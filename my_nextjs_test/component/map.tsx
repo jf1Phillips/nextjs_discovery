@@ -21,8 +21,5 @@ export default function MapDisplay({ x, y, zoom }:
             zoom: zoom,
         });
     }, [x, y, zoom]);
-    return (
-            <div ref={mapContainer}
-            />
-    )
+    return <div ref={mapContainer} style={{ width: "70%", height: "500px" }} />;
 }
