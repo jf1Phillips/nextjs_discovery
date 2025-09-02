@@ -11,9 +11,10 @@ export default function MapNbr(
     return (
         <>
             <p>Map nbr {params.id}</p>
-            <div className={styles.map}>
-                <MapDisplay x={2.35522} y={48.8566} zoom={12}/>
-            </div>
+            <MapDisplay x={2.35522} y={48.8566} zoom={12}/>
+            <h1 className="text-3xl font-bold underline">
+                Hello world!
+            </h1>
         </>
     )
 }
