@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, use } from "react";
 import mapboxgl, {Map as MapboxMap} from "mapbox-gl";
+import "@/styles/globals.css";
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN as string;
 
@@ -21,5 +22,11 @@ export default function MapDisplay({ x, y, zoom }:
             zoom: zoom,
         });
     }, [x, y, zoom]);
-    return <div ref={mapContainer} style={{ width: "70%", height: "500px" }} />;
+    return (
+        <div
+            className="rounded-[10] overflow-hidden"
+            ref={mapContainer}
+            style={{ width: "70%", height: "500px" }}
+        />
+    );
 }

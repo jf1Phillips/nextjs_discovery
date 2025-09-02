@@ -1,3 +1,5 @@
+import "@/styles/globals.css";
+
 export const metadata = {
     title: 'My app',
     description: 'Description',
@@ -10,7 +12,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang="fr">
-            <body>{children}</body>
+            <body className="bg-customGrey">{children}</body>
         </html>
     )
 }

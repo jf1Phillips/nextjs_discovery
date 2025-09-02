@@ -10,11 +10,13 @@ export default function MapNbr(
     const params = use(props.params);
     return (
         <>
-            <p>Map nbr {params.id}</p>
+            <p className="text-customWhite">
+                Map nbr {params.id}
+            </p>
             <div className="flex items-center justify-center w-full">
-                <MapDisplay x={2.35522} y={48.8566} zoom={12}/>
+                <MapDisplay x={2.35522} y={48.8566} zoom={10}/>
             </div>
-            <h1 className="text-3xl font-bold underline">
+            <h1 className="text-3xl font-bold underline text-customWhite">
                 Hello world!
             </h1>
         </>
