@@ -10,7 +10,7 @@ export default function MapNbr(
     const params = use(props.params);
     return (
         <>
-            <p className="text-customWhite">
+            <p className="text-customWhite flex items-center justify-center">
                 Map nbr {params.id}
             </p>
             <div className="flex items-center justify-center w-full">
