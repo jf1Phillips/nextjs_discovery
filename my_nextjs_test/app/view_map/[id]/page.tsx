@@ -1,34 +1,18 @@
-"use client";
+import { use } from "react";
+import MapDisplay  from "@/component/map";
 
-import { useEffect, useRef } from "react";
-import mapboxgl, {Map} from "mapbox-gl";
-
-mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN as string;
-
-export default function MapNbr ({
-    params,
-}: {
-    params: {id: string}
-}) {
-    const mapContainer = useRef<HTMLDivElement | null>(null);
-    const map = useRef<Map | null>(null);
-
-    useEffect(() => {
-        if (map.current) return;
-
-        map.current = new mapboxgl.Map({
-            container: mapContainer.current as HTMLDivElement,
-            style: "mapbox://styles/mapbox/streets-v11",
-            center: [2.3522, 48.8566],
-            zoom: 10,
-        });
-
-
-    }, []);
+export default function MapNbr(
+    props: {
+        params: Promise<{id: string}>
+    }
+) {
+    const params = use(props.params);
     return (
         <>
             <p>Map nbr {params.id}</p>
-            <div ref={mapContainer}></div>
+            <MapDisplay x={2.35522} y={48.8566} zoom={10}/>
+            <MapDisplay x={2.35522} y={48.8566} zoom={11}/>
+            <MapDisplay x={2.35522} y={48.8566} zoom={12}/>
         </>
     )
 }
