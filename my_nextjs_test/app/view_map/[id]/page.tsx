@@ -1,5 +1,6 @@
 import { use } from "react";
-import MapDisplay  from "@/component/map";
+import MapDisplay from "@/component/map";
+import styles from './map.module.css';
 
 export default function MapNbr(
     props: {
@@ -10,9 +11,9 @@ export default function MapNbr(
     return (
         <>
             <p>Map nbr {params.id}</p>
-            <MapDisplay x={2.35522} y={48.8566} zoom={10}/>
-            <MapDisplay x={2.35522} y={48.8566} zoom={11}/>
-            <MapDisplay x={2.35522} y={48.8566} zoom={12}/>
+            <div className={styles.map}>
+                <MapDisplay x={2.35522} y={48.8566} zoom={12}/>
+            </div>
         </>
     )
 }
