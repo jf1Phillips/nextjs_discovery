@@ -13,8 +13,8 @@ export default function MapNbr(
 ) {
     const params = use(props.params);
     const DEFAULT_ZOOM: number = 10;
-    const DEFAULT_LAT: number = 2.35522;
-    const DEFAULT_LONG: number = 48.8566;
+    const DEFAULT_LONG: number = 2.35522;
+    const DEFAULT_LAT: number = 48.8566;
 
     const zoom_number: number = atoi(params.id, DEFAULT_ZOOM);
 
@@ -66,7 +66,7 @@ export default function MapNbr(
                     type="submit">View</button>
             </form>
             <div className="mt-[30px] flex items-center justify-center w-full">
-                <MapDisplay x={lat} y={long} zoom={zoom}/>
+                <MapDisplay y={lat} x={long} zoom={zoom}/>
             </div>
         </>
     )
