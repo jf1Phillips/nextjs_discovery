@@ -40,9 +40,6 @@ export default function MapNbr(
 
     return (
         <>
-            <p className="mt-[40px] text-customWhite flex items-center justify-center">
-                Map zoom: {zoom}
-            </p>
             <form className="mt-[40px] text-customWhite flex flex-col items-center justify-center"
                     onSubmit={submitEvent}>
                 <div className="flex flex-row gap-x-[50px]">
