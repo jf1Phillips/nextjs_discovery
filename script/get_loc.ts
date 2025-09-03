@@ -20,12 +20,3 @@ export default async function get_loc(): Promise<{ lat: number, long: number } |
         return undefined;
     }
 }
-
-// // Utilisation de la fonction
-// getGeolocationByIp().then(location => {
-//   if (location) {
-//     console.log('Received location:', location);
-//   } else {
-//     console.log('Failed to retrieve geolocation.');
-//   }
-// });
