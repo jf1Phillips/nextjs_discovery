@@ -21,13 +21,19 @@ export default function MapDisplay({ x, y, zoom }:
                 zoom: zoom,
             });
         } else {
-            map.current.setCenter([x, y]);
-            map.current.setZoom(zoom);
+            map.current.easeTo({
+                center: [x, y],
+                zoom: zoom,
+                duration: 1000,
+                easing: function(t) {
+                    return t;
+                }
+            })
         }
     }, [x, y, zoom]);
     return (
         <div
-            className="rounded-[10] overflow-hidden"
+            className="rounded-[20px] overflow-hidden"
             ref={mapContainer}
             style={{ width: "70%", height: "500px" }}
         />

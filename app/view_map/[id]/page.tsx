@@ -38,24 +38,24 @@ export default function MapNbr(
     return (
         <>
             <p className="mt-[40px] text-customWhite flex items-center justify-center">
-                Map nbr {params.id}
+                Map zoom: {zoom}
             </p>
             <form className="mt-[40px] text-customWhite flex flex-col items-center justify-center"
                     onSubmit={submitEvent}>
                 <div className="flex flex-row gap-x-[50px]">
                     <div className="flex flex-col items-center">
-                        <label>Zoom</label>
-                        <input className="bg-customGrey2 text-center w-[100px]"
+                        <label className="mb-[5px]">Zoom</label>
+                        <input className="outline-none border-solid border-[2px] rounded-full bg-customGrey2 text-center w-[100px]"
                                 type="text" name="zoom" defaultValue={zoom.toString()}/>
                     </div>
                     <div className="flex flex-col items-center">
-                        <label>Lat</label>
-                        <input className="bg-customGrey2 text-center w-[100px]"
+                        <label className="mb-[5px]">Lat</label>
+                        <input className="outline-none border-solid border-[2px] rounded-full bg-customGrey2 text-center w-[100px]"
                                 type="text" name="lat" defaultValue={lat.toString()}/>
                     </div>
                     <div className="flex flex-col items-center">
-                        <label>Long</label>
-                        <input className="bg-customGrey2 text-center w-[100px]" 
+                        <label className="mb-[5px]">Long</label>
+                        <input className="outline-none border-solid border-[2px] rounded-full bg-customGrey2 text-center w-[100px]" 
                                 type="text" name="long" defaultValue={long.toString()}/>
                     </div>
                 </div>
