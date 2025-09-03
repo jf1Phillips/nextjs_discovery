@@ -8,8 +8,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        customGrey: 'rgba(31, 12, 30, 1)',
-        customWhite: 'rgba(255, 203, 160, 1)',
+        customGrey: 'rgba(41, 30, 49, 1)',
+        customWhite: 'rgba(255, 255, 255, 1)',
       }
     },
   },
