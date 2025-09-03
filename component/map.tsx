@@ -6,8 +6,14 @@ import "@/styles/globals.css";
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN as string;
 
-export default function MapDisplay({ x, y, zoom }:
-    { x: number; y: number; zoom: number }
+type MapArgType = {
+    x: number;
+    y: number;
+    zoom: number;
+    reset: number;
+}
+
+export default function MapDisplay({ x, y, zoom, reset }: MapArgType
 ) {
     const mapContainer = useRef<HTMLDivElement | null>(null);
     const map = useRef<MapboxMap | null>(null);
@@ -31,7 +37,7 @@ export default function MapDisplay({ x, y, zoom }:
                 }
             })
         }
-    }, [x, y, zoom]);
+    }, [x, y, zoom, reset]);
     return (
         <div
             className="overflow-hidden"
