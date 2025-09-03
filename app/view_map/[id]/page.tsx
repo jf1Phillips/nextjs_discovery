@@ -12,7 +12,7 @@ export default function MapNbr(
     const DEFAULT_LAT: number = 2.35522;
     const DEFAULT_LONG: number = 48.8566;
 
-    var zoom_number: number = Number.isNaN(+params.id) ? DEFAULT_ZOOM : +params.id;
+    const zoom_number: number = Number.isNaN(+params.id) ? DEFAULT_ZOOM : +params.id;
     return (
         <>
             <p className="mt-[40px] text-customWhite flex items-center justify-center">
