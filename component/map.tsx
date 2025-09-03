@@ -13,14 +13,17 @@ export default function MapDisplay({ x, y, zoom }:
     const map = useRef<MapboxMap | null>(null);
 
     useEffect(() => {
-        if (map.current) return;
-
-        map.current = new mapboxgl.Map({
-            container: mapContainer.current as HTMLDivElement,
-            style: "mapbox://styles/mapbox/streets-v11",
-            center: [x, y],
-            zoom: zoom,
-        });
+        if (!map.current) {
+            map.current = new mapboxgl.Map({
+                container: mapContainer.current as HTMLDivElement,
+                style: "mapbox://styles/mapbox/streets-v11",
+                center: [x, y],
+                zoom: zoom,
+            });
+        } else {
+            map.current.setCenter([x, y]);
+            map.current.setZoom(zoom);
+        }
     }, [x, y, zoom]);
     return (
         <div

@@ -1,4 +1,6 @@
-import { use } from "react";
+"use client";
+
+import { use, useState } from "react";
 import MapDisplay from "@/component/map";
 import "@/styles/globals.css";
 import atoi from "@/script/atoi";
@@ -15,33 +17,52 @@ export default function MapNbr(
     const DEFAULT_LONG: number = 48.8566;
 
     const zoom_number: number = atoi(params.id, DEFAULT_ZOOM);
+
+    const [zoom, setZoom] = useState<number>(zoom_number);
+    const [lat, setLat] = useState<number>(DEFAULT_LAT);
+    const [long, setLong] = useState<number>(DEFAULT_LONG);
+
+    const submitEvent = (event: React.FormEvent) => {
+        event.preventDefault();
+
+        const target: HTMLFormElement = event.target as HTMLFormElement;
+
+        const newZoom = atoi(target.zoom.value, DEFAULT_ZOOM);
+        const newLat = atoi(target.lat.value, DEFAULT_LAT);
+        const newLong = atoi(target.long.value, DEFAULT_LONG);
+
+        setZoom(newZoom);
+        setLat(newLat);
+        setLong(newLong);
+    };
     return (
         <>
             <p className="mt-[40px] text-customWhite flex items-center justify-center">
                 Map nbr {params.id}
             </p>
-            <form className="mt-[40px] text-customWhite flex flex-col items-center justify-center">
+            <form className="mt-[40px] text-customWhite flex flex-col items-center justify-center"
+                    onSubmit={submitEvent}>
                 <div className="flex flex-row gap-x-[50px]">
                     <div className="flex flex-col items-center">
                         <label>Zoom</label>
                         <input className="bg-customGrey2 text-center w-[100px]"
-                                type="text" name="zoom" placeholder={zoom_number.toString()}/>
+                                type="text" name="zoom" defaultValue={zoom.toString()}/>
                     </div>
                     <div className="flex flex-col items-center">
                         <label>Lat</label>
                         <input className="bg-customGrey2 text-center w-[100px]"
-                                type="text" name="zoom" placeholder={DEFAULT_LAT.toString()}/>
+                                type="text" name="lat" defaultValue={lat.toString()}/>
                     </div>
                     <div className="flex flex-col items-center">
                         <label>Long</label>
                         <input className="bg-customGrey2 text-center w-[100px]" 
-                                type="text" name="zoom" placeholder={DEFAULT_LONG.toString()}/>
+                                type="text" name="long" defaultValue={long.toString()}/>
                     </div>
                 </div>
                 <button className="mt-[10px]" type="submit">View</button>
             </form>
             <div className="mt-[30px] flex items-center justify-center w-full">
-                <MapDisplay x={DEFAULT_LAT} y={DEFAULT_LONG} zoom={zoom_number}/>
+                <MapDisplay x={lat} y={long} zoom={zoom}/>
             </div>
         </>
     )
