@@ -3,6 +3,8 @@
 import { useEffect, useRef, use } from "react";
 import mapboxgl, {Map as MapboxMap} from "mapbox-gl";
 import "@/styles/globals.css";
+import get_loc from "@/script/get_loc";
+import "mapbox-gl/dist/mapbox-gl.css";
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN as string;
 
@@ -27,9 +29,27 @@ export default function MapDisplay({ x, y, zoom, reset }: MapArgType
                 zoom: zoom,
                 projection: 'globe',
             });
+
+            map.current.on("load", () => {
+                if (!map.current)
+                    return;
+                get_loc().then(location => {
+                    if (!location || !map.current)
+                        return;
+                    new mapboxgl.Marker().
+                        setLngLat([location.long, location.lat])
+                        .addTo(map.current);
+                });
+                new mapboxgl.Marker()
+                    .setLngLat([x, y])
+                    .addTo(map.current);
+            });
         } else {
+            const new_x = x % 90;
+            const new_y = y % 180;
+
             map.current.easeTo({
-                center: [x % 90, y % 90],
+                center: [new_x, new_y],
                 zoom: zoom,
                 duration: 1000,
                 easing: function(t) {

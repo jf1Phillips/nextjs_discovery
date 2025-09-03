@@ -7,3 +7,7 @@
 body {
     font-family: 'Montserrat', serif;
 }
+
+.mapboxgl-control-container {
+    display: none;
+}
