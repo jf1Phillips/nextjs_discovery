@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       colors: {
         customGrey: 'rgba(41, 30, 49, 1)',
+        customGrey2: 'rgba(87, 63, 104, 1)',
         customWhite: 'rgba(255, 255, 255, 1)',
       }
     },
