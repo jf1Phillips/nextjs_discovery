@@ -16,13 +16,14 @@ export default function MapDisplay({ x, y, zoom }:
         if (!map.current) {
             map.current = new mapboxgl.Map({
                 container: mapContainer.current as HTMLDivElement,
-                style: "mapbox://styles/mapbox/streets-v11",
+                style: "mapbox://styles/mapbox/dark-v10",
                 center: [x, y],
                 zoom: zoom,
+                projection: 'globe',
             });
         } else {
             map.current.easeTo({
-                center: [x, y],
+                center: [x % 90, y % 90],
                 zoom: zoom,
                 duration: 1000,
                 easing: function(t) {
@@ -33,9 +34,9 @@ export default function MapDisplay({ x, y, zoom }:
     }, [x, y, zoom]);
     return (
         <div
-            className="rounded-[20px] overflow-hidden"
+            className="overflow-hidden"
             ref={mapContainer}
-            style={{ width: "70%", height: "500px" }}
+            style={{ width: "100%", height: "500px" }}
         />
     );
 }

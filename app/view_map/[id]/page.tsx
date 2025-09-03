@@ -12,7 +12,7 @@ export default function MapNbr(
     }
 ) {
     const params = use(props.params);
-    const DEFAULT_ZOOM: number = 10;
+    const DEFAULT_ZOOM: number = 1;
     const DEFAULT_LONG: number = 2.35522;
     const DEFAULT_LAT: number = 48.8566;
 
