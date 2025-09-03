@@ -59,7 +59,11 @@ export default function MapNbr(
                                 type="text" name="long" defaultValue={long.toString()}/>
                     </div>
                 </div>
-                <button className="mt-[10px]" type="submit">View</button>
+                <button className="
+                        rounded-full bg-customGrey2 w-[80px] mt-[30px] h-[30px] border-customGrey2
+                        hover:bg-customGrey2Hover hover:border-[2px] hover:border-solid hover:border-customGrey2
+                        transition-all duration-200 ease-in-out"
+                    type="submit">View</button>
             </form>
             <div className="mt-[30px] flex items-center justify-center w-full">
                 <MapDisplay x={lat} y={long} zoom={zoom}/>
