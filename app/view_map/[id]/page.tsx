@@ -3,8 +3,8 @@
 import { use, useState } from "react";
 import MapDisplay from "@/component/map";
 import "@/styles/globals.css";
+import DarkMode from "@/component/darkmode";
 import atoi from "@/script/atoi";
-
 
 export default function MapNbr(
     props: {
@@ -38,9 +38,12 @@ export default function MapNbr(
         setReset(1 - reset);
     };
 
+    const [enabled, setEnabled] = useState<boolean>(false);
+
     return (
         <>
-            <form className="mt-[40px] text-customWhite flex flex-col items-center justify-center"
+            <DarkMode enabled={enabled} setEnabled={setEnabled} className="absolute"/>
+            <form className="text-customWhite flex flex-col items-center justify-center mt-4"
                     onSubmit={submitEvent}>
                 <div className="flex flex-row gap-x-[50px]">
                     <div className="flex flex-col items-center">
@@ -66,7 +69,7 @@ export default function MapNbr(
                     type="submit">View</button>
             </form>
             <div className="mt-[30px] flex items-center justify-center w-full">
-                <MapDisplay y={lat} x={long} zoom={zoom} reset={reset}/>
+                <MapDisplay y={lat} x={long} zoom={zoom} reset={reset} darkMode={enabled}/>
             </div>
         </>
     )
