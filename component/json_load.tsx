@@ -25,7 +25,7 @@ export default function json_load(file: string, map: MapboxMap) {
             if (it >= 20)
                 break;
             const longlat: number[] = response.points[i].longlat;
-            add_marker(longlat[1], longlat[0], map);
+            add_marker(longlat[1], longlat[0], map, response.points[i].name.fr);
             ++it;
         }
     });

@@ -17,8 +17,11 @@ type MapArgType = {
     darkMode: boolean;
 };
 
-export function add_marker(long: number, lat: number, map: MapboxMap): void {
-    new mapboxgl.Marker().setLngLat([long, lat]).addTo(map);
+export function add_marker(long: number, lat: number, map: MapboxMap, str: string): void {
+    const marker = new mapboxgl.Marker().setLngLat([long, lat]).addTo(map);
+    const popup = new mapboxgl.Popup()
+        .setHTML(`<p>${str}</p>`);
+    marker.setPopup(popup);
 }
 
 export default function MapDisplay({ x, y, zoom, reset, darkMode = false }: MapArgType
@@ -44,9 +47,9 @@ export default function MapDisplay({ x, y, zoom, reset, darkMode = false }: MapA
                 get_loc().then(location => {
                     if (!location || !map.current)
                         return;
-                    add_marker(location.long, location.lat, map.current);
+                    add_marker(location.long, location.lat, map.current, "your location");
                 });
-                add_marker(x, y, map.current);
+                add_marker(x, y, map.current, "paris");
             });
         } else {
             const new_x = x % 90;
