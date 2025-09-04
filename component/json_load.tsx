@@ -20,9 +20,13 @@ export default function json_load(file: string, map: MapboxMap) {
     get_json_data(file).then(response => {
         if (!response)
             return;
+        var it: number = 0;
         for (const i in response.points) {
+            if (it >= 20)
+                break;
             const longlat: number[] = response.points[i].longlat;
             add_marker(longlat[1], longlat[0], map);
+            ++it;
         }
     });
 }
