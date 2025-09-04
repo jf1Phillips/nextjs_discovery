@@ -1,7 +1,10 @@
 {
     "points": [
         {
-            "longlat": [31.6822813967507, 35.7235471783873],
+            "longlat": [
+                31.6822813967507,
+                35.7235471783873
+            ],
             "link": "None",
             "name": {
                 "fr": "Abarim (monts)",
@@ -10,20 +13,4763 @@
             }
         },
         {
-            "longlat": [33.2577033933823, 35.5803781991821],
+            "longlat": [
+                33.2577033933823,
+                35.5803781991821
+            ],
             "link": "None",
             "name": {
                 "fr": "Abel Maïm"
             }
         },
         {
-            "longlat": [33.0485981736681, 35.1023412581567],
+            "longlat": [
+                33.0485981736681,
+                35.1023412581567
+            ],
             "link": "None",
             "name": {
                 "fr": "Achzib",
                 "en": "Achzib",
                 "it": "Aczib",
                 "es": "Akziv"
+            }
+        },
+        {
+            "longlat": [
+                40.2208984543028,
+                16.7352010877973
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Aciri"
+            }
+        },
+        {
+            "longlat": [
+                31.8813663092477,
+                35.3486462894152
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Acor Vallée"
+            }
+        },
+        {
+            "longlat": [
+                31.8600682231551,
+                34.822977032364
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Acron",
+                "en": "Acron",
+                "it": "Acron",
+                "es": "Ecrón"
+            }
+        },
+        {
+            "longlat": [
+                37.9715537092891,
+                23.7258766749851
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Acropole"
+            }
+        },
+        {
+            "longlat": [
+                31.791700904952,
+                35.2809970897732
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Adomin (mont)",
+                "en": "Mt. Adumim",
+                "it": "M. Adomin",
+                "es": "Mt. Adomín"
+            }
+        },
+        {
+            "longlat": [
+                32.7800841602005,
+                35.7041744988012
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Aféca",
+                "en": "Aphek (Decapolis)",
+                "it": "Afeca (Decapoli)",
+                "es": "Afeq"
+            }
+        },
+        {
+            "longlat": [
+                31.9894926808067,
+                35.3332630039967
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Ain Samieh"
+            }
+        },
+        {
+            "longlat": [
+                32.841983861494,
+                35.9455842350175
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Al Allan",
+                "en": " nahr"
+            }
+        },
+        {
+            "longlat": [
+                31.9501909065593,
+                35.4030355361795
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Al Aujah wadi"
+            }
+        },
+        {
+            "longlat": [
+                31.946568207633,
+                35.2915728760959
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Al Aïn",
+                "en": " wadi"
+            }
+        },
+        {
+            "longlat": [
+                36.0518853154235,
+                35.9881071386423
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Al Mina"
+            }
+        },
+        {
+            "longlat": [
+                32.8397442530325,
+                36.0603689604799
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Al Ruqqah wadi"
+            }
+        },
+        {
+            "longlat": [
+                33.1511282117883,
+                35.1677040749146
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Alexandroscène",
+                "en": "Alexandroscene",
+                "it": "Alessandroscene",
+                "es": "Alejandrocena"
+            }
+        },
+        {
+            "longlat": [
+                36.335971688198,
+                36.032284230837
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Aman"
+            }
+        },
+        {
+            "longlat": [
+                32.8653078798978,
+                35.5057053518906
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Amud",
+                "en": " wadi"
+            }
+        },
+        {
+            "longlat": [
+                39.0071391687981,
+                34.0112849168355
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Anatolie"
+            }
+        },
+        {
+            "longlat": [
+                36.1528781036378,
+                36.1538374394675
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Antigonéa ?",
+                "en": "Antigonea",
+                "it": "Antigonio ?",
+                "es": "Antigonio"
+            }
+        },
+        {
+            "longlat": [
+                36.995146667991,
+                35.3396798309193
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Antioche de Cilicie"
+            }
+        },
+        {
+            "longlat": [
+                36.1990474445934,
+                36.1568074417971
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Antioche sur l'Oronte",
+                "en": "Antioch",
+                "zh": "安条克",
+                "it": "Antiochia",
+                "es": "Antioquía"
+            }
+        },
+        {
+            "longlat": [
+                32.1058939752126,
+                34.9309466234329
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Antipatris Afeca",
+                "en": "Antipatrida",
+                "it": "Afec Antipatris",
+                "es": "Antipatris"
+            }
+        },
+        {
+            "longlat": [
+                32.7906949460147,
+                35.4724826209454
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Aqueduc ?"
+            }
+        },
+        {
+            "longlat": [
+                30.1240773407222,
+                39.0398075978795
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Arabie"
+            }
+        },
+        {
+            "longlat": [
+                32.8124937578064,
+                35.4889789069816
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Arbel de Galilée"
+            }
+        },
+        {
+            "longlat": [
+                32.8236121188345,
+                35.4875973260535
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Arbel gorges",
+                "en": "Apostolic Election",
+                "it": "Elezione dei dodici"
+            }
+        },
+        {
+            "longlat": [
+                32.5649808973708,
+                35.9066542014769
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Arbela",
+                "en": "Arbela (Decapolis)",
+                "it": "Arbela (Decapoli)",
+                "es": "Arbela de la Decápolis"
+            }
+        },
+        {
+            "longlat": [
+                32.0269542040498,
+                35.0166922176443
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Arimathie ?",
+                "en": "Arimathea",
+                "it": "Arimatea ?",
+                "es": "Arimatea"
+            }
+        },
+        {
+            "longlat": [
+                37.972406103452,
+                23.7231054790333
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Aréopage"
+            }
+        },
+        {
+            "longlat": [
+                31.6633681511572,
+                34.5477376352198
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Ascalon",
+                "en": "Ashkelon",
+                "zh": "阿什凯隆",
+                "it": "Ascalona",
+                "es": "Ascalón"
+            }
+        },
+        {
+            "longlat": [
+                31.858693441287,
+                35.2086394694006
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Atarot",
+                "en": "Aratoth",
+                "it": "Atarot",
+                "es": "Atarot"
+            }
+        },
+        {
+            "longlat": [
+                32.4900022846043,
+                36.1309613374407
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Auran",
+                "en": " mont"
+            }
+        },
+        {
+            "longlat": [
+                32.6715358512417,
+                36.1702218308742
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Auranitide",
+                "en": "Auran",
+                "it": "Auranitide ",
+                "es": "Auranítida "
+            }
+        },
+        {
+            "longlat": [
+                31.8672459527061,
+                34.9617841697591
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Ayalon",
+                "en": " vallée"
+            }
+        },
+        {
+            "longlat": [
+                31.7005264558161,
+                34.9374211206829
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Azeco",
+                "en": "Azekah",
+                "it": "Azeco",
+                "es": "Azeca"
+            }
+        },
+        {
+            "longlat": [
+                31.7565341130381,
+                34.6601549418528
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Azot",
+                "en": "Azotus",
+                "it": "Azoto",
+                "es": " Azoto "
+            }
+        },
+        {
+            "longlat": [
+                33.0845175810977,
+                36.1766417084336
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Aëra",
+                "en": "Aera",
+                "it": "Aera",
+                "es": "Aera"
+            }
+        },
+        {
+            "longlat": [
+                31.9168166242831,
+                35.2615468606235
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Aï"
+            }
+        },
+        {
+            "longlat": [
+                32.5398886961795,
+                44.4255620238414
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Babylone"
+            }
+        },
+        {
+            "longlat": [
+                33.002200814952,
+                36.0851110074913
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Bashân"
+            }
+        },
+        {
+            "longlat": [
+                32.9027996829728,
+                36.085971174404
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Batanée"
+            }
+        },
+        {
+            "longlat": [
+                31.7800057972275,
+                35.2369801090505
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Bel Midrasch"
+            }
+        },
+        {
+            "longlat": [
+                31.9503478237621,
+                35.5093461369669
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Belle Eau ?"
+            }
+        },
+        {
+            "longlat": [
+                31.7785546293372,
+                35.2367053639852
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Belle Porte"
+            }
+        },
+        {
+            "longlat": [
+                32.3681791855459,
+                35.3978639885605
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Berger samaritain"
+            }
+        },
+        {
+            "longlat": [
+                33.8917736259454,
+                35.4835057970462
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Beritus"
+            }
+        },
+        {
+            "longlat": [
+                31.2593570297393,
+                34.7851260023644
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Bersabée"
+            }
+        },
+        {
+            "longlat": [
+                31.853185520182,
+                35.5499294387367
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Betabara",
+                "en": "Bethabara (Jordan Ford)",
+                "it": "Betabara ?",
+                "es": "Betabara"
+            }
+        },
+        {
+            "longlat": [
+                31.8273275029339,
+                35.5139101375576
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Betagla",
+                "en": "Betagla",
+                "it": "Betagla",
+                "es": "Betagla"
+            }
+        },
+        {
+            "longlat": [
+                31.7198269797963,
+                34.9785531993431
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Betginna",
+                "en": "Bethginna",
+                "it": "Betginna",
+                "es": "Bet Yinna"
+            }
+        },
+        {
+            "longlat": [
+                31.8957389242748,
+                35.2565742394256
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Beth Aven"
+            }
+        },
+        {
+            "longlat": [
+                31.7512116896549,
+                34.975255324316
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Beth Shemesh"
+            }
+        },
+        {
+            "longlat": [
+                31.6080528039458,
+                34.8954583333333
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Bethléchi",
+                "en": "Bethlechi",
+                "it": "Betlechi",
+                "es": "Betlequi"
+            }
+        },
+        {
+            "longlat": [
+                32.7358936851099,
+                35.1924049170991
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Bethléem de Galilée",
+                "en": "Bethlehem (Galilee)",
+                "zh": "白冷",
+                "it": "Betlemme (di Galilea)",
+                "es": "Belén (de Galilea)"
+            }
+        },
+        {
+            "longlat": [
+                31.7044325694036,
+                35.2076122051297
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Bethléem La grotte",
+                "en": "Bethlehem",
+                "it": "Betlemme (Grotta)",
+                "es": "Belén"
+            }
+        },
+        {
+            "longlat": [
+                31.7758223795062,
+                35.2511060603732
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Bethphagé",
+                "en": "Bethphage (Jerusalem)",
+                "it": "Bettage (Gerusalemme)",
+                "es": "Betfagé (Jerusalén)"
+            }
+        },
+        {
+            "longlat": [
+                32.9111642883132,
+                35.6305828176177
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Bethsaïda",
+                "en": "Bethsaida",
+                "it": "Betsaida",
+                "es": "Betsaida"
+            }
+        },
+        {
+            "longlat": [
+                31.5894458701295,
+                35.0941818714657
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Bethsur",
+                "en": "Bethzur",
+                "it": "Betsur",
+                "es": "Betsur"
+            }
+        },
+        {
+            "longlat": [
+                32.1945545943308,
+                35.6237707795341
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Betjaboc ?",
+                "en": "Beth-jabok",
+                "it": "Betjabboc ?",
+                "es": "Bet Yaboc"
+            }
+        },
+        {
+            "longlat": [
+                32.5037872656416,
+                35.5039853528465
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Betscan Scythopolis"
+            }
+        },
+        {
+            "longlat": [
+                32.00005329884,
+                34.8322409528357
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Bettegon",
+                "en": "Bettegon",
+                "it": "Bet Dagón"
+            }
+        },
+        {
+            "longlat": [
+                33.0656426430686,
+                35.1272533370266
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Betzet wadi"
+            }
+        },
+        {
+            "longlat": [
+                31.7819365119453,
+                35.2344295627606
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Bezetha"
+            }
+        },
+        {
+            "longlat": [
+                33.0444295300501,
+                35.4154671065922
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Biram"
+            }
+        },
+        {
+            "longlat": [
+                32.6426401353333,
+                35.4713208019384
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Bireh wadi"
+            }
+        },
+        {
+            "longlat": [
+                41.027003380993,
+                32.1712204094531
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Bithynie"
+            }
+        },
+        {
+            "longlat": [
+                32.0023448947977,
+                35.3068242697293
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Borne Néapolis/Silo/Jéricho"
+            }
+        },
+        {
+            "longlat": [
+                31.8201935104965,
+                35.0369187965437
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Bornes millières"
+            }
+        },
+        {
+            "longlat": [
+                32.5146572431905,
+                36.4636116592271
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Bozra",
+                "en": "Bozrah",
+                "it": "Bozra",
+                "es": "Bosra"
+            }
+        },
+        {
+            "longlat": [
+                40.6370218498425,
+                17.9382988326068
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Brindisi"
+            }
+        },
+        {
+            "longlat": [
+                41.1331221109628,
+                14.7835305694228
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Bénévent"
+            }
+        },
+        {
+            "longlat": [
+                31.9061852097493,
+                35.2173740149574
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Bérot",
+                "en": "Beeroth",
+                "it": "Berot",
+                "es": "Berot "
+            }
+        },
+        {
+            "longlat": [
+                31.7714002280671,
+                35.2578430601287
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Béthanie",
+                "en": "Bethany",
+                "it": "Betania",
+                "es": "Betania"
+            }
+        },
+        {
+            "longlat": [
+                31.8364052823906,
+                35.5532126219756
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Béthanie du Jourdain",
+                "en": "Bethany beyond the Jordan",
+                "it": "Betania del Giordano"
+            }
+        },
+        {
+            "longlat": [
+                31.9241573553745,
+                35.2355874993802
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Béthel",
+                "en": "Bethel",
+                "it": "Betel",
+                "es": "Betel"
+            }
+        },
+        {
+            "longlat": [
+                31.7236819157496,
+                35.1370827233723
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Béther",
+                "en": "Bether",
+                "it": "Beter",
+                "es": "Béter"
+            }
+        },
+        {
+            "longlat": [
+                31.8807505400063,
+                35.1236354437592
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Bétéron",
+                "en": "Beteron sup.",
+                "it": "Beteron",
+                "es": "Bet-Jorón"
+            }
+        },
+        {
+            "longlat": [
+                32.8310359057074,
+                34.9666569672514
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Cabanes des pêcheurs ?"
+            }
+        },
+        {
+            "longlat": [
+                31.5969989905479,
+                35.5594275589976
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Callirhoé"
+            }
+        },
+        {
+            "longlat": [
+                32.7385387748083,
+                35.3484870695062
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Cana",
+                "en": "Cana",
+                "zh": "加纳",
+                "it": "Cana",
+                "es": "Caná "
+            }
+        },
+        {
+            "longlat": [
+                32.75568261884,
+                36.6181559448195
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Canata"
+            }
+        },
+        {
+            "longlat": [
+                33.1641256572801,
+                35.1689653869121
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Cap Blanc (Ras el Bayada)"
+            }
+        },
+        {
+            "longlat": [
+                33.0936391957685,
+                35.1042512775404
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Cap de la tempête (Rosh Hanikra)"
+            }
+        },
+        {
+            "longlat": [
+                32.8811179401164,
+                35.5750417186764
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Capharnaüm",
+                "en": "Capernaum",
+                "zh": "葛法翁 / 迦百农",
+                "it": "Cafarnao",
+                "es": "Cafarnaúm"
+            }
+        },
+        {
+            "longlat": [
+                42.3276033476624,
+                12.2382460608312
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Caprarola"
+            }
+        },
+        {
+            "longlat": [
+                31.1819190049811,
+                35.7037160379559
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Carakamoab"
+            }
+        },
+        {
+            "longlat": [
+                31.8575571721331,
+                35.3379555302377
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Carit Mont",
+                "en": "Mount of the Precipice",
+                "it": "M. Carit",
+                "es": "Mt. Carit"
+            }
+        },
+        {
+            "longlat": [
+                31.8411846752047,
+                35.3524687548408
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Carit Vallée"
+            }
+        },
+        {
+            "longlat": [
+                32.7199991145899,
+                35.0494606722278
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Carmel"
+            }
+        },
+        {
+            "longlat": [
+                35.9514682749586,
+                35.9698955361076
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Casio Mont"
+            }
+        },
+        {
+            "longlat": [
+                32.680071945197,
+                35.3224640694512
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Caslot-Thabor"
+            }
+        },
+        {
+            "longlat": [
+                31.9501786095058,
+                46.5669924603809
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Chaldée"
+            }
+        },
+        {
+            "longlat": [
+                31.7823393442424,
+                35.2457240799446
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Champ des galiléens",
+                "en": "Field of Galileans",
+                "it": "Campo dei Galilei",
+                "es": "Campo de los Galileos"
+            }
+        },
+        {
+            "longlat": [
+                38.1891496536591,
+                15.5871667835401
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Charybde"
+            }
+        },
+        {
+            "longlat": [
+                38.404073036896,
+                26.0320226659811
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Chio"
+            }
+        },
+        {
+            "longlat": [
+                32.2456985978553,
+                35.889019416161
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Chrysorrhoas"
+            }
+        },
+        {
+            "longlat": [
+                35.1359771458957,
+                33.4636455213766
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Chypre"
+            }
+        },
+        {
+            "longlat": [
+                37.147826212552,
+                35.0785031694562
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Cilicie"
+            }
+        },
+        {
+            "longlat": [
+                34.8517132081145,
+                33.5759873997664
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Cintium"
+            }
+        },
+        {
+            "longlat": [
+                31.703738963018,
+                34.9826665024527
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Colline du panorama"
+            }
+        },
+        {
+            "longlat": [
+                36.1918624019178,
+                36.1553431694321
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Colonnades d'Hérode"
+            }
+        },
+        {
+            "longlat": [
+                35.9989928553417,
+                -5.57603379786933
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Colonnes d'Hercule"
+            }
+        },
+        {
+            "longlat": [
+                37.9386358765317,
+                22.9322375459814
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Corinthe"
+            }
+        },
+        {
+            "longlat": [
+                32.9108106341054,
+                35.5663699800185
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Corozaïm",
+                "en": "Korazim",
+                "it": "Corazim",
+                "es": "Corazín"
+            }
+        },
+        {
+            "longlat": [
+                35.1981661785799,
+                25.0094808285953
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Crète"
+            }
+        },
+        {
+            "longlat": [
+                32.5339316494533,
+                21.7355981584779
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Cyrènaïque"
+            }
+        },
+        {
+            "longlat": [
+                32.8246065221071,
+                21.8584256730472
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Cyrène"
+            }
+        },
+        {
+            "longlat": [
+                33.1102983252722,
+                35.5307096952909
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Cédes",
+                "en": "Kedesh",
+                "it": "Cedes",
+                "es": "Quedes"
+            }
+        },
+        {
+            "longlat": [
+                31.7736588445889,
+                35.2369968577705
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Cédron"
+            }
+        },
+        {
+            "longlat": [
+                33.2470796073229,
+                35.6941254786076
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Césarée de Philippe",
+                "en": "Caesarea Philippi",
+                "it": "Cesarea di Filippo",
+                "es": "Cesárea de Filipo"
+            }
+        },
+        {
+            "longlat": [
+                32.5020335350756,
+                34.8927373242555
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Césarée Maritime",
+                "en": "Caesarea",
+                "it": "Cesarea Marittima",
+                "es": "Cesárea"
+            }
+        },
+        {
+            "longlat": [
+                32.8117083883912,
+                35.5233859495939
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Dalmanutha",
+                "en": "Dalmanuta",
+                "it": "Dalmanuta",
+                "es": "Dalmanuta"
+            }
+        },
+        {
+            "longlat": [
+                33.5136182665121,
+                36.2946015909234
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Damas",
+                "en": "Damascus",
+                "it": "Damasco"
+            }
+        },
+        {
+            "longlat": [
+                36.1297204924385,
+                36.1437173800218
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Daphné",
+                "en": "Daphne Valley",
+                "it": "Dafne",
+                "es": "Valle de Dafne"
+            }
+        },
+        {
+            "longlat": [
+                38.482500026168,
+                22.5011111111111
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Delphes"
+            }
+        },
+        {
+            "longlat": [
+                31.8969588762166,
+                35.4228135270606
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Docco"
+            }
+        },
+        {
+            "longlat": [
+                32.6122928380685,
+                34.9200234434881
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Dora Dor",
+                "en": "Dora",
+                "it": "Dora",
+                "es": "Dora"
+            }
+        },
+        {
+            "longlat": [
+                32.6511938683528,
+                35.1867479561814
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Doras ?"
+            }
+        },
+        {
+            "longlat": [
+                32.412796523618,
+                35.2388978153993
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Dothaïn",
+                "en": "Dothan",
+                "it": "Dotain",
+                "es": "Dotán"
+            }
+        },
+        {
+            "longlat": [
+                32.6953212414316,
+                35.3750111666535
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Déberet",
+                "en": "Debir",
+                "it": "Debaret"
+            }
+        },
+        {
+            "longlat": [
+                31.5024221579699,
+                35.7767634104956
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Débon"
+            }
+        },
+        {
+            "longlat": [
+                32.6009676963727,
+                35.8004272484144
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Décapole",
+                "en": "Decapolis Village",
+                "it": "Decapoli",
+                "es": "Decápolis"
+            }
+        },
+        {
+            "longlat": [
+                31.7007451990044,
+                35.3005197713245
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Désert de Judée",
+                "en": "Desert (Jesus’ Temptation)",
+                "zh": "犹大旷野",
+                "it": "Deserto di Giuda (Tentazione di Gesu')",
+                "es": "Desierto (Tentaciones de Jesús)"
+            }
+        },
+        {
+            "longlat": [
+                32.2346399712053,
+                35.2838005165503
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Ebal Mont",
+                "en": "Mt. Ebal",
+                "it": "M. Ebal",
+                "es": "Mt. Ebal"
+            }
+        },
+        {
+            "longlat": [
+                33.0941133357684,
+                35.1077515879031
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Echelles de Tyr"
+            }
+        },
+        {
+            "longlat": [
+                30.6669256468133,
+                35.3337528068173
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Edom"
+            }
+        },
+        {
+            "longlat": [
+                32.7849158242316,
+                35.6389684647028
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Ein Gev"
+            }
+        },
+        {
+            "longlat": [
+                32.7828671634334,
+                35.6528796215317
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Ein Gev wadi"
+            }
+        },
+        {
+            "longlat": [
+                32.7218203594541,
+                35.3508408528429
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Ein Mahil"
+            }
+        },
+        {
+            "longlat": [
+                31.7059318907968,
+                35.2100547754671
+            ],
+            "link": "None",
+            "name": {
+                "fr": "El Djemel",
+                "en": " wadi"
+            }
+        },
+        {
+            "longlat": [
+                31.8414296600819,
+                35.4116224223287
+            ],
+            "link": "None",
+            "name": {
+                "fr": "El Kelt wadi"
+            }
+        },
+        {
+            "longlat": [
+                32.3486814532461,
+                35.5138344690422
+            ],
+            "link": "None",
+            "name": {
+                "fr": "El Maleh wadi"
+            }
+        },
+        {
+            "longlat": [
+                31.8337260850066,
+                35.3892659754351
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Elie l'essénien"
+            }
+        },
+        {
+            "longlat": [
+                31.6723838559668,
+                35.4365874826703
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Embouchure du Cédron"
+            }
+        },
+        {
+            "longlat": [
+                31.8419667955617,
+                35.1297133599386
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Emmaus de la Montagne",
+                "en": "Emmaus in Mountains",
+                "it": "Emmaus montana",
+                "es": "Emaús de la Montaña"
+            }
+        },
+        {
+            "longlat": [
+                31.8389053066653,
+                34.9889220446429
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Emmaus de la Plaine",
+                "en": "Emmaus on Plain",
+                "it": "Emmaus della pianura",
+                "es": "Emaús de la Llanura"
+            }
+        },
+        {
+            "longlat": [
+                32.7662092117317,
+                35.5499564372291
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Emmaüs Sources chaudes"
+            }
+        },
+        {
+            "longlat": [
+                31.7674552929452,
+                35.235221824807
+            ],
+            "link": "None",
+            "name": {
+                "fr": "En Rogel",
+                "en": "En-rogel (Job's well)",
+                "it": "Fontana En Rogel",
+                "es": "En Rogel"
+            }
+        },
+        {
+            "longlat": [
+                32.6266672245111,
+                35.384852420632
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Endor",
+                "en": "Endor",
+                "it": "Endor",
+                "es": "Endor"
+            }
+        },
+        {
+            "longlat": [
+                31.4525203807208,
+                35.3824926173863
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Engaddi",
+                "en": "Engedi",
+                "it": "Engaddi",
+                "es": "Engadí"
+            }
+        },
+        {
+            "longlat": [
+                32.4600818150115,
+                35.2963264771445
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Engannim",
+                "en": "Engannim",
+                "it": "Engannim",
+                "es": "Engannim"
+            }
+        },
+        {
+            "longlat": [
+                32.3844520832118,
+                35.5331245540108
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Enon",
+                "en": "Enon",
+                "it": "Enon",
+                "es": "Enón"
+            }
+        },
+        {
+            "longlat": [
+                31.7742155509179,
+                35.2701982872657
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Ensémès",
+                "en": "En-Shemesh",
+                "it": "Ensemes",
+                "es": "Ensemes"
+            }
+        },
+        {
+            "longlat": [
+                31.9482281436415,
+                35.2927841481705
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Ephraïm",
+                "en": "Ephraim",
+                "it": "Efraim",
+                "es": "Efraím"
+            }
+        },
+        {
+            "longlat": [
+                37.9492375442624,
+                27.3650472257011
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Ephèse"
+            }
+        },
+        {
+            "longlat": [
+                31.5726998612518,
+                35.0730509093216
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Eschcol vallée"
+            }
+        },
+        {
+            "longlat": [
+                32.5576096361754,
+                35.3282259673309
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Esdrelon Jesraël",
+                "en": "Jezreel",
+                "it": "Jezrael",
+                "es": "Jezreel"
+            }
+        },
+        {
+            "longlat": [
+                31.3099371379456,
+                45.298658530285
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Euphrate"
+            }
+        },
+        {
+            "longlat": [
+                32.5485840163656,
+                34.9132718153042
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Ez Zerqa Crocodilum flumen"
+            }
+        },
+        {
+            "longlat": [
+                39.002914460469,
+                16.1736909400865
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Falerne"
+            }
+        },
+        {
+            "longlat": [
+                33.2339827802595,
+                35.7657234896869
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Fialé Phialé lac"
+            }
+        },
+        {
+            "longlat": [
+                43.8061440224078,
+                11.3008274784025
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Fiesole"
+            }
+        },
+        {
+            "longlat": [
+                31.770676665298,
+                35.2346428647388
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Fontaine de Siloé"
+            }
+        },
+        {
+            "longlat": [
+                32.3522168376558,
+                36.2279095740896
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Fontaine des Chameliers ?"
+            }
+        },
+        {
+            "longlat": [
+                31.780268327081,
+                35.2342200709905
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Forteresse Antonia",
+                "en": "Antonia (Fortress)",
+                "it": "Antonia (Fortezza)",
+                "es": "Antonia (Fortaleza)"
+            }
+        },
+        {
+            "longlat": [
+                33.252421021842,
+                35.7135538331122
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Forteresse de Minrod"
+            }
+        },
+        {
+            "longlat": [
+                29.9715054696808,
+                31.4797710502614
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Forêt pétrifiée"
+            }
+        },
+        {
+            "longlat": [
+                31.9858716077074,
+                35.0884711839
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Gaas",
+                "en": " vallée"
+            }
+        },
+        {
+            "longlat": [
+                31.847769807766,
+                35.1851988363916
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Gabaon",
+                "en": "Gibeon",
+                "it": "Gabaon",
+                "es": "Gabaón"
+            }
+        },
+        {
+            "longlat": [
+                32.6553997884651,
+                35.6787503757475
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Gadara",
+                "en": "Gadara",
+                "it": "Gadara",
+                "es": "Gadara"
+            }
+        },
+        {
+            "longlat": [
+                32.261511247871,
+                35.8127559437385
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Galaad",
+                "en": "Gilead",
+                "it": "Galaad"
+            }
+        },
+        {
+            "longlat": [
+                31.8640832712536,
+                35.5174404495436
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Galgala",
+                "en": "Gilgal",
+                "it": "Galgala",
+                "es": "Galgala"
+            }
+        },
+        {
+            "longlat": [
+                32.9334147919095,
+                35.3556097899655
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Galilée"
+            }
+        },
+        {
+            "longlat": [
+                32.9019687562313,
+                35.7384170188734
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Gamala",
+                "en": "Gamala",
+                "it": "Gamala",
+                "es": "Gamala"
+            }
+        },
+        {
+            "longlat": [
+                31.9723880319125,
+                35.0919092955694
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Gamala de Judée"
+            }
+        },
+        {
+            "longlat": [
+                32.7204150738148,
+                35.6827240695183
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Gamala selon MV"
+            }
+        },
+        {
+            "longlat": [
+                45.6181858456653,
+                10.5595640762165
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Gardone"
+            }
+        },
+        {
+            "longlat": [
+                32.2008395264077,
+                35.273641320756
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Garizim Mont",
+                "en": "Mt. Gerizim",
+                "it": "M. Garizim",
+                "es": "Mt. Garizim"
+            }
+        },
+        {
+            "longlat": [
+                33.0105862697674,
+                35.7667407658265
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Gaulanitide"
+            }
+        },
+        {
+            "longlat": [
+                31.5207525216617,
+                34.4341844581074
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Gaza",
+                "en": "Gaza",
+                "zh": "加薩",
+                "it": "Gaza",
+                "es": "Gaza"
+            }
+        },
+        {
+            "longlat": [
+                32.2816990447745,
+                35.8926798468922
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Gerasa",
+                "en": "Gerasa",
+                "it": "Gerasa",
+                "es": "Gerasa"
+            }
+        },
+        {
+            "longlat": [
+                32.8248853667903,
+                35.6501082605952
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Gergésa",
+                "en": "Ghergesa",
+                "it": "Gerghesa",
+                "es": "Guerguesa"
+            }
+        },
+        {
+            "longlat": [
+                31.6983500267424,
+                34.8461239661988
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Get Gath"
+            }
+        },
+        {
+            "longlat": [
+                31.7798522373824,
+                35.2399445997974
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Gethsémani",
+                "en": "Gethsemane",
+                "zh": "客西马尼园",
+                "it": "Getsemani",
+                "es": "Getsemaní"
+            }
+        },
+        {
+            "longlat": [
+                31.7779954465692,
+                35.2277573062618
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Gihon Vallée"
+            }
+        },
+        {
+            "longlat": [
+                32.4866294264734,
+                35.4140902021103
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Gilboa"
+            }
+        },
+        {
+            "longlat": [
+                32.6509217074855,
+                35.2107501706686
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Giocana ?"
+            }
+        },
+        {
+            "longlat": [
+                33.0265203246768,
+                35.4450080663023
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Giscala",
+                "en": "Giscala",
+                "it": "Giscala",
+                "es": "Yiscala"
+            }
+        },
+        {
+            "longlat": [
+                31.9638113613065,
+                35.2162595550594
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Goféna",
+                "en": "Gofena",
+                "it": "Gofena",
+                "es": "Gofená"
+            }
+        },
+        {
+            "longlat": [
+                31.7783963474342,
+                35.2298056047558
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Golgotha",
+                "en": "Golgotha (Calvary) ",
+                "it": "Golgota (Calvario) ",
+                "es": "Gólgota (Calvario) "
+            }
+        },
+        {
+            "longlat": [
+                31.1396462821665,
+                35.4759439082403
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Gomorrhe ?"
+            }
+        },
+        {
+            "longlat": [
+                32.8282457978004,
+                34.9687799355151
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Grotte d'Elie"
+            }
+        },
+        {
+            "longlat": [
+                31.4534622091907,
+                35.3608772391593
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Grotte d'Elisée ?"
+            }
+        },
+        {
+            "longlat": [
+                32.6164088304838,
+                35.3749910542308
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Grotte de la pythonisse ?"
+            }
+        },
+        {
+            "longlat": [
+                32.3547646852679,
+                35.5244930132634
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Grotte du Baptiste"
+            }
+        },
+        {
+            "longlat": [
+                32.1018210136917,
+                35.5355250506411
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Gué d'Adam"
+            }
+        },
+        {
+            "longlat": [
+                31.8372542537337,
+                35.5467156909426
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Gué de Béthabara"
+            }
+        },
+        {
+            "longlat": [
+                31.7682053541662,
+                35.2276819458672
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Géhenne"
+            }
+        },
+        {
+            "longlat": [
+                32.8466760313408,
+                35.5255111929856
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Génésareth"
+            }
+        },
+        {
+            "longlat": [
+                31.7094076023351,
+                34.9709935829513
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Gérimot"
+            }
+        },
+        {
+            "longlat": [
+                31.7681069824218,
+                35.2329873792563
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Haceldema"
+            }
+        },
+        {
+            "longlat": [
+                35.9050309938963,
+                36.7986092418138
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Hadrak"
+            }
+        },
+        {
+            "longlat": [
+                31.4750207432096,
+                35.2171750745093
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Hakila"
+            }
+        },
+        {
+            "longlat": [
+                31.9411208258537,
+                35.4685562931217
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Halte en MV 551.7-9"
+            }
+        },
+        {
+            "longlat": [
+                32.6832201426361,
+                35.6658338675852
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Hamatha sources chaudes"
+            }
+        },
+        {
+            "longlat": [
+                32.824583929474,
+                35.4899174798836
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Hammam Wadi"
+            }
+        },
+        {
+            "longlat": [
+                32.7252298499657,
+                35.3401412298312
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Har Yona"
+            }
+        },
+        {
+            "longlat": [
+                32.7979801039184,
+                35.4556093919692
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Hattin cornes"
+            }
+        },
+        {
+            "longlat": [
+                33.0195867993338,
+                35.5664762497821
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Hatzor",
+                "en": "Hatzur (Ruins)",
+                "it": "Hazor",
+                "es": "Hatzor (Ruinas)"
+            }
+        },
+        {
+            "longlat": [
+                16.0018541057533,
+                32.7465097560517
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Haut Nil"
+            }
+        },
+        {
+            "longlat": [
+                32.418604351985,
+                35.6353351419298
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Haute Pérée"
+            }
+        },
+        {
+            "longlat": [
+                33.4164109126019,
+                35.8573524171567
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Hermon",
+                "en": "Mt. Hermon",
+                "zh": "赫尔孟",
+                "it": "M. Hermon",
+                "es": "Mt. Hermón"
+            }
+        },
+        {
+            "longlat": [
+                31.8176374953244,
+                35.6842714782189
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Hesban",
+                "en": " wadi"
+            }
+        },
+        {
+            "longlat": [
+                31.8010107255448,
+                35.8096597464895
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Hesbon",
+                "en": "Heshbon",
+                "it": "Esebon",
+                "es": "Esebón"
+            }
+        },
+        {
+            "longlat": [
+                33.0508617662132,
+                35.1483251428056
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Humsin"
+            }
+        },
+        {
+            "longlat": [
+                31.5328505427944,
+                35.1086935042723
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Hébron",
+                "en": "Hebron",
+                "it": "Ebron",
+                "es": "Hebrón"
+            }
+        },
+        {
+            "longlat": [
+                42.5539320450811,
+                43.2479164986027
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Ibérie"
+            }
+        },
+        {
+            "longlat": [
+                37.8662395984269,
+                32.4806994083383
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Iconium"
+            }
+        },
+        {
+            "longlat": [
+                31.2007193982636,
+                34.9352710609077
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Idumée"
+            }
+        },
+        {
+            "longlat": [
+                44.9197047526662,
+                16.6708924157177
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Illyrie"
+            }
+        },
+        {
+            "longlat": [
+                32.7790392284578,
+                35.6597434465584
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Ippo",
+                "en": "Hippo (Nearby village)",
+                "it": "Ippo (villaggio vicino)",
+                "es": "Ippo"
+            }
+        },
+        {
+            "longlat": [
+                31.9752735827657,
+                44.3164893114105
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Ischilo ?"
+            }
+        },
+        {
+            "longlat": [
+                32.606941024903,
+                35.2111829790341
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Ismaël ?"
+            }
+        },
+        {
+            "longlat": [
+                31.6254912946426,
+                35.1481487183973
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Israël"
+            }
+        },
+        {
+            "longlat": [
+                33.5903171582453,
+                35.8361250542952
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Iturée"
+            }
+        },
+        {
+            "longlat": [
+                32.3796270250578,
+                35.6123129946893
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Jabes-Galaad",
+                "en": "Jabesh-Gilead",
+                "it": "Jabes-Gelaad",
+                "es": "Yabés Galaad"
+            }
+        },
+        {
+            "longlat": [
+                31.876358966416,
+                34.7343080178345
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Jabnia",
+                "en": "Jabneel",
+                "it": "Jabnia",
+                "es": "Jabnia"
+            }
+        },
+        {
+            "longlat": [
+                32.1969994649756,
+                35.8424652274665
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Jaboc",
+                "en": "Jabok",
+                "it": "Yabboq"
+            }
+        },
+        {
+            "longlat": [
+                33.0146944302709,
+                35.5941654036343
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Jacob",
+                "en": " l'avare 110.5"
+            }
+        },
+        {
+            "longlat": [
+                32.684829183523,
+                35.2729383342486
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Jafia",
+                "en": "Japhia",
+                "it": "Jafia",
+                "es": "Jafia"
+            }
+        },
+        {
+            "longlat": [
+                31.7166694706124,
+                35.1833361111111
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Jala",
+                "en": "Jala",
+                "it": "Jala",
+                "es": "Jala"
+            }
+        },
+        {
+            "longlat": [
+                31.6791821518886,
+                35.179247318569
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Jardins de Salomon",
+                "en": "Solomon's Garden",
+                "it": "Giardini di Salomone"
+            }
+        },
+        {
+            "longlat": [
+                31.7695236652251,
+                35.235593205689
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Jardins du Roi"
+            }
+        },
+        {
+            "longlat": [
+                32.818397831138,
+                35.2477563769256
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Jiphtaël ?"
+            }
+        },
+        {
+            "longlat": [
+                33.0422071608359,
+                35.4151314334027
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Jonas vieil aubergiste 330"
+            }
+        },
+        {
+            "longlat": [
+                32.0545405589111,
+                34.7537876663072
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Joppé",
+                "en": "Joppa",
+                "it": "Joppe",
+                "es": "Joppe"
+            }
+        },
+        {
+            "longlat": [
+                31.7801695372883,
+                35.2394321925037
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Josaphat vallée"
+            }
+        },
+        {
+            "longlat": [
+                32.8386150816249,
+                35.2727932384345
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Jotapate",
+                "en": "Jotapata",
+                "it": "Jotapata",
+                "es": "Yotapata"
+            }
+        },
+        {
+            "longlat": [
+                32.9886069066264,
+                35.5859567984857
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Jude et Anne"
+            }
+        },
+        {
+            "longlat": [
+                31.4511177292541,
+                35.0855599546844
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Jutta",
+                "en": "Juttah",
+                "it": "Jutta",
+                "es": "Yuttá"
+            }
+        },
+        {
+            "longlat": [
+                31.8691429760432,
+                35.4421494414007
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Jéricho",
+                "en": "Jericho",
+                "it": "Gerico",
+                "es": "Jericó"
+            }
+        },
+        {
+            "longlat": [
+                31.8769353070283,
+                34.9220247704369
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Jézéron",
+                "en": "Jezreel",
+                "it": "Jéceron"
+            }
+        },
+        {
+            "longlat": [
+                31.9889445988634,
+                35.3058117807487
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Kafr Malik Les 10 lépreux"
+            }
+        },
+        {
+            "longlat": [
+                32.9001865508872,
+                35.5683374842546
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Kerazeh",
+                "en": " wadi"
+            }
+        },
+        {
+            "longlat": [
+                32.7394261930027,
+                35.1240388100815
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Kiryat Tivon"
+            }
+        },
+        {
+            "longlat": [
+                32.8040566629853,
+                35.0283931796341
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Kison"
+            }
+        },
+        {
+            "longlat": [
+                31.3449933242222,
+                35.1240504817461
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Kérioth",
+                "en": "Kerioth",
+                "it": "Keriot",
+                "es": "Keriot"
+            }
+        },
+        {
+            "longlat": [
+                33.0861099623976,
+                35.119925487952
+            ],
+            "link": "None",
+            "name": {
+                "fr": "La mère cananéenne 330"
+            }
+        },
+        {
+            "longlat": [
+                31.7711430072162,
+                35.255528062561
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Lazare"
+            }
+        },
+        {
+            "longlat": [
+                33.2494453269229,
+                35.6530990563424
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Leshem Dan",
+                "en": "Lesemdan",
+                "it": "Lesemdan",
+                "es": "Lesemdán"
+            }
+        },
+        {
+            "longlat": [
+                33.3477193417649,
+                35.7238616281148
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Liban",
+                "en": " monts",
+                "zh": "Lebanon",
+                "es": "Libano (Monti)"
+            }
+        },
+        {
+            "longlat": [
+                31.9523682548573,
+                34.8982341645519
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Lidda",
+                "en": "Lydda (Nicodemus’ farm)",
+                "zh": "吕大",
+                "it": "Lidda",
+                "es": "Lida"
+            }
+        },
+        {
+            "longlat": [
+                40.9213482215001,
+                14.0297448021493
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Liternum"
+            }
+        },
+        {
+            "longlat": [
+                39.7186018541317,
+                16.143917094037
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Lucania"
+            }
+        },
+        {
+            "longlat": [
+                32.061278422668,
+                35.2480539013377
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Lébona",
+                "en": "Lebonah",
+                "it": "Lebona",
+                "es": "Lebona"
+            }
+        },
+        {
+            "longlat": [
+                31.5686534227736,
+                35.6356347334454
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Macheronte",
+                "en": "Machaerus",
+                "it": "Macheronte",
+                "es": "Maqueronte"
+            }
+        },
+        {
+            "longlat": [
+                31.8750739601682,
+                35.2727050274617
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Macmas"
+            }
+        },
+        {
+            "longlat": [
+                31.7278526250216,
+                34.95535451699
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Macéda"
+            }
+        },
+        {
+            "longlat": [
+                31.7164633825054,
+                35.7929344092242
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Madaba"
+            }
+        },
+        {
+            "longlat": [
+                27.7196309269932,
+                36.1994963337875
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Madian"
+            }
+        },
+        {
+            "longlat": [
+                32.8255594127933,
+                35.5147186508344
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Magdala",
+                "en": "Magdala",
+                "it": "Magdala",
+                "es": "Magdala"
+            }
+        },
+        {
+            "longlat": [
+                31.669579221524,
+                34.6020461102312
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Magdalgad",
+                "en": "Magdalgad",
+                "it": "Magdalgad",
+                "es": "Magdalgad"
+            }
+        },
+        {
+            "longlat": [
+                32.5854867140035,
+                35.1846462369763
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Mageddo",
+                "en": "Megiddo",
+                "it": "Mageddo",
+                "es": "Meguido"
+            }
+        },
+        {
+            "longlat": [
+                31.7754024940972,
+                35.2324438133931
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Maison brûlée"
+            }
+        },
+        {
+            "longlat": [
+                31.7711438861768,
+                35.2317511057879
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Maison de Caiphe ?"
+            }
+        },
+        {
+            "longlat": [
+                31.7676529537177,
+                35.2292852706618
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Maison de campagne Caiphe"
+            }
+        },
+        {
+            "longlat": [
+                32.6646759677359,
+                35.6133927614084
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Maison de Chouza"
+            }
+        },
+        {
+            "longlat": [
+                31.8419557408687,
+                35.1305471894576
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Maison de Cléophas"
+            }
+        },
+        {
+            "longlat": [
+                31.7824963497263,
+                35.2334058266837
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Maison de Joseph d'Arimathie",
+                "en": "Property of Joseph of Arimathea",
+                "it": "Podere di Giuseppe d'Arim.",
+                "es": "Propiedades de José de Arimatea"
+            }
+        },
+        {
+            "longlat": [
+                32.0986289351216,
+                34.7957423523052
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Maison de Joseph d'Arimathie ?"
+            }
+        },
+        {
+            "longlat": [
+                32.8800740557359,
+                35.5752939161996
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Maison de la belle mère de Pierre"
+            }
+        },
+        {
+            "longlat": [
+                32.9099787297527,
+                35.630808137413
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Maison de Pierre"
+            }
+        },
+        {
+            "longlat": [
+                31.77161812622,
+                35.229018415493
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Maison du Cénacle",
+                "en": "Jerusalem: Cenacle",
+                "it": "Cenacolo (Gerusalemme)",
+                "es": "Cenáculo"
+            }
+        },
+        {
+            "longlat": [
+                35.8847295320736,
+                14.4848721658052
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Malte"
+            }
+        },
+        {
+            "longlat": [
+                31.5567538087471,
+                35.1052976517903
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Mambré"
+            }
+        },
+        {
+            "longlat": [
+                31.3178564346459,
+                35.3538288510409
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Masada",
+                "en": "Masada",
+                "it": "Masada",
+                "es": "Masada"
+            }
+        },
+        {
+            "longlat": [
+                30.1205438735734,
+                31.3074674564518
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Mataréa",
+                "en": "Matarea",
+                "it": "Matarea",
+                "es": "Matarea"
+            }
+        },
+        {
+            "longlat": [
+                32.3763863179508,
+                35.5990690788557
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Mathias Ancien lépreux 359.4"
+            }
+        },
+        {
+            "longlat": [
+                31.5759520397108,
+                35.484333675898
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Mer Morte",
+                "en": "Dead Sea",
+                "zh": "死海",
+                "it": "Mar Morto",
+                "es": "Mar Muerto"
+            }
+        },
+        {
+            "longlat": [
+                33.6141719934453,
+                30.1437444604034
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Mer Méditerranée"
+            }
+        },
+        {
+            "longlat": [
+                43.0860275763329,
+                34.0159194444444
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Mer Pontique"
+            }
+        },
+        {
+            "longlat": [
+                21.0009063137787,
+                38.0036589709434
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Mer Rouge",
+                "en": "Red Sea",
+                "zh": "紅海",
+                "it": "Mar Rosso",
+                "es": "Mar Rojo"
+            }
+        },
+        {
+            "longlat": [
+                31.7532983012144,
+                35.7151545383512
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Moab",
+                "en": " monts"
+            }
+        },
+        {
+            "longlat": [
+                31.9349193159725,
+                34.9944305743463
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Modin",
+                "en": "Modin",
+                "it": "Modin",
+                "es": "Modín"
+            }
+        },
+        {
+            "longlat": [
+                36.1762133858393,
+                36.1917173341076
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Mont Silpius"
+            }
+        },
+        {
+            "longlat": [
+                36.4391020189611,
+                36.2124967053166
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Montagnes Noires"
+            }
+        },
+        {
+            "longlat": [
+                36.3046191611785,
+                35.8661657269954
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Monts Pierea"
+            }
+        },
+        {
+            "longlat": [
+                31.8184776830991,
+                35.3601196508412
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Montée du Sang"
+            }
+        },
+        {
+            "longlat": [
+                31.7774590605885,
+                35.2354367554615
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Moriah",
+                "en": "TEMPLE",
+                "it": "TEMPIO",
+                "es": "TEMPLO"
+            }
+        },
+        {
+            "longlat": [
+                32.7027203751174,
+                35.2260168067385
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Mérala",
+                "en": "Meraba",
+                "it": "Meraba",
+                "es": "Meraba"
+            }
+        },
+        {
+            "longlat": [
+                32.9834740576366,
+                35.4381509838015
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Méron",
+                "en": "Meiron",
+                "it": "Meron",
+                "es": "Meirón"
+            }
+        },
+        {
+            "longlat": [
+                33.0556582740476,
+                35.6284919737153
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Méron Lac de"
+            }
+        },
+        {
+            "longlat": [
+                33.711536972301,
+                43.5059505476018
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Mésopotamie"
+            }
+        },
+        {
+            "longlat": [
+                31.459169940787,
+                35.0845794293675
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Nahal Hevron"
+            }
+        },
+        {
+            "longlat": [
+                32.702086078904,
+                35.299771536823
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Nazareth",
+                "en": "Nazareth",
+                "zh": "纳匝肋",
+                "it": "Nazaret",
+                "es": "Nazaret"
+            }
+        },
+        {
+            "longlat": [
+                32.6340368251372,
+                35.348910304796
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Naïm",
+                "en": "Nain",
+                "it": "Naim",
+                "es": "Naím"
+            }
+        },
+        {
+            "longlat": [
+                33.0580881422357,
+                35.5327096523699
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Nephtali",
+                "en": "Naphtali",
+                "it": "Neftali",
+                "es": "Neftalí"
+            }
+        },
+        {
+            "longlat": [
+                32.0673233789847,
+                34.799526438257
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Nicodème ?",
+                "en": "Nicodemus' Estate ",
+                "it": "Pod. di Nicodemo ?",
+                "es": "Propiedades de Nicodemo "
+            }
+        },
+        {
+            "longlat": [
+                31.8541999507368,
+                35.443033501876
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Nike"
+            }
+        },
+        {
+            "longlat": [
+                31.9030303764989,
+                35.6285504906828
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Nimrin"
+            }
+        },
+        {
+            "longlat": [
+                36.3596770251323,
+                43.152579998045
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Ninive"
+            }
+        },
+        {
+            "longlat": [
+                31.7923579307557,
+                35.2464549807221
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Nobé",
+                "en": "Nob",
+                "it": "Nobe",
+                "es": "Nobe"
+            }
+        },
+        {
+            "longlat": [
+                36.2599604194877,
+                6.20581808993082
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Numidie"
+            }
+        },
+        {
+            "longlat": [
+                31.7674869062568,
+                35.7254609153903
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Nébo (mont)",
+                "en": "Mt. Nebo",
+                "it": "M. Nebo",
+                "es": "Mt. Nebo"
+            }
+        },
+        {
+            "longlat": [
+                36.1116713582387,
+                36.1006986696773
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Oronte"
+            }
+        },
+        {
+            "longlat": [
+                31.7758332772225,
+                35.2279152769935
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Palais d'Hérode"
+            }
+        },
+        {
+            "longlat": [
+                32.7759863958591,
+                35.5450747560387
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Palais d'Hérode Tibériade"
+            }
+        },
+        {
+            "longlat": [
+                31.7768488946509,
+                35.2330985331841
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Palais de Chousa ?"
+            }
+        },
+        {
+            "longlat": [
+                32.7756747349058,
+                35.5454176039927
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Palais de Chouza ?"
+            }
+        },
+        {
+            "longlat": [
+                31.7749608031497,
+                35.2321999215836
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Palais de Lazare"
+            }
+        },
+        {
+            "longlat": [
+                31.777188145889,
+                35.2331399834488
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Palais des Hasmonéens ?"
+            }
+        },
+        {
+            "longlat": [
+                47.0661304546334,
+                17.0016558824173
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Pannonie"
+            }
+        },
+        {
+            "longlat": [
+                36.1313491551011,
+                41.6942112698213
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Parthes"
+            }
+        },
+        {
+            "longlat": [
+                32.4497594209034,
+                35.6154566857299
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Pella",
+                "en": "Pella",
+                "it": "Pella",
+                "es": "Pella"
+            }
+        },
+        {
+            "longlat": [
+                36.9617591082582,
+                30.8547934303357
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Pergé"
+            }
+        },
+        {
+            "longlat": [
+                29.929747236433,
+                52.4933729980028
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Perse"
+            }
+        },
+        {
+            "longlat": [
+                27.0051753417027,
+                51.0159461112821
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Persique Golfe"
+            }
+        },
+        {
+            "longlat": [
+                32.6183929140172,
+                35.3584155593009
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Petit Hermon",
+                "en": "Mt. Little Hermon",
+                "zh": "小赫尔孟山",
+                "it": "Piccolo Hermon (Monte)",
+                "es": "Mt. Pequeño Hermón"
+            }
+        },
+        {
+            "longlat": [
+                31.9533688776067,
+                35.9374487428706
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Philadelphie"
+            }
+        },
+        {
+            "longlat": [
+                39.2504605019218,
+                29.8508963521951
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Phrygie"
+            }
+        },
+        {
+            "longlat": [
+                33.4294529032429,
+                35.4305985819245
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Phénicie"
+            }
+        },
+        {
+            "longlat": [
+                36.1843965047537,
+                35.9341243688772
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Pieria"
+            }
+        },
+        {
+            "longlat": [
+                31.7809562956948,
+                35.235745589028
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Piscine de Betesda"
+            }
+        },
+        {
+            "longlat": [
+                31.6889182729379,
+                35.169847632679
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Piscines de Salomon",
+                "en": "Solomon's Pools",
+                "it": "Vasche di Solomone",
+                "es": "Piscinas de Salomón "
+            }
+        },
+        {
+            "longlat": [
+                32.7123885523964,
+                35.1682221538151
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Plaine d'Esdrelon"
+            }
+        },
+        {
+            "longlat": [
+                33.0557926763119,
+                35.1471858295752
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Point d'observation de Jésus"
+            }
+        },
+        {
+            "longlat": [
+                40.7592313206709,
+                36.1828845559121
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Pont"
+            }
+        },
+        {
+            "longlat": [
+                33.0103989894236,
+                35.6282072349046
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Pont romain"
+            }
+        },
+        {
+            "longlat": [
+                32.5495906402863,
+                34.9178600020565
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Pont romain ?"
+            }
+        },
+        {
+            "longlat": [
+                33.2244368470875,
+                35.6144122413878
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Pont romain ??"
+            }
+        },
+        {
+            "longlat": [
+                32.6247531953896,
+                35.5651472026746
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Pont romain de Gesher"
+            }
+        },
+        {
+            "longlat": [
+                32.6655523895756,
+                35.1410612999816
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Pont romain Khizon ?"
+            }
+        },
+        {
+            "longlat": [
+                31.783000801893,
+                35.2337322614586
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Porte d'Hérode"
+            }
+        },
+        {
+            "longlat": [
+                31.7817444269439,
+                35.2305216194399
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Porte de Damas"
+            }
+        },
+        {
+            "longlat": [
+                31.77662214897,
+                35.2276362994475
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Porte de Jaffa"
+            }
+        },
+        {
+            "longlat": [
+                31.7728843165548,
+                35.2277330470856
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Porte de l'Eau ?"
+            }
+        },
+        {
+            "longlat": [
+                31.7784036032297,
+                35.2358154982288
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Porte de Nicanor"
+            }
+        },
+        {
+            "longlat": [
+                31.7696729623371,
+                35.2286017076471
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Porte de Sion"
+            }
+        },
+        {
+            "longlat": [
+                31.7809111596725,
+                35.2369769675965
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Porte des Brebis"
+            }
+        },
+        {
+            "longlat": [
+                31.7822760730469,
+                35.2349896636
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Porte des Poissons ?"
+            }
+        },
+        {
+            "longlat": [
+                31.7788429837842,
+                35.2372213962397
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Porte Dorée"
+            }
+        },
+        {
+            "longlat": [
+                31.7781401830002,
+                35.2309754515924
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Porte Judiciaire ?"
+            }
+        },
+        {
+            "longlat": [
+                31.7807649843615,
+                35.2352692003517
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Porte Orientale ?"
+            }
+        },
+        {
+            "longlat": [
+                31.7780918271962,
+                35.2372296134283
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Portique de Salomon"
+            }
+        },
+        {
+            "longlat": [
+                31.7799564384586,
+                35.2360047849961
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Portique des païens"
+            }
+        },
+        {
+            "longlat": [
+                31.7759329459215,
+                35.2363782759354
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Portique Royal"
+            }
+        },
+        {
+            "longlat": [
+                32.7649494664417,
+                35.6614504319121
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Précipice des porcs géraséniens"
+            }
+        },
+        {
+            "longlat": [
+                31.7805415498316,
+                35.2337322106003
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Prétoire"
+            }
+        },
+        {
+            "longlat": [
+                32.9212231455213,
+                35.0742324468182
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Ptolémaïs",
+                "en": "Ptolemais",
+                "zh": "托勒密",
+                "it": "Tolemaide",
+                "es": "Tolemaida"
+            }
+        },
+        {
+            "longlat": [
+                32.2098077370907,
+                35.2848703283982
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Puits de Jacob",
+                "en": "Jacob’s Well (Samaria)",
+                "zh": "雅各伯井",
+                "it": "Pozzo di Giacobbe (Samaria)",
+                "es": "Pozo de Jacob (Samaria)"
+            }
+        },
+        {
+            "longlat": [
+                32.0667431816403,
+                35.6408435033817
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Pérée",
+                "en": "Perea",
+                "it": "Perea",
+                "es": "Perea"
+            }
+        },
+        {
+            "longlat": [
+                30.3249957726478,
+                35.4494263977471
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Pétra"
+            }
+        },
+        {
+            "longlat": [
+                31.8529117934843,
+                35.2307964962362
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Ramah"
+            }
+        },
+        {
+            "longlat": [
+                31.9228048132559,
+                34.8661475123713
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Ramlé"
+            }
+        },
+        {
+            "longlat": [
+                32.0387204013257,
+                35.7272812725455
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Ramoth Gilead ?",
+                "en": "Ramoth",
+                "it": "Ramot Galaad ?",
+                "es": "Ramot"
+            }
+        },
+        {
+            "longlat": [
+                31.7364601149772,
+                35.1169104886612
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Rephaïm wadi"
+            }
+        },
+        {
+            "longlat": [
+                32.8319530231476,
+                34.9683871513039
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Rocher de 250.9"
+            }
+        },
+        {
+            "longlat": [
+                33.2195000178868,
+                35.5444049420875
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Rohob ?"
+            }
+        },
+        {
+            "longlat": [
+                41.8935176361968,
+                12.4851088821781
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Rome"
+            }
+        },
+        {
+            "longlat": [
+                32.6973934023873,
+                35.235128050829
+            ],
+            "link": "None",
+            "name": {
+                "fr": "RV avec les paysans"
+            }
+        },
+        {
+            "longlat": [
+                31.9527917799898,
+                35.2278188630415
+            ],
+            "link": "None",
+            "name": {
+                "fr": "RV secret"
+            }
+        },
+        {
+            "longlat": [
+                15.760997820677,
+                38.7954600828438
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Saba"
+            }
+        },
+        {
+            "longlat": [
+                32.3991007996432,
+                35.5257205889589
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Salim"
+            }
+        },
+        {
+            "longlat": [
+                31.856807068465,
+                35.5437160233093
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Salomon ?",
+                "en": "Solomon's Village (Jordan)",
+                "it": "Vill. di Salomon ?",
+                "es": "Poblado de Salomon"
+            }
+        },
+        {
+            "longlat": [
+                32.2789160237678,
+                35.1898740650418
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Samarie Sébaste",
+                "en": "Samaria",
+                "zh": "撒馬利亞",
+                "it": "Samaria",
+                "es": "Samaria"
+            }
+        },
+        {
+            "longlat": [
+                31.7754288999307,
+                34.9856586756419
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Saraa"
+            }
+        },
+        {
+            "longlat": [
+                33.4338451011676,
+                35.2989058808102
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Sarepta"
+            }
+        },
+        {
+            "longlat": [
+                49.7476581899748,
+                49.7402033214664
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Sarmates"
+            }
+        },
+        {
+            "longlat": [
+                32.4000774436667,
+                35.000274969416
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Saron",
+                "en": " la plaine"
+            }
+        },
+        {
+            "longlat": [
+                38.2310514164075,
+                15.6328203041005
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Scylla"
+            }
+        },
+        {
+            "longlat": [
+                53.9866052840742,
+                67.4999330787415
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Scythes"
+            }
+        },
+        {
+            "longlat": [
+                30.182250944239,
+                35.317477785281
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Seir",
+                "en": " mont"
+            }
+        },
+        {
+            "longlat": [
+                32.9698955149994,
+                35.4954720618881
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Sephet",
+                "en": "Safed",
+                "it": "Sefet",
+                "es": "Sefet"
+            }
+        },
+        {
+            "longlat": [
+                31.8373981645052,
+                35.5488218731942
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Sermon de Jésus 5",
+                "en": "75"
+            }
+        },
+        {
+            "longlat": [
+                32.0520794908852,
+                35.2962895258807
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Shiloh",
+                "en": "Shiloh",
+                "zh": "史罗",
+                "it": "Silo",
+                "es": "Silo"
+            }
+        },
+        {
+            "longlat": [
+                31.9652040254579,
+                35.7158786916582
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Shu'eib wadi"
+            }
+        },
+        {
+            "longlat": [
+                32.8252322921542,
+                34.9556228078352
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Sicaminon fouilles",
+                "en": "Sicaminon",
+                "it": "Sicaminon",
+                "es": "Sicaminón"
+            }
+        },
+        {
+            "longlat": [
+                32.2135417228366,
+                35.2820320320955
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Sichem",
+                "en": "Shechem",
+                "it": "Sichem",
+                "es": "Siquem"
+            }
+        },
+        {
+            "longlat": [
+                37.7072947023043,
+                14.1911650818508
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Sicules"
+            }
+        },
+        {
+            "longlat": [
+                33.5616805817235,
+                35.3683451400947
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Sidon",
+                "en": "Sidon",
+                "zh": "漆东",
+                "it": "Sidone",
+                "es": "Sidón"
+            }
+        },
+        {
+            "longlat": [
+                28.5401041323363,
+                33.9752445353386
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Sinaï"
+            }
+        },
+        {
+            "longlat": [
+                31.6816401335109,
+                34.9751749684572
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Socoh"
+            }
+        },
+        {
+            "longlat": [
+                31.222386576941,
+                35.4242303639916
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Sodome ?"
+            }
+        },
+        {
+            "longlat": [
+                31.825596856955,
+                35.5144387226094
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Source de la Perdrix"
+            }
+        },
+        {
+            "longlat": [
+                32.8727944596283,
+                35.5503169315227
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Source du Figuier"
+            }
+        },
+        {
+            "longlat": [
+                41.894570084877,
+                12.4899755252441
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Subure"
+            }
+        },
+        {
+            "longlat": [
+                32.2127446493648,
+                35.3014559637528
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Sychar",
+                "en": "Sychar",
+                "it": "Sicar",
+                "es": "Sicar"
+            }
+        },
+        {
+            "longlat": [
+                37.0755302398863,
+                15.2764223687656
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Syracuse Palestre ?"
+            }
+        },
+        {
+            "longlat": [
+                37.0759643844409,
+                15.2750669704842
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Syracuse Théâtre"
+            }
+        },
+        {
+            "longlat": [
+                35.2527515650167,
+                36.9923720926923
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Syrie"
+            }
+        },
+        {
+            "longlat": [
+                31.7167562701806,
+                35.0000068396856
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Szanoé"
+            }
+        },
+        {
+            "longlat": [
+                36.1150167491955,
+                35.9393857993314
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Séleucie",
+                "en": "Seleucia",
+                "it": "Seleucia",
+                "es": "Seleucia"
+            }
+        },
+        {
+            "longlat": [
+                32.7041249877174,
+                35.2149888838063
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Séméron",
+                "en": " Simonia"
+            }
+        },
+        {
+            "longlat": [
+                32.7535661373983,
+                35.2787603206884
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Séphoris",
+                "en": "Sepphoris",
+                "it": "Sefori",
+                "es": "Sefori"
+            }
+        },
+        {
+            "longlat": [
+                32.6875432519963,
+                35.3877400973962
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Tabor",
+                "en": "Mt. Tabor",
+                "zh": "塔沃爾山",
+                "it": "M. Tabor",
+                "es": "Mt Tabor"
+            }
+        },
+        {
+            "longlat": [
+                30.8013012233037,
+                35.2459095746229
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Tamar"
+            }
+        },
+        {
+            "longlat": [
+                33.5021719283188,
+                35.6689774493375
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Tamiri"
+            }
+        },
+        {
+            "longlat": [
+                32.7205621392696,
+                35.569352705035
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Tarichée",
+                "en": "Tarichea",
+                "it": "Tarichea",
+                "es": "Tariquea"
+            }
+        },
+        {
+            "longlat": [
+                36.9173362588244,
+                34.8891700514631
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Tarse"
+            }
+        },
+        {
+            "longlat": [
+                31.9781394132213,
+                35.2860642004453
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Tel Asour"
+            }
+        },
+        {
+            "longlat": [
+                32.1398257195229,
+                35.4921839336659
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Tersa MV ?",
+                "en": "Tirzah",
+                "it": "Tersa ???",
+                "es": "Tersa"
+            }
+        },
+        {
+            "longlat": [
+                32.2854157821966,
+                35.3506309128274
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Tersa Tayasir"
+            }
+        },
+        {
+            "longlat": [
+                51.900000214803,
+                8.81666787787928
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Teutberg"
+            }
+        },
+        {
+            "longlat": [
+                41.5374493312981,
+                25.2916274793123
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Thrace"
+            }
+        },
+        {
+            "longlat": [
+                32.7770005672376,
+                35.543154314951
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Tibériade",
+                "en": "Tiberias",
+                "zh": "提庇黎雅/提庇利亚",
+                "it": "Tiberiade",
+                "es": "Tiberíades"
+            }
+        },
+        {
+            "longlat": [
+                32.6894566403551,
+                45.3031052927788
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Tigre"
+            }
+        },
+        {
+            "longlat": [
+                31.7702476220508,
+                35.0043233269168
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Timnata ?"
+            }
+        },
+        {
+            "longlat": [
+                33.0651436565097,
+                35.1239609353848
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Tito le maréchal-ferrant 327"
+            }
+        },
+        {
+            "longlat": [
+                32.9811740036761,
+                35.4396234486229
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Tombe d'Hillel"
+            }
+        },
+        {
+            "longlat": [
+                31.7204367460936,
+                35.202108218559
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Tombeau de Rachel",
+                "en": "Rachel's Tomb",
+                "zh": "拉結墓",
+                "it": "Betlemme (Tomba di Rachele)",
+                "es": "Tumba de Raquel"
+            }
+        },
+        {
+            "longlat": [
+                31.7759491768863,
+                35.2392276422422
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Tombeaux de Siloan"
+            }
+        },
+        {
+            "longlat": [
+                31.7757707261064,
+                35.2279384157357
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Tour David"
+            }
+        },
+        {
+            "longlat": [
+                31.7045683643655,
+                35.2073050877818
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Tour de David Bethléem"
+            }
+        },
+        {
+            "longlat": [
+                31.7764048853979,
+                35.2284611883479
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Tour Hippique"
+            }
+        },
+        {
+            "longlat": [
+                31.7760156442794,
+                35.2284566870511
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Tour Marianne"
+            }
+        },
+        {
+            "longlat": [
+                31.7764442026151,
+                35.2278050006848
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Tour Phasael"
+            }
+        },
+        {
+            "longlat": [
+                33.003384394866,
+                36.4224554107954
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Trachonitide"
+            }
+        },
+        {
+            "longlat": [
+                31.9561501479924,
+                35.189786207197
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Tribu d'Ephraïm"
+            }
+        },
+        {
+            "longlat": [
+                33.2731983182723,
+                35.194114386689
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Tyr",
+                "en": "Tyre",
+                "zh": "泰尔",
+                "it": "Tiro",
+                "es": "Tiro"
+            }
+        },
+        {
+            "longlat": [
+                31.6395251423331,
+                35.2143805075536
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Técua",
+                "en": "Tekoah",
+                "it": "Tecoa",
+                "es": "Tecua"
+            }
+        },
+        {
+            "longlat": [
+                31.6918356324708,
+                34.9473291809887
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Térébinthe Vallée"
+            }
+        },
+        {
+            "longlat": [
+                31.8405593912913,
+                35.1373554142021
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Village détruit Emmaüs ?"
+            }
+        },
+        {
+            "longlat": [
+                31.8767537254255,
+                35.1281284418142
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Voie romaine"
+            }
+        },
+        {
+            "longlat": [
+                31.7755817786828,
+                35.2338188557708
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Xyste"
+            }
+        },
+        {
+            "longlat": [
+                32.3984675955215,
+                35.6506574857544
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Yabis",
+                "en": " wadi"
+            }
+        },
+        {
+            "longlat": [
+                32.735151313799,
+                35.8655109070329
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Yarmouk"
+            }
+        },
+        {
+            "longlat": [
+                32.7552077505309,
+                35.2281116663289
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Yiftach El ?"
+            }
+        },
+        {
+            "longlat": [
+                32.6812839327153,
+                35.2122347539091
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Zabulon",
+                "en": "Zebulun",
+                "it": "Zabulon (Tribu)"
+            }
+        },
+        {
+            "longlat": [
+                32.8578280742561,
+                35.4899916676764
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Zalmon",
+                "en": " wadi"
+            }
+        },
+        {
+            "longlat": [
+                31.7670758091307,
+                35.2349422417309
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Zoheleth ?"
+            }
+        },
+        {
+            "longlat": [
+                31.84958456,
+                35.42806493
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Accor (Vallée)",
+                "en": "Valley of Achor",
+                "it": "Acor (Valle)",
+                "es": "Acor"
+            }
+        },
+        {
+            "longlat": [
+                32.82733824,
+                35.48933756
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Arbèle (Galilée)",
+                "en": "Arbela (Galilee)",
+                "it": "Arbela (Montagna)",
+                "es": "Arbela (Montaña)"
+            }
+        },
+        {
+            "longlat": [
+                33.05847679,
+                35.62545309
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Lac de Méron",
+                "en": "Lake Merom",
+                "zh": "默龙湖",
+                "it": "L. di Meron",
+                "es": "Lago  Merón"
+            }
+        },
+        {
+            "longlat": [
+                31.76901099,
+                35.23485655
+            ],
+            "link": "None",
+            "name": {
+                "en": "Jerusalem: King’s Garden",
+                "it": "Giardini dei Re (Gerusalemme)",
+                "es": "Jardines del Rey  (Jerusalén)"
+            }
+        },
+        {
+            "longlat": [
+                31.8374641,
+                35.5495852
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Jourdain",
+                "en": " rivière du",
+                "zh": "Ford of the Jordan",
+                "es": "F. Giordano"
+            }
+        },
+        {
+            "longlat": [
+                32.79591386,
+                35.2227282
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Jiphtaël",
+                "en": "Jiphthahel",
+                "it": "Jiftael ?",
+                "es": "Yiftael"
+            }
+        },
+        {
+            "longlat": [
+                31.87508401,
+                35.42862144
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Doco",
+                "en": "Doco",
+                "it": "Doco",
+                "es": "Doco"
+            }
+        },
+        {
+            "longlat": [
+                33.25176,
+                35.712594
+            ],
+            "link": "None",
+            "name": {
+                "fr": "Césarée de Philippe (Panéade)",
+                "en": "Caesarea Paneas (Castle)",
+                "it": "Cesarea Paneas (Castello)",
+                "es": "Cesárea Paneas (Castillo)"
             }
         }
     ]
