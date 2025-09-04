@@ -13,18 +13,21 @@ type MapArgType = {
     y: number;
     zoom: number;
     reset: number;
+    darkMode: boolean;
 }
 
-export default function MapDisplay({ x, y, zoom, reset }: MapArgType
+export default function MapDisplay({ x, y, zoom, reset, darkMode = false }: MapArgType
 ) {
     const mapContainer = useRef<HTMLDivElement | null>(null);
     const map = useRef<MapboxMap | null>(null);
+    const style: string[] = ["mapbox://styles/mapbox/light-v10", "mapbox://styles/mapbox/dark-v10"];
+    const index: number = darkMode ? 1 : 0;
 
     useEffect(() => {
         if (!map.current) {
             map.current = new mapboxgl.Map({
                 container: mapContainer.current as HTMLDivElement,
-                style: "mapbox://styles/mapbox/dark-v10",
+                style: style[index],
                 center: [x, y],
                 zoom: zoom,
                 projection: 'globe',
@@ -58,6 +61,13 @@ export default function MapDisplay({ x, y, zoom, reset }: MapArgType
             })
         }
     }, [x, y, zoom, reset]);
+
+    useEffect(() => {
+        if (!map.current) {
+            return;
+        }
+        map.current.setStyle(style[index]);
+    }, [darkMode]);
     return (
         <div
             className="overflow-hidden"
