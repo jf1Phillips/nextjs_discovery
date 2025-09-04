@@ -5,6 +5,7 @@ import MapDisplay from "@/component/map";
 import "@/styles/globals.css";
 import DarkMode from "@/component/darkmode";
 import atoi from "@/script/atoi";
+import { Analytics } from "@vercel/analytics/next"
 
 export default function MapNbr(
     props: {
