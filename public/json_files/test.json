@@ -1,0 +1,30 @@
+{
+    "points": [
+        {
+            "longlat": [31.6822813967507, 35.7235471783873],
+            "link": "None",
+            "name": {
+                "fr": "Abarim (monts)",
+                "en": "Abarim (Mount)",
+                "it": "Abarim (Monti)"
+            }
+        },
+        {
+            "longlat": [33.2577033933823, 35.5803781991821],
+            "link": "None",
+            "name": {
+                "fr": "Abel Maïm"
+            }
+        },
+        {
+            "longlat": [33.0485981736681, 35.1023412581567],
+            "link": "None",
+            "name": {
+                "fr": "Achzib",
+                "en": "Achzib",
+                "it": "Aczib",
+                "es": "Akziv"
+            }
+        }
+    ]
+}
