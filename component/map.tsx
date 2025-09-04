@@ -14,6 +14,10 @@ type MapArgType = {
     zoom: number;
     reset: number;
     darkMode: boolean;
+};
+
+function add_marker(long: number, lat: number, map: MapboxMap): void {
+    new mapboxgl.Marker().setLngLat([long, lat]).addTo(map);
 }
 
 export default function MapDisplay({ x, y, zoom, reset, darkMode = false }: MapArgType
@@ -43,9 +47,7 @@ export default function MapDisplay({ x, y, zoom, reset, darkMode = false }: MapA
                         setLngLat([location.long, location.lat])
                         .addTo(map.current);
                 });
-                new mapboxgl.Marker()
-                    .setLngLat([x, y])
-                    .addTo(map.current);
+                add_marker(x, y, map.current);
             });
         } else {
             const new_x = x % 90;
