@@ -42,7 +42,7 @@ export default function MapNbr(
 
     return (
         <>
-            <DarkMode enabled={enabled} setEnabled={setEnabled} className="absolute"/>
+            <DarkMode enabled={enabled} setEnabled={setEnabled} className="absolute ml-[calc(100%-80px)] mt-[120px]"/>
             <form className="text-customWhite flex flex-col items-center justify-center mt-4"
                     onSubmit={submitEvent}>
                 <div className="flex flex-row gap-x-[50px]">
