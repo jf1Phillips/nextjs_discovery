@@ -43,15 +43,13 @@ export default function MapDisplay({ x, y, zoom, reset, darkMode = false }: MapA
                 get_loc().then(location => {
                     if (!location || !map.current)
                         return;
-                    new mapboxgl.Marker().
-                        setLngLat([location.long, location.lat])
-                        .addTo(map.current);
+                    add_marker(location.long, location.lat, map.current);
                 });
                 add_marker(x, y, map.current);
             });
         } else {
             const new_x = x % 90;
-            const new_y = y % 180;
+            const new_y = y % 90;
 
             map.current.easeTo({
                 center: [new_x, new_y],
