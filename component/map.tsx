@@ -5,6 +5,7 @@ import mapboxgl, {Map as MapboxMap} from "mapbox-gl";
 import "@/styles/globals.css";
 import get_loc from "@/script/get_loc";
 import "mapbox-gl/dist/mapbox-gl.css";
+import json_load from "./json_load";
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN as string;
 
@@ -16,7 +17,7 @@ type MapArgType = {
     darkMode: boolean;
 };
 
-function add_marker(long: number, lat: number, map: MapboxMap): void {
+export function add_marker(long: number, lat: number, map: MapboxMap): void {
     new mapboxgl.Marker().setLngLat([long, lat]).addTo(map);
 }
 
@@ -24,14 +25,13 @@ export default function MapDisplay({ x, y, zoom, reset, darkMode = false }: MapA
 ) {
     const mapContainer = useRef<HTMLDivElement | null>(null);
     const map = useRef<MapboxMap | null>(null);
-    const style: string[] = ["mapbox://styles/mapbox/light-v10", "mapbox://styles/mapbox/dark-v10"];
-    const index: number = darkMode ? 1 : 0;
+    const style: string = !darkMode ? "mapbox://styles/mapbox/light-v10" : "mapbox://styles/mapbox/dark-v10";
 
     useEffect(() => {
         if (!map.current) {
             map.current = new mapboxgl.Map({
                 container: mapContainer.current as HTMLDivElement,
-                style: style[index],
+                style: style,
                 center: [x, y],
                 zoom: zoom,
                 projection: 'globe',
@@ -40,6 +40,7 @@ export default function MapDisplay({ x, y, zoom, reset, darkMode = false }: MapA
             map.current.on("load", () => {
                 if (!map.current)
                     return;
+                json_load("/json_files/test.json", map.current);
                 get_loc().then(location => {
                     if (!location || !map.current)
                         return;
@@ -66,8 +67,9 @@ export default function MapDisplay({ x, y, zoom, reset, darkMode = false }: MapA
         if (!map.current) {
             return;
         }
-        map.current.setStyle(style[index]);
+        map.current.setStyle(style);
     }, [darkMode]);
+
     return (
         <div
             className="overflow-hidden"
