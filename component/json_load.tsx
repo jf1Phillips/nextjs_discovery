@@ -1,0 +1,28 @@
+"use client";
+import { useEffect, useState } from "react";
+import {Map as MapboxMap} from "mapbox-gl";
+import { add_marker } from "./map";
+
+async function get_json_data(file_name: string): Promise<any | undefined> {
+    try {
+        const response = await fetch(file_name);
+        if (!response.ok) {
+            return undefined;
+        }
+        const json: any = await response.json();
+        return json;
+    } catch (error) {
+        return undefined;
+    }
+}
+
+export default function json_load(file: string, map: MapboxMap) {
+    get_json_data(file).then(response => {
+        if (!response)
+            return;
+        for (const i in response.points) {
+            const longlat: number[] = response.points[i].longlat;
+            add_marker(longlat[1], longlat[0], map);
+        }
+    });
+}
