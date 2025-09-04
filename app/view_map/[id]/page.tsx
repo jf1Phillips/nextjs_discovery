@@ -45,7 +45,7 @@ export default function MapNbr(
             <DarkMode enabled={enabled} setEnabled={setEnabled} className="absolute ml-[calc(100%-80px)] mt-[120px]"/>
             <form className="text-customWhite flex flex-col items-center justify-center mt-4"
                     onSubmit={submitEvent}>
-                <div className="flex flex-row gap-x-[50px]">
+                <div className="flex flex-row gap-x-[10vw]">
                     <div className="flex flex-col items-center">
                         <label className="mb-[5px]">Zoom</label>
                         <input className="outline-none border-solid border-[2px] rounded-full bg-customGrey2 text-center w-[100px]"
