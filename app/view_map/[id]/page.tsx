@@ -72,6 +72,7 @@ export default function MapNbr(
             <div className="mt-[30px] flex items-center justify-center w-full">
                 <MapDisplay y={lat} x={long} zoom={zoom} reset={reset} darkMode={enabled}/>
             </div>
+            <Analytics />
         </>
     )
 }
