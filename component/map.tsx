@@ -43,7 +43,7 @@ export default function MapDisplay({ x, y, zoom, reset, darkMode = false }: MapA
             map.current.on("load", () => {
                 if (!map.current)
                     return;
-                json_load("/json_files/test.json", map.current);
+                json_load("/json_files/test.json", "fr", map.current);
                 get_loc().then(location => {
                     if (!location || !map.current)
                         return;

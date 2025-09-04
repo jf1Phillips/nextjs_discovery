@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import {Map as MapboxMap} from "mapbox-gl";
 import { add_marker } from "./map";
+import { isUndefined } from "node:util";
 
 async function get_json_data(file_name: string): Promise<any | undefined> {
     try {
@@ -16,7 +17,7 @@ async function get_json_data(file_name: string): Promise<any | undefined> {
     }
 }
 
-export default function json_load(file: string, map: MapboxMap) {
+export default function json_load(file: string, lang: string, map: MapboxMap) {
     get_json_data(file).then(response => {
         if (!response)
             return;
@@ -25,7 +26,8 @@ export default function json_load(file: string, map: MapboxMap) {
             if (it >= 20)
                 break;
             const longlat: number[] = response.points[i].longlat;
-            add_marker(longlat[1], longlat[0], map, response.points[i].name.fr);
+            const langage: string = response.points[i].name[lang] ? lang : "fr";
+            add_marker(longlat[1], longlat[0], map, response.points[i].name[langage]);
             ++it;
         }
     });
