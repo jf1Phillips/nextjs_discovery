@@ -5,7 +5,6 @@ import MapDisplay from "@/component/map";
 import "@/styles/globals.css";
 import DarkMode from "@/component/darkmode";
 import atoi from "@/script/atoi";
-import { Analytics } from "@vercel/analytics/next"
 
 export default function MapNbr(
     props: {
@@ -72,7 +71,6 @@ export default function MapNbr(
             <div className="mt-[30px] flex items-center justify-center w-full">
                 <MapDisplay y={lat} x={long} zoom={zoom} reset={reset} darkMode={enabled}/>
             </div>
-            <Analytics />
         </>
     )
 }

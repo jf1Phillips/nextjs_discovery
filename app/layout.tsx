@@ -1,4 +1,6 @@
 import "@/styles/globals.css";
+import { Analytics } from "@vercel/analytics/next"
+
 
 export const metadata = {
     title: 'My app',
@@ -13,6 +15,7 @@ export default function RootLayout({
     return (
         <html lang="fr">
             <body className="bg-customGrey">{children}</body>
+            <Analytics />
         </html>
     )
 }

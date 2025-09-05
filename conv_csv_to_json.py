@@ -16,7 +16,7 @@ def csv_to_json(file_name):
             if not (row["latitude"] and row["longitude"]):
                 continue
             point = {
-                "longlat": [float(row["longitude"]), float(row["latitude"])],
+                "latlong": [float(row["longitude"]), float(row["latitude"])],
                 "link": "None",
                 "name": {}
             }

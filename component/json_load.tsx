@@ -25,7 +25,7 @@ export default function json_load(file: string, lang: string, map: MapboxMap) {
         for (const i in response.points) {
             if (it >= 20)
                 break;
-            const longlat: number[] = response.points[i].longlat;
+            const longlat: number[] = response.points[i].latlong;
             const langage: string = response.points[i].name[lang] ? lang : "fr";
             add_marker(longlat[1], longlat[0], map, response.points[i].name[langage]);
             ++it;
