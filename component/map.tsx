@@ -90,6 +90,15 @@ export default function MapDisplay({ x, y, zoom, reset, darkMode = false, relief
     useEffect(() => {
         if (!map.current) return;
         map.current.setStyle(style);
+        map.current.once("style.load", () => {
+            if (!map.current) return;
+            set3dTerrain(map.current, !relief);
+        });
+
+    }, [darkMode]);
+
+    useEffect(() => {
+        if (!map.current) return;
         if (!map.current.isStyleLoaded()) {
             map.current.once("style.load", () => {
                 if (!map.current) return;
@@ -98,7 +107,7 @@ export default function MapDisplay({ x, y, zoom, reset, darkMode = false, relief
         } else {
             set3dTerrain(map.current, !relief);
         }
-    }, [darkMode, relief]);
+    }, [relief]);
 
     return (
         <div
