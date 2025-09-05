@@ -15,6 +15,7 @@ type MapArgType = {
     zoom: number;
     reset: number;
     darkMode: boolean;
+    relief: boolean;
 };
 
 export function add_marker(long: number, lat: number, map: MapboxMap, str: string): void {
@@ -43,7 +44,7 @@ function set3dTerrain(map: MapboxMap, remove: boolean) {
     map.setTerrain({source: id_terrain, exaggeration: 1.5});
 }
 
-export default function MapDisplay({ x, y, zoom, reset, darkMode = false }: MapArgType
+export default function MapDisplay({ x, y, zoom, reset, darkMode = false, relief = false }: MapArgType
 ) {
     const mapContainer = useRef<HTMLDivElement | null>(null);
     const map = useRef<MapboxMap | null>(null);
@@ -62,7 +63,7 @@ export default function MapDisplay({ x, y, zoom, reset, darkMode = false }: MapA
             map.current.once("load", () => {
                 if (!map.current)
                     return;
-                set3dTerrain(map.current, false);
+                set3dTerrain(map.current, !relief);
                 json_load("/json_files/test.json", "fr", map.current);
                 get_loc().then(location => {
                     if (!location || !map.current)
@@ -87,17 +88,17 @@ export default function MapDisplay({ x, y, zoom, reset, darkMode = false }: MapA
     }, [x, y, zoom, reset]);
 
     useEffect(() => {
-        if (!map.current) {
-            return;
-        }
+        if (!map.current) return;
         map.current.setStyle(style);
-        map.current.once("style.load", () => {
-            if (!map.current) return;
-            set3dTerrain(map.current, false);
-            add_marker(x, y, map.current, "paris");
-        });
-
-    }, [darkMode]);
+        if (!map.current.isStyleLoaded()) {
+            map.current.once("style.load", () => {
+                if (!map.current) return;
+                set3dTerrain(map.current, !relief);
+            });
+        } else {
+            set3dTerrain(map.current, !relief);
+        }
+    }, [darkMode, relief]);
 
     return (
         <div
