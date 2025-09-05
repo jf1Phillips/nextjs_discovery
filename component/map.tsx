@@ -27,6 +27,22 @@ export function add_marker(long: number, lat: number, map: MapboxMap, str: strin
     marker.setPopup(popup);
 }
 
+function set3dTerrain(map: MapboxMap, remove: boolean) {
+    const id_terrain: string = "3d_terrain";
+
+    map.setTerrain(null);
+    if (map.getSource(id_terrain))
+        map.removeSource(id_terrain);
+    if (remove)
+        return;
+    map.addSource(id_terrain, {
+        type: 'raster-dem',
+        url: 'mapbox://mapbox.terrain-rgb',
+        tileSize: 512,
+    });
+    map.setTerrain({source: id_terrain, exaggeration: 1.5});
+}
+
 export default function MapDisplay({ x, y, zoom, reset, darkMode = false }: MapArgType
 ) {
     const mapContainer = useRef<HTMLDivElement | null>(null);
@@ -43,9 +59,10 @@ export default function MapDisplay({ x, y, zoom, reset, darkMode = false }: MapA
                 projection: 'globe',
             });
 
-            map.current.on("load", () => {
+            map.current.once("load", () => {
                 if (!map.current)
                     return;
+                set3dTerrain(map.current, false);
                 json_load("/json_files/test.json", "fr", map.current);
                 get_loc().then(location => {
                     if (!location || !map.current)
@@ -74,6 +91,12 @@ export default function MapDisplay({ x, y, zoom, reset, darkMode = false }: MapA
             return;
         }
         map.current.setStyle(style);
+        map.current.once("style.load", () => {
+            if (!map.current) return;
+            set3dTerrain(map.current, false);
+            add_marker(x, y, map.current, "paris");
+        });
+
     }, [darkMode]);
 
     return (
