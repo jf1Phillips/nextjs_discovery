@@ -80,7 +80,7 @@ export default function MapDisplay({ x, y, zoom, reset, darkMode = false }: MapA
         <div
             className="overflow-hidden"
             ref={mapContainer}
-            style={{ width: "100%", height: "500px" }}
+            style={{ width: "100%", height: "calc(100vh - 165px)" }}
         />
     );
 }
