@@ -21,7 +21,7 @@ export function add_marker(long: number, lat: number, map: MapboxMap, str: strin
     const popup = new mapboxgl.Popup({offset: 10})
     .setHTML(`<p>${str}</p>`);
     const div_marker: HTMLDivElement = document.createElement('div');
-    div_marker.className = "marker bg-[url(/img/map_pin.png)] bg-cover w-[30px] h-[30px] cursor-pointer";
+    div_marker.className = "marker mt-[-15px] bg-[url(/img/map_pin.png)] bg-cover w-[30px] h-[30px] cursor-pointer";
     const marker = new mapboxgl.Marker(div_marker).setLngLat([long, lat]).addTo(map);
 
     marker.setPopup(popup);
