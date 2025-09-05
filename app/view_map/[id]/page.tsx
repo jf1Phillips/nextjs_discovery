@@ -5,6 +5,7 @@ import MapDisplay from "@/component/map";
 import "@/styles/globals.css";
 import DarkMode from "@/component/darkmode";
 import atoi from "@/script/atoi";
+import ZoomInOut from "@/component/zoom_in_out";
 
 export default function MapNbr(
     props: {
@@ -42,6 +43,7 @@ export default function MapNbr(
 
     return (
         <>
+            <ZoomInOut enabled={enabled} zoom={zoom} setZoom={setZoom} />
             <DarkMode enabled={enabled} setEnabled={setEnabled} className="absolute ml-[calc(100%-60px)] mt-[120px]"/>
             <form className="text-customWhite flex flex-col items-center justify-center mt-4"
                     onSubmit={submitEvent}>
