@@ -83,9 +83,23 @@ export default function MapDisplay({ x, y, zoom, reset, darkMode = false, relief
                 easing: function(t) {
                     return t;
                 }
-            })
+            });
         }
-    }, [x, y, zoom, reset]);
+    }, [x, y, reset]);
+
+    useEffect(() => {
+        if (!map.current) return;
+        const {lng, lat} = map.current.getCenter();
+
+        map.current.easeTo({
+            center: [lng, lat],
+            zoom: zoom,
+            duration: 1000,
+            easing: function(t) {
+                return t;
+            }
+        });
+    }, [zoom]);
 
     useEffect(() => {
         if (!map.current) return;
