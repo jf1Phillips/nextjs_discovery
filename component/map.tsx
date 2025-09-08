@@ -72,9 +72,12 @@ function putShaddow(map: MapboxMap, remove: boolean) {
         source: id_terrain,
         layout: {},
         paint: {
+            'hillshade-shadow-color': '#473B24',
+            'hillshade-highlight-color': '#F8E8D0',
+            'hillshade-accent-color': '#BBA67A',
             'hillshade-exaggeration': 1.0
         }
-    });
+    }, 'water');
 }
 
 function set3dTerrain(map: MapboxMap, remove: boolean) {
@@ -119,6 +122,7 @@ export default function MapDisplay({ x, y, zoom, zoom2, reset, darkMode, relief 
                 if (!map.current)
                     return;
                 set3dTerrain(map.current, !relief);
+                map.current.setPaintProperty('water', 'fill-color', 'rgba(14, 122, 155, 1)');
                 json_load("/json_files/test.json", "fr", map.current);
                 get_loc().then(location => {
                     if (!location || !map.current)
@@ -160,8 +164,13 @@ export default function MapDisplay({ x, y, zoom, zoom2, reset, darkMode, relief 
         map.current.once("style.load", () => {
             if (!map.current) return;
             set3dTerrain(map.current, !relief);
+            if (darkMode) {
+                map.current.setPaintProperty('road-primary', 'line-color', 'rgba(255, 240, 31, 1)');
+                map.current.setPaintProperty('water', 'fill-color', 'rgba(14, 15, 99, 1)');
+            } else {
+                map.current.setPaintProperty('water', 'fill-color', 'rgba(14, 122, 155, 1)');
+            }
         });
-
     }, [darkMode]);
 
     useEffect(() => {
