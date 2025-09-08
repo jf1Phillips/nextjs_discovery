@@ -52,12 +52,38 @@ function add3dbuilding(map: MapboxMap, remove: boolean)
         });
 }
 
+function putShaddow(map: MapboxMap, remove: boolean) {
+    const id_shadow: string = "shadow_layer";
+    const id_terrain: string = "terrain_to_shadow";
+
+    if (map.getLayer(id_shadow))
+        map.removeLayer(id_shadow);
+    if (remove) return;
+    if (!map.getSource(id_terrain)) {
+        map.addSource(id_terrain, {
+            type: 'raster-dem',
+            url: 'mapbox://mapbox.terrain-rgb',
+            tileSize: 512,
+        });
+    }
+    map.addLayer({
+        id: id_shadow,
+        type: 'hillshade',
+        source: id_terrain,
+        layout: {},
+        paint: {
+            'hillshade-exaggeration': 1.0
+        }
+    });
+}
+
 function set3dTerrain(map: MapboxMap, remove: boolean) {
     const id_terrain: string = "3d_terrain";
 
     add3dbuilding(map, remove);
     map.setTerrain(null);
     map.easeTo({pitch: 60, duration: 1000});
+    putShaddow(map, remove);
     if (remove) {
         map.easeTo({pitch: 0, duration: 1000});
         return;
