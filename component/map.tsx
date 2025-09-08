@@ -56,15 +56,15 @@ function set3dTerrain(map: MapboxMap, remove: boolean) {
 
     add3dbuilding(map, remove);
     map.setTerrain(null);
-    if (map.getSource(id_terrain))
-        map.removeSource(id_terrain);
     if (remove)
         return;
-    map.addSource(id_terrain, {
-        type: 'raster-dem',
-        url: 'mapbox://mapbox.terrain-rgb',
-        tileSize: 512,
-    });
+    if (!map.getSource(id_terrain)) {
+        map.addSource(id_terrain, {
+            type: 'raster-dem',
+            url: 'mapbox://mapbox.terrain-rgb',
+            tileSize: 512,
+        });
+    }
     map.setTerrain({source: id_terrain, exaggeration: 1.5});
 }
 
