@@ -1,13 +1,14 @@
 "use client";
 
 import { useEffect, useRef, use } from "react";
-import mapboxgl, {Map as MapboxMap} from "mapbox-gl";
+import mapboxgl, {LngLat, Map as MapboxMap} from "mapbox-gl";
 import "@/styles/globals.css";
 import get_loc from "@/script/get_loc";
 import "mapbox-gl/dist/mapbox-gl.css";
 import json_load from "./json_load";
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN as string;
+const idbulding: string = "3dbuilding";
 
 type MapArgType = {
     x: number;
@@ -28,9 +29,32 @@ export function add_marker(long: number, lat: number, map: MapboxMap, str: strin
     marker.setPopup(popup);
 }
 
+function add3dbuilding(map: MapboxMap, remove: boolean)
+{
+        if (map.getLayer(idbulding))
+            map.removeLayer(idbulding);
+        if (remove)
+            return;
+        map.addLayer({
+            'id': idbulding,
+            'source': 'composite',
+            'source-layer': 'building',
+            'filter': ['==', 'extrude', 'true'],
+            'type': 'fill-extrusion',
+            'minzoom': 12,
+            'paint': {
+                'fill-extrusion-color': '#aaa',
+                'fill-extrusion-height': ['get', 'height'],
+                'fill-extrusion-base': ['get', 'min_height'],
+                'fill-extrusion-opacity': 1.0
+            }
+        });
+}
+
 function set3dTerrain(map: MapboxMap, remove: boolean) {
     const id_terrain: string = "3d_terrain";
 
+    add3dbuilding(map, remove);
     map.setTerrain(null);
     if (map.getSource(id_terrain))
         map.removeSource(id_terrain);
@@ -48,6 +72,7 @@ export default function MapDisplay({ x, y, zoom, reset, darkMode = false, relief
 ) {
     const mapContainer = useRef<HTMLDivElement | null>(null);
     const map = useRef<MapboxMap | null>(null);
+    const anc_zoom = useRef<number>(zoom);
     const style: string = !darkMode ? "mapbox://styles/mapbox/light-v10" : "mapbox://styles/mapbox/dark-v10";
 
     useEffect(() => {
@@ -73,8 +98,8 @@ export default function MapDisplay({ x, y, zoom, reset, darkMode = false, relief
                 add_marker(x, y, map.current, "paris");
             });
         } else {
-            const new_x = x % 90;
-            const new_y = y % 90;
+            const new_x: number = x % 90;
+            const new_y: number = y % 90;
 
             map.current.easeTo({
                 center: [new_x, new_y],
@@ -89,11 +114,17 @@ export default function MapDisplay({ x, y, zoom, reset, darkMode = false, relief
 
     useEffect(() => {
         if (!map.current) return;
-        const {lng, lat} = map.current.getCenter();
+        const {lng, lat}: LngLat = map.current.getCenter();
+        var new_zoom: number = map.current.getZoom();
 
+        if (anc_zoom.current < zoom)
+            new_zoom += 1;
+        else if (anc_zoom.current > zoom)
+            new_zoom -= 1;
+        anc_zoom.current = zoom;
         map.current.easeTo({
             center: [lng, lat],
-            zoom: zoom,
+            zoom: new_zoom,
             duration: 1000,
             easing: function(t) {
                 return t;
