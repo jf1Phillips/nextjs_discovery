@@ -56,8 +56,11 @@ function set3dTerrain(map: MapboxMap, remove: boolean) {
 
     add3dbuilding(map, remove);
     map.setTerrain(null);
-    if (remove)
+    map.easeTo({pitch: 60, duration: 1000});
+    if (remove) {
+        map.easeTo({pitch: 0, duration: 1000});
         return;
+    }
     if (!map.getSource(id_terrain)) {
         map.addSource(id_terrain, {
             type: 'raster-dem',
@@ -104,10 +107,7 @@ export default function MapDisplay({ x, y, zoom, reset, darkMode = false, relief
             map.current.easeTo({
                 center: [new_x, new_y],
                 zoom: zoom,
-                duration: 1000,
-                easing: function(t) {
-                    return t;
-                }
+                duration: 1000
             });
         }
     }, [x, y, reset]);
@@ -125,10 +125,7 @@ export default function MapDisplay({ x, y, zoom, reset, darkMode = false, relief
         map.current.easeTo({
             center: [lng, lat],
             zoom: new_zoom,
-            duration: 1000,
-            easing: function(t) {
-                return t;
-            }
+            duration: 1000
         });
     }, [zoom]);
 
