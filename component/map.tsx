@@ -14,9 +14,10 @@ type MapArgType = {
     x: number;
     y: number;
     zoom: number;
-    reset: number;
-    darkMode: boolean;
-    relief: boolean;
+    zoom2 : number;
+    reset ?: number;
+    darkMode ?: boolean;
+    relief ?: boolean;
 };
 
 export function add_marker(long: number, lat: number, map: MapboxMap, str: string): void {
@@ -41,7 +42,7 @@ function add3dbuilding(map: MapboxMap, remove: boolean)
             'source-layer': 'building',
             'filter': ['==', 'extrude', 'true'],
             'type': 'fill-extrusion',
-            'minzoom': 12,
+            'minzoom': 15,
             'paint': {
                 'fill-extrusion-color': '#aaa',
                 'fill-extrusion-height': ['get', 'height'],
@@ -71,11 +72,11 @@ function set3dTerrain(map: MapboxMap, remove: boolean) {
     map.setTerrain({source: id_terrain, exaggeration: 1.5});
 }
 
-export default function MapDisplay({ x, y, zoom, reset, darkMode = false, relief = false }: MapArgType
+export default function MapDisplay({ x, y, zoom, zoom2, reset, darkMode, relief }: MapArgType
 ) {
     const mapContainer = useRef<HTMLDivElement | null>(null);
     const map = useRef<MapboxMap | null>(null);
-    const anc_zoom = useRef<number>(zoom);
+    const anc_zoom = useRef<number>(zoom2);
     const style: string = !darkMode ? "mapbox://styles/mapbox/light-v10" : "mapbox://styles/mapbox/dark-v10";
 
     useEffect(() => {
@@ -110,24 +111,22 @@ export default function MapDisplay({ x, y, zoom, reset, darkMode = false, relief
                 duration: 1000
             });
         }
-    }, [x, y, reset]);
+    }, [x, y, zoom, reset]);
 
     useEffect(() => {
-        if (!map.current) return;
-        const {lng, lat}: LngLat = map.current.getCenter();
-        var new_zoom: number = map.current.getZoom();
+        if (!map.current || !zoom2) return;
+        var new_zoom = map.current.getZoom();
 
-        if (anc_zoom.current < zoom)
-            new_zoom += 1;
-        else if (anc_zoom.current > zoom)
+        console.log(new_zoom, zoom2);
+        if (anc_zoom.current > zoom2) {
             new_zoom -= 1;
-        anc_zoom.current = zoom;
-        map.current.easeTo({
-            center: [lng, lat],
-            zoom: new_zoom,
-            duration: 1000
-        });
-    }, [zoom]);
+        }
+        else if (anc_zoom.current < zoom2) {
+            new_zoom += 1;
+        }
+        anc_zoom.current = zoom2;
+        map.current.easeTo({zoom: new_zoom, duration: 200});
+    }, [zoom2]);
 
     useEffect(() => {
         if (!map.current) return;
