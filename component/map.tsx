@@ -7,6 +7,8 @@ import get_loc from "@/script/get_loc";
 import "mapbox-gl/dist/mapbox-gl.css";
 import json_load from "./json_load";
 import set3dTerrain from "./mapbox_functions/set3dterrain";
+import addRain from "./mapbox_functions/addRain";
+import addBunker from "./mapbox_functions/addBunker";
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN as string;
 
@@ -31,28 +33,6 @@ export function add_marker(long: number, lat: number, map: MapboxMap, str: strin
     marker.setPopup(popup);
 }
 
-function addRain(map: MapboxMap, remove_rain ?: boolean)
-{
-    if (remove_rain) {
-        map.setRain(null);
-    } else if (!map.getRain()){
-        map.setRain({
-            density: ['interpolate', ['linear'], ['zoom'],
-                11, 0.0, 13, 0.8],
-            intensity: 1.0,
-            color: '#a8adbc',
-            opacity: 0.7,
-            vignette: ['interpolate', ['linear'], ['zoom'],
-                11, 0.0, 13, 0.8],
-            'vignette-color': '#464646',
-            direction: [0, 80],
-            'droplet-size': [2.6, 18.2],
-            'distortion-strength': 0.7,
-            'center-thinning': 0
-        });
-    }
-}
-
 export default function MapDisplay({ x, y, zoom, zoom2, reset, darkMode, relief, rain }: MapArgType
 ) {
     const mapContainer = useRef<HTMLDivElement | null>(null);
@@ -74,6 +54,8 @@ export default function MapDisplay({ x, y, zoom, zoom2, reset, darkMode, relief,
                 if (!map.current)
                     return;
                 set3dTerrain(map.current, !relief);
+                addBunker(map.current);
+                add_marker(2.10, 48.15, map.current, "Personal bunker");
                 map.current.setPaintProperty('water', 'fill-color', 'rgba(14, 122, 155, 1)');
                 json_load("/json_files/test.json", "fr", map.current);
                 get_loc().then(location => {
@@ -121,6 +103,7 @@ export default function MapDisplay({ x, y, zoom, zoom2, reset, darkMode, relief,
         map.current.once("style.load", () => {
             if (!map.current) return;
             addRain(map.current, !rain);
+            addBunker(map.current);
             set3dTerrain(map.current, !relief);
             if (darkMode) {
                 map.current.setPaintProperty('road-primary', 'line-color', 'rgba(255, 240, 31, 1)');
