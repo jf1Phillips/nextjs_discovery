@@ -1,0 +1,48 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {"extrude": "true", "height": 2000, "min_height": 0},
+            "geometry": {"type": "Polygon", "coordinates": [[[2.10, 48.15], [2.25, 48.00], [2.30, 48.00], [2.40, 48.10], [2.40, 48.15], [2.35, 48.20], [2.35, 48.25], [2.25, 48.25], [2.20, 48.30], [2.10, 48.20], [2.10, 48.15]]]}
+        },
+        {
+            "type": "Feature",
+            "properties": {"extrude": "true", "height": 7000, "min_height": 2000},
+            "geometry": {"type": "Polygon", "coordinates": [[[2.15, 48.15], [2.25, 48.05], [2.30, 48.05], [2.30, 48.10], [2.25, 48.10], [2.25, 48.20], [2.15, 48.20], [2.15, 48.15]]]}
+        },
+        {
+            "type": "Feature",
+            "properties": {"extrude": "true", "height": 5000, "min_height": 2000},
+            "geometry": {"type": "Polygon", "coordinates": [[[2.30, 48.15], [2.35, 48.15], [2.30, 48.20], [2.30, 48.15]]]}
+        },
+        {
+            "type": "Feature",
+            "properties": {"extrude": "true", "height": 10000, "min_height": 7000},
+            "geometry": {"type": "Polygon", "coordinates": [[[2.20, 48.15], [2.225, 48.125], [2.225, 48.15], [2.20, 48.15]]]}
+        },
+        {
+            "type": "Feature",
+            "properties": {"extrude": "true", "height": 10000, "min_height": 6000},
+            "geometry": {"type": "Polygon", "coordinates": [[
+                [2.30, 48.125],
+                [2.35, 48.125],
+                [2.35, 48.15],
+                [2.325, 48.125],
+                [2.30, 48.15],
+                [2.30, 48.125]
+            ]]}
+        },
+                {
+            "type": "Feature",
+            "properties": {"extrude": "true", "height": 4500, "min_height": 3000},
+            "geometry": {"type": "Polygon", "coordinates": [[
+                [2.30, 48.125],
+                [2.35, 48.125],
+                [2.35, 48.15],
+                [2.30, 48.15],
+                [2.30, 48.125]
+            ]]}
+        }
+    ]
+}
