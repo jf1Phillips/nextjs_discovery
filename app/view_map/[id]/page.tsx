@@ -25,6 +25,7 @@ export default function MapNbr(
     const [long, setLong] = useState<number>(DEFAULT_LONG);
     const [reset, setReset] = useState<number>(0);
     const [relief, setRelief] = useState<boolean>(false);
+    const [rain, setRain] = useState<boolean>(false);
 
     const submitEvent = (event: React.FormEvent) => {
         event.preventDefault();
@@ -49,6 +50,10 @@ export default function MapNbr(
                         ${enabled ? "bg-darkMode text-whiteMode" : "bg-whiteMode text-darkMode"}`}
                     onClick={() => {setRelief(!relief)}}>
                         {relief ? "2d" : "3d"}</button>
+            <button className={`absolute w-[22px] h-[22px] mt-[120px] ml-[132px] duration-300 text-[15px] rounded-[2px]
+                        ${enabled ? "bg-darkMode" : "bg-whiteMode"}`}
+                    onClick={() => {setRain(!rain)}}>
+                        {!rain ? "🌧️" : "☀️"}</button>
             <ZoomInOut enabled={enabled} zoom={zoom2} setZoom={setZoom2} />
             <DarkMode enabled={enabled} setEnabled={setEnabled} className="absolute ml-[calc(100%-60px)] mt-[120px]"/>
             <form className="text-customWhite flex flex-col items-center justify-center mt-4"
@@ -77,7 +82,7 @@ export default function MapNbr(
                     type="submit">View</button>
             </form>
             <div className="mt-[30px] flex items-center justify-center w-full">
-                <MapDisplay y={lat} x={long} zoom={zoom} zoom2={zoom2} reset={reset} darkMode={enabled} relief={relief}/>
+                <MapDisplay y={lat} x={long} zoom={zoom} zoom2={zoom2} reset={reset} darkMode={enabled} relief={relief} rain={rain}/>
             </div>
         </>
     )

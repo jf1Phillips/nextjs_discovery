@@ -18,6 +18,7 @@ type MapArgType = {
     reset ?: number;
     darkMode ?: boolean;
     relief ?: boolean;
+    rain ?: boolean;
 };
 
 export function add_marker(long: number, lat: number, map: MapboxMap, str: string): void {
@@ -36,11 +37,13 @@ function addRain(map: MapboxMap, remove_rain ?: boolean)
         map.setRain(null);
     } else if (!map.getRain()){
         map.setRain({
-            density: 0.5,
+            density: ['interpolate', ['linear'], ['zoom'],
+                11, 0.0, 13, 0.8],
             intensity: 1.0,
             color: '#a8adbc',
             opacity: 0.7,
-            vignette: 1.0,
+            vignette: ['interpolate', ['linear'], ['zoom'],
+                11, 0.0, 13, 0.8],
             'vignette-color': '#464646',
             direction: [0, 80],
             'droplet-size': [2.6, 18.2],
@@ -50,7 +53,7 @@ function addRain(map: MapboxMap, remove_rain ?: boolean)
     }
 }
 
-export default function MapDisplay({ x, y, zoom, zoom2, reset, darkMode, relief }: MapArgType
+export default function MapDisplay({ x, y, zoom, zoom2, reset, darkMode, relief, rain }: MapArgType
 ) {
     const mapContainer = useRef<HTMLDivElement | null>(null);
     const map = useRef<MapboxMap | null>(null);
@@ -70,12 +73,6 @@ export default function MapDisplay({ x, y, zoom, zoom2, reset, darkMode, relief 
             map.current.once("load", () => {
                 if (!map.current)
                     return;
-                map.current.on("zoom", () => {
-                    if (!map.current) return;
-                    if (map.current.isStyleLoaded()) {
-                        addRain(map.current, map.current.getZoom() <= 13);
-                    }
-                });
                 set3dTerrain(map.current, !relief);
                 map.current.setPaintProperty('water', 'fill-color', 'rgba(14, 122, 155, 1)');
                 json_load("/json_files/test.json", "fr", map.current);
@@ -99,6 +96,12 @@ export default function MapDisplay({ x, y, zoom, zoom2, reset, darkMode, relief 
     }, [x, y, zoom, reset]);
 
     useEffect(() => {
+        if (!map.current) return;
+        if (map.current.isStyleLoaded())
+            addRain(map.current, !rain);
+    }, [rain, darkMode]);
+
+    useEffect(() => {
         if (!map.current || !zoom2) return;
         var new_zoom = map.current.getZoom();
 
@@ -117,6 +120,7 @@ export default function MapDisplay({ x, y, zoom, zoom2, reset, darkMode, relief 
         map.current.setStyle(style);
         map.current.once("style.load", () => {
             if (!map.current) return;
+            addRain(map.current, !rain);
             set3dTerrain(map.current, !relief);
             if (darkMode) {
                 map.current.setPaintProperty('road-primary', 'line-color', 'rgba(255, 240, 31, 1)');
