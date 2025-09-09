@@ -1,14 +1,14 @@
 "use client";
 
 import { useEffect, useRef, use } from "react";
-import mapboxgl, {LngLat, Map as MapboxMap} from "mapbox-gl";
+import mapboxgl, {Map as MapboxMap} from "mapbox-gl";
 import "@/styles/globals.css";
 import get_loc from "@/script/get_loc";
 import "mapbox-gl/dist/mapbox-gl.css";
 import json_load from "./json_load";
+import set3dTerrain from "./mapbox_functions/set3dterrain";
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN as string;
-const idbulding: string = "3dbuilding";
 
 type MapArgType = {
     x: number;
@@ -22,7 +22,7 @@ type MapArgType = {
 
 export function add_marker(long: number, lat: number, map: MapboxMap, str: string): void {
     const popup = new mapboxgl.Popup({offset: 10})
-    .setHTML(`<p>${str}</p>`);
+        .setHTML(`<p>${str}</p>`);
     const div_marker: HTMLDivElement = document.createElement('div');
     div_marker.className = "marker mt-[-15px] bg-[url(/img/map_pin.png)] bg-cover w-[30px] h-[30px] cursor-pointer";
     const marker = new mapboxgl.Marker(div_marker).setLngLat([long, lat]).addTo(map);
@@ -30,75 +30,24 @@ export function add_marker(long: number, lat: number, map: MapboxMap, str: strin
     marker.setPopup(popup);
 }
 
-function add3dbuilding(map: MapboxMap, remove: boolean)
+function addRain(map: MapboxMap, remove_rain ?: boolean)
 {
-        if (map.getLayer(idbulding))
-            map.removeLayer(idbulding);
-        if (remove)
-            return;
-        map.addLayer({
-            'id': idbulding,
-            'source': 'composite',
-            'source-layer': 'building',
-            'filter': ['==', 'extrude', 'true'],
-            'type': 'fill-extrusion',
-            'minzoom': 15,
-            'paint': {
-                'fill-extrusion-color': '#aaa',
-                'fill-extrusion-height': ['get', 'height'],
-                'fill-extrusion-base': ['get', 'min_height'],
-                'fill-extrusion-opacity': 1.0
-            }
-        });
-}
-
-function putShaddow(map: MapboxMap, remove: boolean) {
-    const id_shadow: string = "shadow_layer";
-    const id_terrain: string = "terrain_to_shadow";
-
-    if (map.getLayer(id_shadow))
-        map.removeLayer(id_shadow);
-    if (remove) return;
-    if (!map.getSource(id_terrain)) {
-        map.addSource(id_terrain, {
-            type: 'raster-dem',
-            url: 'mapbox://mapbox.terrain-rgb',
-            tileSize: 512,
+    if (remove_rain) {
+        map.setRain(null);
+    } else if (!map.getRain()){
+        map.setRain({
+            density: 0.5,
+            intensity: 1.0,
+            color: '#a8adbc',
+            opacity: 0.7,
+            vignette: 1.0,
+            'vignette-color': '#464646',
+            direction: [0, 80],
+            'droplet-size': [2.6, 18.2],
+            'distortion-strength': 0.7,
+            'center-thinning': 0
         });
     }
-    map.addLayer({
-        id: id_shadow,
-        type: 'hillshade',
-        source: id_terrain,
-        layout: {},
-        paint: {
-            'hillshade-shadow-color': '#473B24',
-            'hillshade-highlight-color': '#F8E8D0',
-            'hillshade-accent-color': '#BBA67A',
-            'hillshade-exaggeration': 1.0
-        }
-    }, 'water');
-}
-
-function set3dTerrain(map: MapboxMap, remove: boolean) {
-    const id_terrain: string = "3d_terrain";
-
-    add3dbuilding(map, remove);
-    map.setTerrain(null);
-    map.easeTo({pitch: 60, duration: 1000});
-    putShaddow(map, remove);
-    if (remove) {
-        map.easeTo({pitch: 0, duration: 1000});
-        return;
-    }
-    if (!map.getSource(id_terrain)) {
-        map.addSource(id_terrain, {
-            type: 'raster-dem',
-            url: 'mapbox://mapbox.terrain-rgb',
-            tileSize: 512,
-        });
-    }
-    map.setTerrain({source: id_terrain, exaggeration: 1.5});
 }
 
 export default function MapDisplay({ x, y, zoom, zoom2, reset, darkMode, relief }: MapArgType
@@ -121,6 +70,12 @@ export default function MapDisplay({ x, y, zoom, zoom2, reset, darkMode, relief 
             map.current.once("load", () => {
                 if (!map.current)
                     return;
+                map.current.on("zoom", () => {
+                    if (!map.current) return;
+                    if (map.current.isStyleLoaded()) {
+                        addRain(map.current, map.current.getZoom() <= 13);
+                    }
+                });
                 set3dTerrain(map.current, !relief);
                 map.current.setPaintProperty('water', 'fill-color', 'rgba(14, 122, 155, 1)');
                 json_load("/json_files/test.json", "fr", map.current);
@@ -147,7 +102,6 @@ export default function MapDisplay({ x, y, zoom, zoom2, reset, darkMode, relief 
         if (!map.current || !zoom2) return;
         var new_zoom = map.current.getZoom();
 
-        console.log(new_zoom, zoom2);
         if (anc_zoom.current > zoom2) {
             new_zoom -= 1;
         }
