@@ -2,8 +2,8 @@ import requests
 from PIL import Image
 from io import BytesIO
 
-TILE_SIZE = 256  # taille standard des tuiles
-Z = 3
+TILE_SIZE = 256
+Z = 4
 X_RANGE = range(2**Z)
 Y_RANGE = range(2**Z)
 URL_TEMPLATE = "https://app.mariavaltorta.com/map/it/{z}/{x}/{y}.pbf"
@@ -16,10 +16,12 @@ for x in X_RANGE:
     for y in Y_RANGE:
         url = URL_TEMPLATE.format(z=Z, x=x, y=y)
         print(f"Téléchargement {url}")
-        r = requests.get(url)
-        if r.status_code != 200:
-            print(f"Erreur téléchargement tile {x},{y}")
-            continue
+        while 1:
+            r = requests.get(url)
+            if r.status_code != 200:
+                print(f"Erreur téléchargement tile {x},{y}")
+                continue
+            break
         tile_img = Image.open(BytesIO(r.content))
         final_img.paste(tile_img, (x*TILE_SIZE, y*TILE_SIZE))
 
