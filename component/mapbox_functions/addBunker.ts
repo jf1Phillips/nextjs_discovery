@@ -10,17 +10,19 @@ export default function addBunker(map: MapboxMap)
             data: '/geoJson_files/france_building.geojson'
         });
     }
-    map.addLayer({
-        'id': 'batiments-3d',
-        'source': bunker_id,
-        'filter': ['==', 'extrude', 'true'],
-        'type': 'fill-extrusion',
-        'minzoom': 6,
-        'paint': {
-            'fill-extrusion-color': '#aaa',
-            'fill-extrusion-height': ['get', 'height'],
-            'fill-extrusion-base': ['get', 'min_height'],
-            'fill-extrusion-opacity': 1.0
-        }
-    });
+    if (!map.getLayer('batiments-3d')) {
+        map.addLayer({
+            'id': 'batiments-3d',
+            'source': bunker_id,
+            'filter': ['==', 'extrude', 'true'],
+            'type': 'fill-extrusion',
+            'minzoom': 6,
+            'paint': {
+                'fill-extrusion-color': '#aaa',
+                'fill-extrusion-height': ['get', 'height'],
+                'fill-extrusion-base': ['get', 'min_height'],
+                'fill-extrusion-opacity': 1.0
+            }
+        });
+    }
 }
