@@ -9,6 +9,7 @@ import json_load from "./json_load";
 import set3dTerrain from "./mapbox_functions/set3dterrain";
 import addRain from "./mapbox_functions/addRain";
 import addBunker from "./mapbox_functions/addBunker";
+import addGeoImg from "./mapbox_functions/add_geoimg";
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN as string;
 
@@ -55,6 +56,7 @@ export default function MapDisplay({ x, y, zoom, zoom2, reset, darkMode, relief,
                     return;
                 set3dTerrain(map.current, !relief);
                 addBunker(map.current);
+                addGeoImg('/geo_map.png', map.current);
                 add_marker(2.10, 48.15, map.current, "Personal bunker");
                 map.current.setPaintProperty('water', 'fill-color', 'rgba(14, 122, 155, 1)');
                 json_load("/json_files/test.json", "fr", map.current);
@@ -105,6 +107,7 @@ export default function MapDisplay({ x, y, zoom, zoom2, reset, darkMode, relief,
             addRain(map.current, !rain);
             addBunker(map.current);
             set3dTerrain(map.current, !relief);
+            addGeoImg('/geo_map.png', map.current);
             if (darkMode) {
                 map.current.setPaintProperty('road-primary', 'line-color', 'rgba(255, 240, 31, 1)');
                 map.current.setPaintProperty('water', 'fill-color', 'rgba(14, 15, 99, 1)');
