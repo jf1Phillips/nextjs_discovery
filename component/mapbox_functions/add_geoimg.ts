@@ -1,21 +1,17 @@
 import { Map as MapBoxMap } from "mapbox-gl";
 
-export default function addGeoImg(url: string, map: MapBoxMap, id ?: string)
+export default function addGeoImg(url_given: string, map: MapBoxMap)
 {
-    const default_id: string = 'geoimage';
-    const id_source: string = id ? id : default_id;
-    const id_layer: string = id ? id : default_id;
-
     const layers = map.getStyle().layers;
+    const url = (url_given.includes("es.png")) ? "/geo_map_fr.png" : url_given;
 
-    console.log(layers);
     layers.forEach(layer => {
-        if (layer.id.includes("road") || layer.id.includes("label")) {
+        if (layer.id.includes("road") || layer.id.includes("label") || layer.id.includes("geo_map")) {
             map.setLayoutProperty(layer.id, 'visibility', 'none');
         }
     });
-    if (!map.getSource(id_source)) {
-        map.addSource(id_source, {
+    if (!map.getSource(url)) {
+        map.addSource(url, {
             type: 'image',
             url: url,
             coordinates: [
@@ -26,14 +22,16 @@ export default function addGeoImg(url: string, map: MapBoxMap, id ?: string)
             ]
         });
     }
-    if (!map.getLayer(id_layer)) {
+    if (!map.getLayer(url)) {
         map.addLayer({
-            id: id_layer,
+            id: url,
             type: 'raster',
-            source: id_source,
+            source: url,
             paint: {
                 'raster-opacity': 0.9,
             }
         });
+    } else {
+        map.setLayoutProperty(url, 'visibility', 'visible');
     }
 }

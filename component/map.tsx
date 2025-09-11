@@ -13,8 +13,6 @@ import addGeoImg from "./mapbox_functions/add_geoimg";
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN as string;
 
-const get_img: string = "/only_road.png";
-
 type MapArgType = {
     x: number;
     y: number;
@@ -70,7 +68,7 @@ export default function MapDisplay({ x, y, zoom, zoom2, lang, reset, darkMode, r
                     return;
                 set3dTerrain(map.current, !relief);
                 addBunker(map.current);
-                addGeoImg(get_img, map.current);
+                addGeoImg(`/geo_map_${lang}.png`, map.current);
                 add_marker(2.10, 48.15, map.current, "Personal bunker");
                 map.current.setPaintProperty('water', 'fill-color', 'rgba(14, 122, 155, 1)');
                 get_loc().then(location => {
@@ -98,13 +96,13 @@ export default function MapDisplay({ x, y, zoom, zoom2, lang, reset, darkMode, r
             map.current.once("style.load", () => {
                 if (!map.current) return;
                 remove_marker();
-            console.log(lang);
                 json_load("/json_files/test.json", lang, map.current);
+                addGeoImg(`/geo_map_${lang}.png`, map.current);
             });
         } else {
             remove_marker();
-            console.log(lang);
             json_load("/json_files/test.json", lang, map.current);
+            addGeoImg(`/geo_map_${lang}.png`, map.current);
         }
     }, [lang]);
 
@@ -136,7 +134,7 @@ export default function MapDisplay({ x, y, zoom, zoom2, lang, reset, darkMode, r
             addRain(map.current, !rain);
             addBunker(map.current);
             set3dTerrain(map.current, !relief);
-            addGeoImg(get_img, map.current);
+            addGeoImg(`/geo_map_${lang}.png`, map.current);
             map.current.setPaintProperty('water', 'fill-color', darkMode ? 'rgba(14, 15, 99, 1)': 'rgba(14, 122, 155, 1)');
         });
     }, [darkMode]);
