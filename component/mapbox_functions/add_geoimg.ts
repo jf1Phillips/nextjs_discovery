@@ -6,6 +6,14 @@ export default function addGeoImg(url: string, map: MapBoxMap, id ?: string)
     const id_source: string = id ? id : default_id;
     const id_layer: string = id ? id : default_id;
 
+    const layers = map.getStyle().layers;
+
+    console.log(layers);
+    layers.forEach(layer => {
+        if (layer.id.includes("road") || layer.id.includes("label")) {
+            map.setLayoutProperty(layer.id, 'visibility', 'none');
+        }
+    });
     if (!map.getSource(id_source)) {
         map.addSource(id_source, {
             type: 'image',

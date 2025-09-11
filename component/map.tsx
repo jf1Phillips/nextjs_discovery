@@ -13,6 +13,8 @@ import addGeoImg from "./mapbox_functions/add_geoimg";
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN as string;
 
+const get_img: string = "/only_road.png";
+
 type MapArgType = {
     x: number;
     y: number;
@@ -56,7 +58,7 @@ export default function MapDisplay({ x, y, zoom, zoom2, reset, darkMode, relief,
                     return;
                 set3dTerrain(map.current, !relief);
                 addBunker(map.current);
-                addGeoImg('/geo_map.png', map.current);
+                addGeoImg(get_img, map.current);
                 add_marker(2.10, 48.15, map.current, "Personal bunker");
                 map.current.setPaintProperty('water', 'fill-color', 'rgba(14, 122, 155, 1)');
                 json_load("/json_files/test.json", "fr", map.current);
@@ -107,13 +109,8 @@ export default function MapDisplay({ x, y, zoom, zoom2, reset, darkMode, relief,
             addRain(map.current, !rain);
             addBunker(map.current);
             set3dTerrain(map.current, !relief);
-            addGeoImg('/geo_map.png', map.current);
-            if (darkMode) {
-                map.current.setPaintProperty('road-primary', 'line-color', 'rgba(255, 240, 31, 1)');
-                map.current.setPaintProperty('water', 'fill-color', 'rgba(14, 15, 99, 1)');
-            } else {
-                map.current.setPaintProperty('water', 'fill-color', 'rgba(14, 122, 155, 1)');
-            }
+            addGeoImg(get_img, map.current);
+            map.current.setPaintProperty('water', 'fill-color', darkMode ? 'rgba(14, 15, 99, 1)': 'rgba(14, 122, 155, 1)');
         });
     }, [darkMode]);
 
