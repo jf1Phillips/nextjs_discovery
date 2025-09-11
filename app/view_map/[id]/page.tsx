@@ -6,6 +6,7 @@ import "@/styles/globals.css";
 import DarkMode from "@/component/darkmode";
 import atoi from "@/script/atoi";
 import ZoomInOut from "@/component/zoom_in_out";
+import SelectLang from "@/component/select_option";
 
 export default function MapNbr(
     props: {
@@ -44,6 +45,7 @@ export default function MapNbr(
 
     const [enabled, setEnabled] = useState<boolean>(false);
 
+    const [selected, setSelected] = useState<string>("fr");
     return (
         <>
             <button className={`absolute w-[22px] h-[22px] mt-[120px] ml-[100px] duration-300 text-[15px] rounded-[2px]
@@ -54,15 +56,7 @@ export default function MapNbr(
                         ${enabled ? "bg-darkMode" : "bg-whiteMode"}`}
                     onClick={() => {setRain(!rain)}}>
                         {!rain ? "🌧️" : "☀️"}</button>
-            <div className="absolute">
-                <label htmlFor="lang_select">💬</label>
-                <select id="lang_select">
-                    <option value="fr">fr</option>
-                    <option value="it">it</option>
-                    <option value="en">en</option>
-                    <option value="es">es</option>
-                </select>
-            </div>
+            <SelectLang selected={selected} setSelected={setSelected}/>
             <ZoomInOut enabled={enabled} zoom={zoom2} setZoom={setZoom2} />
             <DarkMode enabled={enabled} setEnabled={setEnabled} className="absolute ml-[calc(100%-60px)] mt-[120px]"/>
             <form className="text-customWhite flex flex-col items-center justify-center mt-4"
