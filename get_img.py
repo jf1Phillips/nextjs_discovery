@@ -1,12 +1,15 @@
 import requests
 from PIL import Image
 from io import BytesIO
+from sys import argv
+
+lang = argv[1] if len(argv) >= 2 else "fr"
 
 TILE_SIZE = 256
 Z = 4
 X_RANGE = range(2**Z)
 Y_RANGE = range(2**Z)
-URL_TEMPLATE = "https://app.mariavaltorta.com/map/it/{z}/{x}/{y}.pbf"
+URL_TEMPLATE = "https://app.mariavaltorta.com/map/%s/{z}/{x}/{y}.pbf" % (lang)
 
 img_width = TILE_SIZE * len(X_RANGE)
 img_height = TILE_SIZE * len(Y_RANGE)
