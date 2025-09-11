@@ -85,7 +85,7 @@ export default function MapNbr(
                     type="submit">View</button>
             </form>
             <div className="mt-[30px] flex items-center justify-center w-full">
-                <MapDisplay y={lat} x={long} zoom={zoom} zoom2={zoom2} reset={reset} darkMode={enabled} relief={relief} rain={rain}/>
+                <MapDisplay y={lat} x={long} zoom={zoom} zoom2={zoom2} lang={selected} reset={reset} darkMode={enabled} relief={relief} rain={rain}/>
             </div>
         </>
     )

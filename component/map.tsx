@@ -20,13 +20,17 @@ type MapArgType = {
     y: number;
     zoom: number;
     zoom2 : number;
+    lang: string;
     reset ?: number;
     darkMode ?: boolean;
     relief ?: boolean;
     rain ?: boolean;
 };
 
-export function add_marker(long: number, lat: number, map: MapboxMap, str: string): void {
+const markers: mapboxgl.Marker[] = [];
+
+export function add_marker(long: number, lat: number, map: MapboxMap, str: string, add ?: boolean): void
+{
     const popup = new mapboxgl.Popup({offset: 10})
         .setHTML(`<p>${str}</p>`);
     const div_marker: HTMLDivElement = document.createElement('div');
@@ -34,10 +38,18 @@ export function add_marker(long: number, lat: number, map: MapboxMap, str: strin
     const marker = new mapboxgl.Marker(div_marker).setLngLat([long, lat]).addTo(map);
 
     marker.setPopup(popup);
+    if (add)
+        markers.push(marker);
 }
 
-export default function MapDisplay({ x, y, zoom, zoom2, reset, darkMode, relief, rain }: MapArgType
-) {
+function remove_marker(): void
+{
+    markers.forEach(marker => {marker.remove()});
+    markers.length = 0;
+}
+
+export default function MapDisplay({ x, y, zoom, zoom2, lang, reset, darkMode, relief, rain }: MapArgType)
+{
     const mapContainer = useRef<HTMLDivElement | null>(null);
     const map = useRef<MapboxMap | null>(null);
     const anc_zoom = useRef<number>(zoom2);
@@ -61,7 +73,6 @@ export default function MapDisplay({ x, y, zoom, zoom2, reset, darkMode, relief,
                 addGeoImg(get_img, map.current);
                 add_marker(2.10, 48.15, map.current, "Personal bunker");
                 map.current.setPaintProperty('water', 'fill-color', 'rgba(14, 122, 155, 1)');
-                json_load("/json_files/test.json", "fr", map.current);
                 get_loc().then(location => {
                     if (!location || !map.current)
                         return;
@@ -80,6 +91,22 @@ export default function MapDisplay({ x, y, zoom, zoom2, reset, darkMode, relief,
             });
         }
     }, [x, y, zoom, reset]);
+
+    useEffect(() => {
+        if (!map.current) return;
+        if (!map.current.isStyleLoaded()) {
+            map.current.once("style.load", () => {
+                if (!map.current) return;
+                remove_marker();
+            console.log(lang);
+                json_load("/json_files/test.json", lang, map.current);
+            });
+        } else {
+            remove_marker();
+            console.log(lang);
+            json_load("/json_files/test.json", lang, map.current);
+        }
+    }, [lang]);
 
     useEffect(() => {
         if (!map.current) return;

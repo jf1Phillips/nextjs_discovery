@@ -27,7 +27,7 @@ export default function json_load(file: string, lang: string, map: MapboxMap) {
                 break;
             const longlat: number[] = response.points[i].latlong;
             const langage: string = response.points[i].name[lang] ? lang : "fr";
-            add_marker(longlat[1], longlat[0], map, response.points[i].name[langage]);
+            add_marker(longlat[1], longlat[0], map, response.points[i].name[langage], true);
             ++it;
         }
     });
