@@ -56,7 +56,7 @@ export default function MapNbr(
                         ${enabled ? "bg-darkMode" : "bg-whiteMode"}`}
                     onClick={() => {setRain(!rain)}}>
                         {!rain ? "🌧️" : "☀️"}</button>
-            <SelectLang selected={selected} setSelected={setSelected}/>
+            <SelectLang selected={selected} setSelected={setSelected} darkmode={enabled}/>
             <ZoomInOut enabled={enabled} zoom={zoom2} setZoom={setZoom2} />
             <DarkMode enabled={enabled} setEnabled={setEnabled} className="absolute ml-[calc(100%-60px)] mt-[120px]"/>
             <form className="text-customWhite flex flex-col items-center justify-center mt-4"
