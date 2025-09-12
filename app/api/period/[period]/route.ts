@@ -14,12 +14,11 @@ export async function GET(
         const { period } = await params;
         const int_id = atoii(period);
 
-        return NextResponse.json(
-            {
-                id: int_id,
-            },
-            {status: 200});
+        if (period !== "0" && int_id === 0) {
+            return NextResponse.json({error: "Invalid format"}, {status: 400});
+        }
+        return NextResponse.json({id: int_id,}, {status: 200});
     } catch (err) {
-        return NextResponse.json({error: "no params"}, {status: 400});
+        return NextResponse.json({error: "Internal error"}, {status: 500});
     }
 }
