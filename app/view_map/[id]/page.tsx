@@ -74,7 +74,7 @@ export default function MapNbr(
                     </div>
                     <div className="flex flex-col items-center">
                         <label className="mb-[5px]">Long</label>
-                        <input className="outline-none border-solid border-[2px] rounded-full bg-customGrey2 text-center w-[100px]" 
+                        <input className="outline-none border-solid border-[2px] rounded-full bg-customGrey2 text-center w-[100px]"
                                 type="text" name="long" defaultValue={long.toString()}/>
                     </div>
                 </div>
