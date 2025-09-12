@@ -19,6 +19,6 @@ export async function GET(
         }
         return NextResponse.json({id: int_id,}, {status: 200});
     } catch (err) {
-        return NextResponse.json({error: "Internal error"}, {status: 500});
+        return NextResponse.json({"Internal error": err}, {status: 500});
     }
 }
