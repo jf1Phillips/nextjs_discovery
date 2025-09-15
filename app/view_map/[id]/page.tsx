@@ -1,12 +1,61 @@
 "use client";
 
-import { use, useState } from "react";
+import React, { useRef, use, useState } from "react";
 import MapDisplay from "@/component/map";
 import "@/styles/globals.css";
 import DarkMode from "@/component/darkmode";
 import atoi from "@/script/atoi";
 import ZoomInOut from "@/component/zoom_in_out";
 import SelectLang from "@/component/select_option";
+
+
+import mapboxgl, {Map as MapboxMap} from "mapbox-gl";
+import "mapbox-gl/dist/mapbox-gl.css";
+
+mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN as string;
+
+type MyMapProps = {
+    y: number;
+    x: number;
+};
+
+class MyMap extends React.Component<MyMapProps> {
+    mapContainer: React.RefObject<HTMLDivElement | null>;
+    map: MapboxMap | null = null;
+
+    constructor(props: MyMapProps) {
+        super(props);
+        this.mapContainer = React.createRef<HTMLDivElement>();
+    }
+
+    componentDidMount(): void {
+        if (this.mapContainer.current) {
+            this.map = new mapboxgl.Map({
+                container: this.mapContainer.current,
+                style: "mapbox://styles/mapbox/light-v10",
+                center: [this.props.x, this.props.y],
+                zoom: 1,
+                projection: 'globe',
+            })
+        }
+    }
+
+    componentWillUnmount(): void {
+        if (this.map) this.map.remove();
+    }
+
+    render(): React.ReactNode {
+        return (
+            <>
+                <div
+                    className="overflow-hidden"
+                    ref={this.mapContainer}
+                    style={{ width: "100%", height: "calc(100vh - 165px)" }}
+                />
+            </>
+        )
+    }
+}
 
 export default function MapNbr(
     props: {
@@ -85,7 +134,8 @@ export default function MapNbr(
                     type="submit">View</button>
             </form>
             <div className="mt-[30px] flex items-center justify-center w-full">
-                <MapDisplay y={lat} x={long} zoom={zoom} zoom2={zoom2} lang={selected} reset={reset} darkMode={enabled} relief={relief} rain={rain}/>
+                <MyMap x={long} y={lat}/>
+                {/* <MapDisplay y={lat} x={long} zoom={zoom} zoom2={zoom2} lang={selected} reset={reset} darkMode={enabled} relief={relief} rain={rain}/> */}
             </div>
         </>
     )
