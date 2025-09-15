@@ -8,83 +8,6 @@ import atoi from "@/script/atoi";
 import ZoomInOut from "@/component/zoom_in_out";
 import SelectLang from "@/component/select_option";
 
-
-import mapboxgl, {Map as MapboxMap} from "mapbox-gl";
-import "mapbox-gl/dist/mapbox-gl.css";
-import { styleText } from "util";
-
-mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN as string;
-
-type MyMapProps = {
-    long: number;
-    lat: number;
-    darkmode ?: boolean;
-};
-
-type MyMapStates = {
-    style: string;
-}
-
-class MyMap extends React.Component<MyMapProps, MyMapStates> {
-    mapContainer: React.RefObject<HTMLDivElement | null>;
-    map: MapboxMap | null = null;
-
-    constructor(props: MyMapProps) {
-        super(props);
-        this.mapContainer = React.createRef<HTMLDivElement>();
-        this.state = {
-            style: this.props.darkmode ? "mapbox://styles/mapbox/dark-v10" : "mapbox://styles/mapbox/light-v10"
-        };
-    }
-
-    componentDidMount(): void {
-        if (this.mapContainer.current) {
-            this.map = new mapboxgl.Map({
-                container: this.mapContainer.current,
-                style: this.state.style,
-                center: [this.props.long, this.props.lat],
-                zoom: 1,
-                projection: 'globe',
-            })
-        }
-    }
-
-    componentDidUpdate(prevProps: Readonly<MyMapProps>, prevState: Readonly<MyMapStates>): void {
-        if (prevProps.darkmode != this.props.darkmode) {
-            this.setState({
-                style: this.props.darkmode ? "mapbox://styles/mapbox/dark-v10" : "mapbox://styles/mapbox/light-v10"
-            }, () => {
-                if (!this.map) return;
-                this.map.setStyle(this.state.style);
-                // if (this.map.isStyleLoaded()) {
-                //     this.map.setStyle(this.state.style);
-                // } else {
-                //     this.map.once("style.load", () => {
-                //         if (!this.map) return;
-                //         this.map.setStyle(this.state.style);
-                //     });
-                // }
-            });
-        }
-    }
-
-    componentWillUnmount(): void {
-        if (this.map) this.map.remove();
-    }
-
-    render(): React.ReactNode {
-        return (
-            <>
-                <div
-                    className="overflow-hidden"
-                    ref={this.mapContainer}
-                    style={{ width: "100%", height: "calc(100vh - 165px)" }}
-                />
-            </>
-        )
-    }
-}
-
 export default function MapNbr(
     props: {
         params: Promise<{id: string}>
@@ -162,8 +85,7 @@ export default function MapNbr(
                     type="submit">View</button>
             </form>
             <div className="mt-[30px] flex items-center justify-center w-full">
-                <MyMap long={long} lat={lat} darkmode={enabled}/>
-                {/* <MapDisplay y={lat} x={long} zoom={zoom} zoom2={zoom2} lang={selected} reset={reset} darkMode={enabled} relief={relief} rain={rain}/> */}
+                <MapDisplay y={lat} x={long} zoom={zoom} zoom2={zoom2} lang={selected} reset={reset} darkMode={enabled} relief={relief} rain={rain}/>
             </div>
         </>
     )
