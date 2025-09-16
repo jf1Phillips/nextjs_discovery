@@ -15,6 +15,7 @@ import { add_marker, remove_marker } from "@/component/map";
 import get_loc from "@/script/get_loc";
 import atoi from "@/script/atoi";
 import json_load from "./json_load";
+import addRain from "./mapbox_functions/addRain";
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN as string;
 
@@ -25,7 +26,8 @@ type MapVar = {
     style_nbr: number;
     enabled: boolean;
     lang: string;
-    relief: boolean
+    relief: boolean;
+    rain: boolean;
 };
 
 const DEFAULT_VALUE: MapVar = {
@@ -36,6 +38,7 @@ const DEFAULT_VALUE: MapVar = {
     enabled: false,
     lang: "fr",
     relief: false,
+    rain: false,
 };
 
 export default function GetMapboxMap (): JSX.Element
@@ -59,6 +62,7 @@ export default function GetMapboxMap (): JSX.Element
         addGeoImg(`/geo_map_${new_state.lang}.png`, map.current);
         map.current?.setPaintProperty('water', 'fill-color', new_state.enabled ? 'rgba(14, 15, 99, 1)': 'rgba(14, 122, 155, 1)');
         set3dTerrain(map.current, !state.relief);
+        addRain(map.current, !state.rain);
     }
 
     useEffect(() => {
@@ -127,18 +131,24 @@ export default function GetMapboxMap (): JSX.Element
     const setRelief = () => {
         if (!map.current || !map.current.isStyleLoaded()) return;
         set3dTerrain(map.current, state.relief);
-        setState(prev => ({...prev, relief: !state.relief}));
+        setState(prev => ({...prev, relief: !prev.relief}));
     };
+
+    const setRain = () => {
+        if (!map.current || !map.current.isStyleLoaded()) return;
+        addRain(map.current, state.rain);
+        setState(prev => ({...prev, rain: !prev.rain}));
+    }
 
     return (<>
         <button className={`absolute w-[22px] h-[22px] mt-[120px] ml-[100px] duration-300 text-[15px] rounded-[2px]
                     ${state.enabled ? "bg-darkMode text-whiteMode" : "bg-whiteMode text-darkMode"}`}
                 onClick={setRelief}>
                     {state.relief ? "2d" : "3d"}</button>
-        {/* <button className={`absolute w-[22px] h-[22px] mt-[120px] ml-[132px] duration-300 text-[15px] rounded-[2px]
+        <button className={`absolute w-[22px] h-[22px] mt-[120px] ml-[132px] duration-300 text-[15px] rounded-[2px]
                     ${state.enabled ? "bg-darkMode" : "bg-whiteMode"}`}
-                onClick={() => {setRain(!rain)}}>
-                    {!rain ? "🌧️" : "☀️"}</button> */}
+                onClick={setRain}>
+                    {!state.rain ? "🌧️" : "☀️"}</button>
         <SelectLang setSelected={changeLang} darkmode={state.enabled}/>
         <ZoomInOut enabled={state.enabled} setZoom={zoomInOut} />
         <DarkMode enabled={state.enabled} changeMode={changeMode} className="absolute ml-[calc(100%-60px)] mt-[120px]"/>

@@ -1,12 +1,10 @@
 "use client";
 
-import React, { useRef, use, useState } from "react";
-import MapDisplay from "@/component/map";
+import React, { use, useState } from "react";
 import "@/styles/globals.css";
-import DarkMode from "@/component/darkmode";
 import atoi from "@/script/atoi";
-import ZoomInOut from "@/component/zoom_in_out";
-import SelectLang from "@/component/select_option";
+
+import GetMapboxMap from "@/component/get_map";
 
 export default function MapNbr(
     props: {
@@ -48,7 +46,7 @@ export default function MapNbr(
     const [selected, setSelected] = useState<string>("fr");
     return (
         <>
-            <button className={`absolute w-[22px] h-[22px] mt-[120px] ml-[100px] duration-300 text-[15px] rounded-[2px]
+            {/* <button className={`absolute w-[22px] h-[22px] mt-[120px] ml-[100px] duration-300 text-[15px] rounded-[2px]
                         ${enabled ? "bg-darkMode text-whiteMode" : "bg-whiteMode text-darkMode"}`}
                     onClick={() => {setRelief(!relief)}}>
                         {relief ? "2d" : "3d"}</button>
@@ -86,7 +84,8 @@ export default function MapNbr(
             </form>
             <div className="mt-[30px] flex items-center justify-center w-full">
                 <MapDisplay y={lat} x={long} zoom={zoom} zoom2={zoom2} lang={selected} reset={reset} darkMode={enabled} relief={relief} rain={rain}/>
-            </div>
+            </div> */}
+            <GetMapboxMap />
         </>
     )
 }
