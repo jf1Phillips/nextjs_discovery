@@ -66,6 +66,9 @@ export default function GetMapboxMap (): JSX.Element
                 add_marker(DEFAULT_VALUE.long, DEFAULT_VALUE.lat, map.current, "paris");
                 json_load("/json_files/test.json", "fr", map.current);
             });
+            map.current.once("style.load", () => {
+                map.current?.setPaintProperty('water', 'fill-color', 'rgba(14, 122, 155, 1)');
+            });
         }
     });
 
@@ -97,6 +100,9 @@ export default function GetMapboxMap (): JSX.Element
                 enabled: !prev.enabled,
             };
             map.current?.setStyle(style[new_state.style_nbr]);
+            map.current?.once("style.load", () => {
+                map.current?.setPaintProperty('water', 'fill-color', new_state.enabled ? 'rgba(14, 15, 99, 1)': 'rgba(14, 122, 155, 1)');
+            });
             return new_state;
         });
     }
