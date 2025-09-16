@@ -11,11 +11,38 @@ import "@/styles/globals.css";
 import set3dTerrain from "./mapbox_functions/set3dterrain";
 import addBunker from "./mapbox_functions/addBunker";
 import addGeoImg from "./mapbox_functions/add_geoimg";
-import { add_marker, remove_marker } from "@/component/map";
 import get_loc from "@/script/get_loc";
 import atoi from "@/script/atoi";
 import json_load from "./json_load";
 import addRain from "./mapbox_functions/addRain";
+
+const markers: mapboxgl.Marker[] = [];
+const custom_rm: mapboxgl.Marker[] = [];
+
+export function add_marker(long: number, lat: number, map: MapboxMap, str: string, rm ?: boolean): void
+{
+    const popup = new mapboxgl.Popup({offset: 10})
+        .setHTML(`<p>${str}</p>`);
+    const div_marker: HTMLDivElement = document.createElement('div');
+    div_marker.className = "marker mt-[-15px] bg-[url(/img/map_pin.png)] bg-cover w-[30px] h-[30px] cursor-pointer";
+    const marker = new mapboxgl.Marker(div_marker).setLngLat([long, lat]).addTo(map);
+
+    marker.setPopup(popup);
+    markers.push(marker);
+    if (rm)
+        custom_rm.push(marker);
+}
+
+export function remove_marker(custom ?: boolean): void
+{
+    if (custom) {
+        custom_rm.forEach(marker => {marker.remove()});
+        custom_rm.length = 0;
+        return;
+    }
+    markers.forEach(marker => {marker.remove()});
+    markers.length = 0;
+}
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN as string;
 
@@ -41,9 +68,9 @@ const DEFAULT_VALUE: MapVar = {
     rain: false,
 };
 
-export default function GetMapboxMap (): JSX.Element
+export default function GetMapboxMap ({def_zoom}: {def_zoom: number}): JSX.Element
 {
-    const [state, setState] = useState<MapVar>(DEFAULT_VALUE);
+    const [state, setState] = useState<MapVar>(({...DEFAULT_VALUE, zoom: def_zoom}));
     const map = useRef<MapboxMap | null>(null);
     const container = useRef<HTMLDivElement | null>(null);
     const style: string[] = ["mapbox://styles/mapbox/light-v10", "mapbox://styles/mapbox/dark-v10"];

@@ -1,5 +1,5 @@
 import {Map as MapboxMap} from "mapbox-gl";
-import { add_marker, remove_marker } from "./map";
+import { remove_marker, add_marker } from "./get_map";
 
 async function get_json_data(file_name: string): Promise<any | undefined> {
     try {
