@@ -107,8 +107,16 @@ export default function GetMapboxMap (): JSX.Element
         });
     }
 
+    const zoomInOut = (z: "in" | "out") => {
+        map.current?.easeTo({
+            zoom: map.current.getZoom() + (z == "in" ? 1 : -1),
+            duration: 300,
+        });
+    };
+
     return (<>
         <SelectLang selected={selected} setSelected={setSelected} darkmode={state.enabled}/>
+        <ZoomInOut enabled={state.enabled} setZoom={zoomInOut} />
         <DarkMode enabled={state.enabled} changeMode={changeMode} className="absolute ml-[calc(100%-60px)] mt-[120px]"/>
         <form className="text-customWhite flex flex-col items-center justify-center mt-4"
                 onSubmit={submitEvent}>
