@@ -4,7 +4,6 @@ import { JSX } from "react";
 import SelectLang from "@/component/select_option";
 import ZoomInOut from "@/component/zoom_in_out";
 import DarkMode from "@/component/darkmode";
-import MapDisplay from "@/component/map";
 import React, { useState, useRef, useEffect } from "react";
 import mapboxgl, {Map as MapboxMap} from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
@@ -15,7 +14,6 @@ import addGeoImg from "./mapbox_functions/add_geoimg";
 import { add_marker, remove_marker } from "@/component/map";
 import get_loc from "@/script/get_loc";
 import atoi from "@/script/atoi";
-import { stat } from "fs";
 import json_load from "./json_load";
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN as string;
@@ -26,6 +24,8 @@ type MapVar = {
     lat: number;
     style_nbr: number;
     enabled: boolean;
+    lang: string;
+    relief: boolean
 };
 
 const DEFAULT_VALUE: MapVar = {
@@ -34,15 +34,32 @@ const DEFAULT_VALUE: MapVar = {
     lat: 48.8566,
     style_nbr: 0,
     enabled: false,
+    lang: "fr",
+    relief: false,
 };
 
 export default function GetMapboxMap (): JSX.Element
 {
     const [state, setState] = useState<MapVar>(DEFAULT_VALUE);
-    const [selected, setSelected] = useState<string>("fr");
     const map = useRef<MapboxMap | null>(null);
     const container = useRef<HTMLDivElement | null>(null);
     const style: string[] = ["mapbox://styles/mapbox/light-v10", "mapbox://styles/mapbox/dark-v10"];
+
+    const add_all_things = (new_state: MapVar) => {
+        if (!map.current) return;
+        remove_marker();
+        addBunker(map.current);
+        add_marker(2.10, 48.15, map.current, "Personal bunker");
+        get_loc().then(location => {
+            if (!location || !map.current) return;
+            add_marker(location.long, location.lat, map.current, "your location");
+        });
+        add_marker(DEFAULT_VALUE.long, DEFAULT_VALUE.lat, map.current, "paris");
+        json_load("/json_files/test.json", new_state.lang, map.current);
+        addGeoImg(`/geo_map_${new_state.lang}.png`, map.current);
+        map.current?.setPaintProperty('water', 'fill-color', new_state.enabled ? 'rgba(14, 15, 99, 1)': 'rgba(14, 122, 155, 1)');
+        set3dTerrain(map.current, !state.relief);
+    }
 
     useEffect(() => {
         if (!map.current) {
@@ -53,24 +70,9 @@ export default function GetMapboxMap (): JSX.Element
                 zoom: state.zoom,
                 center: [state.long, state.lat],
             });
-            map.current.on("style.load", () => {
-                if (!map.current) return;
-                remove_marker();
-                addBunker(map.current);
-                addGeoImg("/geo_map_fr.png", map.current);
-                add_marker(2.10, 48.15, map.current, "Personal bunker");
-                get_loc().then(location => {
-                    if (!location || !map.current) return;
-                    add_marker(location.long, location.lat, map.current, "your location");
-                });
-                add_marker(DEFAULT_VALUE.long, DEFAULT_VALUE.lat, map.current, "paris");
-                json_load("/json_files/test.json", "fr", map.current);
-            });
-            map.current.once("style.load", () => {
-                map.current?.setPaintProperty('water', 'fill-color', 'rgba(14, 122, 155, 1)');
-            });
+            map.current.once("style.load", () => add_all_things(state));
         }
-    });
+    }, []);
 
     const submitEvent = (event: React.FormEvent) => {
         event.preventDefault();
@@ -100,9 +102,7 @@ export default function GetMapboxMap (): JSX.Element
                 enabled: !prev.enabled,
             };
             map.current?.setStyle(style[new_state.style_nbr]);
-            map.current?.once("style.load", () => {
-                map.current?.setPaintProperty('water', 'fill-color', new_state.enabled ? 'rgba(14, 15, 99, 1)': 'rgba(14, 122, 155, 1)');
-            });
+            map.current?.once("style.load", () => add_all_things(new_state));
             return new_state;
         });
     }
@@ -114,8 +114,32 @@ export default function GetMapboxMap (): JSX.Element
         });
     };
 
+    const changeLang = (lang: string) => {
+        if (!map.current || !map.current.isStyleLoaded()) return;
+        json_load("/json_files/test.json", lang, map.current);
+        addGeoImg(`/geo_map_${lang}.png`, map.current);
+        setState(prev => ({
+            ...prev,
+            lang: lang,
+        }));
+    };
+
+    const setRelief = () => {
+        if (!map.current || !map.current.isStyleLoaded()) return;
+        set3dTerrain(map.current, state.relief);
+        setState(prev => ({...prev, relief: !state.relief}));
+    };
+
     return (<>
-        <SelectLang selected={selected} setSelected={setSelected} darkmode={state.enabled}/>
+        <button className={`absolute w-[22px] h-[22px] mt-[120px] ml-[100px] duration-300 text-[15px] rounded-[2px]
+                    ${state.enabled ? "bg-darkMode text-whiteMode" : "bg-whiteMode text-darkMode"}`}
+                onClick={setRelief}>
+                    {state.relief ? "2d" : "3d"}</button>
+        {/* <button className={`absolute w-[22px] h-[22px] mt-[120px] ml-[132px] duration-300 text-[15px] rounded-[2px]
+                    ${state.enabled ? "bg-darkMode" : "bg-whiteMode"}`}
+                onClick={() => {setRain(!rain)}}>
+                    {!rain ? "🌧️" : "☀️"}</button> */}
+        <SelectLang setSelected={changeLang} darkmode={state.enabled}/>
         <ZoomInOut enabled={state.enabled} setZoom={zoomInOut} />
         <DarkMode enabled={state.enabled} changeMode={changeMode} className="absolute ml-[calc(100%-60px)] mt-[120px]"/>
         <form className="text-customWhite flex flex-col items-center justify-center mt-4"

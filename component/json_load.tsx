@@ -15,6 +15,7 @@ async function get_json_data(file_name: string): Promise<any | undefined> {
 }
 
 export default function json_load(file: string, lang: string, map: MapboxMap) {
+    remove_marker(true);
     get_json_data(file).then(response => {
         if (!response)
             return;
@@ -24,7 +25,7 @@ export default function json_load(file: string, lang: string, map: MapboxMap) {
                 break;
             const longlat: number[] = response.points[i].latlong;
             const langage: string = response.points[i].name[lang] ? lang : "fr";
-            add_marker(longlat[1], longlat[0], map, response.points[i].name[langage]);
+            add_marker(longlat[1], longlat[0], map, response.points[i].name[langage], true);
             ++it;
         }
     });
