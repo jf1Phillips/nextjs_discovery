@@ -1,8 +1,5 @@
-"use client";
-import { useEffect, useState } from "react";
 import {Map as MapboxMap} from "mapbox-gl";
-import { add_marker } from "./map";
-import { isUndefined } from "node:util";
+import { add_marker, remove_marker } from "./map";
 
 async function get_json_data(file_name: string): Promise<any | undefined> {
     try {
@@ -27,7 +24,7 @@ export default function json_load(file: string, lang: string, map: MapboxMap) {
                 break;
             const longlat: number[] = response.points[i].latlong;
             const langage: string = response.points[i].name[lang] ? lang : "fr";
-            add_marker(longlat[1], longlat[0], map, response.points[i].name[langage], true);
+            add_marker(longlat[1], longlat[0], map, response.points[i].name[langage]);
             ++it;
         }
     });

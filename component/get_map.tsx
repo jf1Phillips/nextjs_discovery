@@ -16,6 +16,7 @@ import { add_marker, remove_marker } from "@/component/map";
 import get_loc from "@/script/get_loc";
 import atoi from "@/script/atoi";
 import { stat } from "fs";
+import json_load from "./json_load";
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN as string;
 
@@ -24,6 +25,7 @@ type MapVar = {
     long: number;
     lat: number;
     style_nbr: number;
+    enabled: boolean;
 };
 
 const DEFAULT_VALUE: MapVar = {
@@ -31,11 +33,13 @@ const DEFAULT_VALUE: MapVar = {
     long: 2.35522,
     lat: 48.8566,
     style_nbr: 0,
+    enabled: false,
 };
 
 export default function GetMapboxMap (): JSX.Element
 {
     const [state, setState] = useState<MapVar>(DEFAULT_VALUE);
+    const [selected, setSelected] = useState<string>("fr");
     const map = useRef<MapboxMap | null>(null);
     const container = useRef<HTMLDivElement | null>(null);
     const style: string[] = ["mapbox://styles/mapbox/light-v10", "mapbox://styles/mapbox/dark-v10"];
@@ -51,15 +55,16 @@ export default function GetMapboxMap (): JSX.Element
             });
             map.current.on("style.load", () => {
                 if (!map.current) return;
+                remove_marker();
                 addBunker(map.current);
                 addGeoImg("/geo_map_fr.png", map.current);
                 add_marker(2.10, 48.15, map.current, "Personal bunker");
-                map.current.setPaintProperty('water', 'fill-color', 'rgba(14, 122, 155, 1)');
                 get_loc().then(location => {
                     if (!location || !map.current) return;
                     add_marker(location.long, location.lat, map.current, "your location");
                 });
-                add_marker(state.long, state.lat, map.current, "paris");
+                add_marker(DEFAULT_VALUE.long, DEFAULT_VALUE.lat, map.current, "paris");
+                json_load("/json_files/test.json", "fr", map.current);
             });
         }
     });
@@ -84,12 +89,21 @@ export default function GetMapboxMap (): JSX.Element
         });
     };
 
-    const [selected, setSelected] = useState<string>("fr");
-    const [enabled, setEnabled] = useState<boolean>(false);
+    const changeMode = () => {
+        setState(prev => {
+            const new_state: MapVar = {
+                ...prev,
+                style_nbr: (prev.style_nbr + 1) % style.length,
+                enabled: !prev.enabled,
+            };
+            map.current?.setStyle(style[new_state.style_nbr]);
+            return new_state;
+        });
+    }
 
     return (<>
-        <SelectLang selected={selected} setSelected={setSelected} darkmode={enabled}/>
-        <DarkMode enabled={enabled} setEnabled={setEnabled} className="absolute ml-[calc(100%-60px)] mt-[120px]"/>
+        <SelectLang selected={selected} setSelected={setSelected} darkmode={state.enabled}/>
+        <DarkMode enabled={state.enabled} changeMode={changeMode} className="absolute ml-[calc(100%-60px)] mt-[120px]"/>
         <form className="text-customWhite flex flex-col items-center justify-center mt-4"
                 onSubmit={submitEvent}>
             <div className="flex flex-row gap-x-[10vw]">
