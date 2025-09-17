@@ -67,7 +67,9 @@ const DEFAULT_VALUE: MapVar = {
     rain: false,
 };
 
-export default function GetMapboxMap ({def_zoom}: {def_zoom: number}): JSX.Element
+export default function GetMapboxMap (
+    {def_zoom, enbl, setEnbl}: {def_zoom: number, enbl: boolean, setEnbl: React.Dispatch<React.SetStateAction<boolean>>}
+): JSX.Element
 {
     const [state, setState] = useState<MapVar>(({...DEFAULT_VALUE, zoom: def_zoom}));
     const map = useRef<MapboxMap | null>(null);
@@ -125,6 +127,7 @@ export default function GetMapboxMap ({def_zoom}: {def_zoom: number}): JSX.Eleme
     };
 
     const changeMode = () => {
+        setEnbl(!enbl);
         setState(prev => {
             const new_state: MapVar = {
                 ...prev,
