@@ -1,10 +1,9 @@
 "use client";
 
-import { JSX } from "react";
 import SelectLang from "@/component/select_option";
 import ZoomInOut from "@/component/zoom_in_out";
 import DarkMode from "@/component/darkmode";
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, JSX } from "react";
 import mapboxgl, {Map as MapboxMap} from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import "@/styles/globals.css";
