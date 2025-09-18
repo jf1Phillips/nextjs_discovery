@@ -39,12 +39,13 @@ function DisplayTxt({enabled, setStateTextNbr}:
             <button className={`w-[30px] h-[30px] text-[15px] rounded-full duration-200
                 flex items-center justify-center hover:mb-[10px]
                 ${enabled ? "bg-whiteModeOp text-darMode" : "bg-darkModeOp text-whiteMode"}`}
-                onClick={() => setUp(!up)}>{up ? "△" : "▽"}</button>
+                onClick={() => setUp(!up)}>{!up ? "△" : "▽"}</button>
         </div>
 
-        <div className={`flex-row flex justify-between duration-300 items-center rounded-t-[10px]
+        <div className={`flex-row flex justify-between duration-300 rounded-t-[10px]
             ${enabled ? "bg-darkModeOp text-whiteMode" : "bg-whiteModeOp text-darkMode"}
-            fixed bottom-0 w-full h-[70px] px-[20px]`}>
+                ${up ? "h-[200px] pt-[20px]" : "h-[70px] items-center"}
+                fixed bottom-0 w-full px-[20px]`}>
             <button className={`text-[20px] duration-300 h-[25px] w-[40px] items-center justify-center flex rounded-[5px]
                 ${enabled ? "bg-whiteMode text-darkMode" : "bg-darkMode text-whiteMode"}`}
                 onClick={() => {click_btn(-1)}}
