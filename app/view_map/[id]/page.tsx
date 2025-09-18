@@ -1,13 +1,13 @@
 "use client";
 
-import React, { use, useEffect, useState } from "react";
+import React, { use, useState } from "react";
 import "@/styles/globals.css";
 import atoi from "@/script/atoi";
 
 import GetMapboxMap from "@/component/get_map";
 
 function DisplayTxt({enabled}: {enabled: boolean}): React.JSX.Element {
-    const [displayText, setDisplayText] = useState<string>("loading...");
+    const [displayText, setDisplayText] = useState<string>("start...");
     const [textNbr, setTextNbr] = useState<number>(1);
 
     const api_req: (nbr: number) => string = (nbr:number) => `https://dilexit-back-1001788493975.europe-west9.run.app/bible/pericopes/${nbr}`;
@@ -18,9 +18,10 @@ function DisplayTxt({enabled}: {enabled: boolean}): React.JSX.Element {
         });
     };
 
-    useEffect(() => set_text_data(textNbr), []);
+    if (displayText == "start...")
+        set_text_data(textNbr);
     const click_btn: (add: number) => void = (add: number) => {
-        var new_nbr: number = textNbr + add;
+        let new_nbr: number = textNbr + add;
         const max = 50;
 
         if (new_nbr <= 0) new_nbr = max;
