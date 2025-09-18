@@ -13,7 +13,9 @@ module.exports = {
         customGrey2Hover: 'rgba(68, 50, 82, 1)',
         customWhite: 'rgba(255, 255, 255, 1)',
         darkMode: 'rgba(26, 18, 31, 1)',
+        darkModeOp: 'rgba(26, 18, 31, 0.7)',
         whiteMode: 'rgba(255, 255, 255, 1)',
+        whiteModeOp: 'rgba(255, 255, 255, 0.7)',
       }
     },
   },
