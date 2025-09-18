@@ -110,7 +110,7 @@ export default function GetMapboxMap (
 
     if (prevNbr != textNbr && map.current) {
         setPrevNbr(textNbr);
-        json_load("/json_files/test.json", state.lang, map.current, textNbr);
+        json_load("/json_files/test.json", state.lang, map.current, textNbr, true);
     }
 
     const submitEvent = (event: React.FormEvent) => {
