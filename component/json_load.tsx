@@ -14,19 +14,21 @@ async function get_json_data(file_name: string): Promise<any | undefined> {
     }
 }
 
-export default function json_load(file: string, lang: string, map: MapboxMap) {
+export default function json_load(file: string, lang: string, map: MapboxMap, index_off: number) {
     remove_marker(true);
     get_json_data(file).then(response => {
         if (!response)
             return;
-        var it: number = 0;
-        for (const i in response.points) {
-            if (it >= 20)
-                break;
-            const longlat: number[] = response.points[i].latlong;
-            const langage: string = response.points[i].name[lang] ? lang : "fr";
-            add_marker(longlat[1], longlat[0], map, response.points[i].name[langage], true);
-            ++it;
-        }
+        const longlat: number[] = response.points[index_off].latlong;
+        const langage: string = response.points[index_off].name[lang] ? lang : "fr";
+        map.easeTo({
+            zoom: 5,
+            duration: 1000,
+        });
+        setTimeout(() => {
+            add_marker(longlat[1], longlat[0], map, response.points[index_off].name[langage], true);
+            map.easeTo({zoom: 10,
+            center: [longlat[1], longlat[0]],
+            duration: 1500})}, 1000);
     });
 }

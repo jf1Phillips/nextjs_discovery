@@ -6,7 +6,9 @@ import atoi from "@/script/atoi";
 
 import GetMapboxMap from "@/component/get_map";
 
-function DisplayTxt({enabled}: {enabled: boolean}): React.JSX.Element {
+function DisplayTxt({enabled, setStateTextNbr}:
+    {enabled: boolean, setStateTextNbr:  React.Dispatch<React.SetStateAction<number>>}):React.JSX.Element
+{
     const [displayText, setDisplayText] = useState<string>("start...");
     const [textNbr, setTextNbr] = useState<number>(1);
 
@@ -16,6 +18,7 @@ function DisplayTxt({enabled}: {enabled: boolean}): React.JSX.Element {
                 fetch(api_req(id)).then(res => res.json()).then(data => {
             setDisplayText(data.name);
         });
+        setStateTextNbr(id);
     };
 
     if (displayText == "start...")
@@ -53,12 +56,13 @@ export default function MapNbr(
 ) {
     const params = use(props.params);
     const [enabled, setEnabled] = useState<boolean>(false);
+    const [stateTextNbr, setStateTextNbr] = useState<number>(1);
 
 
     return (
         <>
-            <GetMapboxMap def_zoom={atoi(params.id, 10)} enbl={enabled} setEnbl={setEnabled} />
-            <DisplayTxt enabled={enabled} />
+            <GetMapboxMap def_zoom={atoi(params.id, 10)} enbl={enabled} setEnbl={setEnabled} textNbr={stateTextNbr}/>
+            <DisplayTxt enabled={enabled} setStateTextNbr={setStateTextNbr}/>
         </>
     )
 }

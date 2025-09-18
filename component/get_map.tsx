@@ -68,10 +68,12 @@ const DEFAULT_VALUE: MapVar = {
 };
 
 export default function GetMapboxMap (
-    {def_zoom, enbl, setEnbl}: {def_zoom: number, enbl: boolean, setEnbl: React.Dispatch<React.SetStateAction<boolean>>}
+    {def_zoom, enbl, setEnbl, textNbr}:
+    {def_zoom: number, enbl: boolean, setEnbl: React.Dispatch<React.SetStateAction<boolean>>, textNbr: number}
 ): JSX.Element
 {
     const [state, setState] = useState<MapVar>(({...DEFAULT_VALUE, zoom: def_zoom}));
+    const [prevNbr, setPrevNbr] = useState<number>(0);
     const map = useRef<MapboxMap | null>(null);
     const container = useRef<HTMLDivElement | null>(null);
     const style: string[] = ["mapbox://styles/mapbox/light-v10", "mapbox://styles/mapbox/dark-v10"];
@@ -86,7 +88,7 @@ export default function GetMapboxMap (
             add_marker(location.long, location.lat, map.current, "your location");
         });
         add_marker(DEFAULT_VALUE.long, DEFAULT_VALUE.lat, map.current, "paris");
-        json_load("/json_files/test.json", new_state.lang, map.current);
+        json_load("/json_files/test.json", new_state.lang, map.current, textNbr);
         addGeoImg(`/geo_map_${new_state.lang}.png`, map.current);
         map.current?.setPaintProperty('water', 'fill-color', new_state.enabled ? 'rgba(14, 15, 99, 1)': 'rgba(14, 122, 155, 1)');
         set3dTerrain(map.current, !state.relief);
@@ -105,6 +107,11 @@ export default function GetMapboxMap (
             map.current.once("style.load", () => add_all_things(state));
         }
     }, []);
+
+    if (prevNbr != textNbr && map.current) {
+        setPrevNbr(textNbr);
+        json_load("/json_files/test.json", state.lang, map.current, textNbr);
+    }
 
     const submitEvent = (event: React.FormEvent) => {
         event.preventDefault();
@@ -149,7 +156,7 @@ export default function GetMapboxMap (
 
     const changeLang = (lang: string) => {
         if (!map.current || !map.current.isStyleLoaded()) return;
-        json_load("/json_files/test.json", lang, map.current);
+        json_load("/json_files/test.json", lang, map.current, textNbr);
         addGeoImg(`/geo_map_${lang}.png`, map.current);
         setState(prev => ({
             ...prev,
