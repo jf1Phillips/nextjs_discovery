@@ -19,15 +19,28 @@ function DisplayTxt({enabled}: {enabled: boolean}): React.JSX.Element {
     };
 
     useEffect(() => set_text_data(textNbr), []);
+    const click_btn: (add: number) => void = (add: number) => {
+        var new_nbr: number = textNbr + add;
+        const max = 50;
+
+        if (new_nbr <= 0) new_nbr = max;
+        if (new_nbr > max) new_nbr = 1;
+        setTextNbr(new_nbr);
+        set_text_data(new_nbr);
+    };
     return (<>
         <div className={`flex-row flex justify-between duration-300 items-center rounded-t-[10px]
             ${enabled ? "bg-darkModeOp text-whiteMode" : "bg-whiteModeOp text-darkMode"}
-            fixed mt-[-68px] w-[100%] h-[70] px-[20px]`}>
+            fixed mt-[-67px] w-[100%] h-[70] px-[20px]`}>
             <button className={`text-[20px] duration-300 h-[25px] w-[40px] items-center justify-center flex rounded-[5px]
-                ${enabled ? "bg-whiteMode text-darkMode" : "bg-darkMode text-whiteMode"}`}>{"<"}</button>
+                ${enabled ? "bg-whiteMode text-darkMode" : "bg-darkMode text-whiteMode"}`}
+                onClick={() => {click_btn(-1)}}
+                >{"<"}</button>
             <p className="text-[16px]">{displayText}</p>
             <button className={`text-[20px] duration-300  h-[25px] w-[40px] items-center justify-center flex rounded-[5px]
-                ${enabled ? "bg-whiteMode text-darkMode" : "bg-darkMode text-whiteMode"}`}>{">"}</button>
+                ${enabled ? "bg-whiteMode text-darkMode" : "bg-darkMode text-whiteMode"}`}
+                onClick={() => {click_btn(1)}}
+                >{">"}</button>
         </div>
     </>);
 }
