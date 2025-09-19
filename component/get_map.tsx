@@ -73,7 +73,7 @@ export default function GetMapboxMap (
 ): JSX.Element
 {
     const [state, setState] = useState<MapVar>(({...DEFAULT_VALUE, zoom: def_zoom}));
-    const [prevNbr, setPrevNbr] = useState<number>(0);
+    const [prevNbr, setPrevNbr] = useState<number>(1);
     const map = useRef<MapboxMap | null>(null);
     const container = useRef<HTMLDivElement | null>(null);
     const style: string[] = ["mapbox://styles/mapbox/light-v10", "mapbox://styles/mapbox/dark-v10"];
@@ -110,6 +110,7 @@ export default function GetMapboxMap (
 
     if (prevNbr != textNbr && map.current) {
         setPrevNbr(textNbr);
+        console.log("OKOK");
         json_load("/json_files/test.json", state.lang, map.current, textNbr, true);
     }
 

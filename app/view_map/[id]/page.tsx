@@ -45,7 +45,7 @@ function DisplayTxt({enabled, setStateTextNbr}:
         <div className={`flex-row flex justify-between duration-300 rounded-t-[10px]
             ${enabled ? "bg-darkModeOp text-whiteMode" : "bg-whiteModeOp text-darkMode"}
                 ${up ? "h-[200px] pt-[20px]" : "h-[70px] items-center"}
-                fixed bottom-0 w-full px-[20px]`}>
+                absolute bottom-0 w-full px-[20px]`}>
             <button className={`text-[20px] duration-300 h-[25px] w-[40px] items-center justify-center flex rounded-[5px]
                 ${enabled ? "bg-whiteMode text-darkMode" : "bg-darkMode text-whiteMode"}`}
                 onClick={() => {click_btn(-1)}}
