@@ -32,11 +32,11 @@ function deg2rad(deg: number): number {
 export const lerp = (a: number, b: number, t: number) => a + t * (b - a);
 export const invlerp = (a: number, b: number, v: number) => (v - a) / (b - a);
 export const remap = (
-  v: number,
-  oMin: number,
-  oMax: number,
-  rMin: number,
-  rMax: number
+    v: number,
+    oMin: number,
+    oMax: number,
+    rMin: number,
+    rMax: number
 ) => lerp(rMin, rMax, invlerp(oMin, oMax, v));
 
 export default function json_load(file: string, lang: string, map: MapboxMap, index_off: number, move ?: boolean) {
@@ -50,14 +50,14 @@ export default function json_load(file: string, lang: string, map: MapboxMap, in
         const dist = haversine(latlong[0], latlong[1], center.lat, center.lng);
         add_marker(latlong[1], latlong[0], map, response.points[index_off].name[langage], true);
         if (!move) return;
+        const zoom = Math.max(map.getZoom() - remap(dist, 0, 2000, 1, 5), 2);
         const wait = remap(dist, 0, 2000, 200, 2000);
-        map.easeTo({
-            zoom: Math.max(map.getZoom() - remap(dist, 0, 2000, 1, 5), 2),
-            duration: wait,
-        });
+        const time_out = zoom == 2 ? 0 : wait;
+        if (zoom != 2)
+            map.easeTo({zoom: zoom, duration: wait,});
         setTimeout(() => {
             map.easeTo({zoom: 10,
             center: [latlong[1], latlong[0]],
-            duration: wait})}, wait);
+            duration: wait})}, time_out);
     });
 }
