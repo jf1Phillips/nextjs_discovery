@@ -106,6 +106,7 @@ export default function GetMapboxMap (
             });
             map.current.once("style.load", () => add_all_things(state));
         }
+        return () => {map.current?.remove()};
     }, []);
 
     if (prevNbr != textNbr && map.current) {
