@@ -9,7 +9,7 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import "@/styles/globals.css";
 import set3dTerrain from "./mapbox_functions/set3dterrain";
 import addBunker from "./mapbox_functions/addBunker";
-import addGeoImg from "./mapbox_functions/add_geoimg";
+import addGeoImg, { addRoads } from "./mapbox_functions/add_geoimg";
 import get_loc from "@/script/get_loc";
 import atoi from "@/script/atoi";
 import json_load from "./json_load";
@@ -60,6 +60,9 @@ const DEFAULT_VALUE: MapVar = {
     zoom: 1,
     long: 2.35522,
     lat: 48.8566,
+    // zoom: 12,
+    // long: 35,
+    // lat: 32.8,
     style_nbr: 0,
     enabled: false,
     lang: "fr",
@@ -90,6 +93,7 @@ export default function GetMapboxMap (
         add_marker(DEFAULT_VALUE.long, DEFAULT_VALUE.lat, map.current, "paris");
         json_load("/json_files/test.json", new_state.lang, map.current, textNbr);
         addGeoImg(`/geo_map_${new_state.lang}.png`, map.current);
+        addRoads("/geoJson_files/route_palestine_merged.geojson", map.current);
         map.current?.setPaintProperty('water', 'fill-color', new_state.enabled ? 'rgba(14, 15, 99, 1)': 'rgba(14, 122, 155, 1)');
         set3dTerrain(map.current, !state.relief);
         addRain(map.current, !state.rain);
@@ -177,7 +181,20 @@ export default function GetMapboxMap (
         addRain(map.current, state.rain);
         setState(prev => ({...prev, rain: !prev.rain}));
     }
+    const [sliderValue, setSliderValue] = useState(50);
 
+    const changeOpacity = (value: number) => {
+        setSliderValue(value);
+        if (!map.current) return;
+        const layers = map.current.getStyle()?.layers || [];
+        layers.forEach(layer => {
+            if (layer.id.includes("geo_map")) {
+                try {
+                    map.current!.setPaintProperty(layer.id, "raster-opacity", value / 100.0);
+                } catch (e) {}
+            }
+        });
+    };
     return (<>
         <button className={`absolute w-[22px] h-[22px] mt-[120px] ml-[100px] duration-300 text-[15px] rounded-[2px]
                     ${state.enabled ? "bg-darkMode text-whiteMode" : "bg-whiteMode text-darkMode"}`}
@@ -187,6 +204,18 @@ export default function GetMapboxMap (
                     ${state.enabled ? "bg-darkMode" : "bg-whiteMode"}`}
                 onClick={setRain}>
                     {!state.rain ? "🌧️" : "☀️"}</button>
+        <div className="absolute mt-[90px] h-[22px] ml-[10px] flex items-center w-[120px] z-10">
+            <input type="range" min={0} max={100} value={sliderValue} onChange={e => changeOpacity(Number(e.target.value))}
+                className={`w-full h-[10px] rounded-lg appearance-none cursor-pointer duration-300
+                ${!state.enabled ? "bg-whiteMode accent-darkMode" : "bg-darkMode accent-whiteMode"}`}
+            />
+            <p className="ml-[10px] text-whiteMode"
+                style={{ minWidth: "40px" }}
+            >
+                {sliderValue}
+            </p>
+        </div>
+
         <SelectLang setSelected={changeLang} darkmode={state.enabled}/>
         <ZoomInOut enabled={state.enabled} setZoom={zoomInOut} />
         <DarkMode enabled={state.enabled} changeMode={changeMode} className="absolute ml-[calc(100%-60px)] mt-[120px]"/>
