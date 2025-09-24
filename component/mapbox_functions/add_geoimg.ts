@@ -1,5 +1,30 @@
 import { Map as MapBoxMap } from "mapbox-gl";
 
+export function addRoads(url_given: string, map: MapBoxMap)
+{
+    if (!map.getSource(url_given)) {
+        map.addSource(url_given, {
+            type: 'geojson',
+            data: url_given
+        });
+    }
+    if (!map.getLayer(url_given)) {
+        map.addLayer({
+            id: url_given,
+            type: 'line',
+            source: url_given,
+            layout: {
+                'line-join': 'round',
+                'line-cap': 'round'
+            },
+            paint: {
+                'line-color': '#ff0000',
+                'line-width': 3
+            }
+        });
+    }
+}
+
 export default function addGeoImg(url_given: string, map: MapBoxMap)
 {
     const layers = map.getStyle().layers;
@@ -15,10 +40,10 @@ export default function addGeoImg(url_given: string, map: MapBoxMap)
             type: 'image',
             url: url,
             coordinates: [
-                [33.6751210, 33.7012944],
-                [36.6274031, 33.7012944],
-                [36.6274031, 31.1730673],
-                [33.6751210, 31.1730673],
+                [33.6791210, 33.6868944],
+                [36.6262031, 33.6868944],
+                [36.6262031, 31.1730673],
+                [33.6791210, 31.1730673],
             ]
         });
     }
@@ -28,7 +53,7 @@ export default function addGeoImg(url_given: string, map: MapBoxMap)
             type: 'raster',
             source: url,
             paint: {
-                'raster-opacity': 0.9,
+                'raster-opacity': 0.5,
             }
         });
     } else {
