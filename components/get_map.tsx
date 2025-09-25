@@ -1,8 +1,8 @@
 "use client";
 
-import SelectLang from "@/component/select_option";
-import ZoomInOut from "@/component/zoom_in_out";
-import DarkMode from "@/component/darkmode";
+import SelectLang from "@/components/select_option";
+import ZoomInOut from "@/components/zoom_in_out";
+import DarkMode from "@/components/darkmode";
 import React, { useState, useRef, useEffect, JSX } from "react";
 import mapboxgl, {Map as MapboxMap} from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
@@ -116,7 +116,7 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
             map.current.once("style.load", () => add_all_things(state));
         }
         return () => {map.current?.remove()};
-    }, []);
+    });
 
     if (prevNbr != textNbr && map.current) {
         setPrevNbr(textNbr);
@@ -196,7 +196,7 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
             if (layer.id.includes("geo_map")) {
                 try {
                     map.current!.setPaintProperty(layer.id, "raster-opacity", value / 100.0);
-                } catch (e) {}
+                } catch (e) {console.log(e);}
             }
         });
     };

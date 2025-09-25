@@ -1,5 +1,3 @@
-import { Map as MapboxMap } from "mapbox-gl"
-
 type DarModeArgs = {
     enabled: boolean;
     changeMode: () => void;

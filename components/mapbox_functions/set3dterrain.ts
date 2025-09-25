@@ -1,4 +1,5 @@
-import mapboxgl, {LngLat, Map as MapboxMap} from "mapbox-gl";
+import {Map as MapboxMap} from "mapbox-gl";
+
 const idbulding: string = "3dbuilding";
 
 function add3dbuilding(map: MapboxMap, remove: boolean)

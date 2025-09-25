@@ -1,15 +1,31 @@
 import {Map as MapboxMap} from "mapbox-gl";
 import { remove_marker, add_marker } from "./get_map";
 
-async function get_json_data(file_name: string): Promise<any | undefined> {
+interface Lang {
+    fr: string,
+    [key: string]: string,
+}
+
+interface Points {
+    latlong: [number, number],
+    link: string,
+    name: Lang,
+};
+
+interface json_data {
+    points: Points[],
+};
+
+async function get_json_data(file_name: string): Promise<json_data | undefined> {
     try {
         const response = await fetch(file_name);
         if (!response.ok) {
             return undefined;
         }
-        const json: any = await response.json();
+        const json: json_data = await response.json();
         return json;
-    } catch (error) {
+    } catch (e) {
+        console.log(e);
         return undefined;
     }
 }

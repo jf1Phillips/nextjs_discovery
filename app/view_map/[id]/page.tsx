@@ -3,8 +3,8 @@
 import React, { use, useState } from "react";
 import "@/styles/globals.css";
 import atoi from "@/script/atoi";
-import GetMapboxMap from "@/component/get_map";
-import DisplayTxt from "@/component/display_txt";
+import GetMapboxMap from "@/components/get_map";
+import DisplayTxt from "@/components/display_txt";
 
 export default function MapNbr(
     props: {
