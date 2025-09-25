@@ -70,10 +70,15 @@ const DEFAULT_VALUE: MapVar = {
     rain: false,
 };
 
-export default function GetMapboxMap (
-    {def_zoom, enbl, setEnbl, textNbr}:
-    {def_zoom: number, enbl: boolean, setEnbl: React.Dispatch<React.SetStateAction<boolean>>, textNbr: number}
-): JSX.Element
+interface MapArgs {
+    def_zoom: number,
+    enbl: boolean,
+    setEnbl: React.Dispatch<React.SetStateAction<boolean>>,
+    textNbr: number,
+    histdate: number
+};
+
+export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdate}: MapArgs): JSX.Element
 {
     const [state, setState] = useState<MapVar>(({...DEFAULT_VALUE, zoom: def_zoom}));
     const [prevNbr, setPrevNbr] = useState<number>(1);
