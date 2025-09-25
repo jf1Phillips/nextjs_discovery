@@ -8,7 +8,7 @@ import mapboxgl, {Map as MapboxMap} from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import "@/styles/globals.css";
 import set3dTerrain from "./mapbox_functions/set3dterrain";
-import addBunker from "./mapbox_functions/addBunker";
+import addBunker, { removeBunker } from "./mapbox_functions/addBunker";
 import addGeoImg, { addRoads } from "./mapbox_functions/add_geoimg";
 import get_loc from "@/script/get_loc";
 import atoi from "@/script/atoi";
@@ -82,6 +82,7 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
 {
     const [state, setState] = useState<MapVar>(({...DEFAULT_VALUE, zoom: def_zoom}));
     const [prevNbr, setPrevNbr] = useState<number>(1);
+    const [prevHistdate, setPrevHistdate] = useState<number>(histdate);
     const map = useRef<MapboxMap | null>(null);
     const container = useRef<HTMLDivElement | null>(null);
     const style: string[] = ["mapbox://styles/mapbox/light-v10", "mapbox://styles/mapbox/dark-v10"];
@@ -90,7 +91,7 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
         if (!map.current) return;
         remove_marker();
         addBunker(map.current);
-        add_marker(2.10, 48.15, map.current, "Personal bunker");
+        add_marker(2.10, 48.15, map.current, "Personal bunker (disparait apres 1955)");
         get_loc().then(location => {
             if (!location || !map.current) return;
             add_marker(location.long, location.lat, map.current, "your location");
@@ -122,6 +123,15 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
         setPrevNbr(textNbr);
         console.log("OKOK");
         json_load("/json_files/test.json", state.lang, map.current, textNbr, true);
+    }
+
+    if (prevHistdate != histdate && map.current) {
+        setPrevHistdate(histdate);
+        if (histdate > 1955) {
+            removeBunker(map.current);
+        } else {
+            addBunker(map.current);
+        }
     }
 
     const submitEvent = (event: React.FormEvent) => {

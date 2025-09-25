@@ -19,10 +19,9 @@ export default function DisplayTxt({enabled, setStateTextNbr, histdate, setHistD
     const set_text_data: (id: number) => void = (id: number) => {
         setDisplayText("loading...");
                 fetch(api_req(id)).then(res => res.json()).then(data => {
-            setDisplayText(`${data.name} - ${histdate + id}`);
+            setDisplayText(data.name);
         });
         setStateTextNbr(id);
-        setHistDate(histdate);
     };
 
     if (displayText == "start...")
@@ -35,6 +34,7 @@ export default function DisplayTxt({enabled, setStateTextNbr, histdate, setHistD
         if (new_nbr > max) new_nbr = 1;
         setTextNbr(new_nbr);
         set_text_data(new_nbr);
+        setHistDate(histdate + add);
     };
     return (<>
         <div className={`absolute w-full flex justify-center h-[50px] items-center duration-300
@@ -53,7 +53,7 @@ export default function DisplayTxt({enabled, setStateTextNbr, histdate, setHistD
                 ${enabled ? "bg-whiteMode text-darkMode" : "bg-darkMode text-whiteMode"}`}
                 onClick={() => {click_btn(-1)}}
                 >{"<"}</button>
-            <p className="text-[16px]">{displayText}</p>
+            <p className="text-[16px]">{displayText} - {histdate}</p>
             <button className={`text-[20px] duration-300  h-[25px] w-[40px] items-center justify-center flex rounded-[5px]
                 ${enabled ? "bg-whiteMode text-darkMode" : "bg-darkMode text-whiteMode"}`}
                 onClick={() => {click_btn(1)}}

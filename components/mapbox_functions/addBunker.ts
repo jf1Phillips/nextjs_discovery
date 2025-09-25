@@ -1,5 +1,11 @@
 import {Map as MapboxMap} from "mapbox-gl";
 
+export function removeBunker(map: MapboxMap): void
+{
+    if (map.getLayer('batiments-3d'))
+        map.setLayoutProperty('batiments-3d', 'visibility', 'none');
+}
+
 export default function addBunker(map: MapboxMap)
 {
     const bunker_id: string = "bunker_id";
@@ -24,5 +30,7 @@ export default function addBunker(map: MapboxMap)
                 'fill-extrusion-opacity': 1.0
             }
         });
+    } else {
+        map.setLayoutProperty('batiments-3d', 'visibility', 'visible');
     }
 }
