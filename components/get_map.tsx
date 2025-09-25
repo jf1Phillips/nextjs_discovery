@@ -116,7 +116,7 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
             map.current.once("style.load", () => add_all_things(state));
         }
         return () => {map.current?.remove()};
-    });
+    }, []);
 
     if (prevNbr != textNbr && map.current) {
         setPrevNbr(textNbr);
