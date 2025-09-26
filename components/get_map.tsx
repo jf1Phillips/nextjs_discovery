@@ -83,6 +83,7 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
     const [state, setState] = useState<MapVar>(({...DEFAULT_VALUE, zoom: def_zoom}));
     const [prevNbr, setPrevNbr] = useState<number>(1);
     const [prevHistdate, setPrevHistdate] = useState<number>(histdate);
+    const [mousePos, setMousePos] = useState<[number, number]>([0, 0]);
     const map = useRef<MapboxMap | null>(null);
     const container = useRef<HTMLDivElement | null>(null);
     const style: string[] = ["mapbox://styles/mapbox/light-v10", "mapbox://styles/mapbox/dark-v10"];
@@ -115,6 +116,24 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
                 center: [state.long, state.lat],
             });
             map.current.once("style.load", () => add_all_things(state));
+            map.current.on("mousemove", (m) => {
+                const mouseDiv = document.querySelector('.mouse-pos-div') as HTMLDivElement;
+                setMousePos([m.lngLat.wrap().lat, m.lngLat.wrap().lng]);
+                if (mouseDiv) {
+                    mouseDiv.style.visibility = "visible";
+                    const { width, height } = mouseDiv.getBoundingClientRect();
+                    if (m.originalEvent.clientX + 20 + width >= document.documentElement.clientWidth) {
+                        mouseDiv.style.left = `${document.documentElement.clientWidth - width - 20}px`;
+                    } else {
+                        mouseDiv.style.left = `${m.originalEvent.clientX + 20}px`;
+                    }
+                    if (m.point.y - height - 15 >= 0) {
+                        mouseDiv.style.top = `${m.originalEvent.clientY-height-15}px`;
+                    } else {
+                        mouseDiv.style.top = "170px";
+                    }
+                }
+            })
         }
         return () => {map.current?.remove()};
     }, []);
@@ -211,6 +230,12 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
         });
     };
     return (<>
+        <div className={`absolute text-[13px] duration-100 p-[5px] rounded-[5px] mouse-pos-div z-10
+                    ${!state.enabled ? "text-whiteMode bg-darkMode" : "text-darkMode bg-whiteMode"}`}
+                    style={{visibility: "hidden"}}
+                    >
+            <p>{mousePos[0].toFixed(5)}<br/>{mousePos[1].toFixed(5)}</p>
+        </div>
         <button className={`absolute w-[22px] h-[22px] mt-[120px] ml-[100px] duration-300 text-[15px] rounded-[2px]
                     ${state.enabled ? "bg-darkMode text-whiteMode" : "bg-whiteMode text-darkMode"}`}
                 onClick={setRelief}>
