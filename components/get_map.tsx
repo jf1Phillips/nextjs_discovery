@@ -117,20 +117,24 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
             });
             map.current.once("style.load", () => add_all_things(state));
             map.current.on("mousemove", (m) => {
-                const mouseDiv = document.querySelector('.mouse-pos-div') as HTMLDivElement;
-                setMousePos([m.lngLat.wrap().lat, m.lngLat.wrap().lng]);
-                if (mouseDiv) {
-                    mouseDiv.style.visibility = "visible";
-                    const { width, height } = mouseDiv.getBoundingClientRect();
-                    if (m.originalEvent.clientX + 20 + width >= document.documentElement.clientWidth) {
-                        mouseDiv.style.left = `${document.documentElement.clientWidth - width - 20}px`;
-                    } else {
-                        mouseDiv.style.left = `${m.originalEvent.clientX + 20}px`;
-                    }
-                    if (m.point.y - height - 15 >= 0) {
-                        mouseDiv.style.top = `${m.originalEvent.clientY-height-15}px`;
-                    } else {
-                        mouseDiv.style.top = "170px";
+                if (/Mobi|Android/i.test(navigator.userAgent)) {
+                    console.log("phone");
+                } else {
+                    const mouseDiv = document.querySelector('.mouse-pos-div') as HTMLDivElement;
+                    setMousePos([m.lngLat.wrap().lat, m.lngLat.wrap().lng]);
+                    if (mouseDiv) {
+                        mouseDiv.style.visibility = "visible";
+                        const { width, height } = mouseDiv.getBoundingClientRect();
+                        if (m.originalEvent.clientX + 20 + width >= document.documentElement.clientWidth) {
+                            mouseDiv.style.left = `${document.documentElement.clientWidth - width - 20}px`;
+                        } else {
+                            mouseDiv.style.left = `${m.originalEvent.clientX + 20}px`;
+                        }
+                        if (m.point.y - height - 15 >= 0) {
+                            mouseDiv.style.top = `${m.originalEvent.clientY-height-15}px`;
+                        } else {
+                            mouseDiv.style.top = "170px";
+                        }
                     }
                 }
             })
@@ -230,12 +234,14 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
         });
     };
     return (<>
-        <div className={`absolute text-[13px] duration-100 p-[5px] rounded-[5px] mouse-pos-div z-10
-                    ${!state.enabled ? "text-whiteMode bg-darkMode" : "text-darkMode bg-whiteMode"}`}
-                    style={{visibility: "hidden"}}
-                    >
+        {!/Mobi|Android/i.test(navigator.userAgent) && (
+            <div className={`absolute text-[13px] duration-100 p-[5px] rounded-[5px] mouse-pos-div z-10
+                ${!state.enabled ? "text-whiteMode bg-darkMode" : "text-darkMode bg-whiteMode"}`}
+                style={{visibility: "hidden"}}
+                >
             <p>{mousePos[0].toFixed(5)}<br/>{mousePos[1].toFixed(5)}</p>
-        </div>
+            </div>
+        )}
         <button className={`absolute w-[22px] h-[22px] mt-[120px] ml-[100px] duration-300 text-[15px] rounded-[2px]
                     ${state.enabled ? "bg-darkMode text-whiteMode" : "bg-whiteMode text-darkMode"}`}
                 onClick={setRelief}>
