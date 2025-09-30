@@ -19,7 +19,7 @@ export function addRoads(url_given: string, map: MapBoxMap)
             },
             paint: {
                 'line-color': '#ff0000',
-                'line-width': 3
+                'line-width': 2
             }
         });
     }
@@ -52,14 +52,13 @@ export default function addGeoImg(url_given: string, map: MapBoxMap)
         });
     }
     if (!map.getLayer(url)) {
-        const layers = map.getStyle().layers;
         map.addLayer({
             id: url,
             type: 'raster',
             source: url,
             paint: {
-            'raster-opacity': 0.5,
-            }}
-        );
+                'raster-opacity': 0.5,
+            }
+        });
     }
 }

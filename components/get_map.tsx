@@ -71,15 +71,15 @@ function addGeoJsonLabels(file: string, map: MapboxMap, lang ?: string): void
             layout: {
                 'text-field': ['coalesce', ['get', `${langage}`], ['get', 'fr']],
                 'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'],
-                'text-size': 12,
+                'text-size': 15,
                 'text-anchor': 'bottom'
             },
             paint: {
-                'text-color': '#202',
-                'text-halo-color': '#fff',
+                'text-color': 'rgba(26, 18, 31, 1)',
+                'text-halo-color': 'rgba(255, 255, 255, 1)',
                 'text-halo-width': 2
             }
-        }, layers ? layers[0].id : undefined);
+        });
     }
 }
 

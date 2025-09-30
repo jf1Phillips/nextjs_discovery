@@ -6,14 +6,14 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    2.3522,
-                    48.8566
+                    34.55113,
+                    31.66963
                 ]
             },
             "properties": {
-                "fr": "Paris",
-                "en": "Paris",
-                "es": "París"
+                "fr": "Ascalon",
+                "en": "Ashkelon",
+                "it": "Ascalona"
             }
         },
         {
@@ -21,14 +21,14 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -74.006,
-                    40.7128
+                    34.59679,
+                    31.67913
                 ]
             },
             "properties": {
-                "fr": "New York",
-                "en": "New York",
-                "es": "Nueva York"
+                "fr": "Magdalgad",
+                "en": "Magdalgad",
+                "it": "Magdalgad"
             }
         },
         {
@@ -36,14 +36,14 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -3.7038,
-                    40.4168
+                    34.66093,
+                    31.76304
                 ]
             },
             "properties": {
-                "fr": "Madrid",
-                "en": "Madrid",
-                "es": "Madrid"
+                "fr": "Azot",
+                "en": "Azotus",
+                "it": "Azoto"
             }
         },
         {
@@ -51,14 +51,14 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -0.1276,
-                    51.5074
+                    34.62982,
+                    31.79181
                 ]
             },
             "properties": {
-                "fr": "London",
-                "en": "London",
-                "es": "Londres"
+                "fr": "Ruine du port de Azot",
+                "en": "Ruins of the Port of Azotus",
+                "it": "Ruderi del Porto di Azoto"
             }
         },
         {
@@ -66,44 +66,14 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -118.2437,
-                    34.0522
+                    34.74925,
+                    31.86995
                 ]
             },
             "properties": {
-                "fr": "Los Angeles",
-                "en": "Los Angeles",
-                "es": "Los Ángeles"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -43.1729,
-                    -22.9068
-                ]
-            },
-            "properties": {
-                "fr": "Rio de Janeiro",
-                "en": "Rio de Janeiro",
-                "es": "Río de Janeiro"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -58.3816,
-                    -34.6037
-                ]
-            },
-            "properties": {
-                "fr": "Buenos Aires",
-                "en": "Buenos Aires",
-                "es": "Buenos Aires"
+                "fr": "Jabnia",
+                "en": "Jabneel",
+                "it": "Jabnia"
             }
         }
     ]

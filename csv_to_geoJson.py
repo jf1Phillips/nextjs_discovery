@@ -27,8 +27,8 @@ def csv_to_geoJson(file_name):
                 feature["properties"]["fr"] = row["fr"]
             if row["en"]:
                 feature["properties"]["en"] = row["en"]
-            if row["es"]:
-                feature["properties"]["es"] = row["es"]
+            if row["it"]:
+                feature["properties"]["it"] = row["it"]
             features.append(feature)
     return {
         "type": "FeatureCollection",
