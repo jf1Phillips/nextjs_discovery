@@ -4,7 +4,7 @@ import SelectLang from "@/components/select_option";
 import ZoomInOut from "@/components/zoom_in_out";
 import DarkMode from "@/components/darkmode";
 import React, { useState, useRef, useEffect, JSX } from "react";
-import mapboxgl, {Map as MapboxMap} from "mapbox-gl";
+import mapboxgl, {LngLat, Map as MapboxMap} from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import "@/styles/globals.css";
 import set3dTerrain from "./mapbox_functions/set3dterrain";
@@ -124,6 +124,7 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
     const [prevNbr, setPrevNbr] = useState<number>(1);
     const [prevHistdate, setPrevHistdate] = useState<number>(histdate);
     const [mousePos, setMousePos] = useState<[number, number]>([0, 0]);
+    const [lastPos, setLastPos] = useState<LngLat | null>(null);
     const map = useRef<MapboxMap | null>(null);
     const container = useRef<HTMLDivElement | null>(null);
     const style: string[] = ["mapbox://styles/mapbox/light-v10", "mapbox://styles/mapbox/dark-v10"];
@@ -157,6 +158,7 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
                 center: [state.long, state.lat],
             });
             map.current.once("style.load", () => add_all_things(state));
+            map.current.on("click", (e) => setLastPos(e.lngLat));
         }
         return () => {map.current?.remove()};
     }, []);
@@ -319,6 +321,10 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
                 type="submit">View</button>
         </form>
         <div className="top-[30px] relative overflow-hidden" onMouseMove={mouseMove}>
+            <div className={`absolute text-[13px] p-[5px] rounded-br-[8px] z-10 duration-300
+                ${state.enabled ? "text-whiteMode bg-darkMode" : "text-darkMode bg-whiteMode"}`}>
+                <p>Lng: {lastPos ? lastPos.lng.toFixed(5) : ''}<br/>Lat: {lastPos ? lastPos.lat.toFixed(5) : ''}</p>
+            </div>
             <div className={`absolute text-[13px] duration-100 p-[5px] rounded-[5px] mouse-pos-div z-10
                 ${!state.enabled ? "text-whiteMode bg-darkMode" : "text-darkMode bg-whiteMode"}`}
                 style={{visibility: "hidden"}}>

@@ -32,8 +32,11 @@ export default function addGeoImg(url_given: string, map: MapBoxMap)
 
     layers.forEach(layer => {
         if (layer.id.includes("road") || layer.id.includes("label") || layer.id.includes("geo_map")) {
-            console.log("Hiding layer: ", layer.id);
-            map.setLayoutProperty(layer.id, 'visibility', 'none');
+            if (layer.id == url) {
+                map.setLayoutProperty(layer.id, 'visibility', 'visible');
+            } else {
+                map.setLayoutProperty(layer.id, 'visibility', 'none');
+            }
         }
     });
     if (!map.getSource(url)) {
@@ -50,16 +53,13 @@ export default function addGeoImg(url_given: string, map: MapBoxMap)
     }
     if (!map.getLayer(url)) {
         const layers = map.getStyle().layers;
-        const roadLayer = layers.find(layer => layer.id.includes('geoJson_files'));
         map.addLayer({
             id: url,
             type: 'raster',
             source: url,
             paint: {
             'raster-opacity': 0.5,
-            }
-        }, roadLayer ? roadLayer.id : undefined);
-    } else {
-        map.setLayoutProperty(url, 'visibility', 'visible');
+            }}
+        );
     }
 }
