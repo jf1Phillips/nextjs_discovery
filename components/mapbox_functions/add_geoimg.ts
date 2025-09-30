@@ -32,6 +32,7 @@ export default function addGeoImg(url_given: string, map: MapBoxMap)
 
     layers.forEach(layer => {
         if (layer.id.includes("road") || layer.id.includes("label") || layer.id.includes("geo_map")) {
+            console.log("Hiding layer: ", layer.id);
             map.setLayoutProperty(layer.id, 'visibility', 'none');
         }
     });

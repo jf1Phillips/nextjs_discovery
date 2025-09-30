@@ -43,6 +43,46 @@ export function remove_marker(custom ?: boolean): void
     markers.length = 0;
 }
 
+function chnageLabelsLang(map: MapboxMap, lang: string, file: string): void
+{
+    const id: string = file.replace(/(label|road|geo_map)/gi, "rp");
+
+    if (!map.getLayer(id)) return;
+    map.setLayoutProperty(id, 'text-field', ['coalesce', ['get', `${lang}`], ['get', 'fr']]);
+}
+
+function addGeoJsonLabels(file: string, map: MapboxMap, lang ?: string): void
+{
+    const langage: string = lang ? lang : "fr";
+    const id: string = file.replace(/(label|road|geo_map)/gi, "rp");
+    const layers = map.getStyle().layers;
+
+    if (!map.getSource(id)) {
+        map.addSource(id, {
+            type: 'geojson',
+            data: file
+        });
+    }
+    if (!map.getLayer(id)) {
+        map.addLayer({
+            id: id,
+            type: 'symbol',
+            source: id,
+            layout: {
+                'text-field': ['coalesce', ['get', `${langage}`], ['get', 'fr']],
+                'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'],
+                'text-size': 12,
+                'text-anchor': 'bottom'
+            },
+            paint: {
+                'text-color': '#202',
+                'text-halo-color': '#fff',
+                'text-halo-width': 2
+            }
+        }, layers ? layers[0].id : undefined);
+    }
+}
+
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN as string;
 
 type MapVar = {
@@ -104,6 +144,7 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
         map.current?.setPaintProperty('water', 'fill-color', new_state.enabled ? 'rgba(14, 15, 99, 1)': 'rgba(14, 122, 155, 1)');
         set3dTerrain(map.current, !state.relief);
         addRain(map.current, !state.rain);
+        addGeoJsonLabels("/geoJson_files/city_label.geojson", map.current, new_state.lang);
     }
 
     useEffect(() => {
@@ -196,6 +237,7 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
         if (!map.current || !map.current.isStyleLoaded()) return;
         json_load("/json_files/test.json", lang, map.current, textNbr);
         addGeoImg(`/geo_map_${lang}.png`, map.current);
+        chnageLabelsLang(map.current, lang, "/geoJson_files/city_label.geojson");
         setState(prev => ({
             ...prev,
             lang: lang,
