@@ -82,7 +82,7 @@ function addGeoJsonLabels(file: string, map: MapboxMap, lang ?: string): void
     }
 }
 
-function reload_json_labels(map: MapboxMap, file: string): void
+function reload_json_labels(map: MapboxMap, lang: string, file: string): void
 {
     const id: string = file.replace(/(label|road|geo_map)/gi, "rp");
 
@@ -92,7 +92,7 @@ function reload_json_labels(map: MapboxMap, file: string): void
     if (map.getSource(id)) {
         map.removeSource(id);
     }
-    addGeoJsonLabels(file, map);
+    addGeoJsonLabels(file, map, lang);
 }
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN as string;
@@ -305,7 +305,7 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
         </div>
         <button className={`absolute w-[22px] h-[22px] rounded-[2px] mt-[90px] left-[120px]  duration-300
                     ${state.enabled ? "bg-darkMode text-whiteMode" : "bg-whiteMode text-darkMode"}`}
-                onClick={() => reload_json_labels(map.current as MapboxMap, "/geoJson_files/city_label.geojson")}>
+                onClick={() => reload_json_labels(map.current as MapboxMap, state.lang, "/geoJson_files/city_label.geojson")}>
                     ↻</button>
 
         <SelectLang setSelected={changeLang} darkmode={state.enabled}/>

@@ -285,6 +285,21 @@
                 "en": "Gerimot",
                 "it": "Gerimot"
             }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.93306,
+                    31.70393
+                ]
+            },
+            "properties": {
+                "fr": "Azécon",
+                "en": "Azecon",
+                "it": "Azecon"
+            }
         }
     ]
 }
