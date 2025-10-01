@@ -55,7 +55,6 @@ function addGeoJsonLabels(file: string, map: MapboxMap, lang ?: string): void
 {
     const langage: string = lang ? lang : "fr";
     const id: string = file.replace(/(label|road|geo_map)/gi, "rp");
-    const layers = map.getStyle().layers;
 
     if (!map.getSource(id)) {
         map.addSource(id, {
@@ -81,6 +80,19 @@ function addGeoJsonLabels(file: string, map: MapboxMap, lang ?: string): void
             }
         });
     }
+}
+
+function reload_json_labels(map: MapboxMap, file: string): void
+{
+    const id: string = file.replace(/(label|road|geo_map)/gi, "rp");
+
+    if (map.getLayer(id)) {
+        map.removeLayer(id);
+    }
+    if (map.getSource(id)) {
+        map.removeSource(id);
+    }
+    addGeoJsonLabels(file, map);
 }
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN as string;
@@ -291,6 +303,10 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
                 {sliderValue}
             </p>
         </div>
+        <button className={`absolute w-[22px] h-[22px] rounded-[2px] mt-[90px] left-[120px]  duration-300
+                    ${state.enabled ? "bg-darkMode text-whiteMode" : "bg-whiteMode text-darkMode"}`}
+                onClick={() => reload_json_labels(map.current as MapboxMap, "/geoJson_files/city_label.geojson")}>
+                    ↻</button>
 
         <SelectLang setSelected={changeLang} darkmode={state.enabled}/>
         <ZoomInOut enabled={state.enabled} setZoom={zoomInOut} />
@@ -321,7 +337,7 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
                 type="submit">View</button>
         </form>
         <div className="top-[30px] relative overflow-hidden" onMouseMove={mouseMove}>
-            <div className={`absolute text-[13px] p-[5px] rounded-br-[8px] z-10 duration-300
+            <div className={`absolute text-[18px] p-[5px] rounded-br-[8px] z-10 duration-300 tracking-[1px]
                 ${state.enabled ? "text-whiteMode bg-darkMode" : "text-darkMode bg-whiteMode"}`}>
                 <p>Lng: {lastPos ? lastPos.lng.toFixed(5) : ''}<br/>Lat: {lastPos ? lastPos.lat.toFixed(5) : ''}</p>
             </div>
