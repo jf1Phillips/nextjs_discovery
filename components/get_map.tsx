@@ -160,6 +160,18 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
         addGeoJsonLabels("/geoJson_files/city_label.geojson", map.current, new_state.lang);
     }
 
+    const cpy_txt = async (txt: string): Promise<void> => {
+        if (!navigator.clipboard) {
+            console.error("Clipboard API not supported");
+            return;
+        }
+        try {
+            await navigator.clipboard.writeText(txt);
+        } catch (err) {
+            console.error("Failed to copy text: ", err);
+        }
+    }
+
     useEffect(() => {
         if (!map.current) {
             map.current = new mapboxgl.Map({
@@ -170,7 +182,11 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
                 center: [state.long, state.lat],
             });
             map.current.once("style.load", () => add_all_things(state));
-            map.current.on("click", (e) => setLastPos(e.lngLat));
+            map.current.on("click", (e) => {
+                const txt = `${e.lngLat.lng.toFixed(5)},${e.lngLat.lat.toFixed(5)}`;
+                cpy_txt(txt);
+                setLastPos(e.lngLat);
+            });
         }
         return () => {map.current?.remove()};
     }, []);
@@ -182,7 +198,7 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
             if (mouseDiv.style.visibility != "hidden") mouseDiv.style.visibility = "hidden";
             return;
         }
-        mouseDiv.style.visibility = "visible";
+        // mouseDiv.style.visibility = "visible";
         const {lng, lat} = map.current.unproject([e.clientX, e.clientY]);
         setMousePos([lng, lat]);
         const rect = e.currentTarget.getBoundingClientRect();
@@ -303,10 +319,10 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
                 {sliderValue}
             </p>
         </div>
-        <button className={`absolute w-[22px] h-[22px] rounded-[2px] mt-[90px] left-[120px]  duration-300
+        <button className={`absolute w-[22px] h-[22px] rounded-[2px] mt-[90px] left-[132px]  duration-300
                     ${state.enabled ? "bg-darkMode text-whiteMode" : "bg-whiteMode text-darkMode"}`}
-                onClick={() => reload_json_labels(map.current as MapboxMap, state.lang, "/geoJson_files/city_label.geojson")}>
-                    ↻</button>
+                onClick={() => reload_json_labels(map.current as MapboxMap, state.lang, "/geoJson_files/city_label.geojson")}
+                >↻</button>
 
         <SelectLang setSelected={changeLang} darkmode={state.enabled}/>
         <ZoomInOut enabled={state.enabled} setZoom={zoomInOut} />

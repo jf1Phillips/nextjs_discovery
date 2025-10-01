@@ -300,6 +300,216 @@
                 "en": "Azecon",
                 "it": "Azecon"
             }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.95622,
+                    31.68395
+                ]
+            },
+            "properties": {
+                "fr": "Soco",
+                "en": "Soco",
+                "it": "Soco"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.92912,
+                    31.66186
+                ]
+            },
+            "properties": {
+                "fr": "Szanoé",
+                "en": "Szanoe",
+                "it": "Szanoe"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.89735,
+                    31.61051
+                ]
+            },
+            "properties": {
+                "fr": "Bet Guvrin",
+                "en": "Bet Guvrin",
+                "it": "Bet Guvrin"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.45777,
+                    31.50002
+                ]
+            },
+            "properties": {
+                "fr": "Gaza",
+                "en": "Gaza",
+                "it": "Gaza"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.72838,
+                    31.54891
+                ]
+            },
+            "properties": {
+                "fr": "Eglon",
+                "en": "Eglon",
+                "it": "Eglon"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.84449,
+                    31.56954
+                ]
+            },
+            "properties": {
+                "fr": "Lachis",
+                "en": "Lachis",
+                "it": "Lachis"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.78167,
+                    31.61642
+                ]
+            },
+            "properties": {
+                "fr": "Get",
+                "en": "Get",
+                "it": "Get"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.85187,
+                    31.80097
+                ]
+            },
+            "properties": {
+                "fr": "Acron",
+                "en": "Acron",
+                "it": "Acron"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.884,
+                    31.63558
+                ]
+            },
+            "properties": {
+                "fr": "Libna",
+                "en": "Libna",
+                "it": "Libna"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.8982,
+                    32.50401
+                ]
+            },
+            "properties": {
+                "fr": "Césarée Maritime",
+                "en": "Caesarea Maritima",
+                "it": "Cesarea Marittima"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.90645,
+                    31.44941
+                ]
+            },
+            "properties": {
+                "fr": "Debir",
+                "en": "Debir",
+                "it": "Debir"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.88618,
+                    31.50778
+                ]
+            },
+            "properties": {
+                "fr": "Macéda",
+                "en": "Maceda",
+                "it": "Maceda"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.08873,
+                    31.44803
+                ]
+            },
+            "properties": {
+                "fr": "Jutta",
+                "en": "Juttah",
+                "it": "Jutta"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.06602,
+                    31.45138
+                ]
+            },
+            "properties": {
+                "fr": "Isaac",
+                "en": "Isaac",
+                "it": "Isacco"
+            }
         }
     ]
 }
