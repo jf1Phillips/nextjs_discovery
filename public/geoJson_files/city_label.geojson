@@ -75,6 +75,216 @@
                 "en": "Jabneel",
                 "it": "Jabnia"
             }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.70527,
+                    31.93448
+                ]
+            },
+            "properties": {
+                "fr": "Ruine du port de Jabnia",
+                "en": "Ruins of the Port of Jabneel",
+                "it": "Ruderi del Porto di Jabnia"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.8314,
+                    32.01148
+                ]
+            },
+            "properties": {
+                "fr": "Bettegon",
+                "en": "Bettegon",
+                "it": "Bettegon"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.75484,
+                    32.05695
+                ]
+            },
+            "properties": {
+                "fr": "Joppé",
+                "en": "Joppa",
+                "it": "Joppe"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.87131,
+                    31.93004
+                ]
+            },
+            "properties": {
+                "fr": "Ramlé",
+                "en": "Ramlè",
+                "it": "Ramlè"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.89972,
+                    31.95846
+                ]
+            },
+            "properties": {
+                "fr": "Lidda",
+                "en": "Lydda",
+                "it": "Lidda"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.9335,
+                    31.93554
+                ]
+            },
+            "properties": {
+                "fr": "Arimathie",
+                "en": "Arimathea",
+                "it": "Arimatea"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.98786,
+                    31.93916
+                ]
+            },
+            "properties": {
+                "fr": "Modin",
+                "en": "Modin",
+                "it": "Modin"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.95873,
+                    31.89895
+                ]
+            },
+            "properties": {
+                "fr": "Beteonnaba",
+                "en": "Beteonnaba",
+                "it": "Beteonnaba"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.91693,
+                    31.86548
+                ]
+            },
+            "properties": {
+                "fr": "Gézer",
+                "en": "Gezer",
+                "it": "Gezer"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.96637,
+                    31.8427
+                ]
+            },
+            "properties": {
+                "fr": "Emmaüs de la plaine",
+                "en": "Emmaus on plain",
+                "it": "Emmaus della pianura"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.98514,
+                    31.77927
+                ]
+            },
+            "properties": {
+                "fr": "Saràa",
+                "en": "Saràa",
+                "it": "Saràa"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.99431,
+                    31.76899
+                ]
+            },
+            "properties": {
+                "fr": "Timnata",
+                "en": "Timnata",
+                "it": "Timnata"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.97702,
+                    31.75773
+                ]
+            },
+            "properties": {
+                "fr": "Betsames",
+                "en": "Betsemes",
+                "it": "Betsemes"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.98871,
+                    31.74536
+                ]
+            },
+            "properties": {
+                "fr": "Gerimot",
+                "en": "Gerimot",
+                "it": "Gerimot"
+            }
         }
     ]
 }
