@@ -6,14 +6,12 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    34.55113,
-                    31.66963
+                    35.7235471783873,
+                    31.6822813967507
                 ]
             },
             "properties": {
-                "fr": "Ascalon",
-                "en": "Ashkelon",
-                "it": "Ascalona"
+                "fr": "Abarim (monts)"
             }
         },
         {
@@ -21,14 +19,12 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    34.59679,
-                    31.67913
+                    35.5803781991821,
+                    33.2577033933823
                 ]
             },
             "properties": {
-                "fr": "Magdalgad",
-                "en": "Magdalgad",
-                "it": "Magdalgad"
+                "fr": "Abel Maïm"
             }
         },
         {
@@ -36,14 +32,12 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    34.66093,
-                    31.76304
+                    35.1023412581567,
+                    33.0485981736681
                 ]
             },
             "properties": {
-                "fr": "Azot",
-                "en": "Azotus",
-                "it": "Azoto"
+                "fr": "Achzib"
             }
         },
         {
@@ -51,14 +45,12 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    34.62982,
-                    31.79181
+                    16.7352010877973,
+                    40.2208984543028
                 ]
             },
             "properties": {
-                "fr": "Ruine du port de Azot",
-                "en": "Ruins of the Port of Azotus",
-                "it": "Ruderi del Porto di Azoto"
+                "fr": "Aciri"
             }
         },
         {
@@ -66,14 +58,12 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    34.74925,
-                    31.86995
+                    35.3486462894152,
+                    31.8813663092477
                 ]
             },
             "properties": {
-                "fr": "Jabnia",
-                "en": "Jabneel",
-                "it": "Jabnia"
+                "fr": "Acor Vallée"
             }
         },
         {
@@ -81,14 +71,12 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    34.70527,
-                    31.93448
+                    34.822977032364,
+                    31.8600682231551
                 ]
             },
             "properties": {
-                "fr": "Ruine du port de Jabnia",
-                "en": "Ruins of the Port of Jabneel",
-                "it": "Ruderi del Porto di Jabnia"
+                "fr": "Acron"
             }
         },
         {
@@ -96,14 +84,12 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    34.8314,
-                    32.01148
+                    23.7258766749851,
+                    37.9715537092891
                 ]
             },
             "properties": {
-                "fr": "Bettegon",
-                "en": "Bettegon",
-                "it": "Bettegon"
+                "fr": "Acropole"
             }
         },
         {
@@ -111,14 +97,12 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    34.75484,
-                    32.05695
+                    35.2809970897732,
+                    31.791700904952
                 ]
             },
             "properties": {
-                "fr": "Joppé",
-                "en": "Joppa",
-                "it": "Joppe"
+                "fr": "Adomin (mont)"
             }
         },
         {
@@ -126,14 +110,12 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    34.87131,
-                    31.93004
+                    35.7041744988012,
+                    32.7800841602005
                 ]
             },
             "properties": {
-                "fr": "Ramlé",
-                "en": "Ramlè",
-                "it": "Ramlè"
+                "fr": "Aféca"
             }
         },
         {
@@ -141,14 +123,12 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    34.89972,
-                    31.95846
+                    35.3332630039967,
+                    31.9894926808067
                 ]
             },
             "properties": {
-                "fr": "Lidda",
-                "en": "Lydda",
-                "it": "Lidda"
+                "fr": "Ain Samieh"
             }
         },
         {
@@ -156,14 +136,12 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    34.9335,
-                    31.93554
+                    35.9455842350175,
+                    32.841983861494
                 ]
             },
             "properties": {
-                "fr": "Arimathie",
-                "en": "Arimathea",
-                "it": "Arimatea"
+                "fr": "Al Allan, nahr"
             }
         },
         {
@@ -171,14 +149,12 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    34.98786,
-                    31.93916
+                    35.4030355361795,
+                    31.9501909065593
                 ]
             },
             "properties": {
-                "fr": "Modin",
-                "en": "Modin",
-                "it": "Modin"
+                "fr": "Al Aujah wadi"
             }
         },
         {
@@ -186,14 +162,12 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    34.95873,
-                    31.89895
+                    35.2915728760959,
+                    31.946568207633
                 ]
             },
             "properties": {
-                "fr": "Beteonnaba",
-                "en": "Beteonnaba",
-                "it": "Beteonnaba"
+                "fr": "Al Aïn, wadi"
             }
         },
         {
@@ -201,14 +175,12 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    34.91693,
-                    31.86548
+                    35.9881071386423,
+                    36.0518853154235
                 ]
             },
             "properties": {
-                "fr": "Gézer",
-                "en": "Gezer",
-                "it": "Gezer"
+                "fr": "Al Mina"
             }
         },
         {
@@ -216,14 +188,12 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    34.96637,
-                    31.8427
+                    36.0603689604799,
+                    32.8397442530325
                 ]
             },
             "properties": {
-                "fr": "Emmaüs de la plaine",
-                "en": "Emmaus on plain",
-                "it": "Emmaus della pianura"
+                "fr": "Al Ruqqah wadi"
             }
         },
         {
@@ -231,14 +201,12 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    34.98514,
-                    31.77927
+                    35.1677040749146,
+                    33.1511282117883
                 ]
             },
             "properties": {
-                "fr": "Saràa",
-                "en": "Saràa",
-                "it": "Saràa"
+                "fr": "Alexandroscène"
             }
         },
         {
@@ -246,14 +214,12 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    34.99431,
-                    31.76899
+                    36.032284230837,
+                    36.335971688198
                 ]
             },
             "properties": {
-                "fr": "Timnata",
-                "en": "Timnata",
-                "it": "Timnata"
+                "fr": "Aman"
             }
         },
         {
@@ -261,14 +227,12 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    34.97702,
-                    31.75773
+                    35.5057053518906,
+                    32.8653078798978
                 ]
             },
             "properties": {
-                "fr": "Betsames",
-                "en": "Betsemes",
-                "it": "Betsemes"
+                "fr": "Amud, wadi"
             }
         },
         {
@@ -276,14 +240,12 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    34.98871,
-                    31.74536
+                    34.0112849168355,
+                    39.0071391687981
                 ]
             },
             "properties": {
-                "fr": "Gerimot",
-                "en": "Gerimot",
-                "it": "Gerimot"
+                "fr": "Anatolie"
             }
         },
         {
@@ -291,14 +253,12 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    34.93306,
-                    31.70393
+                    36.1538374394675,
+                    36.1528781036378
                 ]
             },
             "properties": {
-                "fr": "Azécon",
-                "en": "Azecon",
-                "it": "Azecon"
+                "fr": "Antigonéa ?"
             }
         },
         {
@@ -306,14 +266,12 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    34.95622,
-                    31.68395
+                    35.3396798309193,
+                    36.995146667991
                 ]
             },
             "properties": {
-                "fr": "Soco",
-                "en": "Soco",
-                "it": "Soco"
+                "fr": "Antioche de Cilicie"
             }
         },
         {
@@ -321,14 +279,12 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    34.92912,
-                    31.66186
+                    36.1568074417971,
+                    36.1990474445934
                 ]
             },
             "properties": {
-                "fr": "Szanoé",
-                "en": "Szanoe",
-                "it": "Szanoe"
+                "fr": "Antioche sur l'Oronte"
             }
         },
         {
@@ -336,14 +292,12 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    34.89735,
-                    31.61051
+                    34.9309466234329,
+                    32.1058939752126
                 ]
             },
             "properties": {
-                "fr": "Bet Guvrin",
-                "en": "Bet Guvrin",
-                "it": "Bet Guvrin"
+                "fr": "Antipatris Afeca"
             }
         },
         {
@@ -351,14 +305,12 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    34.45777,
-                    31.50002
+                    35.4724826209454,
+                    32.7906949460147
                 ]
             },
             "properties": {
-                "fr": "Gaza",
-                "en": "Gaza",
-                "it": "Gaza"
+                "fr": "Aqueduc ?"
             }
         },
         {
@@ -366,14 +318,12 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    34.72838,
-                    31.54891
+                    39.0398075978795,
+                    30.1240773407222
                 ]
             },
             "properties": {
-                "fr": "Eglon",
-                "en": "Eglon",
-                "it": "Eglon"
+                "fr": "Arabie"
             }
         },
         {
@@ -381,14 +331,12 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    34.84449,
-                    31.56954
+                    35.4889789069816,
+                    32.8124937578064
                 ]
             },
             "properties": {
-                "fr": "Lachis",
-                "en": "Lachis",
-                "it": "Lachis"
+                "fr": "Arbel de Galilée"
             }
         },
         {
@@ -396,14 +344,12 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    34.78167,
-                    31.61642
+                    35.4875973260535,
+                    32.8236121188345
                 ]
             },
             "properties": {
-                "fr": "Get",
-                "en": "Get",
-                "it": "Get"
+                "fr": "Arbel gorges"
             }
         },
         {
@@ -411,14 +357,12 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    34.85187,
-                    31.80097
+                    35.9066542014769,
+                    32.5649808973708
                 ]
             },
             "properties": {
-                "fr": "Acron",
-                "en": "Acron",
-                "it": "Acron"
+                "fr": "Arbela"
             }
         },
         {
@@ -426,14 +370,12 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    34.884,
-                    31.63558
+                    35.0166922176443,
+                    32.0269542040498
                 ]
             },
             "properties": {
-                "fr": "Libna",
-                "en": "Libna",
-                "it": "Libna"
+                "fr": "Arimathie ?"
             }
         },
         {
@@ -441,14 +383,12 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    34.8982,
-                    32.50401
+                    23.7231054790333,
+                    37.972406103452
                 ]
             },
             "properties": {
-                "fr": "Césarée Maritime",
-                "en": "Caesarea Maritima",
-                "it": "Cesarea Marittima"
+                "fr": "Aréopage"
             }
         },
         {
@@ -456,14 +396,12 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    34.90645,
-                    31.44941
+                    34.5477376352198,
+                    31.6633681511572
                 ]
             },
             "properties": {
-                "fr": "Debir",
-                "en": "Debir",
-                "it": "Debir"
+                "fr": "Ascalon"
             }
         },
         {
@@ -471,14 +409,12 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    34.88618,
-                    31.50778
+                    35.2086394694006,
+                    31.858693441287
                 ]
             },
             "properties": {
-                "fr": "Macéda",
-                "en": "Maceda",
-                "it": "Maceda"
+                "fr": "Atarot"
             }
         },
         {
@@ -486,14 +422,12 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    35.08873,
-                    31.44803
+                    36.1309613374407,
+                    32.4900022846043
                 ]
             },
             "properties": {
-                "fr": "Jutta",
-                "en": "Juttah",
-                "it": "Jutta"
+                "fr": "Auran, mont"
             }
         },
         {
@@ -501,14 +435,5056 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    35.06602,
-                    31.45138
+                    36.1702218308742,
+                    32.6715358512417
                 ]
             },
             "properties": {
-                "fr": "Isaac",
-                "en": "Isaac",
-                "it": "Isacco"
+                "fr": "Auranitide"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.9617841697591,
+                    31.8672459527061
+                ]
+            },
+            "properties": {
+                "fr": "Ayalon, vallée"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.9374211206829,
+                    31.7005264558161
+                ]
+            },
+            "properties": {
+                "fr": "Azeco"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.6601549418528,
+                    31.7565341130381
+                ]
+            },
+            "properties": {
+                "fr": "Azot"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    36.1766417084336,
+                    33.0845175810977
+                ]
+            },
+            "properties": {
+                "fr": "Aëra"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2615468606235,
+                    31.9168166242831
+                ]
+            },
+            "properties": {
+                "fr": "Aï"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    44.4255620238414,
+                    32.5398886961795
+                ]
+            },
+            "properties": {
+                "fr": "Babylone"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    36.0851110074913,
+                    33.002200814952
+                ]
+            },
+            "properties": {
+                "fr": "Bashân"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    36.085971174404,
+                    32.9027996829728
+                ]
+            },
+            "properties": {
+                "fr": "Batanée"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2369801090505,
+                    31.7800057972275
+                ]
+            },
+            "properties": {
+                "fr": "Bel Midrasch"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.5093461369669,
+                    31.9503478237621
+                ]
+            },
+            "properties": {
+                "fr": "Belle Eau ?"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2367053639852,
+                    31.7785546293372
+                ]
+            },
+            "properties": {
+                "fr": "Belle Porte"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.3978639885605,
+                    32.3681791855459
+                ]
+            },
+            "properties": {
+                "fr": "Berger samaritain"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.4835057970462,
+                    33.8917736259454
+                ]
+            },
+            "properties": {
+                "fr": "Beritus"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.7851260023644,
+                    31.2593570297393
+                ]
+            },
+            "properties": {
+                "fr": "Bersabée"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.5499294387367,
+                    31.853185520182
+                ]
+            },
+            "properties": {
+                "fr": "Betabara"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.5139101375576,
+                    31.8273275029339
+                ]
+            },
+            "properties": {
+                "fr": "Betagla"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.9785531993431,
+                    31.7198269797963
+                ]
+            },
+            "properties": {
+                "fr": "Betginna"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2565742394256,
+                    31.8957389242748
+                ]
+            },
+            "properties": {
+                "fr": "Beth Aven"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.975255324316,
+                    31.7512116896549
+                ]
+            },
+            "properties": {
+                "fr": "Beth Shemesh"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.8954583333333,
+                    31.6080528039458
+                ]
+            },
+            "properties": {
+                "fr": "Bethléchi"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.1924049170991,
+                    32.7358936851099
+                ]
+            },
+            "properties": {
+                "fr": "Bethléem de Galilée"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2076122051297,
+                    31.7044325694036
+                ]
+            },
+            "properties": {
+                "fr": "Bethléem La grotte"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2511060603732,
+                    31.7758223795062
+                ]
+            },
+            "properties": {
+                "fr": "Bethphagé"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.6305828176177,
+                    32.9111642883132
+                ]
+            },
+            "properties": {
+                "fr": "Bethsaïda"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.0941818714657,
+                    31.5894458701295
+                ]
+            },
+            "properties": {
+                "fr": "Bethsur"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.6237707795341,
+                    32.1945545943308
+                ]
+            },
+            "properties": {
+                "fr": "Betjaboc ?"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.5039853528465,
+                    32.5037872656416
+                ]
+            },
+            "properties": {
+                "fr": "Betscan Scythopolis"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.8322409528357,
+                    32.00005329884
+                ]
+            },
+            "properties": {
+                "fr": "Bettegon"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.1272533370266,
+                    33.0656426430686
+                ]
+            },
+            "properties": {
+                "fr": "Betzet wadi"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2344295627606,
+                    31.7819365119453
+                ]
+            },
+            "properties": {
+                "fr": "Bezetha"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.4154671065922,
+                    33.0444295300501
+                ]
+            },
+            "properties": {
+                "fr": "Biram"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.4713208019384,
+                    32.6426401353333
+                ]
+            },
+            "properties": {
+                "fr": "Bireh wadi"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    32.1712204094531,
+                    41.027003380993
+                ]
+            },
+            "properties": {
+                "fr": "Bithynie"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.3068242697293,
+                    32.0023448947977
+                ]
+            },
+            "properties": {
+                "fr": "Borne Néapolis/Silo/Jéricho"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.0369187965437,
+                    31.8201935104965
+                ]
+            },
+            "properties": {
+                "fr": "Bornes millières"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    36.4636116592271,
+                    32.5146572431905
+                ]
+            },
+            "properties": {
+                "fr": "Bozra"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    17.9382988326068,
+                    40.6370218498425
+                ]
+            },
+            "properties": {
+                "fr": "Brindisi"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    14.7835305694228,
+                    41.1331221109628
+                ]
+            },
+            "properties": {
+                "fr": "Bénévent"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2173740149574,
+                    31.9061852097493
+                ]
+            },
+            "properties": {
+                "fr": "Bérot"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2578430601287,
+                    31.7714002280671
+                ]
+            },
+            "properties": {
+                "fr": "Béthanie"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.5532126219756,
+                    31.8364052823906
+                ]
+            },
+            "properties": {
+                "fr": "Béthanie du Jourdain"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2355874993802,
+                    31.9241573553745
+                ]
+            },
+            "properties": {
+                "fr": "Béthel"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.1370827233723,
+                    31.7236819157496
+                ]
+            },
+            "properties": {
+                "fr": "Béther"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.1236354437592,
+                    31.8807505400063
+                ]
+            },
+            "properties": {
+                "fr": "Bétéron"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.9666569672514,
+                    32.8310359057074
+                ]
+            },
+            "properties": {
+                "fr": "Cabanes des pêcheurs ?"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.5594275589976,
+                    31.5969989905479
+                ]
+            },
+            "properties": {
+                "fr": "Callirhoé"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.3484870695062,
+                    32.7385387748083
+                ]
+            },
+            "properties": {
+                "fr": "Cana"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    36.6181559448195,
+                    32.75568261884
+                ]
+            },
+            "properties": {
+                "fr": "Canata"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.1689653869121,
+                    33.1641256572801
+                ]
+            },
+            "properties": {
+                "fr": "Cap Blanc (Ras el Bayada)"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.1042512775404,
+                    33.0936391957685
+                ]
+            },
+            "properties": {
+                "fr": "Cap de la tempête (Rosh Hanikra)"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.5750417186764,
+                    32.8811179401164
+                ]
+            },
+            "properties": {
+                "fr": "Capharnaüm"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    12.2382460608312,
+                    42.3276033476624
+                ]
+            },
+            "properties": {
+                "fr": "Caprarola"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.7037160379559,
+                    31.1819190049811
+                ]
+            },
+            "properties": {
+                "fr": "Carakamoab"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.3379555302377,
+                    31.8575571721331
+                ]
+            },
+            "properties": {
+                "fr": "Carit Mont"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.3524687548408,
+                    31.8411846752047
+                ]
+            },
+            "properties": {
+                "fr": "Carit Vallée"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.0494606722278,
+                    32.7199991145899
+                ]
+            },
+            "properties": {
+                "fr": "Carmel"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.9698955361076,
+                    35.9514682749586
+                ]
+            },
+            "properties": {
+                "fr": "Casio Mont"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.3224640694512,
+                    32.680071945197
+                ]
+            },
+            "properties": {
+                "fr": "Caslot-Thabor"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    46.5669924603809,
+                    31.9501786095058
+                ]
+            },
+            "properties": {
+                "fr": "Chaldée"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2457240799446,
+                    31.7823393442424
+                ]
+            },
+            "properties": {
+                "fr": "Champ des galiléens"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    15.5871667835401,
+                    38.1891496536591
+                ]
+            },
+            "properties": {
+                "fr": "Charybde"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    26.0320226659811,
+                    38.404073036896
+                ]
+            },
+            "properties": {
+                "fr": "Chio"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.889019416161,
+                    32.2456985978553
+                ]
+            },
+            "properties": {
+                "fr": "Chrysorrhoas"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    33.4636455213766,
+                    35.1359771458957
+                ]
+            },
+            "properties": {
+                "fr": "Chypre"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.0785031694562,
+                    37.147826212552
+                ]
+            },
+            "properties": {
+                "fr": "Cilicie"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    33.5759873997664,
+                    34.8517132081145
+                ]
+            },
+            "properties": {
+                "fr": "Cintium"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.9826665024527,
+                    31.703738963018
+                ]
+            },
+            "properties": {
+                "fr": "Colline du panorama"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    36.1553431694321,
+                    36.1918624019178
+                ]
+            },
+            "properties": {
+                "fr": "Colonnades d'Hérode"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.57603379786933,
+                    35.9989928553417
+                ]
+            },
+            "properties": {
+                "fr": "Colonnes d'Hercule"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    22.9322375459814,
+                    37.9386358765317
+                ]
+            },
+            "properties": {
+                "fr": "Corinthe"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.5663699800185,
+                    32.9108106341054
+                ]
+            },
+            "properties": {
+                "fr": "Corozaïm"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    25.0094808285953,
+                    35.1981661785799
+                ]
+            },
+            "properties": {
+                "fr": "Crète"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    21.7355981584779,
+                    32.5339316494533
+                ]
+            },
+            "properties": {
+                "fr": "Cyrènaïque"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    21.8584256730472,
+                    32.8246065221071
+                ]
+            },
+            "properties": {
+                "fr": "Cyrène"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.5307096952909,
+                    33.1102983252722
+                ]
+            },
+            "properties": {
+                "fr": "Cédes"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2369968577705,
+                    31.7736588445889
+                ]
+            },
+            "properties": {
+                "fr": "Cédron"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.6941254786076,
+                    33.2470796073229
+                ]
+            },
+            "properties": {
+                "fr": "Césarée de Philippe"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.8927373242555,
+                    32.5020335350756
+                ]
+            },
+            "properties": {
+                "fr": "Césarée Maritime"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.5233859495939,
+                    32.8117083883912
+                ]
+            },
+            "properties": {
+                "fr": "Dalmanutha"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    36.2946015909234,
+                    33.5136182665121
+                ]
+            },
+            "properties": {
+                "fr": "Damas"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    36.1437173800218,
+                    36.1297204924385
+                ]
+            },
+            "properties": {
+                "fr": "Daphné"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    22.5011111111111,
+                    38.482500026168
+                ]
+            },
+            "properties": {
+                "fr": "Delphes"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.4228135270606,
+                    31.8969588762166
+                ]
+            },
+            "properties": {
+                "fr": "Docco"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.9200234434881,
+                    32.6122928380685
+                ]
+            },
+            "properties": {
+                "fr": "Dora Dor"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.1867479561814,
+                    32.6511938683528
+                ]
+            },
+            "properties": {
+                "fr": "Doras ?"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2388978153993,
+                    32.412796523618
+                ]
+            },
+            "properties": {
+                "fr": "Dothaïn"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.3750111666535,
+                    32.6953212414316
+                ]
+            },
+            "properties": {
+                "fr": "Déberet"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.7767634104956,
+                    31.5024221579699
+                ]
+            },
+            "properties": {
+                "fr": "Débon"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.8004272484144,
+                    32.6009676963727
+                ]
+            },
+            "properties": {
+                "fr": "Décapole"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.3005197713245,
+                    31.7007451990044
+                ]
+            },
+            "properties": {
+                "fr": "Désert de Judée"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2838005165503,
+                    32.2346399712053
+                ]
+            },
+            "properties": {
+                "fr": "Ebal Mont"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.1077515879031,
+                    33.0941133357684
+                ]
+            },
+            "properties": {
+                "fr": "Echelles de Tyr"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.3337528068173,
+                    30.6669256468133
+                ]
+            },
+            "properties": {
+                "fr": "Edom"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.6389684647028,
+                    32.7849158242316
+                ]
+            },
+            "properties": {
+                "fr": "Ein Gev"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.6528796215317,
+                    32.7828671634334
+                ]
+            },
+            "properties": {
+                "fr": "Ein Gev wadi"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.3508408528429,
+                    32.7218203594541
+                ]
+            },
+            "properties": {
+                "fr": "Ein Mahil"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2100547754671,
+                    31.7059318907968
+                ]
+            },
+            "properties": {
+                "fr": "El Djemel, wadi"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.4116224223287,
+                    31.8414296600819
+                ]
+            },
+            "properties": {
+                "fr": "El Kelt wadi"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.5138344690422,
+                    32.3486814532461
+                ]
+            },
+            "properties": {
+                "fr": "El Maleh wadi"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.3892659754351,
+                    31.8337260850066
+                ]
+            },
+            "properties": {
+                "fr": "Elie l'essénien"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.4365874826703,
+                    31.6723838559668
+                ]
+            },
+            "properties": {
+                "fr": "Embouchure du Cédron"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.1297133599386,
+                    31.8419667955617
+                ]
+            },
+            "properties": {
+                "fr": "Emmaus de la Montagne"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.9889220446429,
+                    31.8389053066653
+                ]
+            },
+            "properties": {
+                "fr": "Emmaus de la Plaine"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.5499564372291,
+                    32.7662092117317
+                ]
+            },
+            "properties": {
+                "fr": "Emmaüs Sources chaudes"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.235221824807,
+                    31.7674552929452
+                ]
+            },
+            "properties": {
+                "fr": "En Rogel"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.384852420632,
+                    32.6266672245111
+                ]
+            },
+            "properties": {
+                "fr": "Endor"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.3824926173863,
+                    31.4525203807208
+                ]
+            },
+            "properties": {
+                "fr": "Engaddi"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2963264771445,
+                    32.4600818150115
+                ]
+            },
+            "properties": {
+                "fr": "Engannim"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.5331245540108,
+                    32.3844520832118
+                ]
+            },
+            "properties": {
+                "fr": "Enon"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2701982872657,
+                    31.7742155509179
+                ]
+            },
+            "properties": {
+                "fr": "Ensémès"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2927841481705,
+                    31.9482281436415
+                ]
+            },
+            "properties": {
+                "fr": "Ephraïm"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    27.3650472257011,
+                    37.9492375442624
+                ]
+            },
+            "properties": {
+                "fr": "Ephèse"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.0730509093216,
+                    31.5726998612518
+                ]
+            },
+            "properties": {
+                "fr": "Eschcol vallée"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.3282259673309,
+                    32.5576096361754
+                ]
+            },
+            "properties": {
+                "fr": "Esdrelon Jesraël"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    45.298658530285,
+                    31.3099371379456
+                ]
+            },
+            "properties": {
+                "fr": "Euphrate"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.9132718153042,
+                    32.5485840163656
+                ]
+            },
+            "properties": {
+                "fr": "Ez Zerqa Crocodilum flumen"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    16.1736909400865,
+                    39.002914460469
+                ]
+            },
+            "properties": {
+                "fr": "Falerne"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.7657234896869,
+                    33.2339827802595
+                ]
+            },
+            "properties": {
+                "fr": "Fialé Phialé lac"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.3008274784025,
+                    43.8061440224078
+                ]
+            },
+            "properties": {
+                "fr": "Fiesole"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2346428647388,
+                    31.770676665298
+                ]
+            },
+            "properties": {
+                "fr": "Fontaine de Siloé"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    36.2279095740896,
+                    32.3522168376558
+                ]
+            },
+            "properties": {
+                "fr": "Fontaine des Chameliers ?"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2342200709905,
+                    31.780268327081
+                ]
+            },
+            "properties": {
+                "fr": "Forteresse Antonia"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.7135538331122,
+                    33.252421021842
+                ]
+            },
+            "properties": {
+                "fr": "Forteresse de Minrod"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    31.4797710502614,
+                    29.9715054696808
+                ]
+            },
+            "properties": {
+                "fr": "Forêt pétrifiée"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.0884711839,
+                    31.9858716077074
+                ]
+            },
+            "properties": {
+                "fr": "Gaas, vallée"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.1851988363916,
+                    31.847769807766
+                ]
+            },
+            "properties": {
+                "fr": "Gabaon"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.6787503757475,
+                    32.6553997884651
+                ]
+            },
+            "properties": {
+                "fr": "Gadara"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.8127559437385,
+                    32.261511247871
+                ]
+            },
+            "properties": {
+                "fr": "Galaad"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.5174404495436,
+                    31.8640832712536
+                ]
+            },
+            "properties": {
+                "fr": "Galgala"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.3556097899655,
+                    32.9334147919095
+                ]
+            },
+            "properties": {
+                "fr": "Galilée"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.7384170188734,
+                    32.9019687562313
+                ]
+            },
+            "properties": {
+                "fr": "Gamala"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.0919092955694,
+                    31.9723880319125
+                ]
+            },
+            "properties": {
+                "fr": "Gamala de Judée"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.6827240695183,
+                    32.7204150738148
+                ]
+            },
+            "properties": {
+                "fr": "Gamala selon MV"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.5595640762165,
+                    45.6181858456653
+                ]
+            },
+            "properties": {
+                "fr": "Gardone"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.273641320756,
+                    32.2008395264077
+                ]
+            },
+            "properties": {
+                "fr": "Garizim Mont"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.7667407658265,
+                    33.0105862697674
+                ]
+            },
+            "properties": {
+                "fr": "Gaulanitide"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.4341844581074,
+                    31.5207525216617
+                ]
+            },
+            "properties": {
+                "fr": "Gaza"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.8926798468922,
+                    32.2816990447745
+                ]
+            },
+            "properties": {
+                "fr": "Gerasa"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.6501082605952,
+                    32.8248853667903
+                ]
+            },
+            "properties": {
+                "fr": "Gergésa"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.8461239661988,
+                    31.6983500267424
+                ]
+            },
+            "properties": {
+                "fr": "Get Gath"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2399445997974,
+                    31.7798522373824
+                ]
+            },
+            "properties": {
+                "fr": "Gethsémani"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2277573062618,
+                    31.7779954465692
+                ]
+            },
+            "properties": {
+                "fr": "Gihon Vallée"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.4140902021103,
+                    32.4866294264734
+                ]
+            },
+            "properties": {
+                "fr": "Gilboa"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2107501706686,
+                    32.6509217074855
+                ]
+            },
+            "properties": {
+                "fr": "Giocana ?"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.4450080663023,
+                    33.0265203246768
+                ]
+            },
+            "properties": {
+                "fr": "Giscala"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2162595550594,
+                    31.9638113613065
+                ]
+            },
+            "properties": {
+                "fr": "Goféna"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2298056047558,
+                    31.7783963474342
+                ]
+            },
+            "properties": {
+                "fr": "Golgotha"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.4759439082403,
+                    31.1396462821665
+                ]
+            },
+            "properties": {
+                "fr": "Gomorrhe ?"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.9687799355151,
+                    32.8282457978004
+                ]
+            },
+            "properties": {
+                "fr": "Grotte d'Elie"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.3608772391593,
+                    31.4534622091907
+                ]
+            },
+            "properties": {
+                "fr": "Grotte d'Elisée ?"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.3749910542308,
+                    32.6164088304838
+                ]
+            },
+            "properties": {
+                "fr": "Grotte de la pythonisse ?"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.5244930132634,
+                    32.3547646852679
+                ]
+            },
+            "properties": {
+                "fr": "Grotte du Baptiste"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.5355250506411,
+                    32.1018210136917
+                ]
+            },
+            "properties": {
+                "fr": "Gué d'Adam"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.5467156909426,
+                    31.8372542537337
+                ]
+            },
+            "properties": {
+                "fr": "Gué de Béthabara"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2276819458672,
+                    31.7682053541662
+                ]
+            },
+            "properties": {
+                "fr": "Géhenne"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.5255111929856,
+                    32.8466760313408
+                ]
+            },
+            "properties": {
+                "fr": "Génésareth"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.9709935829513,
+                    31.7094076023351
+                ]
+            },
+            "properties": {
+                "fr": "Gérimot"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2329873792563,
+                    31.7681069824218
+                ]
+            },
+            "properties": {
+                "fr": "Haceldema"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    36.7986092418138,
+                    35.9050309938963
+                ]
+            },
+            "properties": {
+                "fr": "Hadrak"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2171750745093,
+                    31.4750207432096
+                ]
+            },
+            "properties": {
+                "fr": "Hakila"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.4685562931217,
+                    31.9411208258537
+                ]
+            },
+            "properties": {
+                "fr": "Halte en MV 551.7-9"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.6658338675852,
+                    32.6832201426361
+                ]
+            },
+            "properties": {
+                "fr": "Hamatha sources chaudes"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.4899174798836,
+                    32.824583929474
+                ]
+            },
+            "properties": {
+                "fr": "Hammam Wadi"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.3401412298312,
+                    32.7252298499657
+                ]
+            },
+            "properties": {
+                "fr": "Har Yona"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.4556093919692,
+                    32.7979801039184
+                ]
+            },
+            "properties": {
+                "fr": "Hattin cornes"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.5664762497821,
+                    33.0195867993338
+                ]
+            },
+            "properties": {
+                "fr": "Hatzor"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    32.7465097560517,
+                    16.0018541057533
+                ]
+            },
+            "properties": {
+                "fr": "Haut Nil"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.6353351419298,
+                    32.418604351985
+                ]
+            },
+            "properties": {
+                "fr": "Haute Pérée"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.8573524171567,
+                    33.4164109126019
+                ]
+            },
+            "properties": {
+                "fr": "Hermon"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.6842714782189,
+                    31.8176374953244
+                ]
+            },
+            "properties": {
+                "fr": "Hesban, wadi"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.8096597464895,
+                    31.8010107255448
+                ]
+            },
+            "properties": {
+                "fr": "Hesbon"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.1483251428056,
+                    33.0508617662132
+                ]
+            },
+            "properties": {
+                "fr": "Humsin"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.1086935042723,
+                    31.5328505427944
+                ]
+            },
+            "properties": {
+                "fr": "Hébron"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    43.2479164986027,
+                    42.5539320450811
+                ]
+            },
+            "properties": {
+                "fr": "Ibérie"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    32.4806994083383,
+                    37.8662395984269
+                ]
+            },
+            "properties": {
+                "fr": "Iconium"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.9352710609077,
+                    31.2007193982636
+                ]
+            },
+            "properties": {
+                "fr": "Idumée"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    16.6708924157177,
+                    44.9197047526662
+                ]
+            },
+            "properties": {
+                "fr": "Illyrie"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.6597434465584,
+                    32.7790392284578
+                ]
+            },
+            "properties": {
+                "fr": "Ippo"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    44.3164893114105,
+                    31.9752735827657
+                ]
+            },
+            "properties": {
+                "fr": "Ischilo ?"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2111829790341,
+                    32.606941024903
+                ]
+            },
+            "properties": {
+                "fr": "Ismaël ?"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.1481487183973,
+                    31.6254912946426
+                ]
+            },
+            "properties": {
+                "fr": "Israël"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.8361250542952,
+                    33.5903171582453
+                ]
+            },
+            "properties": {
+                "fr": "Iturée"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.6123129946893,
+                    32.3796270250578
+                ]
+            },
+            "properties": {
+                "fr": "Jabes-Galaad"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.7343080178345,
+                    31.876358966416
+                ]
+            },
+            "properties": {
+                "fr": "Jabnia"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.8424652274665,
+                    32.1969994649756
+                ]
+            },
+            "properties": {
+                "fr": "Jaboc"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.5941654036343,
+                    33.0146944302709
+                ]
+            },
+            "properties": {
+                "fr": "Jacob, l'avare 110.5"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2729383342486,
+                    32.684829183523
+                ]
+            },
+            "properties": {
+                "fr": "Jafia"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.1833361111111,
+                    31.7166694706124
+                ]
+            },
+            "properties": {
+                "fr": "Jala"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.179247318569,
+                    31.6791821518886
+                ]
+            },
+            "properties": {
+                "fr": "Jardins de Salomon"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.235593205689,
+                    31.7695236652251
+                ]
+            },
+            "properties": {
+                "fr": "Jardins du Roi"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2477563769256,
+                    32.818397831138
+                ]
+            },
+            "properties": {
+                "fr": "Jiphtaël ?"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.4151314334027,
+                    33.0422071608359
+                ]
+            },
+            "properties": {
+                "fr": "Jonas vieil aubergiste 330"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.7537876663072,
+                    32.0545405589111
+                ]
+            },
+            "properties": {
+                "fr": "Joppé"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2394321925037,
+                    31.7801695372883
+                ]
+            },
+            "properties": {
+                "fr": "Josaphat vallée"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2727932384345,
+                    32.8386150816249
+                ]
+            },
+            "properties": {
+                "fr": "Jotapate"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.5859567984857,
+                    32.9886069066264
+                ]
+            },
+            "properties": {
+                "fr": "Jude et Anne"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.0855599546844,
+                    31.4511177292541
+                ]
+            },
+            "properties": {
+                "fr": "Jutta"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.4421494414007,
+                    31.8691429760432
+                ]
+            },
+            "properties": {
+                "fr": "Jéricho"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.9220247704369,
+                    31.8769353070283
+                ]
+            },
+            "properties": {
+                "fr": "Jézéron"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.3058117807487,
+                    31.9889445988634
+                ]
+            },
+            "properties": {
+                "fr": "Kafr Malik Les 10 lépreux"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.5683374842546,
+                    32.9001865508872
+                ]
+            },
+            "properties": {
+                "fr": "Kerazeh, wadi"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.1240388100815,
+                    32.7394261930027
+                ]
+            },
+            "properties": {
+                "fr": "Kiryat Tivon"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.0283931796341,
+                    32.8040566629853
+                ]
+            },
+            "properties": {
+                "fr": "Kison"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.1240504817461,
+                    31.3449933242222
+                ]
+            },
+            "properties": {
+                "fr": "Kérioth"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.119925487952,
+                    33.0861099623976
+                ]
+            },
+            "properties": {
+                "fr": "La mère cananéenne 330"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.255528062561,
+                    31.7711430072162
+                ]
+            },
+            "properties": {
+                "fr": "Lazare"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.6530990563424,
+                    33.2494453269229
+                ]
+            },
+            "properties": {
+                "fr": "Leshem Dan"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.7238616281148,
+                    33.3477193417649
+                ]
+            },
+            "properties": {
+                "fr": "Liban, monts"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.8982341645519,
+                    31.9523682548573
+                ]
+            },
+            "properties": {
+                "fr": "Lidda"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    14.0297448021493,
+                    40.9213482215001
+                ]
+            },
+            "properties": {
+                "fr": "Liternum"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    16.143917094037,
+                    39.7186018541317
+                ]
+            },
+            "properties": {
+                "fr": "Lucania"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2480539013377,
+                    32.061278422668
+                ]
+            },
+            "properties": {
+                "fr": "Lébona"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.6356347334454,
+                    31.5686534227736
+                ]
+            },
+            "properties": {
+                "fr": "Macheronte"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2727050274617,
+                    31.8750739601682
+                ]
+            },
+            "properties": {
+                "fr": "Macmas"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.95535451699,
+                    31.7278526250216
+                ]
+            },
+            "properties": {
+                "fr": "Macéda"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.7929344092242,
+                    31.7164633825054
+                ]
+            },
+            "properties": {
+                "fr": "Madaba"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    36.1994963337875,
+                    27.7196309269932
+                ]
+            },
+            "properties": {
+                "fr": "Madian"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.5147186508344,
+                    32.8255594127933
+                ]
+            },
+            "properties": {
+                "fr": "Magdala"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.6020461102312,
+                    31.669579221524
+                ]
+            },
+            "properties": {
+                "fr": "Magdalgad"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.1846462369763,
+                    32.5854867140035
+                ]
+            },
+            "properties": {
+                "fr": "Mageddo"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2324438133931,
+                    31.7754024940972
+                ]
+            },
+            "properties": {
+                "fr": "Maison brûlée"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2317511057879,
+                    31.7711438861768
+                ]
+            },
+            "properties": {
+                "fr": "Maison de Caiphe ?"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2292852706618,
+                    31.7676529537177
+                ]
+            },
+            "properties": {
+                "fr": "Maison de campagne Caiphe"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.6133927614084,
+                    32.6646759677359
+                ]
+            },
+            "properties": {
+                "fr": "Maison de Chouza"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.1305471894576,
+                    31.8419557408687
+                ]
+            },
+            "properties": {
+                "fr": "Maison de Cléophas"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2334058266837,
+                    31.7824963497263
+                ]
+            },
+            "properties": {
+                "fr": "Maison de Joseph d'Arimathie"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.7957423523052,
+                    32.0986289351216
+                ]
+            },
+            "properties": {
+                "fr": "Maison de Joseph d'Arimathie ?"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.5752939161996,
+                    32.8800740557359
+                ]
+            },
+            "properties": {
+                "fr": "Maison de la belle mère de Pierre"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.630808137413,
+                    32.9099787297527
+                ]
+            },
+            "properties": {
+                "fr": "Maison de Pierre"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.229018415493,
+                    31.77161812622
+                ]
+            },
+            "properties": {
+                "fr": "Maison du Cénacle"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    14.4848721658052,
+                    35.8847295320736
+                ]
+            },
+            "properties": {
+                "fr": "Malte"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.1052976517903,
+                    31.5567538087471
+                ]
+            },
+            "properties": {
+                "fr": "Mambré"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.3538288510409,
+                    31.3178564346459
+                ]
+            },
+            "properties": {
+                "fr": "Masada"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    31.3074674564518,
+                    30.1205438735734
+                ]
+            },
+            "properties": {
+                "fr": "Mataréa"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.5990690788557,
+                    32.3763863179508
+                ]
+            },
+            "properties": {
+                "fr": "Mathias Ancien lépreux 359.4"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.484333675898,
+                    31.5759520397108
+                ]
+            },
+            "properties": {
+                "fr": "Mer Morte"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    30.1437444604034,
+                    33.6141719934453
+                ]
+            },
+            "properties": {
+                "fr": "Mer Méditerranée"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.0159194444444,
+                    43.0860275763329
+                ]
+            },
+            "properties": {
+                "fr": "Mer Pontique"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    38.0036589709434,
+                    21.0009063137787
+                ]
+            },
+            "properties": {
+                "fr": "Mer Rouge"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.7151545383512,
+                    31.7532983012144
+                ]
+            },
+            "properties": {
+                "fr": "Moab, monts"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.9944305743463,
+                    31.9349193159725
+                ]
+            },
+            "properties": {
+                "fr": "Modin"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    36.1917173341076,
+                    36.1762133858393
+                ]
+            },
+            "properties": {
+                "fr": "Mont Silpius"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    36.2124967053166,
+                    36.4391020189611
+                ]
+            },
+            "properties": {
+                "fr": "Montagnes Noires"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.8661657269954,
+                    36.3046191611785
+                ]
+            },
+            "properties": {
+                "fr": "Monts Pierea"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.3601196508412,
+                    31.8184776830991
+                ]
+            },
+            "properties": {
+                "fr": "Montée du Sang"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2354367554615,
+                    31.7774590605885
+                ]
+            },
+            "properties": {
+                "fr": "Moriah"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2260168067385,
+                    32.7027203751174
+                ]
+            },
+            "properties": {
+                "fr": "Mérala"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.4381509838015,
+                    32.9834740576366
+                ]
+            },
+            "properties": {
+                "fr": "Méron"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.6284919737153,
+                    33.0556582740476
+                ]
+            },
+            "properties": {
+                "fr": "Méron Lac de"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.6254530888621,
+                    33.0584768141596
+                ]
+            },
+            "properties": {
+                "fr": "Méron Lac de"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    43.5059505476018,
+                    33.711536972301
+                ]
+            },
+            "properties": {
+                "fr": "Mésopotamie"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.0845794293675,
+                    31.459169940787
+                ]
+            },
+            "properties": {
+                "fr": "Nahal Hevron"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.299771536823,
+                    32.702086078904
+                ]
+            },
+            "properties": {
+                "fr": "Nazareth"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.348910304796,
+                    32.6340368251372
+                ]
+            },
+            "properties": {
+                "fr": "Naïm"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.5327096523699,
+                    33.0580881422357
+                ]
+            },
+            "properties": {
+                "fr": "Nephtali"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.799526438257,
+                    32.0673233789847
+                ]
+            },
+            "properties": {
+                "fr": "Nicodème ?"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.443033501876,
+                    31.8541999507368
+                ]
+            },
+            "properties": {
+                "fr": "Nike"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.6285504906828,
+                    31.9030303764989
+                ]
+            },
+            "properties": {
+                "fr": "Nimrin"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    43.152579998045,
+                    36.3596770251323
+                ]
+            },
+            "properties": {
+                "fr": "Ninive"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2464549807221,
+                    31.7923579307557
+                ]
+            },
+            "properties": {
+                "fr": "Nobé"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.20581808993082,
+                    36.2599604194877
+                ]
+            },
+            "properties": {
+                "fr": "Numidie"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.7254609153903,
+                    31.7674869062568
+                ]
+            },
+            "properties": {
+                "fr": "Nébo (mont)"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    36.1006986696773,
+                    36.1116713582387
+                ]
+            },
+            "properties": {
+                "fr": "Oronte"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2279152769935,
+                    31.7758332772225
+                ]
+            },
+            "properties": {
+                "fr": "Palais d'Hérode"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.5450747560387,
+                    32.7759863958591
+                ]
+            },
+            "properties": {
+                "fr": "Palais d'Hérode Tibériade"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2330985331841,
+                    31.7768488946509
+                ]
+            },
+            "properties": {
+                "fr": "Palais de Chousa ?"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.5454176039927,
+                    32.7756747349058
+                ]
+            },
+            "properties": {
+                "fr": "Palais de Chouza ?"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2321999215836,
+                    31.7749608031497
+                ]
+            },
+            "properties": {
+                "fr": "Palais de Lazare"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2331399834488,
+                    31.777188145889
+                ]
+            },
+            "properties": {
+                "fr": "Palais des Hasmonéens ?"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    17.0016558824173,
+                    47.0661304546334
+                ]
+            },
+            "properties": {
+                "fr": "Pannonie"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    41.6942112698213,
+                    36.1313491551011
+                ]
+            },
+            "properties": {
+                "fr": "Parthes"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.6154566857299,
+                    32.4497594209034
+                ]
+            },
+            "properties": {
+                "fr": "Pella"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    30.8547934303357,
+                    36.9617591082582
+                ]
+            },
+            "properties": {
+                "fr": "Pergé"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    52.4933729980028,
+                    29.929747236433
+                ]
+            },
+            "properties": {
+                "fr": "Perse"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    51.0159461112821,
+                    27.0051753417027
+                ]
+            },
+            "properties": {
+                "fr": "Persique Golfe"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.3584155593009,
+                    32.6183929140172
+                ]
+            },
+            "properties": {
+                "fr": "Petit Hermon"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.9374487428706,
+                    31.9533688776067
+                ]
+            },
+            "properties": {
+                "fr": "Philadelphie"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    29.8508963521951,
+                    39.2504605019218
+                ]
+            },
+            "properties": {
+                "fr": "Phrygie"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.4305985819245,
+                    33.4294529032429
+                ]
+            },
+            "properties": {
+                "fr": "Phénicie"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.9341243688772,
+                    36.1843965047537
+                ]
+            },
+            "properties": {
+                "fr": "Pieria"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.235745589028,
+                    31.7809562956948
+                ]
+            },
+            "properties": {
+                "fr": "Piscine de Betesda"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.169847632679,
+                    31.6889182729379
+                ]
+            },
+            "properties": {
+                "fr": "Piscines de Salomon"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.1682221538151,
+                    32.7123885523964
+                ]
+            },
+            "properties": {
+                "fr": "Plaine d'Esdrelon"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.1471858295752,
+                    33.0557926763119
+                ]
+            },
+            "properties": {
+                "fr": "Point d'observation de Jésus"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    36.1828845559121,
+                    40.7592313206709
+                ]
+            },
+            "properties": {
+                "fr": "Pont"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.6282072349046,
+                    33.0103989894236
+                ]
+            },
+            "properties": {
+                "fr": "Pont romain"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.9178600020565,
+                    32.5495906402863
+                ]
+            },
+            "properties": {
+                "fr": "Pont romain ?"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.6144122413878,
+                    33.2244368470875
+                ]
+            },
+            "properties": {
+                "fr": "Pont romain ??"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.5651472026746,
+                    32.6247531953896
+                ]
+            },
+            "properties": {
+                "fr": "Pont romain de Gesher"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.1410612999816,
+                    32.6655523895756
+                ]
+            },
+            "properties": {
+                "fr": "Pont romain Khizon ?"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2337322614586,
+                    31.783000801893
+                ]
+            },
+            "properties": {
+                "fr": "Porte d'Hérode"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2305216194399,
+                    31.7817444269439
+                ]
+            },
+            "properties": {
+                "fr": "Porte de Damas"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2276362994475,
+                    31.77662214897
+                ]
+            },
+            "properties": {
+                "fr": "Porte de Jaffa"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2277330470856,
+                    31.7728843165548
+                ]
+            },
+            "properties": {
+                "fr": "Porte de l'Eau ?"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2358154982288,
+                    31.7784036032297
+                ]
+            },
+            "properties": {
+                "fr": "Porte de Nicanor"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2286017076471,
+                    31.7696729623371
+                ]
+            },
+            "properties": {
+                "fr": "Porte de Sion"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2369769675965,
+                    31.7809111596725
+                ]
+            },
+            "properties": {
+                "fr": "Porte des Brebis"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2349896636,
+                    31.7822760730469
+                ]
+            },
+            "properties": {
+                "fr": "Porte des Poissons ?"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2372213962397,
+                    31.7788429837842
+                ]
+            },
+            "properties": {
+                "fr": "Porte Dorée"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2309754515924,
+                    31.7781401830002
+                ]
+            },
+            "properties": {
+                "fr": "Porte Judiciaire ?"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2352692003517,
+                    31.7807649843615
+                ]
+            },
+            "properties": {
+                "fr": "Porte Orientale ?"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2372296134283,
+                    31.7780918271962
+                ]
+            },
+            "properties": {
+                "fr": "Portique de Salomon"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2360047849961,
+                    31.7799564384586
+                ]
+            },
+            "properties": {
+                "fr": "Portique des païens"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2363782759354,
+                    31.7759329459215
+                ]
+            },
+            "properties": {
+                "fr": "Portique Royal"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.6614504319121,
+                    32.7649494664417
+                ]
+            },
+            "properties": {
+                "fr": "Précipice des porcs géraséniens"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2337322106003,
+                    31.7805415498316
+                ]
+            },
+            "properties": {
+                "fr": "Prétoire"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.0742324468182,
+                    32.9212231455213
+                ]
+            },
+            "properties": {
+                "fr": "Ptolémaïs"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2848703283982,
+                    32.2098077370907
+                ]
+            },
+            "properties": {
+                "fr": "Puits de Jacob"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.6408435033817,
+                    32.0667431816403
+                ]
+            },
+            "properties": {
+                "fr": "Pérée"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.4494263977471,
+                    30.3249957726478
+                ]
+            },
+            "properties": {
+                "fr": "Pétra"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2307964962362,
+                    31.8529117934843
+                ]
+            },
+            "properties": {
+                "fr": "Ramah"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.8661475123713,
+                    31.9228048132559
+                ]
+            },
+            "properties": {
+                "fr": "Ramlé"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.7272812725455,
+                    32.0387204013257
+                ]
+            },
+            "properties": {
+                "fr": "Ramoth Gilead ?"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.1169104886612,
+                    31.7364601149772
+                ]
+            },
+            "properties": {
+                "fr": "Rephaïm wadi"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.9683871513039,
+                    32.8319530231476
+                ]
+            },
+            "properties": {
+                "fr": "Rocher de 250.9"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.5444049420875,
+                    33.2195000178868
+                ]
+            },
+            "properties": {
+                "fr": "Rohob ?"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    12.4851088821781,
+                    41.8935176361968
+                ]
+            },
+            "properties": {
+                "fr": "Rome"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.235128050829,
+                    32.6973934023873
+                ]
+            },
+            "properties": {
+                "fr": "RV avec les paysans"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2278188630415,
+                    31.9527917799898
+                ]
+            },
+            "properties": {
+                "fr": "RV secret"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    38.7954600828438,
+                    15.760997820677
+                ]
+            },
+            "properties": {
+                "fr": "Saba"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.5257205889589,
+                    32.3991007996432
+                ]
+            },
+            "properties": {
+                "fr": "Salim"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.5437160233093,
+                    31.856807068465
+                ]
+            },
+            "properties": {
+                "fr": "Salomon ?"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.1898740650418,
+                    32.2789160237678
+                ]
+            },
+            "properties": {
+                "fr": "Samarie Sébaste"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.9856586756419,
+                    31.7754288999307
+                ]
+            },
+            "properties": {
+                "fr": "Saraa"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2989058808102,
+                    33.4338451011676
+                ]
+            },
+            "properties": {
+                "fr": "Sarepta"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    49.7402033214664,
+                    49.7476581899748
+                ]
+            },
+            "properties": {
+                "fr": "Sarmates"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.000274969416,
+                    32.4000774436667
+                ]
+            },
+            "properties": {
+                "fr": "Saron, la plaine"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    15.6328203041005,
+                    38.2310514164075
+                ]
+            },
+            "properties": {
+                "fr": "Scylla"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    67.4999330787415,
+                    53.9866052840742
+                ]
+            },
+            "properties": {
+                "fr": "Scythes"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.317477785281,
+                    30.182250944239
+                ]
+            },
+            "properties": {
+                "fr": "Seir, mont"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.4954720618881,
+                    32.9698955149994
+                ]
+            },
+            "properties": {
+                "fr": "Sephet"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.5488218731942,
+                    31.8373981645052
+                ]
+            },
+            "properties": {
+                "fr": "Sermon de Jésus 5,75"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2962895258807,
+                    32.0520794908852
+                ]
+            },
+            "properties": {
+                "fr": "Shiloh"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.7158786916582,
+                    31.9652040254579
+                ]
+            },
+            "properties": {
+                "fr": "Shu'eib wadi"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.9556228078352,
+                    32.8252322921542
+                ]
+            },
+            "properties": {
+                "fr": "Sicaminon fouilles"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2820320320955,
+                    32.2135417228366
+                ]
+            },
+            "properties": {
+                "fr": "Sichem"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    14.1911650818508,
+                    37.7072947023043
+                ]
+            },
+            "properties": {
+                "fr": "Sicules"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.3683451400947,
+                    33.5616805817235
+                ]
+            },
+            "properties": {
+                "fr": "Sidon"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    33.9752445353386,
+                    28.5401041323363
+                ]
+            },
+            "properties": {
+                "fr": "Sinaï"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.9751749684572,
+                    31.6816401335109
+                ]
+            },
+            "properties": {
+                "fr": "Socoh"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.4242303639916,
+                    31.222386576941
+                ]
+            },
+            "properties": {
+                "fr": "Sodome ?"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.5144387226094,
+                    31.825596856955
+                ]
+            },
+            "properties": {
+                "fr": "Source de la Perdrix"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.5503169315227,
+                    32.8727944596283
+                ]
+            },
+            "properties": {
+                "fr": "Source du Figuier"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    12.4899755252441,
+                    41.894570084877
+                ]
+            },
+            "properties": {
+                "fr": "Subure"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.3014559637528,
+                    32.2127446493648
+                ]
+            },
+            "properties": {
+                "fr": "Sychar"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    15.2764223687656,
+                    37.0755302398863
+                ]
+            },
+            "properties": {
+                "fr": "Syracuse Palestre ?"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    15.2750669704842,
+                    37.0759643844409
+                ]
+            },
+            "properties": {
+                "fr": "Syracuse Théâtre"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    36.9923720926923,
+                    35.2527515650167
+                ]
+            },
+            "properties": {
+                "fr": "Syrie"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.0000068396856,
+                    31.7167562701806
+                ]
+            },
+            "properties": {
+                "fr": "Szanoé"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.9393857993314,
+                    36.1150167491955
+                ]
+            },
+            "properties": {
+                "fr": "Séleucie"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2149888838063,
+                    32.7041249877174
+                ]
+            },
+            "properties": {
+                "fr": "Séméron, Simonia"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2787603206884,
+                    32.7535661373983
+                ]
+            },
+            "properties": {
+                "fr": "Séphoris"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.3877400973962,
+                    32.6875432519963
+                ]
+            },
+            "properties": {
+                "fr": "Tabor"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2459095746229,
+                    30.8013012233037
+                ]
+            },
+            "properties": {
+                "fr": "Tamar"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.6689774493375,
+                    33.5021719283188
+                ]
+            },
+            "properties": {
+                "fr": "Tamiri"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.569352705035,
+                    32.7205621392696
+                ]
+            },
+            "properties": {
+                "fr": "Tarichée"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.8891700514631,
+                    36.9173362588244
+                ]
+            },
+            "properties": {
+                "fr": "Tarse"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2860642004453,
+                    31.9781394132213
+                ]
+            },
+            "properties": {
+                "fr": "Tel Asour"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.4921839336659,
+                    32.1398257195229
+                ]
+            },
+            "properties": {
+                "fr": "Tersa MV ?"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.3506309128274,
+                    32.2854157821966
+                ]
+            },
+            "properties": {
+                "fr": "Tersa Tayasir"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    8.81666787787928,
+                    51.900000214803
+                ]
+            },
+            "properties": {
+                "fr": "Teutberg"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    25.2916274793123,
+                    41.5374493312981
+                ]
+            },
+            "properties": {
+                "fr": "Thrace"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.543154314951,
+                    32.7770005672376
+                ]
+            },
+            "properties": {
+                "fr": "Tibériade"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    45.3031052927788,
+                    32.6894566403551
+                ]
+            },
+            "properties": {
+                "fr": "Tigre"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.0043233269168,
+                    31.7702476220508
+                ]
+            },
+            "properties": {
+                "fr": "Timnata ?"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.1239609353848,
+                    33.0651436565097
+                ]
+            },
+            "properties": {
+                "fr": "Tito le maréchal-ferrant 327"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.4396234486229,
+                    32.9811740036761
+                ]
+            },
+            "properties": {
+                "fr": "Tombe d'Hillel"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.202108218559,
+                    31.7204367460936
+                ]
+            },
+            "properties": {
+                "fr": "Tombeau de Rachel"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2392276422422,
+                    31.7759491768863
+                ]
+            },
+            "properties": {
+                "fr": "Tombeaux de Siloan"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2279384157357,
+                    31.7757707261064
+                ]
+            },
+            "properties": {
+                "fr": "Tour David"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2073050877818,
+                    31.7045683643655
+                ]
+            },
+            "properties": {
+                "fr": "Tour de David Bethléem"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2284611883479,
+                    31.7764048853979
+                ]
+            },
+            "properties": {
+                "fr": "Tour Hippique"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2284566870511,
+                    31.7760156442794
+                ]
+            },
+            "properties": {
+                "fr": "Tour Marianne"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2278050006848,
+                    31.7764442026151
+                ]
+            },
+            "properties": {
+                "fr": "Tour Phasael"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    36.4224554107954,
+                    33.003384394866
+                ]
+            },
+            "properties": {
+                "fr": "Trachonitide"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.189786207197,
+                    31.9561501479924
+                ]
+            },
+            "properties": {
+                "fr": "Tribu d'Ephraïm"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.194114386689,
+                    33.2731983182723
+                ]
+            },
+            "properties": {
+                "fr": "Tyr"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2143805075536,
+                    31.6395251423331
+                ]
+            },
+            "properties": {
+                "fr": "Técua"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.9473291809887,
+                    31.6918356324708
+                ]
+            },
+            "properties": {
+                "fr": "Térébinthe Vallée"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.1373554142021,
+                    31.8405593912913
+                ]
+            },
+            "properties": {
+                "fr": "Village détruit Emmaüs ?"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.1281284418142,
+                    31.8767537254255
+                ]
+            },
+            "properties": {
+                "fr": "Voie romaine"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2338188557708,
+                    31.7755817786828
+                ]
+            },
+            "properties": {
+                "fr": "Xyste"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.6506574857544,
+                    32.3984675955215
+                ]
+            },
+            "properties": {
+                "fr": "Yabis, wadi"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.8655109070329,
+                    32.735151313799
+                ]
+            },
+            "properties": {
+                "fr": "Yarmouk"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2281116663289,
+                    32.7552077505309
+                ]
+            },
+            "properties": {
+                "fr": "Yiftach El ?"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2122347539091,
+                    32.6812839327153
+                ]
+            },
+            "properties": {
+                "fr": "Zabulon"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.4899916676764,
+                    32.8578280742561
+                ]
+            },
+            "properties": {
+                "fr": "Zalmon, wadi"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2349422417309,
+                    31.7670758091307
+                ]
+            },
+            "properties": {
+                "fr": "Zoheleth ?"
             }
         }
     ]

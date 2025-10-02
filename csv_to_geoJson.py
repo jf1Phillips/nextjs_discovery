@@ -8,6 +8,12 @@ if len(argv) != 2:
 
 file_name = argv[1]
 
+def add_feature(row, key, feature):
+    try:
+        if row[key]:
+            feature["properties"][key] = row[key]
+    except:pass
+
 def csv_to_geoJson(file_name):
     features = []
     with open(file_name, mode='r', encoding='utf-8') as file:
@@ -23,12 +29,9 @@ def csv_to_geoJson(file_name):
                 },
                 "properties": {}
             }
-            if row["fr"]:
-                feature["properties"]["fr"] = row["fr"]
-            if row["en"]:
-                feature["properties"]["en"] = row["en"]
-            if row["it"]:
-                feature["properties"]["it"] = row["it"]
+            add_feature(row, "fr", feature)
+            add_feature(row, "en", feature)
+            add_feature(row, "it", feature)
             features.append(feature)
     return {
         "type": "FeatureCollection",
