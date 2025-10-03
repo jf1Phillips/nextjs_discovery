@@ -1,5 +1,5 @@
 import {Map as MapboxMap} from "mapbox-gl";
-import { remove_marker, add_marker } from "./get_map";
+import add_marker, {remove_marker} from "./mapbox_functions/add_marker";
 
 interface Lang {
     fr: string,

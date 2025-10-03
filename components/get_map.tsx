@@ -14,34 +14,7 @@ import get_loc from "@/script/get_loc";
 import atoi from "@/script/atoi";
 import json_load from "./json_load";
 import addRain from "./mapbox_functions/addRain";
-
-const markers: mapboxgl.Marker[] = [];
-const custom_rm: mapboxgl.Marker[] = [];
-
-export function add_marker(long: number, lat: number, map: MapboxMap, str: string, rm ?: boolean): void
-{
-    const popup = new mapboxgl.Popup({offset: 10})
-        .setHTML(`<p>${str}</p>`);
-    const div_marker: HTMLDivElement = document.createElement('div');
-    div_marker.className = "marker mt-[-15px] bg-[url(/img/map_pin.png)] bg-cover w-[30px] h-[30px] cursor-pointer";
-    const marker = new mapboxgl.Marker(div_marker).setLngLat([long, lat]).addTo(map);
-
-    marker.setPopup(popup);
-    markers.push(marker);
-    if (rm)
-        custom_rm.push(marker);
-}
-
-export function remove_marker(custom ?: boolean): void
-{
-    if (custom) {
-        custom_rm.forEach(marker => {marker.remove()});
-        custom_rm.length = 0;
-        return;
-    }
-    markers.forEach(marker => {marker.remove()});
-    markers.length = 0;
-}
+import add_marker, {remove_marker, add_bethsaida_marker} from "./mapbox_functions/add_marker";
 
 function chnageLabelsLang(map: MapboxMap, lang: string, file: string): void
 {
@@ -146,6 +119,7 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
         remove_marker();
         addBunker(map.current);
         add_marker(2.10, 48.15, map.current, "Personal bunker (disparait apres 1955)");
+        add_bethsaida_marker(map.current);
         get_loc().then(location => {
             if (!location || !map.current) return;
             add_marker(location.long, location.lat, map.current, "your location");
