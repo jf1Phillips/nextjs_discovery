@@ -14,13 +14,13 @@ import get_loc from "@/script/get_loc";
 import atoi from "@/script/atoi";
 import json_load from "./json_load";
 import addRain from "./mapbox_functions/addRain";
-import { Feature, Point } from "geojson";
 import add_marker, {remove_marker, add_bethsaida_marker} from "./mapbox_functions/add_marker";
 
 const GEOMAP_FOLDER: string = "/img/geo_map";
 const GEOMAP_NAME: string = "geo_map_";
 const ROAD_FILENAME: string = "/geoJson_files/route_palestine_merged.geojson";
 const LABELS_FILENAME: string = "/geoJson_files/city_label.geojson";
+const PINLABEL_FILENAME: string = "/img/pin_labels.png";
 export {GEOMAP_FOLDER, GEOMAP_NAME};
 
 function changeLabelsLang(map: MapboxMap, lang: string, file: string): void
@@ -51,17 +51,22 @@ function addGeoJsonLabels(file: string, map: MapboxMap, lang ?: string): void
     const id: string = file.replace(/(label|road|geo_map)/gi, "rp");
 
     if (!map.getSource(id)) {
+        map.loadImage(PINLABEL_FILENAME, (error, image) => {
+            if (error) {
+                console.error("Error loading image: ", error);
+                return;
+            }
+            if (!image) {
+                console.error("Image is null");
+                return;
+            }
+            if (!map.hasImage('pin_label')) {
+                map.addImage('pin_label', image);
+            }
+        });
         map.addSource(id, {
             type: 'geojson',
             data: file
-        });
-        fetch(file).then(response => {return response.json();}).then((data) => {
-            const features: Feature[] = data.features;
-            features.forEach((feature: Feature) => {
-                const coords = (feature.geometry as Point).coordinates;
-                if (feature.properties && feature.properties['fr'])
-                    add_marker(coords[0], coords[1], map, feature.properties['fr']);
-            });
         });
     }
     if (!map.getLayer(id)) {
@@ -70,12 +75,17 @@ function addGeoJsonLabels(file: string, map: MapboxMap, lang ?: string): void
             type: 'symbol',
             source: id,
             layout: {
+                'icon-image': 'pin_label',
+                'icon-allow-overlap': true,
                 'text-field': ['coalesce', ['get', `${langage}`], ['get', 'fr']],
                 'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'],
                 'text-size': ['interpolate', ['linear'], ['zoom'],
                     8, 13, 15, 50],
-                'text-offset': ['interpolate', ['linear'], ['zoom'],
-                    8, [0, -2.9], 15, [0, -1.0]],
+                'icon-size': ['interpolate', ['linear'], ['zoom'],
+                    8, 0.05, 15, 0.2],
+                'text-offset': [0, -1.8],
+                'icon-anchor': 'bottom',
+                'text-anchor': 'bottom',
             },
             paint: {
                 'text-color': 'rgba(87, 63, 104, 1)',
