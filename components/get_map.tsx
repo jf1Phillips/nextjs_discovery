@@ -14,6 +14,7 @@ import get_loc from "@/script/get_loc";
 import atoi from "@/script/atoi";
 import json_load from "./json_load";
 import addRain from "./mapbox_functions/addRain";
+import { Feature, Point } from "geojson";
 import add_marker, {remove_marker, add_bethsaida_marker} from "./mapbox_functions/add_marker";
 
 const GEOMAP_FOLDER: string = "/img/geo_map";
@@ -53,6 +54,14 @@ function addGeoJsonLabels(file: string, map: MapboxMap, lang ?: string): void
         map.addSource(id, {
             type: 'geojson',
             data: file
+        });
+        fetch(file).then(response => {return response.json();}).then((data) => {
+            const features: Feature[] = data.features;
+            features.forEach((feature: Feature) => {
+                const coords = (feature.geometry as Point).coordinates;
+                if (feature.properties && feature.properties['fr'])
+                    add_marker(coords[0], coords[1], map, feature.properties['fr']);
+            });
         });
     }
     if (!map.getLayer(id)) {
