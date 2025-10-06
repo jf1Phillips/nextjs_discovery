@@ -1,4 +1,5 @@
 import { Map as MapBoxMap } from "mapbox-gl";
+import { GEOMAP_FOLDER, GEOMAP_NAME } from "../get_map";
 
 export function addRoads(url_given: string, map: MapBoxMap)
 {
@@ -28,7 +29,7 @@ export function addRoads(url_given: string, map: MapBoxMap)
 export default function addGeoImg(url_given: string, map: MapBoxMap)
 {
     const layers = map.getStyle().layers;
-    const url = (url_given.includes("es.png")) ? "/geo_map_fr.png" : url_given;
+    const url = (url_given.includes("es.png")) ? `${GEOMAP_FOLDER}/${GEOMAP_NAME}fr.png` : url_given;
 
     layers.forEach(layer => {
         if (layer.id.includes("road") || layer.id.includes("label") || layer.id.includes("geo_map")) {

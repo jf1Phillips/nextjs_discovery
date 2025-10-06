@@ -16,6 +16,10 @@ import json_load from "./json_load";
 import addRain from "./mapbox_functions/addRain";
 import add_marker, {remove_marker, add_bethsaida_marker} from "./mapbox_functions/add_marker";
 
+const GEOMAP_FOLDER: string = "/img/geo_map";
+const GEOMAP_NAME: string = "geo_map_";
+export {GEOMAP_FOLDER, GEOMAP_NAME};
+
 function chnageLabelsLang(map: MapboxMap, lang: string, file: string): void
 {
     const id: string = file.replace(/(label|road|geo_map)/gi, "rp");
@@ -44,7 +48,8 @@ function addGeoJsonLabels(file: string, map: MapboxMap, lang ?: string): void
                 'text-field': ['coalesce', ['get', `${langage}`], ['get', 'fr']],
                 'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'],
                 'text-size': 15,
-                'text-anchor': 'bottom'
+                'text-anchor': 'bottom',
+                'text-offset': [0, -2.0],
             },
             paint: {
                 'text-color': 'rgba(26, 18, 31, 1)',
@@ -126,7 +131,7 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
         });
         add_marker(DEFAULT_VALUE.long, DEFAULT_VALUE.lat, map.current, "paris");
         json_load("/json_files/test.json", new_state.lang, map.current, textNbr);
-        addGeoImg(`/geo_map_${new_state.lang}.png`, map.current);
+        addGeoImg(`${GEOMAP_FOLDER}/${GEOMAP_NAME}${new_state.lang}.png`, map.current);
         addRoads("/geoJson_files/route_palestine_merged.geojson", map.current);
         map.current?.setPaintProperty('water', 'fill-color', new_state.enabled ? 'rgba(14, 15, 99, 1)': 'rgba(14, 122, 155, 1)');
         set3dTerrain(map.current, !state.relief);
@@ -240,7 +245,7 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
     const changeLang = (lang: string) => {
         if (!map.current || !map.current.isStyleLoaded()) return;
         json_load("/json_files/test.json", lang, map.current, textNbr);
-        addGeoImg(`/geo_map_${lang}.png`, map.current);
+        addGeoImg(`${GEOMAP_FOLDER}/${GEOMAP_NAME}${lang}.png`, map.current);
         chnageLabelsLang(map.current, lang, "/geoJson_files/city_label.geojson");
         setState(prev => ({
             ...prev,
