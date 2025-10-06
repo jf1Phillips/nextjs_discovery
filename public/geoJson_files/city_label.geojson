@@ -5785,6 +5785,357 @@
             "properties": {
                 "fr": "Betoannaba"
             }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.14514,
+                    31.48544
+                ]
+            },
+            "properties": {
+                "fr": "Zif"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.14066,
+                    31.42534
+                ]
+            },
+            "properties": {
+                "fr": "Carmel"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.0654,
+                    31.4036
+                ]
+            },
+            "properties": {
+                "fr": "Estémoa"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.97001,
+                    31.21815
+                ]
+            },
+            "properties": {
+                "fr": "Hormah"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.23657,
+                    31.28905
+                ]
+            },
+            "properties": {
+                "fr": "Rafia"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.90607,
+                    31.4509
+                ]
+            },
+            "properties": {
+                "fr": "Debir"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.88743,
+                    31.50789
+                ]
+            },
+            "properties": {
+                "fr": "Macéda"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.84309,
+                    31.57083
+                ]
+            },
+            "properties": {
+                "fr": "Lachis"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.78102,
+                    31.61779
+                ]
+            },
+            "properties": {
+                "fr": "Get"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.72746,
+                    31.54833
+                ]
+            },
+            "properties": {
+                "fr": "Eglon"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.90397,
+                    31.59546
+                ]
+            },
+            "properties": {
+                "fr": "Marisa"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.8845,
+                    31.63565
+                ]
+            },
+            "properties": {
+                "fr": "Libna"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.92912,
+                    31.66243
+                ]
+            },
+            "properties": {
+                "fr": "Sznaoé"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.24134,
+                    31.66824
+                ]
+            },
+            "properties": {
+                "fr": "Hérodium"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.53412,
+                    31.8095
+                ]
+            },
+            "properties": {
+                "fr": "Sabéa de Bétléchi"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.44721,
+                    31.83394
+                ]
+            },
+            "properties": {
+                "fr": "Maison de Niké"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.38273,
+                    31.77538
+                ]
+            },
+            "properties": {
+                "fr": "Tentation de Jésus"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.16587,
+                    31.77465
+                ]
+            },
+            "properties": {
+                "fr": "Ein Karem"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2308,
+                    31.82801
+                ]
+            },
+            "properties": {
+                "fr": "Gibéa"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.63037,
+                    31.79255
+                ]
+            },
+            "properties": {
+                "fr": "Ruine du port de Azot"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.70574,
+                    31.93453
+                ]
+            },
+            "properties": {
+                "fr": "Ruine du port de Jabnia"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.32967,
+                    32.61167
+                ]
+            },
+            "properties": {
+                "fr": "Shunam"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.41013,
+                    32.55512
+                ]
+            },
+            "properties": {
+                "fr": "Plaine de Jezraël"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.31155,
+                    32.56725
+                ]
+            },
+            "properties": {
+                "fr": "Jezraël"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.06984,
+                    32.54098
+                ]
+            },
+            "properties": {
+                "fr": "Gamala, vigneron"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.07997,
+                    32.67772
+                ]
+            },
+            "properties": {
+                "fr": "Muraqa"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.92105,
+                    32.53643
+                ]
+            },
+            "properties": {
+                "fr": "Sintica"
+            }
         }
     ]
 }
