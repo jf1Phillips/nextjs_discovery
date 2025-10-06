@@ -6136,6 +6136,97 @@
             "properties": {
                 "fr": "Sintica"
             }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.97835,
+                    32.54084
+                ]
+            },
+            "properties": {
+                "fr": "F. des crocodiles"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.56954,
+                    32.61889
+                ]
+            },
+            "properties": {
+                "fr": "Magedan"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.61349,
+                    32.49928
+                ]
+            },
+            "properties": {
+                "fr": "(Jaïa, jeune aveugle)"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.62027,
+                    32.6137
+                ]
+            },
+            "properties": {
+                "fr": "Galgala?"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.39449,
+                    33.02613
+                ]
+            },
+            "properties": {
+                "fr": "Sasa"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.41491,
+                    33.06012
+                ]
+            },
+            "properties": {
+                "fr": "Mère cananéeenne"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.6318,
+                    33.17815
+                ]
+            },
+            "properties": {
+                "fr": "Election de St. Pierre"
+            }
         }
     ]
 }
