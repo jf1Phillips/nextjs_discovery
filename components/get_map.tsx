@@ -18,9 +18,11 @@ import add_marker, {remove_marker, add_bethsaida_marker} from "./mapbox_function
 
 const GEOMAP_FOLDER: string = "/img/geo_map";
 const GEOMAP_NAME: string = "geo_map_";
+const ROAD_FILENAME: string = "/geoJson_files/route_palestine_merged.geojson";
+const LABELS_FILENAME: string = "/geoJson_files/city_label.geojson";
 export {GEOMAP_FOLDER, GEOMAP_NAME};
 
-function chnageLabelsLang(map: MapboxMap, lang: string, file: string): void
+function changeLabelsLang(map: MapboxMap, lang: string, file: string): void
 {
     const id: string = file.replace(/(label|road|geo_map)/gi, "rp");
 
@@ -52,9 +54,9 @@ function addGeoJsonLabels(file: string, map: MapboxMap, lang ?: string): void
                 'text-offset': [0, -2.0],
             },
             paint: {
-                'text-color': 'rgba(26, 18, 31, 1)',
+                'text-color': 'rgba(87, 63, 104, 1)',
                 'text-halo-color': 'rgba(255, 255, 255, 1)',
-                'text-halo-width': 2
+                'text-halo-width': 1
             }
         });
     }
@@ -132,11 +134,11 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
         add_marker(DEFAULT_VALUE.long, DEFAULT_VALUE.lat, map.current, "paris");
         json_load("/json_files/test.json", new_state.lang, map.current, textNbr);
         addGeoImg(`${GEOMAP_FOLDER}/${GEOMAP_NAME}${new_state.lang}.png`, map.current);
-        addRoads("/geoJson_files/route_palestine_merged.geojson", map.current);
+        addRoads(ROAD_FILENAME, map.current);
         map.current?.setPaintProperty('water', 'fill-color', new_state.enabled ? 'rgba(14, 15, 99, 1)': 'rgba(14, 122, 155, 1)');
         set3dTerrain(map.current, !state.relief);
         addRain(map.current, !state.rain);
-        addGeoJsonLabels("/geoJson_files/city_label.geojson", map.current, new_state.lang);
+        addGeoJsonLabels(LABELS_FILENAME, map.current, new_state.lang);
     }
 
     const cpy_txt = async (txt: string): Promise<void> => {
@@ -246,7 +248,7 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
         if (!map.current || !map.current.isStyleLoaded()) return;
         json_load("/json_files/test.json", lang, map.current, textNbr);
         addGeoImg(`${GEOMAP_FOLDER}/${GEOMAP_NAME}${lang}.png`, map.current);
-        chnageLabelsLang(map.current, lang, "/geoJson_files/city_label.geojson");
+        changeLabelsLang(map.current, lang, LABELS_FILENAME);
         setState(prev => ({
             ...prev,
             lang: lang,
