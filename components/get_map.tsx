@@ -30,6 +30,20 @@ function changeLabelsLang(map: MapboxMap, lang: string, file: string): void
     map.setLayoutProperty(id, 'text-field', ['coalesce', ['get', `${lang}`], ['get', 'fr']]);
 }
 
+function changeLabelsColors(map: MapboxMap, darkmode: boolean, file: string): void
+{
+    const id: string = file.replace(/(label|road|geo_map)/gi, "rp");
+
+    if (!map.getLayer(id)) return;
+    if (darkmode) {
+        map.setPaintProperty(id, 'text-color', 'rgba(255, 255, 255, 1)');
+        map.setPaintProperty(id, 'text-halo-color', 'rgba(87, 63, 104, 1)');
+    } else {
+        map.setPaintProperty(id, 'text-color', 'rgba(87, 63, 104, 1)');
+        map.setPaintProperty(id, 'text-halo-color', 'rgba(255, 255, 255, 1)');
+    }
+}
+
 function addGeoJsonLabels(file: string, map: MapboxMap, lang ?: string): void
 {
     const langage: string = lang ? lang : "fr";
@@ -139,6 +153,7 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
         set3dTerrain(map.current, !state.relief);
         addRain(map.current, !state.rain);
         addGeoJsonLabels(LABELS_FILENAME, map.current, new_state.lang);
+        changeLabelsColors(map.current, new_state.enabled, LABELS_FILENAME);
     }
 
     const cpy_txt = async (txt: string): Promise<void> => {
