@@ -20,7 +20,8 @@ const GEOMAP_FOLDER: string = "/img/geo_map";
 const GEOMAP_NAME: string = "geo_map_";
 const ROAD_FILENAME: string = "/geoJson_files/route_palestine_merged.geojson";
 const LABELS_FILENAME: string = "/geoJson_files/city_label.geojson";
-const PINLABEL_FILENAME: string = "/img/pin_labels.png";
+const PINLABEL_FILENAME_DARK: string = "/img/pin_labels_dark.png";
+const PINLABEL_FILENAME_WHITE: string = "/img/pin_labels_white.png";
 export {GEOMAP_FOLDER, GEOMAP_NAME};
 
 function changeLabelsLang(map: MapboxMap, lang: string, file: string): void
@@ -39,9 +40,11 @@ function changeLabelsColors(map: MapboxMap, darkmode: boolean, file: string): vo
     if (darkmode) {
         map.setPaintProperty(id, 'text-color', 'rgba(255, 255, 255, 1)');
         map.setPaintProperty(id, 'text-halo-color', 'rgba(87, 63, 104, 1)');
+        map.setLayoutProperty(id, 'icon-image', 'pin_label_dark');
     } else {
         map.setPaintProperty(id, 'text-color', 'rgba(87, 63, 104, 1)');
         map.setPaintProperty(id, 'text-halo-color', 'rgba(255, 255, 255, 1)');
+        map.setLayoutProperty(id, 'icon-image', 'pin_label_white');
     }
 }
 
@@ -50,20 +53,25 @@ function addGeoJsonLabels(file: string, map: MapboxMap, lang ?: string): void
     const langage: string = lang ? lang : "fr";
     const id: string = file.replace(/(label|road|geo_map)/gi, "rp");
 
+    if (!map.hasImage('pin_label_dark')) {
+        map.loadImage(PINLABEL_FILENAME_DARK, (error, image) => {
+            if (error) return;
+            if (!image) return;
+            if (!map.hasImage('pin_label_dark'))
+                map.addImage('pin_label_dark', image);
+        }
+        );
+    }
+    if (!map.hasImage('pin_label_white')) {
+        map.loadImage(PINLABEL_FILENAME_WHITE, (error, image) => {
+            if (error) return;
+            if (!image) return;
+            if (!map.hasImage('pin_label_white'))
+                map.addImage('pin_label_white', image);
+        }
+        );
+    }
     if (!map.getSource(id)) {
-        map.loadImage(PINLABEL_FILENAME, (error, image) => {
-            if (error) {
-                console.error("Error loading image: ", error);
-                return;
-            }
-            if (!image) {
-                console.error("Image is null");
-                return;
-            }
-            if (!map.hasImage('pin_label')) {
-                map.addImage('pin_label', image);
-            }
-        });
         map.addSource(id, {
             type: 'geojson',
             data: file
@@ -75,21 +83,21 @@ function addGeoJsonLabels(file: string, map: MapboxMap, lang ?: string): void
             type: 'symbol',
             source: id,
             layout: {
-                'icon-image': 'pin_label',
+                'icon-image': 'pin_label_white',
                 'icon-allow-overlap': true,
                 'text-field': ['coalesce', ['get', `${langage}`], ['get', 'fr']],
                 'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'],
                 'text-size': ['interpolate', ['linear'], ['zoom'],
                     8, 13, 15, 50],
                 'icon-size': ['interpolate', ['linear'], ['zoom'],
-                    8, 0.05, 15, 0.2],
+                    8, 0.4, 15, 1.7],
                 'text-offset': [0, -1.8],
                 'icon-anchor': 'bottom',
                 'text-anchor': 'bottom',
             },
             paint: {
-                'text-color': 'rgba(87, 63, 104, 1)',
-                'text-halo-color': 'rgba(255, 255, 255, 1)',
+                'text-color': 'rgb(87, 63, 104)',
+                'text-halo-color': 'rgb(255, 255, 255)',
                 'text-halo-width': 1
             }
         });
