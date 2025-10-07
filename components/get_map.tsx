@@ -18,6 +18,7 @@ import add_marker, {remove_marker, add_bethsaida_marker} from "./mapbox_function
 
 const GEOMAP_FOLDER: string = "/img/geo_map";
 const GEOMAP_NAME: string = "geo_map_";
+// const ROAD_FILENAME: string = "/test.geojson";
 const ROAD_FILENAME: string = "/geoJson_files/route_palestine_merged.geojson";
 const LABELS_FILENAME: string = "/geoJson_files/city_label.geojson";
 const PINLABEL_FILENAME_DARK: string = "/img/pin_labels_dark.png";
