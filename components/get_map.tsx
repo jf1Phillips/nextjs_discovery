@@ -39,13 +39,13 @@ function changeLabelsColors(map: MapboxMap, darkmode: boolean, file: string): vo
 
     if (!map.getLayer(id)) return;
     if (darkmode) {
-        map.setPaintProperty(id, 'text-color', 'rgba(255, 255, 255, 1)');
-        map.setPaintProperty(id, 'text-halo-color', 'rgba(87, 63, 104, 1)');
-        map.setLayoutProperty(id, 'icon-image', 'pin_label_dark');
-    } else {
-        map.setPaintProperty(id, 'text-color', 'rgba(87, 63, 104, 1)');
-        map.setPaintProperty(id, 'text-halo-color', 'rgba(255, 255, 255, 1)');
+        map.setPaintProperty(id, 'text-color', '#ffffff');
+        map.setPaintProperty(id, 'text-halo-color', '#000000');
         map.setLayoutProperty(id, 'icon-image', 'pin_label_white');
+    } else {
+        map.setPaintProperty(id, 'text-color', '#000000');
+        map.setPaintProperty(id, 'text-halo-color', '#ffffff');
+        map.setLayoutProperty(id, 'icon-image', 'pin_label_dark');
     }
 }
 
@@ -312,18 +312,19 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
     }
     const [sliderValue, setSliderValue] = useState(50);
 
-    const changeOpacity = (value: number) => {
+    const changeOpacity = (value: number, include: string) => {
         setSliderValue(value);
         if (!map.current) return;
         const layers = map.current.getStyle()?.layers || [];
         layers.forEach(layer => {
-            if (layer.id.includes("geo_map")) {
+            if (layer.id.includes(include)) {
                 try {
                     map.current!.setPaintProperty(layer.id, "raster-opacity", value / 100.0);
                 } catch (e) {console.log(e);}
             }
         });
     };
+
     return (<>
         <button className={`absolute w-[22px] h-[22px] mt-[120px] ml-[102px] duration-300 text-[15px] rounded-[2px]
                     ${state.enabled ? "bg-darkMode text-whiteMode" : "bg-whiteMode text-darkMode"}`}
@@ -334,7 +335,7 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
                 onClick={setRain}>
                     {!state.rain ? "🌧️" : "☀️"}</button>
         <div className="absolute mt-[90px] h-[22px] ml-[10px] flex items-center w-[120px] z-10">
-            <input type="range" min={0} max={100} value={sliderValue} onChange={e => changeOpacity(Number(e.target.value))}
+            <input type="range" min={0} max={100} value={sliderValue} onChange={e => changeOpacity(Number(e.target.value), "geo_map")}
                 className={`w-full h-[10px] rounded-lg appearance-none cursor-pointer duration-300
                 ${!state.enabled ? "bg-whiteMode accent-darkMode" : "bg-darkMode accent-whiteMode"}`}
             />
