@@ -159,7 +159,6 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
     const [state, setState] = useState<MapVar>(({...DEFAULT_VALUE, zoom: def_zoom}));
     const [prevNbr, setPrevNbr] = useState<number>(1);
     const [prevHistdate, setPrevHistdate] = useState<number>(histdate);
-    const [mousePos, setMousePos] = useState<[number, number]>([0, 0]);
     const [lastPos, setLastPos] = useState<LngLat | null>(null);
     const map = useRef<MapboxMap | null>(null);
     const container = useRef<HTMLDivElement | null>(null);
@@ -328,36 +327,24 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
                     onClick={setRain}>
                         {!state.rain ? "🌧️" : "☀️"}</button>
 
-            <div className={`absolute top-[15px] left-[10px] h-[22px] flex items-center
-                    ${state.enabled ? "text-darkMode" : "text-whiteMode"}`}>
+            <div className={`absolute top-[15px] left-[10px] h-[22px] flex items-center text-[13px]
+                    ${state.enabled ? "text-whiteMode" : "text-whiteMode"}`}>
                 <input type="range" min={0} max={100} value={sliderValue} onChange={e => changeOpacity(Number(e.target.value), "geo_map", setSliderValue)}
-                    className={`w-[70px] h-[10px] rounded-lg appearance-none cursor-pointer duration-300
+                    className={`w-[62px] h-[10px] rounded-lg appearance-none cursor-pointer duration-300
                     ${!state.enabled ? "bg-whiteMode accent-darkMode" : "bg-darkMode accent-whiteMode"}`}
                 />
-                <p className="ml-[10px] w-[35px]">{sliderValue}</p>
-                <p>Masquer l'image de fond</p>
+                <p className="ml-[10px] w-[30px]">{sliderValue}</p>
+                <p>{"Masquer l'image de fond"}</p>
             </div>
-            <div className={`absolute top-[45px] left-[10px] h-[22px] flex items-center
-                    ${state.enabled ? "text-darkMode" : "text-whiteMode"}`}>
+            <div className={`absolute top-[45px] left-[10px] h-[22px] flex items-center text-[13px]
+                    ${state.enabled ? "text-whiteMode" : "text-whiteMode"}`}>
                 <input type="range" min={0} max={100} value={sliderValue2} onChange={e => changeOpacity(Number(e.target.value), "city", setSliderValue2)}
-                    className={`w-[70px] h-[10px] rounded-lg appearance-none cursor-pointer duration-300
+                    className={`w-[62px] h-[10px] rounded-lg appearance-none cursor-pointer duration-300
                     ${!state.enabled ? "bg-whiteMode accent-darkMode" : "bg-darkMode accent-whiteMode"}`}
                 />
-                <p className="ml-[10px] w-[35px]">{sliderValue2}</p>
+                <p className="ml-[10px] w-[30px]">{sliderValue2}</p>
                 <p>Masquer les marqueurs et les labels</p>
             </div>
-            {/* <div className="absolute mt-[60px] h-[22px] ml-[10px] flex items-center w-[120px] z-10">
-                <input type="range" min={0} max={100} value={sliderValue2} onChange={e => changeOpacity(Number(e.target.value), "city", setSliderValue2)}
-                    className={`w-full h-[10px] rounded-lg appearance-none cursor-pointer duration-300
-                    ${!state.enabled ? "bg-whiteMode accent-darkMode" : "bg-darkMode accent-whiteMode"}`}
-                />
-                <p className="ml-[10px] text-whiteMode"
-                    style={{ minWidth: "40px" }}
-                >
-                    {sliderValue2}
-                </p>
-                <p>Masquer les marqueurs et les labels</p>
-            </div> */}
 
             {/* <button className={`absolute w-[22px] h-[22px] rounded-[2px] mt-[120px] left-[72px]  duration-300
                         ${state.enabled ? "bg-darkMode text-whiteMode" : "bg-whiteMode text-darkMode"}`}
@@ -365,8 +352,8 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
                     >↻</button> */}
 
             {/* <SelectLang setSelected={changeLang} darkmode={state.enabled}/> */}
-            {/* <ZoomInOut enabled={state.enabled} setZoom={zoomInOut} /> */}
-            {/* <DarkMode enabled={state.enabled} changeMode={changeMode} className="absolute ml-[calc(100%-60px)] mt-[120px]"/> */}
+            <ZoomInOut enabled={state.enabled} setZoom={zoomInOut} />
+            <DarkMode enabled={state.enabled} changeMode={changeMode}/>
             {/* <form className="text-customWhite flex flex-col items-center justify-center mt-4"
                     onSubmit={submitEvent}>
                 <div className="flex flex-row gap-x-[10vw]">
@@ -393,7 +380,7 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
                     type="submit">View</button>
             </form> */}
         </div>
-        <div className="relative overflow-hidden bg-black">
+        <div className="relative overflow-hidden">
             <div className={`absolute text-[18px] p-[5px] rounded-br-[8px] z-10 duration-300 tracking-[1px] top-0 left-0
                 ${state.enabled ? "text-whiteMode bg-darkMode" : "text-darkMode bg-whiteMode"}`}>
                 <p>Lng: {lastPos ? lastPos.lng.toFixed(5) : ''}<br/>Lat: {lastPos ? lastPos.lat.toFixed(5) : ''}</p>

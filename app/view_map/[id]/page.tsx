@@ -19,10 +19,10 @@ export default function MapNbr(
     return (
         <>
             <GetMapboxMap def_zoom={atoi(params.id, 10)} histdate={histdate} enbl={enabled} setEnbl={setEnabled} textNbr={stateTextNbr}/>
-            {/* <DisplayTxt enabled={enabled}
+            <DisplayTxt enabled={enabled}
                         setStateTextNbr={setStateTextNbr}
                         histdate={histdate}
-                        setHistDate={setHistDate}/> */}
+                        setHistDate={setHistDate}/>
         </>
     )
 }
