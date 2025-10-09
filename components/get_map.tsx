@@ -217,22 +217,6 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
         return () => {map.current?.remove()};
     }, []);
 
-    const mouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-        const mouseDiv = document.querySelector('.mouse-pos-div') as HTMLDivElement;
-        if (!mouseDiv) return;
-        if (window.innerWidth < 800 || !map.current) {
-            if (mouseDiv.style.visibility != "hidden") mouseDiv.style.visibility = "hidden";
-            return;
-        }
-        // mouseDiv.style.visibility = "visible";
-        const {lng, lat} = map.current.unproject([e.clientX, e.clientY]);
-        setMousePos([lng, lat]);
-        const rect = e.currentTarget.getBoundingClientRect();
-        const [x, y] = [e.clientX - rect.left, e.clientY - rect.top];
-        mouseDiv.style.left = `${x + 20}px`;
-        mouseDiv.style.top = `${y - 50}px`;
-    }
-
     if (prevNbr != textNbr && map.current) {
         setPrevNbr(textNbr);
         console.log("OKOK");
@@ -334,87 +318,90 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
     };
 
     return (<>
-        <button className={`absolute w-[22px] h-[22px] mt-[120px] ml-[102px] duration-300 text-[15px] rounded-[2px]
-                    ${state.enabled ? "bg-darkMode text-whiteMode" : "bg-whiteMode text-darkMode"}`}
-                onClick={setRelief}>
-                    {state.relief ? "2d" : "3d"}</button>
-        <button className={`absolute w-[22px] h-[22px] mt-[120px] ml-[132px] duration-300 text-[15px] rounded-[2px]
-                    ${state.enabled ? "bg-darkMode" : "bg-whiteMode"}`}
-                onClick={setRain}>
-                    {!state.rain ? "🌧️" : "☀️"}</button>
+        <div className="w-full h-[120px]">
+            <button className={`absolute w-[22px] h-[22px] duration-300 text-[15px] rounded-[2px] top-[80px] left-[10px]
+                        ${state.enabled ? "bg-darkMode text-whiteMode" : "bg-whiteMode text-darkMode"}`}
+                    onClick={setRelief}>
+                        {state.relief ? "2d" : "3d"}</button>
+            <button className={`absolute w-[22px] h-[22px] duration-300 text-[15px] rounded-[2px] top-[80px] left-[50px]
+                        ${state.enabled ? "bg-darkMode" : "bg-whiteMode"}`}
+                    onClick={setRain}>
+                        {!state.rain ? "🌧️" : "☀️"}</button>
 
-        <div className="absolute mt-[90px] h-[22px] ml-[10px] flex items-center w-[120px] z-10">
-            <input type="range" min={0} max={100} value={sliderValue} onChange={e => changeOpacity(Number(e.target.value), "geo_map", setSliderValue)}
-                className={`w-full h-[10px] rounded-lg appearance-none cursor-pointer duration-300
-                ${!state.enabled ? "bg-whiteMode accent-darkMode" : "bg-darkMode accent-whiteMode"}`}
-            />
-            <p className="ml-[10px] text-whiteMode"
-                style={{ minWidth: "40px" }}
-            >
-                {sliderValue}
-            </p>
-            {/* <p>Masquer l'image de fond</p> */}
-        </div>
-                <div className="absolute mt-[60px] h-[22px] ml-[10px] flex items-center w-[120px] z-10">
-            <input type="range" min={0} max={100} value={sliderValue2} onChange={e => changeOpacity(Number(e.target.value), "city", setSliderValue2)}
-                className={`w-full h-[10px] rounded-lg appearance-none cursor-pointer duration-300
-                ${!state.enabled ? "bg-whiteMode accent-darkMode" : "bg-darkMode accent-whiteMode"}`}
-            />
-            <p className="ml-[10px] text-whiteMode"
-                style={{ minWidth: "40px" }}
-            >
-                {sliderValue2}
-            </p>
-            {/* <p>Masquer les marqueurs et les labels</p> */}
-        </div>
-
-        <button className={`absolute w-[22px] h-[22px] rounded-[2px] mt-[120px] left-[72px]  duration-300
-                    ${state.enabled ? "bg-darkMode text-whiteMode" : "bg-whiteMode text-darkMode"}`}
-                onClick={() => reload_json_labels(map.current as MapboxMap, state.lang, "/geoJson_files/city_label.geojson")}
-                >↻</button>
-
-        <SelectLang setSelected={changeLang} darkmode={state.enabled}/>
-        <ZoomInOut enabled={state.enabled} setZoom={zoomInOut} />
-        <DarkMode enabled={state.enabled} changeMode={changeMode} className="absolute ml-[calc(100%-60px)] mt-[120px]"/>
-        <form className="text-customWhite flex flex-col items-center justify-center mt-4"
-                onSubmit={submitEvent}>
-            <div className="flex flex-row gap-x-[10vw]">
-                <div className="flex flex-col items-center">
-                    <label className="mb-[5px]">Zoom</label>
-                    <input className="outline-none border-solid border-[2px] rounded-full bg-customGrey2 text-center w-[100px]"
-                            type="text" name="zoom" defaultValue={state.zoom.toString()}/>
-                </div>
-                <div className="flex flex-col items-center">
-                    <label className="mb-[5px]">Lat</label>
-                    <input className="outline-none border-solid border-[2px] rounded-full bg-customGrey2 text-center w-[100px]"
-                            type="text" name="lat" defaultValue={state.lat.toString()}/>
-                </div>
-                <div className="flex flex-col items-center">
-                    <label className="mb-[5px]">Long</label>
-                    <input className="outline-none border-solid border-[2px] rounded-full bg-customGrey2 text-center w-[100px]"
-                            type="text" name="long" defaultValue={state.long.toString()}/>
-                </div>
+            <div className={`absolute top-[15px] left-[10px] h-[22px] flex items-center
+                    ${state.enabled ? "text-darkMode" : "text-whiteMode"}`}>
+                <input type="range" min={0} max={100} value={sliderValue} onChange={e => changeOpacity(Number(e.target.value), "geo_map", setSliderValue)}
+                    className={`w-[70px] h-[10px] rounded-lg appearance-none cursor-pointer duration-300
+                    ${!state.enabled ? "bg-whiteMode accent-darkMode" : "bg-darkMode accent-whiteMode"}`}
+                />
+                <p className="ml-[10px] w-[35px]">{sliderValue}</p>
+                <p>Masquer l'image de fond</p>
             </div>
-            <button className="
-                    rounded-full bg-customGrey2 w-[80px] mt-[30px] h-[30px] border-customGrey2
-                    hover:bg-customGrey2Hover hover:border-[2px] hover:border-solid hover:border-customGrey2
-                    transition-all duration-200 ease-in-out"
-                type="submit">View</button>
-        </form>
-        <div className="top-[30px] relative overflow-hidden" onMouseMove={mouseMove}>
-            <div className={`absolute text-[18px] p-[5px] rounded-br-[8px] z-10 duration-300 tracking-[1px]
+            <div className={`absolute top-[45px] left-[10px] h-[22px] flex items-center
+                    ${state.enabled ? "text-darkMode" : "text-whiteMode"}`}>
+                <input type="range" min={0} max={100} value={sliderValue2} onChange={e => changeOpacity(Number(e.target.value), "city", setSliderValue2)}
+                    className={`w-[70px] h-[10px] rounded-lg appearance-none cursor-pointer duration-300
+                    ${!state.enabled ? "bg-whiteMode accent-darkMode" : "bg-darkMode accent-whiteMode"}`}
+                />
+                <p className="ml-[10px] w-[35px]">{sliderValue2}</p>
+                <p>Masquer les marqueurs et les labels</p>
+            </div>
+            {/* <div className="absolute mt-[60px] h-[22px] ml-[10px] flex items-center w-[120px] z-10">
+                <input type="range" min={0} max={100} value={sliderValue2} onChange={e => changeOpacity(Number(e.target.value), "city", setSliderValue2)}
+                    className={`w-full h-[10px] rounded-lg appearance-none cursor-pointer duration-300
+                    ${!state.enabled ? "bg-whiteMode accent-darkMode" : "bg-darkMode accent-whiteMode"}`}
+                />
+                <p className="ml-[10px] text-whiteMode"
+                    style={{ minWidth: "40px" }}
+                >
+                    {sliderValue2}
+                </p>
+                <p>Masquer les marqueurs et les labels</p>
+            </div> */}
+
+            {/* <button className={`absolute w-[22px] h-[22px] rounded-[2px] mt-[120px] left-[72px]  duration-300
+                        ${state.enabled ? "bg-darkMode text-whiteMode" : "bg-whiteMode text-darkMode"}`}
+                    onClick={() => reload_json_labels(map.current as MapboxMap, state.lang, "/geoJson_files/city_label.geojson")}
+                    >↻</button> */}
+
+            {/* <SelectLang setSelected={changeLang} darkmode={state.enabled}/> */}
+            {/* <ZoomInOut enabled={state.enabled} setZoom={zoomInOut} /> */}
+            {/* <DarkMode enabled={state.enabled} changeMode={changeMode} className="absolute ml-[calc(100%-60px)] mt-[120px]"/> */}
+            {/* <form className="text-customWhite flex flex-col items-center justify-center mt-4"
+                    onSubmit={submitEvent}>
+                <div className="flex flex-row gap-x-[10vw]">
+                    <div className="flex flex-col items-center">
+                        <label className="mb-[5px]">Zoom</label>
+                        <input className="outline-none border-solid border-[2px] rounded-full bg-customGrey2 text-center w-[100px]"
+                                type="text" name="zoom" defaultValue={state.zoom.toString()}/>
+                    </div>
+                    <div className="flex flex-col items-center">
+                        <label className="mb-[5px]">Lat</label>
+                        <input className="outline-none border-solid border-[2px] rounded-full bg-customGrey2 text-center w-[100px]"
+                                type="text" name="lat" defaultValue={state.lat.toString()}/>
+                    </div>
+                    <div className="flex flex-col items-center">
+                        <label className="mb-[5px]">Long</label>
+                        <input className="outline-none border-solid border-[2px] rounded-full bg-customGrey2 text-center w-[100px]"
+                                type="text" name="long" defaultValue={state.long.toString()}/>
+                    </div>
+                </div>
+                <button className="
+                        rounded-full bg-customGrey2 w-[80px] mt-[30px] h-[30px] border-customGrey2
+                        hover:bg-customGrey2Hover hover:border-[2px] hover:border-solid hover:border-customGrey2
+                        transition-all duration-200 ease-in-out"
+                    type="submit">View</button>
+            </form> */}
+        </div>
+        <div className="relative overflow-hidden bg-black">
+            <div className={`absolute text-[18px] p-[5px] rounded-br-[8px] z-10 duration-300 tracking-[1px] top-0 left-0
                 ${state.enabled ? "text-whiteMode bg-darkMode" : "text-darkMode bg-whiteMode"}`}>
                 <p>Lng: {lastPos ? lastPos.lng.toFixed(5) : ''}<br/>Lat: {lastPos ? lastPos.lat.toFixed(5) : ''}</p>
-            </div>
-            <div className={`absolute text-[13px] duration-100 p-[5px] rounded-[5px] mouse-pos-div z-10
-                ${!state.enabled ? "text-whiteMode bg-darkMode" : "text-darkMode bg-whiteMode"}`}
-                style={{visibility: "hidden"}}>
-                <p className="whitespace-nowrap">Lng: {mousePos[0].toFixed(5)}<br/>Lat: {mousePos[1].toFixed(5)}</p>
             </div>
             <div
                 className="overflow-hidden"
                 ref={container}
-                style={{ width: "100%", height: "calc(100vh - 165px)" }}/>
+                style={{ width: "100%", height: "calc(100vh - 120px)" }}/>
         </div>
     </>)
 }
