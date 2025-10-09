@@ -85,7 +85,7 @@ function addGeoJsonLabels(file: string, map: MapboxMap, lang ?: string): void
             type: 'symbol',
             source: id,
             layout: {
-                'icon-image': 'pin_label_white',
+                'icon-image': 'pin_label_dark',
                 'icon-allow-overlap': true,
                 'text-field': ['coalesce', ['get', `${langage}`], ['get', 'fr']],
                 'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'],
@@ -98,8 +98,8 @@ function addGeoJsonLabels(file: string, map: MapboxMap, lang ?: string): void
                 'text-anchor': 'bottom',
             },
             paint: {
-                'text-color': 'rgb(87, 63, 104)',
-                'text-halo-color': 'rgb(255, 255, 255)',
+                'text-color': '#000000',
+                'text-halo-color': '#ffffff',
                 'text-halo-width': 1
             }
         });
@@ -353,6 +353,7 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
             >
                 {sliderValue}
             </p>
+            {/* <p>Masquer l'image de fond</p> */}
         </div>
                 <div className="absolute mt-[60px] h-[22px] ml-[10px] flex items-center w-[120px] z-10">
             <input type="range" min={0} max={100} value={sliderValue2} onChange={e => changeOpacity(Number(e.target.value), "city", setSliderValue2)}
@@ -364,6 +365,7 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
             >
                 {sliderValue2}
             </p>
+            {/* <p>Masquer les marqueurs et les labels</p> */}
         </div>
 
         <button className={`absolute w-[22px] h-[22px] rounded-[2px] mt-[120px] left-[72px]  duration-300

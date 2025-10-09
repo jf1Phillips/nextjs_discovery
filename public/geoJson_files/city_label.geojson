@@ -11,7 +11,7 @@
                 ]
             },
             "properties": {
-                "fr": "Abarim (monts)"
+                "fr": "Monts Abarim"
             }
         },
         {
@@ -63,7 +63,7 @@
                 ]
             },
             "properties": {
-                "fr": "Acor Vallée"
+                "fr": "Vallée de Acor"
             }
         },
         {
@@ -1168,7 +1168,7 @@
                 ]
             },
             "properties": {
-                "fr": "Carmel"
+                "fr": "Mont Carmel"
             }
         },
         {
@@ -1852,19 +1852,6 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    35.5331245540108,
-                    32.3844520832118
-                ]
-            },
-            "properties": {
-                "fr": "Enon"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
                     35.2701982872657,
                     31.7742155509179
                 ]
@@ -1974,7 +1961,7 @@
                 ]
             },
             "properties": {
-                "fr": "Fialé Phialé lac"
+                "fr": "Lac de Fialé Phialé"
             }
         },
         {
@@ -2195,7 +2182,7 @@
                 ]
             },
             "properties": {
-                "fr": "Garizim Mont"
+                "fr": "Mont Garizim"
             }
         },
         {
@@ -2637,7 +2624,7 @@
                 ]
             },
             "properties": {
-                "fr": "Hermon"
+                "fr": "Mont Hermon"
             }
         },
         {
@@ -3677,7 +3664,7 @@
                 ]
             },
             "properties": {
-                "fr": "Méron Lac de"
+                "fr": "Lac de Méron"
             }
         },
         {
@@ -3690,7 +3677,7 @@
                 ]
             },
             "properties": {
-                "fr": "Méron Lac de"
+                "fr": "Lac de Méron"
             }
         },
         {
@@ -5107,7 +5094,7 @@
                 ]
             },
             "properties": {
-                "fr": "Tersa MV ?"
+                "fr": "Tersa"
             }
         },
         {
@@ -6226,6 +6213,318 @@
             },
             "properties": {
                 "fr": "Election de St. Pierre"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.3658,
+                    32.94111
+                ]
+            },
+            "properties": {
+                "fr": "Rama"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.6459,
+                    32.35454
+                ]
+            },
+            "properties": {
+                "fr": "Cabane de Mathias"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.3331,
+                    32.28416
+                ]
+            },
+            "properties": {
+                "fr": "Grotte de Jean-Baptiste"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.37188,
+                    32.32004
+                ]
+            },
+            "properties": {
+                "fr": "Telbes"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.82413,
+                    33.1175
+                ]
+            },
+            "properties": {
+                "fr": "Qunaitra"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.65229,
+                    33.23979
+                ]
+            },
+            "properties": {
+                "fr": "Dan"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.06381,
+                    31.91645
+                ]
+            },
+            "properties": {
+                "fr": "Bétéron inf."
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.11659,
+                    31.88923
+                ]
+            },
+            "properties": {
+                "fr": "Bétéron sup."
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.18591,
+                    31.9293
+                ]
+            },
+            "properties": {
+                "fr": "Emmaüs de la montagne?"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.19403,
+                    31.97961
+                ]
+            },
+            "properties": {
+                "fr": "Birzéit"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2686,
+                    32.00246
+                ]
+            },
+            "properties": {
+                "fr": "Silo"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.25824,
+                    31.98863
+                ]
+            },
+            "properties": {
+                "fr": "Silwad"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.4418,
+                    32.03003
+                ]
+            },
+            "properties": {
+                "fr": "Phasaelis"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.34685,
+                    32.12878
+                ]
+            },
+            "properties": {
+                "fr": "Acrabate"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.44929,
+                    32.10151
+                ]
+            },
+            "properties": {
+                "fr": "Alexandreion"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.6096,
+                    32.16644
+                ]
+            },
+            "properties": {
+                "fr": "Anastasica"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.71582,
+                    32.07819
+                ]
+            },
+            "properties": {
+                "fr": "M. Galaad"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.55773,
+                    31.82082
+                ]
+            },
+            "properties": {
+                "fr": "Bétabara"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.45716,
+                    31.89373
+                ]
+            },
+            "properties": {
+                "fr": "Jeune homme riche"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.2576,
+                    31.55033
+                ]
+            },
+            "properties": {
+                "fr": "M. du jeûne"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.06662,
+                    31.45126
+                ]
+            },
+            "properties": {
+                "fr": "Isaac"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    34.85181,
+                    31.80086
+                ]
+            },
+            "properties": {
+                "fr": "Acron"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.10062,
+                    31.81196
+                ]
+            },
+            "properties": {
+                "fr": "Kiriat Jéarim"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    36.09425,
+                    32.61111
+                ]
+            },
+            "properties": {
+                "fr": "Edrei"
             }
         }
     ]
