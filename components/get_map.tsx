@@ -325,7 +325,7 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
         });
     };
     return (<>
-        <button className={`absolute w-[22px] h-[22px] mt-[120px] ml-[100px] duration-300 text-[15px] rounded-[2px]
+        <button className={`absolute w-[22px] h-[22px] mt-[120px] ml-[102px] duration-300 text-[15px] rounded-[2px]
                     ${state.enabled ? "bg-darkMode text-whiteMode" : "bg-whiteMode text-darkMode"}`}
                 onClick={setRelief}>
                     {state.relief ? "2d" : "3d"}</button>
@@ -344,7 +344,7 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
                 {sliderValue}
             </p>
         </div>
-        <button className={`absolute w-[22px] h-[22px] rounded-[2px] mt-[90px] left-[132px]  duration-300
+        <button className={`absolute w-[22px] h-[22px] rounded-[2px] mt-[120px] left-[72px]  duration-300
                     ${state.enabled ? "bg-darkMode text-whiteMode" : "bg-whiteMode text-darkMode"}`}
                 onClick={() => reload_json_labels(map.current as MapboxMap, state.lang, "/geoJson_files/city_label.geojson")}
                 >↻</button>
