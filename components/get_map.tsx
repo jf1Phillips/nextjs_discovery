@@ -15,6 +15,7 @@ import atoi from "@/script/atoi";
 import json_load from "./json_load";
 import addRain from "./mapbox_functions/addRain";
 import add_marker, {remove_marker, add_bethsaida_marker} from "./mapbox_functions/add_marker";
+import { V4MAPPED } from "dns";
 
 const GEOMAP_FOLDER: string = "/img/geo_map";
 const GEOMAP_NAME: string = "geo_map_";
@@ -311,16 +312,23 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
         setState(prev => ({...prev, rain: !prev.rain}));
     }
     const [sliderValue, setSliderValue] = useState(50);
+    const [sliderValue2, setSliderValue2] = useState(100);
 
-    const changeOpacity = (value: number, include: string) => {
-        setSliderValue(value);
+    const changeOpacity = (value: number, include: string, set: React.Dispatch<React.SetStateAction<number>>) => {
+        set(value);
         if (!map.current) return;
         const layers = map.current.getStyle()?.layers || [];
         layers.forEach(layer => {
             if (layer.id.includes(include)) {
                 try {
+                    map.current!.setPaintProperty(layer.id, "text-opacity", value / 100.0);
+                } catch (e) {e;}
+                try {
+                    map.current!.setPaintProperty(layer.id, "icon-opacity", value / 100.0);
+                } catch (e) {e;}
+                try {
                     map.current!.setPaintProperty(layer.id, "raster-opacity", value / 100.0);
-                } catch (e) {console.log(e);}
+                } catch (e) {e;}
             }
         });
     };
@@ -334,8 +342,9 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
                     ${state.enabled ? "bg-darkMode" : "bg-whiteMode"}`}
                 onClick={setRain}>
                     {!state.rain ? "🌧️" : "☀️"}</button>
+
         <div className="absolute mt-[90px] h-[22px] ml-[10px] flex items-center w-[120px] z-10">
-            <input type="range" min={0} max={100} value={sliderValue} onChange={e => changeOpacity(Number(e.target.value), "geo_map")}
+            <input type="range" min={0} max={100} value={sliderValue} onChange={e => changeOpacity(Number(e.target.value), "geo_map", setSliderValue)}
                 className={`w-full h-[10px] rounded-lg appearance-none cursor-pointer duration-300
                 ${!state.enabled ? "bg-whiteMode accent-darkMode" : "bg-darkMode accent-whiteMode"}`}
             />
@@ -345,6 +354,18 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
                 {sliderValue}
             </p>
         </div>
+                <div className="absolute mt-[60px] h-[22px] ml-[10px] flex items-center w-[120px] z-10">
+            <input type="range" min={0} max={100} value={sliderValue2} onChange={e => changeOpacity(Number(e.target.value), "city", setSliderValue2)}
+                className={`w-full h-[10px] rounded-lg appearance-none cursor-pointer duration-300
+                ${!state.enabled ? "bg-whiteMode accent-darkMode" : "bg-darkMode accent-whiteMode"}`}
+            />
+            <p className="ml-[10px] text-whiteMode"
+                style={{ minWidth: "40px" }}
+            >
+                {sliderValue2}
+            </p>
+        </div>
+
         <button className={`absolute w-[22px] h-[22px] rounded-[2px] mt-[120px] left-[72px]  duration-300
                     ${state.enabled ? "bg-darkMode text-whiteMode" : "bg-whiteMode text-darkMode"}`}
                 onClick={() => reload_json_labels(map.current as MapboxMap, state.lang, "/geoJson_files/city_label.geojson")}
