@@ -346,10 +346,10 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
                 <p>Masquer les marqueurs et les labels</p>
             </div>
 
-            {/* <button className={`absolute w-[22px] h-[22px] rounded-[2px] mt-[120px] left-[72px]  duration-300
+            <button className={`absolute w-[22px] h-[22px] rounded-[2px] top-[80px] left-[90px]  duration-300
                         ${state.enabled ? "bg-darkMode text-whiteMode" : "bg-whiteMode text-darkMode"}`}
                     onClick={() => reload_json_labels(map.current as MapboxMap, state.lang, "/geoJson_files/city_label.geojson")}
-                    >↻</button> */}
+                    >↻</button>
 
             {/* <SelectLang setSelected={changeLang} darkmode={state.enabled}/> */}
             <ZoomInOut enabled={state.enabled} setZoom={zoomInOut} />

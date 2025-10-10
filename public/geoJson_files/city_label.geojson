@@ -791,7 +791,7 @@
                 ]
             },
             "properties": {
-                "fr": "Betscan Scythopolis"
+                "fr": "Betscan/Scythopolis"
             }
         },
         {
@@ -6525,6 +6525,32 @@
             },
             "properties": {
                 "fr": "Edrei"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.03604,
+                    32.40059
+                ]
+            },
+            "properties": {
+                "fr": "Jatt"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.35697,
+                    32.28825
+                ]
+            },
+            "properties": {
+                "fr": "Enon"
             }
         }
     ]
