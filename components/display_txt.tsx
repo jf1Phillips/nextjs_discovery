@@ -53,7 +53,7 @@ export default function DisplayTxt({enabled, setStateTextNbr, histdate, setHistD
                 ${enabled ? "bg-whiteMode text-darkMode" : "bg-darkMode text-whiteMode"}`}
                 onClick={() => {click_btn(-1)}}
                 >{"<"}</button>
-            <p className="text-[16px]">{displayText} - {histdate}</p>
+            <p className="text-[16px]">Chapitre {textNbr}</p>
             <button className={`text-[20px] duration-300  h-[25px] w-[40px] items-center justify-center flex rounded-[5px]
                 ${enabled ? "bg-whiteMode text-darkMode" : "bg-darkMode text-whiteMode"}`}
                 onClick={() => {click_btn(1)}}

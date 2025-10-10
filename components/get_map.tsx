@@ -241,10 +241,11 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
                 if (feature.geometry?.type !== 'Point') return;
                 const labelText = feature.properties?.['fr'] || 'Label';
                 const coords = feature.geometry.coordinates as LngLatLike;
-                const popup =new mapboxgl.Popup({anchor: "left", closeButton: false, offset: [10, -20]})
+                const popup = new mapboxgl.Popup({anchor: "left", closeButton: false, offset: [10, -20]})
                     .setLngLat(coords)
                     .setHTML(`<div style="font-weight:bold;font-size:20px;">${labelText}</div>`)
-                    .addTo(map.current);
+                popup.on("open", () => {console.log("oe")});
+                popup.addTo(map.current);
             });
         }
         return () => {map.current?.remove()};
@@ -252,7 +253,6 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
 
     if (prevNbr != textNbr && map.current) {
         setPrevNbr(textNbr);
-        console.log("OKOK");
         json_load("/json_files/test.json", state.lang, map.current, textNbr, true);
     }
 

@@ -3399,19 +3399,6 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    35.630808137413,
-                    32.9099787297527
-                ]
-            },
-            "properties": {
-                "fr": "Maison de Pierre"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
                     35.229018415493,
                     31.77161812622
                 ]
@@ -6655,6 +6642,19 @@
             },
             "properties": {
                 "fr": "Port de Ippo"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.3529358,
+                    31.3321607
+                ]
+            },
+            "properties": {
+                "fr": "Gomorrhe ?"
             }
         }
     ]
