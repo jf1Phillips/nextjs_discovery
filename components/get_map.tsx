@@ -296,6 +296,7 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
     }
     const [sliderValue, setSliderValue] = useState(50);
     const [sliderValue2, setSliderValue2] = useState(100);
+    const [sliderValueRoads, setSliderValueRoads] = useState(100);
 
     const changeOpacity = (value: number, include: string, set: React.Dispatch<React.SetStateAction<number>>) => {
         set(value);
@@ -312,41 +313,54 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
                 try {
                     map.current!.setPaintProperty(layer.id, "raster-opacity", value / 100.0);
                 } catch (e) {e;}
+                try {
+                    map.current!.setPaintProperty(layer.id, 'line-opacity', value / 100.0);
+                } catch (e) {e;}
             }
         });
     };
 
     return (<>
         <div className="w-full h-[120px]">
-            <button className={`absolute w-[22px] h-[22px] duration-300 text-[15px] rounded-[2px] top-[80px] left-[10px]
+            <div className="absolute h-[85px] flex flex-col justify-between p-[5px]">
+                <div className={`relative h-[22px] flex items-center text-[13px]
+                        ${state.enabled ? "text-whiteMode" : "text-whiteMode"}`}>
+                    <input type="range" min={0} max={100} value={sliderValue} onChange={e => changeOpacity(Number(e.target.value), "geo_map", setSliderValue)}
+                        className={`w-[62px] h-[10px] rounded-lg appearance-none cursor-pointer duration-300
+                        ${!state.enabled ? "bg-whiteMode accent-darkMode" : "bg-darkMode accent-whiteMode"}`}
+                    />
+                    <p className="ml-[10px] w-[30px]">{sliderValue}</p>
+                    <p>{"Masquer l'image de fond"}</p>
+                </div>
+                <div className={`relative h-[22px] flex items-center text-[13px]
+                        ${state.enabled ? "text-whiteMode" : "text-whiteMode"}`}>
+                    <input type="range" min={0} max={100} value={sliderValue2} onChange={e => changeOpacity(Number(e.target.value), "city", setSliderValue2)}
+                        className={`w-[62px] h-[10px] rounded-lg appearance-none cursor-pointer duration-300
+                        ${!state.enabled ? "bg-whiteMode accent-darkMode" : "bg-darkMode accent-whiteMode"}`}
+                    />
+                    <p className="ml-[10px] w-[30px]">{sliderValue2}</p>
+                    <p>Masquer les marqueurs et les labels</p>
+                </div>
+                <div className={`relative h-[22px] flex items-center text-[13px]
+                        ${state.enabled ? "text-whiteMode" : "text-whiteMode"}`}>
+                    <input type="range" min={0} max={100} value={sliderValueRoads} onChange={e => changeOpacity(Number(e.target.value), ROAD_FILENAME, setSliderValueRoads)}
+                        className={`w-[62px] h-[10px] rounded-lg appearance-none cursor-pointer duration-300
+                        ${!state.enabled ? "bg-whiteMode accent-darkMode" : "bg-darkMode accent-whiteMode"}`}
+                    />
+                    <p className="ml-[10px] w-[30px]">{sliderValueRoads}</p>
+                    <p>Masquer les routes</p>
+                </div>
+            </div>
+
+            <button className={`absolute w-[22px] h-[22px] duration-300 text-[15px] rounded-[2px] top-[90px] left-[10px]
                         ${state.enabled ? "bg-darkMode text-whiteMode" : "bg-whiteMode text-darkMode"}`}
                     onClick={setRelief}>
                         {state.relief ? "2d" : "3d"}</button>
-            <button className={`absolute w-[22px] h-[22px] duration-300 text-[15px] rounded-[2px] top-[80px] left-[50px]
+            <button className={`absolute w-[22px] h-[22px] duration-300 text-[15px] rounded-[2px] top-[90px] left-[50px]
                         ${state.enabled ? "bg-darkMode" : "bg-whiteMode"}`}
                     onClick={setRain}>
                         {!state.rain ? "🌧️" : "☀️"}</button>
-
-            <div className={`absolute top-[15px] left-[10px] h-[22px] flex items-center text-[13px]
-                    ${state.enabled ? "text-whiteMode" : "text-whiteMode"}`}>
-                <input type="range" min={0} max={100} value={sliderValue} onChange={e => changeOpacity(Number(e.target.value), "geo_map", setSliderValue)}
-                    className={`w-[62px] h-[10px] rounded-lg appearance-none cursor-pointer duration-300
-                    ${!state.enabled ? "bg-whiteMode accent-darkMode" : "bg-darkMode accent-whiteMode"}`}
-                />
-                <p className="ml-[10px] w-[30px]">{sliderValue}</p>
-                <p>{"Masquer l'image de fond"}</p>
-            </div>
-            <div className={`absolute top-[45px] left-[10px] h-[22px] flex items-center text-[13px]
-                    ${state.enabled ? "text-whiteMode" : "text-whiteMode"}`}>
-                <input type="range" min={0} max={100} value={sliderValue2} onChange={e => changeOpacity(Number(e.target.value), "city", setSliderValue2)}
-                    className={`w-[62px] h-[10px] rounded-lg appearance-none cursor-pointer duration-300
-                    ${!state.enabled ? "bg-whiteMode accent-darkMode" : "bg-darkMode accent-whiteMode"}`}
-                />
-                <p className="ml-[10px] w-[30px]">{sliderValue2}</p>
-                <p>Masquer les marqueurs et les labels</p>
-            </div>
-
-            <button className={`absolute w-[22px] h-[22px] rounded-[2px] top-[80px] left-[90px]  duration-300
+            <button className={`absolute w-[22px] h-[22px] rounded-[2px] top-[90px] left-[90px]  duration-300
                         ${state.enabled ? "bg-darkMode text-whiteMode" : "bg-whiteMode text-darkMode"}`}
                     onClick={() => reload_json_labels(map.current as MapboxMap, state.lang, "/geoJson_files/city_label.geojson")}
                     >↻</button>
