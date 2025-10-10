@@ -133,9 +133,9 @@ type MapVar = {
 };
 
 const DEFAULT_VALUE: MapVar = {
-    zoom: 1,
-    long: 2.35522,
-    lat: 48.8566,
+    zoom: 8,
+    long: 35.47679,
+    lat: 32.38416,
     // zoom: 12,
     // long: 35,
     // lat: 32.8,

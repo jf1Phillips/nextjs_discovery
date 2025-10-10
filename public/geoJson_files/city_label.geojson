@@ -6552,6 +6552,110 @@
             "properties": {
                 "fr": "Enon"
             }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.50052,
+                    32.82183
+                ]
+            },
+            "properties": {
+                "fr": "Election apostolique"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.46503,
+                    32.79859
+                ]
+            },
+            "properties": {
+                "fr": "Cornes d'Hattin (Mont des Béatitudes)"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.33587,
+                    32.72873
+                ]
+            },
+            "properties": {
+                "fr": "Bois de Mathathias"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.58695,
+                    32.68289
+                ]
+            },
+            "properties": {
+                "fr": "Prop. de Chouza"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.55954,
+                    32.69066
+                ]
+            },
+            "properties": {
+                "fr": "Première multiplication des pains"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.63413,
+                    32.72578
+                ]
+            },
+            "properties": {
+                "fr": "Triple profession d'amour de Pierre"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.73873,
+                    32.84557
+                ]
+            },
+            "properties": {
+                "fr": "Seconde multiplication des pains"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.64003,
+                    32.79558
+                ]
+            },
+            "properties": {
+                "fr": "Port de Ippo"
+            }
         }
     ]
 }
