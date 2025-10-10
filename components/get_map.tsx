@@ -1,10 +1,9 @@
 "use client";
 
-import SelectLang from "@/components/select_option";
 import ZoomInOut from "@/components/zoom_in_out";
 import DarkMode from "@/components/darkmode";
 import React, { useState, useRef, useEffect, JSX } from "react";
-import mapboxgl, {LngLat, Map as MapboxMap} from "mapbox-gl";
+import mapboxgl, {LngLat, LngLatLike, Map as MapboxMap} from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import "@/styles/globals.css";
 import set3dTerrain from "./mapbox_functions/set3dterrain";
@@ -15,7 +14,6 @@ import atoi from "@/script/atoi";
 import json_load from "./json_load";
 import addRain from "./mapbox_functions/addRain";
 import add_marker, {remove_marker, add_bethsaida_marker} from "./mapbox_functions/add_marker";
-import { V4MAPPED } from "dns";
 
 const GEOMAP_FOLDER: string = "/img/geo_map";
 const GEOMAP_NAME: string = "geo_map_";
@@ -57,21 +55,17 @@ function addGeoJsonLabels(file: string, map: MapboxMap, lang ?: string): void
 
     if (!map.hasImage('pin_label_dark')) {
         map.loadImage(PINLABEL_FILENAME_DARK, (error, image) => {
-            if (error) return;
-            if (!image) return;
+            if (error || !image) return;
             if (!map.hasImage('pin_label_dark'))
                 map.addImage('pin_label_dark', image);
-        }
-        );
+        });
     }
     if (!map.hasImage('pin_label_white')) {
         map.loadImage(PINLABEL_FILENAME_WHITE, (error, image) => {
-            if (error) return;
-            if (!image) return;
+            if (error || !image) return;
             if (!map.hasImage('pin_label_white'))
                 map.addImage('pin_label_white', image);
-        }
-        );
+        });
     }
     if (!map.getSource(id)) {
         map.addSource(id, {
@@ -117,6 +111,47 @@ function reload_json_labels(map: MapboxMap, lang: string, file: string): void
         map.removeSource(id);
     }
     addGeoJsonLabels(file, map, lang);
+}
+
+interface ArgsCursor {
+    sliderValue: number,
+    setSliderValue: React.Dispatch<React.SetStateAction<number>>,
+    name: string,
+    include: string,
+    map: MapboxMap | null,
+    enabled?: boolean,
+};
+
+function Cursor({sliderValue, setSliderValue, name, include, map, enabled} : ArgsCursor): JSX.Element {
+    const changeOpacity = (value: number) => {
+        setSliderValue(value);
+        if (!map) return;
+        const layers = map.getStyle()?.layers || [];
+        layers.forEach(layer => {
+            if (layer.id.includes(include)) {
+                try {
+                    map!.setPaintProperty(layer.id, "text-opacity", value / 100.0);} catch (e) {e;}
+                try {
+                    map!.setPaintProperty(layer.id, "icon-opacity", value / 100.0);} catch (e) {e;}
+                try {
+                    map!.setPaintProperty(layer.id, "raster-opacity", value / 100.0);} catch (e) {e;}
+                try {
+                    map!.setPaintProperty(layer.id, 'line-opacity', value / 100.0);} catch (e) {e;}
+            }
+        });
+    };
+
+    return (<>
+        <div className={`relative h-[22px] flex items-center text-[13px]
+            ${enabled ? "text-whiteMode" : "text-whiteMode"}`}>
+        <input type="range" min={0} max={100} value={sliderValue} onChange={e => changeOpacity(Number(e.target.value))}
+            className={`w-[62px] h-[10px] rounded-lg appearance-none cursor-pointer duration-300
+            ${!enabled ? "bg-whiteMode accent-darkMode" : "bg-darkMode accent-whiteMode"}`}
+        />
+        <p className="ml-[10px] w-[30px]">{sliderValue}</p>
+        <p>{name}</p>
+    </div>
+    </>);
 }
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN as string;
@@ -212,6 +247,18 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
                 cpy_txt(txt);
                 setLastPos(e.lngLat);
             });
+            const id: string = LABELS_FILENAME.replace(/(label|road|geo_map)/gi, "rp");
+            map.current.on("click", id, (e) => {
+                if (!e.features || !e.features.length || !map.current) return;
+                const feature = e.features[0];
+                if (feature.geometry?.type !== 'Point') return;
+                const labelText = feature.properties?.['fr'] || 'Label';
+                const coords = feature.geometry.coordinates as LngLatLike;
+                const popup =new mapboxgl.Popup({anchor: "left", closeButton: false, offset: [10, -20]})
+                    .setLngLat(coords)
+                    .setHTML(`<div style="font-weight:bold;font-size:20px;">${labelText}</div>`)
+                    .addTo(map.current);
+            });
         }
         return () => {map.current?.remove()};
     }, []);
@@ -298,58 +345,18 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
     const [sliderValue2, setSliderValue2] = useState(100);
     const [sliderValueRoads, setSliderValueRoads] = useState(100);
 
-    const changeOpacity = (value: number, include: string, set: React.Dispatch<React.SetStateAction<number>>) => {
-        set(value);
-        if (!map.current) return;
-        const layers = map.current.getStyle()?.layers || [];
-        layers.forEach(layer => {
-            if (layer.id.includes(include)) {
-                try {
-                    map.current!.setPaintProperty(layer.id, "text-opacity", value / 100.0);
-                } catch (e) {e;}
-                try {
-                    map.current!.setPaintProperty(layer.id, "icon-opacity", value / 100.0);
-                } catch (e) {e;}
-                try {
-                    map.current!.setPaintProperty(layer.id, "raster-opacity", value / 100.0);
-                } catch (e) {e;}
-                try {
-                    map.current!.setPaintProperty(layer.id, 'line-opacity', value / 100.0);
-                } catch (e) {e;}
-            }
-        });
-    };
-
     return (<>
         <div className="w-full h-[120px]">
             <div className="absolute h-[85px] flex flex-col justify-between p-[5px]">
-                <div className={`relative h-[22px] flex items-center text-[13px]
-                        ${state.enabled ? "text-whiteMode" : "text-whiteMode"}`}>
-                    <input type="range" min={0} max={100} value={sliderValue} onChange={e => changeOpacity(Number(e.target.value), "geo_map", setSliderValue)}
-                        className={`w-[62px] h-[10px] rounded-lg appearance-none cursor-pointer duration-300
-                        ${!state.enabled ? "bg-whiteMode accent-darkMode" : "bg-darkMode accent-whiteMode"}`}
-                    />
-                    <p className="ml-[10px] w-[30px]">{sliderValue}</p>
-                    <p>{"Masquer l'image de fond"}</p>
-                </div>
-                <div className={`relative h-[22px] flex items-center text-[13px]
-                        ${state.enabled ? "text-whiteMode" : "text-whiteMode"}`}>
-                    <input type="range" min={0} max={100} value={sliderValue2} onChange={e => changeOpacity(Number(e.target.value), "city", setSliderValue2)}
-                        className={`w-[62px] h-[10px] rounded-lg appearance-none cursor-pointer duration-300
-                        ${!state.enabled ? "bg-whiteMode accent-darkMode" : "bg-darkMode accent-whiteMode"}`}
-                    />
-                    <p className="ml-[10px] w-[30px]">{sliderValue2}</p>
-                    <p>Masquer les marqueurs et les labels</p>
-                </div>
-                <div className={`relative h-[22px] flex items-center text-[13px]
-                        ${state.enabled ? "text-whiteMode" : "text-whiteMode"}`}>
-                    <input type="range" min={0} max={100} value={sliderValueRoads} onChange={e => changeOpacity(Number(e.target.value), ROAD_FILENAME, setSliderValueRoads)}
-                        className={`w-[62px] h-[10px] rounded-lg appearance-none cursor-pointer duration-300
-                        ${!state.enabled ? "bg-whiteMode accent-darkMode" : "bg-darkMode accent-whiteMode"}`}
-                    />
-                    <p className="ml-[10px] w-[30px]">{sliderValueRoads}</p>
-                    <p>Masquer les routes</p>
-                </div>
+                <Cursor name="Masquer l'image de fond" include="geo_map"
+                    sliderValue={sliderValue} setSliderValue={setSliderValue}
+                    map={map.current} enabled={state.enabled} />
+                <Cursor name="Masquer les marqueurs et les labels" include="city"
+                    sliderValue={sliderValue2} setSliderValue={setSliderValue2}
+                    map={map.current} enabled={state.enabled} />
+                <Cursor name="Masquer routes" include={ROAD_FILENAME}
+                    sliderValue={sliderValueRoads} setSliderValue={setSliderValueRoads}
+                    map={map.current} enabled={state.enabled} />
             </div>
 
             <button className={`absolute w-[22px] h-[22px] duration-300 text-[15px] rounded-[2px] top-[90px] left-[10px]
