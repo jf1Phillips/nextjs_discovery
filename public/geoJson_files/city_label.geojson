@@ -4842,19 +4842,6 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    35.4242303639916,
-                    31.222386576941
-                ]
-            },
-            "properties": {
-                "fr": "Sodome ?"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
                     35.5144387226094,
                     31.825596856955
                 ]
@@ -6655,6 +6642,19 @@
             },
             "properties": {
                 "fr": "Gomorrhe ?"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    35.67426,
+                    31.84098
+                ]
+            },
+            "properties": {
+                "fr": "Sodome ?"
             }
         }
     ]
