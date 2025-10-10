@@ -1,5 +1,4 @@
 import {Map as MapboxMap} from "mapbox-gl";
-import add_marker, {remove_marker} from "./mapbox_functions/add_marker";
 
 interface Lang {
     fr: string,
@@ -56,7 +55,6 @@ export const remap = (
 ) => lerp(rMin, rMax, invlerp(oMin, oMax, v));
 
 export default function json_load(file: string, lang: string, map: MapboxMap, index_off: number, move ?: boolean) {
-    remove_marker(true);
     get_json_data(file).then(response => {
         if (!response)
             return;
@@ -64,7 +62,7 @@ export default function json_load(file: string, lang: string, map: MapboxMap, in
         const langage: string = response.points[index_off].name[lang] ? lang : "fr";
         const center = map.getCenter();
         const dist = haversine(latlong[0], latlong[1], center.lat, center.lng);
-        add_marker(latlong[1], latlong[0], map, response.points[index_off].name[langage], true);
+        // add_marker(latlong[1], latlong[0], map, response.points[index_off].name[langage], true);
         if (!move) return;
         const zoom = Math.max(map.getZoom() - remap(dist, 0, 2000, 1, 5), 2);
         const wait = remap(dist, 0, 2000, 200, 2000);

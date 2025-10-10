@@ -9,15 +9,12 @@ import "@/styles/globals.css";
 import set3dTerrain from "./mapbox_functions/set3dterrain";
 import addBunker, { removeBunker } from "./mapbox_functions/addBunker";
 import addGeoImg, { addRoads } from "./mapbox_functions/add_geoimg";
-import get_loc from "@/script/get_loc";
 import atoi from "@/script/atoi";
 import json_load from "./json_load";
 import addRain from "./mapbox_functions/addRain";
-import add_marker, {remove_marker, add_bethsaida_marker} from "./mapbox_functions/add_marker";
 
 const GEOMAP_FOLDER: string = "/img/geo_map";
 const GEOMAP_NAME: string = "geo_map_";
-// const ROAD_FILENAME: string = "/test.geojson";
 const ROAD_FILENAME: string = "/geoJson_files/route_palestine_merged.geojson";
 const LABELS_FILENAME: string = "/geoJson_files/city_label.geojson";
 const PINLABEL_FILENAME_DARK: string = "/img/pin_labels_dark.png";
@@ -171,9 +168,6 @@ const DEFAULT_VALUE: MapVar = {
     zoom: 8,
     long: 35.47679,
     lat: 32.38416,
-    // zoom: 12,
-    // long: 35,
-    // lat: 32.8,
     style_nbr: 0,
     enabled: false,
     lang: "fr",
@@ -201,15 +195,8 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
 
     const add_all_things = (new_state: MapVar) => {
         if (!map.current) return;
-        remove_marker();
         addBunker(map.current);
-        add_marker(2.10, 48.15, map.current, "Personal bunker (disparait apres 1955)");
-        add_bethsaida_marker(map.current);
-        get_loc().then(location => {
-            if (!location || !map.current) return;
-            add_marker(location.long, location.lat, map.current, "your location");
-        });
-        add_marker(DEFAULT_VALUE.long, DEFAULT_VALUE.lat, map.current, "paris");
+        // add_bethsaida_marker(map.current);
         json_load("/json_files/test.json", new_state.lang, map.current, textNbr);
         addGeoImg(`${GEOMAP_FOLDER}/${GEOMAP_NAME}${new_state.lang}.png`, map.current);
         addRoads(ROAD_FILENAME, map.current);
@@ -278,26 +265,6 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
         }
     }
 
-    const submitEvent = (event: React.FormEvent) => {
-        event.preventDefault();
-        const target: HTMLFormElement = event.target as HTMLFormElement;
-        const newZoom = atoi(target.zoom.value, DEFAULT_VALUE.zoom);
-        const newLat = atoi(target.lat.value, DEFAULT_VALUE.lat);
-        const newLong = atoi(target.long.value, DEFAULT_VALUE.long);
-
-        setState(prev => ({
-            ...prev,
-            zoom: newZoom,
-            lat: newLat,
-            long: newLong,
-        }));
-        map.current?.easeTo({
-            zoom: newZoom,
-            center: [newLong, newLat],
-            duration: 1000,
-        });
-    };
-
     const changeMode = () => {
         setEnbl(!enbl);
         setState(prev => {
@@ -317,17 +284,6 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
             zoom: map.current.getZoom() + (z == "in" ? 1 : -1),
             duration: 300,
         });
-    };
-
-    const changeLang = (lang: string) => {
-        if (!map.current || !map.current.isStyleLoaded()) return;
-        json_load("/json_files/test.json", lang, map.current, textNbr);
-        addGeoImg(`${GEOMAP_FOLDER}/${GEOMAP_NAME}${lang}.png`, map.current);
-        changeLabelsLang(map.current, lang, LABELS_FILENAME);
-        setState(prev => ({
-            ...prev,
-            lang: lang,
-        }));
     };
 
     const setRelief = () => {
@@ -372,34 +328,8 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
                     onClick={() => reload_json_labels(map.current as MapboxMap, state.lang, "/geoJson_files/city_label.geojson")}
                     >↻</button>
 
-            {/* <SelectLang setSelected={changeLang} darkmode={state.enabled}/> */}
             <ZoomInOut enabled={state.enabled} setZoom={zoomInOut} />
             <DarkMode enabled={state.enabled} changeMode={changeMode}/>
-            {/* <form className="text-customWhite flex flex-col items-center justify-center mt-4"
-                    onSubmit={submitEvent}>
-                <div className="flex flex-row gap-x-[10vw]">
-                    <div className="flex flex-col items-center">
-                        <label className="mb-[5px]">Zoom</label>
-                        <input className="outline-none border-solid border-[2px] rounded-full bg-customGrey2 text-center w-[100px]"
-                                type="text" name="zoom" defaultValue={state.zoom.toString()}/>
-                    </div>
-                    <div className="flex flex-col items-center">
-                        <label className="mb-[5px]">Lat</label>
-                        <input className="outline-none border-solid border-[2px] rounded-full bg-customGrey2 text-center w-[100px]"
-                                type="text" name="lat" defaultValue={state.lat.toString()}/>
-                    </div>
-                    <div className="flex flex-col items-center">
-                        <label className="mb-[5px]">Long</label>
-                        <input className="outline-none border-solid border-[2px] rounded-full bg-customGrey2 text-center w-[100px]"
-                                type="text" name="long" defaultValue={state.long.toString()}/>
-                    </div>
-                </div>
-                <button className="
-                        rounded-full bg-customGrey2 w-[80px] mt-[30px] h-[30px] border-customGrey2
-                        hover:bg-customGrey2Hover hover:border-[2px] hover:border-solid hover:border-customGrey2
-                        transition-all duration-200 ease-in-out"
-                    type="submit">View</button>
-            </form> */}
         </div>
         <div className="relative overflow-hidden">
             <div className={`absolute text-[18px] p-[5px] rounded-br-[8px] z-10 duration-300 tracking-[1px] top-0 left-0
