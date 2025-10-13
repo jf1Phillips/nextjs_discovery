@@ -126,14 +126,10 @@ function Cursor({sliderValue, setSliderValue, name, include, map, enabled} : Arg
         const layers = map.getStyle()?.layers || [];
         layers.forEach(layer => {
             if (layer.id.includes(include)) {
-                try {
-                    map!.setPaintProperty(layer.id, "text-opacity", value / 100.0);} catch (e) {e;}
-                try {
-                    map!.setPaintProperty(layer.id, "icon-opacity", value / 100.0);} catch (e) {e;}
-                try {
-                    map!.setPaintProperty(layer.id, "raster-opacity", value / 100.0);} catch (e) {e;}
-                try {
-                    map!.setPaintProperty(layer.id, 'line-opacity', value / 100.0);} catch (e) {e;}
+                try {map!.setPaintProperty(layer.id, "text-opacity", value / 100.0);} catch (e) {e;}
+                try {map!.setPaintProperty(layer.id, "icon-opacity", value / 100.0);} catch (e) {e;}
+                try {map!.setPaintProperty(layer.id, "raster-opacity", value / 100.0);} catch (e) {e;}
+                try {map!.setPaintProperty(layer.id, 'line-opacity', value / 100.0);} catch (e) {e;}
             }
         });
     };

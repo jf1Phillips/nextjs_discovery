@@ -2567,19 +2567,6 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    35.4556093919692,
-                    32.7979801039184
-                ]
-            },
-            "properties": {
-                "fr": "Hattin cornes"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
                     35.5664762497821,
                     33.0195867993338
                 ]
