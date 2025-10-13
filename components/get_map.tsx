@@ -135,8 +135,8 @@ function Cursor({sliderValue, setSliderValue, name, include, map, enabled} : Arg
     };
 
     return (<>
-        <div className={`relative h-[22px] flex items-center text-[13px]
-            ${enabled ? "text-whiteMode" : "text-whiteMode"}`}>
+        <div className={`relative h-[22px] flex items-center text-[13px] duration-300
+            ${!enabled ? "text-whiteMode" : "text-darkMode"}`}>
         <input type="range" min={0} max={100} value={sliderValue} onChange={e => changeOpacity(Number(e.target.value))}
             className={`w-[62px] h-[10px] rounded-lg appearance-none cursor-pointer duration-300
             ${!enabled ? "bg-whiteMode accent-darkMode" : "bg-darkMode accent-whiteMode"}`}
@@ -304,8 +304,9 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
     const [sliderValueImg2, setSliderValueImg2] = useState(0);
 
     return (<>
-        <div className="w-full h-[120px]">
-            <div className="absolute h-[85px] flex flex-col justify-between p-[5px]">
+        <div className="w-full flex absolute z-10">
+            <div className={`absolute h-[110px] flex flex-col justify-between p-[5px] duration-300 rounded-br-[5px]
+                ${state.enabled ? "bg-whiteMode" : "bg-darkMode" }`}>
                 <Cursor name="Masquer la carte de Valtorta" include={`${state.lang}.png`}
                     sliderValue={sliderValue} setSliderValue={setSliderValue}
                     map={map.current} enabled={state.enabled} />
@@ -320,16 +321,16 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
                     map={map.current} enabled={state.enabled} />
             </div>
 
-            <button className={`absolute w-[22px] h-[22px] duration-300 text-[15px] rounded-[2px] top-[90px] left-[10px]
-                        ${state.enabled ? "bg-darkMode text-whiteMode" : "bg-whiteMode text-darkMode"}`}
+            <button className={`absolute w-[22px] h-[22px] duration-300 text-[15px] rounded-[2px] top-[120px] left-[150px]
+                        ${!state.enabled ? "bg-darkMode text-whiteMode" : "bg-whiteMode text-darkMode"}`}
                     onClick={setRelief}>
                         {state.relief ? "2d" : "3d"}</button>
-            <button className={`absolute w-[22px] h-[22px] duration-300 text-[15px] rounded-[2px] top-[90px] left-[50px]
-                        ${state.enabled ? "bg-darkMode" : "bg-whiteMode"}`}
+            <button className={`absolute w-[22px] h-[22px] duration-300 text-[15px] rounded-[2px] top-[120px] left-[180px]
+                        ${!state.enabled ? "bg-darkMode" : "bg-whiteMode"}`}
                     onClick={setRain}>
                         {!state.rain ? "🌧️" : "☀️"}</button>
-            <button className={`absolute w-[22px] h-[22px] rounded-[2px] top-[90px] left-[90px]  duration-300
-                        ${state.enabled ? "bg-darkMode text-whiteMode" : "bg-whiteMode text-darkMode"}`}
+            <button className={`absolute w-[22px] h-[22px] rounded-[2px] top-[120px] left-[210px]  duration-300
+                        ${!state.enabled ? "bg-darkMode text-whiteMode" : "bg-whiteMode text-darkMode"}`}
                     onClick={() => reload_json_labels(map.current as MapboxMap, state.lang, "/geoJson_files/city_label.geojson")}
                     >↻</button>
 
@@ -337,14 +338,14 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
             <DarkMode enabled={state.enabled} changeMode={changeMode}/>
         </div>
         <div className="relative overflow-hidden">
-            <div className={`absolute text-[18px] p-[5px] rounded-br-[8px] z-10 duration-300 tracking-[1px] top-0 left-0
-                ${state.enabled ? "text-whiteMode bg-darkMode" : "text-darkMode bg-whiteMode"}`}>
-                <p>Lng: {lastPos ? lastPos.lng.toFixed(5) : ''}<br/>Lat: {lastPos ? lastPos.lat.toFixed(5) : ''}</p>
+            <div className={`absolute text-[15px] p-[5px] right-[0px] rounded-bl-[8px] z-10 duration-300 tracking-[1px] top-0
+                ${!state.enabled ? "text-whiteMode bg-darkMode" : "text-darkMode bg-whiteMode"}`}>
+                <p>Lng: {lastPos ? lastPos.lng.toFixed(2) : ''}<br/>Lat: {lastPos ? lastPos.lat.toFixed(2) : ''}</p>
             </div>
             <div
                 className="overflow-hidden"
                 ref={container}
-                style={{ width: "100%", height: "calc(100vh - 120px)" }}/>
+                style={{ width: "100%", height: "100vh" }}/>
         </div>
     </>)
 }
