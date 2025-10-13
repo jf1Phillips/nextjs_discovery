@@ -8,13 +8,13 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import "@/styles/globals.css";
 import set3dTerrain from "./mapbox_functions/set3dterrain";
 import addBunker, { removeBunker } from "./mapbox_functions/addBunker";
-import addGeoImg, { addRoads } from "./mapbox_functions/add_geoimg";
-import atoi from "@/script/atoi";
+import addGeoImg, { addRoads, Coords } from "./mapbox_functions/add_geoimg";
 import json_load from "./json_load";
 import addRain from "./mapbox_functions/addRain";
 
 const GEOMAP_FOLDER: string = "/img/geo_map";
 const GEOMAP_NAME: string = "geo_map_";
+const NEWMAP_NAME: string = "new_map.jpg";
 const ROAD_FILENAME: string = "/geoJson_files/route_palestine_merged.geojson";
 const LABELS_FILENAME: string = "/geoJson_files/city_label.geojson";
 const PINLABEL_FILENAME_DARK: string = "/img/pin_labels_dark.png";
@@ -179,6 +179,7 @@ interface MapArgs {
     histdate: number
 };
 
+
 export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdate}: MapArgs): JSX.Element
 {
     const [state, setState] = useState<MapVar>(({...DEFAULT_VALUE, zoom: def_zoom}));
@@ -188,6 +189,12 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
     const map = useRef<MapboxMap | null>(null);
     const container = useRef<HTMLDivElement | null>(null);
     const style: string[] = ["mapbox://styles/mapbox/light-v10", "mapbox://styles/mapbox/dark-v10"];
+    const coord_new_map: Coords = [
+        [34.120542941238725, 33.46703792406347],
+        [35.7498100593699, 33.46703792406347],
+        [35.7498100593699, 31.10529446421723],
+        [34.120542941238725, 31.10529446421723],
+    ];
 
     const add_all_things = (new_state: MapVar) => {
         if (!map.current) return;
@@ -195,6 +202,7 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
         // add_bethsaida_marker(map.current);
         json_load("/json_files/test.json", new_state.lang, map.current, textNbr);
         addGeoImg(`${GEOMAP_FOLDER}/${GEOMAP_NAME}${new_state.lang}.png`, map.current);
+        addGeoImg(`${GEOMAP_FOLDER}/${NEWMAP_NAME}`, map.current, coord_new_map);
         addRoads(ROAD_FILENAME, map.current);
         map.current?.setPaintProperty('water', 'fill-color', new_state.enabled ? 'rgba(14, 15, 99, 1)': 'rgba(14, 122, 155, 1)');
         set3dTerrain(map.current, !state.relief);
@@ -208,11 +216,8 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
             console.error("Clipboard API not supported");
             return;
         }
-        try {
-            await navigator.clipboard.writeText(txt);
-        } catch (err) {
-            console.error("Failed to copy text: ", err);
-        }
+        try {await navigator.clipboard.writeText(txt);
+        } catch (err) {console.error("Failed to copy text: ", err);}
     }
 
     useEffect(() => {
@@ -296,12 +301,16 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
     const [sliderValue, setSliderValue] = useState(50);
     const [sliderValue2, setSliderValue2] = useState(100);
     const [sliderValueRoads, setSliderValueRoads] = useState(100);
+    const [sliderValueImg2, setSliderValueImg2] = useState(0);
 
     return (<>
         <div className="w-full h-[120px]">
             <div className="absolute h-[85px] flex flex-col justify-between p-[5px]">
-                <Cursor name="Masquer l'image de fond" include="geo_map"
+                <Cursor name="Masquer la carte de Valtorta" include={`${state.lang}.png`}
                     sliderValue={sliderValue} setSliderValue={setSliderValue}
+                    map={map.current} enabled={state.enabled} />
+                <Cursor name="Masquer la carte du PEF de 1880" include={NEWMAP_NAME}
+                    sliderValue={sliderValueImg2} setSliderValue={setSliderValueImg2}
                     map={map.current} enabled={state.enabled} />
                 <Cursor name="Masquer les marqueurs et les labels" include="city"
                     sliderValue={sliderValue2} setSliderValue={setSliderValue2}

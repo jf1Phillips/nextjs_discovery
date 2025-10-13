@@ -26,30 +26,25 @@ export function addRoads(url_given: string, map: MapBoxMap)
     }
 }
 
-export default function addGeoImg(url_given: string, map: MapBoxMap)
-{
-    const layers = map.getStyle().layers;
-    const url = (url_given.includes("es.png")) ? `${GEOMAP_FOLDER}/${GEOMAP_NAME}fr.png` : url_given;
+export type Coords = [[number, number], [number, number], [number, number], [number, number]];
+const default_coord: Coords =
+[
+    [33.6791210, 33.6868944],
+    [36.6262031, 33.6868944],
+    [36.6262031, 31.1730673],
+    [33.6791210, 31.1730673],
+];
 
-    layers.forEach(layer => {
-        if (layer.id.includes("road") || layer.id.includes("label") || layer.id.includes("geo_map")) {
-            if (layer.id == url) {
-                map.setLayoutProperty(layer.id, 'visibility', 'visible');
-            } else {
-                map.setLayoutProperty(layer.id, 'visibility', 'none');
-            }
-        }
-    });
+export default function addGeoImg(url_given: string, map: MapBoxMap, coords ?: Coords)
+{
+    const url = (url_given.includes("es.png")) ? `${GEOMAP_FOLDER}/${GEOMAP_NAME}fr.png` : url_given;
+    const coordinates: Coords = !coords ? default_coord : coords;
+
     if (!map.getSource(url)) {
         map.addSource(url, {
             type: 'image',
             url: url,
-            coordinates: [
-                [33.6791210, 33.6868944],
-                [36.6262031, 33.6868944],
-                [36.6262031, 31.1730673],
-                [33.6791210, 31.1730673],
-            ]
+            coordinates: coordinates,
         });
     }
     if (!map.getLayer(url)) {
@@ -58,7 +53,7 @@ export default function addGeoImg(url_given: string, map: MapBoxMap)
             type: 'raster',
             source: url,
             paint: {
-                'raster-opacity': 0.5,
+                'raster-opacity': !coords ? 0.5 : 0.0,
             }
         });
     }
