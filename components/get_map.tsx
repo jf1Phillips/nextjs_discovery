@@ -191,7 +191,6 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
     const add_all_things = (new_state: MapVar) => {
         if (!map.current) return;
         addBunker(map.current);
-        // add_bethsaida_marker(map.current);
         json_load("/json_files/test.json", new_state.lang, map.current, textNbr);
         addGeoImg(`${GEOMAP_FOLDER}/${GEOMAP_NAME}${new_state.lang}.png`, map.current);
         addGeoImg(`${GEOMAP_FOLDER}/${NEWMAP_NAME}`, map.current, coord_new_map);
