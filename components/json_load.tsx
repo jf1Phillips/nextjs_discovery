@@ -59,7 +59,6 @@ export default function json_load(file: string, lang: string, map: MapboxMap, in
         if (!response)
             return;
         const latlong: number[] = response.points[index_off].latlong;
-        const langage: string = response.points[index_off].name[lang] ? lang : "fr";
         const center = map.getCenter();
         const dist = haversine(latlong[0], latlong[1], center.lat, center.lng);
         // add_marker(latlong[1], latlong[0], map, response.points[index_off].name[langage], true);

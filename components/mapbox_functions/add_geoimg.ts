@@ -20,7 +20,8 @@ export function addRoads(url_given: string, map: MapBoxMap)
             },
             paint: {
                 'line-color': '#8a898b',
-                'line-width': 2
+                'line-width': 2,
+                'line-opacity': 1.0,
             }
         });
     }

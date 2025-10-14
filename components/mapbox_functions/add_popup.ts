@@ -15,22 +15,23 @@ export default function add_popup(map: Mapboxgl): void
         const entry : DicoJsx | undefined = JSXLabels.find(entry => entry.town === labelText);
 
         const coords = feature.geometry.coordinates as LngLatLike;
-        const popup = new mapboxgl.Popup({anchor: "left", closeButton: false, offset: [10, -20]})
+        const popup = new mapboxgl.Popup({anchor: "bottom", closeButton: false, offset: [0, -30]})
             .setLngLat(coords);
         if (!entry) {
             popup.setHTML(`<div style="font-weight:bold;font-size:20px;">${labelText}</div>`)
         } else {
             const html_str: string = ReactDOMServer.renderToString(entry.jsx);
             popup.setHTML(html_str);
-            popup.on("open", () => {
+            popup.setOffset([-20, -30]);
+            popup.once("open", () => {
                 const popup_el = document.querySelector('.mapboxgl-popup-content') as HTMLDivElement;
 
                 popup_el.classList.add(
                     'flex',
                     'flex-col',
                     'items-center',
-                    'w-[250px]',
-                    'h-[300px]',
+                    `w-[280px]`,
+                    'h-[500px]',
                     'text-white');
                 popup_el.style.overflowY = 'scroll';
                 popup_el.style.backgroundColor = 'rgb(26, 18, 31)';
@@ -38,6 +39,10 @@ export default function add_popup(map: Mapboxgl): void
                 popup_el.style.scrollbarColor = '#616161 #2a2a2a';
             });
         }
+        popup.once("open", () => {
+                const popup_anchor = document.querySelector('.mapboxgl-popup-tip') as HTMLDivElement;
+                popup_anchor.style.display = "none";
+        });
         popup.addTo(map);
     });
 }

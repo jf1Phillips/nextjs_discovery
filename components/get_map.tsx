@@ -2,8 +2,8 @@
 
 import ZoomInOut from "@/components/zoom_in_out";
 import DarkMode from "@/components/darkmode";
-import React, { useState, useRef, useEffect, JSX } from "react";
-import mapboxgl, {LngLat, LngLatLike, Map as MapboxMap} from "mapbox-gl";
+import React, { useState,  useRef, useEffect, JSX } from "react";
+import mapboxgl, {Layer, LngLat, Map as MapboxMap} from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import "@/styles/globals.css";
 import set3dTerrain from "./mapbox_functions/set3dterrain";
@@ -84,7 +84,9 @@ function addGeoJsonLabels(file: string, map: MapboxMap, lang ?: string): void
             paint: {
                 'text-color': '#000000',
                 'text-halo-color': '#ffffff',
-                'text-halo-width': 1
+                'text-halo-width': 1,
+                'text-opacity': 1.0,
+                'icon-opacity': 1.0,
             }
         });
     }
@@ -117,12 +119,19 @@ function Cursor({sliderValue, setSliderValue, name, include, map, enabled} : Arg
         setSliderValue(value);
         if (!map) return;
         const layers = map.getStyle()?.layers || [];
+
+        type PaintPropertyName = Parameters<typeof map.setPaintProperty>[1];
+        const set_paint_property = (layer: Layer, type: PaintPropertyName) => {
+            if (!layer.paint) return;
+            if (type in layer.paint)
+                map.setPaintProperty(layer.id, type, value / 100.0);
+        };
         layers.forEach(layer => {
             if (layer.id.includes(include)) {
-                try {map!.setPaintProperty(layer.id, "text-opacity", value / 100.0);} catch (e) {e;}
-                try {map!.setPaintProperty(layer.id, "icon-opacity", value / 100.0);} catch (e) {e;}
-                try {map!.setPaintProperty(layer.id, "raster-opacity", value / 100.0);} catch (e) {e;}
-                try {map!.setPaintProperty(layer.id, 'line-opacity', value / 100.0);} catch (e) {e;}
+                set_paint_property(layer, "raster-opacity");
+                set_paint_property(layer, "text-opacity");
+                set_paint_property(layer, "icon-opacity");
+                set_paint_property(layer, "line-opacity");
             }
         });
     };
@@ -172,6 +181,28 @@ interface MapArgs {
     histdate: number
 };
 
+const style: string[] = ["mapbox://styles/mapbox/light-v10", "mapbox://styles/mapbox/dark-v10"];
+const coord_new_map: Coords = [
+    [34.120542941238725, 33.46703792406347],
+    [35.7498100593699, 33.46703792406347],
+    [35.7498100593699, 31.10529446421723],
+    [34.120542941238725, 31.10529446421723],
+];
+
+const add_all_things = (new_state: MapVar, map: MapboxMap | null, textNbr: number) => {
+    if (!map) return;
+    addBunker(map);
+    json_load("/json_files/test.json", new_state.lang, map, textNbr);
+    addGeoImg(`${GEOMAP_FOLDER}/${GEOMAP_NAME}${new_state.lang}.jpg`, map);
+    addGeoImg(`${GEOMAP_FOLDER}/${NEWMAP_NAME}`, map, coord_new_map);
+    addRoads(ROAD_FILENAME, map);
+    map?.setPaintProperty('water', 'fill-color', new_state.enabled ? 'rgba(14, 15, 99, 1)': 'rgba(14, 122, 155, 1)');
+    set3dTerrain(map, !new_state.relief);
+    addRain(map, !new_state.rain);
+    addGeoJsonLabels(LABELS_FILENAME, map, new_state.lang);
+    changeLabelsColors(map, new_state.enabled, LABELS_FILENAME);
+}
+
 export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdate}: MapArgs): JSX.Element
 {
     const [state, setState] = useState<MapVar>(({...DEFAULT_VALUE, zoom: def_zoom}));
@@ -180,27 +211,6 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
     const [lastPos, setLastPos] = useState<LngLat | null>(null);
     const map = useRef<MapboxMap | null>(null);
     const container = useRef<HTMLDivElement | null>(null);
-    const style: string[] = ["mapbox://styles/mapbox/light-v10", "mapbox://styles/mapbox/dark-v10"];
-    const coord_new_map: Coords = [
-        [34.120542941238725, 33.46703792406347],
-        [35.7498100593699, 33.46703792406347],
-        [35.7498100593699, 31.10529446421723],
-        [34.120542941238725, 31.10529446421723],
-    ];
-
-    const add_all_things = (new_state: MapVar) => {
-        if (!map.current) return;
-        addBunker(map.current);
-        json_load("/json_files/test.json", new_state.lang, map.current, textNbr);
-        addGeoImg(`${GEOMAP_FOLDER}/${GEOMAP_NAME}${new_state.lang}.jpg`, map.current);
-        addGeoImg(`${GEOMAP_FOLDER}/${NEWMAP_NAME}`, map.current, coord_new_map);
-        addRoads(ROAD_FILENAME, map.current);
-        map.current?.setPaintProperty('water', 'fill-color', new_state.enabled ? 'rgba(14, 15, 99, 1)': 'rgba(14, 122, 155, 1)');
-        set3dTerrain(map.current, !state.relief);
-        addRain(map.current, !state.rain);
-        addGeoJsonLabels(LABELS_FILENAME, map.current, new_state.lang);
-        changeLabelsColors(map.current, new_state.enabled, LABELS_FILENAME);
-    }
 
     const cpy_txt = async (txt: string): Promise<void> => {
         if (!navigator.clipboard) {
@@ -220,7 +230,7 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
                 zoom: state.zoom,
                 center: [state.long, state.lat],
             });
-            map.current.once("style.load", () => add_all_things(state));
+            map.current.once("style.load", () => add_all_things(state, map.current, textNbr));
             map.current.on("click", (e) => {
                 const txt = `${e.lngLat.lng.toFixed(5)},${e.lngLat.lat.toFixed(5)}`;
                 cpy_txt(txt);
@@ -228,8 +238,7 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
             });
             add_popup(map.current);
         }
-        return () => {map.current?.remove()};
-    }, []);
+    }, [state, textNbr]);
 
     if (prevNbr != textNbr && map.current) {
         setPrevNbr(textNbr);
@@ -254,7 +263,7 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
                 enabled: !prev.enabled,
             };
             map.current?.setStyle(style[new_state.style_nbr]);
-            map.current?.once("style.load", () => add_all_things(new_state));
+            map.current?.once("style.load", () => add_all_things(new_state, map.current, textNbr));
             return new_state;
         });
     }

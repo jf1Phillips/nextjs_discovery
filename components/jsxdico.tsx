@@ -1,4 +1,5 @@
 import { JSX } from "react";
+import Image from "next/image";
 
 export interface DicoJsx {
     town: string,
@@ -9,8 +10,8 @@ const JSXLabels: DicoJsx[] = [
     {
         town: "Bethsaïda",
         jsx: (<>
-            <p className="text-[20px]">Bethsaïde</p>
-            <img src="/img/bethsaid.jpg" alt="Bethsaïde" className="w-[250px]"/>
+            <p className="mb-2 text-[20px]">Bethsaïde</p>
+            <Image src="/img/bethsaid.jpg" alt="Bethsaïde" width={250} height={0}/>
             <p className="text-justify p-2 text-[15px]">{`
                 La ville galiléenne de Bethsaïde fut détruite par un tremblement de terre
                 vers l'an 324 après Jésus Christ. Elle fut retrouvée en 1987 par un consortium
