@@ -11,6 +11,7 @@ import addBunker, { removeBunker } from "./mapbox_functions/addBunker";
 import addGeoImg, { addRoads, Coords } from "./mapbox_functions/add_geoimg";
 import json_load from "./json_load";
 import addRain from "./mapbox_functions/addRain";
+import add_popup from "./mapbox_functions/add_popup";
 
 const GEOMAP_FOLDER: string = "/img/geo_map";
 const GEOMAP_NAME: string = "geo_map_";
@@ -19,15 +20,7 @@ const ROAD_FILENAME: string = "/geoJson_files/route_palestine_merged.geojson";
 const LABELS_FILENAME: string = "/geoJson_files/city_label.geojson";
 const PINLABEL_FILENAME_DARK: string = "/img/pin_labels_dark.png";
 const PINLABEL_FILENAME_WHITE: string = "/img/pin_labels_white.png";
-export {GEOMAP_FOLDER, GEOMAP_NAME};
-
-function changeLabelsLang(map: MapboxMap, lang: string, file: string): void
-{
-    const id: string = file.replace(/(label|road|geo_map)/gi, "rp");
-
-    if (!map.getLayer(id)) return;
-    map.setLayoutProperty(id, 'text-field', ['coalesce', ['get', `${lang}`], ['get', 'fr']]);
-}
+export {GEOMAP_FOLDER, GEOMAP_NAME, LABELS_FILENAME};
 
 function changeLabelsColors(map: MapboxMap, darkmode: boolean, file: string): void
 {
@@ -179,7 +172,6 @@ interface MapArgs {
     histdate: number
 };
 
-
 export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdate}: MapArgs): JSX.Element
 {
     const [state, setState] = useState<MapVar>(({...DEFAULT_VALUE, zoom: def_zoom}));
@@ -235,19 +227,7 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
                 cpy_txt(txt);
                 setLastPos(e.lngLat);
             });
-            const id: string = LABELS_FILENAME.replace(/(label|road|geo_map)/gi, "rp");
-            map.current.on("click", id, (e) => {
-                if (!e.features || !e.features.length || !map.current) return;
-                const feature = e.features[0];
-                if (feature.geometry?.type !== 'Point') return;
-                const labelText = feature.properties?.['fr'] || 'Label';
-                const coords = feature.geometry.coordinates as LngLatLike;
-                const popup = new mapboxgl.Popup({anchor: "left", closeButton: false, offset: [10, -20]})
-                    .setLngLat(coords)
-                    .setHTML(`<div style="font-weight:bold;font-size:20px;">${labelText}</div>`)
-                popup.on("open", () => {console.log("oe")});
-                popup.addTo(map.current);
-            });
+            add_popup(map.current);
         }
         return () => {map.current?.remove()};
     }, []);
