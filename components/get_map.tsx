@@ -295,16 +295,16 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
         <div className="w-full flex absolute z-10">
             <div className={`absolute h-[110px] flex flex-col justify-between p-[5px] duration-300 rounded-br-[5px]
                 ${state.enabled ? "bg-whiteMode" : "bg-darkMode" }`}>
-                <Cursor name="Masquer la carte de Valtorta" include={`${state.lang}.jpg`}
+                <Cursor name="Afficher la carte de Valtorta" include={`${state.lang}.jpg`}
                     sliderValue={sliderValue} setSliderValue={setSliderValue}
                     map={map.current} enabled={state.enabled} />
-                <Cursor name="Masquer la carte du PEF de 1880" include={NEWMAP_NAME}
+                <Cursor name="Afficher la carte du PEF de 1880" include={NEWMAP_NAME}
                     sliderValue={sliderValueImg2} setSliderValue={setSliderValueImg2}
                     map={map.current} enabled={state.enabled} />
-                <Cursor name="Masquer les marqueurs et les labels" include="city"
+                <Cursor name="Afficher les marqueurs et les labels" include="city"
                     sliderValue={sliderValue2} setSliderValue={setSliderValue2}
                     map={map.current} enabled={state.enabled} />
-                <Cursor name="Masquer routes" include={ROAD_FILENAME}
+                <Cursor name="Afficher routes" include={ROAD_FILENAME}
                     sliderValue={sliderValueRoads} setSliderValue={setSliderValueRoads}
                     map={map.current} enabled={state.enabled} />
             </div>
