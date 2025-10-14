@@ -192,7 +192,7 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
         if (!map.current) return;
         addBunker(map.current);
         json_load("/json_files/test.json", new_state.lang, map.current, textNbr);
-        addGeoImg(`${GEOMAP_FOLDER}/${GEOMAP_NAME}${new_state.lang}.png`, map.current);
+        addGeoImg(`${GEOMAP_FOLDER}/${GEOMAP_NAME}${new_state.lang}.jpg`, map.current);
         addGeoImg(`${GEOMAP_FOLDER}/${NEWMAP_NAME}`, map.current, coord_new_map);
         addRoads(ROAD_FILENAME, map.current);
         map.current?.setPaintProperty('water', 'fill-color', new_state.enabled ? 'rgba(14, 15, 99, 1)': 'rgba(14, 122, 155, 1)');
@@ -286,7 +286,7 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
         <div className="w-full flex absolute z-10">
             <div className={`absolute h-[110px] flex flex-col justify-between p-[5px] duration-300 rounded-br-[5px]
                 ${state.enabled ? "bg-whiteMode" : "bg-darkMode" }`}>
-                <Cursor name="Masquer la carte de Valtorta" include={`${state.lang}.png`}
+                <Cursor name="Masquer la carte de Valtorta" include={`${state.lang}.jpg`}
                     sliderValue={sliderValue} setSliderValue={setSliderValue}
                     map={map.current} enabled={state.enabled} />
                 <Cursor name="Masquer la carte du PEF de 1880" include={NEWMAP_NAME}

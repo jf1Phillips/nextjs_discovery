@@ -37,7 +37,7 @@ const default_coord: Coords =
 
 export default function addGeoImg(url_given: string, map: MapBoxMap, coords ?: Coords)
 {
-    const url = (url_given.includes("es.png")) ? `${GEOMAP_FOLDER}/${GEOMAP_NAME}fr.png` : url_given;
+    const url = (url_given.includes("es.jpg")) ? `${GEOMAP_FOLDER}/${GEOMAP_NAME}fr.jpg` : url_given;
     const coordinates: Coords = !coords ? default_coord : coords;
 
     if (!map.getSource(url)) {
