@@ -18,7 +18,7 @@ export default function add_popup(map: Mapboxgl): void
         const popup = new mapboxgl.Popup({anchor: "bottom", closeButton: false, offset: [0, -30]})
             .setLngLat(coords);
         if (!entry) {
-            popup.setHTML(`<div style="font-weight:bold;font-size:20px;">${labelText}</div>`)
+            popup.setHTML(`<p style="font-weight:bold;font-size:20px;">${labelText}</p>`)
         } else {
             const html_str: string = ReactDOMServer.renderToString(entry.jsx);
             popup.setHTML(html_str);
@@ -31,9 +31,9 @@ export default function add_popup(map: Mapboxgl): void
                     'flex-col',
                     'items-center',
                     `w-[280px]`,
-                    'h-[500px]',
+                    'max-h-[500px]',
+                    'overflow-y-auto',
                     'text-white');
-                popup_el.style.overflowY = 'scroll';
                 popup_el.style.backgroundColor = 'rgb(26, 18, 31)';
                 popup_el.style.scrollbarWidth = 'thin';
                 popup_el.style.scrollbarColor = '#616161 #2a2a2a';
