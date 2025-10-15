@@ -7,7 +7,7 @@ export default function ZoomInOut(
     {enabled, setZoom}: ZoomInOutArgs)
 {
     return (<>
-        <div className={`absolute w-[60px] h-[22px] text-[20px] flex flex-row justify-between top-[120px] left-[80px]
+        <div className={`w-[55px] h-[22px] text-[20px] flex flex-row justify-between
                         ${enabled ? "text-darkMode" : "text-whiteMode"}`}>
             <button className={`rounded-[2px] w-[22px] h-[22px] flex items-center justify-center duration-[300ms]
                         ${!enabled ? "bg-darkMode" : "bg-whiteMode"}`}
