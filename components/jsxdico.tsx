@@ -34,6 +34,15 @@ const JSXLabels: DicoJsx[] = [
             <a className="text-center" target="_blank" href="https://www.youtube.com/watch?v=YpdYveOi28A">{`https://www.youtube.com/watch?v=YpdYveOi28A`}</a>
         </>)
     },
+    {
+        town: "Sodome ?",
+        jsx: (<>
+            <p className="mb-2 font-bold text-[20px]">Sodome ?</p>
+            <a className="mb-2 text-center" target="_blank" href="https://edifiant.fr/sodome-et-gomorrhe/">{`https://edifiant.fr/sodome-et-gomorrhe/`}</a>
+            <a className="mb-2 text-center" target="_blank" href="https://tallelhammam.com/">{`https://tallelhammam.com/`}</a>
+            <a className="text-center" target="_blank" href="https://www.youtube.com/watch?v=YpdYveOi28A">{`https://www.youtube.com/watch?v=YpdYveOi28A`}</a>
+        </>)
+    }
 ]
 
 export default JSXLabels;
