@@ -296,7 +296,7 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
     return (<>
         <div className={`flex left-0 top-0 absolute z-10
                 ${displayCursor ? "flex-col" : "flex-row items-center"}`}>
-            <div className={`flex flex-col justify-between p-[5px] duration-500 rounded-br-[5px] whitespace-nowrap overflow-hidden
+            <div className={`flex flex-col justify-between p-[5px] duration-300 rounded-br-[5px] whitespace-nowrap overflow-hidden
                 ${displayCursor ? "h-[180px] w-[400px]" : "h-[30px] w-[30px]"}
                 ${state.enabled ? "bg-whiteMode" : "bg-darkMode" }`}>
                 <Cursor className={!displayCursor ? "hidden": ""} name="Afficher la carte de Hans J. Hopfen (1975)" include={`${state.lang}.jpg`}
