@@ -58,7 +58,7 @@ export default function Cursor({name, include, map, def, className, enabled} : A
             className={`w-[62px] h-[10px] rounded-lg appearance-none cursor-pointer duration-300
             ${!enabled ? "bg-whiteMode accent-darkMode" : "bg-darkMode accent-whiteMode"}`}
         />
-        <p className="min-w-[20px]">{sliderValue}</p>
+        <p className="min-w-[23px]">{sliderValue}</p>
         <p>{name}</p>
     </div>
     </>);
