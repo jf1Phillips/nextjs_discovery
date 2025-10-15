@@ -1,29 +1,29 @@
+"use client";
+
 import { Map as MapboxMap, Layer } from "mapbox-gl"
-import { JSX } from "react"
+import { JSX, useState } from "react"
 
 interface ArgsCursor
 {
-    sliderValue: number,
-    setSliderValue: React.Dispatch<React.SetStateAction<number>>,
     name: string,
-    include: string,
+    include: string | string[],
     className?: string,
-    map: MapboxMap | null,
+    map: React.RefObject<MapboxMap | null>,
     enabled?: boolean,
 };
 
-export default function Cursor({sliderValue, setSliderValue, name, include, className, map, enabled} : ArgsCursor): JSX.Element {
-    const changeOpacity = (value: number) => {
-        setSliderValue(value);
-        if (!map) return;
-        const layers = map.getStyle()?.layers || [];
+function set_paint(map: MapboxMap, value: number, include: string | string[])
+{
+    const layers = map.getStyle()?.layers || [];
 
-        type PaintPropertyName = Parameters<typeof map.setPaintProperty>[1];
-        const set_paint_property = (layer: Layer, type: PaintPropertyName) => {
-            if (!layer.paint) return;
-            if (type in layer.paint)
-                map.setPaintProperty(layer.id, type, value / 100.0);
-        };
+    type PaintPropertyName = Parameters<typeof map.setPaintProperty>[1];
+    const set_paint_property = (layer: Layer, type: PaintPropertyName) => {
+        if (!layer.paint) return;
+        if (type in layer.paint)
+            map.setPaintProperty(layer.id, type, value / 100.0);
+    };
+
+    if (typeof include === 'string') {
         layers.forEach(layer => {
             if (layer.id.includes(include)) {
                 set_paint_property(layer, "raster-opacity");
@@ -32,6 +32,28 @@ export default function Cursor({sliderValue, setSliderValue, name, include, clas
                 set_paint_property(layer, "line-opacity");
             }
         });
+    } else {
+        include.forEach(inc => {
+            layers.forEach(layer => {
+                if (layer.id.includes(inc)) {
+                    set_paint_property(layer, "raster-opacity");
+                    set_paint_property(layer, "text-opacity");
+                    set_paint_property(layer, "icon-opacity");
+                    set_paint_property(layer, "line-opacity");
+                }
+            });
+        });
+    }
+}
+
+export default function Cursor({name, include, className, map, enabled} : ArgsCursor): JSX.Element {
+    const [sliderValue, setSliderValue] = useState<number>(50);
+
+    const changeOpacity = (value: number) => {
+        setSliderValue(value);
+        if (map.current?.isStyleLoaded) {
+            set_paint(map.current as MapboxMap, value, include);
+        }
     };
 
     return (<>

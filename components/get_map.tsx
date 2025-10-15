@@ -142,6 +142,10 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
     }
 
     const zoomInOut = (z: "in" | "out") => {
+        const layers = map.current?.getStyle().layers;
+        if (layers) {
+            layers.forEach((l) => {console.log(l.id)});
+        }
         map.current?.easeTo({
             zoom: map.current.getZoom() + (z == "in" ? 1 : -1),
             duration: 300,
@@ -159,16 +163,13 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
         addRain(map.current, state.rain);
         setState(prev => ({...prev, rain: !prev.rain}));
     }
-    const [sliderValue, setSliderValue] = useState<number>(50);
-    const [sliderValue2, setSliderValue2] = useState<number>(100);
-    const [sliderValueRoads, setSliderValueRoads] = useState<number>(100);
-    const [sliderValueImg2, setSliderValueImg2] = useState<number>(0);
 
     const [displayCursor, setDisplayCursor] = useState<boolean>(true);
     return (<>
         <div className={`flex left-0 top-0 absolute z-10
                 ${displayCursor ? "flex-col" : "flex-row items-center"}`}>
-            <div className={`flex flex-col justify-between p-[5px] duration-300 rounded-br-[5px] whitespace-nowrap overflow-hidden
+            <div className={`flex flex-col justify-between p-[5px] duration-300
+                    rounded-br-[5px] whitespace-nowrap overflow-hidden
                     ${displayCursor ? "h-[180px] w-[400px]" : "h-[30px] w-[30px]"}
                     ${state.enabled ? "bg-whiteMode" : "bg-darkMode" }`}>
                 <div className="flex justify-start">
@@ -179,17 +180,13 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
                     </button>
                 </div>
                 <Cursor className={!displayCursor ? "hidden": "ml-[5px]"} name="Afficher la carte de Hans J. Hopfen (1975)" include={`${state.lang}.jpg`}
-                    sliderValue={sliderValue} setSliderValue={setSliderValue}
-                    map={map.current} enabled={state.enabled} />
-                <Cursor className={!displayCursor ? "hidden": "ml-[5px]"} name="Afficher la carte du PEF de 1880" include={NEWMAP_NAME}
-                    sliderValue={sliderValueImg2} setSliderValue={setSliderValueImg2}
-                    map={map.current} enabled={state.enabled} />
+                    map={map} enabled={state.enabled} />
+                <Cursor className={!displayCursor ? "hidden": "ml-[5px]"} name="Afficher la carte du PEF de 1880" include={[NEWMAP_NAME, `${state.lang}.jpg`]}
+                    map={map} enabled={state.enabled} />
                 <Cursor className={!displayCursor ? "hidden": "ml-[5px]"} name="Afficher les marqueurs et les labels" include="city"
-                    sliderValue={sliderValue2} setSliderValue={setSliderValue2}
-                    map={map.current} enabled={state.enabled} />
+                    map={map} enabled={state.enabled} />
                 <Cursor className={!displayCursor ? "hidden": "ml-[5px]"} name="Afficher les routes de Hans J. Hopfen (1975)" include={ROAD_FILENAME}
-                    sliderValue={sliderValueRoads} setSliderValue={setSliderValueRoads}
-                    map={map.current} enabled={state.enabled} />
+                    map={map} enabled={state.enabled} />
             </div>
             <div className={`flex space-x-[10px] ml-[10px] ${displayCursor ? "mt-[10px]" : ""}`}>
                 <DarkMode enabled={state.enabled} changeMode={changeMode}/>
