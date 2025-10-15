@@ -6623,19 +6623,6 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    35.3529358,
-                    31.3321607
-                ]
-            },
-            "properties": {
-                "fr": "Gomorrhe ?"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
                     35.67426,
                     31.84098
                 ]

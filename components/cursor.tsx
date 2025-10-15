@@ -23,10 +23,12 @@ function set_paint(map: MapboxMap, value: number, include: string | string[])
             map.setPaintProperty(layer.id, 'text-opacity', value / 100.0)
             map.setPaintProperty(layer.id, 'icon-opacity', value / 100.0)},
         'line': (layer) => map.setPaintProperty(layer.id, 'line-opacity', value / 100.0),
+        'fill': (layer) => map.setPaintProperty(layer.id, 'fill-opacity', value / 100.0),
     }
 
     const for_func = (include: string) => {
         layers.forEach(layer => {
+            console.log(layer.id, layer.type);
             if (layer.id.includes(include)) {
                 const set_opacity_function = opacity_dico[layer.type];
                 if (set_opacity_function) set_opacity_function(layer);

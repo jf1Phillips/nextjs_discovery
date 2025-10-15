@@ -193,19 +193,19 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
                     </button>
                 </div>
                 <Cursor className={!displayCursor ? "hidden": "ml-[5px]"}
-                    name="Afficher la carte du PEF de 1880" include={NEWMAP_NAME}
+                    name="Afficher la carte du PEF (1880)" include={NEWMAP_NAME}
                     map={map} enabled={state.enabled} />
                 <Cursor className={!displayCursor ? "hidden": "ml-[5px]"}
                     name="Afficher la carte de Hans J. Hopfen (1975)" include={`${state.lang}.jpg`}
                     map={map} enabled={state.enabled} def={50}/>
                 <Cursor className={!displayCursor ? "hidden": "ml-[5px]"}
-                    name="Afficher les labels de Hans J. Hopfen (1975)" include="city"
-                    map={map} enabled={state.enabled} def={100} />
-                <Cursor className={!displayCursor ? "hidden": "ml-[5px]"}
                     name="Afficher les routes de Hans J. Hopfen (1975)" include={ROAD_FILENAME}
                     map={map} enabled={state.enabled} def={100} />
                 <Cursor className={!displayCursor ? "hidden": "ml-[5px]"}
-                    name="Afficher les layers actuels" include={["road", "label"]}
+                    name="Afficher les lieux" include="city"
+                    map={map} enabled={state.enabled} def={100} />
+                <Cursor className={!displayCursor ? "hidden": "ml-[5px]"}
+                    name="Afficher les routes et bâtiments actuels" include={["road", "label", "building"]}
                     map={map} enabled={state.enabled} def={100}/>
             </div>
             <div className={`flex space-x-[10px] ml-[10px] ${displayCursor ? "mt-[10px]" : ""}`}>
