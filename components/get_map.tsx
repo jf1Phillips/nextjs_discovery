@@ -138,13 +138,13 @@ function Cursor({sliderValue, setSliderValue, name, include, className, map, ena
     };
 
     return (<>
-    <div className={`relative h-[22px] flex items-center text-[13px] duration-300 ${className}
+    <div className={`relative h-[22px] flex items-center text-[13px] duration-300 space-x-[10px] ${className}
             ${!enabled ? "text-whiteMode" : "text-darkMode"}`}>
         <input type="range" min={0} max={100} value={sliderValue} onChange={e => changeOpacity(Number(e.target.value))}
             className={`w-[62px] h-[10px] rounded-lg appearance-none cursor-pointer duration-300
             ${!enabled ? "bg-whiteMode accent-darkMode" : "bg-darkMode accent-whiteMode"}`}
         />
-        <p className="ml-[10px] w-[30px]">{sliderValue}</p>
+        <p className="min-w-[20px]">{sliderValue}</p>
         <p>{name}</p>
     </div>
     </>);
@@ -296,7 +296,7 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
     return (<>
         <div className={`flex left-0 top-0 absolute z-10
                 ${displayCursor ? "flex-col" : "flex-row items-center"}`}>
-            <div className={`flex flex-col justify-between p-[5px] duration-300 rounded-br-[5px]
+            <div className={`flex flex-col justify-between p-[5px] duration-500 rounded-br-[5px] whitespace-nowrap overflow-hidden
                 ${displayCursor ? "h-[180px] w-[400px]" : "h-[30px] w-[30px]"}
                 ${state.enabled ? "bg-whiteMode" : "bg-darkMode" }`}>
                 <Cursor className={!displayCursor ? "hidden": ""} name="Afficher la carte de Hans J. Hopfen (1975)" include={`${state.lang}.jpg`}
@@ -338,7 +338,8 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
         </div>
         <div className="relative overflow-hidden">
             <div className={`absolute text-[15px] p-[5px] right-[0px] rounded-bl-[8px] z-10 duration-300 tracking-[1px] top-0
-                ${!state.enabled ? "text-whiteMode bg-darkMode" : "text-darkMode bg-whiteMode"}`}>
+                ${!state.enabled ? "text-whiteMode bg-darkMode" : "text-darkMode bg-whiteMode"}
+                ${displayCursor ? "hidden" : ""}`}>
                 <p>Lng: {lastPos ? lastPos.lng.toFixed(2) : ''}<br/>Lat: {lastPos ? lastPos.lat.toFixed(2) : ''}</p>
             </div>
             <div
