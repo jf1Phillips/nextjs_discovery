@@ -30,7 +30,7 @@ const JSXLabels: DicoJsx[] = [
         town: "Gomorrhe ?",
         jsx: (<>
             <p className="mb-2 font-bold text-[20px]">Gomorrhe ?</p>
-            <a className="mb-2 text-center block" target="_blank" href="https://edifiant.fr/sodome-et-gomorrhe/">{`https://edifiant.fr/sodome-et-gomorrhe/`}</a>
+            <a className="mb-2 text-center" target="_blank" href="https://edifiant.fr/sodome-et-gomorrhe/">{`https://edifiant.fr/sodome-et-gomorrhe/`}</a>
             <a className="text-center" target="_blank" href="https://www.youtube.com/watch?v=YpdYveOi28A">{`https://www.youtube.com/watch?v=YpdYveOi28A`}</a>
         </>)
     },
