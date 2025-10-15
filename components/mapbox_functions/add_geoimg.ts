@@ -30,10 +30,10 @@ export function addRoads(url_given: string, map: MapBoxMap)
 export type Coords = [[number, number], [number, number], [number, number], [number, number]];
 const default_coord: Coords =
 [
-    [33.6791210, 33.6868944],
-    [36.6262031, 33.6868944],
-    [36.6262031, 31.1730673],
-    [33.6791210, 31.1730673],
+    [33.6791210, 33.6868944 + 0.007], // ╭
+    [36.6262031, 33.6868944 + 0.007], //  ╮
+    [36.6262031, 31.1730673 - 0.01],  //  ╯
+    [33.6791210, 31.1730673 - 0.01],  // ╰
 ];
 
 export default function addGeoImg(url_given: string, map: MapBoxMap, coords ?: Coords)
@@ -54,7 +54,7 @@ export default function addGeoImg(url_given: string, map: MapBoxMap, coords ?: C
             type: 'raster',
             source: url,
             paint: {
-                'raster-opacity': coords ? 0.5 : 0.0,
+                'raster-opacity': !coords ? 0.5 : 0.0,
             }
         });
     }
