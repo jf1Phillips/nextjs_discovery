@@ -7,8 +7,9 @@ interface ArgsCursor
 {
     name: string,
     include: string | string[],
-    className?: string,
     map: React.RefObject<MapboxMap | null>,
+    className?: string,
+    def?: number,
     enabled?: boolean,
 };
 
@@ -16,38 +17,32 @@ function set_paint(map: MapboxMap, value: number, include: string | string[])
 {
     const layers = map.getStyle()?.layers || [];
 
-    type PaintPropertyName = Parameters<typeof map.setPaintProperty>[1];
-    const set_paint_property = (layer: Layer, type: PaintPropertyName) => {
-        if (!layer.paint) return;
-        if (type in layer.paint)
-            map.setPaintProperty(layer.id, type, value / 100.0);
+    const opacity_dico: {[key: string]: ((layer: Layer) => void) | undefined} ={
+        'raster': (layer) => map.setPaintProperty(layer.id, 'raster-opacity', value / 100.0),
+        'symbol': (layer) => {
+            map.setPaintProperty(layer.id, 'text-opacity', value / 100.0)
+            map.setPaintProperty(layer.id, 'icon-opacity', value / 100.0)},
+        'line': (layer) => map.setPaintProperty(layer.id, 'line-opacity', value / 100.0),
+    }
+
+    const for_func = (include: string) => {
+        layers.forEach(layer => {
+            if (layer.id.includes(include)) {
+                const set_opacity_function = opacity_dico[layer.type];
+                if (set_opacity_function) set_opacity_function(layer);
+            }
+        });
     };
 
     if (typeof include === 'string') {
-        layers.forEach(layer => {
-            if (layer.id.includes(include)) {
-                set_paint_property(layer, "raster-opacity");
-                set_paint_property(layer, "text-opacity");
-                set_paint_property(layer, "icon-opacity");
-                set_paint_property(layer, "line-opacity");
-            }
-        });
+        for_func(include);
     } else {
-        include.forEach(inc => {
-            layers.forEach(layer => {
-                if (layer.id.includes(inc)) {
-                    set_paint_property(layer, "raster-opacity");
-                    set_paint_property(layer, "text-opacity");
-                    set_paint_property(layer, "icon-opacity");
-                    set_paint_property(layer, "line-opacity");
-                }
-            });
-        });
+        include.forEach(inc => for_func(inc));
     }
 }
 
-export default function Cursor({name, include, className, map, enabled} : ArgsCursor): JSX.Element {
-    const [sliderValue, setSliderValue] = useState<number>(50);
+export default function Cursor({name, include, map, def, className, enabled} : ArgsCursor): JSX.Element {
+    const [sliderValue, setSliderValue] = useState<number>(def ? def : 0);
 
     const changeOpacity = (value: number) => {
         setSliderValue(value);

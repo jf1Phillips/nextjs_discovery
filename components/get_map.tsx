@@ -142,10 +142,6 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
     }
 
     const zoomInOut = (z: "in" | "out") => {
-        const layers = map.current?.getStyle().layers;
-        if (layers) {
-            layers.forEach((l) => {console.log(l.id)});
-        }
         map.current?.easeTo({
             zoom: map.current.getZoom() + (z == "in" ? 1 : -1),
             duration: 300,
@@ -170,7 +166,7 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
                 ${displayCursor ? "flex-col" : "flex-row items-center"}`}>
             <div className={`flex flex-col justify-between p-[5px] duration-300
                     rounded-br-[5px] whitespace-nowrap overflow-hidden
-                    ${displayCursor ? "h-[180px] w-[400px]" : "h-[30px] w-[30px]"}
+                    ${displayCursor ? "h-[200px] w-[400px]" : "h-[30px] w-[30px]"}
                     ${state.enabled ? "bg-whiteMode" : "bg-darkMode" }`}>
                 <div className="flex justify-start">
                     <button className={`text-[15px] duration-300 w-[20px] h-[20px] flex items-center justify-center rounded-[5px]
@@ -180,13 +176,15 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
                     </button>
                 </div>
                 <Cursor className={!displayCursor ? "hidden": "ml-[5px]"} name="Afficher la carte de Hans J. Hopfen (1975)" include={`${state.lang}.jpg`}
-                    map={map} enabled={state.enabled} />
-                <Cursor className={!displayCursor ? "hidden": "ml-[5px]"} name="Afficher la carte du PEF de 1880" include={[NEWMAP_NAME, `${state.lang}.jpg`]}
+                    map={map} enabled={state.enabled} def={50}/>
+                <Cursor className={!displayCursor ? "hidden": "ml-[5px]"} name="Afficher la carte du PEF de 1880" include={NEWMAP_NAME}
                     map={map} enabled={state.enabled} />
                 <Cursor className={!displayCursor ? "hidden": "ml-[5px]"} name="Afficher les marqueurs et les labels" include="city"
-                    map={map} enabled={state.enabled} />
+                    map={map} enabled={state.enabled} def={100} />
                 <Cursor className={!displayCursor ? "hidden": "ml-[5px]"} name="Afficher les routes de Hans J. Hopfen (1975)" include={ROAD_FILENAME}
-                    map={map} enabled={state.enabled} />
+                    map={map} enabled={state.enabled} def={100} />
+                <Cursor className={!displayCursor ? "hidden": "ml-[5px]"} name="Afficher les layers actuels" include={["road", "label"]}
+                    map={map} enabled={state.enabled} def={100}/>
             </div>
             <div className={`flex space-x-[10px] ml-[10px] ${displayCursor ? "mt-[10px]" : ""}`}>
                 <DarkMode enabled={state.enabled} changeMode={changeMode}/>
