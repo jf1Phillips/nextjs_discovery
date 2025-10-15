@@ -28,7 +28,6 @@ function set_paint(map: MapboxMap, value: number, include: string | string[])
 
     const for_func = (include: string) => {
         layers.forEach(layer => {
-            console.log(layer.id, layer.type);
             if (layer.id.includes(include)) {
                 const set_opacity_function = opacity_dico[layer.type];
                 if (set_opacity_function) set_opacity_function(layer);

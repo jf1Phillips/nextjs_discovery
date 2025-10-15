@@ -22,10 +22,10 @@ const ROAD_FILENAME: string = "/geoJson_files/route_palestine_merged.geojson";
 const LABELS_FILENAME: string = "/geoJson_files/city_label.geojson";
 const style: string[] = ["mapbox://styles/mapbox/light-v10", "mapbox://styles/mapbox/dark-v10"];
 const coord_new_map: Coords = [
-    [34.120542941238725 + 0.01, 33.46703792406347],
-    [35.7498100593699 + 0.01, 33.46703792406347],
-    [35.7498100593699 + 0.01, 31.10529446421723],
-    [34.120542941238725 + 0.01, 31.10529446421723],
+    [34.120542941238725 + 0.008, 33.46703792406347 + 0.003],
+    [35.7498100593699 + 0.008, 33.46703792406347 + 0.003],
+    [35.7498100593699 + 0.008, 31.10529446421723 - 0.0058],
+    [34.120542941238725 + 0.008, 31.10529446421723 - 0.0058],
 ];
 export {GEOMAP_FOLDER, GEOMAP_NAME, LABELS_FILENAME};
 

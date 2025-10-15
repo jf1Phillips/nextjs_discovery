@@ -23,8 +23,8 @@ async function get_json_data(file_name: string): Promise<json_data | undefined> 
         }
         const json: json_data = await response.json();
         return json;
-    } catch (e) {
-        console.log(e);
+    } catch (error) {
+        console.log(error);
         return undefined;
     }
 }
