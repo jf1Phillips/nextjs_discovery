@@ -205,7 +205,10 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
                     name="Afficher les lieux" include="city"
                     map={map} enabled={state.enabled} def={100} />
                 <Cursor className={!displayCursor ? "hidden": "ml-[5px]"}
-                    name="Afficher les routes et bâtiments actuels" include={["road", "label", "building"]}
+                    name="Afficher les routes et bâtiments actuels" include={["road", "label", "building", "bridge", "tunnel", "land", "waterway", "park"]}
+                    map={map} enabled={state.enabled} def={100}/>
+                <Cursor className={!displayCursor ? "hidden" : "ml-[5px]"}
+                    name="Afficher les frontières actuelles" include="admin"
                     map={map} enabled={state.enabled} def={100}/>
             </div>
             <div className={`flex space-x-[10px] ml-[10px] ${displayCursor ? "mt-[10px]" : ""}`}>

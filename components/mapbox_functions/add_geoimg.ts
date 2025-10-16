@@ -54,7 +54,7 @@ export default function addGeoImg(url_given: string, map: MapBoxMap, coords ?: C
             type: 'raster',
             source: url,
             paint: {
-                'raster-opacity': coords ? 0.5 : 0.0,
+                'raster-opacity': !coords ? 0.5 : 0.0,
             }
         });
     }
