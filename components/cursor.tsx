@@ -24,6 +24,7 @@ function set_paint(map: MapboxMap, value: number, include: string | string[])
             map.setPaintProperty(layer.id, 'icon-opacity', value / 100.0)},
         'line': (layer) => map.setPaintProperty(layer.id, 'line-opacity', value / 100.0),
         'fill': (layer) => map.setPaintProperty(layer.id, 'fill-opacity', value / 100.0),
+        'fill-extrusion': (layer) => map.setPaintProperty(layer.id, "fill-extrusion-opacity", value / 100.0),
     }
 
     const for_func = (include: string) => {
