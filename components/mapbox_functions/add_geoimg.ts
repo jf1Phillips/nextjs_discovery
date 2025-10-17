@@ -45,8 +45,14 @@ export default function addGeoImg(url_given: string, map: MapBoxMap, coords ?: C
     // if (!map.getSource(url)) {
     //     map.addSource(url, {
     //         type: "raster",
-    //         url: "mapbox://ads-eo.7sbtrddh",
+    //         // url: "mapbox://ads-eo.7sbtrddh",
+    //         tiles: [
+    //             '/tiles/{z}/{x}/{y}.png'
+    //         ],
     //         tileSize: 256,
+    //         scheme: 'tms',
+    //         minzoom: 0,
+    //         maxzoom: 15,
     //     });
     // }
     // if (!map.getLayer(url)) {
@@ -54,8 +60,11 @@ export default function addGeoImg(url_given: string, map: MapBoxMap, coords ?: C
     //         id: url,
     //         type: 'raster',
     //         source: url,
+    //         paint: {
+    //             'raster-opacity': coords ? 0.5 : 0.0,
+    //         }
     //     });
-    // }
+    // } return;
     if (!map.getSource(url)) {
         map.addSource(url, {
             type: 'image',

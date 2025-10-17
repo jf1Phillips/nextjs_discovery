@@ -3,7 +3,7 @@
 import ZoomInOut from "@/components/zoom_in_out";
 import DarkMode from "@/components/darkmode";
 import React, { useState,  useRef, useEffect, JSX } from "react";
-import mapboxgl, {LngLat, Map as MapboxMap} from "mapbox-gl";
+import mapboxgl, {LngLat, Map as MapboxMap, Marker} from "mapbox-gl";
 import Cursor from "./cursor";
 import "mapbox-gl/dist/mapbox-gl.css";
 import "@/styles/globals.css";
@@ -14,6 +14,7 @@ import json_load from "./json_load";
 import addRain from "./mapbox_functions/addRain";
 import add_popup from "./mapbox_functions/add_popup";
 import addGeoJsonLabels, {reload_json_labels, changeLabelsColors} from "./mapbox_functions/geojson_labels";
+import get_location from "./mapbox_functions/get_location";
 
 const GEOMAP_FOLDER: string = "/img/geo_map";
 const GEOMAP_NAME: string = "geo_map_";
@@ -178,6 +179,8 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
     }
 
     const [displayCursor, setDisplayCursor] = useState<boolean>(true);
+    const marker = useRef<Marker | null>(null);
+
     return (<>
         <div className={`flex left-0 top-0 absolute z-10
                 ${displayCursor ? "flex-col" : "flex-row items-center"}`}>
@@ -226,6 +229,9 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
                             ${!state.enabled ? "bg-darkMode text-whiteMode" : "bg-whiteMode text-darkMode"}`}
                         onClick={reload_map_and_labels}
                         >↻</button>
+                <button onClick={() => get_location(map.current, marker)} className={`w-[22px] h-[22px] rounded-[2px] duration-300 text-[15px]
+                            ${!state.enabled ? "bg-darkMode text-whiteMode" : "bg-whiteMode text-darkMode"}`}
+                        >⊕</button>
             </div>
         </div>
         <div className="relative overflow-hidden">
