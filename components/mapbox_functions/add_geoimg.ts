@@ -41,6 +41,21 @@ export default function addGeoImg(url_given: string, map: MapBoxMap, coords ?: C
     const url = (url_given.includes("es.jpg")) ? `${GEOMAP_FOLDER}/${GEOMAP_NAME}fr.jpg` : url_given;
     const coordinates: Coords = !coords ? default_coord : coords;
 
+    // if (!coords) return;
+    // if (!map.getSource(url)) {
+    //     map.addSource(url, {
+    //         type: "raster",
+    //         url: "mapbox://ads-eo.7sbtrddh",
+    //         tileSize: 256,
+    //     });
+    // }
+    // if (!map.getLayer(url)) {
+    //     map.addLayer({
+    //         id: url,
+    //         type: 'raster',
+    //         source: url,
+    //     });
+    // }
     if (!map.getSource(url)) {
         map.addSource(url, {
             type: 'image',

@@ -231,7 +231,7 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
         <div className="relative overflow-hidden">
             <div className={`absolute text-[15px] p-[5px] right-[0px] rounded-bl-[8px] z-10 duration-300 tracking-[1px] top-0
                 ${!state.enabled ? "text-whiteMode bg-darkMode" : "text-darkMode bg-whiteMode"}
-                ${displayCursor ? "hidden" : ""}`}>
+                ${displayCursor && "hidden"}`}>
                 <p>Lng: {lastPos ? lastPos.lng.toFixed(2) : ''}<br/>Lat: {lastPos ? lastPos.lat.toFixed(2) : ''}</p>
             </div>
             <div
