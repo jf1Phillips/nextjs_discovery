@@ -41,36 +41,24 @@ export default function addGeoImg(url_given: string, map: MapBoxMap, coords ?: C
     const url = (url_given.includes("es.jpg")) ? `${GEOMAP_FOLDER}/${GEOMAP_NAME}fr.jpg` : url_given;
     const coordinates: Coords = !coords ? default_coord : coords;
 
-    // if (!coords) return;
-    // if (!map.getSource(url)) {
-    //     map.addSource(url, {
-    //         type: "raster",
-    //         // url: "mapbox://ads-eo.7sbtrddh",
-    //         tiles: [
-    //             '/tiles/{z}/{x}/{y}.png'
-    //         ],
-    //         tileSize: 256,
-    //         scheme: 'tms',
-    //         minzoom: 0,
-    //         maxzoom: 15,
-    //     });
-    // }
-    // if (!map.getLayer(url)) {
-    //     map.addLayer({
-    //         id: url,
-    //         type: 'raster',
-    //         source: url,
-    //         paint: {
-    //             'raster-opacity': coords ? 0.5 : 0.0,
-    //         }
-    //     });
-    // } return;
     if (!map.getSource(url)) {
-        map.addSource(url, {
-            type: 'image',
-            url: url,
-            coordinates: coordinates,
-        });
+        if (url.includes(GEOMAP_NAME)) {
+            map.addSource(url, {
+                type: "raster",
+                tiles: [
+                    '/tiles/{z}/{x}/{y}.webp'
+                ],
+                tileSize: 512,
+                minzoom: 6,
+                maxzoom: 13,
+            });
+        } else {
+            map.addSource(url, {
+                type: 'image',
+                url: url,
+                coordinates: coordinates,
+            });
+        }
     }
     if (!map.getLayer(url)) {
         map.addLayer({
