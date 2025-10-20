@@ -26,7 +26,8 @@ export default function get_location(
         return;
     }
     if (watchId.current === null) {
-        watchId.current = navigator.geolocation.watchPosition((p) => {
+        let available: boolean = true;
+        const tmp: number = navigator.geolocation.watchPosition((p) => {
             const coord: [number, number] = [p.coords.longitude, p.coords.latitude];
 
             if (!marker.current) {
@@ -39,6 +40,7 @@ export default function get_location(
         },
         (error) => {
             console.log("Error location: ", error);
+            available = false;
             setLoc(false);
         },
         {
@@ -46,5 +48,6 @@ export default function get_location(
             timeout: 5000,
             maximumAge: 0,
         });
+        if (available) watchId.current = tmp;
     }
 }
