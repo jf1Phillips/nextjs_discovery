@@ -179,8 +179,15 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
     }
 
     const [displayCursor, setDisplayCursor] = useState<boolean>(true);
+    const [locBtn, setLocBtn] = useState<boolean>(false);
     const marker = useRef<Marker | null>(null);
+    const whatchId = useRef<number | null>(null);
 
+    const listen_loc = ():void => {
+        const loc: boolean = !locBtn;
+        get_location(map.current, marker, loc, whatchId)
+        setLocBtn(loc);
+    }
     return (<>
         <div className={`flex left-0 top-0 absolute z-10
                 ${displayCursor ? "flex-col" : "flex-row items-center"}`}>
@@ -232,8 +239,8 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
                             ${!state.enabled ? "bg-darkMode text-whiteMode" : "bg-whiteMode text-darkMode"}`}
                         onClick={reload_map_and_labels}
                         >↻</button>
-                <button onClick={() => get_location(map.current, marker)} className={`w-[22px] h-[22px] rounded-[2px] duration-300 text-[15px]
-                            ${!state.enabled ? "bg-darkMode text-whiteMode" : "bg-whiteMode text-darkMode"}`}
+                <button onClick={listen_loc} className={`w-[22px] h-[22px] rounded-[2px] duration-300 text-[15px]
+                            ${!state.enabled ? `${locBtn ? "text-whiteMode" : "text-[#ff0000]"} bg-darkMode` : "bg-whiteMode text-darkMode"}`}
                         >⊕</button>
             </div>
         </div>
