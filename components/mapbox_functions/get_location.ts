@@ -6,6 +6,7 @@ export default function get_location(
     map: MapboxMap | null,
     marker: React.RefObject<Marker | null>,
     loc: boolean,
+    setLoc: React.Dispatch<React.SetStateAction<boolean>>,
     watchId: React.RefObject<number | null>
 ) : void
 {
@@ -21,6 +22,7 @@ export default function get_location(
             marker.current.remove();
             marker.current = null;
         }
+        setLoc(false);
         return;
     }
     if (watchId.current === null) {
@@ -33,9 +35,11 @@ export default function get_location(
             } else {
                 marker.current.setLngLat(coord);
             }
+            setLoc(true);
         },
         (error) => {
             console.log("Error location: ", error);
+            setLoc(false);
         },
         {
             enableHighAccuracy: true,
