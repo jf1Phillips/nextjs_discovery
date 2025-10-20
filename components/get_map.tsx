@@ -67,8 +67,8 @@ const add_all_things = (new_state: MapVar, map: MapboxMap | null, textNbr: numbe
     if (!map) return;
     addBunker(map);
     json_load("/json_files/test.json", new_state.lang, map, textNbr);
-    addGeoImg(`${GEOMAP_FOLDER}/${GEOMAP_NAME}${new_state.lang}.jpg`, map);
     addGeoImg(`${GEOMAP_FOLDER}/${NEWMAP_NAME}`, map, coord_new_map);
+    addGeoImg(`${GEOMAP_FOLDER}/${GEOMAP_NAME}${new_state.lang}.jpg`, map);
     addRoads(ROAD_FILENAME, map);
     map?.setPaintProperty('water', 'fill-color', new_state.enabled ? 'rgba(14, 15, 99, 1)': 'rgba(14, 122, 155, 1)');
     set3dTerrain(map, !new_state.relief);
@@ -164,7 +164,6 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
 
     const reload_map_and_labels = () => {
         if (!map.current) return;
-        reload_json_labels(map.current, state.lang, "/geoJson_files/city_label.geojson");
         if (map.current.getLayer(`${GEOMAP_FOLDER}/${GEOMAP_NAME}${state.lang}.jpg`))
             map.current.removeLayer(`${GEOMAP_FOLDER}/${GEOMAP_NAME}${state.lang}.jpg`);
         if (map.current.getSource(`${GEOMAP_FOLDER}/${GEOMAP_NAME}${state.lang}.jpg`))
@@ -174,8 +173,9 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
             map.current.removeLayer(`${GEOMAP_FOLDER}/${NEWMAP_NAME}`);
         if (map.current.getSource(`${GEOMAP_FOLDER}/${NEWMAP_NAME}`))
             map.current.removeSource(`${GEOMAP_FOLDER}/${NEWMAP_NAME}`);
-        addGeoImg(`${GEOMAP_FOLDER}/${GEOMAP_NAME}${state.lang}.jpg`, map.current);
         addGeoImg(`${GEOMAP_FOLDER}/${NEWMAP_NAME}`, map.current, coord_new_map);
+        addGeoImg(`${GEOMAP_FOLDER}/${GEOMAP_NAME}${state.lang}.jpg`, map.current);
+        reload_json_labels(map.current, state.lang, "/geoJson_files/city_label.geojson");
     }
 
     const [displayCursor, setDisplayCursor] = useState<boolean>(true);
@@ -183,11 +183,6 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
     const marker = useRef<Marker | null>(null);
     const whatchId = useRef<number | null>(null);
 
-    const listen_loc = ():void => {
-        const loc: boolean = !locBtn;
-        get_location(map.current, marker, loc, whatchId)
-        setLocBtn(loc);
-    }
     return (<>
         <div className={`flex left-0 top-0 absolute z-10
                 ${displayCursor ? "flex-col" : "flex-row items-center"}`}>
@@ -239,7 +234,8 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
                             ${!state.enabled ? "bg-darkMode text-whiteMode" : "bg-whiteMode text-darkMode"}`}
                         onClick={reload_map_and_labels}
                         >↻</button>
-                <button onClick={listen_loc} className={`w-[22px] h-[22px] rounded-[2px] duration-300 text-[15px]
+                <button onClick={() => get_location(map.current, marker, !locBtn, setLocBtn, whatchId)}
+                            className={`w-[22px] h-[22px] rounded-[2px] duration-300 text-[15px]
                             ${!state.enabled ? `${locBtn ? "text-whiteMode" : "text-[#ff0000]"} bg-darkMode` : "bg-whiteMode text-darkMode"}`}
                         >⊕</button>
             </div>
