@@ -1,5 +1,4 @@
 import { Map as MapboxMap } from "mapbox-gl";
-import { responseCookiesToRequestCookies } from "next/dist/server/web/spec-extension/adapters/request-cookies";
 const PINLABEL_FILENAME_DARK: string = "/img/pin_labels_dark.png";
 const PINLABEL_FILENAME_WHITE: string = "/img/pin_labels_white.png";
 const PINLABEL_FILENAME_ORANGE: string = "/img/pin_labels_orange.png";
