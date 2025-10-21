@@ -2,6 +2,7 @@ import mapboxgl, { Map as Mapboxgl, LngLatLike } from "mapbox-gl";
 import ReactDOMServer from 'react-dom/server';
 import { LABELS_FILENAME } from "../get_map";
 import JSXLabels, {DicoJsx} from "../jsxdico";
+import { highLightLabel } from "./geojson_labels";
 
 export default function add_popup(map: Mapboxgl): void
 {
@@ -11,6 +12,7 @@ export default function add_popup(map: Mapboxgl): void
         const feature = e.features[0];
         if (feature.geometry?.type !== 'Point') return;
         const labelText = feature.properties?.['fr'] || 'Label';
+        highLightLabel(map, id, labelText);
 
         const entry : DicoJsx | undefined = JSXLabels.find(entry => entry.town === labelText);
 
@@ -39,6 +41,7 @@ export default function add_popup(map: Mapboxgl): void
                 popup_el.style.scrollbarColor = '#616161 #2a2a2a';
             });
         }
+        popup.once('close', () => highLightLabel(map, id));
         popup.once("open", () => {
                 const popup_anchor = document.querySelector('.mapboxgl-popup-tip') as HTMLDivElement;
                 popup_anchor.style.display = "none";

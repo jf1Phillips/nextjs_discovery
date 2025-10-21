@@ -1,4 +1,5 @@
 import { Map as MapboxMap } from "mapbox-gl";
+import { responseCookiesToRequestCookies } from "next/dist/server/web/spec-extension/adapters/request-cookies";
 const PINLABEL_FILENAME_DARK: string = "/img/pin_labels_dark.png";
 const PINLABEL_FILENAME_WHITE: string = "/img/pin_labels_white.png";
 const PINLABEL_FILENAME_ORANGE: string = "/img/pin_labels_orange.png";
@@ -71,6 +72,21 @@ export default function addGeoJsonLabels(file: string, map: MapboxMap, lang ?: s
             }
         });
     }
+}
+
+export function highLightLabel(map: MapboxMap, id: string, name?: string)
+{
+    if (!map.getLayer(id)) return;
+    if (!name) {
+        map.setLayoutProperty(id, 'icon-image', 'pin_label_dark');
+        return;
+    }
+    map.setLayoutProperty(id, 'icon-image', [
+        'case',
+        ['==', ['get', 'fr'], name],
+        'pin_label_selected',
+        'pin_label_dark'
+    ])
 }
 
 export function reload_json_labels(map: MapboxMap, lang: string, file: string): void
