@@ -1,6 +1,7 @@
 import { Map as MapboxMap } from "mapbox-gl";
 const PINLABEL_FILENAME_DARK: string = "/img/pin_labels_dark.png";
 const PINLABEL_FILENAME_WHITE: string = "/img/pin_labels_white.png";
+const PINLABEL_FILENAME_ORANGE: string = "/img/pin_labels_orange.png";
 
 export function changeLabelsColors(map: MapboxMap, darkmode: boolean, file: string): void
 {
@@ -22,21 +23,21 @@ export default function addGeoJsonLabels(file: string, map: MapboxMap, lang ?: s
 {
     const langage: string = lang ? lang : "fr";
     const id: string = file.replace(/(label|road|geo_map)/gi, "rp");
+    const icons = [
+        { name: 'pin_label_dark', url: PINLABEL_FILENAME_DARK },
+        { name: 'pin_label_white', url: PINLABEL_FILENAME_WHITE },
+        { name: 'pin_label_selected', url: PINLABEL_FILENAME_ORANGE}
+    ];
 
-    if (!map.hasImage('pin_label_dark')) {
-        map.loadImage(PINLABEL_FILENAME_DARK, (error, image) => {
-            if (error || !image) return;
-            if (!map.hasImage('pin_label_dark'))
-                map.addImage('pin_label_dark', image);
-        });
-    }
-    if (!map.hasImage('pin_label_white')) {
-        map.loadImage(PINLABEL_FILENAME_WHITE, (error, image) => {
-            if (error || !image) return;
-            if (!map.hasImage('pin_label_white'))
-                map.addImage('pin_label_white', image);
-        });
-    }
+    icons.forEach(({ name, url }) => {
+        if (!map.hasImage(name)) {
+            map.loadImage(url, (error, image) => {
+                if (error || !image) return;
+                if (!map.hasImage(name))
+                    map.addImage(name, image);
+            });
+        }
+    });
     if (!map.getSource(id)) {
         map.addSource(id, {
             type: 'geojson',
