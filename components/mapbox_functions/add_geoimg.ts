@@ -40,6 +40,8 @@ export default function addGeoImg(url_given: string, map: MapBoxMap, coords ?: C
 {
     const url = (url_given.includes("es.jpg")) ? `${GEOMAP_FOLDER}/${GEOMAP_NAME}fr.jpg` : url_given;
     const coordinates: Coords = !coords ? default_coord : coords;
+    const labelLayers = map.getStyle().layers.filter(l => l.id.includes('admin'));
+    const firstLabel = labelLayers.length ? labelLayers[0].id : undefined;
 
     if (!map.getSource(url)) {
         if (url.includes(GEOMAP_NAME)) {
@@ -48,7 +50,7 @@ export default function addGeoImg(url_given: string, map: MapBoxMap, coords ?: C
                 tiles: [
                     '/tiles/{z}/{x}/{y}.webp'
                 ],
-                tileSize: 512,
+                tileSize: 256,
                 minzoom: 6,
                 maxzoom: 13,
             });
@@ -68,6 +70,6 @@ export default function addGeoImg(url_given: string, map: MapBoxMap, coords ?: C
             paint: {
                 'raster-opacity': !coords ? 0.5 : 0.0,
             }
-        });
+        }, firstLabel);
     }
 }
