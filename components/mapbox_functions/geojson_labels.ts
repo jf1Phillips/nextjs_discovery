@@ -88,10 +88,11 @@ export function highLightLabel(map: MapboxMap, id: string, name?: string)
     ])
 }
 
-export function reload_json_labels(map: MapboxMap, lang: string, file: string): void
+export function reload_json_labels(map: MapboxMap | null, lang: string, file: string): void
 {
     const id: string = file.replace(/(label|road|geo_map)/gi, "rp");
 
+    if (!map) return;
     if (map.getLayer(id)) {
         map.removeLayer(id);
     }

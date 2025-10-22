@@ -9,26 +9,18 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import "@/styles/globals.css";
 import set3dTerrain from "./mapbox_functions/set3dterrain";
 import addBunker, { removeBunker } from "./mapbox_functions/addBunker";
-import addGeoImg, { addRoads, Coords } from "./mapbox_functions/add_geoimg";
+import addGeoImg, { addRoads, ID_HANS, ID_PEF } from "./mapbox_functions/add_geoimg";
 import json_load from "./json_load";
 import addRain from "./mapbox_functions/addRain";
 import add_popup from "./mapbox_functions/add_popup";
 import addGeoJsonLabels, {reload_json_labels, changeLabelsColors} from "./mapbox_functions/geojson_labels";
 import get_location from "./mapbox_functions/get_location";
 
-const GEOMAP_FOLDER: string = "/img/geo_map";
-const GEOMAP_NAME: string = "geo_map_";
-const NEWMAP_NAME: string = "new_map.jpg";
 const ROAD_FILENAME: string = "/geoJson_files/route_palestine_merged.geojson";
 const LABELS_FILENAME: string = "/geoJson_files/city_label.geojson";
 const style: string[] = ["mapbox://styles/mapbox/light-v10", "mapbox://styles/mapbox/dark-v10"];
-const coord_new_map: Coords = [
-    [34.120542941238725 + 0.008, 33.46703792406347 + 0.003],
-    [35.7498100593699 + 0.008, 33.46703792406347 + 0.003],
-    [35.7498100593699 + 0.008, 31.10529446421723 - 0.0058],
-    [34.120542941238725 + 0.008, 31.10529446421723 - 0.0058],
-];
-export {GEOMAP_FOLDER, GEOMAP_NAME, LABELS_FILENAME};
+
+export {LABELS_FILENAME};
 
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN as string;
@@ -67,8 +59,7 @@ const add_all_things = (new_state: MapVar, map: MapboxMap | null, textNbr: numbe
     if (!map) return;
     addBunker(map);
     json_load("/json_files/test.json", new_state.lang, map, textNbr);
-    addGeoImg(`${GEOMAP_FOLDER}/${NEWMAP_NAME}`, map, coord_new_map);
-    addGeoImg(`${GEOMAP_FOLDER}/${GEOMAP_NAME}${new_state.lang}.jpg`, map);
+    addGeoImg(map);
     addRoads(ROAD_FILENAME, map);
     map?.setPaintProperty('water', 'fill-color', new_state.enabled ? 'rgba(14, 15, 99, 1)': 'rgba(14, 122, 155, 1)');
     set3dTerrain(map, !new_state.relief);
@@ -162,22 +153,6 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
         setState(prev => ({...prev, rain: !prev.rain}));
     }
 
-    const reload_map_and_labels = () => {
-        if (!map.current) return;
-        if (map.current.getLayer(`${GEOMAP_FOLDER}/${GEOMAP_NAME}${state.lang}.jpg`))
-            map.current.removeLayer(`${GEOMAP_FOLDER}/${GEOMAP_NAME}${state.lang}.jpg`);
-        if (map.current.getSource(`${GEOMAP_FOLDER}/${GEOMAP_NAME}${state.lang}.jpg`))
-            map.current.removeSource(`${GEOMAP_FOLDER}/${GEOMAP_NAME}${state.lang}.jpg`);
-
-        if (map.current.getLayer(`${GEOMAP_FOLDER}/${NEWMAP_NAME}`))
-            map.current.removeLayer(`${GEOMAP_FOLDER}/${NEWMAP_NAME}`);
-        if (map.current.getSource(`${GEOMAP_FOLDER}/${NEWMAP_NAME}`))
-            map.current.removeSource(`${GEOMAP_FOLDER}/${NEWMAP_NAME}`);
-        addGeoImg(`${GEOMAP_FOLDER}/${NEWMAP_NAME}`, map.current, coord_new_map);
-        addGeoImg(`${GEOMAP_FOLDER}/${GEOMAP_NAME}${state.lang}.jpg`, map.current);
-        reload_json_labels(map.current, state.lang, "/geoJson_files/city_label.geojson");
-    }
-
     const [displayCursor, setDisplayCursor] = useState<boolean>(true);
     const [locBtn, setLocBtn] = useState<boolean>(false);
     const marker = useRef<Marker | null>(null);
@@ -198,10 +173,10 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
                     </button>
                 </div>
                 <Cursor className={!displayCursor ? "hidden": "ml-[5px]"}
-                    name="Afficher la carte du PEF (1880)" include={NEWMAP_NAME}
+                    name="Afficher la carte du PEF (1880)" include={ID_PEF}
                     map={map} enabled={state.enabled} />
                 <Cursor className={!displayCursor ? "hidden": "ml-[5px]"}
-                    name="Afficher la carte de Hans J. Hopfen (1975)" include={`${state.lang}.jpg`}
+                    name="Afficher la carte de Hans J. Hopfen (1975)" include={ID_HANS}
                     map={map} enabled={state.enabled} def={50}/>
                 <Cursor className={!displayCursor ? "hidden": "ml-[5px]"}
                     name="Afficher les routes de Hans J. Hopfen (1975)" include={ROAD_FILENAME}
@@ -232,7 +207,7 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
                             {!state.rain ? "🌧️" : "☀️"}</button>
                 <button className={`w-[22px] h-[22px] rounded-[2px] duration-300 text-[15px]
                             ${!state.enabled ? "bg-darkMode text-whiteMode" : "bg-whiteMode text-darkMode"}`}
-                        onClick={reload_map_and_labels}
+                        onClick={() => reload_json_labels(map.current, state.lang, "/geoJson_files/city_label.geojson")}
                         >↻</button>
                 <button onClick={() => get_location(map.current, marker, !locBtn, setLocBtn, whatchId)}
                             className={`w-[22px] h-[22px] rounded-[2px] duration-300 text-[15px]
