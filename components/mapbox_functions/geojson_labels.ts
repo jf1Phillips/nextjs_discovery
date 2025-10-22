@@ -119,7 +119,7 @@ export default function addGeoJsonLabels(map: MapboxMap, labels: GeoJsonLabels[]
         });
 
         if (!map.getSource(label.id)) {
-            map.addSource(label.id, {type: "geojson", data: label.url});
+            map.addSource(label.id, { type: "geojson", data: label.url });
         }
         if (!map.getLayer(label.id)) {
             map.addLayer({
@@ -149,18 +149,36 @@ export default function addGeoJsonLabels(map: MapboxMap, labels: GeoJsonLabels[]
     });
 }
 
-export function highLightLabel(map: MapboxMap, id: string, name?: string) {
-    if (!map.getLayer(id)) return;
-    if (!name) {
-        map.setLayoutProperty(id, 'icon-image', 'pin_label_dark');
-        return;
-    }
-    map.setLayoutProperty(id, 'icon-image', [
-        'case',
-        ['==', ['get', 'fr'], name],
-        'pin_label_selected',
-        'pin_label_dark'
-    ])
+export function highLightLabel(map: MapboxMap, labels: GeoJsonLabels[], darkmode: boolean, name?: string) {
+    labels.forEach((label) => {
+        if (!map.getLayer(label.id)) return;
+        const icon = darkmode ? label.icons.white.id : label.icons.dark.id;
+        const txtColor = darkmode ? '#ffffff' : '#000000';
+        const haloColor= darkmode ? '#000000' : '#ffffff';
+
+        if (!name) {
+            setDarkmodeToLabels(map, [label], darkmode);
+            return;
+        }
+        map.setLayoutProperty(label.id, 'icon-image', [
+            "case",
+            ["==", ["get", "fr"], name],
+                label.icons.selected.id,
+                icon
+        ]);
+        map.setPaintProperty(label.id, "text-color", [
+            "case",
+            ["==", ["get", "fr"], name],
+                "#e56c00",
+                txtColor
+        ]);
+        map.setPaintProperty(label.id, "text-halo-color", [
+            "case",
+            ["==", ["get", "fr"], name],
+                "#ffffff",
+                haloColor
+        ]);
+    });
 }
 
 /**
