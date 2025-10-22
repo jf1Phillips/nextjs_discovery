@@ -9,7 +9,8 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import "@/styles/globals.css";
 import set3dTerrain from "./mapbox_functions/set3dterrain";
 import addBunker, { removeBunker } from "./mapbox_functions/addBunker";
-import addGeoImg, { addRoads, ID_HANS, ID_PEF } from "./mapbox_functions/add_geoimg";
+import addGeoImg, { GeoImg } from "./mapbox_functions/add_geoimg";
+import addRoads from "./mapbox_functions/addRoads";
 import json_load from "./json_load";
 import addRain from "./mapbox_functions/addRain";
 import add_popup from "./mapbox_functions/add_popup";
@@ -55,11 +56,34 @@ interface MapArgs {
     histdate: number
 };
 
+const ID_PEF: string = "pef1880map";
+const ID_HANS: string = "hans1975map";
+
+const geoImgArray: GeoImg[] = [
+    {
+        url: "/img/geo_map/pef_1880_map.jpg",
+        id: ID_PEF,
+        type: "image",
+        coord: [
+            [34.120542941238725 + 0.008, 33.46703792406347 + 0.003],
+            [35.7498100593699 + 0.008, 33.46703792406347 + 0.003],
+            [35.7498100593699 + 0.008, 31.10529446421723 - 0.0058],
+            [34.120542941238725 + 0.008, 31.10529446421723 - 0.0058],
+        ],
+    },
+    {
+        url: "/tiles/{z}/{x}/{y}.webp",
+        id: ID_HANS,
+        type: "raster",
+        opacity: 0.5,
+    }
+];
+
 const add_all_things = (new_state: MapVar, map: MapboxMap | null, textNbr: number) => {
     if (!map) return;
     addBunker(map);
     json_load("/json_files/test.json", new_state.lang, map, textNbr);
-    addGeoImg(map);
+    addGeoImg(map, geoImgArray);
     addRoads(ROAD_FILENAME, map);
     map?.setPaintProperty('water', 'fill-color', new_state.enabled ? 'rgba(14, 15, 99, 1)': 'rgba(14, 122, 155, 1)');
     set3dTerrain(map, !new_state.relief);
