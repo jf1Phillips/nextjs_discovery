@@ -1,7 +1,34 @@
 "use client";
-
 import { Map as MapboxMap, Marker } from "mapbox-gl";
 
+/**
+ * Toggles real-time user geolocation tracking on a Mapbox map.
+ *
+ * When activated, this function continuously updates a marker to follow
+ * the user's current position using the browser's Geolocation API.
+ * When disabled, it stops tracking, removes the marker, and clears the active watch.
+ *
+ * @param map - The Mapbox map instance, or `null` if the map is not initialized.
+ * @param marker - A React ref holding the current Mapbox `Marker` used to display the user’s position.
+ * @param loc - A boolean flag indicating whether location tracking should be active (`true`) or disabled (`false`).
+ * @param setLoc - A React state setter used to update the `loc` state when location availability changes.
+ * @param watchId - A React ref storing the ID of the active geolocation watch (if any), allowing cleanup or restart.
+ *
+ * @example
+ * // Enable geolocation tracking
+ * get_location(map, markerRef, true, setLoc, watchIdRef);
+ *
+ * @example
+ * // Disable geolocation tracking
+ * get_location(map, markerRef, false, setLoc, watchIdRef);
+ *
+ * @remarks
+ * - Uses `navigator.geolocation.watchPosition()` to continuously track position.
+ * - Ensures only one active watcher exists at a time (cleans up existing watchers before starting new ones).
+ * - Automatically removes the user marker and stops watching when `loc` is set to `false`.
+ * - Requests high-accuracy positioning with a 5-second timeout and zero cache age.
+ * - Safe-guards against missing browser geolocation support.
+ */
 export default function get_location(
     map: MapboxMap | null,
     marker: React.RefObject<Marker | null>,
