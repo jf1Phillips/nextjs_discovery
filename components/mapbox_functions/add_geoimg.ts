@@ -1,5 +1,4 @@
 import { Map as MapBoxMap } from "mapbox-gl";
-import { GEOMAP_FOLDER, GEOMAP_NAME } from "../get_map";
 
 export function addRoads(url_given: string, map: MapBoxMap)
 {
@@ -27,41 +26,31 @@ export function addRoads(url_given: string, map: MapBoxMap)
     }
 }
 
-export type Coords = [[number, number], [number, number], [number, number], [number, number]];
+export type Coords = [
+    [number, number],
+    [number, number],
+    [number, number],
+    [number, number]
+];
+
+type  BaseGeoImg = {
+    url: string,
+    id: string,
+    opacity?: number,
+}
 
 type GeoImg =
-    |   {
-            url: string,
-            id: string,
+    |   (BaseGeoImg & {
             type: "image",
             coord: Coords,
-        }
-    |   {
-            url: string,
-            id: string,
+        })
+    |   (BaseGeoImg & {
             type: "raster",
-    };
+    });
 
-const coord_new_map: Coords = [
-    [34.120542941238725 + 0.008, 33.46703792406347 + 0.003],
-    [35.7498100593699 + 0.008, 33.46703792406347 + 0.003],
-    [35.7498100593699 + 0.008, 31.10529446421723 - 0.0058],
-    [34.120542941238725 + 0.008, 31.10529446421723 - 0.0058],
-];
-// const GEOMAP_FOLDER: string = "/img/geo_map";
-// const GEOMAP_NAME: string = "geo_map_";
-// const NEWMAP_NAME: string = "new_map.jpg";
 const ID_PEF: string = "pef1880map";
 const ID_HANS: string = "hans1975map";
 export {ID_PEF, ID_HANS};
-
-const default_coord: Coords =
-[
-    [33.6791210, 33.6868944 + 0.007], // ╭
-    [36.6262031, 33.6868944 + 0.007], //  ╮
-    [36.6262031, 31.1730673 + 0.007], //  ╯
-    [33.6791210, 31.1730673 + 0.007], // ╰
-];
 
 const geoImgArray: GeoImg[] = [
     {
@@ -74,43 +63,50 @@ const geoImgArray: GeoImg[] = [
             [35.7498100593699 + 0.008, 31.10529446421723 - 0.0058],
             [34.120542941238725 + 0.008, 31.10529446421723 - 0.0058],
         ],
+    },
+    {
+        url: "/tiles/{z}/{x}/{y}.webp",
+        id: ID_HANS,
+        type: "raster",
+        opacity: 0.5,
     }
 ]
 
-export default function addGeoImg(url_given: string, map: MapBoxMap, coords ?: Coords)
+export default function addGeoImg(map: MapBoxMap)
 {
-    const url = (url_given.includes("es.jpg")) ? `${GEOMAP_FOLDER}/${GEOMAP_NAME}fr.jpg` : url_given;
-    const coordinates: Coords = !coords ? default_coord : coords;
     const labelLayers = map.getStyle().layers.filter(l => l.id.includes('admin'));
     const firstLabel = labelLayers.length ? labelLayers[0].id : undefined;
 
-    if (!map.getSource(url)) {
-        if (url.includes(GEOMAP_NAME)) {
-            map.addSource(url, {
-                type: "raster",
-                tiles: [
-                    '/tiles/{z}/{x}/{y}.webp'
-                ],
-                tileSize: 256,
-                minzoom: 6,
-                maxzoom: 13,
-            });
-        } else {
-            map.addSource(url, {
-                type: 'image',
-                url: url,
-                coordinates: coordinates,
-            });
-        }
-    }
-    if (!map.getLayer(url)) {
-        map.addLayer({
-            id: url,
-            type: 'raster',
-            source: url,
-            paint: {
-                'raster-opacity': !coords ? 0.5 : 0.0,
+    geoImgArray.forEach((geomap) => {
+        if (!map.getSource(geomap.id)) {
+            if (geomap.type === "raster") {
+                map.addSource(geomap.id, {
+                    type: "raster",
+                    tiles: [
+                        geomap.url
+                    ],
+                    tileSize: 256,
+                    minzoom: 6,
+                    maxzoom: 13,
+                });
             }
-        }, firstLabel);
-    }
+            if (geomap.type === "image") {
+                map.addSource(geomap.id, {
+                    type: "image",
+                    url: geomap.url,
+                    coordinates: geomap.coord,
+                });
+            }
+        }
+        if (!map.getLayer(geomap.id)) {
+            map.addLayer({
+                id: geomap.id,
+                type: "raster",
+                source: geomap.id,
+                paint: {
+                    "raster-opacity": geomap.opacity ? geomap.opacity : 0.0,
+                }
+            }, firstLabel);
+        }
+    });
 }
