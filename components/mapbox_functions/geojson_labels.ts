@@ -1,9 +1,40 @@
 import { Map as MapboxMap } from "mapbox-gl";
 
+/**
+ * Represents a single icon resource.
+ *
+ * @property url - The URL of the icon image.
+ * @property id - A unique identifier for the icon.
+ */
 type Icon = {
     url: string;
     id: string;
 }
+
+/**
+ * Represents a GeoJSON label resource with associated icons.
+ *
+ * Each label has a GeoJSON URL, a unique identifier, and a set of icons
+ * representing different visual states.
+ *
+ * @property url - The URL to the GeoJSON file for this label.
+ * @property id - A unique identifier for this label resource.
+ * @property icons - An object containing icons for different states:
+ *   - `white`: The default white icon.
+ *   - `dark`: The dark variant of the icon.
+ *   - `selected`: The icon displayed when the label is selected.
+ *
+ * @example
+ * const cityLabel: GeoJsonLabels = {
+ *   url: "/geoJson_files/city_label.geojson",
+ *   id: "city_label_1",
+ *   icons: {
+ *     white: { id: "pinWhite", url: "/icons/pin_white.png" },
+ *     dark: { id: "pinDark", url: "/icons/pin_dark.png" },
+ *     selected: { id: "pinSelected", url: "/icons/pin_selected.png" }
+ *   }
+ * };
+ */
 export type GeoJsonLabels = {
     url: string;
     id: string;
@@ -14,6 +45,23 @@ export type GeoJsonLabels = {
     };
 };
 
+/**
+ * Updates the visual appearance of GeoJSON label layers on a Mapbox map
+ * according to the dark mode setting.
+ *
+ * For each label in `labels`, if the layer exists on the map, this function:
+ * - Sets the `text-color` to white or black depending on `darkmode`.
+ * - Sets the `text-halo-color` to provide contrast against the text.
+ * - Switches the `icon-image` to the appropriate icon variant (`white` or `dark`).
+ *
+ * @param map - The Mapbox map instance on which the label layers exist.
+ * @param labels - An array of `GeoJsonLabels` representing the labels to update.
+ * @param darkmode - A boolean indicating whether dark mode is enabled (`true`) or not (`false`).
+ *
+ * @example
+ * setDarkmodeToLabels(map, [cityLabel], true);
+ * // This will set the label text to white, the halo to black, and use the white icon.
+ */
 export function setDarkmodeToLabels(map: MapboxMap, labels: GeoJsonLabels[], darkmode: boolean): void {
     labels.forEach((label) => {
         if (!map.getLayer(label.id)) return;
@@ -26,6 +74,36 @@ export function setDarkmodeToLabels(map: MapboxMap, labels: GeoJsonLabels[], dar
     });
 }
 
+/**
+ * Adds GeoJSON label layers to a Mapbox map and ensures their icons are loaded.
+ *
+ * This function iterates over an array of `GeoJsonLabels` and for each label:
+ * 1. Loads the associated icons (`white`, `dark`, `selected`) if they are not already loaded.
+ * 2. Adds a GeoJSON source for the label if it does not exist.
+ * 3. Adds a Mapbox `symbol` layer for the label if it does not exist, using the `dark` icon by default.
+ * 
+ * The layer is configured with:
+ * - Icon and text sizing based on zoom levels.
+ * - Text offsets, anchors, and font settings.
+ * - Overlapping icons allowed.
+ * - Default paint properties (text and icon color, halo, opacity).
+ *
+ * @param map - The Mapbox map instance to which the labels will be added.
+ * @param labels - An array of `GeoJsonLabels`, each containing a URL, a unique ID, and icons for different states.
+ *
+ * @example
+ * addGeoJsonLabels(map, [
+ *   {
+ *     url: "/geoJson_files/city_label.geojson",
+ *     id: "city_label_1",
+ *     icons: {
+ *       dark: { id: "pinDark", url: "/icons/pin_dark.png" },
+ *       white: { id: "pinWhite", url: "/icons/pin_white.png" },
+ *       selected: { id: "pinSelected", url: "/icons/pin_selected.png" }
+ *     }
+ *   }
+ * ]);
+ */
 export default function addGeoJsonLabels(map: MapboxMap, labels: GeoJsonLabels[]): void {
     const loadingIcons = new Set<string>();
 
@@ -85,6 +163,29 @@ export function highLightLabel(map: MapboxMap, id: string, name?: string) {
     ])
 }
 
+/**
+ * Reloads GeoJSON label layers on a Mapbox map.
+ *
+ * This function removes existing layers and sources for each label in `labels`,
+ * then re-adds them using `addGeoJsonLabels`. Useful for refreshing label data
+ * or updating icons.
+ *
+ * @param map - The Mapbox map instance on which to reload the labels. If `null`, the function does nothing.
+ * @param labels - An array of `GeoJsonLabels` representing the labels to reload.
+ *
+ * @example
+ * reload_json_labels(map, [
+ *   {
+ *     url: "/geoJson_files/city_label.geojson",
+ *     id: "city_label_1",
+ *     icons: {
+ *       dark: { id: "pinDark", url: "/icons/pin_dark.png" },
+ *       white: { id: "pinWhite", url: "/icons/pin_white.png" },
+ *       selected: { id: "pinSelected", url: "/icons/pin_selected.png" }
+ *     }
+ *   }
+ * ]);
+ */
 export function reload_json_labels(map: MapboxMap | null, labels: GeoJsonLabels[]): void {
     if (!map) return;
     labels.forEach((label) => {
