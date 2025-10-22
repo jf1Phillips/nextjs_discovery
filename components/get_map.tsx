@@ -14,7 +14,7 @@ import addRoads from "./mapbox_functions/addRoads";
 import json_load from "./json_load";
 import addRain from "./mapbox_functions/addRain";
 import add_popup from "./mapbox_functions/add_popup";
-import addGeoJsonLabels, {reload_json_labels, changeLabelsColors} from "./mapbox_functions/geojson_labels";
+import addGeoJsonLabels, {reload_json_labels, GeoJsonLabels, setDarkmodeToLabels} from "./mapbox_functions/geojson_labels";
 import get_location from "./mapbox_functions/get_location";
 
 const ROAD_FILENAME: string = "/geoJson_files/route_palestine_merged.geojson";
@@ -79,6 +79,19 @@ const geoImgArray: GeoImg[] = [
     }
 ];
 
+const ID_CITY: string = "cityGeoJson";
+const LabelsToAdd: GeoJsonLabels[] = [
+    {
+        url: "/geoJson_files/city_label.geojson",
+        id: ID_CITY,
+        icons: {
+            dark: { url: "/img/pin_labels_dark.png", id: "pinDark" },
+            white: { url: "/img/pin_labels_white.png", id: "pinWhite" },
+            selected: { url: "/img/pin_labels_orange.png", id: "pinSelected" }
+        },
+    },
+];
+
 const add_all_things = (new_state: MapVar, map: MapboxMap | null, textNbr: number) => {
     if (!map) return;
     addBunker(map);
@@ -88,8 +101,9 @@ const add_all_things = (new_state: MapVar, map: MapboxMap | null, textNbr: numbe
     map?.setPaintProperty('water', 'fill-color', new_state.enabled ? 'rgba(14, 15, 99, 1)': 'rgba(14, 122, 155, 1)');
     set3dTerrain(map, !new_state.relief);
     addRain(map, !new_state.rain);
-    addGeoJsonLabels(LABELS_FILENAME, map, new_state.lang);
-    changeLabelsColors(map, new_state.enabled, LABELS_FILENAME);
+    addGeoJsonLabels(map, LabelsToAdd);
+    setDarkmodeToLabels(map, LabelsToAdd, new_state.enabled);
+    add_popup(map, LabelsToAdd, new_state.enabled);
 }
 
 export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdate}: MapArgs): JSX.Element
@@ -126,7 +140,6 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
                 cpy_txt(txt);
                 setLastPos(e.lngLat);
             });
-            add_popup(map.current);
         }
     }, [state, textNbr]);
 
@@ -206,7 +219,7 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
                     name="Afficher les routes de Hans J. Hopfen (1975)" include={ROAD_FILENAME}
                     map={map} enabled={state.enabled} def={100} />
                 <Cursor className={!displayCursor ? "hidden": "ml-[5px]"}
-                    name="Afficher les lieux" include="city"
+                    name="Afficher les lieux" include={ID_CITY}
                     map={map} enabled={state.enabled} def={100} />
                 <Cursor className={!displayCursor ? "hidden": "ml-[5px]"}
                     name="Afficher les routes et bâtiments actuels" include={[
@@ -231,7 +244,7 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
                             {!state.rain ? "🌧️" : "☀️"}</button>
                 <button className={`w-[22px] h-[22px] rounded-[2px] duration-300 text-[15px]
                             ${!state.enabled ? "bg-darkMode text-whiteMode" : "bg-whiteMode text-darkMode"}`}
-                        onClick={() => reload_json_labels(map.current, state.lang, "/geoJson_files/city_label.geojson")}
+                        onClick={() => reload_json_labels(map.current, LabelsToAdd)}
                         >↻</button>
                 <button onClick={() => get_location(map.current, marker, !locBtn, setLocBtn, whatchId)}
                             className={`w-[22px] h-[22px] rounded-[2px] duration-300 text-[15px]
