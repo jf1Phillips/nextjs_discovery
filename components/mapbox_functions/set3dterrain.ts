@@ -1,5 +1,34 @@
 import { Map as MapboxMap } from "mapbox-gl";
 
+/**
+ * Enables or disables 3D terrain and building visualization on the Mapbox map.
+ *
+ * When activated, this function:
+ * - Applies a 3D pitch animation for better visual perspective.
+ * - Loads and sets a raster digital elevation model (DEM) as terrain data.
+ * - Adds a 3D extrusion layer for buildings.
+ * - Adds a hillshade layer to simulate realistic shadows and lighting.
+ *
+ * When disabled (`remove = true`), it:
+ * - Removes the terrain, hillshade, and building layers.
+ * - Smoothly resets the map pitch to a flat view.
+ *
+ * @param map - The Mapbox map instance.
+ * @param remove - Whether to remove the 3D terrain and restore a flat map view.
+ *
+ * @example
+ * // Enable 3D terrain
+ * set3dTerrain(map, false);
+ *
+ * // Disable 3D terrain and return to flat mode
+ * set3dTerrain(map, true);
+ *
+ * @remarks
+ * - The terrain source uses Mapbox’s `mapbox.terrain-rgb` DEM tileset.
+ * - Building data is fetched from the `"composite"` source (default Mapbox Streets style).
+ * - A smooth pitch animation is applied when toggling terrain for a better user experience.
+ * - The function safely checks for existing sources and layers before adding or removing them.
+ */
 export default function set3dTerrain(map: MapboxMap, remove: boolean) {
     const id_building: string = "3dbuilding";
     const id_shadow: string = "shadow_layer";
