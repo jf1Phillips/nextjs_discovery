@@ -1,15 +1,28 @@
-import {Map as MapboxMap} from "mapbox-gl";
+import { Map as MapboxMap } from "mapbox-gl";
 
-const idbulding: string = "3dbuilding";
+export default function set3dTerrain(map: MapboxMap, remove: boolean) {
+    const id_building: string = "3dbuilding";
+    const id_shadow: string = "shadow_layer";
+    const id_terrain: string = "terrain_to_shadow";
 
-function add3dbuilding(map: MapboxMap, remove: boolean)
-{
-        if (map.getLayer(idbulding))
-            map.removeLayer(idbulding);
-        if (remove)
-            return;
+    map.easeTo({ pitch: 60, duration: 1000 });
+    if (remove) {
+        map.setTerrain(null);
+        map.easeTo({ pitch: 0, duration: 1000 });
+        if (map.getLayer(id_shadow)) map.removeLayer(id_shadow);
+        if (map.getLayer(id_building)) map.removeLayer(id_building);
+        return;
+    }
+    if (!map.getSource(id_terrain)) {
+        map.addSource(id_terrain, {
+            type: 'raster-dem',
+            url: 'mapbox://mapbox.terrain-rgb',
+            tileSize: 512,
+        });
+    }
+    if (!map.getLayer(id_building)) {
         map.addLayer({
-            'id': idbulding,
+            'id': id_building,
             'source': 'composite',
             'source-layer': 'building',
             'filter': ['==', 'extrude', 'true'],
@@ -22,53 +35,22 @@ function add3dbuilding(map: MapboxMap, remove: boolean)
                 'fill-extrusion-opacity': 1.0
             }
         });
-}
-
-function putShaddow(map: MapboxMap, remove: boolean) {
-    const id_shadow: string = "shadow_layer";
-    const id_terrain: string = "terrain_to_shadow";
-
-    if (map.getLayer(id_shadow))
-        map.removeLayer(id_shadow);
-    if (remove) return;
-    if (!map.getSource(id_terrain)) {
-        map.addSource(id_terrain, {
-            type: 'raster-dem',
-            url: 'mapbox://mapbox.terrain-rgb',
-            tileSize: 512,
-        });
     }
-    map.addLayer({
-        id: id_shadow,
-        type: 'hillshade',
-        source: id_terrain,
-        layout: {},
-        paint: {
-            'hillshade-shadow-color': '#473B24',
-            'hillshade-highlight-color': '#F8E8D0',
-            'hillshade-accent-color': '#BBA67A',
-            'hillshade-exaggeration': 1.0
-        }
-    }, 'water');
-}
-
-export default function set3dTerrain(map: MapboxMap, remove: boolean) {
-    const id_terrain: string = "3d_terrain";
-
-    add3dbuilding(map, remove);
-    map.setTerrain(null);
-    map.easeTo({pitch: 60, duration: 1000});
-    putShaddow(map, remove);
-    if (remove) {
-        map.easeTo({pitch: 0, duration: 1000});
-        return;
+    if (!map.getLayer(id_shadow)) {
+        map.addLayer({
+            id: id_shadow,
+            type: 'hillshade',
+            source: id_terrain,
+            layout: {},
+            paint: {
+                'hillshade-shadow-color': '#473B24',
+                'hillshade-highlight-color': '#F8E8D0',
+                'hillshade-accent-color': '#BBA67A',
+                'hillshade-exaggeration': 1.0
+            }
+        }, 'water');
     }
-    if (!map.getSource(id_terrain)) {
-        map.addSource(id_terrain, {
-            type: 'raster-dem',
-            url: 'mapbox://mapbox.terrain-rgb',
-            tileSize: 512,
-        });
+    if (!map.getTerrain()) {
+        map.setTerrain({ source: id_terrain, exaggeration: 1.5 });
     }
-    map.setTerrain({source: id_terrain, exaggeration: 1.5});
 }
