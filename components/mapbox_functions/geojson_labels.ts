@@ -149,6 +149,28 @@ export default function addGeoJsonLabels(map: MapboxMap, labels: GeoJsonLabels[]
     });
 }
 
+/**
+ * Highlights a specific label on the map, or resets all labels to match the current dark mode style.
+ *
+ * If a label name is provided, this function visually highlights the matching label
+ * by changing its icon and text colors. If no name is provided, all labels are reset
+ * to their default appearance according to the `darkmode` setting.
+ *
+ * @param map - The Mapbox map instance where the labels are displayed.
+ * @param labels - An array of `GeoJsonLabels` representing the labels to update.
+ * @param darkmode - A boolean indicating whether the map is currently in dark mode.
+ *                   Determines which icons and text colors to use.
+ * @param name - *(Optional)* The name of the label to highlight, corresponding to the `"fr"` property
+ *               in the GeoJSON feature. If omitted, all labels are reset to normal.
+ *
+ * @example
+ * // Highlight a specific label named "Paris"
+ * highLightLabel(map, labels, true, "Paris");
+ *
+ * @example
+ * // Reset all labels to match the dark mode style
+ * highLightLabel(map, labels, true);
+ */
 export function highLightLabel(map: MapboxMap, labels: GeoJsonLabels[], darkmode: boolean, name?: string) {
     labels.forEach((label) => {
         if (!map.getLayer(label.id)) return;
