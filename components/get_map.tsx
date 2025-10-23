@@ -7,16 +7,11 @@ import mapboxgl, {LngLat, Map as MapboxMap, Marker} from "mapbox-gl";
 import Cursor from "./cursor";
 import "mapbox-gl/dist/mapbox-gl.css";
 import "@/styles/globals.css";
-import {set3dTerrain} from "./mapbox_functions/set3dterrain";
-import addBunker, { removeBunker } from "./mapbox_functions/addBunker";
-import {addGeoImg, GeoImg } from "./mapbox_functions/add_geoimg";
-import {addRoads} from "./mapbox_functions/addRoads";
+import addBunker, { removeBunker } from "./addBunker";
 import json_load from "./json_load";
-import {addRain} from "./mapbox_functions/addRain";
-import {add_popup} from "./mapbox_functions/add_popup";
 import {addGeoJsonLabels, reload_json_labels,
-    GeoJsonLabels, setDarkmodeToLabels} from "./mapbox_functions/geojson_labels";
-import {get_location} from "./mapbox_functions/get_location";
+    GeoJsonLabels, setDarkmodeToLabels, addGeoImg, GeoImg, add_popup,
+    set3dTerrain, addRoads, addRain, get_location} from "./mapbox_functions";
 
 const ROAD_FILENAME: string = "/geoJson_files/route_palestine_merged.geojson";
 const LABELS_FILENAME: string = "/geoJson_files/city_label.geojson";
