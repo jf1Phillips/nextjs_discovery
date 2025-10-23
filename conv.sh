@@ -53,7 +53,7 @@ if [ -d "$OUTPUT_DIR" ]; then
 fi
 
 gdal2tiles.py \
-    -z 8-13 \
+    -z 6-13 \
     --xyz \
     --tilesize=256 \
     --processes=8 \
@@ -92,4 +92,4 @@ echo -e "\n${GREEN}✓ Terminé !${NC}"
 echo -e "\nUtilise dans ton code TypeScript:"
 echo -e "${BLUE}tiles: ['/tiles/{z}/{x}/{y}.webp']${NC}"
 echo -e "${BLUE}tileSize: 256${NC}"
-echo -e "${BLUE}minzoom: 8, maxzoom: 13${NC}"
+echo -e "${BLUE}minzoom: 6, maxzoom: 13${NC}"
