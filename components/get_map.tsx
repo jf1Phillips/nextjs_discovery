@@ -9,9 +9,10 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import "@/styles/globals.css";
 import addBunker, { removeBunker } from "./addBunker";
 import json_load from "./json_load";
-import {addGeoJsonLabels, reload_json_labels,
-    GeoJsonLabels, setDarkmodeToLabels, addGeoImg, GeoImg, add_popup,
-    set3dTerrain, addRoads, addRain, get_location} from "./mapbox_functions";
+// import {addGeoJsonLabels, reload_json_labels,
+//     GeoJsonLabels, setDarkmodeToLabels, addGeoImg, GeoImg, add_popup,
+//     set3dTerrain, addRoads, addRain, get_location} from "./mapbox_functions";
+import mapboxTools, {GeoImg, GeoJsonLabels} from "./mapbox_functions";
 
 const ROAD_FILENAME: string = "/geoJson_files/route_palestine_merged.geojson";
 const LABELS_FILENAME: string = "/geoJson_files/city_label.geojson";
@@ -92,14 +93,14 @@ const add_all_things = (new_state: MapVar, map: MapboxMap | null, textNbr: numbe
     if (!map) return;
     addBunker(map);
     json_load("/json_files/test.json", new_state.lang, map, textNbr);
-    addGeoImg(map, geoImgArray);
-    addRoads(ROAD_FILENAME, map);
+    mapboxTools.addGeoImg(map, geoImgArray);
+    mapboxTools.addRoads(ROAD_FILENAME, map);
     map?.setPaintProperty('water', 'fill-color', new_state.enabled ? 'rgba(14, 15, 99, 1)': 'rgba(14, 122, 155, 1)');
-    set3dTerrain(map, !new_state.relief);
-    addRain(map, !new_state.rain);
-    addGeoJsonLabels(map, LabelsToAdd);
-    setDarkmodeToLabels(map, LabelsToAdd, new_state.enabled);
-    add_popup(map, LabelsToAdd, new_state.enabled);
+    mapboxTools.set3dTerrain(map, !new_state.relief);
+    mapboxTools.addRain(map, !new_state.rain);
+    mapboxTools.addGeoJsonLabels(map, LabelsToAdd);
+    mapboxTools.setDarkmodeToLabels(map, LabelsToAdd, new_state.enabled);
+    mapboxTools.add_popup(map, LabelsToAdd, new_state.enabled);
 }
 
 export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdate}: MapArgs): JSX.Element
@@ -176,13 +177,13 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
 
     const setRelief = () => {
         if (!map.current || !map.current.isStyleLoaded()) return;
-        set3dTerrain(map.current, state.relief);
+        mapboxTools.set3dTerrain(map.current, state.relief);
         setState(prev => ({...prev, relief: !prev.relief}));
     };
 
     const setRain = () => {
         if (!map.current || !map.current.isStyleLoaded()) return;
-        addRain(map.current, state.rain);
+        mapboxTools.addRain(map.current, state.rain);
         setState(prev => ({...prev, rain: !prev.rain}));
     }
 
@@ -240,9 +241,9 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
                             {!state.rain ? "🌧️" : "☀️"}</button>
                 <button className={`w-[22px] h-[22px] rounded-[2px] duration-300 text-[15px]
                             ${!state.enabled ? "bg-darkMode text-whiteMode" : "bg-whiteMode text-darkMode"}`}
-                        onClick={() => reload_json_labels(map.current, LabelsToAdd)}
+                        onClick={() => mapboxTools.reload_json_labels(map.current, LabelsToAdd)}
                         >↻</button>
-                <button onClick={() => get_location(map.current, marker, !locBtn, setLocBtn, whatchId)}
+                <button onClick={() => mapboxTools.get_location(map.current, marker, !locBtn, setLocBtn, whatchId)}
                             className={`w-[22px] h-[22px] rounded-[2px] duration-300 text-[15px]
                             ${!state.enabled ? `${locBtn ? "text-whiteMode" : "text-[#ff0000]"} bg-darkMode` : "bg-whiteMode text-darkMode"}`}
                         >⊕</button>

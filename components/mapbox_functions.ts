@@ -2,6 +2,20 @@ import mapboxgl, { Map as MapboxMap, LngLatLike, MapMouseEvent, Marker } from "m
 import ReactDOMServer from 'react-dom/server';
 import JSXLabels, { DicoJsx } from "./jsxdico";
 
+const mapboxTools = {
+    addGeoJsonLabels,
+    reload_json_labels,
+    setDarkmodeToLabels,
+    addGeoImg,
+    add_popup,
+    set3dTerrain,
+    addRoads,
+    addRain,
+    get_location,
+};
+
+export default mapboxTools;
+
 /**------------------------------------------------------------------------------------- */
 /**                                 GEOJSON LABELS                                       */
 /**------------------------------------------------------------------------------------- */
