@@ -10,7 +10,7 @@ import { JSX, useState } from "react"
  * a slider UI element that controls the opacity of
  * specific map layers in a Mapbox map.
  */
-interface ArgsCursor {
+export interface ArgsCursor {
     /** Display name shown next to the slider. */
     name: string;
     /**
@@ -93,12 +93,13 @@ function set_paint(map: MapboxMap, value: number, include: string | string[])
  * updates its internal state, and applies the new opacity
  * to all map layers whose IDs include the given substring(s).
  *
- * @param name - The label displayed next to the slider.
- * @param include - One or more strings used to filter map layers by ID.
- * @param map - A reference to the active Mapbox map instance.
- * @param def - The initial opacity value (default is 0 if not provided).
- * @param className - Additional class names for the component container.
- * @param enabled - Indicates whether dark mode styling is active.
+ * @param props - Object containing the component props.
+ * @param props.name - The label displayed next to the slider.
+ * @param props.include - One or more strings used to filter map layers by ID.
+ * @param props.map - A reference to the active Mapbox map instance.
+ * @param props.def - The initial opacity value (default is 0 if not provided).
+ * @param props.className - Additional class names for the component container.
+ * @param props.enabled - Indicates whether dark mode styling is active.
  * @returns A JSX element representing the slider and its label.
  *
  * @example

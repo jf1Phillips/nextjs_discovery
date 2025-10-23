@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-interface DisplayArgs {
+export interface DisplayArgs {
     enabled: boolean,
     setStateTextNbr:  React.Dispatch<React.SetStateAction<number>>,
     histdate: number,

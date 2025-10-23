@@ -1,5 +1,5 @@
 {
-  "entryPoints": ["components/mapbox_functions/*.ts"],
+  "entryPoints": ["script/*.ts", "components/*.tsx"],
   "out": "docs",
   "name": "Geo Image API",
   "includeVersion": true,

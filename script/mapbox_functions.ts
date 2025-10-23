@@ -5,15 +5,25 @@ import JSXLabels, { DicoJsx } from "@/components/jsxdico";
 var darkmode: boolean = false;
 
 const mapboxTools = {
+    /** {@link addGeoJsonLabels} */
     addGeoJsonLabels,
+    /** {@link reload_json_labels} */
     reload_json_labels,
+    /** {@link setDarkmodeToLabels} */
     setDarkmodeToLabels,
+    /** {@link addGeoImg} */
     addGeoImg,
+    /** {@link add_popup} */
     add_popup,
+    /** {@link set3dTerrain} */
     set3dTerrain,
+    /** {@link addRoads} */
     addRoads,
+    /** {@link addRain} */
     addRain,
+    /** {@link get_location} */
     get_location,
+    /** {@link highLightLabel} */
     highLightLabel,
     get darkmode() {
         return darkmode;
@@ -87,7 +97,7 @@ type GeoJsonLabels = {
  * @param labels - An array of `GeoJsonLabels` representing the labels to update.
  *
  * @example
- * setDarkmodeToLabels(map, [cityLabel], true);
+ * setDarkmodeToLabels(map, [cityLabel]);
  * // This will set the label text to white, the halo to black, and use the white icon.
  */
 function setDarkmodeToLabels(map: MapboxMap, labels: GeoJsonLabels[]): void {
@@ -191,11 +201,11 @@ function addGeoJsonLabels(map: MapboxMap, labels: GeoJsonLabels[]): void {
  *
  * @example
  * // Highlight a specific label named "Paris"
- * highLightLabel(map, labels, true, "Paris");
+ * highLightLabel(map, labels, "Paris");
  *
  * @example
  * // Reset all labels to match the dark mode style
- * highLightLabel(map, labels, true);
+ * highLightLabel(map, labels);
  */
 function highLightLabel(map: MapboxMap, labels: GeoJsonLabels[], name?: string): void {
     labels.forEach((label) => {
@@ -496,7 +506,7 @@ function handler(map: MapboxMap, e: MapMouseEvent, label: GeoJsonLabels): void {
  *
  * @example
  * // Add popups to all label layers
- * add_popup(map, labels, true);
+ * add_popup(map, labels);
  *
  * @remarks
  * - Popups are dynamically styled with Tailwind-like utility classes for layout and colors.

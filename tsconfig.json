@@ -26,7 +26,6 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "components/mapbox_functions/*.ts",
     ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 }
