@@ -1,0 +1,11 @@
+{
+  "entryPoints": ["components/mapbox_functions/*.ts"],
+  "out": "docs",
+  "name": "Geo Image API",
+  "includeVersion": true,
+  "excludePrivate": true,
+  "excludeExternals": true,
+  "excludeProtected": true,
+  "hideGenerator": true,
+  "theme": "default"
+}
