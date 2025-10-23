@@ -4,10 +4,10 @@ import "@/styles/globals.css";
 import "mapbox-gl/dist/mapbox-gl.css";
 import React, { useState,  useRef, useEffect, JSX } from "react";
 import mapboxgl, {LngLat, Map as MapboxMap, Marker} from "mapbox-gl";
-import Cursor from "./cursor";
+import {Cursor} from "./cursor";
 import addBunker, { removeBunker } from "./addBunker";
 import json_load from "./json_load";
-import mapboxTools, {GeoImg, GeoJsonLabels} from "./mapbox_functions";
+import mapboxTools, {GeoImg, GeoJsonLabels} from "@/script/mapbox_functions";
 
 const ROAD_FILENAME: string = "/geoJson_files/route_palestine_merged.geojson";
 const LABELS_FILENAME: string = "/geoJson_files/city_label.geojson";
