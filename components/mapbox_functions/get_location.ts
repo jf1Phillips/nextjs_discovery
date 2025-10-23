@@ -79,4 +79,4 @@ function get_location(
     }
 }
 
-export default get_location;
+export {get_location};

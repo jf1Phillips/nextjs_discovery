@@ -136,5 +136,4 @@ function addGeoImg(map: MapBoxMap, geoImgArray: GeoImg[])
     });
 }
 
-export default addGeoImg;
-export {type GeoImg, type Coords};
+export {type GeoImg, type Coords, type BaseGeoImg, addGeoImg};

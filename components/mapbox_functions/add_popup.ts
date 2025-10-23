@@ -100,4 +100,4 @@ function add_popup(map: Mapboxgl, labels: GeoJsonLabels[], darkmode: boolean): v
         map.on("click", label.id, newHandler);
     });
 }
-export default add_popup;
+export {add_popup};

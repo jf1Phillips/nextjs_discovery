@@ -47,4 +47,4 @@ function addRoads(url_given: string, map: MapBoxMap)
     }
 }
 
-export default addRoads;
+export {addRoads};

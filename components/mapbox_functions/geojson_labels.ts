@@ -235,6 +235,7 @@ function reload_json_labels(map: MapboxMap | null, labels: GeoJsonLabels[]): voi
     addGeoJsonLabels(map, labels);
 }
 
-export default addGeoJsonLabels;
-export {type GeoJsonLabels, reload_json_labels, highLightLabel, setDarkmodeToLabels};
+export {type GeoJsonLabels, type Icon,
+    addGeoJsonLabels, reload_json_labels,
+    highLightLabel, setDarkmodeToLabels};
 

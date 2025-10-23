@@ -84,4 +84,4 @@ function set3dTerrain(map: MapboxMap, remove: boolean) {
     }
 }
 
-export default set3dTerrain;
+export {set3dTerrain};

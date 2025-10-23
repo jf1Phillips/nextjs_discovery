@@ -38,4 +38,4 @@ function addRain(map: MapboxMap, remove_rain?: boolean) {
     }
 }
 
-export default addRain;
+export {addRain};
