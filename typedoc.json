@@ -1,6 +1,6 @@
 {
   "entryPoints": ["script/*.ts", "components/*.tsx"],
-  "out": "docs",
+  "out": "public/docs",
   "name": "Geo Image API",
   "includeVersion": true,
   "excludePrivate": true,
