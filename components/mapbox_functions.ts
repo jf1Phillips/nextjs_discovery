@@ -2,6 +2,8 @@ import mapboxgl, { Map as MapboxMap, LngLatLike, MapMouseEvent, Marker } from "m
 import ReactDOMServer from 'react-dom/server';
 import JSXLabels, { DicoJsx } from "./jsxdico";
 
+var darkmode: boolean = false;
+
 const mapboxTools = {
     addGeoJsonLabels,
     reload_json_labels,
@@ -13,6 +15,12 @@ const mapboxTools = {
     addRain,
     get_location,
     highLightLabel,
+    get darkmode() {
+        return darkmode;
+    },
+    set darkmode(value: boolean) {
+        darkmode = value;
+    }
 };
 
 export default mapboxTools;
@@ -77,13 +85,12 @@ type GeoJsonLabels = {
  *
  * @param map - The Mapbox map instance on which the label layers exist.
  * @param labels - An array of `GeoJsonLabels` representing the labels to update.
- * @param darkmode - A boolean indicating whether dark mode is enabled (`true`) or not (`false`).
  *
  * @example
  * setDarkmodeToLabels(map, [cityLabel], true);
  * // This will set the label text to white, the halo to black, and use the white icon.
  */
-function setDarkmodeToLabels(map: MapboxMap, labels: GeoJsonLabels[], darkmode: boolean): void {
+function setDarkmodeToLabels(map: MapboxMap, labels: GeoJsonLabels[]): void {
     labels.forEach((label) => {
         if (!map.getLayer(label.id)) return;
         map.setPaintProperty(label.id, 'text-color',
@@ -179,8 +186,6 @@ function addGeoJsonLabels(map: MapboxMap, labels: GeoJsonLabels[]): void {
  *
  * @param map - The Mapbox map instance where the labels are displayed.
  * @param labels - An array of `GeoJsonLabels` representing the labels to update.
- * @param darkmode - A boolean indicating whether the map is currently in dark mode.
- *                   Determines which icons and text colors to use.
  * @param name - *(Optional)* The name of the label to highlight, corresponding to the `"fr"` property
  *               in the GeoJSON feature. If omitted, all labels are reset to normal.
  *
@@ -192,7 +197,7 @@ function addGeoJsonLabels(map: MapboxMap, labels: GeoJsonLabels[]): void {
  * // Reset all labels to match the dark mode style
  * highLightLabel(map, labels, true);
  */
-function highLightLabel(map: MapboxMap, labels: GeoJsonLabels[], darkmode: boolean, name?: string): void {
+function highLightLabel(map: MapboxMap, labels: GeoJsonLabels[], name?: string): void {
     labels.forEach((label) => {
         if (!map.getLayer(label.id)) return;
         const icon = darkmode ? label.icons.white.id : label.icons.dark.id;
@@ -200,7 +205,7 @@ function highLightLabel(map: MapboxMap, labels: GeoJsonLabels[], darkmode: boole
         const haloColor = darkmode ? '#000000' : '#ffffff';
 
         if (!name) {
-            setDarkmodeToLabels(map, [label], darkmode);
+            setDarkmodeToLabels(map, [label]);
             return;
         }
         map.setLayoutProperty(label.id, 'icon-image', [
@@ -325,6 +330,8 @@ type GeoImg =
     | (BaseGeoImg & {
         /** Type discriminator — indicates this is a raster layer. */
         type: "raster",
+        /** Geographic bounding box of the image in [minLng, minLat, maxLng, maxLat] order. */
+        bounds: [number, number, number, number],
     });
 
 /**
@@ -350,6 +357,7 @@ type GeoImg =
  *     type: "raster",
  *     url: "https://example.com/tiles/{z}/{x}/{y}.png",
  *     opacity: 0.7
+ *     bounds: [33.6803545, 31.1732927, 36.6260058, 33.7008169],
  *   },
  *   {
  *     id: "overlay-image",
@@ -380,6 +388,7 @@ function addGeoImg(map: MapboxMap, geoImgArray: GeoImg[]): void {
                     tileSize: 256,
                     minzoom: 6,
                     maxzoom: 13,
+                    bounds: geomap.bounds,
                 });
             }
             if (geomap.type === "image") {
@@ -420,18 +429,17 @@ const labelHandlers = new Map<string, (e: MapMouseEvent) => void>();
  * @param map - The Mapbox map instance.
  * @param e - The Mapbox mouse event triggered by a user click.
  * @param label - The specific {@link GeoJsonLabels} entry that was clicked.
- * @param darkmode - Whether the map is currently in dark mode (affects highlight colors and icons).
  *
  * @internal
  * This function is meant to be used internally by {@link add_popup}.
  */
-function handler(map: MapboxMap, e: MapMouseEvent, label: GeoJsonLabels, darkmode: boolean): void {
+function handler(map: MapboxMap, e: MapMouseEvent, label: GeoJsonLabels): void {
     if (!e.features || !e.features.length) return;
     const feature = e.features[0];
     if (!feature.properties || feature.geometry.type !== 'Point') return;
 
     const labelTXT = feature.properties['fr'];
-    highLightLabel(map, [label], darkmode, labelTXT);
+    highLightLabel(map, [label], labelTXT);
 
     // if the label is in the dico
     const dicoEntry: DicoJsx | undefined = JSXLabels.find(e => e.town === labelTXT);
@@ -462,7 +470,7 @@ function handler(map: MapboxMap, e: MapMouseEvent, label: GeoJsonLabels, darkmod
         });
     }
     // Reset highlight when popup closes
-    popup.once('close', () => highLightLabel(map, [label], darkmode));
+    popup.once('close', () => highLightLabel(map, [label]));
     // Hide the popup anchor triangle
     popup.once("open", () => {
         const popup_anchor = document.querySelector('.mapboxgl-popup-tip') as HTMLDivElement;
@@ -485,7 +493,6 @@ function handler(map: MapboxMap, e: MapMouseEvent, label: GeoJsonLabels, darkmod
  *
  * @param map - The Mapbox map instance.
  * @param labels - An array of {@link GeoJsonLabels} representing the label layers to attach popups to.
- * @param darkmode - Whether the map is currently in dark mode (affects colors and icons).
  *
  * @example
  * // Add popups to all label layers
@@ -496,13 +503,13 @@ function handler(map: MapboxMap, e: MapMouseEvent, label: GeoJsonLabels, darkmod
  * - If a JSX component is associated with a label (`JSXLabels`), it is rendered to HTML using ReactDOMServer.
  * - The label highlight resets when the popup is closed.
  */
-function add_popup(map: MapboxMap, labels: GeoJsonLabels[], darkmode: boolean): void {
+function add_popup(map: MapboxMap, labels: GeoJsonLabels[]): void {
     labels.forEach((label) => {
         const oldHandler = labelHandlers.get(label.id);
         if (oldHandler) {
             map.off("click", label.id, oldHandler);
         }
-        const newHandler = (e: MapMouseEvent) => handler(map, e, label, darkmode);
+        const newHandler = (e: MapMouseEvent) => handler(map, e, label);
         labelHandlers.set(label.id, newHandler);
         map.on("click", label.id, newHandler);
     });
@@ -529,7 +536,6 @@ export { add_popup };
  * - Smoothly resets the map pitch to a flat view.
  *
  * @param map - The Mapbox map instance.
- * @param remove - Whether to remove the 3D terrain and restore a flat map view.
  *
  * @example
  * // Enable 3D terrain
