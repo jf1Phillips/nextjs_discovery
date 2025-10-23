@@ -66,6 +66,7 @@ const geoImgArray: GeoImg[] = [
         id: ID_HANS,
         type: "raster",
         opacity: 0.5,
+        bounds: [33.6803545, 31.1732927, 36.6260058, 33.7008169],
     }
 ];
 
@@ -86,14 +87,15 @@ const add_all_things = (new_state: MapVar, map: MapboxMap | null, textNbr: numbe
     if (!map) return;
     addBunker(map);
     json_load("/json_files/test.json", map, textNbr);
+    mapboxTools.darkmode = new_state.enabled;
     mapboxTools.addGeoImg(map, geoImgArray);
     mapboxTools.addRoads(ROAD_FILENAME, map);
     map?.setPaintProperty('water', 'fill-color', new_state.enabled ? 'rgba(14, 15, 99, 1)': 'rgba(14, 122, 155, 1)');
     mapboxTools.set3dTerrain(map, !new_state.relief);
     mapboxTools.addRain(map, !new_state.rain);
     mapboxTools.addGeoJsonLabels(map, LabelsToAdd);
-    mapboxTools.setDarkmodeToLabels(map, LabelsToAdd, new_state.enabled);
-    mapboxTools.add_popup(map, LabelsToAdd, new_state.enabled);
+    mapboxTools.setDarkmodeToLabels(map, LabelsToAdd);
+    mapboxTools.add_popup(map, LabelsToAdd);
 }
 
 export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdate}: MapArgs): JSX.Element
@@ -124,6 +126,7 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
                 zoom: state.zoom,
                 center: [state.long, state.lat],
             });
+            mapboxTools.darkmode = true;
             map.current.once("style.load", () => add_all_things(state, map.current, textNbr));
             map.current.on("click", (e) => {
                 const txt = `${e.lngLat.lng.toFixed(5)},${e.lngLat.lat.toFixed(5)}`;
