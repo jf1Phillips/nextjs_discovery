@@ -35,7 +35,7 @@ type Icon = {
  *   }
  * };
  */
-export type GeoJsonLabels = {
+type GeoJsonLabels = {
     url: string;
     id: string;
     icons: {
@@ -62,7 +62,7 @@ export type GeoJsonLabels = {
  * setDarkmodeToLabels(map, [cityLabel], true);
  * // This will set the label text to white, the halo to black, and use the white icon.
  */
-export function setDarkmodeToLabels(map: MapboxMap, labels: GeoJsonLabels[], darkmode: boolean): void {
+function setDarkmodeToLabels(map: MapboxMap, labels: GeoJsonLabels[], darkmode: boolean): void {
     labels.forEach((label) => {
         if (!map.getLayer(label.id)) return;
         map.setPaintProperty(label.id, 'text-color',
@@ -104,7 +104,7 @@ export function setDarkmodeToLabels(map: MapboxMap, labels: GeoJsonLabels[], dar
  *   }
  * ]);
  */
-export default function addGeoJsonLabels(map: MapboxMap, labels: GeoJsonLabels[]): void {
+function addGeoJsonLabels(map: MapboxMap, labels: GeoJsonLabels[]): void {
     const loadingIcons = new Set<string>();
 
     labels.forEach((label) => {
@@ -171,7 +171,7 @@ export default function addGeoJsonLabels(map: MapboxMap, labels: GeoJsonLabels[]
  * // Reset all labels to match the dark mode style
  * highLightLabel(map, labels, true);
  */
-export function highLightLabel(map: MapboxMap, labels: GeoJsonLabels[], darkmode: boolean, name?: string) {
+function highLightLabel(map: MapboxMap, labels: GeoJsonLabels[], darkmode: boolean, name?: string) {
     labels.forEach((label) => {
         if (!map.getLayer(label.id)) return;
         const icon = darkmode ? label.icons.white.id : label.icons.dark.id;
@@ -226,7 +226,7 @@ export function highLightLabel(map: MapboxMap, labels: GeoJsonLabels[], darkmode
  *   }
  * ]);
  */
-export function reload_json_labels(map: MapboxMap | null, labels: GeoJsonLabels[]): void {
+function reload_json_labels(map: MapboxMap | null, labels: GeoJsonLabels[]): void {
     if (!map) return;
     labels.forEach((label) => {
         if (map.getLayer(label.id)) map.removeLayer(label.id);
@@ -234,3 +234,7 @@ export function reload_json_labels(map: MapboxMap | null, labels: GeoJsonLabels[
     });
     addGeoJsonLabels(map, labels);
 }
+
+export default addGeoJsonLabels;
+export {type GeoJsonLabels, reload_json_labels, highLightLabel, setDarkmodeToLabels};
+

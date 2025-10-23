@@ -17,7 +17,7 @@ import { Map as MapboxMap } from "mapbox-gl";
  * // Remove the rain effect
  * addRain(map, true);
  */
-export default function addRain(map: MapboxMap, remove_rain?: boolean) {
+function addRain(map: MapboxMap, remove_rain?: boolean) {
     if (remove_rain) {
         map.setRain(null);
     } else if (!map.getRain()) {
@@ -37,3 +37,5 @@ export default function addRain(map: MapboxMap, remove_rain?: boolean) {
         });
     }
 }
+
+export default addRain;

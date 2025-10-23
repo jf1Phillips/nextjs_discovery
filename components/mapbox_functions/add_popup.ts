@@ -88,7 +88,7 @@ function handler(map: Mapboxgl, e: MapMouseEvent, label: GeoJsonLabels, darkmode
  * - If a JSX component is associated with a label (`JSXLabels`), it is rendered to HTML using ReactDOMServer.
  * - The label highlight resets when the popup is closed.
  */
-export default function add_popup(map: Mapboxgl, labels: GeoJsonLabels[], darkmode: boolean): void
+function add_popup(map: Mapboxgl, labels: GeoJsonLabels[], darkmode: boolean): void
 {
     labels.forEach((label) => {
         const oldHandler = labelHandlers.get(label.id);
@@ -100,3 +100,4 @@ export default function add_popup(map: Mapboxgl, labels: GeoJsonLabels[], darkmo
         map.on("click", label.id, newHandler);
     });
 }
+export default add_popup;

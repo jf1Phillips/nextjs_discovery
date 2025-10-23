@@ -29,7 +29,7 @@ import { Map as MapboxMap, Marker } from "mapbox-gl";
  * - Requests high-accuracy positioning with a 5-second timeout and zero cache age.
  * - Safe-guards against missing browser geolocation support.
  */
-export default function get_location(
+function get_location(
     map: MapboxMap | null,
     marker: React.RefObject<Marker | null>,
     loc: boolean,
@@ -78,3 +78,5 @@ export default function get_location(
         if (available) watchId.current = tmp;
     }
 }
+
+export default get_location;

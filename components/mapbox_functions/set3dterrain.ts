@@ -29,7 +29,7 @@ import { Map as MapboxMap } from "mapbox-gl";
  * - A smooth pitch animation is applied when toggling terrain for a better user experience.
  * - The function safely checks for existing sources and layers before adding or removing them.
  */
-export default function set3dTerrain(map: MapboxMap, remove: boolean) {
+function set3dTerrain(map: MapboxMap, remove: boolean) {
     const id_building: string = "3dbuilding";
     const id_shadow: string = "shadow_layer";
     const id_terrain: string = "terrain_to_shadow";
@@ -83,3 +83,5 @@ export default function set3dTerrain(map: MapboxMap, remove: boolean) {
         map.setTerrain({ source: id_terrain, exaggeration: 1.5 });
     }
 }
+
+export default set3dTerrain;

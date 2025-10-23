@@ -11,7 +11,7 @@ import { Map as MapBoxMap } from "mapbox-gl";
  *
  * Each pair follows the `[longitude, latitude]` format.
  */
-export type Coords = [
+type Coords = [
     [number, number],
     [number, number],
     [number, number],
@@ -47,7 +47,7 @@ type BaseGeoImg = {
  * - `id`: a unique identifier for this resource
  * - `opacity` (optional): transparency between `0` (transparent) and `1` (opaque)
  */
-export type GeoImg =
+type GeoImg =
     |   (BaseGeoImg & {
             /** Type discriminator — indicates this is a single image overlay. */
             type: "image",
@@ -97,7 +97,7 @@ export type GeoImg =
  * ]);
  * ```
  */
-export default function addGeoImg(map: MapBoxMap, geoImgArray: GeoImg[])
+function addGeoImg(map: MapBoxMap, geoImgArray: GeoImg[])
 {
     const labelLayers = map.getStyle().layers.filter(l => l.id.includes('admin'));
     const firstLabel = labelLayers.length ? labelLayers[0].id : undefined;
@@ -135,3 +135,6 @@ export default function addGeoImg(map: MapBoxMap, geoImgArray: GeoImg[])
         }
     });
 }
+
+export default addGeoImg;
+export {type GeoImg, type Coords};

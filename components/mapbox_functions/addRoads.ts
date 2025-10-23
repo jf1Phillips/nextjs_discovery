@@ -21,7 +21,7 @@ import { Map as MapBoxMap } from "mapbox-gl";
  * - If the same source or layer already exists, it will not be re-added.
  * - The provided URL is used as both the source name and layer ID.
  */
-export default function addRoads(url_given: string, map: MapBoxMap)
+function addRoads(url_given: string, map: MapBoxMap)
 {
     if (!map.getSource(url_given)) {
         map.addSource(url_given, {
@@ -46,3 +46,5 @@ export default function addRoads(url_given: string, map: MapBoxMap)
         });
     }
 }
+
+export default addRoads;
