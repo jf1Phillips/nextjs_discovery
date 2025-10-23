@@ -12,6 +12,7 @@ const mapboxTools = {
     addRoads,
     addRain,
     get_location,
+    highLightLabel,
 };
 
 export default mapboxTools;

@@ -1,17 +1,12 @@
 "use client";
 
-import ZoomInOut from "@/components/zoom_in_out";
-import DarkMode from "@/components/darkmode";
+import "@/styles/globals.css";
+import "mapbox-gl/dist/mapbox-gl.css";
 import React, { useState,  useRef, useEffect, JSX } from "react";
 import mapboxgl, {LngLat, Map as MapboxMap, Marker} from "mapbox-gl";
 import Cursor from "./cursor";
-import "mapbox-gl/dist/mapbox-gl.css";
-import "@/styles/globals.css";
 import addBunker, { removeBunker } from "./addBunker";
 import json_load from "./json_load";
-// import {addGeoJsonLabels, reload_json_labels,
-//     GeoJsonLabels, setDarkmodeToLabels, addGeoImg, GeoImg, add_popup,
-//     set3dTerrain, addRoads, addRain, get_location} from "./mapbox_functions";
 import mapboxTools, {GeoImg, GeoJsonLabels} from "./mapbox_functions";
 
 const ROAD_FILENAME: string = "/geoJson_files/route_palestine_merged.geojson";
@@ -29,7 +24,6 @@ type MapVar = {
     lat: number;
     style_nbr: number;
     enabled: boolean;
-    lang: string;
     relief: boolean;
     rain: boolean;
 };
@@ -40,7 +34,6 @@ const DEFAULT_VALUE: MapVar = {
     lat: 32.38416,
     style_nbr: 0,
     enabled: false,
-    lang: "fr",
     relief: false,
     rain: false,
 };
@@ -92,7 +85,7 @@ const LabelsToAdd: GeoJsonLabels[] = [
 const add_all_things = (new_state: MapVar, map: MapboxMap | null, textNbr: number) => {
     if (!map) return;
     addBunker(map);
-    json_load("/json_files/test.json", new_state.lang, map, textNbr);
+    json_load("/json_files/test.json", map, textNbr);
     mapboxTools.addGeoImg(map, geoImgArray);
     mapboxTools.addRoads(ROAD_FILENAME, map);
     map?.setPaintProperty('water', 'fill-color', new_state.enabled ? 'rgba(14, 15, 99, 1)': 'rgba(14, 122, 155, 1)');
@@ -142,7 +135,7 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
 
     if (prevNbr != textNbr && map.current) {
         setPrevNbr(textNbr);
-        json_load("/json_files/test.json", state.lang, map.current, textNbr, true);
+        json_load("/json_files/test.json", map.current, textNbr, true);
     }
 
     if (prevHistdate != histdate && map.current) {
@@ -220,8 +213,9 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
                     map={map} enabled={state.enabled} def={100} />
                 <Cursor className={!displayCursor ? "hidden": "ml-[5px]"}
                     name="Afficher les routes et bâtiments actuels" include={[
-                        "road",
-                        "road-label", "waterway-label", "natural-line-label", "natural-point-label", "water-line-label", "water-point-label", "poi-label", "airport-label", "settlement-subdivision-label", "settlement-label",
+                        "road", "natural-line-label", "natural-point-label",
+                        "water-line-label", "water-point-label", "poi-label", "airport-label",
+                        "settlement-subdivision-label", "settlement-label",
                         "building", "bridge", "tunnel", "land", "waterway", "park"]}
                     map={map} enabled={state.enabled} def={100}/>
                 <Cursor className={!displayCursor ? "hidden" : "ml-[5px]"}
@@ -229,8 +223,26 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
                     map={map} enabled={state.enabled} def={100}/>
             </div>
             <div className={`flex space-x-[10px] ml-[10px] ${displayCursor ? "mt-[10px]" : ""}`}>
-                <DarkMode enabled={state.enabled} changeMode={changeMode}/>
-                <ZoomInOut enabled={state.enabled} setZoom={zoomInOut} />
+                {/* DARKMODE */}
+                <div className={`flex cursor-pointer rounded-full duration-300 w-[60px] z-10
+                        ${state.enabled ? "bg-darkMode" : "bg-whiteMode"}`} onClick={changeMode}>
+                    <p className={`pointer-events-none text-[15px] select-none duration-300
+                        z-10 ml-[5px] mr-[5px]
+                        ${state.enabled ? "translate-x-0" : "translate-x-[30px]"}`}>
+                        {state.enabled ? "🌑" : "🔆"}</p>
+                </div>
+                {/* ******* */}
+                {/* ZOOM IN OUT */}
+                <div className={`w-[55px] h-[22px] text-[20px] flex flex-row justify-between
+                        ${state.enabled ? "text-darkMode" : "text-whiteMode"}`}>
+                    <button className={`rounded-[2px] w-[22px] h-[22px] flex items-center justify-center duration-[300ms]
+                        ${!state.enabled ? "bg-darkMode" : "bg-whiteMode"}`}
+                        onClick={() => {zoomInOut("out")}}>-</button>
+                    <button className={`rounded-[2px] w-[22px] h-[22px] flex items-center justify-center duration-[300ms]
+                        ${!state.enabled ? "bg-darkMode" : "bg-whiteMode"}`}
+                    onClick={() => {zoomInOut("in")}}>+</button>
+                </div>
+                {/* ********** */}
                 <button className={`w-[22px] h-[22px] duration-300 text-[15px] rounded-[2px]
                             ${!state.enabled ? "bg-darkMode text-whiteMode" : "bg-whiteMode text-darkMode"}`}
                         onClick={setRelief}>

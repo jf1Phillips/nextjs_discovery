@@ -54,7 +54,7 @@ export const remap = (
     rMax: number
 ) => lerp(rMin, rMax, invlerp(oMin, oMax, v));
 
-export default function json_load(file: string, lang: string, map: MapboxMap, index_off: number, move ?: boolean) {
+export default function json_load(file: string, map: MapboxMap, index_off: number, move ?: boolean) {
     get_json_data(file).then(response => {
         if (!response)
             return;
