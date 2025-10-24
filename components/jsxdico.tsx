@@ -1,9 +1,39 @@
 import { JSX } from "react";
 import Image from "next/image";
 
-export interface DicoJsx {
-    town: string,
-    jsx: JSX.Element,
+/**
+ * Represents a mapping between a town name and its corresponding JSX content.
+ *
+ * This interface is typically used to associate a location or city
+ * with a block of JSX that provides related information, such as
+ * descriptive text, images, or links.
+ *
+ * @example
+ * ```tsx
+ * const JSXLabels: DicoJsx[] = [
+ *   {
+ *     town: "Bethsaïde",
+ *     jsx: (
+ *       <>
+ *         <p className="mb-2 text-[20px]">Bethsaïde</p>
+ *         <Image src="/img/bethsaid.jpg" alt="Bethsaïde" width={250} height={0}/>
+ *         <p className="text-justify p-2 text-[15px]">
+ *           {`Ville galiléenne détruite par un tremblement de terre vers 324 après J.-C.`}
+ *         </p>
+ *       </>
+ *     )
+ *   }
+ * ];
+ * ```
+ * @remarks
+ * The `jsx` property supports any valid JSX content, including elements styled  
+ * with **Tailwind CSS** utility classes for rapid and consistent UI design.
+ */
+type DicoJsx = {
+    /** Name of the town or location associated with the JSX content. */
+    town: string;
+    /** JSX content describing or illustrating the town (text, images, links, etc.). */
+    jsx: JSX.Element;
 };
 
 const JSXLabels: DicoJsx[] = [
@@ -43,6 +73,6 @@ const JSXLabels: DicoJsx[] = [
             <a className="text-center" target="_blank" href="https://www.youtube.com/watch?v=YpdYveOi28A">{`https://www.youtube.com/watch?v=YpdYveOi28A`}</a>
         </>)
     }
-]
+];
 
-export default JSXLabels;
+export {JSXLabels, type DicoJsx};

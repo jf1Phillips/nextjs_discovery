@@ -1,6 +1,6 @@
 import mapboxgl, { Map as MapboxMap, LngLatLike, MapMouseEvent, Marker } from "mapbox-gl";
 import ReactDOMServer from 'react-dom/server';
-import JSXLabels, { DicoJsx } from "@/components/jsxdico";
+import { JSXLabels, DicoJsx } from "@/components/jsxdico";
 
 var darkmode: boolean = false;
 
