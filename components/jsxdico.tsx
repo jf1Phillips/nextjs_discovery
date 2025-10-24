@@ -36,6 +36,14 @@ type DicoJsx = {
     jsx: JSX.Element;
 };
 
+/**
+ * A list of {@link DicoJsx} objects defining custom JSX popups
+ * for specific towns displayed on the Mapbox map.
+ *
+ * Each entry corresponds to a location name (`town`) and its
+ * associated JSX content (`jsx`), which replaces the default
+ * Mapbox popup for that town.
+ */
 const JSXLabels: DicoJsx[] = [
     {
         town: "Bethsaïda",
