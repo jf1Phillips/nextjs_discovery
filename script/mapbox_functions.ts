@@ -195,7 +195,7 @@ function addGeoJsonLabels(map: MapboxMap, labels: GeoJsonLabels[]): void {
  * to their default appearance according to the `darkmode` setting.
  *
  * @param map - The Mapbox map instance where the labels are displayed.
- * @param labels - An array of `GeoJsonLabels` representing the labels to update.
+ * @param labels - An array of {@link GeoJsonLabels} representing the labels to update.
  * @param name - *(Optional)* The name of the label to highlight, corresponding to the `"fr"` property
  *               in the GeoJSON feature. If omitted, all labels are reset to normal.
  *

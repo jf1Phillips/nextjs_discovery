@@ -15,7 +15,6 @@ const style: string[] = ["mapbox://styles/mapbox/light-v10", "mapbox://styles/ma
 
 export {LABELS_FILENAME};
 
-
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN as string;
 
 type MapVar = {
@@ -86,7 +85,7 @@ const LabelsToAdd: GeoJsonLabels[] = [
 const add_all_things = (new_state: MapVar, map: MapboxMap | null, textNbr: number) => {
     if (!map) return;
     addBunker(map);
-    json_load("/json_files/test.json", map, textNbr);
+    json_load(map, LabelsToAdd[0], textNbr);
     mapboxTools.darkmode = new_state.enabled;
     mapboxTools.addGeoImg(map, geoImgArray);
     mapboxTools.addRoads(ROAD_FILENAME, map);
@@ -138,7 +137,7 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
 
     if (prevNbr != textNbr && map.current) {
         setPrevNbr(textNbr);
-        json_load("/json_files/test.json", map.current, textNbr, true);
+        json_load(map.current, LabelsToAdd[0], textNbr, true);
     }
 
     if (prevHistdate != histdate && map.current) {
