@@ -137,7 +137,7 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
 
     if (prevNbr != textNbr && map.current) {
         setPrevNbr(textNbr);
-        if (textNbr % 4) {
+        if (!(textNbr % 4)) {
             mapboxTools.addRain(map.current);
             setState(prev => ({...prev, rain: true}));
         } else {
