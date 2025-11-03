@@ -168,6 +168,8 @@ function addGeoJsonLabels(map: MapboxMap, labels: GeoJsonLabels[]): void {
                     'icon-image': label.icons.dark.id,
                     'icon-allow-overlap': true,
                     'text-field': ['get', 'fr'],
+                    'symbol-z-order': 'source',
+                    'symbol-sort-key': 0,
                     'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'],
                     'text-size': ['interpolate', ['linear'], ['zoom'], 8, 13, 15, 50],
                     'icon-size': ['interpolate', ['linear'], ['zoom'], 8, 0.4, 15, 1.7],
@@ -184,58 +186,65 @@ function addGeoJsonLabels(map: MapboxMap, labels: GeoJsonLabels[]): void {
                 }
             });
         }
+        const highlightedLayerId = `${label.id}-highlighted`;
+        if (!map.getLayer(highlightedLayerId)) {
+            const sourceLayer = map.getLayer(label.id);
+            map.addLayer({
+                id: highlightedLayerId,
+                type: 'symbol',
+                source: label.id,
+                layout: {
+                    ...sourceLayer?.layout,
+                    'icon-image': label.icons.selected.id,
+                },
+                paint: {
+                    ...sourceLayer?.paint,
+                    'text-color': "#e56c00",
+                    'text-halo-color': "#ffffff",
+                }
+            });
+        }
     });
 }
 
 /**
- * Highlights a specific label on the map, or resets all labels to match the current dark mode style.
+ * Highlights one or more specific labels on the map, or resets all labels to match the current dark mode style.
  *
- * If a label name is provided, this function visually highlights the matching label
- * by changing its icon and text colors. If no name is provided, all labels are reset
+ * If one or more label names are provided, this function visually highlights all matching labels
+ * by changing their icon and text colors. If no name is provided, all labels are reset
  * to their default appearance according to the `darkmode` setting.
  *
  * @param map - The Mapbox map instance where the labels are displayed.
  * @param labels - An array of {@link GeoJsonLabels} representing the labels to update.
- * @param name - *(Optional)* The name of the label to highlight, corresponding to the `"fr"` property
- *               in the GeoJSON feature. If omitted, all labels are reset to normal.
+ * @param name - *(Optional)* A single label name or an array of names to highlight.
+ *               Each name corresponds to the `"fr"` property in the GeoJSON features.
+ *               If omitted, all labels are reset to normal.
  *
  * @example
- * // Highlight a specific label named "Paris"
+ * // Highlight a single label named "Paris"
  * highLightLabel(map, labels, "Paris");
+ *
+ * @example
+ * // Highlight multiple labels
+ * highLightLabel(map, labels, ["Paris", "Lyon", "Marseille"]);
  *
  * @example
  * // Reset all labels to match the dark mode style
  * highLightLabel(map, labels);
  */
-function highLightLabel(map: MapboxMap, labels: GeoJsonLabels[], name?: string): void {
+function highLightLabel(map: MapboxMap, labels: GeoJsonLabels[], name?: string | string[]): void {
     labels.forEach((label) => {
-        if (!map.getLayer(label.id)) return;
-        const icon = darkmode ? label.icons.white.id : label.icons.dark.id;
-        const txtColor = darkmode ? '#ffffff' : '#000000';
-        const haloColor = darkmode ? '#000000' : '#ffffff';
-
-        if (!name) {
+        const highlightedLayerId = `${label.id}-highlighted`;
+        if (!map.getLayer(label.id) || !map.getLayer(highlightedLayerId)) return;
+        if (name === undefined) {
             setDarkmodeToLabels(map, [label]);
+            map.setFilter(label.id, null);
+            map.setFilter(highlightedLayerId, ["==", "fr", ""]);
             return;
         }
-        map.setLayoutProperty(label.id, 'icon-image', [
-            "case",
-            ["==", ["get", "fr"], name],
-            label.icons.selected.id,
-            icon
-        ]);
-        map.setPaintProperty(label.id, "text-color", [
-            "case",
-            ["==", ["get", "fr"], name],
-            "#e56c00",
-            txtColor
-        ]);
-        map.setPaintProperty(label.id, "text-halo-color", [
-            "case",
-            ["==", ["get", "fr"], name],
-            "#ffffff",
-            haloColor
-        ]);
+        const nameArray = typeof name === "string" ? [name] : name;
+        map.setFilter(label.id, ['!in', 'fr', ...nameArray]);
+        map.setFilter(highlightedLayerId, ['in', 'fr', ...nameArray]);
     });
 }
 
@@ -449,7 +458,6 @@ function handler(map: MapboxMap, e: MapMouseEvent, label: GeoJsonLabels): void {
     if (!feature.properties || feature.geometry.type !== 'Point') return;
 
     const labelTXT = feature.properties['fr'];
-    highLightLabel(map, [label], labelTXT);
 
     // if the label is in the dico
     const dicoEntry: DicoJsx | undefined = JSXLabels.find(e => e.town === labelTXT);
@@ -479,8 +487,6 @@ function handler(map: MapboxMap, e: MapMouseEvent, label: GeoJsonLabels): void {
             popup_el.style.scrollbarColor = '#616161 #2a2a2a';
         });
     }
-    // Reset highlight when popup closes
-    popup.once('close', () => highLightLabel(map, [label]));
     // Hide the popup anchor triangle
     popup.once("open", () => {
         const popup_anchor = document.querySelector('.mapboxgl-popup-tip') as HTMLDivElement;
@@ -494,9 +500,8 @@ function handler(map: MapboxMap, e: MapMouseEvent, label: GeoJsonLabels): void {
  * Attaches interactive popups to each GeoJSON label layer on the map.
  *
  * When a user clicks on a label, this function:
- * 1. Highlights the clicked label using {@link highLightLabel}.
- * 2. Displays a styled popup showing either basic text or a rendered JSX component.
- * 3. Automatically resets the label’s highlight when the popup closes.
+ * 1. Displays a styled popup showing either basic text or a rendered JSX component.
+ * 2. Automatically closes any previously opened popup to ensure only one is visible at a time.
  *
  * Each label layer is assigned its own click handler, which is safely replaced
  * if one already exists — preventing duplicate event bindings.
@@ -511,7 +516,7 @@ function handler(map: MapboxMap, e: MapMouseEvent, label: GeoJsonLabels): void {
  * @remarks
  * - Popups are dynamically styled with Tailwind-like utility classes for layout and colors.
  * - If a JSX component is associated with a label (`JSXLabels`), it is rendered to HTML using ReactDOMServer.
- * - The label highlight resets when the popup is closed.
+ * - Only one popup is displayed at a time to maintain clarity on the map.
  */
 function add_popup(map: MapboxMap, labels: GeoJsonLabels[]): void {
     labels.forEach((label) => {
