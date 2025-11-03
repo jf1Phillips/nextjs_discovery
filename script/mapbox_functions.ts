@@ -94,7 +94,7 @@ type GeoJsonLabels = {
  * - Switches the `icon-image` to the appropriate icon variant (`white` or `dark`).
  *
  * @param map - The Mapbox map instance on which the label layers exist.
- * @param labels - An array of `GeoJsonLabels` representing the labels to update.
+ * @param labels - An array of {@link GeoJsonLabels} representing the labels to update.
  *
  * @example
  * setDarkmodeToLabels(map, [cityLabel]);
@@ -127,7 +127,7 @@ function setDarkmodeToLabels(map: MapboxMap, labels: GeoJsonLabels[]): void {
  * - Default paint properties (text and icon color, halo, opacity).
  *
  * @param map - The Mapbox map instance to which the labels will be added.
- * @param labels - An array of `GeoJsonLabels`, each containing a URL, a unique ID, and icons for different states.
+ * @param labels - An array of {@link GeoJsonLabels}, each containing a URL, a unique ID, and icons for different states.
  *
  * @example
  * addGeoJsonLabels(map, [
@@ -247,7 +247,7 @@ function highLightLabel(map: MapboxMap, labels: GeoJsonLabels[], name?: string):
  * or updating icons.
  *
  * @param map - The Mapbox map instance on which to reload the labels. If `null`, the function does nothing.
- * @param labels - An array of `GeoJsonLabels` representing the labels to reload.
+ * @param labels - An array of {@link GeoJsonLabels} representing the labels to reload.
  *
  * @example
  * reload_json_labels(map, [
