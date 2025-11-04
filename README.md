@@ -1,87 +1,87 @@
-# Carte historique interactive — Le Proche-Orient ancien
+# Interactive Historical Map — The Ancient Near East
 
-Ce projet est une **carte interactive Mapbox** permettant d’explorer la Le Proche-Orient ancien à travers différentes époques, avec des **couches historiques**, des **labels dynamiques**, des **pop-ups contextuels** et un **mode clair/sombre**.
-Le site a été conçu pour naviguer librement, visualiser des cartes anciennes superposées et afficher des informations géographiques détaillées.
+This project is an **interactive Mapbox map** designed to explore the Ancient Near East across different eras, featuring **historical layers**, **dynamic labels**, **contextual popups**, and a **light/dark mode**.
+The site allows free navigation, visualization of overlaid historical maps, and access to detailed geographic information.
 
 ---
 
-## Fonctionnalités principales
+## Main Features
 
-### Carte interactive
+### Interactive Map
 
-* Navigation libre sur la carte (zoom, déplacement, clics).
-* Interface minimaliste réactive.
+* Free navigation (zoom, pan, clicks).
+* Responsive minimalist interface.
 
-### Couches historiques
+### Historical Layers
 
-Deux cartes anciennes sont intégrées :
+Two ancient maps are integrated:
 
-1. **Carte du PEF (1880)**
-2. **Carte de Hans J. Hopfen (1975)**
+1. **PEF Map (1880)**
+2. **Hans J. Hopfen Map (1975)**
 
-Elles sont superposées sur la carte moderne et peuvent être affichées ou masquées individuellement via l’interface.
+They are overlaid on the modern map and can be individually toggled on or off via the interface.
 
-### Labels et points d’intérêt
+### Labels and Points of Interest
 
-* Les labels proviennent de fichiers GeoJSON.
-* Certains labels disposent de **pop-ups spéciaux** (contenu HTML dynamique).
-* Lorsqu’un chapitre particulier est actif, le label correspondant est **surligné en orange**.
+* Labels are loaded from GeoJSON files.
+* Some labels include **special popups** (dynamic HTML content).
+* When a specific chapter is active, the corresponding label is **highlighted in orange**.
 
-### Mode clair/sombre
+### Light/Dark Mode
 
-* Bascule dynamique entre les styles *Mapbox Light* et *Mapbox Dark*.
-* Les icônes et textes des labels s’adaptent automatiquement (couleur, halo, contraste).
+* Dynamic switching between *Mapbox Light* and *Mapbox Dark* styles.
+* Label icons and text automatically adapt (color, halo, contrast).
 
-### Effets visuels
+### Visual Effects
 
-* Option **pluie animée** et **relief 3D** activables via l’interface.
+* Optional **animated rain** and **3D terrain** effects, toggleable via the interface.
 
 ---
 
 ## Architecture
 
-Le cœur du projet repose sur deux fichiers principaux :
+The core of the project is based on two main files:
 
-| Fichier               | Rôle                                                                                                                                            |
-| --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| `./components/get_map.tsx`    | Composant React principal affichant la carte et gérant les interactions utilisateur.                                                           |
-| `./components/mapbox_functions.ts` | Module contenant toutes les fonctions utilitaires pour manipuler la carte Mapbox (ajout de labels, d’images, de routes, effets visuels, etc.). |
+| File                               | Role                                                                                                                    |
+| ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `./components/get_map.tsx`         | Main React component displaying the map and handling user interactions.                                                 |
+| `./components/mapbox_functions.ts` | Module containing all utility functions to manipulate the Mapbox map (add labels, images, roads, visual effects, etc.). |
 
 ---
 
 ## Installation
 
 ```bash
-# 1. Cloner le dépôt
-git clone [https://github.com/jf1Phillips/nextjs_discovery.git](https://github.com/jf1Phillips/nextjs_discovery.git)
+# 1. Clone the repository
+git clone https://github.com/jf1Phillips/nextjs_discovery.git
 cd nextjs_discovery/
 
-# 2. Installer les dépendances
+# 2. Install dependencies
 npm install
 
-# 3. Ajouter votre clé Mapbox
+# 3. Add your Mapbox key
 echo "NEXT_PUBLIC_MAPBOX_TOKEN=YOUR_TOKEN_HERE" > .env.local
 
-# 4. Lancer le serveur de développement
+# 4. Start the development server
 npm run dev
 ```
 
-Le site sera accessible sur [http://localhost:3000](http://localhost:3000).
+The site will be available at [http://localhost:3000](http://localhost:3000).
 
 ---
 
 ## Module `mapbox_functions.ts`
 
-Ce module agit comme une **librairie Mapbox personnalisée**, réutilisable dans d’autres projets.
-Il expose un objet principal `mapboxTools` contenant de nombreuses fonctions documentées.
+This module acts as a **custom Mapbox library**, reusable in other projects.
+It exposes a main object `mapboxTools` containing numerous documented functions.
 
 ---
 
-### Liste des fonctions exportées
+### List of Exported Functions
 
 #### `addGeoJsonLabels(map, labels)`
 
-Ajoute des labels à partir de fichiers GeoJSON, avec gestion automatique des icônes (`dark`, `white`, `selected`).
+Adds labels from GeoJSON files with automatic icon management (`dark`, `white`, `selected`).
 
 ```ts
 function addGeoJsonLabels(map: MapboxMap, labels: GeoJsonLabels[]): void
@@ -89,7 +89,7 @@ function addGeoJsonLabels(map: MapboxMap, labels: GeoJsonLabels[]): void
 
 #### `setDarkmodeToLabels(map, labels)`
 
-Met à jour les couleurs et icônes des labels selon le mode sombre ou clair.
+Updates label colors and icons according to the active light or dark mode.
 
 ```ts
 function setDarkmodeToLabels(map: MapboxMap, labels: GeoJsonLabels[]): void
@@ -97,7 +97,7 @@ function setDarkmodeToLabels(map: MapboxMap, labels: GeoJsonLabels[]): void
 
 #### `highLightLabel(map, labels, name?)`
 
-Surligne un ou plusieurs labels par nom, ou réinitialise tous les labels.
+Highlights one or several labels by name, or resets all labels.
 
 ```ts
 function highLightLabel(map: MapboxMap, labels: GeoJsonLabels[], name?: string | string[]): void
@@ -105,7 +105,7 @@ function highLightLabel(map: MapboxMap, labels: GeoJsonLabels[], name?: string |
 
 #### `reload_json_labels(map, labels)`
 
-Recharge complètement les labels GeoJSON (supprime et réimporte les couches).
+Completely reloads GeoJSON labels (removes and reimports layers).
 
 ```ts
 function reload_json_labels(map: MapboxMap | null, labels: GeoJsonLabels[]): void
@@ -113,7 +113,7 @@ function reload_json_labels(map: MapboxMap | null, labels: GeoJsonLabels[]): voi
 
 #### `addGeoImg(map, geoImgArray)`
 
-Ajoute des cartes historiques (images ou tuiles raster) sur la carte.
+Adds historical maps (image or raster tiles) to the map.
 
 ```ts
 function addGeoImg(map: MapboxMap, imgs: GeoImg[]): void
@@ -121,7 +121,7 @@ function addGeoImg(map: MapboxMap, imgs: GeoImg[]): void
 
 #### `addRoads(path, map)`
 
-Ajoute un fichier GeoJSON contenant les routes sur la carte.
+Adds a GeoJSON file containing roads to the map.
 
 ```ts
 function addRoads(path: string, map: MapboxMap): void
@@ -129,7 +129,7 @@ function addRoads(path: string, map: MapboxMap): void
 
 #### `addRain(map, clear?)`
 
-Affiche un effet de pluie sur la carte (ou le retire si `clear = true`).
+Displays a rain effect on the map (or removes it if `clear = true`).
 
 ```ts
 function addRain(map: MapboxMap, clear?: boolean): void
@@ -137,7 +137,7 @@ function addRain(map: MapboxMap, clear?: boolean): void
 
 #### `set3dTerrain(map, clear?)`
 
-Active ou désactive le rendu 3D du relief.
+Enables or disables 3D terrain rendering.
 
 ```ts
 function set3dTerrain(map: MapboxMap, clear?: boolean): void
@@ -145,7 +145,7 @@ function set3dTerrain(map: MapboxMap, clear?: boolean): void
 
 #### `add_popup(map, labels)`
 
-Associe des pop-ups dynamiques aux labels correspondants.
+Attaches dynamic popups to the corresponding labels.
 
 ```ts
 function add_popup(map: MapboxMap, labels: GeoJsonLabels[]): void
@@ -153,7 +153,7 @@ function add_popup(map: MapboxMap, labels: GeoJsonLabels[]): void
 
 #### `get_location(map, marker, enable, setBtn, watchId)`
 
-Permet de suivre la localisation de l’utilisateur et d’afficher un marqueur GPS.
+Tracks the user’s location and displays a GPS marker.
 
 ```ts
 function get_location(
@@ -169,23 +169,23 @@ function get_location(
 
 ## Navigation & Interface
 
-L’interface inclut :
+The interface includes:
 
-* Bouton ☰ : ouvre le panneau latéral de couches.
-* 🌑 / 🔆 : bascule entre mode clair et sombre.
-* * / − : zoom.
-* 3D / 2D : active ou désactive le relief.
-* 🌧️ / ☀️ : active ou désactive la pluie.
-* ↻ : recharge les labels GeoJSON.
-* ⊕ : active la géolocalisation de l’utilisateur.
+* ☰ button — opens the layer panel.
+* 🌑 / 🔆 — toggles light/dark mode.
+* '+' / '−' — zoom controls.
+* 3D / 2D — toggles terrain rendering.
+* 🌧️ / ☀️ — toggles rain effect.
+* ↻ — reloads GeoJSON labels.
+* ⊕ — activates user geolocation.
 
 ---
 
-## Types principaux
+## Main Types
 
 ### `GeoJsonLabels`
 
-Structure décrivant un label géographique :
+Defines a geographic label structure:
 
 ```ts
 type GeoJsonLabels = {
@@ -201,7 +201,7 @@ type GeoJsonLabels = {
 
 ### `GeoImg`
 
-Structure d’une image ou couche raster :
+Defines an image or raster layer structure:
 
 ```ts
 type GeoImg =
