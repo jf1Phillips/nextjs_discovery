@@ -8,15 +8,14 @@ parser.add_argument("-f", "--file")
 parser.add_argument("-s", "--start")
 
 args = parser.parse_args()
-
 try:
     start = int(args.start)
 except:
     parser.exit(84, "Start must be an integer\n")
-if args.file == None or not isfile(args.file):
+filename = args.file
+if filename == None or not isfile(filename):
     parser.exit(84, "The file doesn't exist\n")
 
-exit(0)
 from os import getenv
 from groq import Groq
 from dotenv import load_dotenv
@@ -35,8 +34,8 @@ class WeatherInfo:
         self.night = night
 
     def __repr__(self):
-        attrs = {k: v for k, v in self.__dict__.items() if v}
-        return f"{', '.join(f'{k}={v}' for k, v in attrs.items())}"
+        infos = [f"{key}: {value}" for key, value in vars(self).items()]
+        return ", ".join(infos)
 
 def extract_weather(text: str, client: Groq) -> WeatherInfo:
     prompt = f"""Analyse le texte suivant et détermine les conditions météo présentes.
@@ -78,19 +77,15 @@ def extract_weather(text: str, client: Groq) -> WeatherInfo:
 
 client = Groq(api_key=getenv("AI_API_KEY"))
 
-# Exemples d'utilisation
-if __name__ == "__main__":
-    exemples = [
-        "Il fait beau et chaud",
-        "Il pleut des cordes et il fait froid",
-        "Journée ensoleillée avec quelques nuages",
-        "Tempête de neige avec des vents violents",
-        "Brouillard dense ce matin",
-        "Temps orageux avec de fortes précipitations",
-        "Il fait nuit aujourd'hui et l'air est humide a cause de la pluie"
-    ]
+csv = pd.read_csv(filename, delimiter='|')
+csv.info()
 
-    for texte in exemples:
-        print(f"\nTexte : {texte}")
-        meteo = extract_weather(texte, client)
-        print(f"Résultat : {meteo}")
+for i, row in csv.iloc[start:].iterrows():
+    testement = row["t"]
+    book = row["livre"]
+    chapter = row["chapitre"]
+    verse = row["verset"]
+    texte = row["texte"]
+    print(testement, book, chapter, verse, texte)
+    weather = extract_weather(texte, client=client)
+    print(weather, end="\n\n")
