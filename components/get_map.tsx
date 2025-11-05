@@ -85,7 +85,13 @@ const LabelsToAdd: GeoJsonLabels[] = [
 const add_all_things = (new_state: MapVar, map: MapboxMap | null, textNbr: number) => {
     if (!map) return;
     addBunker(map);
-    json_load(map, LabelsToAdd[0], textNbr);
+    json_load(map, {
+        label: LabelsToAdd[0],
+        zoom_level: 10,
+        move: false,
+        draw_circle: false,
+        index: textNbr,
+    });
     mapboxTools.darkmode = new_state.enabled;
     mapboxTools.addGeoImg(map, geoImgArray);
     mapboxTools.addRoads(ROAD_FILENAME, map);
@@ -144,7 +150,13 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
             mapboxTools.addRain(map.current, true);
             setState(prev => ({...prev, rain: false}));
         }
-        json_load(map.current, LabelsToAdd[0], textNbr, true);
+        json_load(map.current, {
+            label: LabelsToAdd[0],
+            index: textNbr,
+            zoom_level: 10,
+            draw_circle: false,
+            move: true,
+        });
     }
 
     if (prevHistdate != histdate && map.current) {

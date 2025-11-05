@@ -48,7 +48,7 @@ export default mapboxTools;
 type Icon = {
     url: string;
     id: string;
-}
+};
 
 /**
  * Represents a GeoJSON label resource with associated icons.
@@ -320,7 +320,7 @@ type BaseGeoImg = {
     id: string,
     /** Optional opacity value, between 0 (fully transparent) and 1 (fully opaque). */
     opacity?: number,
-}
+};
 
 /**
  * Represents a geographic image resource.

@@ -32,14 +32,22 @@ async function get_json_data(file_name: string): Promise<GeoJsonScheme | undefin
     }
 }
 
-export default function json_load(map: MapboxMap, label: GeoJsonLabels, index_off: number, move ?: boolean) {
-    get_json_data(label.url).then(response => {
+interface LoadProperties {
+    label: GeoJsonLabels,
+    index: number,
+    move: boolean,
+    zoom_level: number,
+    draw_circle: boolean,
+};
+
+export default function json_load(map: MapboxMap, properties: LoadProperties) {
+    get_json_data(properties.label.url).then(response => {
         if (!response || !response.features || !response.features.length)
             return;
-        const feature: Feature = response.features[index_off];
+        const feature: Feature = response.features[properties.index];
+        highLightLabel(map, [properties.label], feature.properties.fr);
+        if (!properties.move) return;
         const coord: [number, number] = feature.geometry.coordinates;
-        highLightLabel(map, [label], feature.properties.fr);
-        if (!move) return;
-        map.flyTo({center: coord, zoom: 13});
+        map.flyTo({center: coord, zoom: properties.zoom_level});
     });
 }
