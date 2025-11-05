@@ -18,10 +18,11 @@ export default function DisplayTxt({enabled, setStateTextNbr, histdate, setHistD
     const api_req: (nbr: number) => string = (nbr:number) => `https://dilexit-back-1001788493975.europe-west9.run.app/bible/pericopes/${nbr}`;
     const set_text_data: (id: number) => void = (id: number) => {
         setDisplayText("loading...");
-                fetch(api_req(id)).then(res => res.json()).then(data => {
-            setDisplayText(data.name);
+        fetch(api_req(id)).then(res => res.json()).then(data => {
+            setDisplayText(id.toString());
+            setStateTextNbr(id);
+            setTextNbr(id);
         });
-        setStateTextNbr(id);
     };
 
     if (displayText == "start...")
@@ -32,7 +33,6 @@ export default function DisplayTxt({enabled, setStateTextNbr, histdate, setHistD
 
         if (new_nbr <= 0) new_nbr = max;
         if (new_nbr > max) new_nbr = 1;
-        setTextNbr(new_nbr);
         set_text_data(new_nbr);
         setHistDate(histdate + add);
     };
@@ -53,7 +53,7 @@ export default function DisplayTxt({enabled, setStateTextNbr, histdate, setHistD
                 ${enabled ? "bg-whiteMode text-darkMode" : "bg-darkMode text-whiteMode"}`}
                 onClick={() => {click_btn(-1)}}
                 >{"<"}</button>
-            <p className="text-[16px]">Chapitre {textNbr}</p>
+            <p className="text-[16px]">Chapitre {displayText}</p>
             <button className={`text-[20px] duration-300  h-[25px] w-[40px] items-center justify-center flex rounded-[5px]
                 ${enabled ? "bg-whiteMode text-darkMode" : "bg-darkMode text-whiteMode"}`}
                 onClick={() => {click_btn(1)}}
