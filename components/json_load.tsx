@@ -32,13 +32,21 @@ async function get_json_data(file_name: string): Promise<GeoJsonScheme | undefin
     }
 }
 
-interface LoadProperties {
+interface BaseLoadProperties {
     label: GeoJsonLabels,
     index: number,
     move: boolean,
     zoom_level: number,
-    draw_circle: boolean,
 };
+
+type LoadProperties =
+    | (BaseLoadProperties & {
+        draw_circle: false,
+    })
+    | (BaseLoadProperties & {
+        draw_circle: true,
+        radius: number,
+    });
 
 export default function json_load(map: MapboxMap, properties: LoadProperties) {
     get_json_data(properties.label.url).then(response => {
