@@ -53,6 +53,7 @@ const geoImgArray: GeoImg[] = [
         url: "/img/geo_map/pef_1880_map.jpg",
         id: ID_PEF,
         type: "image",
+        opacity: 0,
         coord: [
             [34.120542941238725 + 0.008, 33.46703792406347 + 0.003],
             [35.7498100593699 + 0.008, 33.46703792406347 + 0.003],
@@ -64,7 +65,7 @@ const geoImgArray: GeoImg[] = [
         url: "/tiles/{z}/{x}/{y}.webp",
         id: ID_HANS,
         type: "raster",
-        opacity: 0.5,
+        opacity: 0,
         bounds: [33.6803545, 31.1732927, 36.6260058, 33.7008169],
     }
 ];
@@ -111,6 +112,7 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
     const [lastPos, setLastPos] = useState<LngLat | null>(null);
     const map = useRef<MapboxMap | null>(null);
     const container = useRef<HTMLDivElement | null>(null);
+    const [styleLoaded, setStyleLoaded] = useState<boolean>(false);
 
     const cpy_txt = async (txt: string): Promise<void> => {
         return;
@@ -132,7 +134,10 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
                 center: [state.long, state.lat],
             });
             mapboxTools.darkmode = true;
-            map.current.once("style.load", () => add_all_things(state, map.current, textNbr));
+            map.current.once("style.load", () => {
+                add_all_things(state, map.current, textNbr);
+                setStyleLoaded(true);
+            });
             map.current.on("click", (e) => {
                 const txt = `${e.lngLat.lng.toFixed(5)},${e.lngLat.lat.toFixed(5)}`;
                 cpy_txt(txt);
@@ -220,28 +225,32 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
                         {displayCursor ? "x" : "☰"}
                     </button>
                 </div>
-                <Cursor className={!displayCursor ? "hidden": "ml-[5px]"}
-                    name="Afficher la carte du PEF (1880)" include={ID_PEF}
-                    map={map} enabled={state.enabled} />
-                <Cursor className={!displayCursor ? "hidden": "ml-[5px]"}
-                    name="Afficher la carte de Hans J. Hopfen (1975)" include={ID_HANS}
-                    map={map} enabled={state.enabled} def={50}/>
-                <Cursor className={!displayCursor ? "hidden": "ml-[5px]"}
-                    name="Afficher les routes de Hans J. Hopfen (1975)" include={ROAD_FILENAME}
-                    map={map} enabled={state.enabled} def={100} />
-                <Cursor className={!displayCursor ? "hidden": "ml-[5px]"}
-                    name="Afficher les lieux" include={ID_CITY}
-                    map={map} enabled={state.enabled} def={100} />
-                <Cursor className={!displayCursor ? "hidden": "ml-[5px]"}
-                    name="Afficher les routes et bâtiments actuels" include={[
-                        "road", "natural-line-label", "natural-point-label",
-                        "water-line-label", "water-point-label", "poi-label", "airport-label",
-                        "settlement-subdivision-label", "settlement-label",
-                        "building", "bridge", "tunnel", "land", "waterway", "park"]}
-                    map={map} enabled={state.enabled} def={100}/>
-                <Cursor className={!displayCursor ? "hidden" : "ml-[5px]"}
-                    name="Afficher les frontières actuelles" include={["admin", "state-label", "country-label"]}
-                    map={map} enabled={state.enabled} def={100}/>
+                {
+                    styleLoaded ? (<>
+                        <Cursor className={!displayCursor ? "hidden": "ml-[5px]"}
+                            name="Afficher la carte du PEF (1880)" include={ID_PEF}
+                            map={map} enabled={state.enabled}/>
+                        <Cursor className={!displayCursor ? "hidden": "ml-[5px]"}
+                            name="Afficher la carte de Hans J. Hopfen (1975)" include={ID_HANS}
+                            map={map} enabled={state.enabled}/>
+                        <Cursor className={!displayCursor ? "hidden": "ml-[5px]"}
+                            name="Afficher les routes de Hans J. Hopfen (1975)" include={ROAD_FILENAME}
+                            map={map} enabled={state.enabled} def={100} />
+                        <Cursor className={!displayCursor ? "hidden": "ml-[5px]"}
+                            name="Afficher les lieux" include={ID_CITY}
+                            map={map} enabled={state.enabled} def={100} />
+                        <Cursor className={!displayCursor ? "hidden": "ml-[5px]"}
+                            name="Afficher les routes et bâtiments actuels" include={[
+                                "road", "natural-line-label", "natural-point-label",
+                                "water-line-label", "water-point-label", "poi-label", "airport-label",
+                                "settlement-subdivision-label", "settlement-label",
+                                "building", "bridge", "tunnel", "land", "waterway", "park"]}
+                            map={map} enabled={state.enabled} def={0}/>
+                        <Cursor className={!displayCursor ? "hidden" : "ml-[5px]"}
+                            name="Afficher les frontières actuelles" include={["admin", "state-label", "country-label"]}
+                            map={map} enabled={state.enabled} def={100}/>
+                    </>) : null
+                }
             </div>
             <div className={`flex space-x-[10px] ml-[10px] ${displayCursor ? "mt-[10px]" : ""}`}>
                 {/* DARKMODE */}

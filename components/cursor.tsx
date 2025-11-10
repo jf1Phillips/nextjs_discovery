@@ -114,13 +114,16 @@ function set_paint(map: MapboxMap, value: number, include: string | string[])
  * ```
  */
 function Cursor({name, include, map, def, className, enabled} : ArgsCursor): JSX.Element {
-    const [sliderValue, setSliderValue] = useState<number>(def ? def : 0);
+    const [sliderValue, setSliderValue] = useState<number>(() => {
+            const value = def ? def : 0;
+            set_paint(map.current as MapboxMap, value, include);
+            return value;
+        }
+    );
 
     const changeOpacity = (value: number) => {
         setSliderValue(value);
-        if (map.current?.isStyleLoaded) {
-            set_paint(map.current as MapboxMap, value, include);
-        }
+        set_paint(map.current as MapboxMap, value, include);
     };
 
     return (<>
