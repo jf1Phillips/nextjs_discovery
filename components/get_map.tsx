@@ -181,8 +181,8 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
                 style_nbr: (prev.style_nbr + 1) % style.length,
                 enabled: !prev.enabled,
             };
-            map.current?.setStyle(style[new_state.style_nbr]);
-            map.current?.once("style.load", () => add_all_things(new_state, map.current, textNbr));
+            // map.current?.setStyle(style[new_state.style_nbr]);
+            // map.current?.once("style.load", () => add_all_things(new_state, map.current, textNbr));
             return new_state;
         });
     }
