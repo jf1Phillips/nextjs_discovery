@@ -705,7 +705,7 @@ function addRain(map: MapboxMap, remove_rain?: boolean): void {
     } else if (!map.getRain()) {
         map.setRain({
             density: ['interpolate', ['linear'], ['zoom'],
-                9, 0.0, 13, 0.8],
+                8, 0, 10, 1.0],
             intensity: 1.0,
             color: '#a8adbc',
             opacity: 0.7,
