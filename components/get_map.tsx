@@ -212,91 +212,91 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
     const whatchId = useRef<number | null>(null);
 
     return (<>
-        <div className={`flex left-0 top-0 absolute z-10
-                ${displayCursor ? "flex-col" : "flex-row items-center"}`}>
-            <div className={`flex flex-col justify-between p-[5px] duration-300
-                    rounded-br-[5px] whitespace-nowrap overflow-hidden
-                    ${displayCursor ? "h-[200px] w-[400px]" : "h-[30px] w-[30px]"}
-                    ${state.enabled ? "bg-whiteMode" : "bg-darkMode" }`}>
-                <div className="flex justify-start">
-                    <button className={`text-[15px] duration-300 w-[20px] h-[20px] flex items-center justify-center rounded-[5px]
-                        ${!state.enabled ? "text-darkMode bg-whiteMode" : "text-whiteMode bg-darkMode"}
-                    `} onClick={() => setDisplayCursor(!displayCursor)}>
-                        {displayCursor ? "x" : "☰"}
-                    </button>
+        <div className="flex flex-col left-0 top-0 absolute z-10">
+            <div className={`flex ${displayCursor ? "flex-col" : "flex-row items-center"}`}>
+                <div className={`flex flex-col justify-between p-[5px] duration-300
+                        rounded-br-[5px] whitespace-nowrap overflow-hidden
+                        ${displayCursor ? "h-[200px] w-[400px]" : "h-[30px] w-[30px]"}
+                        ${state.enabled ? "bg-whiteMode" : "bg-darkMode" }`}>
+                    <div className="flex justify-start">
+                        <button className={`text-[15px] duration-300 w-[20px] h-[20px] flex items-center justify-center rounded-[5px]
+                            ${!state.enabled ? "text-darkMode bg-whiteMode" : "text-whiteMode bg-darkMode"}
+                        `} onClick={() => setDisplayCursor(!displayCursor)}>
+                            {displayCursor ? "x" : "☰"}
+                        </button>
+                    </div>
+                    {
+                        styleLoaded ? (<>
+                            <Cursor className={!displayCursor ? "hidden": "ml-[5px]"}
+                                name="Afficher la carte du PEF (1880)" include={ID_PEF}
+                                map={map} enabled={state.enabled}/>
+                            <Cursor className={!displayCursor ? "hidden": "ml-[5px]"}
+                                name="Afficher la carte de Hans J. Hopfen (1975)" include={ID_HANS}
+                                map={map} enabled={state.enabled}/>
+                            <Cursor className={!displayCursor ? "hidden": "ml-[5px]"}
+                                name="Afficher les routes de Hans J. Hopfen (1975)" include={ROAD_FILENAME}
+                                map={map} enabled={state.enabled} def={100} />
+                            <Cursor className={!displayCursor ? "hidden": "ml-[5px]"}
+                                name="Afficher les lieux" include={ID_CITY}
+                                map={map} enabled={state.enabled} def={100} />
+                            <Cursor className={!displayCursor ? "hidden": "ml-[5px]"}
+                                name="Afficher les routes et bâtiments actuels" include={[
+                                    "road", "natural-line-label", "natural-point-label",
+                                    "water-line-label", "water-point-label", "poi-label", "airport-label",
+                                    "settlement-subdivision-label", "settlement-label",
+                                    "building", "bridge", "tunnel", "land", "waterway", "park"]}
+                                map={map} enabled={state.enabled} def={0}/>
+                            <Cursor className={!displayCursor ? "hidden" : "ml-[5px]"}
+                                name="Afficher les frontières actuelles" include={["admin", "state-label", "country-label"]}
+                                map={map} enabled={state.enabled} def={100}/>
+                        </>) : null
+                    }
                 </div>
-                {
-                    styleLoaded ? (<>
-                        <Cursor className={!displayCursor ? "hidden": "ml-[5px]"}
-                            name="Afficher la carte du PEF (1880)" include={ID_PEF}
-                            map={map} enabled={state.enabled}/>
-                        <Cursor className={!displayCursor ? "hidden": "ml-[5px]"}
-                            name="Afficher la carte de Hans J. Hopfen (1975)" include={ID_HANS}
-                            map={map} enabled={state.enabled}/>
-                        <Cursor className={!displayCursor ? "hidden": "ml-[5px]"}
-                            name="Afficher les routes de Hans J. Hopfen (1975)" include={ROAD_FILENAME}
-                            map={map} enabled={state.enabled} def={100} />
-                        <Cursor className={!displayCursor ? "hidden": "ml-[5px]"}
-                            name="Afficher les lieux" include={ID_CITY}
-                            map={map} enabled={state.enabled} def={100} />
-                        <Cursor className={!displayCursor ? "hidden": "ml-[5px]"}
-                            name="Afficher les routes et bâtiments actuels" include={[
-                                "road", "natural-line-label", "natural-point-label",
-                                "water-line-label", "water-point-label", "poi-label", "airport-label",
-                                "settlement-subdivision-label", "settlement-label",
-                                "building", "bridge", "tunnel", "land", "waterway", "park"]}
-                            map={map} enabled={state.enabled} def={0}/>
-                        <Cursor className={!displayCursor ? "hidden" : "ml-[5px]"}
-                            name="Afficher les frontières actuelles" include={["admin", "state-label", "country-label"]}
-                            map={map} enabled={state.enabled} def={100}/>
-                    </>) : null
-                }
-            </div>
-            <div className={`flex space-x-[10px] ml-[10px] ${displayCursor ? "mt-[10px]" : ""}`}>
-                {/* DARKMODE */}
-                <div className={`flex cursor-pointer rounded-full duration-300 w-[60px] z-10
-                        ${state.enabled ? "bg-darkMode" : "bg-whiteMode"}`} onClick={changeMode}>
-                    <p className={`pointer-events-none text-[15px] select-none duration-300
-                        z-10 ml-[5px] mr-[5px]
-                        ${state.enabled ? "translate-x-0" : "translate-x-[30px]"}`}>
-                        {state.enabled ? "🌑" : "🔆"}</p>
-                </div>
-                {/* ******* */}
-                {/* ZOOM IN OUT */}
-                <div className={`w-[55px] h-[22px] text-[20px] flex flex-row justify-between
-                        ${state.enabled ? "text-darkMode" : "text-whiteMode"}`}>
-                    <button className={`rounded-[2px] w-[22px] h-[22px] flex items-center justify-center duration-[300ms]
-                        ${!state.enabled ? "bg-darkMode" : "bg-whiteMode"}`}
-                        onClick={() => {zoomInOut("out")}}>-</button>
-                    <button className={`rounded-[2px] w-[22px] h-[22px] flex items-center justify-center duration-[300ms]
-                        ${!state.enabled ? "bg-darkMode" : "bg-whiteMode"}`}
-                    onClick={() => {zoomInOut("in")}}>+</button>
-                </div>
-                {/* ********** */}
-                <button className={`w-[22px] h-[22px] duration-300 text-[15px] rounded-[2px]
-                            ${!state.enabled ? "bg-darkMode text-whiteMode" : "bg-whiteMode text-darkMode"}`}
-                        onClick={setRelief}>
-                            {state.relief ? "2d" : "3d"}</button>
-                <button className={`w-[22px] h-[22px] duration-300 text-[15px] rounded-[2px]
+                <div className={`flex space-x-[10px] ml-[10px] ${displayCursor ? "mt-[10px] mb-[10px]" : ""}`}>
+                    {/* DARKMODE */}
+                    <div className={`flex cursor-pointer rounded-full duration-300 w-[60px] z-10
+                            ${state.enabled ? "bg-darkMode" : "bg-whiteMode"}`} onClick={changeMode}>
+                        <p className={`pointer-events-none text-[15px] select-none duration-300
+                            z-10 ml-[5px] mr-[5px]
+                            ${state.enabled ? "translate-x-0" : "translate-x-[30px]"}`}>
+                            {state.enabled ? "🌑" : "🔆"}</p>
+                    </div>
+                    {/* ******* */}
+                    {/* ZOOM IN OUT */}
+                    <div className={`w-[55px] h-[22px] text-[20px] flex flex-row justify-between
+                            ${state.enabled ? "text-darkMode" : "text-whiteMode"}`}>
+                        <button className={`rounded-[2px] w-[22px] h-[22px] flex items-center justify-center duration-[300ms]
                             ${!state.enabled ? "bg-darkMode" : "bg-whiteMode"}`}
-                        onClick={setRain}>
-                            {!state.rain ? "🌧️" : "☀️"}</button>
-                <button className={`w-[22px] h-[22px] rounded-[2px] duration-300 text-[15px]
-                            ${!state.enabled ? "bg-darkMode text-whiteMode" : "bg-whiteMode text-darkMode"}`}
-                        onClick={() => mapboxTools.reload_json_labels(map.current, LabelsToAdd)}
-                        >↻</button>
-                <button onClick={() => mapboxTools.get_location(map.current, marker, !locBtn, setLocBtn, whatchId)}
-                            className={`w-[22px] h-[22px] rounded-[2px] duration-300 text-[15px]
-                            ${!state.enabled ? `${locBtn ? "text-whiteMode" : "text-[#ff0000]"} bg-darkMode` : "bg-whiteMode text-darkMode"}`}
-                        >⊕</button>
+                            onClick={() => {zoomInOut("out")}}>-</button>
+                        <button className={`rounded-[2px] w-[22px] h-[22px] flex items-center justify-center duration-[300ms]
+                            ${!state.enabled ? "bg-darkMode" : "bg-whiteMode"}`}
+                        onClick={() => {zoomInOut("in")}}>+</button>
+                    </div>
+                    {/* ********** */}
+                    <button className={`w-[22px] h-[22px] duration-300 text-[15px] rounded-[2px]
+                                ${!state.enabled ? "bg-darkMode text-whiteMode" : "bg-whiteMode text-darkMode"}`}
+                            onClick={setRelief}>
+                                {state.relief ? "2d" : "3d"}</button>
+                    <button className={`w-[22px] h-[22px] duration-300 text-[15px] rounded-[2px]
+                                ${!state.enabled ? "bg-darkMode" : "bg-whiteMode"}`}
+                            onClick={setRain}>
+                                {!state.rain ? "🌧️" : "☀️"}</button>
+                    <button className={`w-[22px] h-[22px] rounded-[2px] duration-300 text-[15px]
+                                ${!state.enabled ? "bg-darkMode text-whiteMode" : "bg-whiteMode text-darkMode"}`}
+                            onClick={() => mapboxTools.reload_json_labels(map.current, LabelsToAdd)}
+                            >↻</button>
+                    <button onClick={() => mapboxTools.get_location(map.current, marker, !locBtn, setLocBtn, whatchId)}
+                                className={`w-[22px] h-[22px] rounded-[2px] duration-300 text-[15px]
+                                ${!state.enabled ? `${locBtn ? "text-whiteMode" : "text-[#ff0000]"} bg-darkMode` : "bg-whiteMode text-darkMode"}`}
+                            >⊕</button>
+                </div>
             </div>
-        </div>
-        <div className="relative overflow-hidden">
-            <div className={`absolute text-[15px] p-[5px] right-[0px] rounded-bl-[8px] z-10 duration-300 tracking-[1px] top-0
-                ${!state.enabled ? "text-whiteMode bg-darkMode" : "text-darkMode bg-whiteMode"}
-                ${displayCursor && "hidden"}`}>
+            <div className={`w-fit text-[15px] p-[5px] duration-300 tracking-[1px] rounded-br-[5px]
+                ${!state.enabled ? "text-whiteMode bg-darkMode" : "bg-whiteMode text-darkMode"}`}>
                 <p>Lng: {lastPos ? lastPos.lng.toFixed(2) : ''}<br/>Lat: {lastPos ? lastPos.lat.toFixed(2) : ''}</p>
             </div>
+        </div>
+        <div className="relative">
             <div
                 className="overflow-hidden"
                 ref={container}
