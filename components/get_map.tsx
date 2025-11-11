@@ -254,7 +254,7 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
                 </div>
                 <div className={`flex space-x-[10px] ml-[10px] ${displayCursor ? "mt-[10px] mb-[10px]" : ""}`}>
                     {/* DARKMODE */}
-                    <div className={`flex cursor-pointer rounded-full duration-300 w-[60px] z-10
+                    <div className={`flex cursor-pointer rounded-full duration-300 w-[60px]
                             ${state.enabled ? "bg-darkMode" : "bg-whiteMode"}`} onClick={changeMode}>
                         <p className={`pointer-events-none text-[15px] select-none duration-300
                             z-10 ml-[5px] mr-[5px]
@@ -273,28 +273,42 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
                         onClick={() => {zoomInOut("in")}}>+</button>
                     </div>
                     {/* ********** */}
+                    {/* RELIEF */}
                     <button className={`w-[22px] h-[22px] duration-300 text-[15px] rounded-[2px]
                                 ${!state.enabled ? "bg-darkMode text-whiteMode" : "bg-whiteMode text-darkMode"}`}
                             onClick={setRelief}>
                                 {state.relief ? "2d" : "3d"}</button>
+                    {/* ********** */}
+                    {/* RAIN */}
                     <button className={`w-[22px] h-[22px] duration-300 text-[15px] rounded-[2px]
                                 ${!state.enabled ? "bg-darkMode" : "bg-whiteMode"}`}
                             onClick={setRain}>
                                 {!state.rain ? "🌧️" : "☀️"}</button>
+                    {/* ********** */}
+                    {/* RELOAD JSON */}
                     <button className={`w-[22px] h-[22px] rounded-[2px] duration-300 text-[15px]
                                 ${!state.enabled ? "bg-darkMode text-whiteMode" : "bg-whiteMode text-darkMode"}`}
                             onClick={() => mapboxTools.reload_json_labels(map.current, LabelsToAdd)}
                             >↻</button>
-                    <button onClick={() => mapboxTools.get_location(map.current, marker, !locBtn, setLocBtn, whatchId)}
-                                className={`w-[22px] h-[22px] rounded-[2px] duration-300 text-[15px]
-                                ${!state.enabled ? `${locBtn ? "text-whiteMode" : "text-[#ff0000]"} bg-darkMode` : "bg-whiteMode text-darkMode"}`}
-                            >⊕</button>
+                    {/* ********** */}
+                    {/* GEOLOC */}
+                    <div className={`flex cursor-pointer rounded-full duration-300 w-[40px] z-10
+                            ${state.enabled ? "bg-whiteMode text-darkMode" : "bg-darkMode text-whiteMode"}`}
+                            onClick={() => mapboxTools.get_location(map.current, marker, !locBtn, setLocBtn, whatchId)}>
+                        <p className={`pointer-events-none text-[15px] select-none duration-300
+                            ml-[5px] mr-[5px] pt-[-15px]
+                            ${!locBtn ? "translate-x-[2px] text-[#ff0000]" : "translate-x-[18px]"}`}>
+                            ⊕</p>
+                    </div>
+                    {/* ********** */}
                 </div>
             </div>
+            {/* LONG LAT */}
             <div className={`w-fit text-[15px] p-[5px] duration-300 tracking-[1px] rounded-br-[5px]
                 ${!state.enabled ? "text-whiteMode bg-darkMode" : "bg-whiteMode text-darkMode"}`}>
                 <p>Lng: {lastPos ? lastPos.lng.toFixed(2) : ''}<br/>Lat: {lastPos ? lastPos.lat.toFixed(2) : ''}</p>
             </div>
+            {/* ********** */}
         </div>
         <div className="relative">
             <div
