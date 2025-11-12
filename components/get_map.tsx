@@ -214,43 +214,59 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
     return (<>
         <div className="flex flex-col left-0 top-0 absolute z-10">
             <div className={`flex ${displayCursor ? "flex-col" : "flex-row items-center"}`}>
-                <div className={`flex flex-col justify-between p-[5px] duration-300
+                <div className={`flex flex-col justify-between p-[10px] duration-300
                         rounded-br-[5px] whitespace-nowrap overflow-hidden
-                        ${displayCursor ? "h-[200px] w-[400px]" : "h-[30px] w-[30px]"}
+                        ${displayCursor ? "h-[240px] w-[400px]" : "h-[30px] w-[30px]"}
                         ${state.enabled ? "bg-whiteMode" : "bg-darkMode" }`}>
-                    <div className="flex justify-start">
+                    {/* CLOSE BTN */}
+                    <div className="flex justify-start m-[-5px]">
                         <button className={`text-[15px] duration-300 w-[20px] h-[20px] flex items-center justify-center rounded-[5px]
                             ${!state.enabled ? "text-darkMode bg-whiteMode" : "text-whiteMode bg-darkMode"}
                         `} onClick={() => setDisplayCursor(!displayCursor)}>
                             {displayCursor ? "x" : "☰"}
                         </button>
                     </div>
+                    {/* ********** */}
                     {
                         styleLoaded ? (<>
-                            <Cursor className={!displayCursor ? "hidden": "ml-[5px]"}
+                            <Cursor className={!displayCursor ? "hidden": ""}
                                 name="Afficher la carte du PEF (1880)" include={ID_PEF}
                                 map={map} enabled={state.enabled}/>
-                            <Cursor className={!displayCursor ? "hidden": "ml-[5px]"}
+                            <Cursor className={!displayCursor ? "hidden": ""}
                                 name="Afficher la carte de Hans J. Hopfen (1975)" include={ID_HANS}
                                 map={map} enabled={state.enabled}/>
-                            <Cursor className={!displayCursor ? "hidden": "ml-[5px]"}
+                            <Cursor className={!displayCursor ? "hidden": ""}
                                 name="Afficher les routes de Hans J. Hopfen (1975)" include={ROAD_FILENAME}
                                 map={map} enabled={state.enabled} def={100} />
-                            <Cursor className={!displayCursor ? "hidden": "ml-[5px]"}
+                            <Cursor className={!displayCursor ? "hidden": ""}
                                 name="Afficher les lieux" include={ID_CITY}
                                 map={map} enabled={state.enabled} def={100} />
-                            <Cursor className={!displayCursor ? "hidden": "ml-[5px]"}
+                            <Cursor className={!displayCursor ? "hidden": ""}
                                 name="Afficher les routes et bâtiments actuels" include={[
                                     "road", "natural-line-label", "natural-point-label",
                                     "water-line-label", "water-point-label", "poi-label", "airport-label",
                                     "settlement-subdivision-label", "settlement-label",
                                     "building", "bridge", "tunnel", "land", "waterway", "park"]}
                                 map={map} enabled={state.enabled} def={0}/>
-                            <Cursor className={!displayCursor ? "hidden" : "ml-[5px]"}
+                            <Cursor className={!displayCursor ? "hidden" : ""}
                                 name="Afficher les frontières actuelles" include={["admin", "state-label", "country-label"]}
                                 map={map} enabled={state.enabled} def={100}/>
                         </>) : null
                     }
+                    {/* GEOLOC */}
+                    <div className={!displayCursor ? "hidden": "space-x-[15px] flex items-center"}>
+                        <div className={`flex cursor-pointer rounded-full duration-300 w-[40px] h-[20px] items-center
+                                ${state.enabled ? "bg-darkMode text-whiteMode" : "bg-whiteMode text-darkMode"}`}
+                                onClick={() => mapboxTools.get_location(map.current, marker, !locBtn, setLocBtn, whatchId)}>
+                            <p className={`pointer-events-none text-[15px] select-none duration-300
+                                ml-[5px] mr-[5px]
+                                ${!locBtn ? "translate-x-[2px] text-[#ff0000]" : "translate-x-[18px]"}`}>
+                                ⊕</p>
+                        </div>
+                        <p className={`duration-300 text-[13px] ${!state.enabled ? "text-whiteMode" :  "text-darkMode"}`}>
+                            Géolocalisation</p>
+                    </div>
+                    {/* ********** */}
                 </div>
                 <div className={`flex space-x-[10px] ml-[10px] ${displayCursor ? "mt-[10px] mb-[10px]" : ""}`}>
                     {/* DARKMODE */}
@@ -290,16 +306,6 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
                                 ${!state.enabled ? "bg-darkMode text-whiteMode" : "bg-whiteMode text-darkMode"}`}
                             onClick={() => mapboxTools.reload_json_labels(map.current, LabelsToAdd)}
                             >↻</button>
-                    {/* ********** */}
-                    {/* GEOLOC */}
-                    <div className={`flex cursor-pointer rounded-full duration-300 w-[40px] z-10
-                            ${state.enabled ? "bg-whiteMode text-darkMode" : "bg-darkMode text-whiteMode"}`}
-                            onClick={() => mapboxTools.get_location(map.current, marker, !locBtn, setLocBtn, whatchId)}>
-                        <p className={`pointer-events-none text-[15px] select-none duration-300
-                            ml-[5px] mr-[5px] pt-[-15px]
-                            ${!locBtn ? "translate-x-[2px] text-[#ff0000]" : "translate-x-[18px]"}`}>
-                            ⊕</p>
-                    </div>
                     {/* ********** */}
                 </div>
             </div>
