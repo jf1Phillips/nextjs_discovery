@@ -277,7 +277,7 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
                             ${state.enabled ? "translate-x-0" : "translate-x-[30px]"}`}>
                             {state.enabled ? "🌑" : "🔆"}</p>
                     </div>
-                    {/* ******* */}
+                    {/* ********** */}
                     {/* ZOOM IN OUT */}
                     <div className={`w-[55px] h-[22px] text-[20px] flex flex-row justify-between
                             ${state.enabled ? "text-darkMode" : "text-whiteMode"}`}>
