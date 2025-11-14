@@ -71,16 +71,16 @@ const geoImgArray: GeoImg[] = [
 ];
 
 const ID_CITY: string = "cityGeoJson";
+const ID_MARIALCITY: string = "marialGeoJson";
 const LabelsToAdd: GeoJsonLabels[] = [
     {
         url: "/geoJson_files/city_label.geojson",
         id: ID_CITY,
-        icons: {
-            dark: { url: "/img/pin_labels_dark.png", id: "pinDark" },
-            white: { url: "/img/pin_labels_white.png", id: "pinWhite" },
-            selected: { url: "/img/pin_labels_orange.png", id: "pinSelected" }
-        },
     },
+    {
+        url: "/geoJson_files/carte_marial.geojson",
+        id: ID_MARIALCITY,
+    }
 ];
 
 const add_all_things = (new_state: MapVar, map: MapboxMap | null, textNbr: number) => {
