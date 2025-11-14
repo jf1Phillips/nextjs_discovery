@@ -27,7 +27,8 @@ with open(file_name, mode="r", encoding="utf-8") as file:
                 "fr": d["Nom"],
                 "jsx": d["Texte"],
                 "icon": d["TypeSite"],
-                "min_zoom": d["NiveauCarteMinimum"]
+                "icon_selected": "pin_labels_selected.png",
+                "min_zoom": float(d["NiveauCarteMinimum"])
             }
         }
         features.append(feature)

@@ -25,6 +25,7 @@ def csv_to_geoJson(file_name):
                     "fr": row["fr"],
                     "jsx": f"<p>{row["fr"]}</p>",
                     "icon": "pin_labels_dark.png",
+                    "icon_selected": "pin_labels_selected.png",
                 }
             }
             features.append(feature)
