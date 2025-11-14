@@ -1,8 +1,6 @@
 import mapboxgl, { Map as MapboxMap, LngLatLike, MapMouseEvent, Marker } from "mapbox-gl";
 import ReactDOMServer from 'react-dom/server';
 import { JSXLabels, DicoJsx } from "@/components/jsxdico";
-import { IncomingMessage } from "http";
-import { resolve } from "path";
 
 var darkmode: boolean = false;
 
@@ -41,28 +39,21 @@ export default mapboxTools;
 /**                                 GEOJSON LABELS                                       */
 /**------------------------------------------------------------------------------------- */
 
-/**  A MODIFIER #########################################################################################################
- * Represents a GeoJSON label resource with associated icons.
+/**
+ * Represents a GeoJSON resource used to display a label on the map.
  *
- * Each label has a GeoJSON URL, a unique identifier, and a set of icons
- * representing different visual states.
+ * This resource contains only:
+ * - the URL of the GeoJSON file;
+ * - a unique identifier used to reference this label in the map
+ *   or within the application logic.
  *
- * @property url - The URL to the GeoJSON file for this label.
- * @property id - A unique identifier for this label resource.
- * @property icons - An object containing icons for different states:
- *   - `white`: The default white icon.
- *   - `dark`: The dark variant of the icon.
- *   - `selected`: The icon displayed when the label is selected.
+ * @property url - The URL to the GeoJSON file.
+ * @property id - A unique identifier for the label resource.
  *
  * @example
  * const cityLabel: GeoJsonLabels = {
  *   url: "/geoJson_files/city_label.geojson",
- *   id: "city_label_1",
- *   icons: {
- *     white: { id: "pinWhite", url: "/icons/pin_white.png" },
- *     dark: { id: "pinDark", url: "/icons/pin_dark.png" },
- *     selected: { id: "pinSelected", url: "/icons/pin_selected.png" }
- *   }
+ *   id: "city_label_1"
  * };
  */
 type GeoJsonLabels = {
@@ -70,7 +61,41 @@ type GeoJsonLabels = {
     id: string;
 };
 
-/**  A MODIFIER #########################################################################################################
+/**
+ * Represents a custom GeoJSON Feature used to display a point on the map.
+ *
+ * This Feature includes:
+ * - a geometry of type `Point` with coordinates `[longitude, latitude]`;
+ * - properties controlling the label display, icons, and zoom behavior.
+ *
+ * @property type - Must always be `"Feature"`, according to the GeoJSON specification.
+ *
+ * @property geometry - Describes the position of the point:
+ *   - `type`: Always `"Point"`.
+ *   - `coordinates`: An array `[longitude, latitude]`.
+ *
+ * @property properties - Metadata associated with the point:
+ *   - `fr`: The French display name.
+ *   - `jsx`: A JSX version of the label (e.g., for React rendering).
+ *   - `icon`: The default icon ID or URL.
+ *   - `icon_selected`: The icon ID or URL used when the point is selected.
+ *   - `min_zoom` *(optional)*: Minimum zoom level required for the point to be displayed.
+ *
+ * @example
+ * const feature: CustomFeature = {
+ *   type: "Feature",
+ *   geometry: {
+ *     type: "Point",
+ *     coordinates: [2.3522, 48.8566] // Longitude, Latitude
+ *   },
+ *   properties: {
+ *     fr: "Paris",
+ *     jsx: "<p>Paris</p>",
+ *     icon: "city_default",
+ *     icon_selected: "city_selected",
+ *     min_zoom: 10
+ *   }
+ * };
  */
 type CustomFeature = {
     type: "Feature",
@@ -88,7 +113,35 @@ type CustomFeature = {
 };
 
 
-/**  A MODIFIER #########################################################################################################
+/**
+ * Represents a custom GeoJSON collection containing multiple features.
+ *
+ * This structure follows the standard GeoJSON `FeatureCollection` format.
+ * It groups together multiple custom point features (`CustomFeature`) used for
+ * displaying markers on a map or for other application logic.
+ *
+ * @property type - Must always be `"FeatureCollection"`, following the GeoJSON specification.
+ *
+ * @property features - An array of custom features
+ * ({@link CustomFeature}) representing each point or element within the collection.
+ *
+ * @example
+ * const cities: CustomGeoJson = {
+ *   type: "FeatureCollection",
+ *   features: [
+ *     {
+ *       type: "Feature",
+ *       geometry: { type: "Point", coordinates: [2.3522, 48.8566] },
+ *       properties: {
+ *         fr: "Paris",
+ *         jsx: "<b>Paris</b>",
+ *         icon: "city_default",
+ *         icon_selected: "city_selected",
+ *         min_zoom: 8
+ *       }
+ *     }
+ *   ]
+ * };
  */
 type CustomGeoJson = {
     type: "FeatureCollection",
@@ -125,8 +178,32 @@ function setDarkmodeToLabels(map: MapboxMap, labels: GeoJsonLabels[]): void {
 
 const PIN_LABELS_FOLDER: string = "/img/pin/"
 const loadedIcons = new Set<string>();
-/**  A MODIFIER #########################################################################################################
+
+/**
+ * Loads all icons referenced in a given GeoJSON label file into the Mapbox map.
+ *
+ * This is an **internal helper function** (not exported) used to ensure that
+ * all icons required by the features inside a label's GeoJSON file are properly
+ * loaded before being used by the map.
+ *
+ * The function:
+ * - fetches the GeoJSON file associated with the label,
+ * - extracts all icon names (`icon` and `icon_selected`) from each feature,
+ * - prevents duplicate loading by checking a global `loadedIcons` set,
+ * - loads missing icons using `map.loadImage`,
+ * - adds them to the Mapbox style using `map.addImage`,
+ * - waits for all asynchronous image loads to complete.
+ *
+ * @param map - The Mapbox map instance where icons should be registered.
+ * @param label - A label configuration containing the URL of the associated GeoJSON file.
+ *
+ * @throws If the GeoJSON file cannot be fetched.
+ *
+ * @example
+ * // This function is used internally when initializing label layers.
+ * await loadIcons(map, cityLabel);
  */
+
 async function loadIcons(map: MapboxMap, label: GeoJsonLabels): Promise<void> {
     const response = await fetch(label.url);
     if (!response.ok) throw new Error("Error fetch " + label.url);
@@ -153,33 +230,39 @@ async function loadIcons(map: MapboxMap, label: GeoJsonLabels): Promise<void> {
     await Promise.all(promises);
 }
 
-/**  A MODIFIER #########################################################################################################
- * Adds GeoJSON label layers to a Mapbox map and ensures their icons are loaded.
+/**
+ * Adds GeoJSON-based label layers to a Mapbox map and ensures the icons used by
+ * those labels are loaded beforehand.
  *
- * This function iterates over an array of `GeoJsonLabels` and for each label:
- * 1. Loads the associated icons (`white`, `dark`, `selected`) if they are not already loaded.
- * 2. Adds a GeoJSON source for the label if it does not exist.
- * 3. Adds a Mapbox `symbol` layer for the label if it does not exist, using the `dark` icon by default.
- * 
- * The layer is configured with:
- * - Icon and text sizing based on zoom levels.
- * - Text offsets, anchors, and font settings.
- * - Overlapping icons allowed.
- * - Default paint properties (text and icon color, halo, opacity).
+ * This function processes each {@link GeoJsonLabels} entry by:
+ * 1. Fetching the corresponding GeoJSON file and loading all icons referenced
+ *    inside its features (via `loadIcons`, an internal helper).
+ * 2. Creating a GeoJSON source with the label's ID if it does not already exist.
+ * 3. Adding a default `symbol` layer for the label if it is not yet present.
+ *    - The default layer uses the feature’s `icon` property for the marker.
+ *    - Text labels use the `fr` property.
+ *    - Sizes (text and icon) adapt dynamically based on zoom levels.
  *
- * @param map - The Mapbox map instance to which the labels will be added.
- * @param labels - An array of {@link GeoJsonLabels}, each containing a URL, a unique ID, and icons for different states.
+ * The function also creates a secondary *highlighted* layer (with `-highlighted`
+ * appended to the ID) that:
+ * - Displays the `icon_selected` variant;
+ * - Uses distinct text colors for highlighting;
+ * - Remains hidden by default until its filter is updated externally.
+ *
+ * Layer behavior includes:
+ * - Icon overlap enabled;
+ * - Text halo and color styling;
+ * - Zoom-based visibility via `min_zoom` feature property.
+ *
+ * @param map - The Mapbox map instance where layers will be added.
+ * @param labels - An array of {@link GeoJsonLabels}, each containing a URL to
+ *                 a GeoJSON file and a unique ID used for both the source and layers.
  *
  * @example
  * addGeoJsonLabels(map, [
  *   {
- *     url: "/geoJson_files/city_label.geojson",
- *     id: "city_label_1",
- *     icons: {
- *       dark: { id: "pinDark", url: "/icons/pin_dark.png" },
- *       white: { id: "pinWhite", url: "/icons/pin_white.png" },
- *       selected: { id: "pinSelected", url: "/icons/pin_selected.png" }
- *     }
+ *     url: "/geoJson_files/cities.geojson",
+ *     id: "cities_label"
  *   }
  * ]);
  */
@@ -285,26 +368,26 @@ function highLightLabel(map: MapboxMap, labels: GeoJsonLabels[], name?: string |
     });
 }
 
-/**  A MODIFIER #########################################################################################################
- * Reloads GeoJSON label layers on a Mapbox map.
+/**
+ * Reloads GeoJSON-based label layers on a Mapbox map.
  *
- * This function removes existing layers and sources for each label in `labels`,
- * then re-adds them using `addGeoJsonLabels`. Useful for refreshing label data
- * or updating icons.
+ * This function removes any existing layers and sources associated with the
+ * given {@link GeoJsonLabels}, then re-adds them by calling `addGeoJsonLabels`.
+ * It is useful when label data changes, when the underlying GeoJSON files are
+ * updated, or when icons referenced inside those files need to be refreshed.
  *
- * @param map - The Mapbox map instance on which to reload the labels. If `null`, the function does nothing.
- * @param labels - An array of {@link GeoJsonLabels} representing the labels to reload.
+ * If the `map` parameter is `null`, the function exits without performing any action.
+ *
+ * @param map - The Mapbox map instance on which the label layers should be reloaded.
+ *              If `null`, the function does nothing.
+ * @param labels - An array of {@link GeoJsonLabels} defining the GeoJSON resources
+ *                 and IDs to reload.
  *
  * @example
  * reload_json_labels(map, [
  *   {
  *     url: "/geoJson_files/city_label.geojson",
- *     id: "city_label_1",
- *     icons: {
- *       dark: { id: "pinDark", url: "/icons/pin_dark.png" },
- *       white: { id: "pinWhite", url: "/icons/pin_white.png" },
- *       selected: { id: "pinSelected", url: "/icons/pin_selected.png" }
- *     }
+ *     id: "city_label_1"
  *   }
  * ]);
  */
@@ -318,7 +401,7 @@ function reload_json_labels(map: MapboxMap | null, labels: GeoJsonLabels[]): voi
 }
 
 export {
-    type GeoJsonLabels,
+    type GeoJsonLabels, type CustomFeature, type CustomGeoJson,
     addGeoJsonLabels, reload_json_labels,
     highLightLabel, setDarkmodeToLabels
 };
