@@ -1,6 +1,8 @@
 import mapboxgl, { Map as MapboxMap, LngLatLike, MapMouseEvent, Marker } from "mapbox-gl";
 import ReactDOMServer from 'react-dom/server';
 import { JSXLabels, DicoJsx } from "@/components/jsxdico";
+import { IncomingMessage } from "http";
+import { resolve } from "path";
 
 var darkmode: boolean = false;
 
@@ -39,18 +41,7 @@ export default mapboxTools;
 /**                                 GEOJSON LABELS                                       */
 /**------------------------------------------------------------------------------------- */
 
-/**
- * Represents a single icon resource.
- *
- * @property url - The URL of the icon image.
- * @property id - A unique identifier for the icon.
- */
-type Icon = {
-    url: string;
-    id: string;
-};
-
-/**
+/**  A MODIFIER #########################################################################################################
  * Represents a GeoJSON label resource with associated icons.
  *
  * Each label has a GeoJSON URL, a unique identifier, and a set of icons
@@ -77,14 +68,35 @@ type Icon = {
 type GeoJsonLabels = {
     url: string;
     id: string;
-    icons: {
-        white: Icon;
-        dark: Icon;
-        selected: Icon;
-    };
 };
 
-/**
+/**  A MODIFIER #########################################################################################################
+ */
+type CustomFeature = {
+    type: "Feature",
+    geometry: {
+        type: "Point",
+        coordinates: [number, number],
+    },
+    properties: {
+        fr: string,
+        jsx: string,
+        icon: string,
+        icon_selected: string,
+        min_zoom?: number,
+    },
+};
+
+
+/**  A MODIFIER #########################################################################################################
+ */
+type CustomGeoJson = {
+    type: "FeatureCollection",
+    features: CustomFeature[],
+};
+
+
+/**  A MODIFIER #########################################################################################################
  * Updates the visual appearance of GeoJSON label layers on a Mapbox map
  * according to the dark mode setting.
  *
@@ -107,12 +119,41 @@ function setDarkmodeToLabels(map: MapboxMap, labels: GeoJsonLabels[]): void {
             darkmode ? '#ffffff' : '#000000');
         map.setPaintProperty(label.id, 'text-halo-color',
             darkmode ? '#000000' : '#ffffff');
-        map.setLayoutProperty(label.id, 'icon-image',
-            darkmode ? label.icons.white.id : label.icons.dark.id);
     });
 }
 
-/**
+
+const PIN_LABELS_FOLDER: string = "/img/pin/"
+const loadedIcons = new Set<string>();
+/**  A MODIFIER #########################################################################################################
+ */
+async function loadIcons(map: MapboxMap, label: GeoJsonLabels): Promise<void> {
+    const response = await fetch(label.url);
+    if (!response.ok) throw new Error("Error fetch " + label.url);
+    const geojson: CustomGeoJson = await response.json();
+    const promises: Promise<void>[] = [];
+
+    geojson.features.forEach((feature) => {
+        const icons = [feature.properties.icon, feature.properties.icon_selected];
+
+        icons.forEach((icon) => {
+            if (loadedIcons.has(icon)) return;
+            loadedIcons.add(icon);
+            const url = PIN_LABELS_FOLDER + icon;
+            const p = new Promise<void>((resolve, reject) => {
+                map.loadImage(url, (err, img) => {
+                    if (err) return reject(err);
+                    if (!map.hasImage(icon)) map.addImage(icon, img!);
+                    resolve();
+                });
+            });
+            promises.push(p);
+        });
+    });
+    await Promise.all(promises);
+}
+
+/**  A MODIFIER #########################################################################################################
  * Adds GeoJSON label layers to a Mapbox map and ensures their icons are loaded.
  *
  * This function iterates over an array of `GeoJsonLabels` and for each label:
@@ -143,67 +184,62 @@ function setDarkmodeToLabels(map: MapboxMap, labels: GeoJsonLabels[]): void {
  * ]);
  */
 function addGeoJsonLabels(map: MapboxMap, labels: GeoJsonLabels[]): void {
-    const loadingIcons = new Set<string>();
-
     labels.forEach((label) => {
-        Object.values(label.icons).forEach((icon) => {
-            if (map.hasImage(icon.id) || loadingIcons.has(icon.id)) return;
-            loadingIcons.add(icon.id);
-            map.loadImage(icon.url, (error, image) => {
-                if (error || !image) return;
-                if (!map.hasImage(icon.id))
-                    map.addImage(icon.id, image);
-            });
+        loadIcons(map, label).then(() => {
+            if (!map.getSource(label.id)) {
+                map.addSource(label.id, { type: "geojson", data: label.url });
+            }
+            if (!map.getLayer(label.id)) {
+                map.addLayer({
+                    id: label.id,
+                    type: 'symbol',
+                    source: label.id,
+                    layout: {
+                        'icon-image': ['get', 'icon'],
+                        'icon-allow-overlap': true,
+                        'text-field': ['get', 'fr'],
+                        'symbol-z-order': 'source',
+                        'symbol-sort-key': 0,
+                        'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'],
+                        'text-size': ['interpolate', ['linear'], ['zoom'], 8, 13, 15, 50],
+                        'icon-size': ['interpolate', ['linear'], ['zoom'], 8, 0.4, 15, 1.7],
+                        'text-offset': [0, -1.8],
+                        'icon-anchor': 'bottom',
+                        'text-anchor': 'bottom',
+                    },
+                    paint: {
+                        'text-color': '#000000',
+                        'text-halo-color': '#ffffff',
+                        'text-halo-width': 1,
+                        'text-opacity': 1.0,
+                        'icon-opacity': 1.0,
+                    },
+                    filter: ['>=',
+                        ['zoom'],
+                        ['coalesce', ['get', 'min_zoom'], 0]
+                    ],
+                });
+            }
+            const highlightedLayerId = `${label.id}-highlighted`;
+            if (!map.getLayer(highlightedLayerId)) {
+                const sourceLayer = map.getLayer(label.id);
+                map.addLayer({
+                    id: highlightedLayerId,
+                    type: 'symbol',
+                    source: label.id,
+                    layout: {
+                        ...sourceLayer?.layout,
+                        'icon-image': ['get', 'icon_selected'],
+                    },
+                    paint: {
+                        ...sourceLayer?.paint,
+                        'text-color': "#e56c00",
+                        'text-halo-color': "#ffffff",
+                    },
+                    filter: ["==", "fr", ""]
+                });
+            }
         });
-
-        if (!map.getSource(label.id)) {
-            map.addSource(label.id, { type: "geojson", data: label.url });
-        }
-        if (!map.getLayer(label.id)) {
-            map.addLayer({
-                id: label.id,
-                type: 'symbol',
-                source: label.id,
-                layout: {
-                    'icon-image': label.icons.dark.id,
-                    'icon-allow-overlap': true,
-                    'text-field': ['get', 'fr'],
-                    'symbol-z-order': 'source',
-                    'symbol-sort-key': 0,
-                    'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'],
-                    'text-size': ['interpolate', ['linear'], ['zoom'], 8, 13, 15, 50],
-                    'icon-size': ['interpolate', ['linear'], ['zoom'], 8, 0.4, 15, 1.7],
-                    'text-offset': [0, -1.8],
-                    'icon-anchor': 'bottom',
-                    'text-anchor': 'bottom',
-                },
-                paint: {
-                    'text-color': '#000000',
-                    'text-halo-color': '#ffffff',
-                    'text-halo-width': 1,
-                    'text-opacity': 1.0,
-                    'icon-opacity': 1.0,
-                }
-            });
-        }
-        const highlightedLayerId = `${label.id}-highlighted`;
-        if (!map.getLayer(highlightedLayerId)) {
-            const sourceLayer = map.getLayer(label.id);
-            map.addLayer({
-                id: highlightedLayerId,
-                type: 'symbol',
-                source: label.id,
-                layout: {
-                    ...sourceLayer?.layout,
-                    'icon-image': label.icons.selected.id,
-                },
-                paint: {
-                    ...sourceLayer?.paint,
-                    'text-color': "#e56c00",
-                    'text-halo-color': "#ffffff",
-                }
-            });
-        }
     });
 }
 
@@ -238,17 +274,18 @@ function highLightLabel(map: MapboxMap, labels: GeoJsonLabels[], name?: string |
         if (!map.getLayer(label.id) || !map.getLayer(highlightedLayerId)) return;
         if (name === undefined) {
             setDarkmodeToLabels(map, [label]);
-            map.setFilter(label.id, null);
+            map.setFilter(label.id, ['>=', ['zoom'],
+                    ['coalesce', ['get', 'min_zoom'], 10]
+                ]);
             map.setFilter(highlightedLayerId, ["==", "fr", ""]);
             return;
         }
         const nameArray = typeof name === "string" ? [name] : name;
-        map.setFilter(label.id, ['!in', 'fr', ...nameArray]);
         map.setFilter(highlightedLayerId, ['in', 'fr', ...nameArray]);
     });
 }
 
-/**
+/**  A MODIFIER #########################################################################################################
  * Reloads GeoJSON label layers on a Mapbox map.
  *
  * This function removes existing layers and sources for each label in `labels`,
@@ -281,7 +318,7 @@ function reload_json_labels(map: MapboxMap | null, labels: GeoJsonLabels[]): voi
 }
 
 export {
-    type GeoJsonLabels, type Icon,
+    type GeoJsonLabels,
     addGeoJsonLabels, reload_json_labels,
     highLightLabel, setDarkmodeToLabels
 };
@@ -762,8 +799,7 @@ function get_location(
     loc: boolean,
     setLoc: React.Dispatch<React.SetStateAction<boolean>>,
     watchId: React.RefObject<number | null>
-) : void
-{
+): void {
     if (!map) return;
     if (!navigator.geolocation) return;
 
@@ -792,19 +828,19 @@ function get_location(
             }
             setLoc(true);
         },
-        (error) => {
-            console.log("Error location: ", error);
-            available = false;
-            setLoc(false);
-        },
-        {
-            enableHighAccuracy: true,
-            timeout: 5000,
-            maximumAge: 0,
-        });
+            (error) => {
+                console.log("Error location: ", error);
+                available = false;
+                setLoc(false);
+            },
+            {
+                enableHighAccuracy: true,
+                timeout: 5000,
+                maximumAge: 0,
+            });
         if (available) watchId.current = tmp;
     }
 }
 
-export {get_location};
+export { get_location };
 /*****************************************************************************************/
