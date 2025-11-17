@@ -26,6 +26,13 @@ import json
 
 load_dotenv()
 
+models = [
+    # "llama-3.1-8b-instant",
+    "llama-3.3-70b-versatile",
+    "openai/gpt-oss-120b",
+    "openai/gpt-oss-20b",
+]
+
 class WeatherInfo:
     def __init__(self, rain=False, snow=False,
                  wind=False, fog=False, storm=False, night=False):
@@ -43,7 +50,7 @@ class WeatherInfo:
         infos = [f"{key}: {value}" for key, value in vars(self).items()]
         return ", ".join(infos)
 
-def extract_weather(text: str, client: Groq) -> WeatherInfo:
+def extract_weather(text: str, client: Groq, index) -> WeatherInfo:
     prompt = f"""Analyse le texte suivant et identifie les conditions atmosphériques et temporelles présentes ou fortement suggérées.
         Consignes :
         - rain: présence de pluie, averses, ou précipitations liquides
@@ -69,7 +76,7 @@ def extract_weather(text: str, client: Groq) -> WeatherInfo:
     """
 
     completion = client.chat.completions.create(
-        model="llama-3.1-8b-instant",
+        model=models[index % len(models)],
         messages=[
             {"role": "user", "content": prompt}
         ],
@@ -96,21 +103,26 @@ csv = pd.read_csv(filename, delimiter='|', encoding="utf-8")
 csv.info()
 
 # print("t|bible reference|texte|rain|snow|wind|fog|storm|night")
+from time import sleep
 file = open("ex.csv", "a", encoding="utf-8")
-try:
-    for i, row in csv.iloc[start:].iterrows():
-        testement = row["t"]
-        book = row["livre"]
-        chapter = row["chapitre"]
-        verse = row["verset"]
-        texte = row["texte"]
-        weather = extract_weather(texte, client=client)
-        end_str = "|".join([testement, "%s %s,%s" % (book, chapter, verse),
+i=0
+while True:
+    try:
+        for i, row in csv.iloc[start:].iterrows():
+            testement = row["t"]
+            book = row["livre"]
+            chapter = row["chapitre"]
+            verse = row["verset"]
+            texte = row["texte"]
+            weather = extract_weather(text=texte, client=client, index=i)
+            end_str = "|".join([testement, "%s %s,%s" % (book, chapter, verse),
                         texte, weather.get_weather_str()])
-        file.write(end_str + "\n")
-        print("\rprocessing...%d/%d" % (i+1, len(csv)), end="")
-    file.close()
-    print("\nDone !")
-except:
-    file.close()
-    print("")
+            file.write(end_str + "\n")
+            print("\rprocessing...%d/%d" % (i+1, len(csv)), end="")
+        print("\nDone !")
+        break
+    except Exception as e:
+        start=i
+        sleep(2)
+print("")
+file.close()
