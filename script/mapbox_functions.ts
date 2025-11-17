@@ -11,6 +11,8 @@ const mapboxTools = {
     reload_json_labels,
     /** {@link setDarkmodeToLabels} */
     setDarkmodeToLabels,
+    /** {@link setDarkModeToMap} */
+    setDarkModeToMap,
     /** {@link addGeoImg} */
     addGeoImg,
     /** {@link add_popup} */
@@ -149,7 +151,7 @@ type CustomGeoJson = {
 };
 
 
-/**  A MODIFIER #########################################################################################################
+/**
  * Updates the visual appearance of GeoJSON label layers on a Mapbox map
  * according to the dark mode setting.
  *
@@ -175,6 +177,156 @@ function setDarkmodeToLabels(map: MapboxMap, labels: GeoJsonLabels[]): void {
     });
 }
 
+/**
+ * Defines the set of color values used to style different categories of layers
+ * in the map when switching between dark mode and light mode.
+ *
+ * Each property corresponds to a major visual component of the map, such as
+ * water, buildings, parks, roads, text, and borders.
+ *
+ * This type is used by `setDarkModeToMap()` to apply the correct color palette
+ * depending on the selected theme.
+ *
+ * @property background - Main land/background color of the map.
+ * @property water - Color applied to water bodies (lakes, rivers, seas).
+ * @property park - Color applied to parks, forests, and natural green areas.
+ * @property building - Color applied to building polygons or 3D extrusions.
+ * @property road - Color used for primary and major roads.
+ * @property roadMinor - Color used for secondary, minor, or residential roads.
+ * @property border - Color applied to administrative borders or boundaries.
+ * @property text - Default color for text labels on symbol layers.
+ * @property textHalo - Color for the halo around text labels.
+ */
+type LayerStyleInclude = {
+    background: string,
+    water: string,
+    park: string,
+    building: string,
+    road: string,
+    roadMinor: string,
+    border: string,
+    text: string,
+    textHalo: string,
+}
+
+/**
+ * Applies either a dark or light theme to a Mapbox map by dynamically updating
+ * the paint properties of all relevant layers (water, buildings, roads, parks,
+ * labels, etc.).
+ *
+ * This function inspects each layer of the current map style and updates colors
+ * based on whether dark mode is enabled. It supports several layer types:
+ * `fill`, `line`, `fill-extrusion`, and `symbol`.
+ *
+ * ### Features
+ * - Changes background, water, parks, buildings, roads, borders, and text colors.
+ * - Detects primary vs secondary roads.
+ * - Handles text and text halo styling for label layers.
+ * - Safely wraps each Mapbox operation in a try/catch to avoid breaking if
+ *   a layer does not support a certain paint property.
+ *
+ * ### Parameters
+ * @param map - The Mapbox GL map instance to modify.
+ *
+ * ### Behavior
+ * The function uses the global boolean `darkmode` to choose between dark and
+ * light color palettes. It then iterates on all style layers and applies color
+ * rules according to layer ID patterns:
+ *
+ * - `water*` → water colors
+ * - `park*`, `landuse*`, `natural*` → park/green colors
+ * - `building*` → fill or extrusion building colors
+ * - `road*`, `street*`, `highway*` → line colors for roads
+ * - `border*`, `boundary*`, `admin*` → border line colors
+ * - All `symbol` layers → text and text halo colors
+ *
+ * ### Notes
+ * - Make sure this function is called **after** the map's style has fully loaded
+ *   (e.g., inside `map.on('load', ...)`), otherwise some layers may not exist yet.
+ * - If you use a custom Mapbox style, layer naming conventions may differ.
+ *   Adjust ID matching patterns as needed.
+ *
+ * @example
+ * map.on('load', () => {
+ *     setDarkModeToMap(map);
+ * });
+ */
+function setDarkModeToMap(map: MapboxMap): void {
+    const layers = map.getStyle().layers;
+    if (!layers) return;
+    // Couleurs du mode sombre
+    const darkColors: LayerStyleInclude = {
+        background: '#343332',      // Fond principal (terre)
+        water: '#0e0f63',           // Eau
+        park: '#1e3a1e',            // Parcs et espaces verts
+        building: '#2a2a3e',        // Bâtiments
+        road: '#6E6E6E',            // Routes principales
+        roadMinor: '#8a8a8a',       // Routes secondaires
+        border: '#1A1A1A',          // Bordures/limites
+        text: '#e0e0e0',            // Texte
+        textHalo: '#1a1a2e',        // Halo du texte
+    };
+    // Couleurs du mode clair
+    const lightColors: LayerStyleInclude = {
+        background: '#f8f8f8',      // Fond principal (terre)
+        water: '#0e7a9b',           // Eau
+        park: '#c8e6c9',            // Parcs et espaces verts
+        building: '#e0e0e0',        // Bâtiments
+        road: '#bbbbbb',            // Routes principales
+        roadMinor: '#f5f5f5',       // Routes secondaires
+        border: '#d0d0d0',          // Bordures/limites
+        text: '#333333',            // Texte
+        textHalo: '#ffffff',        // Halo du texte
+    };
+    const colors: LayerStyleInclude = darkmode ? darkColors : lightColors;
+
+    if (map.getLayer('land')) {
+        map.setPaintProperty('land', 'background-color', colors.background);
+    }
+    layers.forEach(layer => {
+        try {
+            if (layer.id.includes('water')) {
+                if (layer.type === 'fill') {
+                    map.setPaintProperty(layer.id, 'fill-color', colors.water);
+                } else if (layer.type === 'line') {
+                    map.setPaintProperty(layer.id, 'line-color', colors.water);
+                }
+            }
+            if (layer.id.includes('park') || layer.id.includes('landuse') || layer.id.includes('natural')) {
+                if (layer.type === 'fill') {
+                    map.setPaintProperty(layer.id, 'fill-color', colors.park);
+                }
+            }
+            if (layer.id.includes('building')) {
+                if (layer.type === 'fill') {
+                    map.setPaintProperty(layer.id, 'fill-color', colors.building);
+                } else if (layer.type === 'fill-extrusion') {
+                    map.setPaintProperty(layer.id, 'fill-extrusion-color', colors.building);
+                }
+            }
+            if (layer.id.includes('road') || layer.id.includes('street') || layer.id.includes('highway')) {
+                if (layer.type === 'line') {
+                    const color = layer.id.includes('primary') || layer.id.includes('highway')
+                        ? colors.road
+                        : colors.roadMinor;
+                    map.setPaintProperty(layer.id, 'line-color', color);
+                }
+            }
+            if (layer.id.includes('border') || layer.id.includes('boundary') || layer.id.includes('admin')) {
+                if (layer.type === 'line') {
+                    map.setPaintProperty(layer.id, 'line-color', colors.road);
+                    map.setPaintProperty(layer.id, "line-border-color", colors.border)
+                }
+            }
+            if (layer.type === 'symbol') {
+                map.setPaintProperty(layer.id, 'text-color', colors.text);
+                map.setPaintProperty(layer.id, 'text-halo-color', colors.textHalo);
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    });
+}
 
 const PIN_LABELS_FOLDER: string = "/img/pin/"
 const loadedIcons = new Set<string>();
@@ -354,12 +506,14 @@ function addGeoJsonLabels(map: MapboxMap, labels: GeoJsonLabels[]): void {
 function highLightLabel(map: MapboxMap, labels: GeoJsonLabels[], name?: string | string[]): void {
     labels.forEach((label) => {
         const highlightedLayerId = `${label.id}-highlighted`;
+        console.log("OEE");
         if (!map.getLayer(label.id) || !map.getLayer(highlightedLayerId)) return;
+        console.log("NOP");
         if (name === undefined) {
             setDarkmodeToLabels(map, [label]);
             map.setFilter(label.id, ['>=', ['zoom'],
-                    ['coalesce', ['get', 'min_zoom'], 10]
-                ]);
+                ['coalesce', ['get', 'min_zoom'], 10]
+            ]);
             map.setFilter(highlightedLayerId, ["==", "fr", ""]);
             return;
         }
@@ -403,7 +557,7 @@ function reload_json_labels(map: MapboxMap | null, labels: GeoJsonLabels[]): voi
 export {
     type GeoJsonLabels, type CustomFeature, type CustomGeoJson,
     addGeoJsonLabels, reload_json_labels,
-    highLightLabel, setDarkmodeToLabels
+    highLightLabel, setDarkmodeToLabels, setDarkModeToMap,
 };
 /*****************************************************************************************/
 

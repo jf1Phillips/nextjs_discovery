@@ -12,7 +12,7 @@ module.exports = {
         customBackground: '#1C0B19',
         darkMode: '#171219',
         bgDarkMode: "#d4d4d4ff",
-        whiteMode: '#EBEBD3',
+        whiteMode: '#fafae1ff',
         bgWhiteMode: "#626C66",
       }
     },
