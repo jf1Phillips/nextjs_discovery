@@ -567,12 +567,11 @@ const labelHandlers = new Map<string, (e: MapMouseEvent) => void>();
  *
  * @param map - The Mapbox map instance.
  * @param e - The Mapbox mouse event triggered by a user click.
- * @param label - The specific {@link GeoJsonLabels} entry that was clicked.
  *
  * @internal
  * This function is meant to be used internally by {@link add_popup}.
  */
-function handler(map: MapboxMap, e: MapMouseEvent, label: GeoJsonLabels): void {
+function handler(map: MapboxMap, e: MapMouseEvent): void {
     if (!e.features || !e.features.length) return;
     const feature = e.features[0];
     if (!feature.properties || feature.geometry.type !== 'Point') return;
@@ -583,7 +582,7 @@ function handler(map: MapboxMap, e: MapMouseEvent, label: GeoJsonLabels): void {
 
     // const html_str: string = ReactDOMServer.renderToString(feature.properties["jsx"]);
     popup.setHTML(feature.properties["html"]);
-    popup.setOffset([-20, -30]);
+    // popup.setOffset([-20, -30]);
     popup.once("open", () => {
         const popup_el = document.querySelector('.mapboxgl-popup-content') as HTMLDivElement;
 
@@ -591,7 +590,6 @@ function handler(map: MapboxMap, e: MapMouseEvent, label: GeoJsonLabels): void {
             'flex',
             'flex-col',
             'items-center',
-            `w-[280px]`,
             'max-h-[500px]',
             'overflow-y-auto',
             'text-white');
@@ -628,13 +626,19 @@ function handler(map: MapboxMap, e: MapMouseEvent, label: GeoJsonLabels): void {
  */
 function add_popup(map: MapboxMap, labels: GeoJsonLabels[]): void {
     labels.forEach((label) => {
-        const oldHandler = labelHandlers.get(label.id);
-        if (oldHandler) {
-            map.off("click", label.id, oldHandler);
-        }
-        const newHandler = (e: MapMouseEvent) => handler(map, e, label);
-        labelHandlers.set(label.id, newHandler);
-        map.on("click", label.id, newHandler);
+        const ids = [
+            label.id,
+            `${label.id}-highlighted`
+        ];
+        ids.forEach((id) => {
+            const oldHandler = labelHandlers.get(id);
+            if (oldHandler) {
+                map.off("click", id, oldHandler);
+            }
+            const newHandler = (e: MapMouseEvent) => handler(map, e);
+            labelHandlers.set(id, newHandler);
+            map.on("click", id, newHandler);
+        });
     });
 }
 export { add_popup };
