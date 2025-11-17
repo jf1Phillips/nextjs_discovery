@@ -12,7 +12,7 @@
             },
             "properties": {
                 "fr": "Monts Abarim",
-                "jsx": "<p>Monts Abarim</p>",
+                "html": "<p>Monts Abarim</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -28,7 +28,7 @@
             },
             "properties": {
                 "fr": "Abel Maïm",
-                "jsx": "<p>Abel Maïm</p>",
+                "html": "<p>Abel Maïm</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -44,7 +44,7 @@
             },
             "properties": {
                 "fr": "Achzib",
-                "jsx": "<p>Achzib</p>",
+                "html": "<p>Achzib</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -60,7 +60,7 @@
             },
             "properties": {
                 "fr": "Aciri",
-                "jsx": "<p>Aciri</p>",
+                "html": "<p>Aciri</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -76,7 +76,7 @@
             },
             "properties": {
                 "fr": "Vallée de Acor",
-                "jsx": "<p>Vallée de Acor</p>",
+                "html": "<p>Vallée de Acor</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -92,7 +92,7 @@
             },
             "properties": {
                 "fr": "Acron",
-                "jsx": "<p>Acron</p>",
+                "html": "<p>Acron</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -108,7 +108,7 @@
             },
             "properties": {
                 "fr": "Acropole",
-                "jsx": "<p>Acropole</p>",
+                "html": "<p>Acropole</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -124,7 +124,7 @@
             },
             "properties": {
                 "fr": "Mont Adomin",
-                "jsx": "<p>Mont Adomin</p>",
+                "html": "<p>Mont Adomin</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -140,7 +140,7 @@
             },
             "properties": {
                 "fr": "Aféca",
-                "jsx": "<p>Aféca</p>",
+                "html": "<p>Aféca</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -156,7 +156,7 @@
             },
             "properties": {
                 "fr": "Ain Samieh",
-                "jsx": "<p>Ain Samieh</p>",
+                "html": "<p>Ain Samieh</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -172,7 +172,7 @@
             },
             "properties": {
                 "fr": "Al Allan, nahr",
-                "jsx": "<p>Al Allan, nahr</p>",
+                "html": "<p>Al Allan, nahr</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -188,7 +188,7 @@
             },
             "properties": {
                 "fr": "Al Aujah wadi",
-                "jsx": "<p>Al Aujah wadi</p>",
+                "html": "<p>Al Aujah wadi</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -204,7 +204,7 @@
             },
             "properties": {
                 "fr": "Al Aïn, wadi",
-                "jsx": "<p>Al Aïn, wadi</p>",
+                "html": "<p>Al Aïn, wadi</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -220,7 +220,7 @@
             },
             "properties": {
                 "fr": "Al Mina",
-                "jsx": "<p>Al Mina</p>",
+                "html": "<p>Al Mina</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -236,7 +236,7 @@
             },
             "properties": {
                 "fr": "Al Ruqqah wadi",
-                "jsx": "<p>Al Ruqqah wadi</p>",
+                "html": "<p>Al Ruqqah wadi</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -252,7 +252,7 @@
             },
             "properties": {
                 "fr": "Alexandroscène",
-                "jsx": "<p>Alexandroscène</p>",
+                "html": "<p>Alexandroscène</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -268,7 +268,7 @@
             },
             "properties": {
                 "fr": "Aman",
-                "jsx": "<p>Aman</p>",
+                "html": "<p>Aman</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -284,7 +284,7 @@
             },
             "properties": {
                 "fr": "Amud, wadi",
-                "jsx": "<p>Amud, wadi</p>",
+                "html": "<p>Amud, wadi</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -300,7 +300,7 @@
             },
             "properties": {
                 "fr": "Anatolie",
-                "jsx": "<p>Anatolie</p>",
+                "html": "<p>Anatolie</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -316,7 +316,7 @@
             },
             "properties": {
                 "fr": "Antigonéa ?",
-                "jsx": "<p>Antigonéa ?</p>",
+                "html": "<p>Antigonéa ?</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -332,7 +332,7 @@
             },
             "properties": {
                 "fr": "Antioche de Cilicie",
-                "jsx": "<p>Antioche de Cilicie</p>",
+                "html": "<p>Antioche de Cilicie</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -348,7 +348,7 @@
             },
             "properties": {
                 "fr": "Antioche sur l'Oronte",
-                "jsx": "<p>Antioche sur l'Oronte</p>",
+                "html": "<p>Antioche sur l'Oronte</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -364,7 +364,7 @@
             },
             "properties": {
                 "fr": "Antipatris Afeca",
-                "jsx": "<p>Antipatris Afeca</p>",
+                "html": "<p>Antipatris Afeca</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -380,7 +380,7 @@
             },
             "properties": {
                 "fr": "Aqueduc ?",
-                "jsx": "<p>Aqueduc ?</p>",
+                "html": "<p>Aqueduc ?</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -396,7 +396,7 @@
             },
             "properties": {
                 "fr": "Arabie",
-                "jsx": "<p>Arabie</p>",
+                "html": "<p>Arabie</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -412,7 +412,7 @@
             },
             "properties": {
                 "fr": "Arbel de Galilée",
-                "jsx": "<p>Arbel de Galilée</p>",
+                "html": "<p>Arbel de Galilée</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -428,7 +428,7 @@
             },
             "properties": {
                 "fr": "Arbel gorges",
-                "jsx": "<p>Arbel gorges</p>",
+                "html": "<p>Arbel gorges</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -444,7 +444,7 @@
             },
             "properties": {
                 "fr": "Arbela",
-                "jsx": "<p>Arbela</p>",
+                "html": "<p>Arbela</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -460,7 +460,7 @@
             },
             "properties": {
                 "fr": "Arimathie ?",
-                "jsx": "<p>Arimathie ?</p>",
+                "html": "<p>Arimathie ?</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -476,7 +476,7 @@
             },
             "properties": {
                 "fr": "Aréopage",
-                "jsx": "<p>Aréopage</p>",
+                "html": "<p>Aréopage</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -492,7 +492,7 @@
             },
             "properties": {
                 "fr": "Ascalon",
-                "jsx": "<p>Ascalon</p>",
+                "html": "<p>Ascalon</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -508,7 +508,7 @@
             },
             "properties": {
                 "fr": "Atarot",
-                "jsx": "<p>Atarot</p>",
+                "html": "<p>Atarot</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -524,7 +524,7 @@
             },
             "properties": {
                 "fr": "Mont Auran",
-                "jsx": "<p>Mont Auran</p>",
+                "html": "<p>Mont Auran</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -540,7 +540,7 @@
             },
             "properties": {
                 "fr": "Auranitide",
-                "jsx": "<p>Auranitide</p>",
+                "html": "<p>Auranitide</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -556,7 +556,7 @@
             },
             "properties": {
                 "fr": "Ayalon, vallée",
-                "jsx": "<p>Ayalon, vallée</p>",
+                "html": "<p>Ayalon, vallée</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -572,7 +572,7 @@
             },
             "properties": {
                 "fr": "Azeco",
-                "jsx": "<p>Azeco</p>",
+                "html": "<p>Azeco</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -588,7 +588,7 @@
             },
             "properties": {
                 "fr": "Azot",
-                "jsx": "<p>Azot</p>",
+                "html": "<p>Azot</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -604,7 +604,7 @@
             },
             "properties": {
                 "fr": "Aëra",
-                "jsx": "<p>Aëra</p>",
+                "html": "<p>Aëra</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -620,7 +620,7 @@
             },
             "properties": {
                 "fr": "Aï",
-                "jsx": "<p>Aï</p>",
+                "html": "<p>Aï</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -636,7 +636,7 @@
             },
             "properties": {
                 "fr": "Babylone",
-                "jsx": "<p>Babylone</p>",
+                "html": "<p>Babylone</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -652,7 +652,7 @@
             },
             "properties": {
                 "fr": "Bashân",
-                "jsx": "<p>Bashân</p>",
+                "html": "<p>Bashân</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -668,7 +668,7 @@
             },
             "properties": {
                 "fr": "Batanée",
-                "jsx": "<p>Batanée</p>",
+                "html": "<p>Batanée</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -684,7 +684,7 @@
             },
             "properties": {
                 "fr": "Bel Midrasch",
-                "jsx": "<p>Bel Midrasch</p>",
+                "html": "<p>Bel Midrasch</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -700,7 +700,7 @@
             },
             "properties": {
                 "fr": "Belle Eau ?",
-                "jsx": "<p>Belle Eau ?</p>",
+                "html": "<p>Belle Eau ?</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -716,7 +716,7 @@
             },
             "properties": {
                 "fr": "Belle Porte",
-                "jsx": "<p>Belle Porte</p>",
+                "html": "<p>Belle Porte</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -732,7 +732,7 @@
             },
             "properties": {
                 "fr": "Berger samaritain",
-                "jsx": "<p>Berger samaritain</p>",
+                "html": "<p>Berger samaritain</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -748,7 +748,7 @@
             },
             "properties": {
                 "fr": "Beritus",
-                "jsx": "<p>Beritus</p>",
+                "html": "<p>Beritus</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -764,7 +764,7 @@
             },
             "properties": {
                 "fr": "Bersabée",
-                "jsx": "<p>Bersabée</p>",
+                "html": "<p>Bersabée</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -780,7 +780,7 @@
             },
             "properties": {
                 "fr": "Betabara",
-                "jsx": "<p>Betabara</p>",
+                "html": "<p>Betabara</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -796,7 +796,7 @@
             },
             "properties": {
                 "fr": "Betagla",
-                "jsx": "<p>Betagla</p>",
+                "html": "<p>Betagla</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -812,7 +812,7 @@
             },
             "properties": {
                 "fr": "Betginna",
-                "jsx": "<p>Betginna</p>",
+                "html": "<p>Betginna</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -828,7 +828,7 @@
             },
             "properties": {
                 "fr": "Beth Aven",
-                "jsx": "<p>Beth Aven</p>",
+                "html": "<p>Beth Aven</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -844,7 +844,7 @@
             },
             "properties": {
                 "fr": "Beth Shemesh",
-                "jsx": "<p>Beth Shemesh</p>",
+                "html": "<p>Beth Shemesh</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -860,7 +860,7 @@
             },
             "properties": {
                 "fr": "Bethléchi",
-                "jsx": "<p>Bethléchi</p>",
+                "html": "<p>Bethléchi</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -876,7 +876,7 @@
             },
             "properties": {
                 "fr": "Bethléem de Galilée",
-                "jsx": "<p>Bethléem de Galilée</p>",
+                "html": "<p>Bethléem de Galilée</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -892,7 +892,7 @@
             },
             "properties": {
                 "fr": "Bethléem La grotte",
-                "jsx": "<p>Bethléem La grotte</p>",
+                "html": "<p>Bethléem La grotte</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -908,7 +908,7 @@
             },
             "properties": {
                 "fr": "Bethphagé",
-                "jsx": "<p>Bethphagé</p>",
+                "html": "<p>Bethphagé</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -924,7 +924,7 @@
             },
             "properties": {
                 "fr": "Bethsaïda",
-                "jsx": "<p>Bethsaïda</p>",
+                "html": "<p class='mb-2 text-[20px]'>Bethsaïde</p><img src='/img/bethsaid.jpg' alt='Bethsaïde' width='250'/><p class='text-justify p-2 text-[15px]'>La ville galiléenne de Bethsaïde fut détruite par un tremblement de terre vers l'an 324 après Jésus Christ. Elle fut retrouvée en 1987 par un consortium d'universités menée par l'Université du Nebraska à Omaha, conduit par le professeur de religion et de philosophie israélien Dr. Rami Arav, sur le site de et-Tell, à 2 kilomètres au nord-est du lac de Tibériade. Cet emplacement correspond exactement à la dictée du Christ transmis à Maria Valtorta du 4 juin 1947 dans laquelle il lui explique qu'en raison de « vingt siècles d'alluvions apportés par le fleuve et par les éboulis descendus des collines », la ville se trouve désormais au milieu des terres et non plus « à l'embouchure du fleuve dans le lac » (L'Évangile tel qu'il m'a été révélé, chapitre 179.1).</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -940,7 +940,7 @@
             },
             "properties": {
                 "fr": "Bethsur",
-                "jsx": "<p>Bethsur</p>",
+                "html": "<p>Bethsur</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -956,7 +956,7 @@
             },
             "properties": {
                 "fr": "Betjaboc ?",
-                "jsx": "<p>Betjaboc ?</p>",
+                "html": "<p>Betjaboc ?</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -972,7 +972,7 @@
             },
             "properties": {
                 "fr": "Betscan/Scythopolis",
-                "jsx": "<p>Betscan/Scythopolis</p>",
+                "html": "<p>Betscan/Scythopolis</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -988,7 +988,7 @@
             },
             "properties": {
                 "fr": "Bettegon",
-                "jsx": "<p>Bettegon</p>",
+                "html": "<p>Bettegon</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1004,7 +1004,7 @@
             },
             "properties": {
                 "fr": "Betzet wadi",
-                "jsx": "<p>Betzet wadi</p>",
+                "html": "<p>Betzet wadi</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1020,7 +1020,7 @@
             },
             "properties": {
                 "fr": "Bezetha",
-                "jsx": "<p>Bezetha</p>",
+                "html": "<p>Bezetha</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1036,7 +1036,7 @@
             },
             "properties": {
                 "fr": "Biram",
-                "jsx": "<p>Biram</p>",
+                "html": "<p>Biram</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1052,7 +1052,7 @@
             },
             "properties": {
                 "fr": "Bireh wadi",
-                "jsx": "<p>Bireh wadi</p>",
+                "html": "<p>Bireh wadi</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1068,7 +1068,7 @@
             },
             "properties": {
                 "fr": "Bithynie",
-                "jsx": "<p>Bithynie</p>",
+                "html": "<p>Bithynie</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1084,7 +1084,7 @@
             },
             "properties": {
                 "fr": "Borne Néapolis/Silo/Jéricho",
-                "jsx": "<p>Borne Néapolis/Silo/Jéricho</p>",
+                "html": "<p>Borne Néapolis/Silo/Jéricho</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1100,7 +1100,7 @@
             },
             "properties": {
                 "fr": "Bornes millières",
-                "jsx": "<p>Bornes millières</p>",
+                "html": "<p>Bornes millières</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1116,7 +1116,7 @@
             },
             "properties": {
                 "fr": "Bozra",
-                "jsx": "<p>Bozra</p>",
+                "html": "<p>Bozra</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1132,7 +1132,7 @@
             },
             "properties": {
                 "fr": "Brindisi",
-                "jsx": "<p>Brindisi</p>",
+                "html": "<p>Brindisi</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1148,7 +1148,7 @@
             },
             "properties": {
                 "fr": "Bénévent",
-                "jsx": "<p>Bénévent</p>",
+                "html": "<p>Bénévent</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1164,7 +1164,7 @@
             },
             "properties": {
                 "fr": "Bérot",
-                "jsx": "<p>Bérot</p>",
+                "html": "<p>Bérot</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1180,7 +1180,7 @@
             },
             "properties": {
                 "fr": "Béthanie",
-                "jsx": "<p>Béthanie</p>",
+                "html": "<p>Béthanie</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1196,7 +1196,7 @@
             },
             "properties": {
                 "fr": "Béthanie du Jourdain",
-                "jsx": "<p>Béthanie du Jourdain</p>",
+                "html": "<p>Béthanie du Jourdain</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1212,7 +1212,7 @@
             },
             "properties": {
                 "fr": "Béthel",
-                "jsx": "<p>Béthel</p>",
+                "html": "<p>Béthel</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1228,7 +1228,7 @@
             },
             "properties": {
                 "fr": "Béther",
-                "jsx": "<p>Béther</p>",
+                "html": "<p>Béther</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1244,7 +1244,7 @@
             },
             "properties": {
                 "fr": "Bétéron",
-                "jsx": "<p>Bétéron</p>",
+                "html": "<p>Bétéron</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1260,7 +1260,7 @@
             },
             "properties": {
                 "fr": "Cabanes des pêcheurs ?",
-                "jsx": "<p>Cabanes des pêcheurs ?</p>",
+                "html": "<p>Cabanes des pêcheurs ?</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1276,7 +1276,7 @@
             },
             "properties": {
                 "fr": "Callirhoé",
-                "jsx": "<p>Callirhoé</p>",
+                "html": "<p>Callirhoé</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1292,7 +1292,7 @@
             },
             "properties": {
                 "fr": "Cana",
-                "jsx": "<p>Cana</p>",
+                "html": "<p>Cana</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1308,7 +1308,7 @@
             },
             "properties": {
                 "fr": "Canata",
-                "jsx": "<p>Canata</p>",
+                "html": "<p>Canata</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1324,7 +1324,7 @@
             },
             "properties": {
                 "fr": "Cap Blanc (Ras el Bayada)",
-                "jsx": "<p>Cap Blanc (Ras el Bayada)</p>",
+                "html": "<p>Cap Blanc (Ras el Bayada)</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1340,7 +1340,7 @@
             },
             "properties": {
                 "fr": "Cap de la tempête (Rosh Hanikra)",
-                "jsx": "<p>Cap de la tempête (Rosh Hanikra)</p>",
+                "html": "<p>Cap de la tempête (Rosh Hanikra)</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1356,7 +1356,7 @@
             },
             "properties": {
                 "fr": "Capharnaüm",
-                "jsx": "<p>Capharnaüm</p>",
+                "html": "<p>Capharnaüm</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1372,7 +1372,7 @@
             },
             "properties": {
                 "fr": "Caprarola",
-                "jsx": "<p>Caprarola</p>",
+                "html": "<p>Caprarola</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1388,7 +1388,7 @@
             },
             "properties": {
                 "fr": "Carakamoab",
-                "jsx": "<p>Carakamoab</p>",
+                "html": "<p>Carakamoab</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1404,7 +1404,7 @@
             },
             "properties": {
                 "fr": "Mont Carit",
-                "jsx": "<p>Mont Carit</p>",
+                "html": "<p>Mont Carit</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1420,7 +1420,7 @@
             },
             "properties": {
                 "fr": "Carit Vallée",
-                "jsx": "<p>Carit Vallée</p>",
+                "html": "<p>Carit Vallée</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1436,7 +1436,7 @@
             },
             "properties": {
                 "fr": "Mont Carmel",
-                "jsx": "<p>Mont Carmel</p>",
+                "html": "<p>Mont Carmel</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1452,7 +1452,7 @@
             },
             "properties": {
                 "fr": "Mont Casio",
-                "jsx": "<p>Mont Casio</p>",
+                "html": "<p>Mont Casio</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1468,7 +1468,7 @@
             },
             "properties": {
                 "fr": "Caslot-Thabor",
-                "jsx": "<p>Caslot-Thabor</p>",
+                "html": "<p>Caslot-Thabor</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1484,7 +1484,7 @@
             },
             "properties": {
                 "fr": "Chaldée",
-                "jsx": "<p>Chaldée</p>",
+                "html": "<p>Chaldée</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1500,7 +1500,7 @@
             },
             "properties": {
                 "fr": "Champ des galiléens",
-                "jsx": "<p>Champ des galiléens</p>",
+                "html": "<p>Champ des galiléens</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1516,7 +1516,7 @@
             },
             "properties": {
                 "fr": "Charybde",
-                "jsx": "<p>Charybde</p>",
+                "html": "<p>Charybde</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1532,7 +1532,7 @@
             },
             "properties": {
                 "fr": "Chio",
-                "jsx": "<p>Chio</p>",
+                "html": "<p>Chio</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1548,7 +1548,7 @@
             },
             "properties": {
                 "fr": "Chrysorrhoas",
-                "jsx": "<p>Chrysorrhoas</p>",
+                "html": "<p>Chrysorrhoas</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1564,7 +1564,7 @@
             },
             "properties": {
                 "fr": "Chypre",
-                "jsx": "<p>Chypre</p>",
+                "html": "<p>Chypre</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1580,7 +1580,7 @@
             },
             "properties": {
                 "fr": "Cilicie",
-                "jsx": "<p>Cilicie</p>",
+                "html": "<p>Cilicie</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1596,7 +1596,7 @@
             },
             "properties": {
                 "fr": "Cintium",
-                "jsx": "<p>Cintium</p>",
+                "html": "<p>Cintium</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1612,7 +1612,7 @@
             },
             "properties": {
                 "fr": "Colline du panorama",
-                "jsx": "<p>Colline du panorama</p>",
+                "html": "<p>Colline du panorama</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1628,7 +1628,7 @@
             },
             "properties": {
                 "fr": "Colonnades d'Hérode",
-                "jsx": "<p>Colonnades d'Hérode</p>",
+                "html": "<p>Colonnades d'Hérode</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1644,7 +1644,7 @@
             },
             "properties": {
                 "fr": "Colonnes d'Hercule",
-                "jsx": "<p>Colonnes d'Hercule</p>",
+                "html": "<p>Colonnes d'Hercule</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1660,7 +1660,7 @@
             },
             "properties": {
                 "fr": "Corinthe",
-                "jsx": "<p>Corinthe</p>",
+                "html": "<p>Corinthe</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1676,7 +1676,7 @@
             },
             "properties": {
                 "fr": "Corozaïm",
-                "jsx": "<p>Corozaïm</p>",
+                "html": "<p>Corozaïm</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1692,7 +1692,7 @@
             },
             "properties": {
                 "fr": "Crète",
-                "jsx": "<p>Crète</p>",
+                "html": "<p>Crète</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1708,7 +1708,7 @@
             },
             "properties": {
                 "fr": "Cyrènaïque",
-                "jsx": "<p>Cyrènaïque</p>",
+                "html": "<p>Cyrènaïque</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1724,7 +1724,7 @@
             },
             "properties": {
                 "fr": "Cyrène",
-                "jsx": "<p>Cyrène</p>",
+                "html": "<p>Cyrène</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1740,7 +1740,7 @@
             },
             "properties": {
                 "fr": "Cédes",
-                "jsx": "<p>Cédes</p>",
+                "html": "<p>Cédes</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1756,7 +1756,7 @@
             },
             "properties": {
                 "fr": "Cédron",
-                "jsx": "<p>Cédron</p>",
+                "html": "<p>Cédron</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1772,7 +1772,7 @@
             },
             "properties": {
                 "fr": "Césarée de Philippe",
-                "jsx": "<p>Césarée de Philippe</p>",
+                "html": "<p>Césarée de Philippe</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1788,7 +1788,7 @@
             },
             "properties": {
                 "fr": "Césarée Maritime",
-                "jsx": "<p>Césarée Maritime</p>",
+                "html": "<p>Césarée Maritime</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1804,7 +1804,7 @@
             },
             "properties": {
                 "fr": "Dalmanutha",
-                "jsx": "<p>Dalmanutha</p>",
+                "html": "<p>Dalmanutha</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1820,7 +1820,7 @@
             },
             "properties": {
                 "fr": "Damas",
-                "jsx": "<p>Damas</p>",
+                "html": "<p>Damas</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1836,7 +1836,7 @@
             },
             "properties": {
                 "fr": "Daphné",
-                "jsx": "<p>Daphné</p>",
+                "html": "<p>Daphné</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1852,7 +1852,7 @@
             },
             "properties": {
                 "fr": "Delphes",
-                "jsx": "<p>Delphes</p>",
+                "html": "<p>Delphes</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1868,7 +1868,7 @@
             },
             "properties": {
                 "fr": "Docco",
-                "jsx": "<p>Docco</p>",
+                "html": "<p>Docco</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1884,7 +1884,7 @@
             },
             "properties": {
                 "fr": "Dora Dor",
-                "jsx": "<p>Dora Dor</p>",
+                "html": "<p>Dora Dor</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1900,7 +1900,7 @@
             },
             "properties": {
                 "fr": "Doras ?",
-                "jsx": "<p>Doras ?</p>",
+                "html": "<p>Doras ?</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1916,7 +1916,7 @@
             },
             "properties": {
                 "fr": "Dothaïn",
-                "jsx": "<p>Dothaïn</p>",
+                "html": "<p>Dothaïn</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1932,7 +1932,7 @@
             },
             "properties": {
                 "fr": "Déberet",
-                "jsx": "<p>Déberet</p>",
+                "html": "<p>Déberet</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1948,7 +1948,7 @@
             },
             "properties": {
                 "fr": "Débon",
-                "jsx": "<p>Débon</p>",
+                "html": "<p>Débon</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1964,7 +1964,7 @@
             },
             "properties": {
                 "fr": "Décapole",
-                "jsx": "<p>Décapole</p>",
+                "html": "<p>Décapole</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1980,7 +1980,7 @@
             },
             "properties": {
                 "fr": "Désert de Judée",
-                "jsx": "<p>Désert de Judée</p>",
+                "html": "<p>Désert de Judée</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -1996,7 +1996,7 @@
             },
             "properties": {
                 "fr": "Mont Ebal",
-                "jsx": "<p>Mont Ebal</p>",
+                "html": "<p>Mont Ebal</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2012,7 +2012,7 @@
             },
             "properties": {
                 "fr": "Echelles de Tyr",
-                "jsx": "<p>Echelles de Tyr</p>",
+                "html": "<p>Echelles de Tyr</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2028,7 +2028,7 @@
             },
             "properties": {
                 "fr": "Edom",
-                "jsx": "<p>Edom</p>",
+                "html": "<p>Edom</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2044,7 +2044,7 @@
             },
             "properties": {
                 "fr": "Ein Gev",
-                "jsx": "<p>Ein Gev</p>",
+                "html": "<p>Ein Gev</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2060,7 +2060,7 @@
             },
             "properties": {
                 "fr": "Ein Gev wadi",
-                "jsx": "<p>Ein Gev wadi</p>",
+                "html": "<p>Ein Gev wadi</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2076,7 +2076,7 @@
             },
             "properties": {
                 "fr": "Ein Mahil",
-                "jsx": "<p>Ein Mahil</p>",
+                "html": "<p>Ein Mahil</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2092,7 +2092,7 @@
             },
             "properties": {
                 "fr": "El Djemel, wadi",
-                "jsx": "<p>El Djemel, wadi</p>",
+                "html": "<p>El Djemel, wadi</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2108,7 +2108,7 @@
             },
             "properties": {
                 "fr": "El Kelt wadi",
-                "jsx": "<p>El Kelt wadi</p>",
+                "html": "<p>El Kelt wadi</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2124,7 +2124,7 @@
             },
             "properties": {
                 "fr": "El Maleh wadi",
-                "jsx": "<p>El Maleh wadi</p>",
+                "html": "<p>El Maleh wadi</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2140,7 +2140,7 @@
             },
             "properties": {
                 "fr": "Elie l'essénien",
-                "jsx": "<p>Elie l'essénien</p>",
+                "html": "<p>Elie l'essénien</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2156,7 +2156,7 @@
             },
             "properties": {
                 "fr": "Embouchure du Cédron",
-                "jsx": "<p>Embouchure du Cédron</p>",
+                "html": "<p>Embouchure du Cédron</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2172,7 +2172,7 @@
             },
             "properties": {
                 "fr": "Emmaus de la Montagne",
-                "jsx": "<p>Emmaus de la Montagne</p>",
+                "html": "<p>Emmaus de la Montagne</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2188,7 +2188,7 @@
             },
             "properties": {
                 "fr": "Emmaus de la Plaine",
-                "jsx": "<p>Emmaus de la Plaine</p>",
+                "html": "<p>Emmaus de la Plaine</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2204,7 +2204,7 @@
             },
             "properties": {
                 "fr": "Emmaüs Sources chaudes",
-                "jsx": "<p>Emmaüs Sources chaudes</p>",
+                "html": "<p>Emmaüs Sources chaudes</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2220,7 +2220,7 @@
             },
             "properties": {
                 "fr": "En Rogel",
-                "jsx": "<p>En Rogel</p>",
+                "html": "<p>En Rogel</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2236,7 +2236,7 @@
             },
             "properties": {
                 "fr": "Endor",
-                "jsx": "<p>Endor</p>",
+                "html": "<p>Endor</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2252,7 +2252,7 @@
             },
             "properties": {
                 "fr": "Engaddi",
-                "jsx": "<p>Engaddi</p>",
+                "html": "<p>Engaddi</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2268,7 +2268,7 @@
             },
             "properties": {
                 "fr": "Engannim",
-                "jsx": "<p>Engannim</p>",
+                "html": "<p>Engannim</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2284,7 +2284,7 @@
             },
             "properties": {
                 "fr": "Ensémès",
-                "jsx": "<p>Ensémès</p>",
+                "html": "<p>Ensémès</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2300,7 +2300,7 @@
             },
             "properties": {
                 "fr": "Ephraïm",
-                "jsx": "<p>Ephraïm</p>",
+                "html": "<p>Ephraïm</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2316,7 +2316,7 @@
             },
             "properties": {
                 "fr": "Ephèse",
-                "jsx": "<p>Ephèse</p>",
+                "html": "<p>Ephèse</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2332,7 +2332,7 @@
             },
             "properties": {
                 "fr": "Eschcol vallée",
-                "jsx": "<p>Eschcol vallée</p>",
+                "html": "<p>Eschcol vallée</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2348,7 +2348,7 @@
             },
             "properties": {
                 "fr": "Esdrelon Jesraël",
-                "jsx": "<p>Esdrelon Jesraël</p>",
+                "html": "<p>Esdrelon Jesraël</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2364,7 +2364,7 @@
             },
             "properties": {
                 "fr": "Euphrate",
-                "jsx": "<p>Euphrate</p>",
+                "html": "<p>Euphrate</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2380,7 +2380,7 @@
             },
             "properties": {
                 "fr": "Ez Zerqa Crocodilum flumen",
-                "jsx": "<p>Ez Zerqa Crocodilum flumen</p>",
+                "html": "<p>Ez Zerqa Crocodilum flumen</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2396,7 +2396,7 @@
             },
             "properties": {
                 "fr": "Falerne",
-                "jsx": "<p>Falerne</p>",
+                "html": "<p>Falerne</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2412,7 +2412,7 @@
             },
             "properties": {
                 "fr": "Lac de Fialé Phialé",
-                "jsx": "<p>Lac de Fialé Phialé</p>",
+                "html": "<p>Lac de Fialé Phialé</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2428,7 +2428,7 @@
             },
             "properties": {
                 "fr": "Fiesole",
-                "jsx": "<p>Fiesole</p>",
+                "html": "<p>Fiesole</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2444,7 +2444,7 @@
             },
             "properties": {
                 "fr": "Fontaine de Siloé",
-                "jsx": "<p>Fontaine de Siloé</p>",
+                "html": "<p>Fontaine de Siloé</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2460,7 +2460,7 @@
             },
             "properties": {
                 "fr": "Fontaine des Chameliers ?",
-                "jsx": "<p>Fontaine des Chameliers ?</p>",
+                "html": "<p>Fontaine des Chameliers ?</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2476,7 +2476,7 @@
             },
             "properties": {
                 "fr": "Forteresse Antonia",
-                "jsx": "<p>Forteresse Antonia</p>",
+                "html": "<p>Forteresse Antonia</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2492,7 +2492,7 @@
             },
             "properties": {
                 "fr": "Forteresse de Minrod",
-                "jsx": "<p>Forteresse de Minrod</p>",
+                "html": "<p>Forteresse de Minrod</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2508,7 +2508,7 @@
             },
             "properties": {
                 "fr": "Forêt pétrifiée",
-                "jsx": "<p>Forêt pétrifiée</p>",
+                "html": "<p>Forêt pétrifiée</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2524,7 +2524,7 @@
             },
             "properties": {
                 "fr": "Gaas, vallée",
-                "jsx": "<p>Gaas, vallée</p>",
+                "html": "<p>Gaas, vallée</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2540,7 +2540,7 @@
             },
             "properties": {
                 "fr": "Gabaon",
-                "jsx": "<p>Gabaon</p>",
+                "html": "<p>Gabaon</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2556,7 +2556,7 @@
             },
             "properties": {
                 "fr": "Gadara",
-                "jsx": "<p>Gadara</p>",
+                "html": "<p>Gadara</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2572,7 +2572,7 @@
             },
             "properties": {
                 "fr": "Galaad",
-                "jsx": "<p>Galaad</p>",
+                "html": "<p>Galaad</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2588,7 +2588,7 @@
             },
             "properties": {
                 "fr": "Galgala",
-                "jsx": "<p>Galgala</p>",
+                "html": "<p>Galgala</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2604,7 +2604,7 @@
             },
             "properties": {
                 "fr": "Galilée",
-                "jsx": "<p>Galilée</p>",
+                "html": "<p>Galilée</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2620,7 +2620,7 @@
             },
             "properties": {
                 "fr": "Gamala",
-                "jsx": "<p>Gamala</p>",
+                "html": "<p>Gamala</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2636,7 +2636,7 @@
             },
             "properties": {
                 "fr": "Gamala de Judée",
-                "jsx": "<p>Gamala de Judée</p>",
+                "html": "<p>Gamala de Judée</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2652,7 +2652,7 @@
             },
             "properties": {
                 "fr": "Gamala selon MV",
-                "jsx": "<p>Gamala selon MV</p>",
+                "html": "<p>Gamala selon MV</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2668,7 +2668,7 @@
             },
             "properties": {
                 "fr": "Gardone",
-                "jsx": "<p>Gardone</p>",
+                "html": "<p>Gardone</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2684,7 +2684,7 @@
             },
             "properties": {
                 "fr": "Mont Garizim",
-                "jsx": "<p>Mont Garizim</p>",
+                "html": "<p>Mont Garizim</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2700,7 +2700,7 @@
             },
             "properties": {
                 "fr": "Gaulanitide",
-                "jsx": "<p>Gaulanitide</p>",
+                "html": "<p>Gaulanitide</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2716,7 +2716,7 @@
             },
             "properties": {
                 "fr": "Gaza",
-                "jsx": "<p>Gaza</p>",
+                "html": "<p>Gaza</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2732,7 +2732,7 @@
             },
             "properties": {
                 "fr": "Gerasa",
-                "jsx": "<p>Gerasa</p>",
+                "html": "<p>Gerasa</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2748,7 +2748,7 @@
             },
             "properties": {
                 "fr": "Gergésa",
-                "jsx": "<p>Gergésa</p>",
+                "html": "<p>Gergésa</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2764,7 +2764,7 @@
             },
             "properties": {
                 "fr": "Get Gath",
-                "jsx": "<p>Get Gath</p>",
+                "html": "<p>Get Gath</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2780,7 +2780,7 @@
             },
             "properties": {
                 "fr": "Gethsémani",
-                "jsx": "<p>Gethsémani</p>",
+                "html": "<p>Gethsémani</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2796,7 +2796,7 @@
             },
             "properties": {
                 "fr": "Gihon Vallée",
-                "jsx": "<p>Gihon Vallée</p>",
+                "html": "<p>Gihon Vallée</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2812,7 +2812,7 @@
             },
             "properties": {
                 "fr": "Gilboa",
-                "jsx": "<p>Gilboa</p>",
+                "html": "<p>Gilboa</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2828,7 +2828,7 @@
             },
             "properties": {
                 "fr": "Giocana ?",
-                "jsx": "<p>Giocana ?</p>",
+                "html": "<p>Giocana ?</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2844,7 +2844,7 @@
             },
             "properties": {
                 "fr": "Giscala",
-                "jsx": "<p>Giscala</p>",
+                "html": "<p>Giscala</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2860,7 +2860,7 @@
             },
             "properties": {
                 "fr": "Goféna",
-                "jsx": "<p>Goféna</p>",
+                "html": "<p>Goféna</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2876,7 +2876,7 @@
             },
             "properties": {
                 "fr": "Golgotha",
-                "jsx": "<p>Golgotha</p>",
+                "html": "<p>Golgotha</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2892,7 +2892,7 @@
             },
             "properties": {
                 "fr": "Grotte d'Elie",
-                "jsx": "<p>Grotte d'Elie</p>",
+                "html": "<p>Grotte d'Elie</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2908,7 +2908,7 @@
             },
             "properties": {
                 "fr": "Grotte d'Elisée ?",
-                "jsx": "<p>Grotte d'Elisée ?</p>",
+                "html": "<p>Grotte d'Elisée ?</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2924,7 +2924,7 @@
             },
             "properties": {
                 "fr": "Grotte de la pythonisse ?",
-                "jsx": "<p>Grotte de la pythonisse ?</p>",
+                "html": "<p>Grotte de la pythonisse ?</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2940,7 +2940,7 @@
             },
             "properties": {
                 "fr": "Grotte du Baptiste",
-                "jsx": "<p>Grotte du Baptiste</p>",
+                "html": "<p>Grotte du Baptiste</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2956,7 +2956,7 @@
             },
             "properties": {
                 "fr": "Gué d'Adam",
-                "jsx": "<p>Gué d'Adam</p>",
+                "html": "<p>Gué d'Adam</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2972,7 +2972,7 @@
             },
             "properties": {
                 "fr": "Gué de Béthabara",
-                "jsx": "<p>Gué de Béthabara</p>",
+                "html": "<p>Gué de Béthabara</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -2988,7 +2988,7 @@
             },
             "properties": {
                 "fr": "Géhenne",
-                "jsx": "<p>Géhenne</p>",
+                "html": "<p>Géhenne</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3004,7 +3004,7 @@
             },
             "properties": {
                 "fr": "Génésareth",
-                "jsx": "<p>Génésareth</p>",
+                "html": "<p>Génésareth</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3020,7 +3020,7 @@
             },
             "properties": {
                 "fr": "Gérimot",
-                "jsx": "<p>Gérimot</p>",
+                "html": "<p>Gérimot</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3036,7 +3036,7 @@
             },
             "properties": {
                 "fr": "Haceldema",
-                "jsx": "<p>Haceldema</p>",
+                "html": "<p>Haceldema</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3052,7 +3052,7 @@
             },
             "properties": {
                 "fr": "Hadrak",
-                "jsx": "<p>Hadrak</p>",
+                "html": "<p>Hadrak</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3068,7 +3068,7 @@
             },
             "properties": {
                 "fr": "Hakila",
-                "jsx": "<p>Hakila</p>",
+                "html": "<p>Hakila</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3084,7 +3084,7 @@
             },
             "properties": {
                 "fr": "Halte en MV 551.7-9",
-                "jsx": "<p>Halte en MV 551.7-9</p>",
+                "html": "<p>Halte en MV 551.7-9</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3100,7 +3100,7 @@
             },
             "properties": {
                 "fr": "Hamatha sources chaudes",
-                "jsx": "<p>Hamatha sources chaudes</p>",
+                "html": "<p>Hamatha sources chaudes</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3116,7 +3116,7 @@
             },
             "properties": {
                 "fr": "Hammam Wadi",
-                "jsx": "<p>Hammam Wadi</p>",
+                "html": "<p>Hammam Wadi</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3132,7 +3132,7 @@
             },
             "properties": {
                 "fr": "Har Yona",
-                "jsx": "<p>Har Yona</p>",
+                "html": "<p>Har Yona</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3148,7 +3148,7 @@
             },
             "properties": {
                 "fr": "Hatzor",
-                "jsx": "<p>Hatzor</p>",
+                "html": "<p>Hatzor</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3164,7 +3164,7 @@
             },
             "properties": {
                 "fr": "Haut Nil",
-                "jsx": "<p>Haut Nil</p>",
+                "html": "<p>Haut Nil</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3180,7 +3180,7 @@
             },
             "properties": {
                 "fr": "Haute Pérée",
-                "jsx": "<p>Haute Pérée</p>",
+                "html": "<p>Haute Pérée</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3196,7 +3196,7 @@
             },
             "properties": {
                 "fr": "Mont Hermon",
-                "jsx": "<p>Mont Hermon</p>",
+                "html": "<p>Mont Hermon</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3212,7 +3212,7 @@
             },
             "properties": {
                 "fr": "Hesban, wadi",
-                "jsx": "<p>Hesban, wadi</p>",
+                "html": "<p>Hesban, wadi</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3228,7 +3228,7 @@
             },
             "properties": {
                 "fr": "Hesbon",
-                "jsx": "<p>Hesbon</p>",
+                "html": "<p>Hesbon</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3244,7 +3244,7 @@
             },
             "properties": {
                 "fr": "Humsin",
-                "jsx": "<p>Humsin</p>",
+                "html": "<p>Humsin</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3260,7 +3260,7 @@
             },
             "properties": {
                 "fr": "Hébron",
-                "jsx": "<p>Hébron</p>",
+                "html": "<p>Hébron</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3276,7 +3276,7 @@
             },
             "properties": {
                 "fr": "Ibérie",
-                "jsx": "<p>Ibérie</p>",
+                "html": "<p>Ibérie</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3292,7 +3292,7 @@
             },
             "properties": {
                 "fr": "Iconium",
-                "jsx": "<p>Iconium</p>",
+                "html": "<p>Iconium</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3308,7 +3308,7 @@
             },
             "properties": {
                 "fr": "Idumée",
-                "jsx": "<p>Idumée</p>",
+                "html": "<p>Idumée</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3324,7 +3324,7 @@
             },
             "properties": {
                 "fr": "Illyrie",
-                "jsx": "<p>Illyrie</p>",
+                "html": "<p>Illyrie</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3340,7 +3340,7 @@
             },
             "properties": {
                 "fr": "Ippo",
-                "jsx": "<p>Ippo</p>",
+                "html": "<p>Ippo</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3356,7 +3356,7 @@
             },
             "properties": {
                 "fr": "Ischilo ?",
-                "jsx": "<p>Ischilo ?</p>",
+                "html": "<p>Ischilo ?</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3372,7 +3372,7 @@
             },
             "properties": {
                 "fr": "Ismaël ?",
-                "jsx": "<p>Ismaël ?</p>",
+                "html": "<p>Ismaël ?</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3388,7 +3388,7 @@
             },
             "properties": {
                 "fr": "Israël",
-                "jsx": "<p>Israël</p>",
+                "html": "<p>Israël</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3404,7 +3404,7 @@
             },
             "properties": {
                 "fr": "Iturée",
-                "jsx": "<p>Iturée</p>",
+                "html": "<p>Iturée</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3420,7 +3420,7 @@
             },
             "properties": {
                 "fr": "Jabes-Galaad",
-                "jsx": "<p>Jabes-Galaad</p>",
+                "html": "<p>Jabes-Galaad</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3436,7 +3436,7 @@
             },
             "properties": {
                 "fr": "Jabnia",
-                "jsx": "<p>Jabnia</p>",
+                "html": "<p>Jabnia</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3452,7 +3452,7 @@
             },
             "properties": {
                 "fr": "Jaboc",
-                "jsx": "<p>Jaboc</p>",
+                "html": "<p>Jaboc</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3468,7 +3468,7 @@
             },
             "properties": {
                 "fr": "Jacob, l'avare 110.5",
-                "jsx": "<p>Jacob, l'avare 110.5</p>",
+                "html": "<p>Jacob, l'avare 110.5</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3484,7 +3484,7 @@
             },
             "properties": {
                 "fr": "Jafia",
-                "jsx": "<p>Jafia</p>",
+                "html": "<p>Jafia</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3500,7 +3500,7 @@
             },
             "properties": {
                 "fr": "Jala",
-                "jsx": "<p>Jala</p>",
+                "html": "<p>Jala</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3516,7 +3516,7 @@
             },
             "properties": {
                 "fr": "Jardins de Salomon",
-                "jsx": "<p>Jardins de Salomon</p>",
+                "html": "<p>Jardins de Salomon</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3532,7 +3532,7 @@
             },
             "properties": {
                 "fr": "Jardins du Roi",
-                "jsx": "<p>Jardins du Roi</p>",
+                "html": "<p>Jardins du Roi</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3548,7 +3548,7 @@
             },
             "properties": {
                 "fr": "Jiphtaël ?",
-                "jsx": "<p>Jiphtaël ?</p>",
+                "html": "<p>Jiphtaël ?</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3564,7 +3564,7 @@
             },
             "properties": {
                 "fr": "Jonas vieil aubergiste 330",
-                "jsx": "<p>Jonas vieil aubergiste 330</p>",
+                "html": "<p>Jonas vieil aubergiste 330</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3580,7 +3580,7 @@
             },
             "properties": {
                 "fr": "Joppé",
-                "jsx": "<p>Joppé</p>",
+                "html": "<p>Joppé</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3596,7 +3596,7 @@
             },
             "properties": {
                 "fr": "Josaphat vallée",
-                "jsx": "<p>Josaphat vallée</p>",
+                "html": "<p>Josaphat vallée</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3612,7 +3612,7 @@
             },
             "properties": {
                 "fr": "Jotapate",
-                "jsx": "<p>Jotapate</p>",
+                "html": "<p>Jotapate</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3628,7 +3628,7 @@
             },
             "properties": {
                 "fr": "Jude et Anne",
-                "jsx": "<p>Jude et Anne</p>",
+                "html": "<p>Jude et Anne</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3644,7 +3644,7 @@
             },
             "properties": {
                 "fr": "Jutta",
-                "jsx": "<p>Jutta</p>",
+                "html": "<p>Jutta</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3660,7 +3660,7 @@
             },
             "properties": {
                 "fr": "Jéricho",
-                "jsx": "<p>Jéricho</p>",
+                "html": "<p>Jéricho</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3676,7 +3676,7 @@
             },
             "properties": {
                 "fr": "Jézéron",
-                "jsx": "<p>Jézéron</p>",
+                "html": "<p>Jézéron</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3692,7 +3692,7 @@
             },
             "properties": {
                 "fr": "Kafr Malik Les 10 lépreux",
-                "jsx": "<p>Kafr Malik Les 10 lépreux</p>",
+                "html": "<p>Kafr Malik Les 10 lépreux</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3708,7 +3708,7 @@
             },
             "properties": {
                 "fr": "Kerazeh, wadi",
-                "jsx": "<p>Kerazeh, wadi</p>",
+                "html": "<p>Kerazeh, wadi</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3724,7 +3724,7 @@
             },
             "properties": {
                 "fr": "Kiryat Tivon",
-                "jsx": "<p>Kiryat Tivon</p>",
+                "html": "<p>Kiryat Tivon</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3740,7 +3740,7 @@
             },
             "properties": {
                 "fr": "Kison",
-                "jsx": "<p>Kison</p>",
+                "html": "<p>Kison</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3756,7 +3756,7 @@
             },
             "properties": {
                 "fr": "Kérioth",
-                "jsx": "<p>Kérioth</p>",
+                "html": "<p>Kérioth</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3772,7 +3772,7 @@
             },
             "properties": {
                 "fr": "La mère cananéenne 330",
-                "jsx": "<p>La mère cananéenne 330</p>",
+                "html": "<p>La mère cananéenne 330</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3788,7 +3788,7 @@
             },
             "properties": {
                 "fr": "Lazare",
-                "jsx": "<p>Lazare</p>",
+                "html": "<p>Lazare</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3804,7 +3804,7 @@
             },
             "properties": {
                 "fr": "Leshem Dan",
-                "jsx": "<p>Leshem Dan</p>",
+                "html": "<p>Leshem Dan</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3820,7 +3820,7 @@
             },
             "properties": {
                 "fr": "Monts Liban",
-                "jsx": "<p>Monts Liban</p>",
+                "html": "<p>Monts Liban</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3836,7 +3836,7 @@
             },
             "properties": {
                 "fr": "Lidda",
-                "jsx": "<p>Lidda</p>",
+                "html": "<p>Lidda</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3852,7 +3852,7 @@
             },
             "properties": {
                 "fr": "Liternum",
-                "jsx": "<p>Liternum</p>",
+                "html": "<p>Liternum</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3868,7 +3868,7 @@
             },
             "properties": {
                 "fr": "Lucania",
-                "jsx": "<p>Lucania</p>",
+                "html": "<p>Lucania</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3884,7 +3884,7 @@
             },
             "properties": {
                 "fr": "Lébona",
-                "jsx": "<p>Lébona</p>",
+                "html": "<p>Lébona</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3900,7 +3900,7 @@
             },
             "properties": {
                 "fr": "Macheronte",
-                "jsx": "<p>Macheronte</p>",
+                "html": "<p>Macheronte</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3916,7 +3916,7 @@
             },
             "properties": {
                 "fr": "Macmas",
-                "jsx": "<p>Macmas</p>",
+                "html": "<p>Macmas</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3932,7 +3932,7 @@
             },
             "properties": {
                 "fr": "Macéda",
-                "jsx": "<p>Macéda</p>",
+                "html": "<p>Macéda</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3948,7 +3948,7 @@
             },
             "properties": {
                 "fr": "Madaba",
-                "jsx": "<p>Madaba</p>",
+                "html": "<p>Madaba</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3964,7 +3964,7 @@
             },
             "properties": {
                 "fr": "Madian",
-                "jsx": "<p>Madian</p>",
+                "html": "<p>Madian</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3980,7 +3980,7 @@
             },
             "properties": {
                 "fr": "Magdala",
-                "jsx": "<p>Magdala</p>",
+                "html": "<p>Magdala</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -3996,7 +3996,7 @@
             },
             "properties": {
                 "fr": "Magdalgad",
-                "jsx": "<p>Magdalgad</p>",
+                "html": "<p>Magdalgad</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4012,7 +4012,7 @@
             },
             "properties": {
                 "fr": "Mageddo",
-                "jsx": "<p>Mageddo</p>",
+                "html": "<p>Mageddo</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4028,7 +4028,7 @@
             },
             "properties": {
                 "fr": "Maison brûlée",
-                "jsx": "<p>Maison brûlée</p>",
+                "html": "<p>Maison brûlée</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4044,7 +4044,7 @@
             },
             "properties": {
                 "fr": "Maison de Caiphe ?",
-                "jsx": "<p>Maison de Caiphe ?</p>",
+                "html": "<p>Maison de Caiphe ?</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4060,7 +4060,7 @@
             },
             "properties": {
                 "fr": "Maison de campagne Caiphe",
-                "jsx": "<p>Maison de campagne Caiphe</p>",
+                "html": "<p>Maison de campagne Caiphe</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4076,7 +4076,7 @@
             },
             "properties": {
                 "fr": "Maison de Chouza",
-                "jsx": "<p>Maison de Chouza</p>",
+                "html": "<p>Maison de Chouza</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4092,7 +4092,7 @@
             },
             "properties": {
                 "fr": "Maison de Cléophas",
-                "jsx": "<p>Maison de Cléophas</p>",
+                "html": "<p>Maison de Cléophas</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4108,7 +4108,7 @@
             },
             "properties": {
                 "fr": "Maison de Joseph d'Arimathie",
-                "jsx": "<p>Maison de Joseph d'Arimathie</p>",
+                "html": "<p>Maison de Joseph d'Arimathie</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4124,7 +4124,7 @@
             },
             "properties": {
                 "fr": "Maison de Joseph d'Arimathie ?",
-                "jsx": "<p>Maison de Joseph d'Arimathie ?</p>",
+                "html": "<p>Maison de Joseph d'Arimathie ?</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4140,7 +4140,7 @@
             },
             "properties": {
                 "fr": "Maison de la belle mère de Pierre",
-                "jsx": "<p>Maison de la belle mère de Pierre</p>",
+                "html": "<p>Maison de la belle mère de Pierre</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4156,7 +4156,7 @@
             },
             "properties": {
                 "fr": "Maison du Cénacle",
-                "jsx": "<p>Maison du Cénacle</p>",
+                "html": "<p>Maison du Cénacle</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4172,7 +4172,7 @@
             },
             "properties": {
                 "fr": "Malte",
-                "jsx": "<p>Malte</p>",
+                "html": "<p>Malte</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4188,7 +4188,7 @@
             },
             "properties": {
                 "fr": "Mambré",
-                "jsx": "<p>Mambré</p>",
+                "html": "<p>Mambré</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4204,7 +4204,7 @@
             },
             "properties": {
                 "fr": "Masada",
-                "jsx": "<p>Masada</p>",
+                "html": "<p>Masada</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4220,7 +4220,7 @@
             },
             "properties": {
                 "fr": "Mataréa",
-                "jsx": "<p>Mataréa</p>",
+                "html": "<p>Mataréa</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4236,7 +4236,7 @@
             },
             "properties": {
                 "fr": "Mathias Ancien lépreux 359.4",
-                "jsx": "<p>Mathias Ancien lépreux 359.4</p>",
+                "html": "<p>Mathias Ancien lépreux 359.4</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4252,7 +4252,7 @@
             },
             "properties": {
                 "fr": "Mer Morte",
-                "jsx": "<p>Mer Morte</p>",
+                "html": "<p>Mer Morte</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4268,7 +4268,7 @@
             },
             "properties": {
                 "fr": "Mer Méditerranée",
-                "jsx": "<p>Mer Méditerranée</p>",
+                "html": "<p>Mer Méditerranée</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4284,7 +4284,7 @@
             },
             "properties": {
                 "fr": "Mer Pontique",
-                "jsx": "<p>Mer Pontique</p>",
+                "html": "<p>Mer Pontique</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4300,7 +4300,7 @@
             },
             "properties": {
                 "fr": "Mer Rouge",
-                "jsx": "<p>Mer Rouge</p>",
+                "html": "<p>Mer Rouge</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4316,7 +4316,7 @@
             },
             "properties": {
                 "fr": "Monts Moab",
-                "jsx": "<p>Monts Moab</p>",
+                "html": "<p>Monts Moab</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4332,7 +4332,7 @@
             },
             "properties": {
                 "fr": "Modin",
-                "jsx": "<p>Modin</p>",
+                "html": "<p>Modin</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4348,7 +4348,7 @@
             },
             "properties": {
                 "fr": "Mont Silpius",
-                "jsx": "<p>Mont Silpius</p>",
+                "html": "<p>Mont Silpius</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4364,7 +4364,7 @@
             },
             "properties": {
                 "fr": "Montagnes Noires",
-                "jsx": "<p>Montagnes Noires</p>",
+                "html": "<p>Montagnes Noires</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4380,7 +4380,7 @@
             },
             "properties": {
                 "fr": "Monts Pierea",
-                "jsx": "<p>Monts Pierea</p>",
+                "html": "<p>Monts Pierea</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4396,7 +4396,7 @@
             },
             "properties": {
                 "fr": "Montée du Sang",
-                "jsx": "<p>Montée du Sang</p>",
+                "html": "<p>Montée du Sang</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4412,7 +4412,7 @@
             },
             "properties": {
                 "fr": "Moriah",
-                "jsx": "<p>Moriah</p>",
+                "html": "<p>Moriah</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4428,7 +4428,7 @@
             },
             "properties": {
                 "fr": "Mérala",
-                "jsx": "<p>Mérala</p>",
+                "html": "<p>Mérala</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4444,7 +4444,7 @@
             },
             "properties": {
                 "fr": "Méron",
-                "jsx": "<p>Méron</p>",
+                "html": "<p>Méron</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4460,7 +4460,7 @@
             },
             "properties": {
                 "fr": "Lac de Méron",
-                "jsx": "<p>Lac de Méron</p>",
+                "html": "<p>Lac de Méron</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4476,7 +4476,7 @@
             },
             "properties": {
                 "fr": "Lac de Méron",
-                "jsx": "<p>Lac de Méron</p>",
+                "html": "<p>Lac de Méron</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4492,7 +4492,7 @@
             },
             "properties": {
                 "fr": "Mésopotamie",
-                "jsx": "<p>Mésopotamie</p>",
+                "html": "<p>Mésopotamie</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4508,7 +4508,7 @@
             },
             "properties": {
                 "fr": "Nahal Hevron",
-                "jsx": "<p>Nahal Hevron</p>",
+                "html": "<p>Nahal Hevron</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4524,7 +4524,7 @@
             },
             "properties": {
                 "fr": "Nazareth",
-                "jsx": "<p>Nazareth</p>",
+                "html": "<p>Nazareth</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4540,7 +4540,7 @@
             },
             "properties": {
                 "fr": "Naïm",
-                "jsx": "<p>Naïm</p>",
+                "html": "<p>Naïm</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4556,7 +4556,7 @@
             },
             "properties": {
                 "fr": "Nephtali",
-                "jsx": "<p>Nephtali</p>",
+                "html": "<p>Nephtali</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4572,7 +4572,7 @@
             },
             "properties": {
                 "fr": "Nicodème ?",
-                "jsx": "<p>Nicodème ?</p>",
+                "html": "<p>Nicodème ?</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4588,7 +4588,7 @@
             },
             "properties": {
                 "fr": "Nike",
-                "jsx": "<p>Nike</p>",
+                "html": "<p>Nike</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4604,7 +4604,7 @@
             },
             "properties": {
                 "fr": "Nimrin",
-                "jsx": "<p>Nimrin</p>",
+                "html": "<p>Nimrin</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4620,7 +4620,7 @@
             },
             "properties": {
                 "fr": "Ninive",
-                "jsx": "<p>Ninive</p>",
+                "html": "<p>Ninive</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4636,7 +4636,7 @@
             },
             "properties": {
                 "fr": "Nobé",
-                "jsx": "<p>Nobé</p>",
+                "html": "<p>Nobé</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4652,7 +4652,7 @@
             },
             "properties": {
                 "fr": "Numidie",
-                "jsx": "<p>Numidie</p>",
+                "html": "<p>Numidie</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4668,7 +4668,7 @@
             },
             "properties": {
                 "fr": "Mont Nébo",
-                "jsx": "<p>Mont Nébo</p>",
+                "html": "<p>Mont Nébo</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4684,7 +4684,7 @@
             },
             "properties": {
                 "fr": "Oronte",
-                "jsx": "<p>Oronte</p>",
+                "html": "<p>Oronte</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4700,7 +4700,7 @@
             },
             "properties": {
                 "fr": "Palais d'Hérode",
-                "jsx": "<p>Palais d'Hérode</p>",
+                "html": "<p>Palais d'Hérode</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4716,7 +4716,7 @@
             },
             "properties": {
                 "fr": "Palais d'Hérode Tibériade",
-                "jsx": "<p>Palais d'Hérode Tibériade</p>",
+                "html": "<p>Palais d'Hérode Tibériade</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4732,7 +4732,7 @@
             },
             "properties": {
                 "fr": "Palais de Chousa ?",
-                "jsx": "<p>Palais de Chousa ?</p>",
+                "html": "<p>Palais de Chousa ?</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4748,7 +4748,7 @@
             },
             "properties": {
                 "fr": "Palais de Chouza ?",
-                "jsx": "<p>Palais de Chouza ?</p>",
+                "html": "<p>Palais de Chouza ?</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4764,7 +4764,7 @@
             },
             "properties": {
                 "fr": "Palais de Lazare",
-                "jsx": "<p>Palais de Lazare</p>",
+                "html": "<p>Palais de Lazare</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4780,7 +4780,7 @@
             },
             "properties": {
                 "fr": "Palais des Hasmonéens ?",
-                "jsx": "<p>Palais des Hasmonéens ?</p>",
+                "html": "<p>Palais des Hasmonéens ?</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4796,7 +4796,7 @@
             },
             "properties": {
                 "fr": "Pannonie",
-                "jsx": "<p>Pannonie</p>",
+                "html": "<p>Pannonie</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4812,7 +4812,7 @@
             },
             "properties": {
                 "fr": "Parthes",
-                "jsx": "<p>Parthes</p>",
+                "html": "<p>Parthes</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4828,7 +4828,7 @@
             },
             "properties": {
                 "fr": "Pella",
-                "jsx": "<p>Pella</p>",
+                "html": "<p>Pella</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4844,7 +4844,7 @@
             },
             "properties": {
                 "fr": "Pergé",
-                "jsx": "<p>Pergé</p>",
+                "html": "<p>Pergé</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4860,7 +4860,7 @@
             },
             "properties": {
                 "fr": "Perse",
-                "jsx": "<p>Perse</p>",
+                "html": "<p>Perse</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4876,7 +4876,7 @@
             },
             "properties": {
                 "fr": "Persique Golfe",
-                "jsx": "<p>Persique Golfe</p>",
+                "html": "<p>Persique Golfe</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4892,7 +4892,7 @@
             },
             "properties": {
                 "fr": "Petit Hermon",
-                "jsx": "<p>Petit Hermon</p>",
+                "html": "<p>Petit Hermon</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4908,7 +4908,7 @@
             },
             "properties": {
                 "fr": "Philadelphie",
-                "jsx": "<p>Philadelphie</p>",
+                "html": "<p>Philadelphie</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4924,7 +4924,7 @@
             },
             "properties": {
                 "fr": "Phrygie",
-                "jsx": "<p>Phrygie</p>",
+                "html": "<p>Phrygie</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4940,7 +4940,7 @@
             },
             "properties": {
                 "fr": "Phénicie",
-                "jsx": "<p>Phénicie</p>",
+                "html": "<p>Phénicie</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4956,7 +4956,7 @@
             },
             "properties": {
                 "fr": "Pieria",
-                "jsx": "<p>Pieria</p>",
+                "html": "<p>Pieria</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4972,7 +4972,7 @@
             },
             "properties": {
                 "fr": "Piscine de Betesda",
-                "jsx": "<p>Piscine de Betesda</p>",
+                "html": "<p>Piscine de Betesda</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -4988,7 +4988,7 @@
             },
             "properties": {
                 "fr": "Piscines de Salomon",
-                "jsx": "<p>Piscines de Salomon</p>",
+                "html": "<p>Piscines de Salomon</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5004,7 +5004,7 @@
             },
             "properties": {
                 "fr": "Plaine d'Esdrelon",
-                "jsx": "<p>Plaine d'Esdrelon</p>",
+                "html": "<p>Plaine d'Esdrelon</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5020,7 +5020,7 @@
             },
             "properties": {
                 "fr": "Point d'observation de Jésus",
-                "jsx": "<p>Point d'observation de Jésus</p>",
+                "html": "<p>Point d'observation de Jésus</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5036,7 +5036,7 @@
             },
             "properties": {
                 "fr": "Pont",
-                "jsx": "<p>Pont</p>",
+                "html": "<p>Pont</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5052,7 +5052,7 @@
             },
             "properties": {
                 "fr": "Pont romain",
-                "jsx": "<p>Pont romain</p>",
+                "html": "<p>Pont romain</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5068,7 +5068,7 @@
             },
             "properties": {
                 "fr": "Pont romain ?",
-                "jsx": "<p>Pont romain ?</p>",
+                "html": "<p>Pont romain ?</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5084,7 +5084,7 @@
             },
             "properties": {
                 "fr": "Pont romain ??",
-                "jsx": "<p>Pont romain ??</p>",
+                "html": "<p>Pont romain ??</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5100,7 +5100,7 @@
             },
             "properties": {
                 "fr": "Pont romain de Gesher",
-                "jsx": "<p>Pont romain de Gesher</p>",
+                "html": "<p>Pont romain de Gesher</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5116,7 +5116,7 @@
             },
             "properties": {
                 "fr": "Pont romain Khizon ?",
-                "jsx": "<p>Pont romain Khizon ?</p>",
+                "html": "<p>Pont romain Khizon ?</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5132,7 +5132,7 @@
             },
             "properties": {
                 "fr": "Porte d'Hérode",
-                "jsx": "<p>Porte d'Hérode</p>",
+                "html": "<p>Porte d'Hérode</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5148,7 +5148,7 @@
             },
             "properties": {
                 "fr": "Porte de Damas",
-                "jsx": "<p>Porte de Damas</p>",
+                "html": "<p>Porte de Damas</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5164,7 +5164,7 @@
             },
             "properties": {
                 "fr": "Porte de Jaffa",
-                "jsx": "<p>Porte de Jaffa</p>",
+                "html": "<p>Porte de Jaffa</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5180,7 +5180,7 @@
             },
             "properties": {
                 "fr": "Porte de l'Eau ?",
-                "jsx": "<p>Porte de l'Eau ?</p>",
+                "html": "<p>Porte de l'Eau ?</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5196,7 +5196,7 @@
             },
             "properties": {
                 "fr": "Porte de Nicanor",
-                "jsx": "<p>Porte de Nicanor</p>",
+                "html": "<p>Porte de Nicanor</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5212,7 +5212,7 @@
             },
             "properties": {
                 "fr": "Porte de Sion",
-                "jsx": "<p>Porte de Sion</p>",
+                "html": "<p>Porte de Sion</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5228,7 +5228,7 @@
             },
             "properties": {
                 "fr": "Porte des Brebis",
-                "jsx": "<p>Porte des Brebis</p>",
+                "html": "<p>Porte des Brebis</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5244,7 +5244,7 @@
             },
             "properties": {
                 "fr": "Porte des Poissons ?",
-                "jsx": "<p>Porte des Poissons ?</p>",
+                "html": "<p>Porte des Poissons ?</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5260,7 +5260,7 @@
             },
             "properties": {
                 "fr": "Porte Dorée",
-                "jsx": "<p>Porte Dorée</p>",
+                "html": "<p>Porte Dorée</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5276,7 +5276,7 @@
             },
             "properties": {
                 "fr": "Porte Judiciaire ?",
-                "jsx": "<p>Porte Judiciaire ?</p>",
+                "html": "<p>Porte Judiciaire ?</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5292,7 +5292,7 @@
             },
             "properties": {
                 "fr": "Porte Orientale ?",
-                "jsx": "<p>Porte Orientale ?</p>",
+                "html": "<p>Porte Orientale ?</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5308,7 +5308,7 @@
             },
             "properties": {
                 "fr": "Portique de Salomon",
-                "jsx": "<p>Portique de Salomon</p>",
+                "html": "<p>Portique de Salomon</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5324,7 +5324,7 @@
             },
             "properties": {
                 "fr": "Portique des païens",
-                "jsx": "<p>Portique des païens</p>",
+                "html": "<p>Portique des païens</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5340,7 +5340,7 @@
             },
             "properties": {
                 "fr": "Portique Royal",
-                "jsx": "<p>Portique Royal</p>",
+                "html": "<p>Portique Royal</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5356,7 +5356,7 @@
             },
             "properties": {
                 "fr": "Précipice des porcs géraséniens",
-                "jsx": "<p>Précipice des porcs géraséniens</p>",
+                "html": "<p>Précipice des porcs géraséniens</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5372,7 +5372,7 @@
             },
             "properties": {
                 "fr": "Prétoire",
-                "jsx": "<p>Prétoire</p>",
+                "html": "<p>Prétoire</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5388,7 +5388,7 @@
             },
             "properties": {
                 "fr": "Ptolémaïs",
-                "jsx": "<p>Ptolémaïs</p>",
+                "html": "<p>Ptolémaïs</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5404,7 +5404,7 @@
             },
             "properties": {
                 "fr": "Puits de Jacob",
-                "jsx": "<p>Puits de Jacob</p>",
+                "html": "<p>Puits de Jacob</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5420,7 +5420,7 @@
             },
             "properties": {
                 "fr": "Pérée",
-                "jsx": "<p>Pérée</p>",
+                "html": "<p>Pérée</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5436,7 +5436,7 @@
             },
             "properties": {
                 "fr": "Pétra",
-                "jsx": "<p>Pétra</p>",
+                "html": "<p>Pétra</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5452,7 +5452,7 @@
             },
             "properties": {
                 "fr": "Ramah",
-                "jsx": "<p>Ramah</p>",
+                "html": "<p>Ramah</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5468,7 +5468,7 @@
             },
             "properties": {
                 "fr": "Ramlé",
-                "jsx": "<p>Ramlé</p>",
+                "html": "<p>Ramlé</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5484,7 +5484,7 @@
             },
             "properties": {
                 "fr": "Ramoth Gilead ?",
-                "jsx": "<p>Ramoth Gilead ?</p>",
+                "html": "<p>Ramoth Gilead ?</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5500,7 +5500,7 @@
             },
             "properties": {
                 "fr": "Rephaïm wadi",
-                "jsx": "<p>Rephaïm wadi</p>",
+                "html": "<p>Rephaïm wadi</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5516,7 +5516,7 @@
             },
             "properties": {
                 "fr": "Rocher de 250.9",
-                "jsx": "<p>Rocher de 250.9</p>",
+                "html": "<p>Rocher de 250.9</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5532,7 +5532,7 @@
             },
             "properties": {
                 "fr": "Rohob ?",
-                "jsx": "<p>Rohob ?</p>",
+                "html": "<p>Rohob ?</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5548,7 +5548,7 @@
             },
             "properties": {
                 "fr": "Rome",
-                "jsx": "<p>Rome</p>",
+                "html": "<p>Rome</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5564,7 +5564,7 @@
             },
             "properties": {
                 "fr": "RV avec les paysans",
-                "jsx": "<p>RV avec les paysans</p>",
+                "html": "<p>RV avec les paysans</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5580,7 +5580,7 @@
             },
             "properties": {
                 "fr": "RV secret",
-                "jsx": "<p>RV secret</p>",
+                "html": "<p>RV secret</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5596,7 +5596,7 @@
             },
             "properties": {
                 "fr": "Saba",
-                "jsx": "<p>Saba</p>",
+                "html": "<p>Saba</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5612,7 +5612,7 @@
             },
             "properties": {
                 "fr": "Salim",
-                "jsx": "<p>Salim</p>",
+                "html": "<p>Salim</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5628,7 +5628,7 @@
             },
             "properties": {
                 "fr": "Salomon ?",
-                "jsx": "<p>Salomon ?</p>",
+                "html": "<p>Salomon ?</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5644,7 +5644,7 @@
             },
             "properties": {
                 "fr": "Samarie Sébaste",
-                "jsx": "<p>Samarie Sébaste</p>",
+                "html": "<p>Samarie Sébaste</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5660,7 +5660,7 @@
             },
             "properties": {
                 "fr": "Saraa",
-                "jsx": "<p>Saraa</p>",
+                "html": "<p>Saraa</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5676,7 +5676,7 @@
             },
             "properties": {
                 "fr": "Sarepta",
-                "jsx": "<p>Sarepta</p>",
+                "html": "<p>Sarepta</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5692,7 +5692,7 @@
             },
             "properties": {
                 "fr": "Sarmates",
-                "jsx": "<p>Sarmates</p>",
+                "html": "<p>Sarmates</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5708,7 +5708,7 @@
             },
             "properties": {
                 "fr": "Saron, la plaine",
-                "jsx": "<p>Saron, la plaine</p>",
+                "html": "<p>Saron, la plaine</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5724,7 +5724,7 @@
             },
             "properties": {
                 "fr": "Scylla",
-                "jsx": "<p>Scylla</p>",
+                "html": "<p>Scylla</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5740,7 +5740,7 @@
             },
             "properties": {
                 "fr": "Scythes",
-                "jsx": "<p>Scythes</p>",
+                "html": "<p>Scythes</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5756,7 +5756,7 @@
             },
             "properties": {
                 "fr": "Mont Seir",
-                "jsx": "<p>Mont Seir</p>",
+                "html": "<p>Mont Seir</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5772,7 +5772,7 @@
             },
             "properties": {
                 "fr": "Sephet",
-                "jsx": "<p>Sephet</p>",
+                "html": "<p>Sephet</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5788,7 +5788,7 @@
             },
             "properties": {
                 "fr": "Sermon de Jésus 5,75",
-                "jsx": "<p>Sermon de Jésus 5,75</p>",
+                "html": "<p>Sermon de Jésus 5,75</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5804,7 +5804,7 @@
             },
             "properties": {
                 "fr": "Shiloh",
-                "jsx": "<p>Shiloh</p>",
+                "html": "<p>Shiloh</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5820,7 +5820,7 @@
             },
             "properties": {
                 "fr": "Shu'eib wadi",
-                "jsx": "<p>Shu'eib wadi</p>",
+                "html": "<p>Shu'eib wadi</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5836,7 +5836,7 @@
             },
             "properties": {
                 "fr": "Sicaminon fouilles",
-                "jsx": "<p>Sicaminon fouilles</p>",
+                "html": "<p>Sicaminon fouilles</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5852,7 +5852,7 @@
             },
             "properties": {
                 "fr": "Sichem",
-                "jsx": "<p>Sichem</p>",
+                "html": "<p>Sichem</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5868,7 +5868,7 @@
             },
             "properties": {
                 "fr": "Sicules",
-                "jsx": "<p>Sicules</p>",
+                "html": "<p>Sicules</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5884,7 +5884,7 @@
             },
             "properties": {
                 "fr": "Sidon",
-                "jsx": "<p>Sidon</p>",
+                "html": "<p>Sidon</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5900,7 +5900,7 @@
             },
             "properties": {
                 "fr": "Sinaï",
-                "jsx": "<p>Sinaï</p>",
+                "html": "<p>Sinaï</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5916,7 +5916,7 @@
             },
             "properties": {
                 "fr": "Socoh",
-                "jsx": "<p>Socoh</p>",
+                "html": "<p>Socoh</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5932,7 +5932,7 @@
             },
             "properties": {
                 "fr": "Source de la Perdrix",
-                "jsx": "<p>Source de la Perdrix</p>",
+                "html": "<p>Source de la Perdrix</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5948,7 +5948,7 @@
             },
             "properties": {
                 "fr": "Source du Figuier",
-                "jsx": "<p>Source du Figuier</p>",
+                "html": "<p>Source du Figuier</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5964,7 +5964,7 @@
             },
             "properties": {
                 "fr": "Subure",
-                "jsx": "<p>Subure</p>",
+                "html": "<p>Subure</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5980,7 +5980,7 @@
             },
             "properties": {
                 "fr": "Sychar",
-                "jsx": "<p>Sychar</p>",
+                "html": "<p>Sychar</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -5996,7 +5996,7 @@
             },
             "properties": {
                 "fr": "Syracuse Palestre ?",
-                "jsx": "<p>Syracuse Palestre ?</p>",
+                "html": "<p>Syracuse Palestre ?</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6012,7 +6012,7 @@
             },
             "properties": {
                 "fr": "Syracuse Théâtre",
-                "jsx": "<p>Syracuse Théâtre</p>",
+                "html": "<p>Syracuse Théâtre</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6028,7 +6028,7 @@
             },
             "properties": {
                 "fr": "Syrie",
-                "jsx": "<p>Syrie</p>",
+                "html": "<p>Syrie</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6044,7 +6044,7 @@
             },
             "properties": {
                 "fr": "Szanoé",
-                "jsx": "<p>Szanoé</p>",
+                "html": "<p>Szanoé</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6060,7 +6060,7 @@
             },
             "properties": {
                 "fr": "Séleucie",
-                "jsx": "<p>Séleucie</p>",
+                "html": "<p>Séleucie</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6076,7 +6076,7 @@
             },
             "properties": {
                 "fr": "Séméron, Simonia",
-                "jsx": "<p>Séméron, Simonia</p>",
+                "html": "<p>Séméron, Simonia</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6092,7 +6092,7 @@
             },
             "properties": {
                 "fr": "Séphoris",
-                "jsx": "<p>Séphoris</p>",
+                "html": "<p>Séphoris</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6108,7 +6108,7 @@
             },
             "properties": {
                 "fr": "Tabor",
-                "jsx": "<p>Tabor</p>",
+                "html": "<p>Tabor</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6124,7 +6124,7 @@
             },
             "properties": {
                 "fr": "Tamar",
-                "jsx": "<p>Tamar</p>",
+                "html": "<p>Tamar</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6140,7 +6140,7 @@
             },
             "properties": {
                 "fr": "Tamiri",
-                "jsx": "<p>Tamiri</p>",
+                "html": "<p>Tamiri</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6156,7 +6156,7 @@
             },
             "properties": {
                 "fr": "Tarichée",
-                "jsx": "<p>Tarichée</p>",
+                "html": "<p>Tarichée</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6172,7 +6172,7 @@
             },
             "properties": {
                 "fr": "Tarse",
-                "jsx": "<p>Tarse</p>",
+                "html": "<p>Tarse</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6188,7 +6188,7 @@
             },
             "properties": {
                 "fr": "Tel Asour",
-                "jsx": "<p>Tel Asour</p>",
+                "html": "<p>Tel Asour</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6204,7 +6204,7 @@
             },
             "properties": {
                 "fr": "Tersa",
-                "jsx": "<p>Tersa</p>",
+                "html": "<p>Tersa</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6220,7 +6220,7 @@
             },
             "properties": {
                 "fr": "Tersa Tayasir",
-                "jsx": "<p>Tersa Tayasir</p>",
+                "html": "<p>Tersa Tayasir</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6236,7 +6236,7 @@
             },
             "properties": {
                 "fr": "Teutberg",
-                "jsx": "<p>Teutberg</p>",
+                "html": "<p>Teutberg</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6252,7 +6252,7 @@
             },
             "properties": {
                 "fr": "Thrace",
-                "jsx": "<p>Thrace</p>",
+                "html": "<p>Thrace</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6268,7 +6268,7 @@
             },
             "properties": {
                 "fr": "Tibériade",
-                "jsx": "<p>Tibériade</p>",
+                "html": "<p>Tibériade</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6284,7 +6284,7 @@
             },
             "properties": {
                 "fr": "Tigre",
-                "jsx": "<p>Tigre</p>",
+                "html": "<p>Tigre</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6300,7 +6300,7 @@
             },
             "properties": {
                 "fr": "Timnata ?",
-                "jsx": "<p>Timnata ?</p>",
+                "html": "<p>Timnata ?</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6316,7 +6316,7 @@
             },
             "properties": {
                 "fr": "Tito le maréchal-ferrant 327",
-                "jsx": "<p>Tito le maréchal-ferrant 327</p>",
+                "html": "<p>Tito le maréchal-ferrant 327</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6332,7 +6332,7 @@
             },
             "properties": {
                 "fr": "Tombe d'Hillel",
-                "jsx": "<p>Tombe d'Hillel</p>",
+                "html": "<p>Tombe d'Hillel</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6348,7 +6348,7 @@
             },
             "properties": {
                 "fr": "Tombeau de Rachel",
-                "jsx": "<p>Tombeau de Rachel</p>",
+                "html": "<p>Tombeau de Rachel</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6364,7 +6364,7 @@
             },
             "properties": {
                 "fr": "Tombeaux de Siloan",
-                "jsx": "<p>Tombeaux de Siloan</p>",
+                "html": "<p>Tombeaux de Siloan</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6380,7 +6380,7 @@
             },
             "properties": {
                 "fr": "Tour David",
-                "jsx": "<p>Tour David</p>",
+                "html": "<p>Tour David</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6396,7 +6396,7 @@
             },
             "properties": {
                 "fr": "Tour de David Bethléem",
-                "jsx": "<p>Tour de David Bethléem</p>",
+                "html": "<p>Tour de David Bethléem</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6412,7 +6412,7 @@
             },
             "properties": {
                 "fr": "Tour Hippique",
-                "jsx": "<p>Tour Hippique</p>",
+                "html": "<p>Tour Hippique</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6428,7 +6428,7 @@
             },
             "properties": {
                 "fr": "Tour Marianne",
-                "jsx": "<p>Tour Marianne</p>",
+                "html": "<p>Tour Marianne</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6444,7 +6444,7 @@
             },
             "properties": {
                 "fr": "Tour Phasael",
-                "jsx": "<p>Tour Phasael</p>",
+                "html": "<p>Tour Phasael</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6460,7 +6460,7 @@
             },
             "properties": {
                 "fr": "Trachonitide",
-                "jsx": "<p>Trachonitide</p>",
+                "html": "<p>Trachonitide</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6476,7 +6476,7 @@
             },
             "properties": {
                 "fr": "Tribu d'Ephraïm",
-                "jsx": "<p>Tribu d'Ephraïm</p>",
+                "html": "<p>Tribu d'Ephraïm</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6492,7 +6492,7 @@
             },
             "properties": {
                 "fr": "Tyr",
-                "jsx": "<p>Tyr</p>",
+                "html": "<p>Tyr</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6508,7 +6508,7 @@
             },
             "properties": {
                 "fr": "Técua",
-                "jsx": "<p>Técua</p>",
+                "html": "<p>Técua</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6524,7 +6524,7 @@
             },
             "properties": {
                 "fr": "Térébinthe Vallée",
-                "jsx": "<p>Térébinthe Vallée</p>",
+                "html": "<p>Térébinthe Vallée</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6540,7 +6540,7 @@
             },
             "properties": {
                 "fr": "Village détruit Emmaüs ?",
-                "jsx": "<p>Village détruit Emmaüs ?</p>",
+                "html": "<p>Village détruit Emmaüs ?</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6556,7 +6556,7 @@
             },
             "properties": {
                 "fr": "Voie romaine",
-                "jsx": "<p>Voie romaine</p>",
+                "html": "<p>Voie romaine</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6572,7 +6572,7 @@
             },
             "properties": {
                 "fr": "Xyste",
-                "jsx": "<p>Xyste</p>",
+                "html": "<p>Xyste</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6588,7 +6588,7 @@
             },
             "properties": {
                 "fr": "Yabis, wadi",
-                "jsx": "<p>Yabis, wadi</p>",
+                "html": "<p>Yabis, wadi</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6604,7 +6604,7 @@
             },
             "properties": {
                 "fr": "Yarmouk",
-                "jsx": "<p>Yarmouk</p>",
+                "html": "<p>Yarmouk</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6620,7 +6620,7 @@
             },
             "properties": {
                 "fr": "Yiftach El ?",
-                "jsx": "<p>Yiftach El ?</p>",
+                "html": "<p>Yiftach El ?</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6636,7 +6636,7 @@
             },
             "properties": {
                 "fr": "Zabulon",
-                "jsx": "<p>Zabulon</p>",
+                "html": "<p>Zabulon</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6652,7 +6652,7 @@
             },
             "properties": {
                 "fr": "Zalmon, wadi",
-                "jsx": "<p>Zalmon, wadi</p>",
+                "html": "<p>Zalmon, wadi</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6668,7 +6668,7 @@
             },
             "properties": {
                 "fr": "Zoheleth ?",
-                "jsx": "<p>Zoheleth ?</p>",
+                "html": "<p>Zoheleth ?</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6684,7 +6684,7 @@
             },
             "properties": {
                 "fr": "Bet Karen",
-                "jsx": "<p>Bet Karen</p>",
+                "html": "<p>Bet Karen</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6700,7 +6700,7 @@
             },
             "properties": {
                 "fr": "Maghar",
-                "jsx": "<p>Maghar</p>",
+                "html": "<p>Maghar</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6716,7 +6716,7 @@
             },
             "properties": {
                 "fr": "Lesemdan",
-                "jsx": "<p>Lesemdan</p>",
+                "html": "<p>Lesemdan</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6732,7 +6732,7 @@
             },
             "properties": {
                 "fr": "Jattir",
-                "jsx": "<p>Jattir</p>",
+                "html": "<p>Jattir</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6748,7 +6748,7 @@
             },
             "properties": {
                 "fr": "Astaroth",
-                "jsx": "<p>Astaroth</p>",
+                "html": "<p>Astaroth</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6764,7 +6764,7 @@
             },
             "properties": {
                 "fr": "Carnaim",
-                "jsx": "<p>Carnaim</p>",
+                "html": "<p>Carnaim</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6780,7 +6780,7 @@
             },
             "properties": {
                 "fr": "Jamlè",
-                "jsx": "<p>Jamlè</p>",
+                "html": "<p>Jamlè</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6796,7 +6796,7 @@
             },
             "properties": {
                 "fr": "Abila",
-                "jsx": "<p>Abila</p>",
+                "html": "<p>Abila</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6812,7 +6812,7 @@
             },
             "properties": {
                 "fr": "Capitolais",
-                "jsx": "<p>Capitolais</p>",
+                "html": "<p>Capitolais</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6828,7 +6828,7 @@
             },
             "properties": {
                 "fr": "Tell er Rumeith",
-                "jsx": "<p>Tell er Rumeith</p>",
+                "html": "<p>Tell er Rumeith</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6844,7 +6844,7 @@
             },
             "properties": {
                 "fr": "Arad",
-                "jsx": "<p>Arad</p>",
+                "html": "<p>Arad</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6860,7 +6860,7 @@
             },
             "properties": {
                 "fr": "Jattir",
-                "jsx": "<p>Jattir</p>",
+                "html": "<p>Jattir</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6876,7 +6876,7 @@
             },
             "properties": {
                 "fr": "Maréchalerie de Tito",
-                "jsx": "<p>Maréchalerie de Tito</p>",
+                "html": "<p>Maréchalerie de Tito</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6892,7 +6892,7 @@
             },
             "properties": {
                 "fr": "Kabul",
-                "jsx": "<p>Kabul</p>",
+                "html": "<p>Kabul</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6908,7 +6908,7 @@
             },
             "properties": {
                 "fr": "Tamra",
-                "jsx": "<p>Tamra</p>",
+                "html": "<p>Tamra</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6924,7 +6924,7 @@
             },
             "properties": {
                 "fr": "Kaukab",
-                "jsx": "<p>Kaukab</p>",
+                "html": "<p>Kaukab</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6940,7 +6940,7 @@
             },
             "properties": {
                 "fr": "Cana",
-                "jsx": "<p>Cana</p>",
+                "html": "<p>Cana</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6956,7 +6956,7 @@
             },
             "properties": {
                 "fr": "Gahas?",
-                "jsx": "<p>Gahas?</p>",
+                "html": "<p>Gahas?</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6972,7 +6972,7 @@
             },
             "properties": {
                 "fr": "Prop. de Nicodème",
-                "jsx": "<p>Prop. de Nicodème</p>",
+                "html": "<p>Prop. de Nicodème</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -6988,7 +6988,7 @@
             },
             "properties": {
                 "fr": "Prop. de Joseph d'Arimathie",
-                "jsx": "<p>Prop. de Joseph d'Arimathie</p>",
+                "html": "<p>Prop. de Joseph d'Arimathie</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7004,7 +7004,7 @@
             },
             "properties": {
                 "fr": "Arimathie",
-                "jsx": "<p>Arimathie</p>",
+                "html": "<p>Arimathie</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7020,7 +7020,7 @@
             },
             "properties": {
                 "fr": "Géze",
-                "jsx": "<p>Géze</p>",
+                "html": "<p>Géze</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7036,7 +7036,7 @@
             },
             "properties": {
                 "fr": "Betoannaba",
-                "jsx": "<p>Betoannaba</p>",
+                "html": "<p>Betoannaba</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7052,7 +7052,7 @@
             },
             "properties": {
                 "fr": "Zif",
-                "jsx": "<p>Zif</p>",
+                "html": "<p>Zif</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7068,7 +7068,7 @@
             },
             "properties": {
                 "fr": "Carmel",
-                "jsx": "<p>Carmel</p>",
+                "html": "<p>Carmel</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7084,7 +7084,7 @@
             },
             "properties": {
                 "fr": "Estémoa",
-                "jsx": "<p>Estémoa</p>",
+                "html": "<p>Estémoa</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7100,7 +7100,7 @@
             },
             "properties": {
                 "fr": "Hormah",
-                "jsx": "<p>Hormah</p>",
+                "html": "<p>Hormah</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7116,7 +7116,7 @@
             },
             "properties": {
                 "fr": "Rafia",
-                "jsx": "<p>Rafia</p>",
+                "html": "<p>Rafia</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7132,7 +7132,7 @@
             },
             "properties": {
                 "fr": "Debir",
-                "jsx": "<p>Debir</p>",
+                "html": "<p>Debir</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7148,7 +7148,7 @@
             },
             "properties": {
                 "fr": "Macéda",
-                "jsx": "<p>Macéda</p>",
+                "html": "<p>Macéda</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7164,7 +7164,7 @@
             },
             "properties": {
                 "fr": "Lachis",
-                "jsx": "<p>Lachis</p>",
+                "html": "<p>Lachis</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7180,7 +7180,7 @@
             },
             "properties": {
                 "fr": "Get",
-                "jsx": "<p>Get</p>",
+                "html": "<p>Get</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7196,7 +7196,7 @@
             },
             "properties": {
                 "fr": "Eglon",
-                "jsx": "<p>Eglon</p>",
+                "html": "<p>Eglon</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7212,7 +7212,7 @@
             },
             "properties": {
                 "fr": "Marisa",
-                "jsx": "<p>Marisa</p>",
+                "html": "<p>Marisa</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7228,7 +7228,7 @@
             },
             "properties": {
                 "fr": "Libna",
-                "jsx": "<p>Libna</p>",
+                "html": "<p>Libna</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7244,7 +7244,7 @@
             },
             "properties": {
                 "fr": "Sznaoé",
-                "jsx": "<p>Sznaoé</p>",
+                "html": "<p>Sznaoé</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7260,7 +7260,7 @@
             },
             "properties": {
                 "fr": "Hérodium",
-                "jsx": "<p>Hérodium</p>",
+                "html": "<p>Hérodium</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7276,7 +7276,7 @@
             },
             "properties": {
                 "fr": "Sabéa de Bétléchi",
-                "jsx": "<p>Sabéa de Bétléchi</p>",
+                "html": "<p>Sabéa de Bétléchi</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7292,7 +7292,7 @@
             },
             "properties": {
                 "fr": "Maison de Niké",
-                "jsx": "<p>Maison de Niké</p>",
+                "html": "<p>Maison de Niké</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7308,7 +7308,7 @@
             },
             "properties": {
                 "fr": "Tentation de Jésus",
-                "jsx": "<p>Tentation de Jésus</p>",
+                "html": "<p>Tentation de Jésus</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7324,7 +7324,7 @@
             },
             "properties": {
                 "fr": "Ein Karem",
-                "jsx": "<p>Ein Karem</p>",
+                "html": "<p>Ein Karem</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7340,7 +7340,7 @@
             },
             "properties": {
                 "fr": "Gibéa",
-                "jsx": "<p>Gibéa</p>",
+                "html": "<p>Gibéa</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7356,7 +7356,7 @@
             },
             "properties": {
                 "fr": "Ruine du port de Azot",
-                "jsx": "<p>Ruine du port de Azot</p>",
+                "html": "<p>Ruine du port de Azot</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7372,7 +7372,7 @@
             },
             "properties": {
                 "fr": "Ruine du port de Jabnia",
-                "jsx": "<p>Ruine du port de Jabnia</p>",
+                "html": "<p>Ruine du port de Jabnia</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7388,7 +7388,7 @@
             },
             "properties": {
                 "fr": "Shunam",
-                "jsx": "<p>Shunam</p>",
+                "html": "<p>Shunam</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7404,7 +7404,7 @@
             },
             "properties": {
                 "fr": "Plaine de Jezraël",
-                "jsx": "<p>Plaine de Jezraël</p>",
+                "html": "<p>Plaine de Jezraël</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7420,7 +7420,7 @@
             },
             "properties": {
                 "fr": "Jezraël",
-                "jsx": "<p>Jezraël</p>",
+                "html": "<p>Jezraël</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7436,7 +7436,7 @@
             },
             "properties": {
                 "fr": "Gamala, vigneron",
-                "jsx": "<p>Gamala, vigneron</p>",
+                "html": "<p>Gamala, vigneron</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7452,7 +7452,7 @@
             },
             "properties": {
                 "fr": "Muraqa",
-                "jsx": "<p>Muraqa</p>",
+                "html": "<p>Muraqa</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7468,7 +7468,7 @@
             },
             "properties": {
                 "fr": "Sintica",
-                "jsx": "<p>Sintica</p>",
+                "html": "<p>Sintica</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7484,7 +7484,7 @@
             },
             "properties": {
                 "fr": "F. des crocodiles",
-                "jsx": "<p>F. des crocodiles</p>",
+                "html": "<p>F. des crocodiles</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7500,7 +7500,7 @@
             },
             "properties": {
                 "fr": "Magedan",
-                "jsx": "<p>Magedan</p>",
+                "html": "<p>Magedan</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7516,7 +7516,7 @@
             },
             "properties": {
                 "fr": "(Jaïa, jeune aveugle)",
-                "jsx": "<p>(Jaïa, jeune aveugle)</p>",
+                "html": "<p>(Jaïa, jeune aveugle)</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7532,7 +7532,7 @@
             },
             "properties": {
                 "fr": "Galgala?",
-                "jsx": "<p>Galgala?</p>",
+                "html": "<p>Galgala?</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7548,7 +7548,7 @@
             },
             "properties": {
                 "fr": "Sasa",
-                "jsx": "<p>Sasa</p>",
+                "html": "<p>Sasa</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7564,7 +7564,7 @@
             },
             "properties": {
                 "fr": "Mère cananéeenne",
-                "jsx": "<p>Mère cananéeenne</p>",
+                "html": "<p>Mère cananéeenne</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7580,7 +7580,7 @@
             },
             "properties": {
                 "fr": "Election de St. Pierre",
-                "jsx": "<p>Election de St. Pierre</p>",
+                "html": "<p>Election de St. Pierre</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7596,7 +7596,7 @@
             },
             "properties": {
                 "fr": "Rama",
-                "jsx": "<p>Rama</p>",
+                "html": "<p>Rama</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7612,7 +7612,7 @@
             },
             "properties": {
                 "fr": "Cabane de Mathias",
-                "jsx": "<p>Cabane de Mathias</p>",
+                "html": "<p>Cabane de Mathias</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7628,7 +7628,7 @@
             },
             "properties": {
                 "fr": "Grotte de Jean-Baptiste",
-                "jsx": "<p>Grotte de Jean-Baptiste</p>",
+                "html": "<p>Grotte de Jean-Baptiste</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7644,7 +7644,7 @@
             },
             "properties": {
                 "fr": "Telbes",
-                "jsx": "<p>Telbes</p>",
+                "html": "<p>Telbes</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7660,7 +7660,7 @@
             },
             "properties": {
                 "fr": "Qunaitra",
-                "jsx": "<p>Qunaitra</p>",
+                "html": "<p>Qunaitra</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7676,7 +7676,7 @@
             },
             "properties": {
                 "fr": "Dan",
-                "jsx": "<p>Dan</p>",
+                "html": "<p>Dan</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7692,7 +7692,7 @@
             },
             "properties": {
                 "fr": "Bétéron inf.",
-                "jsx": "<p>Bétéron inf.</p>",
+                "html": "<p>Bétéron inf.</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7708,7 +7708,7 @@
             },
             "properties": {
                 "fr": "Bétéron sup.",
-                "jsx": "<p>Bétéron sup.</p>",
+                "html": "<p>Bétéron sup.</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7724,7 +7724,7 @@
             },
             "properties": {
                 "fr": "Emmaüs de la montagne?",
-                "jsx": "<p>Emmaüs de la montagne?</p>",
+                "html": "<p>Emmaüs de la montagne?</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7740,7 +7740,7 @@
             },
             "properties": {
                 "fr": "Birzéit",
-                "jsx": "<p>Birzéit</p>",
+                "html": "<p>Birzéit</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7756,7 +7756,7 @@
             },
             "properties": {
                 "fr": "Silo",
-                "jsx": "<p>Silo</p>",
+                "html": "<p>Silo</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7772,7 +7772,7 @@
             },
             "properties": {
                 "fr": "Silwad",
-                "jsx": "<p>Silwad</p>",
+                "html": "<p>Silwad</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7788,7 +7788,7 @@
             },
             "properties": {
                 "fr": "Phasaelis",
-                "jsx": "<p>Phasaelis</p>",
+                "html": "<p>Phasaelis</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7804,7 +7804,7 @@
             },
             "properties": {
                 "fr": "Acrabate",
-                "jsx": "<p>Acrabate</p>",
+                "html": "<p>Acrabate</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7820,7 +7820,7 @@
             },
             "properties": {
                 "fr": "Alexandreion",
-                "jsx": "<p>Alexandreion</p>",
+                "html": "<p>Alexandreion</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7836,7 +7836,7 @@
             },
             "properties": {
                 "fr": "Anastasica",
-                "jsx": "<p>Anastasica</p>",
+                "html": "<p>Anastasica</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7852,7 +7852,7 @@
             },
             "properties": {
                 "fr": "M. Galaad",
-                "jsx": "<p>M. Galaad</p>",
+                "html": "<p>M. Galaad</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7868,7 +7868,7 @@
             },
             "properties": {
                 "fr": "Bétabara",
-                "jsx": "<p>Bétabara</p>",
+                "html": "<p>Bétabara</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7884,7 +7884,7 @@
             },
             "properties": {
                 "fr": "Jeune homme riche",
-                "jsx": "<p>Jeune homme riche</p>",
+                "html": "<p>Jeune homme riche</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7900,7 +7900,7 @@
             },
             "properties": {
                 "fr": "M. du jeûne",
-                "jsx": "<p>M. du jeûne</p>",
+                "html": "<p>M. du jeûne</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7916,7 +7916,7 @@
             },
             "properties": {
                 "fr": "Isaac",
-                "jsx": "<p>Isaac</p>",
+                "html": "<p>Isaac</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7932,7 +7932,7 @@
             },
             "properties": {
                 "fr": "Acron",
-                "jsx": "<p>Acron</p>",
+                "html": "<p>Acron</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7948,7 +7948,7 @@
             },
             "properties": {
                 "fr": "Kiriat Jéarim",
-                "jsx": "<p>Kiriat Jéarim</p>",
+                "html": "<p>Kiriat Jéarim</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7964,7 +7964,7 @@
             },
             "properties": {
                 "fr": "Edrei",
-                "jsx": "<p>Edrei</p>",
+                "html": "<p>Edrei</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7980,7 +7980,7 @@
             },
             "properties": {
                 "fr": "Jatt",
-                "jsx": "<p>Jatt</p>",
+                "html": "<p>Jatt</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -7996,7 +7996,7 @@
             },
             "properties": {
                 "fr": "Enon",
-                "jsx": "<p>Enon</p>",
+                "html": "<p>Enon</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -8012,7 +8012,7 @@
             },
             "properties": {
                 "fr": "Election apostolique",
-                "jsx": "<p>Election apostolique</p>",
+                "html": "<p>Election apostolique</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -8028,7 +8028,7 @@
             },
             "properties": {
                 "fr": "Cornes d'Hattin (Mont des Béatitudes)",
-                "jsx": "<p>Cornes d'Hattin (Mont des Béatitudes)</p>",
+                "html": "<p>Cornes d'Hattin (Mont des Béatitudes)</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -8044,7 +8044,7 @@
             },
             "properties": {
                 "fr": "Bois de Mathathias",
-                "jsx": "<p>Bois de Mathathias</p>",
+                "html": "<p>Bois de Mathathias</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -8060,7 +8060,7 @@
             },
             "properties": {
                 "fr": "Prop. de Chouza",
-                "jsx": "<p>Prop. de Chouza</p>",
+                "html": "<p>Prop. de Chouza</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -8076,7 +8076,7 @@
             },
             "properties": {
                 "fr": "Première multiplication des pains",
-                "jsx": "<p>Première multiplication des pains</p>",
+                "html": "<p>Première multiplication des pains</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -8092,7 +8092,7 @@
             },
             "properties": {
                 "fr": "Triple profession d'amour de Pierre",
-                "jsx": "<p>Triple profession d'amour de Pierre</p>",
+                "html": "<p>Triple profession d'amour de Pierre</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -8108,7 +8108,7 @@
             },
             "properties": {
                 "fr": "Seconde multiplication des pains",
-                "jsx": "<p>Seconde multiplication des pains</p>",
+                "html": "<p>Seconde multiplication des pains</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -8124,7 +8124,7 @@
             },
             "properties": {
                 "fr": "Port de Ippo",
-                "jsx": "<p>Port de Ippo</p>",
+                "html": "<p>Port de Ippo</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -8140,7 +8140,7 @@
             },
             "properties": {
                 "fr": "Gomorrhe ?",
-                "jsx": "<p>Gomorrhe ?</p>",
+                "html": "<p class='mb-2 font-bold text-[20px]'>Gomorrhe ?</p><a class='mb-2 text-center' target='_blank' href='https://edifiant.fr/sodome-et-gomorrhe/'>https://edifiant.fr/sodome-et-gomorrhe/</a><a class='text-center block' target='_blank' href='https://www.youtube.com/watch?v=YpdYveOi28A'>https://www.youtube.com/watch?v=YpdYveOi28A</a>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }
@@ -8156,7 +8156,7 @@
             },
             "properties": {
                 "fr": "Sodome ?",
-                "jsx": "<p>Sodome ?</p>",
+                "html": "<p>Sodome ?</p>",
                 "icon": "pin_labels_dark.png",
                 "icon_selected": "pin_labels_selected.png"
             }

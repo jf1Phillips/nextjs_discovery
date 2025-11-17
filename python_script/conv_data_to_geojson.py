@@ -25,7 +25,7 @@ with open(file_name, mode="r", encoding="utf-8") as file:
             },
             "properties": {
                 "fr": d["Nom"],
-                "jsx": d["Texte"],
+                "html": d["Texte"],
                 "icon": d["TypeSite"],
                 "icon_selected": "pin_labels_selected.png",
                 "min_zoom": float(d["NiveauCarteMinimum"])
