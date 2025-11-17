@@ -9,14 +9,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        customGrey: 'rgba(41, 30, 49, 1)',
-        customGrey2: 'rgba(87, 63, 104, 1)',
-        customGrey2Hover: 'rgba(68, 50, 82, 1)',
-        customWhite: 'rgba(255, 255, 255, 1)',
-        darkMode: 'rgba(26, 18, 31, 1)',
-        darkModeOp: 'rgba(26, 18, 31, 0.9)',
-        whiteMode: 'rgba(255, 255, 255, 1)',
-        whiteModeOp: 'rgba(255, 255, 255, 0.9)',
+        customBackground: '#1C0B19',
+        darkMode: '#171219',
+        bgDarkMode: "#d4d4d4ff",
+        whiteMode: '#EBEBD3',
+        bgWhiteMode: "#626C66",
       }
     },
   },
