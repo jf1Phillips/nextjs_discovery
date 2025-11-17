@@ -2,18 +2,18 @@
 
 import "@/styles/globals.css";
 import "mapbox-gl/dist/mapbox-gl.css";
-import React, { useState,  useRef, useEffect, JSX } from "react";
-import mapboxgl, {LngLat, Map as MapboxMap, Marker} from "mapbox-gl";
-import {Cursor} from "./cursor";
+import React, { useState, useRef, useEffect, JSX } from "react";
+import mapboxgl, { LngLat, Map as MapboxMap, Marker } from "mapbox-gl";
+import { Cursor } from "./cursor";
 import addBunker, { removeBunker } from "./addBunker";
 import json_load from "./json_load";
-import mapboxTools, {GeoImg, GeoJsonLabels} from "@/script/mapbox_functions";
+import mapboxTools, { GeoImg, GeoJsonLabels } from "@/script/mapbox_functions";
 
 const ROAD_FILENAME: string = "/geoJson_files/route_palestine_merged.geojson";
 const LABELS_FILENAME: string = "/geoJson_files/city_label.geojson";
-const style: string[] = ["mapbox://styles/mapbox/light-v10", "mapbox://styles/mapbox/dark-v10"];
+const style: string = "mapbox://styles/mapbox/dark-v10";
 
-export {LABELS_FILENAME};
+export { LABELS_FILENAME };
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN as string;
 
@@ -21,7 +21,6 @@ type MapVar = {
     zoom: number;
     long: number;
     lat: number;
-    style_nbr: number;
     enabled: boolean;
     relief: boolean;
     rain: boolean;
@@ -31,7 +30,6 @@ const DEFAULT_VALUE: MapVar = {
     zoom: 8,
     long: 35.47679,
     lat: 32.38416,
-    style_nbr: 0,
     enabled: false,
     relief: false,
     rain: false,
@@ -39,7 +37,6 @@ const DEFAULT_VALUE: MapVar = {
 
 interface MapArgs {
     def_zoom: number,
-    enbl: boolean,
     setEnbl: React.Dispatch<React.SetStateAction<boolean>>,
     textNbr: number,
     histdate: number
@@ -83,32 +80,21 @@ const LabelsToAdd: GeoJsonLabels[] = [
     }
 ];
 
-const add_all_things = (new_state: MapVar, map: MapboxMap | null, textNbr: number) => {
+const add_all_things = (new_state: MapVar, map: MapboxMap | null) => {
     if (!map) return;
-    addBunker(map);
-    json_load(map, {
-        label: LabelsToAdd[0],
-        zoom_level: 10,
-        move: false,
-        draw_circle: false,
-        index: textNbr,
-    });
     mapboxTools.darkmode = new_state.enabled;
     mapboxTools.addGeoImg(map, geoImgArray);
     mapboxTools.addRoads(ROAD_FILENAME, map);
-    map?.setPaintProperty('water', 'fill-color', new_state.enabled ? 'rgba(14, 15, 99, 1)': 'rgba(14, 122, 155, 1)');
     mapboxTools.set3dTerrain(map, !new_state.relief);
     mapboxTools.addRain(map, !new_state.rain);
     mapboxTools.addGeoJsonLabels(map, LabelsToAdd);
     mapboxTools.setDarkmodeToLabels(map, LabelsToAdd);
     mapboxTools.add_popup(map, LabelsToAdd);
+    mapboxTools.setDarkModeToMap(map);
 }
 
-export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdate}: MapArgs): JSX.Element
-{
-    const [state, setState] = useState<MapVar>(({...DEFAULT_VALUE, zoom: def_zoom}));
-    const [prevNbr, setPrevNbr] = useState<number>(1);
-    const [prevHistdate, setPrevHistdate] = useState<number>(histdate);
+export default function GetMapboxMap({ def_zoom, setEnbl, textNbr, histdate }: MapArgs): JSX.Element {
+    const [state, setState] = useState<MapVar>(({ ...DEFAULT_VALUE, zoom: def_zoom }));
     const [lastPos, setLastPos] = useState<LngLat | null>(null);
     const map = useRef<MapboxMap | null>(null);
     const container = useRef<HTMLDivElement | null>(null);
@@ -120,22 +106,23 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
             console.error("Clipboard API not supported");
             return;
         }
-        try {await navigator.clipboard.writeText(txt);
-        } catch (err) {console.error("Failed to copy text: ", err);}
+        try {
+            await navigator.clipboard.writeText(txt);
+        } catch (err) { console.error("Failed to copy text: ", err); }
     }
 
     useEffect(() => {
         if (!map.current) {
             map.current = new mapboxgl.Map({
                 container: container.current as HTMLDivElement,
-                style: style[state.style_nbr],
+                style: style,
                 projection: 'globe',
                 zoom: state.zoom,
                 center: [state.long, state.lat],
             });
             mapboxTools.darkmode = true;
             map.current.once("style.load", () => {
-                add_all_things(state, map.current, textNbr);
+                add_all_things(state, map.current);
                 setStyleLoaded(true);
             });
             map.current.on("click", (e) => {
@@ -144,10 +131,11 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
                 setLastPos(e.lngLat);
             });
         }
-    }, [state, textNbr]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
-    if (prevNbr != textNbr && map.current) {
-        setPrevNbr(textNbr);
+    useEffect(() => {
+        if (!map.current || !styleLoaded) return;
         if (!(textNbr % 4)) {
             mapboxTools.addRain(map.current);
             setState(prev => ({...prev, rain: true}));
@@ -157,34 +145,30 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
         }
         json_load(map.current, {
             label: LabelsToAdd[0],
-            index: textNbr,
             zoom_level: 10,
-            draw_circle: false,
             move: true,
+            draw_circle: false,
+            index: textNbr,
         });
-    }
+    }, [textNbr, styleLoaded]);
 
-    if (prevHistdate != histdate && map.current) {
-        setPrevHistdate(histdate);
+    useEffect(() => {
+        if (!map.current || !styleLoaded) return;
         if (histdate > 1955) {
             removeBunker(map.current);
         } else {
             addBunker(map.current);
         }
-    }
+    }, [histdate, styleLoaded]);
 
     const changeMode = () => {
-        setEnbl(!enbl);
-        setState(prev => {
-            const new_state: MapVar = {
-                ...prev,
-                style_nbr: (prev.style_nbr + 1) % style.length,
-                enabled: !prev.enabled,
-            };
-            // map.current?.setStyle(style[new_state.style_nbr]);
-            // map.current?.once("style.load", () => add_all_things(new_state, map.current, textNbr));
-            return new_state;
-        });
+        if (!map.current || !styleLoaded) return;
+        const new_state: MapVar = {...state, enabled: !state.enabled};
+        mapboxTools.darkmode = new_state.enabled;
+        mapboxTools.setDarkmodeToLabels(map.current, LabelsToAdd);
+        mapboxTools.setDarkModeToMap(map.current);
+        setState(new_state);
+        setEnbl(new_state.enabled);
     }
 
     const zoomInOut = (z: "in" | "out") => {
@@ -197,13 +181,13 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
     const setRelief = () => {
         if (!map.current || !map.current.isStyleLoaded()) return;
         mapboxTools.set3dTerrain(map.current, state.relief);
-        setState(prev => ({...prev, relief: !prev.relief}));
+        setState(prev => ({ ...prev, relief: !prev.relief }));
     };
 
     const setRain = () => {
         if (!map.current || !map.current.isStyleLoaded()) return;
         mapboxTools.addRain(map.current, state.rain);
-        setState(prev => ({...prev, rain: !prev.rain}));
+        setState(prev => ({ ...prev, rain: !prev.rain }));
     }
 
     const [displayCursor, setDisplayCursor] = useState<boolean>(true);
@@ -217,11 +201,11 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
                 <div className={`flex flex-col justify-between p-[10px] duration-300
                         rounded-br-[5px] whitespace-nowrap overflow-hidden
                         ${displayCursor ? "h-[240px] w-[400px]" : "h-[30px] w-[30px]"}
-                        ${state.enabled ? "bg-whiteMode" : "bg-darkMode" }`}>
+                        ${!state.enabled ? "bg-bgDarkMode" : "bg-darkMode"}`}>
                     {/* CLOSE BTN */}
                     <div className="flex justify-start m-[-5px]">
                         <button className={`text-[15px] duration-300 w-[20px] h-[20px] flex items-center justify-center rounded-[5px]
-                            ${!state.enabled ? "text-darkMode bg-whiteMode" : "text-whiteMode bg-darkMode"}
+                            ${!state.enabled ? "text-darkMode bg-bgWhiteMode" : "text-whiteMode bg-bgDarkMode"}
                         `} onClick={() => setDisplayCursor(!displayCursor)}>
                             {displayCursor ? "x" : "☰"}
                         </button>
@@ -229,41 +213,41 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
                     {/* ********** */}
                     {
                         styleLoaded ? (<>
-                            <Cursor className={!displayCursor ? "hidden": ""}
+                            <Cursor className={!displayCursor ? "hidden" : ""}
                                 name="Afficher la carte du PEF (1880)" include={ID_PEF}
-                                map={map} enabled={state.enabled}/>
-                            <Cursor className={!displayCursor ? "hidden": ""}
+                                map={map} enabled={state.enabled} />
+                            <Cursor className={!displayCursor ? "hidden" : ""}
                                 name="Afficher la carte de Hans J. Hopfen (1975)" include={ID_HANS}
-                                map={map} enabled={state.enabled}/>
-                            <Cursor className={!displayCursor ? "hidden": ""}
+                                map={map} enabled={state.enabled} />
+                            <Cursor className={!displayCursor ? "hidden" : ""}
                                 name="Afficher les routes de Hans J. Hopfen (1975)" include={ROAD_FILENAME}
                                 map={map} enabled={state.enabled} def={100} />
-                            <Cursor className={!displayCursor ? "hidden": ""}
+                            <Cursor className={!displayCursor ? "hidden" : ""}
                                 name="Afficher les lieux" include={ID_CITY}
                                 map={map} enabled={state.enabled} def={100} />
-                            <Cursor className={!displayCursor ? "hidden": ""}
+                            <Cursor className={!displayCursor ? "hidden" : ""}
                                 name="Afficher les routes et bâtiments actuels" include={[
                                     "road", "natural-line-label", "natural-point-label",
                                     "water-line-label", "water-point-label", "poi-label", "airport-label",
                                     "settlement-subdivision-label", "settlement-label",
                                     "building", "bridge", "tunnel", "land", "waterway", "park"]}
-                                map={map} enabled={state.enabled} def={0}/>
+                                map={map} enabled={state.enabled} def={0} />
                             <Cursor className={!displayCursor ? "hidden" : ""}
                                 name="Afficher les frontières actuelles" include={["admin", "state-label", "country-label"]}
-                                map={map} enabled={state.enabled} def={100}/>
+                                map={map} enabled={state.enabled} def={100} />
                         </>) : null
                     }
                     {/* GEOLOC */}
-                    <div className={!displayCursor ? "hidden": "space-x-[15px] flex items-center"}>
+                    <div className={!displayCursor ? "hidden" : "space-x-[15px] flex items-center"}>
                         <div className={`flex cursor-pointer rounded-full duration-300 w-[40px] h-[20px] items-center
-                                ${state.enabled ? "bg-darkMode text-whiteMode" : "bg-whiteMode text-darkMode"}`}
-                                onClick={() => mapboxTools.get_location(map.current, marker, !locBtn, setLocBtn, whatchId)}>
+                                ${!state.enabled ? "bg-whiteMode text-whiteMode" : "bg-bgWhiteMode text-darkMode"}`}
+                            onClick={() => mapboxTools.get_location(map.current, marker, !locBtn, setLocBtn, whatchId)}>
                             <p className={`pointer-events-none text-[15px] select-none duration-300
                                 ml-[5px] mr-[5px]
                                 ${!locBtn ? "translate-x-[2px] text-[#ff0000]" : "translate-x-[18px]"}`}>
                                 ⊕</p>
                         </div>
-                        <p className={`duration-300 text-[13px] ${!state.enabled ? "text-whiteMode" :  "text-darkMode"}`}>
+                        <p className={`duration-300 text-[13px] ${!state.enabled ? "text-darkMode" : "text-whiteMode"}`}>
                             Géolocalisation</p>
                     </div>
                     {/* ********** */}
@@ -271,7 +255,7 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
                 <div className={`flex space-x-[10px] ml-[10px] ${displayCursor ? "mt-[10px] mb-[10px]" : ""}`}>
                     {/* DARKMODE */}
                     <div className={`flex cursor-pointer rounded-full duration-300 w-[60px]
-                            ${state.enabled ? "bg-darkMode" : "bg-whiteMode"}`} onClick={changeMode}>
+                            ${state.enabled ? "bg-darkMode" : "bg-bgDarkMode"}`} onClick={changeMode}>
                         <p className={`pointer-events-none text-[15px] select-none duration-300
                             z-10 ml-[5px] mr-[5px]
                             ${state.enabled ? "translate-x-0" : "translate-x-[30px]"}`}>
@@ -280,39 +264,39 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
                     {/* ********** */}
                     {/* ZOOM IN OUT */}
                     <div className={`w-[55px] h-[22px] text-[20px] flex flex-row justify-between
-                            ${state.enabled ? "text-darkMode" : "text-whiteMode"}`}>
+                            ${state.enabled ? "text-whiteMode" : "text-darkMode"}`}>
                         <button className={`rounded-[2px] w-[22px] h-[22px] flex items-center justify-center duration-[300ms]
-                            ${!state.enabled ? "bg-darkMode" : "bg-whiteMode"}`}
-                            onClick={() => {zoomInOut("out")}}>-</button>
+                            ${!state.enabled ? "bg-bgDarkMode" : "bg-darkMode"}`}
+                            onClick={() => { zoomInOut("out") }}>-</button>
                         <button className={`rounded-[2px] w-[22px] h-[22px] flex items-center justify-center duration-[300ms]
-                            ${!state.enabled ? "bg-darkMode" : "bg-whiteMode"}`}
-                        onClick={() => {zoomInOut("in")}}>+</button>
+                            ${!state.enabled ? "bg-bgDarkMode" : "bg-darkMode"}`}
+                            onClick={() => { zoomInOut("in") }}>+</button>
                     </div>
                     {/* ********** */}
                     {/* RELIEF */}
                     <button className={`w-[22px] h-[22px] duration-300 text-[15px] rounded-[2px]
-                                ${!state.enabled ? "bg-darkMode text-whiteMode" : "bg-whiteMode text-darkMode"}`}
-                            onClick={setRelief}>
-                                {state.relief ? "2d" : "3d"}</button>
+                                ${!state.enabled ? "bg-bgDarkMode text-darkModde" : "bg-darkMode text-whiteMode"}`}
+                        onClick={setRelief}>
+                        {state.relief ? "2d" : "3d"}</button>
                     {/* ********** */}
                     {/* RAIN */}
                     <button className={`w-[22px] h-[22px] duration-300 text-[15px] rounded-[2px]
-                                ${!state.enabled ? "bg-darkMode" : "bg-whiteMode"}`}
-                            onClick={setRain}>
-                                {!state.rain ? "🌧️" : "☀️"}</button>
+                                ${!state.enabled ? "bg-bgDarkMode" : "bg-darkMode"}`}
+                        onClick={setRain}>
+                        {!state.rain ? "🌧️" : "☀️"}</button>
                     {/* ********** */}
                     {/* RELOAD JSON */}
                     <button className={`w-[22px] h-[22px] rounded-[2px] duration-300 text-[15px]
-                                ${!state.enabled ? "bg-darkMode text-whiteMode" : "bg-whiteMode text-darkMode"}`}
-                            onClick={() => mapboxTools.reload_json_labels(map.current, LabelsToAdd)}
-                            >↻</button>
+                                ${!state.enabled ? "bg-bgDarkMode text-darkMode" : "bg-darkMode text-whiteMode"}`}
+                        onClick={() => mapboxTools.reload_json_labels(map.current, LabelsToAdd)}
+                    >↻</button>
                     {/* ********** */}
                 </div>
             </div>
             {/* LONG LAT */}
             <div className={`w-fit text-[15px] p-[5px] duration-300 tracking-[1px] rounded-br-[5px]
-                ${!state.enabled ? "text-whiteMode bg-darkMode" : "bg-whiteMode text-darkMode"}`}>
-                <p>Lng: {lastPos ? lastPos.lng.toFixed(2) : ''}<br/>Lat: {lastPos ? lastPos.lat.toFixed(2) : ''}</p>
+                ${!state.enabled ? "text-darkMode bg-bgDarkMode" : "bg-darkMode text-whiteMode"}`}>
+                <p>Lng: {lastPos ? lastPos.lng.toFixed(2) : ''}<br />Lat: {lastPos ? lastPos.lat.toFixed(2) : ''}</p>
             </div>
             {/* ********** */}
         </div>
@@ -320,7 +304,7 @@ export default function GetMapboxMap ({def_zoom, enbl, setEnbl, textNbr, histdat
             <div
                 className="overflow-hidden"
                 ref={container}
-                style={{ width: "100%", height: "100vh" }}/>
+                style={{ width: "100%", height: "100vh" }} />
         </div>
     </>)
 }

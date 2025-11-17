@@ -128,10 +128,10 @@ function Cursor({name, include, map, def, className, enabled} : ArgsCursor): JSX
 
     return (<>
     <div className={`relative h-[22px] flex items-center text-[13px] duration-300 space-x-[10px] ${className}
-            ${!enabled ? "text-whiteMode" : "text-darkMode"}`}>
+            ${enabled ? "text-whiteMode" : "text-darkMode"}`}>
         <input type="range" min={0} max={100} value={sliderValue} onChange={e => changeOpacity(Number(e.target.value))}
             className={`w-[62px] h-[10px] rounded-lg appearance-none cursor-pointer duration-300
-            ${!enabled ? "bg-whiteMode accent-darkMode" : "bg-darkMode accent-whiteMode"}`}
+            ${enabled ? "bg-bgWhiteMode accent-bgDarkMode" : "bg-whiteMode accent-bgWhiteMode"}`}
         />
         <p className="min-w-[23px]">{sliderValue}</p>
         <p>{name}</p>
