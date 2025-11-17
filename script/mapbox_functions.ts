@@ -1,6 +1,6 @@
 import mapboxgl, { Map as MapboxMap, LngLatLike, MapMouseEvent, Marker } from "mapbox-gl";
 import ReactDOMServer from 'react-dom/server';
-import { JSXLabels, DicoJsx } from "@/components/jsxdico";
+// import { JSXLabels, DicoJsx } from "@/components/jsxdico";
 
 var darkmode: boolean = false;
 
@@ -577,36 +577,29 @@ function handler(map: MapboxMap, e: MapMouseEvent, label: GeoJsonLabels): void {
     const feature = e.features[0];
     if (!feature.properties || feature.geometry.type !== 'Point') return;
 
-    const labelTXT = feature.properties['fr'];
-
-    // if the label is in the dico
-    const dicoEntry: DicoJsx | undefined = JSXLabels.find(e => e.town === labelTXT);
-
     const coords = feature.geometry.coordinates as LngLatLike;
     const popup = new mapboxgl.Popup({ anchor: "bottom", closeButton: false, offset: [0, -30] })
         .setLngLat(coords);
-    if (!dicoEntry) {
-        popup.setHTML(`<p style="font-weight:bold;font-size:20px;">${labelTXT}</p>`)
-    } else {
-        const html_str: string = ReactDOMServer.renderToString(dicoEntry.jsx);
-        popup.setHTML(html_str);
-        popup.setOffset([-20, -30]);
-        popup.once("open", () => {
-            const popup_el = document.querySelector('.mapboxgl-popup-content') as HTMLDivElement;
 
-            popup_el.classList.add(
-                'flex',
-                'flex-col',
-                'items-center',
-                `w-[280px]`,
-                'max-h-[500px]',
-                'overflow-y-auto',
-                'text-white');
-            popup_el.style.backgroundColor = 'rgb(26, 18, 31)';
-            popup_el.style.scrollbarWidth = 'thin';
-            popup_el.style.scrollbarColor = '#616161 #2a2a2a';
-        });
-    }
+    // const html_str: string = ReactDOMServer.renderToString(feature.properties["jsx"]);
+    popup.setHTML(feature.properties["html"]);
+    popup.setOffset([-20, -30]);
+    popup.once("open", () => {
+        const popup_el = document.querySelector('.mapboxgl-popup-content') as HTMLDivElement;
+
+        popup_el.classList.add(
+            'flex',
+            'flex-col',
+            'items-center',
+            `w-[280px]`,
+            'max-h-[500px]',
+            'overflow-y-auto',
+            'text-white');
+        popup_el.style.backgroundColor = 'rgb(26, 18, 31)';
+        popup_el.style.scrollbarWidth = 'thin';
+        popup_el.style.scrollbarColor = '#616161 #2a2a2a';
+    });
+
     // Hide the popup anchor triangle
     popup.once("open", () => {
         const popup_anchor = document.querySelector('.mapboxgl-popup-tip') as HTMLDivElement;
@@ -632,11 +625,6 @@ function handler(map: MapboxMap, e: MapMouseEvent, label: GeoJsonLabels): void {
  * @example
  * // Add popups to all label layers
  * add_popup(map, labels);
- *
- * @remarks
- * - Popups are dynamically styled with Tailwind-like utility classes for layout and colors.
- * - If a JSX component is associated with a label (`JSXLabels`), it is rendered to HTML using ReactDOMServer.
- * - Only one popup is displayed at a time to maintain clarity on the map.
  */
 function add_popup(map: MapboxMap, labels: GeoJsonLabels[]): void {
     labels.forEach((label) => {
