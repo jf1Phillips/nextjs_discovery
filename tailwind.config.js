@@ -10,10 +10,10 @@ module.exports = {
     extend: {
       colors: {
         customBackground: '#1C0B19',
-        darkMode: '#171219',
-        bgDarkMode: "#f3ebf7ff",
-        whiteMode: '#ffffffff',
-        bgWhiteMode: "#626C66",
+        darkMode: '#1D1448',
+        bgDarkMode: "#ffffff",
+        whiteMode: '#e2e2e2ff',
+        bgWhiteMode: "#3E3D3C",
       }
     },
   },
