@@ -195,6 +195,11 @@ export default function GetMapboxMap({ def_zoom, setEnbl, textNbr, histdate }: M
     const marker = useRef<Marker | null>(null);
     const whatchId = useRef<number | null>(null);
 
+    const goToLoc = () => {
+        if (!map.current || !locBtn.enabled) return;
+        map.current.flyTo({center: locBtn.pos});
+    }
+
     return (<>
         <div className="flex flex-col left-0 top-0 absolute z-10">
             <div className={`flex ${displayCursor ? "flex-col" : "flex-row items-center"}`}>
@@ -250,7 +255,7 @@ export default function GetMapboxMap({ def_zoom, setEnbl, textNbr, histdate }: M
                         <p className={`duration-300 text-[13px] pl-[5px] pr-[5px] rounded-[5px] ${locBtn.enabled && "cursor-pointer"}
                             ${locBtn.enabled ? (!state.enabled ? "bg-bgWhiteMode text-whiteMode" : "bg-bgDarkMode text-darkMode") :
                                 (!state.enabled ? "text-darkMode" : "text-whiteMode")}`}
-                                onClick={() => {locBtn.enabled && map.current?.flyTo({center: locBtn.pos})}}>
+                                onClick={goToLoc}>
                             Géolocalisation</p>
                     </div>
                     {/* ********** */}
