@@ -11,8 +11,8 @@ module.exports = {
       colors: {
         customBackground: '#1C0B19',
         darkMode: '#171219',
-        bgDarkMode: "#d4d4d4ff",
-        whiteMode: '#fafae1ff',
+        bgDarkMode: "#f3ebf7ff",
+        whiteMode: '#ffffffff',
         bgWhiteMode: "#626C66",
       }
     },
