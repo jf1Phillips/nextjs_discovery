@@ -995,44 +995,73 @@ export { addRain };
 /**------------------------------------------------------------------------------------- */
 
 /**
- * Toggles real-time user geolocation tracking on a Mapbox map.
+ * Represents the state of the user's geolocation tracking.
  *
- * When activated, this function continuously updates a marker to follow
- * the user's current position using the browser's Geolocation API.
- * When disabled, it stops tracking, removes the marker, and clears the active watch.
+ * @property enabled - Whether real-time geolocation tracking is currently active.
+ * @property pos - The latest known geographic coordinates of the user.
+ * @property pos.lng - Longitude of the user’s position.
+ * @property pos.lat - Latitude of the user’s position.
  *
- * @param map - The Mapbox map instance, or `null` if the map is not initialized.
- * @param marker - A React ref holding the current Mapbox `Marker` used to display the user’s position.
- * @param loc - A boolean flag indicating whether location tracking should be active (`true`) or disabled (`false`).
- * @param setLoc - A React state setter used to update the `loc` state when location availability changes.
- * @param watchId - A React ref storing the ID of the active geolocation watch (if any), allowing cleanup or restart.
+ * @example
+ * const loc: LocType = {
+ *     enabled: true,
+ *     pos: { lng: 2.35, lat: 48.85 }
+ * };
+ */
+type LocType = {
+    enabled: boolean,
+    pos: { lng: number, lat: number }
+};
+
+/**
+ * Manages real-time user geolocation tracking on a Mapbox map.
+ *
+ * This function either:
+ * - **starts tracking** the user's position when `loc.enabled === true`, or
+ * - **stops tracking** when `loc.enabled === false`.
+ *
+ * When enabled, it continuously updates a Mapbox `Marker` so it follows the
+ * user’s live coordinates using `navigator.geolocation.watchPosition()`.
+ *
+ * @param map - The Mapbox map instance. If `null`, the function safely aborts.
+ * @param marker - A React ref holding the current user position `Marker`.
+ *                 The marker is created on first position update, then reused.
+ * @param loc - The current geolocation state object. Only `loc.enabled` is used to
+ *              decide whether tracking should be active or disabled.
+ * @param setLoc - React state setter used to update geolocation availability
+ *                 and the user’s latest known coordinates.
+ * @param watchId - A React ref storing the ID returned by `watchPosition()`,
+ *                  allowing the function to avoid multiple watchers and properly
+ *                  clear the existing one when tracking is disabled.
  *
  * @example
  * // Enable geolocation tracking
- * get_location(map, markerRef, true, setLoc, watchIdRef);
+ * get_location(map, markerRef, { enabled: true, pos: { lng: 0, lat: 0 } }, setLoc, watchIdRef);
  *
  * @example
  * // Disable geolocation tracking
- * get_location(map, markerRef, false, setLoc, watchIdRef);
+ * get_location(map, markerRef, { enabled: false, pos: { lng: 0, lat: 0 } }, setLoc, watchIdRef);
  *
  * @remarks
- * - Uses `navigator.geolocation.watchPosition()` to continuously track position.
- * - Ensures only one active watcher exists at a time (cleans up existing watchers before starting new ones).
- * - Automatically removes the user marker and stops watching when `loc` is set to `false`.
- * - Requests high-accuracy positioning with a 5-second timeout and zero cache age.
- * - Safe-guards against missing browser geolocation support.
+ * - Ensures **only one active geolocation watcher** exists at a time.
+ * - When disabled, the function **removes the marker**, clears the watcher,
+ *   and updates state accordingly.
+ * - Requests high-accuracy positioning (GPS when available).
+ * - Automatically detects unavailable geolocation or permission denial.
+ * - Uses `{ enableHighAccuracy: true, timeout: 5000, maximumAge: 0 }` for
+ *   fresh and precise location updates.
  */
 function get_location(
     map: MapboxMap | null,
     marker: React.RefObject<Marker | null>,
-    loc: boolean,
-    setLoc: React.Dispatch<React.SetStateAction<boolean>>,
+    loc: LocType,
+    setLoc: React.Dispatch<React.SetStateAction<LocType>>,
     watchId: React.RefObject<number | null>
 ): void {
     if (!map) return;
     if (!navigator.geolocation) return;
 
-    if (!loc) {
+    if (!loc.enabled) {
         if (watchId.current !== null) {
             navigator.geolocation.clearWatch(watchId.current);
             watchId.current = null;
@@ -1041,7 +1070,7 @@ function get_location(
             marker.current.remove();
             marker.current = null;
         }
-        setLoc(false);
+        setLoc((prev) => ({ ...prev, enabled: false }));
         return;
     }
     if (watchId.current === null) {
@@ -1055,12 +1084,12 @@ function get_location(
             } else {
                 marker.current.setLngLat(coord);
             }
-            setLoc(true);
+            setLoc({ enabled: true, pos: { lng: coord[0], lat: coord[1] } });
         },
             (error) => {
                 console.log("Error location: ", error);
                 available = false;
-                setLoc(false);
+                setLoc((prev) => ({ ...prev, enabled: false }));
             },
             {
                 enableHighAccuracy: true,
@@ -1071,5 +1100,5 @@ function get_location(
     }
 }
 
-export { get_location };
+export { get_location, type LocType };
 /*****************************************************************************************/

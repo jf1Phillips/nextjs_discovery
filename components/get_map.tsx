@@ -7,7 +7,7 @@ import mapboxgl, { LngLat, Map as MapboxMap, Marker } from "mapbox-gl";
 import { Cursor } from "./cursor";
 import addBunker, { removeBunker } from "./addBunker";
 import json_load from "./json_load";
-import mapboxTools, { GeoImg, GeoJsonLabels } from "@/script/mapbox_functions";
+import mapboxTools, { GeoImg, GeoJsonLabels, LocType } from "@/script/mapbox_functions";
 
 const ROAD_FILENAME: string = "/geoJson_files/route_palestine_merged.geojson";
 const LABELS_FILENAME: string = "/geoJson_files/city_label.geojson";
@@ -191,7 +191,7 @@ export default function GetMapboxMap({ def_zoom, setEnbl, textNbr, histdate }: M
     }
 
     const [displayCursor, setDisplayCursor] = useState<boolean>(true);
-    const [locBtn, setLocBtn] = useState<boolean>(false);
+    const [locBtn, setLocBtn] = useState<LocType>({enabled: false, pos: {lng: 0, lat: 0}});
     const marker = useRef<Marker | null>(null);
     const whatchId = useRef<number | null>(null);
 
@@ -205,14 +205,14 @@ export default function GetMapboxMap({ def_zoom, setEnbl, textNbr, histdate }: M
                     {/* CLOSE BTN */}
                     <div className="flex justify-start m-[-5px]">
                         <button className={`text-[15px] duration-300 w-[20px] h-[20px] flex items-center justify-center rounded-[5px]
-                            ${!state.enabled ? "text-darkMode bg-bgWhiteMode" : "text-whiteMode bg-bgDarkMode"}
+                            ${!state.enabled ? "text-whiteMode bg-bgWhiteMode" : "text-darkMode bg-bgDarkMode"}
                         `} onClick={() => setDisplayCursor(!displayCursor)}>
                             {displayCursor ? "x" : "☰"}
                         </button>
                     </div>
                     {/* ********** */}
                     {
-                        styleLoaded ? (<>
+                        styleLoaded && (<>
                             <Cursor className={!displayCursor ? "hidden" : ""}
                                 name="Afficher la carte du PEF (1880)" include={ID_PEF}
                                 map={map} enabled={state.enabled} />
@@ -235,19 +235,22 @@ export default function GetMapboxMap({ def_zoom, setEnbl, textNbr, histdate }: M
                             <Cursor className={!displayCursor ? "hidden" : ""}
                                 name="Afficher les frontières actuelles" include={["admin", "state-label", "country-label"]}
                                 map={map} enabled={state.enabled} def={100} />
-                        </>) : null
+                        </>)
                     }
                     {/* GEOLOC */}
                     <div className={!displayCursor ? "hidden" : "space-x-[15px] flex items-center"}>
                         <div className={`flex cursor-pointer rounded-full duration-300 w-[40px] h-[20px] items-center
-                                ${!state.enabled ? "bg-whiteMode text-whiteMode" : "bg-bgWhiteMode text-darkMode"}`}
-                            onClick={() => mapboxTools.get_location(map.current, marker, !locBtn, setLocBtn, whatchId)}>
+                                ${!state.enabled ? "bg-whiteMode text-darkMode" : "bg-bgWhiteMode text-whiteMode"}`}
+                            onClick={() => mapboxTools.get_location(map.current, marker, ({...locBtn, enabled: !locBtn.enabled}), setLocBtn, whatchId)}>
                             <p className={`pointer-events-none text-[15px] select-none duration-300
                                 ml-[5px] mr-[5px]
-                                ${!locBtn ? "translate-x-[2px] text-[#ff0000]" : "translate-x-[18px]"}`}>
+                                ${!locBtn.enabled ? "translate-x-[2px] text-[#ff0000]" : "translate-x-[18px]"}`}>
                                 ⊕</p>
                         </div>
-                        <p className={`duration-300 text-[13px] ${!state.enabled ? "text-darkMode" : "text-whiteMode"}`}>
+                        <p className={`duration-300 text-[13px] pl-[5px] pr-[5px] rounded-[5px] ${locBtn.enabled && "cursor-pointer"}
+                            ${locBtn.enabled ? (!state.enabled ? "bg-bgWhiteMode text-whiteMode" : "bg-bgDarkMode text-darkMode") :
+                                (!state.enabled ? "text-darkMode" : "text-whiteMode")}`}
+                                onClick={() => {locBtn.enabled && map.current?.flyTo({center: locBtn.pos})}}>
                             Géolocalisation</p>
                     </div>
                     {/* ********** */}
