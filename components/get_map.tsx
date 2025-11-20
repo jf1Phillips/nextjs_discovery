@@ -167,10 +167,10 @@ export default function GetMapboxMap({ def_zoom, setEnbl, textNbr, histdate }: M
         if (!map.current || !styleLoaded) return;
         if (!(textNbr % 4)) {
             mapboxTools.addRain(map.current);
-            setState(prev => ({...prev, rain: true}));
+            setState(prev => ({ ...prev, rain: true }));
         } else {
             mapboxTools.addRain(map.current, true);
-            setState(prev => ({...prev, rain: false}));
+            setState(prev => ({ ...prev, rain: false }));
         }
         json_load(map.current, {
             label: LabelsToAdd[0],
@@ -192,7 +192,7 @@ export default function GetMapboxMap({ def_zoom, setEnbl, textNbr, histdate }: M
 
     const changeMode = () => {
         if (!map.current || !styleLoaded) return;
-        const new_state: MapVar = {...state, enabled: !state.enabled};
+        const new_state: MapVar = { ...state, enabled: !state.enabled };
         mapboxTools.darkmode = new_state.enabled;
         mapboxTools.setDarkmodeToLabels(map.current, LabelsToAdd);
         mapboxTools.setDarkModeToMap(map.current);
@@ -220,13 +220,13 @@ export default function GetMapboxMap({ def_zoom, setEnbl, textNbr, histdate }: M
     }
 
     const [displayCursor, setDisplayCursor] = useState<boolean>(true);
-    const [locBtn, setLocBtn] = useState<LocType>({enabled: false, pos: {lng: 0, lat: 0}});
+    const [locBtn, setLocBtn] = useState<LocType>({ enabled: false, pos: { lng: 0, lat: 0 } });
     const marker = useRef<Marker | null>(null);
     const whatchId = useRef<number | null>(null);
 
     const goToLoc = () => {
         if (!map.current || !locBtn.enabled) return;
-        map.current.flyTo({center: locBtn.pos});
+        map.current.flyTo({ center: locBtn.pos });
     }
 
     return (<>
@@ -261,7 +261,7 @@ export default function GetMapboxMap({ def_zoom, setEnbl, textNbr, histdate }: M
                                 map={map} enabled={state.enabled} def={100} />
                             <Cursor className={!displayCursor ? "hidden" : ""}
                                 name="Afficher les routes et bâtiments actuels" include={[
-                                    "road", "natural-line-label", "natural-point-label",
+                                    "road", "natural-line-label", "natural-point-label", "aeroway",
                                     "water-line-label", "water-point-label", "poi-label", "airport-label",
                                     "settlement-subdivision-label", "settlement-label",
                                     "building", "bridge", "tunnel", "waterway", "park"]}
@@ -275,7 +275,7 @@ export default function GetMapboxMap({ def_zoom, setEnbl, textNbr, histdate }: M
                     <div className={!displayCursor ? "hidden" : "space-x-[15px] flex items-center"}>
                         <div className={`flex cursor-pointer rounded-full duration-300 w-[40px] h-[20px] items-center
                                 ${!state.enabled ? "bg-whiteMode text-darkMode" : "bg-bgWhiteMode text-whiteMode"}`}
-                            onClick={() => mapboxTools.get_location(map.current, marker, ({...locBtn, enabled: !locBtn.enabled}), setLocBtn, whatchId)}>
+                            onClick={() => mapboxTools.get_location(map.current, marker, ({ ...locBtn, enabled: !locBtn.enabled }), setLocBtn, whatchId)}>
                             <p className={`pointer-events-none text-[15px] select-none duration-300
                                 ml-[5px] mr-[5px]
                                 ${!locBtn.enabled ? "translate-x-[2px] text-[#ff0000]" : "translate-x-[18px]"}`}>
@@ -284,7 +284,7 @@ export default function GetMapboxMap({ def_zoom, setEnbl, textNbr, histdate }: M
                         <p className={`duration-300 text-[13px] pl-[5px] pr-[5px] rounded-[5px] ${locBtn.enabled && "cursor-pointer"}
                             ${locBtn.enabled ? (!state.enabled ? "bg-bgWhiteMode text-whiteMode" : "bg-bgDarkMode text-darkMode") :
                                 (!state.enabled ? "text-darkMode" : "text-whiteMode")}`}
-                                onClick={goToLoc}>
+                            onClick={goToLoc}>
                             Géolocalisation</p>
                     </div>
                     {/* ********** */}
@@ -324,7 +324,7 @@ export default function GetMapboxMap({ def_zoom, setEnbl, textNbr, histdate }: M
                     {/* ********** */}
                     {/* RELOAD JSON */}
                     <button ref={reloadRef}
-                            className={`w-[22px] h-[22px] rounded-[2px] duration-300 text-[15px] reload_json
+                        className={`w-[22px] h-[22px] rounded-[2px] duration-300 text-[15px] reload_json
                                 ${!state.enabled ? "bg-bgDarkMode text-darkMode" : "bg-darkMode text-whiteMode"}`}
                         onClick={() => mapboxTools.reload_json_labels(map.current, LabelsToAdd)}
                     >↻</button>
