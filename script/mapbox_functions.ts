@@ -546,6 +546,7 @@ function reload_json_labels(map: MapboxMap | null, labels: GeoJsonLabels[]): voi
     if (!map) return;
     labels.forEach((label) => {
         if (map.getLayer(label.id)) map.removeLayer(label.id);
+        if (map.getLayer(`${label.id}-highlighted`)) map.removeLayer(`${label.id}-highlighted`);
         if (map.getSource(label.id)) map.removeSource(label.id);
     });
     addGeoJsonLabels(map, labels);
