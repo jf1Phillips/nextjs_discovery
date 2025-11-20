@@ -8,7 +8,6 @@ import { Cursor } from "./cursor";
 import addBunker, { removeBunker } from "./addBunker";
 import json_load from "./json_load";
 import mapboxTools, { GeoImg, GeoJsonLabels, LocType } from "@/script/mapbox_functions";
-import { resolve } from "path";
 
 const ROAD_FILENAME: string = "/geoJson_files/route_palestine_merged.geojson";
 const LABELS_FILENAME: string = "/geoJson_files/city_label.geojson";
@@ -162,7 +161,7 @@ export default function GetMapboxMap({ def_zoom, setEnbl, textNbr, histdate }: M
         if (scaleEl && btnsContainer) {
             btnsContainer.parentElement?.appendChild(scaleEl);
         }
-    }, [reloadRef.current]);
+    }, []);
 
     useEffect(() => {
         if (!map.current || !styleLoaded) return;
