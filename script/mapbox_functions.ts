@@ -314,8 +314,7 @@ function setDarkModeToMap(map: MapboxMap): void {
             }
             if (layer.id.includes('border') || layer.id.includes('boundary') || layer.id.includes('admin')) {
                 if (layer.type === 'line') {
-                    map.setPaintProperty(layer.id, 'line-color', colors.road);
-                    map.setPaintProperty(layer.id, "line-border-color", colors.border)
+                    map.setPaintProperty(layer.id, 'line-color', colors.border);
                 }
             }
             if (layer.type === 'symbol') {
@@ -506,9 +505,7 @@ function addGeoJsonLabels(map: MapboxMap, labels: GeoJsonLabels[]): void {
 function highLightLabel(map: MapboxMap, labels: GeoJsonLabels[], name?: string | string[]): void {
     labels.forEach((label) => {
         const highlightedLayerId = `${label.id}-highlighted`;
-        console.log("OEE");
         if (!map.getLayer(label.id) || !map.getLayer(highlightedLayerId)) return;
-        console.log("NOP");
         if (name === undefined) {
             setDarkmodeToLabels(map, [label]);
             map.setFilter(label.id, ['>=', ['zoom'],

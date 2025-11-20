@@ -11,7 +11,7 @@ import mapboxTools, { GeoImg, GeoJsonLabels, LocType } from "@/script/mapbox_fun
 
 const ROAD_FILENAME: string = "/geoJson_files/route_palestine_merged.geojson";
 const LABELS_FILENAME: string = "/geoJson_files/city_label.geojson";
-const style: string = "mapbox://styles/mapbox/dark-v10";
+const style: string = "mapbox://styles/mapbox/light-v10";
 
 export { LABELS_FILENAME };
 
@@ -235,7 +235,7 @@ export default function GetMapboxMap({ def_zoom, setEnbl, textNbr, histdate }: M
                                     "road", "natural-line-label", "natural-point-label",
                                     "water-line-label", "water-point-label", "poi-label", "airport-label",
                                     "settlement-subdivision-label", "settlement-label",
-                                    "building", "bridge", "tunnel", "land", "waterway", "park"]}
+                                    "building", "bridge", "tunnel", "waterway", "park"]}
                                 map={map} enabled={state.enabled} def={0} />
                             <Cursor className={!displayCursor ? "hidden" : ""}
                                 name="Afficher les frontières actuelles" include={["admin", "state-label", "country-label"]}
