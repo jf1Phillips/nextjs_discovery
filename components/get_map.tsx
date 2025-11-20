@@ -8,6 +8,7 @@ import { Cursor } from "./cursor";
 import addBunker, { removeBunker } from "./addBunker";
 import json_load from "./json_load";
 import mapboxTools, { GeoImg, GeoJsonLabels, LocType } from "@/script/mapbox_functions";
+import { resolve } from "path";
 
 const ROAD_FILENAME: string = "/geoJson_files/route_palestine_merged.geojson";
 const LABELS_FILENAME: string = "/geoJson_files/city_label.geojson";
@@ -129,7 +130,19 @@ export default function GetMapboxMap({ def_zoom, setEnbl, textNbr, histdate }: M
             map.current.addControl(scaleControl);
             map.current.once("style.load", () => {
                 add_all_things(state, map.current);
-                setStyleLoaded(true);
+                const waitLoadStyle = (labels: GeoJsonLabels[]) => {
+                    if (!map.current) return;
+                    const allLoaded = labels.every(label =>
+                        map.current?.getLayer(label.id) &&
+                        map.current?.getLayer(`${label.id}-highlighted`)
+                    );
+                    if (allLoaded) {
+                        setStyleLoaded(true);
+                    } else {
+                        setTimeout(() => waitLoadStyle(labels), 100);
+                    }
+                };
+                waitLoadStyle(LabelsToAdd);
             });
             map.current.on("click", (e) => {
                 const txt = `${e.lngLat.lng.toFixed(5)},${e.lngLat.lat.toFixed(5)}`;
