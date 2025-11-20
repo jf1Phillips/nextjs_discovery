@@ -22,7 +22,7 @@ def scrape_table(url):
     for tr in target_table.find_all("tr"):
         tds = tr.find_all("td")
         if len(tds) == 3:
-            row = [re.sub(r"\s+", " ", str(td.get_text(strip=True))) for td in tds]
+            row = [re.sub(r"\s+", " ", str(td.get_text(strip=False))) for td in tds]
             if not ("Contact The Miracle Hunter" in row):
                 results.append(row)
     return results[1:]
