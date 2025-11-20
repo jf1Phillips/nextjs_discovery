@@ -121,6 +121,12 @@ export default function GetMapboxMap({ def_zoom, setEnbl, textNbr, histdate }: M
                 center: [state.long, state.lat],
             });
             mapboxTools.darkmode = true;
+            const scaleControl: mapboxgl.ScaleControl =
+                new mapboxgl.ScaleControl({
+                    maxWidth: 100,
+                    unit: 'metric'
+                });
+            map.current.addControl(scaleControl);
             map.current.once("style.load", () => {
                 add_all_things(state, map.current);
                 setStyleLoaded(true);
@@ -133,6 +139,17 @@ export default function GetMapboxMap({ def_zoom, setEnbl, textNbr, histdate }: M
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
+
+    const reloadRef = useRef<HTMLButtonElement | null>(null);
+    useEffect(() => {
+        if (!reloadRef.current) return;
+        const scaleEl = document.querySelector(".mapboxgl-ctrl-scale");
+        const btnsContainer = document.querySelector(".reload_json");
+
+        if (scaleEl && btnsContainer) {
+            btnsContainer.parentElement?.appendChild(scaleEl);
+        }
+    }, [reloadRef.current]);
 
     useEffect(() => {
         if (!map.current || !styleLoaded) return;
@@ -294,7 +311,8 @@ export default function GetMapboxMap({ def_zoom, setEnbl, textNbr, histdate }: M
                         {!state.rain ? "🌧️" : "☀️"}</button>
                     {/* ********** */}
                     {/* RELOAD JSON */}
-                    <button className={`w-[22px] h-[22px] rounded-[2px] duration-300 text-[15px]
+                    <button ref={reloadRef}
+                            className={`w-[22px] h-[22px] rounded-[2px] duration-300 text-[15px] reload_json
                                 ${!state.enabled ? "bg-bgDarkMode text-darkMode" : "bg-darkMode text-whiteMode"}`}
                         onClick={() => mapboxTools.reload_json_labels(map.current, LabelsToAdd)}
                     >↻</button>
