@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 
+export const BDD_ULR:string = "https://om-backend-315602396963.europe-west9.run.app/";
+
 export interface DisplayArgs {
     enabled: boolean,
     setStateTextNbr:  React.Dispatch<React.SetStateAction<number>>,
@@ -15,7 +17,7 @@ export default function DisplayTxt({enabled, setStateTextNbr, histdate, setHistD
     const [textNbr, setTextNbr] = useState<number>(1);
     const [up, setUp] = useState<boolean>(false);
 
-    const api_req: (nbr: number) => string = (nbr:number) => `https://dilexit-back-1001788493975.europe-west9.run.app/bible/pericopes/${nbr}`;
+    const api_req: (nbr: number) => string = (nbr:number) => `${BDD_ULR}${nbr}`;
     const set_text_data: (id: number) => void = (id: number) => {
         setDisplayText("loading...");
         fetch(api_req(id)).then(res => res.json()).then(data => {
