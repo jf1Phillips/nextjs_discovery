@@ -46,7 +46,6 @@ export default function DisplayTxt({ setStateTextNbr, histdate, setHistDate }: D
                 ${mapboxTools.darkmode ? "bg-whiteMode text-darMode" : "bg-bgWhiteMode text-whiteMode"}`}
                 onClick={() => setUp(!up)}>{!up ? "△" : "▽"}</button>
         </div>
-
         <div className={`flex-row flex justify-between duration-300 rounded-t-[10px]
             ${mapboxTools.darkmode ? "bg-darkMode text-whiteMode" : "bg-bgDarkMode text-darkMode"}
                 ${up ? "h-[200px] pt-[20px]" : "h-[70px] items-center"}
@@ -60,6 +59,7 @@ export default function DisplayTxt({ setStateTextNbr, histdate, setHistDate }: D
                 ${mapboxTools.darkmode ? "bg-whiteMode text-darkMode" : "bg-bgWhiteMode text-whiteMode"}`}
                 onClick={() => { click_btn(1) }}
             >{">"}</button>
+            <div className="scaleDiv right-[10px] top-[-30px] absolute"></div>
         </div>
     </>);
 }

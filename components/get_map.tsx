@@ -155,10 +155,10 @@ export default function GetMapboxMap({ def_zoom, textNbr, histdate }: MapArgs): 
     useEffect(() => {
         if (!reloadRef.current) return;
         const scaleEl = document.querySelector(".mapboxgl-ctrl-scale");
-        const btnsContainer = document.querySelector(".reload_json");
+        const btnsContainer = document.querySelector(".scaleDiv");
 
         if (scaleEl && btnsContainer) {
-            btnsContainer.parentElement?.appendChild(scaleEl);
+            btnsContainer.appendChild(scaleEl);
         }
     }, []);
 
