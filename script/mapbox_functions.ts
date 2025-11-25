@@ -730,9 +730,7 @@ function handler(map: MapboxMap, e: MapMouseEvent): void {
     const popup = new mapboxgl.Popup({ anchor: "bottom", closeButton: false, offset: [0, -30] })
         .setLngLat(coords);
 
-    // const html_str: string = ReactDOMServer.renderToString(feature.properties["jsx"]);
     popup.setHTML(feature.properties["html"]);
-    // popup.setOffset([-20, -30]);
     popup.once("open", () => {
         const popup_el = document.querySelector('.mapboxgl-popup-content') as HTMLDivElement;
 
