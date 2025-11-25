@@ -743,7 +743,9 @@ function handler(map: MapboxMap, e: MapMouseEvent): void {
             'max-h-[500px]',
             'overflow-y-auto',
             'text-white');
-        popup_el.style.backgroundColor = 'rgb(26, 18, 31)';
+        popup_el.style.backgroundColor = '#3E3D3C';
+        popup_el.style.color = '#FFFFFF';
+        popup_el.style.fontSize = '18px';
         popup_el.style.scrollbarWidth = 'thin';
         popup_el.style.scrollbarColor = '#616161 #2a2a2a';
     });
