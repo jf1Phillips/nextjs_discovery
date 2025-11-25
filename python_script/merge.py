@@ -13,6 +13,7 @@ final_data = []
 
 for entry in data1:
     dic = {
+        "type": "Apparation of the virgin Mary",
         "date": entry["date"],
         "place": entry["place"],
         "visionary": entry["visionary"],
@@ -29,6 +30,7 @@ for entry in data1:
 
 for entry in data2:
     dic = {
+        "type": "Apparation of the virgin Mary",
         "date": entry["date"],
         "place": entry["place"],
         "visionary": "",
