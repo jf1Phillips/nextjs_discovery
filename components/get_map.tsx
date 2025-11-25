@@ -35,13 +35,6 @@ const DEFAULT_VALUE: MapVar = {
     rain: false,
 };
 
-interface MapArgs {
-    def_zoom: number,
-    setEnbl: React.Dispatch<React.SetStateAction<boolean>>,
-    textNbr: number,
-    histdate: number
-};
-
 const ID_PEF: string = "pef1880map";
 const ID_HANS: string = "hans1975map";
 
@@ -93,7 +86,13 @@ const add_all_things = (new_state: MapVar, map: MapboxMap | null) => {
     mapboxTools.setDarkModeToMap(map);
 }
 
-export default function GetMapboxMap({ def_zoom, setEnbl, textNbr, histdate }: MapArgs): JSX.Element {
+interface MapArgs {
+    def_zoom: number,
+    textNbr: number,
+    histdate: number
+};
+
+export default function GetMapboxMap({ def_zoom, textNbr, histdate }: MapArgs): JSX.Element {
     const [state, setState] = useState<MapVar>(({ ...DEFAULT_VALUE, zoom: def_zoom }));
     const [lastPos, setLastPos] = useState<LngLat | null>(null);
     const map = useRef<MapboxMap | null>(null);
@@ -197,7 +196,6 @@ export default function GetMapboxMap({ def_zoom, setEnbl, textNbr, histdate }: M
         mapboxTools.setDarkmodeToLabels(map.current, LabelsToAdd);
         mapboxTools.setDarkModeToMap(map.current);
         setState(new_state);
-        setEnbl(new_state.enabled);
     }
 
     const zoomInOut = (z: "in" | "out") => {

@@ -12,17 +12,18 @@ export default function MapNbr(
     }
 ) {
     const params = use(props.params);
-    const [enabled, setEnabled] = useState<boolean>(false);
     const [stateTextNbr, setStateTextNbr] = useState<number>(1);
     const [histdate, setHistDate] = useState<number>(1950);
 
     return (
         <>
-            <GetMapboxMap def_zoom={atoi(params.id, 10) ? 8 : 8} histdate={histdate} setEnbl={setEnabled} textNbr={stateTextNbr}/>
-            <DisplayTxt enabled={enabled}
-                        setStateTextNbr={setStateTextNbr}
-                        histdate={histdate}
-                        setHistDate={setHistDate}/>
+            <GetMapboxMap   def_zoom={atoi(params.id, 10) ? 8 : 8}
+                            histdate={histdate}
+                            textNbr={stateTextNbr}/>
+
+            <DisplayTxt     setStateTextNbr={setStateTextNbr}
+                            histdate={histdate}
+                            setHistDate={setHistDate}/>
         </>
     )
 }

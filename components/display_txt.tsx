@@ -1,23 +1,23 @@
 "use client";
 
 import { useState } from "react";
+import mapboxTools from "@/script/mapbox_functions"
 
-export const BDD_ULR:string = "https://om-backend-315602396963.europe-west9.run.app/";
+export const BDD_ULR: string = "https://om-backend-315602396963.europe-west9.run.app/";
+const BIBLE_ID: number = 5;
 
 export interface DisplayArgs {
-    enabled: boolean,
-    setStateTextNbr:  React.Dispatch<React.SetStateAction<number>>,
+    setStateTextNbr: React.Dispatch<React.SetStateAction<number>>,
     histdate: number,
     setHistDate: React.Dispatch<React.SetStateAction<number>>
 };
 
-export default function DisplayTxt({enabled, setStateTextNbr, histdate, setHistDate}: DisplayArgs):React.JSX.Element
-{
+export default function DisplayTxt({ setStateTextNbr, histdate, setHistDate }: DisplayArgs): React.JSX.Element {
     const [displayText, setDisplayText] = useState<string>("start...");
     const [textNbr, setTextNbr] = useState<number>(1);
     const [up, setUp] = useState<boolean>(false);
 
-    const api_req: (nbr: number) => string = (nbr:number) => `${BDD_ULR}${nbr}`;
+    const api_req: (nbr: number) => string = (nbr: number) => `${BDD_ULR}${nbr}`;
     const set_text_data: (id: number) => void = (id: number) => {
         setDisplayText("loading...");
         fetch(api_req(id)).then(res => res.json()).then(data => {
@@ -43,23 +43,23 @@ export default function DisplayTxt({enabled, setStateTextNbr, histdate, setHistD
                 ${up ? "bottom-[200px]" : "bottom-[70px]"}`}>
             <button className={`w-[30px] h-[30px] text-[15px] rounded-full duration-200
                 flex items-center justify-center hover:mb-[10px]
-                ${enabled ? "bg-whiteMode text-darMode" : "bg-bgWhiteMode text-whiteMode"}`}
+                ${mapboxTools.darkmode ? "bg-whiteMode text-darMode" : "bg-bgWhiteMode text-whiteMode"}`}
                 onClick={() => setUp(!up)}>{!up ? "△" : "▽"}</button>
         </div>
 
         <div className={`flex-row flex justify-between duration-300 rounded-t-[10px]
-            ${enabled ? "bg-darkMode text-whiteMode" : "bg-bgDarkMode text-darkMode"}
+            ${mapboxTools.darkmode ? "bg-darkMode text-whiteMode" : "bg-bgDarkMode text-darkMode"}
                 ${up ? "h-[200px] pt-[20px]" : "h-[70px] items-center"}
                 absolute bottom-0 w-full px-[20px]`}>
             <button className={`text-[20px] duration-300 h-[25px] w-[40px] items-center justify-center flex rounded-[5px]
-                ${enabled ? "bg-whiteMode text-darkMode" : "bg-bgWhiteMode text-whiteMode"}`}
-                onClick={() => {click_btn(-1)}}
-                >{"<"}</button>
+                ${mapboxTools.darkmode ? "bg-whiteMode text-darkMode" : "bg-bgWhiteMode text-whiteMode"}`}
+                onClick={() => { click_btn(-1) }}
+            >{"<"}</button>
             <p className="text-[16px]">Chapitre {displayText}</p>
             <button className={`text-[20px] duration-300  h-[25px] w-[40px] items-center justify-center flex rounded-[5px]
-                ${enabled ? "bg-whiteMode text-darkMode" : "bg-bgWhiteMode text-whiteMode"}`}
-                onClick={() => {click_btn(1)}}
-                >{">"}</button>
+                ${mapboxTools.darkmode ? "bg-whiteMode text-darkMode" : "bg-bgWhiteMode text-whiteMode"}`}
+                onClick={() => { click_btn(1) }}
+            >{">"}</button>
         </div>
     </>);
 }
