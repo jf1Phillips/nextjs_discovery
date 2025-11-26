@@ -89,7 +89,10 @@ def scrape_table(url):
                 for link in links:
                     href = link.get("href", "")
                     if href != "":
-                        row.append(BASEURL+href)
+                        if href.startswith("http"):
+                            row.append(href)
+                        else:
+                            row.append(BASEURL+href)
                 results.append(row)
     return results[1:]
 
