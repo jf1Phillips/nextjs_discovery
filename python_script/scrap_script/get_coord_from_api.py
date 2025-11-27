@@ -62,7 +62,7 @@ def get_coords(place) -> tuple | None:
     if data:
         lat = data[0]["lat"]
         lon = data[0]["lon"]
-        return lat, lon
+        return float(lat), float(lon)
     return None
 
 
