@@ -1051,7 +1051,7 @@ function get_location(
     map: MapboxMap | null,
     marker: React.RefObject<Marker | null>,
     loc: LocType,
-    setLoc: React.Dispatch<React.SetStateAction<LocType>>,
+    setLoc: (val: LocType | ((prev: LocType) => LocType)) => void,
     watchId: React.RefObject<number | null>
 ): void {
     if (!map) return;
