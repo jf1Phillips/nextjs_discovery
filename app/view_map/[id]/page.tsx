@@ -14,16 +14,19 @@ export default function MapNbr(
     const params = use(props.params);
     const [stateTextNbr, setStateTextNbr] = useState<number>(1);
     const [histdate, setHistDate] = useState<number>(1950);
+    const [darkMode, setDarkMode] = useState<boolean>(false);
 
     return (
         <>
             <GetMapboxMap   def_zoom={atoi(params.id, 10) ? 8 : 8}
                             histdate={histdate}
-                            textNbr={stateTextNbr}/>
+                            textNbr={stateTextNbr}
+                            setDarkMode={setDarkMode}/>
 
             <DisplayTxt     setStateTextNbr={setStateTextNbr}
                             histdate={histdate}
-                            setHistDate={setHistDate}/>
+                            setHistDate={setHistDate}
+                            darkMode={darkMode}/>
         </>
     )
 }

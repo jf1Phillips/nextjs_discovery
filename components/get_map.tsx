@@ -89,10 +89,11 @@ const add_all_things = (new_state: MapVar, map: MapboxMap | null) => {
 interface MapArgs {
     def_zoom: number,
     textNbr: number,
-    histdate: number
+    histdate: number,
+    setDarkMode: (val: boolean) => void,
 };
 
-export default function GetMapboxMap({ def_zoom, textNbr, histdate }: MapArgs): JSX.Element {
+export default function GetMapboxMap({ def_zoom, textNbr, histdate, setDarkMode }: MapArgs): JSX.Element {
     const [state, setState] = useState<MapVar>(({ ...DEFAULT_VALUE, zoom: def_zoom }));
     const [lastPos, setLastPos] = useState<LngLat | null>(null);
     const map = useRef<MapboxMap | null>(null);
@@ -119,7 +120,7 @@ export default function GetMapboxMap({ def_zoom, textNbr, histdate }: MapArgs): 
                 zoom: state.zoom,
                 center: [state.long, state.lat],
             });
-            mapboxTools.darkmode = true;
+            mapboxTools.darkmode = false;
             const scaleControl: mapboxgl.ScaleControl =
                 new mapboxgl.ScaleControl({
                     maxWidth: 100,
@@ -193,6 +194,7 @@ export default function GetMapboxMap({ def_zoom, textNbr, histdate }: MapArgs): 
         if (!map.current || !styleLoaded) return;
         const new_state: MapVar = { ...state, enabled: !state.enabled };
         mapboxTools.darkmode = new_state.enabled;
+        setDarkMode(new_state.enabled);
         mapboxTools.setDarkmodeToLabels(map.current, LabelsToAdd);
         mapboxTools.setDarkModeToMap(map.current);
         setState(new_state);
