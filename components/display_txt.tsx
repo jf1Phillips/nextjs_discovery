@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import mapboxTools from "@/script/mapbox_functions"
 
 export const BDD_ULR: string = "https://om-backend-315602396963.europe-west9.run.app/";
 const BIBLE_ID: number = 5;
@@ -18,26 +17,26 @@ export default function DisplayTxt({ setStateTextNbr, histdate, setHistDate, dar
     const [textNbr, setTextNbr] = useState<number>(1);
     const [up, setUp] = useState<boolean>(false);
 
-    const api_req: (nbr: number) => string = (nbr: number) => `${BDD_ULR}${nbr}`;
-    const set_text_data: (id: number) => void = (id: number) => {
-        setDisplayText("loading...");
-        fetch(api_req(id)).then(res => res.json()).then(data => {
-            setDisplayText(id.toString());
-            setStateTextNbr(id);
-            setTextNbr(id);
-        });
-    };
+    // const api_req: (nbr: number) => string = (nbr: number) => `${BDD_ULR}${nbr}`;
+    // const set_text_data: (id: number) => void = (id: number) => {
+    //     setDisplayText("loading...");
+    //     fetch(api_req(id)).then(res => res.json()).then(data => {
+    //         setDisplayText(id.toString());
+    //         setStateTextNbr(id);
+    //         setTextNbr(id);
+    //     });
+    // };
 
-    if (displayText == "start...")
-        set_text_data(textNbr);
+    // if (displayText == "start...")
+    //     set_text_data(textNbr);
     const click_btn: (add: number) => void = (add: number) => {
-        let new_nbr: number = textNbr + add;
-        const max = 50;
+        // let new_nbr: number = textNbr + add;
+        // const max = 50;
 
-        if (new_nbr <= 0) new_nbr = max;
-        if (new_nbr > max) new_nbr = 1;
-        set_text_data(new_nbr);
-        setHistDate(histdate + add);
+        // if (new_nbr <= 0) new_nbr = max;
+        // if (new_nbr > max) new_nbr = 1;
+        // set_text_data(new_nbr);
+        // setHistDate(histdate + add);
     };
     return (<>
         <div className={`absolute w-full flex justify-center h-[50px] items-center duration-300

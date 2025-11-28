@@ -1,5 +1,24 @@
 import { GeoJsonLabels, highLightLabel } from "@/script/mapbox_functions";
-import {Map as MapboxMap} from "mapbox-gl";
+import { Map as MapboxMap } from "mapbox-gl";
+
+interface ApiScheme {
+    chapter: number,
+    poemSections: {
+        name: string,
+        entityLocations: {
+            name: string,
+            longitude: number,
+            latitude: number,
+            [key: string]: any,
+        }[],
+        [key: string]: any,
+    }[],
+    [key: string]: any,
+};
+
+async function loadChapterData(chatperId: number): Promise<ApiScheme | undefined> {
+    return undefined;
+}
 
 interface Feature {
     type: "Feature",
@@ -56,6 +75,6 @@ export default function json_load(map: MapboxMap, properties: LoadProperties) {
         highLightLabel(map, [properties.label], feature.properties.fr);
         if (!properties.move) return;
         const coord: [number, number] = feature.geometry.coordinates;
-        map.flyTo({center: coord, zoom: properties.zoom_level});
+        map.flyTo({ center: coord, zoom: properties.zoom_level });
     });
 }
