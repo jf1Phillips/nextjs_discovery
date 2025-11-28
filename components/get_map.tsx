@@ -338,7 +338,7 @@ export default function GetMapboxMap({ def_zoom, textNbr, histdate, setDarkMode 
             {/* LONG LAT */}
             <div className={`w-fit text-[15px] p-[5px] duration-300 tracking-[1px] rounded-br-[5px]
                 ${!state.enabled ? "text-darkMode bg-bgDarkMode" : "bg-darkMode text-whiteMode"}`}>
-                <p>Lng: {lastPos ? lastPos.lng.toFixed(2) : ''}<br />Lat: {lastPos ? lastPos.lat.toFixed(2) : ''}</p>
+                <p>Lng: {lastPos ? lastPos.lng.toFixed(7) : ''}<br />Lat: {lastPos ? lastPos.lat.toFixed(7) : ''}</p>
             </div>
             {/* ********** */}
         </div>
