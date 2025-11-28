@@ -35,10 +35,6 @@ const mapboxTools = {
 
 export default mapboxTools;
 
-/**------------------------------------------------------------------------------------- */
-/**                                 GEOJSON LABELS                                       */
-/**------------------------------------------------------------------------------------- */
-
 /**
  * Represents a GeoJSON resource used to display a label on the map.
  *
@@ -175,6 +171,71 @@ function setDarkmodeToLabels(map: MapboxMap, labels: GeoJsonLabels[]): void {
     });
 }
 
+/**------------------------------------------------------------------------------------- */
+/**                                    SET WATER COLOR                                   */
+/**------------------------------------------------------------------------------------- */
+
+
+const idWaterLayer: string = "ocean-depth";
+interface Bathymetry {
+    whitemode: (number | string)[],
+    darkmode: (number | string)[],
+};
+
+const bathymetryColors: Bathymetry = {
+    whitemode: [
+        200, '#78bced',
+        1000, '#3d9cd4',
+        3000, '#2874a6',
+        9000, '#15659f',
+    ],
+    darkmode: [
+        200, '#213e4e',
+        1000, '#1c3341',
+        3000, '#152530',
+        9000, '#010405',
+    ],
+};
+
+function setWaterColor(map: MapboxMap) {
+    const colors: (number | string)[] = darkmode ? bathymetryColors.darkmode : bathymetryColors.whitemode;
+
+    if (!map.getSource(idWaterLayer)) {
+        map.addSource(idWaterLayer, {
+            type: 'vector',
+            url: 'mapbox://mapbox.mapbox-bathymetry-v2'
+        });
+    }
+    if (!map.getLayer(idWaterLayer)) {
+        map.addLayer({
+            id: idWaterLayer,
+            type: 'fill',
+            source: idWaterLayer,
+            'source-layer': 'depth',
+            paint: {
+                'fill-color': [
+                    'interpolate', ['linear'], ['get', 'min_depth'],
+                    ...colors
+                ],
+                'fill-opacity': 1.0,
+            }
+        });
+    } else {
+        map.setPaintProperty(idWaterLayer, 'fill-color', [
+            'interpolate', ['linear'], ['get', 'min_depth'],
+            ...colors
+        ]);
+    }
+}
+
+export { setWaterColor };
+/*****************************************************************************************/
+
+
+/**------------------------------------------------------------------------------------- */
+/**                              SET DARKMODE TO MAP                                     */
+/**------------------------------------------------------------------------------------- */
+
 /**
  * Defines the set of color values used to style different categories of layers
  * in the map when switching between dark mode and light mode.
@@ -252,10 +313,12 @@ type LayerStyleInclude = {
 function setDarkModeToMap(map: MapboxMap): void {
     const layers = map.getStyle().layers;
     if (!layers) return;
+    setWaterColor(map);
+
     // Couleurs du mode sombre
     const darkColors: LayerStyleInclude = {
         background: '#343332',      // Fond principal (terre)
-        water: '#0e0f63',           // Eau
+        water: '#213e4e',           // Eau
         park: '#1e3a1e',            // Parcs et espaces verts
         building: '#2a2a3e',        // Bâtiments
         road: '#6E6E6E',            // Routes principales
@@ -267,7 +330,7 @@ function setDarkModeToMap(map: MapboxMap): void {
     // Couleurs du mode clair
     const lightColors: LayerStyleInclude = {
         background: '#f8f8f8',      // Fond principal (terre)
-        water: '#0e7a9b',           // Eau
+        water: '#78bced',           // Eau
         park: '#c8e6c9',            // Parcs et espaces verts
         building: '#e0e0e0',        // Bâtiments
         road: '#bbbbbb',            // Routes principales
@@ -327,6 +390,8 @@ function setDarkModeToMap(map: MapboxMap): void {
 
 const PIN_LABELS_FOLDER: string = "/img/pin/"
 const loadedIcons = new Set<string>();
+/*****************************************************************************************/
+
 
 /**
  * Loads all icons referenced in a given GeoJSON label file into the Mapbox map.
@@ -556,7 +621,6 @@ export {
     highLightLabel, setDarkmodeToLabels, setDarkModeToMap,
 };
 /*****************************************************************************************/
-
 
 /**------------------------------------------------------------------------------------- */
 /**                                    ADD GEO IMG                                       */
