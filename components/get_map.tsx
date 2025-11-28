@@ -288,7 +288,9 @@ export default function GetMapboxMap({ def_zoom, textNbr, histdate, setDarkMode 
                                     Géolocalisation</p>
                             </div>
                             {/* ********** */}
-                            <SearchBar map={map.current as MapboxMap} enabled={state.enabled} />
+                            <SearchBar className={!displayCursor ? "hidden" : ""}
+                                setLastPos={setLastPos as (lngLat: { lng: number; lat: number }) => void}
+                                map={map.current as MapboxMap} enabled={state.enabled} />
                     </>)}
                 </div>
                 <div className={`flex space-x-[10px] ml-[10px] ${displayCursor ? "mt-[10px] mb-[10px]" : ""}`}>

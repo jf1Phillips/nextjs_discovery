@@ -1,8 +1,11 @@
-import { useState } from 'react';
-import { Map as MapboxMap } from 'mapbox-gl';
+"use client";
+
+import { useRef, useState } from 'react';
+import { Map as MapboxMap, Marker } from 'mapbox-gl';
 
 type SearchBarProps = {
     map: MapboxMap,
+    setLastPos: (lngLat: { lng: number; lat: number }) => void,
     className?: string,
     enabled?: boolean,
 };
@@ -25,7 +28,6 @@ async function fetchSearchResults(query: string): Promise<[number, number] | nul
             return null;
         }
         const data: { lat: string; lon: string }[] = await response.json();
-        console.log("Search results:", data);
         if (data.length > 0) {
             const lat = parseFloat(data[0].lat);
             const lon = parseFloat(data[0].lon);
@@ -39,10 +41,11 @@ async function fetchSearchResults(query: string): Promise<[number, number] | nul
 }
 
 export default function SearchBar(
-    { className, enabled, map }: SearchBarProps
+    { className, enabled, map, setLastPos }: SearchBarProps
 ): React.JSX.Element {
     const [search, setSearch] = useState<string>("");
     const [error, setError] = useState<boolean>(false);
+    const marker = useRef<Marker | null>(null);
 
     const handleSubmit = () => {
         fetchSearchResults(search).then((coords) => {
@@ -51,6 +54,14 @@ export default function SearchBar(
                     center: [coords[1], coords[0]],
                     zoom: 12,
                 });
+                setLastPos({ lng: coords[1], lat: coords[0] });
+                if (marker.current) {
+                    marker.current.setLngLat([coords[1], coords[0]]);
+                } else {
+                    marker.current = new Marker()
+                        .setLngLat([coords[1], coords[0]])
+                        .addTo(map);
+                }
                 setError(false);
             } else {
                 setError(true);
@@ -63,14 +74,14 @@ export default function SearchBar(
             <input
                 type="text"
                 value={search}
-                onChange={(e) => {setSearch(e.target.value); setError(false);}}
-                onKeyDown={(e) => { e.key === "Enter" && handleSubmit()}}
+                onChange={(e) => { setSearch(e.target.value); setError(false); }}
+                onKeyDown={(e) => { e.key === "Enter" && handleSubmit() }}
                 placeholder="Rechercher un lieu..."
                 className={`h-[35px] px-4 py-2 border border-gray-300
                     rounded-lg focus:outline-none focus:border-gray-500
                     duration-300
                     ${enabled ? `bg-bgWhiteMode ${error ? "text-[#cf3535]" : "text-white"}` :
-                                `bg-bgDarkMode ${error ? "text-[#cf3535]" : "text-black"}`}`}
+                        `bg-bgDarkMode ${error ? "text-[#cf3535]" : "text-black"}`}`}
             />
         </div>
     </>);
