@@ -9,11 +9,11 @@ interface ApiScheme {
             name: string,
             longitude: number,
             latitude: number,
-            [key: string]: any,
+            [key: string]: unknown,
         }[],
-        [key: string]: any,
+        [key: string]: unknown,
     }[],
-    [key: string]: any,
+    [key: string]: unknown,
 };
 
 async function loadChapterData(chatperId: number): Promise<ApiScheme | undefined> {
