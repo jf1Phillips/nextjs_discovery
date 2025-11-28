@@ -25,6 +25,8 @@ const mapboxTools = {
     get_location,
     /** {@link highLightLabel} */
     highLightLabel,
+    /** {@link setWaterColor} */
+    setWaterColor,
     get darkmode() {
         return darkmode;
     },
@@ -175,29 +177,86 @@ function setDarkmodeToLabels(map: MapboxMap, labels: GeoJsonLabels[]): void {
 /**                                    SET WATER COLOR                                   */
 /**------------------------------------------------------------------------------------- */
 
-
-const idWaterLayer: string = "ocean-depth";
+/**
+ * Bathymetry color stops for ocean depths.
+ *
+ * This interface defines color mappings for two modes:
+ * - whitemode: suitable for light-themed maps
+ * - darkmode: suitable for dark-themed maps
+ *
+ * Each mode is represented as a flat array of numbers and strings, where each
+ * number indicates a depth in meters and the following string is the corresponding color.
+ * Example: [200, "#78bced", 1000, "#3d9cd4", ...]
+ */
 interface Bathymetry {
-    whitemode: (number | string)[],
-    darkmode: (number | string)[],
-};
+    /**
+     * Color stops for light-themed maps.
+     * Format: [depth1, color1, depth2, color2, ...]
+     * Example: [200, "#78bced", 1000, "#3d9cd4"]
+     */
+    whitemode: (number | string)[];
+    /**
+     * Color stops for dark-themed maps.
+     * Format: [depth1, color1, depth2, color2, ...]
+     * Example: [200, "#213e4e", 1000, "#1c3341"]
+     */
+    darkmode: (number | string)[];
+}
 
+/**
+ * Predefined bathymetry color mappings.
+ *
+ * These values can be used in Mapbox GL JS or similar mapping libraries
+ * to interpolate colors based on ocean depth.
+ */
 const bathymetryColors: Bathymetry = {
+    // Light-themed color palette for ocean depths
     whitemode: [
-        200, '#78bced',
-        1000, '#3d9cd4',
-        3000, '#2874a6',
-        9000, '#15659f',
+        200, '#78bced',   // shallow water
+        1000, '#3d9cd4',  // medium depth
+        3000, '#2874a6',  // deep water
+        9000, '#15659f',  // very deep water
     ],
+    // Dark-themed color palette for ocean depths
     darkmode: [
-        200, '#213e4e',
-        1000, '#1c3341',
-        3000, '#152530',
-        9000, '#010405',
+        200, '#213e4e',   // shallow water (dark)
+        1000, '#1c3341',  // medium depth (dark)
+        3000, '#152530',  // deep water (dark)
+        9000, '#010405',  // very deep water (almost black)
     ],
 };
 
+/**
+ * Sets the water color layer on a Mapbox map according to ocean depth.
+ *
+ * This function adds a vector source and a fill layer to represent ocean
+ * depth using color interpolation. It supports both light and dark modes.
+ *
+ * If the layer already exists, it updates the `fill-color` paint property
+ * with the new color stops.
+ *
+ * @param map - The Mapbox map instance on which to add or update the water layer.
+ *
+ * @example
+ * // Light mode
+ * mapboxTools.darkmode = false;
+ * setWaterColor(map);
+ *
+ * @example
+ * // Dark mode
+ * mapboxTools.darkmode = true;
+ * setWaterColor(map);
+ *
+ * @remarks
+ * The function uses the `bathymetryColors` object for color stops:
+ * - `whitemode` is used when darkmode is false
+ * - `darkmode` is used when darkmode is true
+ *
+ * The color interpolation uses the Mapbox `interpolate` expression with
+ * the `min_depth` property from the `mapbox-bathymetry-v2` vector source.
+ */
 function setWaterColor(map: MapboxMap) {
+    const idWaterLayer: string = "ocean-depth";
     const colors: (number | string)[] = darkmode ? bathymetryColors.darkmode : bathymetryColors.whitemode;
 
     if (!map.getSource(idWaterLayer)) {
@@ -269,46 +328,36 @@ type LayerStyleInclude = {
 }
 
 /**
- * Applies either a dark or light theme to a Mapbox map by dynamically updating
- * the paint properties of all relevant layers (water, buildings, roads, parks,
- * labels, etc.).
+ * Sets the water color layer on a Mapbox map according to ocean depth.
  *
- * This function inspects each layer of the current map style and updates colors
- * based on whether dark mode is enabled. It supports several layer types:
- * `fill`, `line`, `fill-extrusion`, and `symbol`.
+ * This function adds a vector source and a fill layer to represent ocean
+ * depth using color interpolation. It supports both light and dark modes.
  *
- * ### Features
- * - Changes background, water, parks, buildings, roads, borders, and text colors.
- * - Detects primary vs secondary roads.
- * - Handles text and text halo styling for label layers.
- * - Safely wraps each Mapbox operation in a try/catch to avoid breaking if
- *   a layer does not support a certain paint property.
+ * This function is used internally by {@link setDarkModeToMap} to update
+ * the water layer when switching between light and dark map themes.
  *
- * ### Parameters
- * @param map - The Mapbox GL map instance to modify.
+ * If the layer already exists, it updates the `fill-color` paint property
+ * with the new color stops.
  *
- * ### Behavior
- * The function uses the global boolean `darkmode` to choose between dark and
- * light color palettes. It then iterates on all style layers and applies color
- * rules according to layer ID patterns:
- *
- * - `water*` → water colors
- * - `park*`, `landuse*`, `natural*` → park/green colors
- * - `building*` → fill or extrusion building colors
- * - `road*`, `street*`, `highway*` → line colors for roads
- * - `border*`, `boundary*`, `admin*` → border line colors
- * - All `symbol` layers → text and text halo colors
- *
- * ### Notes
- * - Make sure this function is called **after** the map's style has fully loaded
- *   (e.g., inside `map.on('load', ...)`), otherwise some layers may not exist yet.
- * - If you use a custom Mapbox style, layer naming conventions may differ.
- *   Adjust ID matching patterns as needed.
+ * @param map - The Mapbox map instance on which to add or update the water layer.
  *
  * @example
- * map.on('load', () => {
- *     setDarkModeToMap(map);
- * });
+ * // Light mode
+ * mapboxTools.darkmode = false;
+ * setWaterColor(map);
+ *
+ * @example
+ * // Dark mode
+ * mapboxTools.darkmode = true;
+ * setWaterColor(map);
+ *
+ * @remarks
+ * The function uses the `bathymetryColors` object for color stops:
+ * - `whitemode` is used when darkmode is false
+ * - `darkmode` is used when darkmode is true
+ *
+ * The color interpolation uses the Mapbox `interpolate` expression with
+ * the `min_depth` property from the `mapbox-bathymetry-v2` vector source.
  */
 function setDarkModeToMap(map: MapboxMap): void {
     const layers = map.getStyle().layers;
