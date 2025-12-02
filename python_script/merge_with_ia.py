@@ -60,8 +60,8 @@ for data in data1:
     geo = data["geometry"]
     date = extract_year(pr["html"])
     all_data.append({
-        "type": "Apparation of the virgin Mary",
-        "date": str(date),
+        "type": ["Apparation of the virgin Mary"],
+        "date": str(date) if date is not None else None,
         "dt2": date,
         "place": pr["fr"],
         "visionary": None,
@@ -87,6 +87,7 @@ for data in data2:
         lng = None
     all_data.append({
         **data,
+        "type": [data["type"]],
         "feast": data["feast"] if data["feast"] != "" else None,
         "commemorated": data["commemorated"] if data["commemorated"] != "" else None,
         "lang": "en",
@@ -103,17 +104,16 @@ for item in all_data:
     item.pop("peple_involved", None)
 
 all_data = [{
-    "type": data["type"] if data["type"] != "" else None,
+    "type": data["type"],
     "date": data["date"] if data["date"] != "" else None,
     "place": data["place"] if data["place"] != "" else None,
     "latitude": data["latitude"] if data["latitude"] != "" else None,
     "longitude": data["longitude"] if data["longitude"] != "" else None,
     "title": data["title"] if data["title"] != "" else None,
     "description": data["description"] if data["description"] != "" else None,
-    "visionary": data["visionary"] if data["visionary"] != "" else None,
-    "people_involved": data["people_involved"] if data["people_involved"] != "" else None,
+    "visionaries": data["visionary"] if data["visionary"] != "" else (data["people_involved"] if data["people_involved"] != "" else None),
     "approval": data["approval"] if data["approval"] != "" else None,
-    "feast": data["feast"] if data["feast"] is not None else data['commemorated'],
+    "commemorated": data["feast"] if data["feast"] is not None else data['commemorated'],
     "source": data["source"] if data["source"] != "" else None,
     "links": data["links"],
     "lang": data["lang"] if data["lang"] != "" else None
