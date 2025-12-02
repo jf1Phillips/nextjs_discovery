@@ -265,7 +265,7 @@ export default function GetMapboxMap({ def_zoom, textNbr, histdate, setDarkMode 
                                     "road", "natural-line-label", "natural-point-label", "aeroway",
                                     "water-line-label", "water-point-label", "poi-label", "airport-label",
                                     "settlement-subdivision-label", "settlement-label",
-                                    "building", "bridge", "tunnel", "waterway", "park"]}
+                                    "building", "bridge", "tunnel", "waterway", "park", "land-structure-polygon"]}
                                 map={map} enabled={state.enabled} def={0} />
                             <Cursor className={!displayCursor ? "hidden" : ""}
                                 name="Afficher les frontières actuelles" include={["admin", "state-label", "country-label"]}
