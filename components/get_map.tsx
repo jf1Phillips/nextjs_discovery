@@ -9,6 +9,8 @@ import addBunker, { removeBunker } from "./addBunker";
 import json_load from "./json_load";
 import SearchBar from "./search_bar";
 import mapboxTools, { GeoImg, GeoJsonLabels, LocType } from "@/script/mapbox_functions";
+import Toggle from "./toggle";
+import { stat } from "fs";
 
 const ROAD_FILENAME: string = "/geoJson_files/route_palestine_merged.geojson";
 const LABELS_FILENAME: string = "/geoJson_files/city_label.geojson";
@@ -102,7 +104,6 @@ export default function GetMapboxMap({ def_zoom, textNbr, histdate, setDarkMode 
     const [styleLoaded, setStyleLoaded] = useState<boolean>(false);
 
     const cpy_txt = async (txt: string): Promise<void> => {
-        return;
         if (!navigator.clipboard) {
             console.error("Clipboard API not supported");
             return;
@@ -145,7 +146,7 @@ export default function GetMapboxMap({ def_zoom, textNbr, histdate, setDarkMode 
                 waitLoadStyle(LabelsToAdd);
             });
             map.current.on("click", (e) => {
-                const txt = `${e.lngLat.lng.toFixed(5)},${e.lngLat.lat.toFixed(5)}`;
+                const txt = `${e.lngLat.lng.toFixed(7)},${e.lngLat.lat.toFixed(7)}`;
                 cpy_txt(txt);
                 setLastPos(e.lngLat);
             });
@@ -272,13 +273,12 @@ export default function GetMapboxMap({ def_zoom, textNbr, histdate, setDarkMode 
                                 map={map} enabled={state.enabled} def={100} />
 
                             {/* GEOLOC */}
-                            <div className={!displayCursor ? "hidden" : "space-x-[15px] flex items-center"}>
-                                <div className={`flex cursor-pointer rounded-full duration-300 w-[40px] h-[20px] items-center
+                            <div className={!displayCursor ? "hidden" : "space-x-4 flex items-center"}>
+                                <div className={`flex cursor-pointer rounded-full duration-300 w-11 h-5 items-center
                                         ${!state.enabled ? "bg-whiteMode text-darkMode" : "bg-bgWhiteMode text-whiteMode"}`}
                                     onClick={() => mapboxTools.get_location(map.current, marker, ({ ...locBtn, enabled: !locBtn.enabled }), setLocBtn, whatchId)}>
-                                    <p className={`pointer-events-none text-[15px] select-none duration-300
-                                        ml-[5px] mr-[5px]
-                                        ${!locBtn.enabled ? "translate-x-[2px] text-[#ff0000]" : "translate-x-[18px]"}`}>
+                                    <p className={`pointer-events-none text-4 select-none duration-300
+                                        ${!locBtn.enabled ? "translate-x-2 text-[#ff0000]" : "translate-x-6"}`}>
                                         ⊕</p>
                                 </div>
                                 <p className={`duration-300 text-[13px] pl-[5px] pr-[5px] rounded-[5px] ${locBtn.enabled && "cursor-pointer"}
@@ -288,9 +288,17 @@ export default function GetMapboxMap({ def_zoom, textNbr, histdate, setDarkMode 
                                     Géolocalisation</p>
                             </div>
                             {/* ********** */}
+                            <div className={`${!displayCursor ? "hidden":
+                                    "flex w-full pr-10 justify-between"}`}>
+                                <Toggle defaultChecked={true} text="AT" darkmode={state.enabled} />
+                                <Toggle defaultChecked={true} text="NT" darkmode={state.enabled} />
+                                <Toggle defaultChecked={true} text="EC" darkmode={state.enabled} />
+                            </div>
+                            {/* GEOLOC */}
                             <SearchBar className={!displayCursor ? "hidden" : ""}
                                 setLastPos={setLastPos as (lngLat: { lng: number; lat: number }) => void}
                                 map={map.current as MapboxMap} enabled={state.enabled} />
+                            {/* ********** */}
                     </>)}
                 </div>
                 <div className={`flex space-x-[10px] ml-[10px] ${displayCursor ? "mt-[10px] mb-[10px]" : ""}`}>
