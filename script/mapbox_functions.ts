@@ -382,8 +382,8 @@ function setDarkModeToMap(map: MapboxMap): void {
         water: '#78bced',           // Eau
         park: '#c8e6c9',            // Parcs et espaces verts
         building: '#e0e0e0',        // Bâtiments
-        road: '#bbbbbb',            // Routes principales
-        roadMinor: '#f5f5f5',       // Routes secondaires
+        road: '#c9c9c9',            // Routes principales
+        roadMinor: '#cfcfcf',       // Routes secondaires
         border: '#d0d0d0',          // Bordures/limites
         text: '#333333',            // Texte
         textHalo: '#ffffff',        // Halo du texte
