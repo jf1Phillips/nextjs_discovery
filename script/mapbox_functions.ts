@@ -1,4 +1,4 @@
-import mapboxgl, { Map as MapboxMap, LngLatLike, MapMouseEvent, Marker } from "mapbox-gl";
+import mapboxgl, { Map as MapboxMap, LngLatLike, MapMouseEvent, Marker, FilterSpecification } from "mapbox-gl";
 
 var darkmode: boolean = false;
 
@@ -26,6 +26,8 @@ const mapboxTools = {
     /** {@link highLightLabel} */
     highLightLabel,
     /** {@link setWaterColor} */
+    filterGestion,
+    /** {@link filterGestion} */
     setWaterColor,
     get darkmode() {
         return darkmode;
@@ -493,6 +495,69 @@ async function loadIcons(map: MapboxMap, label: GeoJsonLabels): Promise<void> {
     await Promise.all(promises);
 }
 
+
+const filtersMemory: Map<string, Record<string, FilterSpecification>> = new Map();
+
+/**
+ * Manages and applies filters on a specified Mapbox layer.
+ *
+ * This function keeps track of multiple independent filters per layer
+ * using an internal memory map. Each filter is stored under a `filterKey`,
+ * allowing different parts of the application to add, update, or remove
+ * their own filters without overriding others.
+ *
+ * @param map - The Mapbox map instance.
+ * @param layerId - The ID of the Mapbox layer to apply filters to.
+ * @param filterKey - A unique key identifying the filter to set or remove.
+ * @param filter - The filter expression to apply.  
+ *                If `null`, the filter corresponding to `filterKey` is removed.
+ *
+ * How it works:
+ * - Ensures a filter store exists for the given `layerId`.
+ * - Adds, updates, or deletes a filter under the provided `filterKey`.
+ * - Rebuilds the combined filter:
+ *     - No filters → `null` (removes filter on the layer)
+ *     - One filter → applies that single filter directly
+ *     - Multiple filters → wraps them in an `"all"` filter (logical AND)
+ * - Applies the resulting filter to the Mapbox layer if it exists.
+ *  * ---
+ * ### Examples
+ *
+ * #### 1. Add a new filter
+ * ```ts
+ * filterGestion(map, "my-layer", "onlyRed", ["==", ["get", "color"], "red"]);
+ * ```
+ * #### 2. Modify an existing filter (same `filterKey`)
+ * ```ts
+ * filterGestion(map, "my-layer", "onlyRed", ["==", ["get", "color"], "blue"]);
+ * ```
+ * #### 3. Remove a filter
+ * ```ts
+ * filterGestion(map, "my-layer", "onlyRed", null);
+ * ```
+ */
+function filterGestion(map: MapboxMap, layerId: string, filterKey: string, filter: FilterSpecification | null): void {
+    if (!filtersMemory.has(layerId)) {
+        filtersMemory.set(layerId, {});
+    }
+
+    const layerFilters = filtersMemory.get(layerId)!;
+    if (filter === null) {
+        delete layerFilters[filterKey];
+    } else {
+        layerFilters[filterKey] = filter;
+    }
+    const filters = Object.values(layerFilters);
+    const combinedFilter = filters.length === 0 ? null :
+        filters.length === 1 ? filters[0] :
+            ['all', ...filters];
+
+    if (map.getLayer(layerId)) {
+        map.setFilter(layerId, combinedFilter);
+    }
+}
+
+
 /**
  * Adds GeoJSON-based label layers to a Mapbox map and ensures the icons used by
  * those labels are loaded beforehand.
@@ -560,11 +625,10 @@ function addGeoJsonLabels(map: MapboxMap, labels: GeoJsonLabels[]): void {
                         'text-opacity': 1.0,
                         'icon-opacity': 1.0,
                     },
-                    filter: ['>=',
-                        ['zoom'],
-                        ['coalesce', ['get', 'min_zoom'], 0]
-                    ],
                 });
+                filterGestion(map, label.id, "zoom", ['>=', ['zoom'],
+                    ['coalesce', ['get', 'min_zoom'], 10]
+                ]);
             }
             const highlightedLayerId = `${label.id}-highlighted`;
             if (!map.getLayer(highlightedLayerId)) {
@@ -582,8 +646,8 @@ function addGeoJsonLabels(map: MapboxMap, labels: GeoJsonLabels[]): void {
                         'text-color': "#e56c00",
                         'text-halo-color': "#ffffff",
                     },
-                    filter: ["==", "fr", ""]
                 });
+                filterGestion(map, highlightedLayerId, "get_fr", ["==", "fr", ""]);
             }
         });
     });
@@ -620,14 +684,14 @@ function highLightLabel(map: MapboxMap, labels: GeoJsonLabels[], name?: string |
         if (!map.getLayer(label.id) || !map.getLayer(highlightedLayerId)) return;
         if (name === undefined) {
             setDarkmodeToLabels(map, [label]);
-            map.setFilter(label.id, ['>=', ['zoom'],
-                ['coalesce', ['get', 'min_zoom'], 10]
+            filterGestion(map, label.id, "zoom", ['>=', ['zoom'],
+                ['coalesce', ['get', 'min_zoomsss'], 10]
             ]);
-            map.setFilter(highlightedLayerId, ["==", "fr", ""]);
+            filterGestion(map, highlightedLayerId, "get_fr", ["==", "fr", ""]);
             return;
         }
         const nameArray = typeof name === "string" ? [name] : name;
-        map.setFilter(highlightedLayerId, ['in', 'fr', ...nameArray]);
+        filterGestion(map, highlightedLayerId, "get_fr", ['in', 'fr', ...nameArray]);
     });
 }
 
@@ -666,7 +730,7 @@ function reload_json_labels(map: MapboxMap | null, labels: GeoJsonLabels[]): voi
 
 export {
     type GeoJsonLabels, type CustomFeature, type CustomGeoJson,
-    addGeoJsonLabels, reload_json_labels,
+    addGeoJsonLabels, reload_json_labels, filterGestion,
     highLightLabel, setDarkmodeToLabels, setDarkModeToMap,
 };
 /*****************************************************************************************/
