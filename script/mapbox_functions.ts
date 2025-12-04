@@ -627,7 +627,7 @@ function addGeoJsonLabels(map: MapboxMap, labels: GeoJsonLabels[]): void {
                     },
                 });
                 filterGestion(map, label.id, "zoom", ['>=', ['zoom'],
-                    ['coalesce', ['get', 'min_zoom'], 10]
+                    ['coalesce', ['get', 'min_zoom'], 0]
                 ]);
             }
             const highlightedLayerId = `${label.id}-highlighted`;
@@ -684,9 +684,6 @@ function highLightLabel(map: MapboxMap, labels: GeoJsonLabels[], name?: string |
         if (!map.getLayer(label.id) || !map.getLayer(highlightedLayerId)) return;
         if (name === undefined) {
             setDarkmodeToLabels(map, [label]);
-            filterGestion(map, label.id, "zoom", ['>=', ['zoom'],
-                ['coalesce', ['get', 'min_zoomsss'], 10]
-            ]);
             filterGestion(map, highlightedLayerId, "get_fr", ["==", "fr", ""]);
             return;
         }

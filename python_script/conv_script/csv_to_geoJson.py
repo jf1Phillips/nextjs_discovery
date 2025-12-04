@@ -44,6 +44,7 @@ def csv_to_geoJson(file_name):
                     "html": html,
                     "icon": f"pin_labels_dark_{testement[nb]}.png",
                     "icon_selected": f"pin_labels_{testement[nb]}_selected.png",
+                    "testament": testement[nb],
                 }
             }
             features.append(feature)
