@@ -11,6 +11,7 @@ import SearchBar from "./search_bar";
 import mapboxTools, { GeoImg, GeoJsonLabels, LocType } from "@/script/mapbox_functions";
 import Toggle from "./toggle";
 import { stat } from "fs";
+import { text } from "stream/consumers";
 
 const ROAD_FILENAME: string = "/geoJson_files/route_palestine_merged.geojson";
 const LABELS_FILENAME: string = "/geoJson_files/city_label.geojson";
@@ -231,6 +232,15 @@ export default function GetMapboxMap({ def_zoom, textNbr, histdate, setDarkMode 
         map.current.flyTo({ center: locBtn.pos });
     }
 
+    const toggleClick = (txt: string, isChecked: boolean) => {
+        if (!map.current) return;
+        if (!isChecked) {
+            mapboxTools.filterGestion(map.current, ID_CITY, `toggle${txt}`, ["!=", ["get", "testament"], txt]);
+        } else {
+            mapboxTools.filterGestion(map.current, ID_CITY, `toggle${txt}`, null);
+        }
+    };
+
     return (<>
         <div className="flex flex-col left-0 top-0 absolute z-10">
             <div className={`flex ${displayCursor ? "flex-col" : "flex-row items-center"}`}>
@@ -290,9 +300,9 @@ export default function GetMapboxMap({ def_zoom, textNbr, histdate, setDarkMode 
                             {/* ********** */}
                             <div className={`${!displayCursor ? "hidden":
                                     "flex w-full pr-10 justify-between"}`}>
-                                <Toggle defaultChecked={true} text="AT" darkmode={state.enabled} />
-                                <Toggle defaultChecked={true} text="NT" darkmode={state.enabled} />
-                                <Toggle defaultChecked={true} text="EC" darkmode={state.enabled} />
+                                <Toggle defaultChecked={true} text="AT" darkmode={state.enabled} onClick={toggleClick} />
+                                <Toggle defaultChecked={true} text="NT" darkmode={state.enabled} onClick={toggleClick} />
+                                <Toggle defaultChecked={true} text="EC" darkmode={state.enabled} onClick={toggleClick} />
                             </div>
                             {/* GEOLOC */}
                             <SearchBar className={!displayCursor ? "hidden" : ""}

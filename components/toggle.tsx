@@ -1,12 +1,11 @@
 "use client";
 
-import { Map as MapboxMap, Layer } from "mapbox-gl"
 import { JSX, useState } from "react"
 
 type ToggleArgs = {
     text: string,
     defaultChecked?: boolean;
-    onChange?: (checked: boolean) => void;
+    onClick?: (txt: string, isChecked: boolean) => void;
     darkmode?: boolean,
 };
 
@@ -14,7 +13,7 @@ export default function Toggle(
     {
         text,
         defaultChecked = false,
-        onChange,
+        onClick,
         darkmode = false,
     }: ToggleArgs
 ): JSX.Element {
@@ -23,7 +22,7 @@ export default function Toggle(
     const handleToggle = () => {
         const newValue = !isChecked;
         setIsChecked(newValue);
-        onChange?.(newValue);
+        onClick?.(text, newValue);
     };
 
     return (<>
@@ -34,7 +33,7 @@ export default function Toggle(
                 <span className={`
                             pointer-events-none select-none
                             inline-block h-4 w-4 transform rounded-full
-                            ${darkmode ? "bg-whiteMode": "bg-darkMode"}
+                            ${darkmode ? "bg-bgDarkMode": "bg-bgWhiteMode"}
                             duration-300
                             ${isChecked ? 'translate-x-6' : 'translate-x-1'}
                         `}>
