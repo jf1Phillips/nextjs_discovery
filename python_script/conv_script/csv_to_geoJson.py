@@ -21,8 +21,8 @@ def csv_to_geoJson(file_name):
         size = len(list(csv.DictReader(file)))
         file.seek(0, 0)
         reader = csv.DictReader(file)
-        for row in reader:
-            nb = reader.line_num // int(1 + size / len(testement))
+        for i, row in enumerate(reader):
+            nb = min(i // int(size / len(testement)), len(testement) - 1)
 
             if not (row["lat"] and row["long"]):
                 continue
@@ -32,6 +32,8 @@ def csv_to_geoJson(file_name):
                 html = dico[fr_name]
             else:
                 html = f"<p>{fr_name}</p>"
+            if row["url"] != "":
+                html += f"<a href='{row["url"]}' target='_blank' style='color: #6873fb'>lien</a>"
 
             feature = {
                 "type": "Feature",

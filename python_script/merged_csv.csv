@@ -1,0 +1,627 @@
+long,lat,fr,url
+35.7235471783873,31.6822813967507,Monts Abarim,
+35.5803781991821,33.2577033933823,Abel Maïm,
+35.1023412581567,33.0485981736681,Achzib,
+16.7352010877973,40.2208984543028,Aciri,
+35.3486462894152,31.8813663092477,Vallée de Acor,
+34.822977032364,31.8600682231551,Acron,
+23.7258766749851,37.9715537092891,Acropole,
+35.2809970897732,31.791700904952,Mont Adomin,
+35.7041744988012,32.7800841602005,Aféca,
+35.3332630039967,31.9894926808067,Ain Samieh,
+35.9455842350175,32.841983861494,"Al Allan, nahr",
+35.4030355361795,31.9501909065593,Al Aujah wadi,
+35.2915728760959,31.946568207633,"Al Aïn, wadi",
+35.9881071386423,36.0518853154235,Al Mina,
+36.0603689604799,32.8397442530325,Al Ruqqah wadi,
+36.032284230837,36.335971688198,Aman,
+35.5057053518906,32.8653078798978,"Amud, wadi",
+34.0112849168355,39.0071391687981,Anatolie,
+36.1538374394675,36.1528781036378,Antigonéa ?,
+35.3396798309193,36.995146667991,Antioche de Cilicie,
+36.1568074417971,36.1990474445934,Antioche sur l'Oronte,
+34.9309466234329,32.1058939752126,Antipatris Afeca,
+35.4724826209454,32.7906949460147,Aqueduc ?,
+39.0398075978795,30.1240773407222,Arabie,
+35.4889789069816,32.8124937578064,Arbel de Galilée,
+35.4875973260535,32.8236121188345,Arbel gorges,
+35.9066542014769,32.5649808973708,Arbela,
+35.0166922176443,32.0269542040498,Arimathie ?,
+23.7231054790333,37.972406103452,Aréopage,
+34.5477376352198,31.6633681511572,Ascalon,
+36.1309613374407,32.4900022846043,Mont Auran,
+36.1702218308742,32.6715358512417,Auranitide,
+34.9617841697591,31.8672459527061,"Ayalon, vallée",
+34.9374211206829,31.7005264558161,Azeco,
+34.6601549418528,31.7565341130381,Azot,
+36.1766417084336,33.0845175810977,Aëra,
+35.2615468606235,31.9168166242831,Aï,
+44.4255620238414,32.5398886961795,Babylone,
+36.0851110074913,33.002200814952,Bashân,
+36.085971174404,32.9027996829728,Batanée,
+35.2369801090505,31.7800057972275,Bel Midrasch,
+35.5093461369669,31.9503478237621,Belle Eau ?,
+35.2367053639852,31.7785546293372,Belle Porte,
+35.3978639885605,32.3681791855459,Berger samaritain,
+35.4835057970462,33.8917736259454,Beritus,
+35.5499294387367,31.853185520182,Betabara,
+35.5139101375576,31.8273275029339,Betagla,
+34.9785531993431,31.7198269797963,Betginna,
+35.2565742394256,31.8957389242748,Beth Aven,
+34.975255324316,31.7512116896549,Beth Shemesh,
+34.8954583333333,31.6080528039458,Bethléchi,
+35.2076122051297,31.7044325694036,Bethléem La grotte,
+35.2511060603732,31.7758223795062,Bethphagé,
+35.6305828176177,32.9111642883132,Bethsaïda,
+35.0941818714657,31.5894458701295,Bethsur,
+35.6237707795341,32.1945545943308,Betjaboc ?,
+35.5039853528465,32.5037872656416,Betscan/Scythopolis,
+35.1272533370266,33.0656426430686,Betzet wadi,
+35.2344295627606,31.7819365119453,Bezetha,
+35.4154671065922,33.0444295300501,Biram,
+35.4713208019384,32.6426401353333,Bireh wadi,
+32.1712204094531,41.027003380993,Bithynie,
+35.3068242697293,32.0023448947977,Borne Néapolis/Silo/Jéricho,
+35.0369187965437,31.8201935104965,Bornes millières,
+17.9382988326068,40.6370218498425,Brindisi,
+14.7835305694228,41.1331221109628,Bénévent,
+35.2173740149574,31.9061852097493,Bérot,
+35.5532126219756,31.8364052823906,Béthanie du Jourdain,
+35.1236354437592,31.8807505400063,Bétéron,
+34.9666569672514,32.8310359057074,Cabanes des pêcheurs ?,
+35.5594275589976,31.5969989905479,Callirhoé,
+36.6181559448195,32.75568261884,Canata,
+35.1689653869121,33.1641256572801,Cap Blanc (Ras el Bayada),
+35.1042512775404,33.0936391957685,Cap de la tempête (Rosh Hanikra),
+35.7037160379559,31.1819190049811,Carakamoab,
+35.3379555302377,31.8575571721331,Mont Carit,
+35.3524687548408,31.8411846752047,Carit Vallée,
+35.0494606722278,32.7199991145899,Mont Carmel,
+35.9698955361076,35.9514682749586,Mont Casio,
+46.5669924603809,31.9501786095058,Chaldée,
+35.2457240799446,31.7823393442424,Champ des galiléens,
+15.5871667835401,38.1891496536591,Charybde,
+26.0320226659811,38.404073036896,Chio,
+35.889019416161,32.2456985978553,Chrysorrhoas,
+33.4636455213766,35.1359771458957,Chypre,
+35.0785031694562,37.147826212552,Cilicie,
+34.9826665024527,31.703738963018,Colline du panorama,
+36.1553431694321,36.1918624019178,Colonnades d'Hérode,
+-5.57603379786933,35.9989928553417,Colonnes d'Hercule,
+22.9322375459814,37.9386358765317,Corinthe,
+35.5663699800185,32.9108106341054,Corozaïm,
+25.0094808285953,35.1981661785799,Crète,
+21.7355981584779,32.5339316494533,Cyrènaïque,
+21.8584256730472,32.8246065221071,Cyrène,
+35.5307096952909,33.1102983252722,Cédes,
+35.2369968577705,31.7736588445889,Cédron,
+35.6941254786076,33.2470796073229,Césarée de Philippe,
+36.1437173800218,36.1297204924385,Daphné,
+22.5011111111111,38.482500026168,Delphes,
+35.4228135270606,31.8969588762166,Docco,
+34.9200234434881,32.6122928380685,Dora Dor,
+35.1867479561814,32.6511938683528,Doras ?,
+35.3750111666535,32.6953212414316,Déberet,
+35.7767634104956,31.5024221579699,Débon,
+35.8004272484144,32.6009676963727,Décapole,
+35.3005197713245,31.7007451990044,Désert de Judée,
+35.2838005165503,32.2346399712053,Mont Ebal,
+35.1077515879031,33.0941133357684,Echelles de Tyr,
+35.3337528068173,30.6669256468133,Edom,
+35.6389684647028,32.7849158242316,Ein Gev,
+35.6528796215317,32.7828671634334,Ein Gev wadi,
+35.3508408528429,32.7218203594541,Ein Mahil,
+35.2100547754671,31.7059318907968,"El Djemel, wadi",
+35.4116224223287,31.8414296600819,El Kelt wadi,
+35.5138344690422,32.3486814532461,El Maleh wadi,
+35.3892659754351,31.8337260850066,Elie l'essénien,
+35.4365874826703,31.6723838559668,Embouchure du Cédron,
+35.1297133599386,31.8419667955617,Emmaus de la Montagne,
+34.9889220446429,31.8389053066653,Emmaus de la Plaine,
+35.5499564372291,32.7662092117317,Emmaüs Sources chaudes,
+35.235221824807,31.7674552929452,En Rogel,
+35.384852420632,32.6266672245111,Endor,
+35.2963264771445,32.4600818150115,Engannim,
+35.2927841481705,31.9482281436415,Ephraïm,
+27.3650472257011,37.9492375442624,Ephèse,
+35.0730509093216,31.5726998612518,Eschcol vallée,
+35.3282259673309,32.5576096361754,Esdrelon Jesraël,
+45.298658530285,31.3099371379456,Euphrate,
+34.9132718153042,32.5485840163656,Ez Zerqa Crocodilum flumen,
+16.1736909400865,39.002914460469,Falerne,
+35.7657234896869,33.2339827802595,Lac de Fialé Phialé,
+11.3008274784025,43.8061440224078,Fiesole,
+35.2346428647388,31.770676665298,Fontaine de Siloé,
+36.2279095740896,32.3522168376558,Fontaine des Chameliers ?,
+35.2342200709905,31.780268327081,Forteresse Antonia,
+35.7135538331122,33.252421021842,Forteresse de Minrod,
+31.4797710502614,29.9715054696808,Forêt pétrifiée,
+35.0884711839,31.9858716077074,"Gaas, vallée",
+35.1851988363916,31.847769807766,Gabaon,
+35.8127559437385,32.261511247871,Galaad,
+35.5174404495436,31.8640832712536,Galgala,
+35.3556097899655,32.9334147919095,Galilée,
+35.0919092955694,31.9723880319125,Gamala de Judée,
+35.6827240695183,32.7204150738148,Gamala selon MV,
+10.5595640762165,45.6181858456653,Gardone,
+35.273641320756,32.2008395264077,Mont Garizim,
+35.7667407658265,33.0105862697674,Gaulanitide,
+35.8926798468922,32.2816990447745,Gerasa,
+35.6501082605952,32.8248853667903,Gergésa,
+34.8461239661988,31.6983500267424,Get Gath,
+35.2277573062618,31.7779954465692,Gihon Vallée,
+35.4140902021103,32.4866294264734,Gilboa,
+35.2107501706686,32.6509217074855,Giocana ?,
+35.2298056047558,31.7783963474342,Golgotha,
+34.9687799355151,32.8282457978004,Grotte d'Elie,
+35.3608772391593,31.4534622091907,Grotte d'Elisée ?,
+35.3749910542308,32.6164088304838,Grotte de la pythonisse ?,
+35.5244930132634,32.3547646852679,Grotte du Baptiste,
+35.5355250506411,32.1018210136917,Gué d'Adam,
+35.5467156909426,31.8372542537337,Gué de Béthabara,
+35.2276819458672,31.7682053541662,Géhenne,
+34.9709935829513,31.7094076023351,Gérimot,
+35.2329873792563,31.7681069824218,Haceldema,
+36.7986092418138,35.9050309938963,Hadrak,
+35.2171750745093,31.4750207432096,Hakila,
+35.4685562931217,31.9411208258537,Halte en MV 551.7-9,
+35.6658338675852,32.6832201426361,Hamatha sources chaudes,
+35.4899174798836,32.824583929474,Hammam Wadi,
+35.3401412298312,32.7252298499657,Har Yona,
+35.5664762497821,33.0195867993338,Hatzor,
+32.7465097560517,16.0018541057533,Haut Nil,
+35.6353351419298,32.418604351985,Haute Pérée,
+35.8573524171567,33.4164109126019,Mont Hermon,
+35.6842714782189,31.8176374953244,"Hesban, wadi",
+35.1483251428056,33.0508617662132,Humsin,
+43.2479164986027,42.5539320450811,Ibérie,
+34.9352710609077,31.2007193982636,Idumée,
+16.6708924157177,44.9197047526662,Illyrie,
+35.6597434465584,32.7790392284578,Ippo,
+44.3164893114105,31.9752735827657,Ischilo ?,
+35.2111829790341,32.606941024903,Ismaël ?,
+35.1481487183973,31.6254912946426,Israël,
+35.8361250542952,33.5903171582453,Iturée,
+35.6123129946893,32.3796270250578,Jabes-Galaad,
+35.5941654036343,33.0146944302709,"Jacob, l'avare 110.5",
+35.179247318569,31.6791821518886,Jardins de Salomon,
+35.235593205689,31.7695236652251,Jardins du Roi,
+35.2477563769256,32.818397831138,Jiphtaël ?,
+35.4151314334027,33.0422071608359,Jonas vieil aubergiste 330,
+35.2394321925037,31.7801695372883,Josaphat vallée,
+35.2727932384345,32.8386150816249,Jotapate,
+35.5859567984857,32.9886069066264,Jude et Anne,
+34.9220247704369,31.8769353070283,Jézéron,
+35.3058117807487,31.9889445988634,Kafr Malik Les 10 lépreux,
+35.5683374842546,32.9001865508872,"Kerazeh, wadi",
+35.1240388100815,32.7394261930027,Kiryat Tivon,
+35.0283931796341,32.8040566629853,Kison,
+35.1240504817461,31.3449933242222,Kérioth,
+35.119925487952,33.0861099623976,La mère cananéenne 330,
+35.255528062561,31.7711430072162,Lazare,
+35.6530990563424,33.2494453269229,Leshem Dan,
+35.7238616281148,33.3477193417649,Monts Liban,
+14.0297448021493,40.9213482215001,Liternum,
+16.143917094037,39.7186018541317,Lucania,
+35.6356347334454,31.5686534227736,Macheronte,
+35.2727050274617,31.8750739601682,Macmas,
+35.7929344092242,31.7164633825054,Madaba,
+36.1994963337875,27.7196309269932,Madian,
+35.2324438133931,31.7754024940972,Maison brûlée,
+35.2317511057879,31.7711438861768,Maison de Caiphe ?,
+35.2292852706618,31.7676529537177,Maison de campagne Caiphe,
+35.6133927614084,32.6646759677359,Maison de Chouza,
+35.1305471894576,31.8419557408687,Maison de Cléophas,
+35.2334058266837,31.7824963497263,Maison de Joseph d'Arimathie,
+34.7957423523052,32.0986289351216,Maison de Joseph d'Arimathie ?,
+35.5752939161996,32.8800740557359,Maison de la belle mère de Pierre,
+35.229018415493,31.77161812622,Maison du Cénacle,
+14.4848721658052,35.8847295320736,Malte,
+35.1052976517903,31.5567538087471,Mambré,
+35.3538288510409,31.3178564346459,Masada,
+31.3074674564518,30.1205438735734,Mataréa,
+35.5990690788557,32.3763863179508,Mathias Ancien lépreux 359.4,
+30.1437444604034,33.6141719934453,Mer Méditerranée,
+34.0159194444444,43.0860275763329,Mer Pontique,
+38.0036589709434,21.0009063137787,Mer Rouge,
+35.7151545383512,31.7532983012144,Monts Moab,
+36.1917173341076,36.1762133858393,Mont Silpius,
+36.2124967053166,36.4391020189611,Montagnes Noires,
+35.8661657269954,36.3046191611785,Monts Pierea,
+35.3601196508412,31.8184776830991,Montée du Sang,
+35.2354367554615,31.7774590605885,Moriah,
+35.2260168067385,32.7027203751174,Mérala,
+35.4381509838015,32.9834740576366,Méron,
+35.6284919737153,33.0556582740476,Lac de Méron,
+35.6254530888621,33.0584768141596,Lac de Méron,
+43.5059505476018,33.711536972301,Mésopotamie,
+35.0845794293675,31.459169940787,Nahal Hevron,
+35.5327096523699,33.0580881422357,Nephtali,
+34.799526438257,32.0673233789847,Nicodème ?,
+35.443033501876,31.8541999507368,Nike,
+35.6285504906828,31.9030303764989,Nimrin,
+43.152579998045,36.3596770251323,Ninive,
+6.20581808993082,36.2599604194877,Numidie,
+35.7254609153903,31.7674869062568,Mont Nébo,
+36.1006986696773,36.1116713582387,Oronte,
+35.2279152769935,31.7758332772225,Palais d'Hérode,
+35.5450747560387,32.7759863958591,Palais d'Hérode Tibériade,
+35.2330985331841,31.7768488946509,Palais de Chousa ?,
+35.5454176039927,32.7756747349058,Palais de Chouza ?,
+35.2321999215836,31.7749608031497,Palais de Lazare,
+35.2331399834488,31.777188145889,Palais des Hasmonéens ?,
+17.0016558824173,47.0661304546334,Pannonie,
+41.6942112698213,36.1313491551011,Parthes,
+52.4933729980028,29.929747236433,Perse,
+51.0159461112821,27.0051753417027,Persique Golfe,
+35.3584155593009,32.6183929140172,Petit Hermon,
+35.9374487428706,31.9533688776067,Philadelphie,
+29.8508963521951,39.2504605019218,Phrygie,
+35.4305985819245,33.4294529032429,Phénicie,
+35.9341243688772,36.1843965047537,Pieria,
+35.235745589028,31.7809562956948,Piscine de Betesda,
+35.1682221538151,32.7123885523964,Plaine d'Esdrelon,
+35.1471858295752,33.0557926763119,Point d'observation de Jésus,
+36.1828845559121,40.7592313206709,Pont,
+35.6282072349046,33.0103989894236,Pont romain,
+34.9178600020565,32.5495906402863,Pont romain ?,
+35.6144122413878,33.2244368470875,Pont romain ??,
+35.5651472026746,32.6247531953896,Pont romain de Gesher,
+35.1410612999816,32.6655523895756,Pont romain Khizon ?,
+35.2337322614586,31.783000801893,Porte d'Hérode,
+35.2305216194399,31.7817444269439,Porte de Damas,
+35.2276362994475,31.77662214897,Porte de Jaffa,
+35.2277330470856,31.7728843165548,Porte de l'Eau ?,
+35.2358154982288,31.7784036032297,Porte de Nicanor,
+35.2286017076471,31.7696729623371,Porte de Sion,
+35.2369769675965,31.7809111596725,Porte des Brebis,
+35.2349896636,31.7822760730469,Porte des Poissons ?,
+35.2372213962397,31.7788429837842,Porte Dorée,
+35.2309754515924,31.7781401830002,Porte Judiciaire ?,
+35.2352692003517,31.7807649843615,Porte Orientale ?,
+35.2372296134283,31.7780918271962,Portique de Salomon,
+35.2360047849961,31.7799564384586,Portique des païens,
+35.2363782759354,31.7759329459215,Portique Royal,
+35.6614504319121,32.7649494664417,Précipice des porcs géraséniens,
+35.2337322106003,31.7805415498316,Prétoire,
+35.2848703283982,32.2098077370907,Puits de Jacob,
+35.6408435033817,32.0667431816403,Pérée,
+35.2307964962362,31.8529117934843,Ramah,
+35.7272812725455,32.0387204013257,Ramoth Gilead ?,
+35.1169104886612,31.7364601149772,Rephaïm wadi,
+34.9683871513039,32.8319530231476,Rocher de 250.9,
+35.5444049420875,33.2195000178868,Rohob ?,
+12.4851088821781,41.8935176361968,Rome,
+35.235128050829,32.6973934023873,RV avec les paysans,
+35.2278188630415,31.9527917799898,RV secret,
+38.7954600828438,15.760997820677,Saba,
+35.5257205889589,32.3991007996432,Salim,
+35.5437160233093,31.856807068465,Salomon ?,
+35.1898740650418,32.2789160237678,Samarie Sébaste,
+34.9856586756419,31.7754288999307,Saraa,
+49.7402033214664,49.7476581899748,Sarmates,
+35.000274969416,32.4000774436667,"Saron, la plaine",
+15.6328203041005,38.2310514164075,Scylla,
+67.4999330787415,53.9866052840742,Scythes,
+35.317477785281,30.182250944239,Mont Seir,
+35.4954720618881,32.9698955149994,Sephet,
+35.5488218731942,31.8373981645052,"Sermon de Jésus 5,75",
+35.2962895258807,32.0520794908852,Shiloh,
+35.7158786916582,31.9652040254579,Shu'eib wadi,
+34.9556228078352,32.8252322921542,Sicaminon fouilles,
+14.1911650818508,37.7072947023043,Sicules,
+33.9752445353386,28.5401041323363,Sinaï,
+34.9751749684572,31.6816401335109,Socoh,
+35.5144387226094,31.825596856955,Source de la Perdrix,
+35.5503169315227,32.8727944596283,Source du Figuier,
+12.4899755252441,41.894570084877,Subure,
+15.2764223687656,37.0755302398863,Syracuse Palestre ?,
+15.2750669704842,37.0759643844409,Syracuse Théâtre,
+36.9923720926923,35.2527515650167,Syrie,
+35.2149888838063,32.7041249877174,"Séméron, Simonia",
+35.2787603206884,32.7535661373983,Séphoris,
+35.3877400973962,32.6875432519963,Tabor,
+35.2459095746229,30.8013012233037,Tamar,
+35.6689774493375,33.5021719283188,Tamiri,
+34.8891700514631,36.9173362588244,Tarse,
+35.2860642004453,31.9781394132213,Tel Asour,
+35.3506309128274,32.2854157821966,Tersa Tayasir,
+8.81666787787928,51.900000214803,Teutberg,
+25.2916274793123,41.5374493312981,Thrace,
+35.543154314951,32.7770005672376,Tibériade,
+45.3031052927788,32.6894566403551,Tigre,
+35.0043233269168,31.7702476220508,Timnata ?,
+35.1239609353848,33.0651436565097,Tito le maréchal-ferrant 327,
+35.4396234486229,32.9811740036761,Tombe d'Hillel,
+35.202108218559,31.7204367460936,Tombeau de Rachel,
+35.2392276422422,31.7759491768863,Tombeaux de Siloan,
+35.2279384157357,31.7757707261064,Tour David,
+35.2073050877818,31.7045683643655,Tour de David Bethléem,
+35.2284611883479,31.7764048853979,Tour Hippique,
+35.2284566870511,31.7760156442794,Tour Marianne,
+35.2278050006848,31.7764442026151,Tour Phasael,
+36.4224554107954,33.003384394866,Trachonitide,
+35.189786207197,31.9561501479924,Tribu d'Ephraïm,
+35.2143805075536,31.6395251423331,Técua,
+34.9473291809887,31.6918356324708,Térébinthe Vallée,
+35.1373554142021,31.8405593912913,Village détruit Emmaüs ?,
+35.1281284418142,31.8767537254255,Voie romaine,
+35.2338188557708,31.7755817786828,Xyste,
+35.6506574857544,32.3984675955215,"Yabis, wadi",
+35.8655109070329,32.735151313799,Yarmouk,
+35.2281116663289,32.7552077505309,Yiftach El ?,
+35.2122347539091,32.6812839327153,Zabulon,
+35.4899916676764,32.8578280742561,"Zalmon, wadi",
+35.2349422417309,31.7670758091307,Zoheleth ?,
+35.24907,32.91915,Bet Karen,
+35.40287,32.88598,Maghar,
+35.32958,33.14692,Jattir,
+36.01008,32.74039,Astaroth,
+36.01506,32.80468,Carnaim,
+35.85472,32.80414,Jamlè,
+35.87472,32.67324,Abila,
+35.85612,32.59418,Capitolais,
+36.01582,32.49357,Tell er Rumeith,
+35.12078,31.28304,Arad,
+35.01527,31.35447,Jattir,
+35.1152,33.04205,Maréchalerie de Tito,
+35.21013,32.86716,Kabul,
+35.20291,32.84717,Tamra,
+35.25023,32.83071,Kaukab,
+35.01018,31.98004,Gahas?,
+34.91584,31.97225,Prop. de Nicodème,
+34.89417,31.93744,Prop. de Joseph d'Arimathie,
+34.91743,31.86524,Géze,
+34.95873,31.89953,Betoannaba,
+35.14514,31.48544,Zif,
+35.14066,31.42534,Carmel,
+35.0654,31.4036,Estémoa,
+34.97001,31.21815,Hormah,
+34.23657,31.28905,Rafia,
+34.90607,31.4509,Debir,
+34.84309,31.57083,Lachis,
+34.72746,31.54833,Eglon,
+34.90397,31.59546,Marisa,
+34.8845,31.63565,Libna,
+34.92912,31.66243,Sznaoé,
+35.24134,31.66824,Hérodium,
+35.53412,31.8095,Sabéa de Bétléchi,
+35.44721,31.83394,Maison de Niké,
+35.38273,31.77538,Tentation de Jésus,
+35.16587,31.77465,Ein Karem,
+35.2308,31.82801,Gibéa,
+34.63037,31.79255,Ruine du port de Azot,
+34.70574,31.93453,Ruine du port de Jabnia,
+35.32967,32.61167,Shunam,
+35.41013,32.55512,Plaine de Jezraël,
+35.31155,32.56725,Jezraël,
+35.06984,32.54098,"Gamala, vigneron",
+35.07997,32.67772,Muraqa,
+34.92105,32.53643,Sintica,
+34.97835,32.54084,F. des crocodiles,
+35.61349,32.49928,"(Jaïa, jeune aveugle)",
+35.62027,32.6137,Galgala?,
+35.39449,33.02613,Sasa,
+35.41491,33.06012,Mère cananéeenne,
+35.6318,33.17815,Election de St. Pierre,
+35.6459,32.35454,Cabane de Mathias,
+35.3331,32.28416,Grotte de Jean-Baptiste,
+35.37188,32.32004,Telbes,
+35.82413,33.1175,Qunaitra,
+35.65229,33.23979,Dan,
+35.06381,31.91645,Bétéron inf.,
+35.11659,31.88923,Bétéron sup.,
+35.18591,31.9293,Emmaüs de la montagne?,
+35.19403,31.97961,Birzéit,
+35.25824,31.98863,Silwad,
+35.4418,32.03003,Phasaelis,
+35.34685,32.12878,Acrabate,
+35.44929,32.10151,Alexandreion,
+35.6096,32.16644,Anastasica,
+35.71582,32.07819,M. Galaad,
+35.55773,31.82082,Bétabara,
+35.45716,31.89373,Jeune homme riche,
+35.2576,31.55033,M. du jeûne,
+35.06662,31.45126,Isaac,
+34.85181,31.80086,Acron,
+35.10062,31.81196,Kiriat Jéarim,
+36.09425,32.61111,Edrei,
+35.03604,32.40059,Jatt,
+35.35697,32.28825,Enon,
+35.50052,32.82183,Election apostolique,
+35.46503,32.79859,Cornes d'Hattin (Mont des Béatitudes),
+35.33587,32.72873,Bois de Mathathias,
+35.58695,32.68289,Prop. de Chouza,
+35.55954,32.69066,Première multiplication des pains,
+35.63413,32.72578,Triple profession d'amour de Pierre,
+35.73873,32.84557,Seconde multiplication des pains,
+35.64003,32.79558,Port de Ippo,
+35.3529358,31.3321607,Gomorrhe ?,
+35.67426,31.84098,Sodome ?,
+35.68386745736617,32.76608303874568,Gamala,https://fr.mariavaltorta.wiki/wiki/Gamala_(Gamla)
+35.89235293983559,32.28807578561087,Gérasa,https://fr.mariavaltorta.wiki/wiki/G%C3%A9rasa
+27.363892,37.95458,Éphèse,https://fr.mariavaltorta.wiki/wiki/Éphèse
+35.534898,31.796308,"Acor (Vallée), Akor","https://fr.mariavaltorta.wiki/wiki/Acor_(Vallée),_Akor"
+35.10276791877531,33.05474178338891,"Aczib, Achzib","https://fr.mariavaltorta.wiki/wiki/Aczib,_Achzib"
+34.82291375631936,31.861397850928658,"Acron, Akron","https://fr.mariavaltorta.wiki/wiki/Acron,_Akron"
+35.537030335731465,32.15011469946688,"Gué d'Adâm, Gué du Jaboc, Gué du Yabbok","https://fr.mariavaltorta.wiki/wiki/Gué_d'Adâm,_Gué_du_Jaboc,_Gué_du_Yabbok"
+35.27992673550452,31.797916244791807,"Adomin (Mont), Hadomim","https://fr.mariavaltorta.wiki/wiki/Adomin_(Mont),_Hadomim"
+36.174242644637,33.20375808032284,"Aëra, Aéra","https://fr.mariavaltorta.wiki/wiki/Aëra,_Aéra"
+35.70307069326341,32.7865310252464,"Aféca, Aphéqa, Afeca","https://fr.mariavaltorta.wiki/wiki/Aféca,_Aphéqa,_Afeca"
+35.16739037781992,33.156919969429204,Alexandroscène,https://fr.mariavaltorta.wiki/wiki/Alexandroscène
+36.15375311559845,36.15833118293284,"Antigonéa, Antigonée","https://fr.mariavaltorta.wiki/wiki/Antigonéa,_Antigonée"
+36.154973449557176,36.20546385287751,Antioche,https://fr.mariavaltorta.wiki/wiki/Antioche
+35.234079218347745,31.785951868031947,Forteresse l'Antonia (Jérusalem),https://fr.mariavaltorta.wiki/wiki/Antonia_(forteresse)
+35.90610731834754,32.57038621471836,"Arbela, Arbel","https://fr.mariavaltorta.wiki/wiki/Arbela,_Arbel"
+35.487650853884105,32.81842353577318,"Arbèle (Gorges), Arbel","https://fr.mariavaltorta.wiki/wiki/Arbèle_(Gorges),_Arbel"
+35.01627393214829,32.0325508923911,Arimathie,https://fr.mariavaltorta.wiki/wiki/Arimathie
+34.54699376789066,31.66965210239085,"Ascalon, Ashqelôn","https://fr.mariavaltorta.wiki/wiki/Ascalon,_Ashqelôn"
+35.207380081365926,31.86546704454692,Atarot,https://fr.mariavaltorta.wiki/wiki/Atarot
+36.12954892593851,32.49615005382346,Auran (Mont),https://fr.mariavaltorta.wiki/wiki/Auran_(Mont)
+34.93667386189169,31.70702592856994,"Azeco,_Azéqa,_Azéco","https://fr.mariavaltorta.wiki/wiki/Azeco,_Azéqa,_Azéco"
+34.6593859176661,31.762234378953867,"Azoto, Azot","https://fr.mariavaltorta.wiki/wiki/Azoto,_Azot"
+35.48978713030348,32.16921125780772,Belle Eau (La),https://fr.mariavaltorta.wiki/wiki/Belle_Eau_(La)
+35.483226288099075,33.89743467157843,"Béritia, Beritus","https://fr.mariavaltorta.wiki/wiki/Béritia,_Beritus"
+35.21724212370894,31.91166515963394,"Bérot, Béérot","https://fr.mariavaltorta.wiki/wiki/Bérot,_Béérot"
+35.509184367546084,31.858545795417108,"Betagla, Bétagla","https://fr.mariavaltorta.wiki/wiki/Betagla,_Bétagla"
+35.12254823161521,31.88671424483616,"Beteron, Bétéron","https://fr.mariavaltorta.wiki/wiki/Beteron,_Bétéron"
+34.97762383459524,31.72642939540705,"Bétginna, Bet-Ginna","https://fr.mariavaltorta.wiki/wiki/Bétginna,_Bet-Ginna"
+35.55017237849946,31.86332866134816,"Béthabara, Beth-Abara, Bétabara","https://fr.mariavaltorta.wiki/wiki/Béthabara,_Beth-Abara,_Bétabara"
+35.25661964973813,31.776247432141385,Béthanie,https://fr.mariavaltorta.wiki/wiki/Béthanie
+35.234214802638554,31.93811990517501,Béthel,https://fr.mariavaltorta.wiki/wiki/Béthel
+35.13604844770129,31.730110910093167,Béther,https://fr.mariavaltorta.wiki/wiki/Béther
+35.19179841408379,32.74079020576323,Bethléem de Galilée,https://fr.mariavaltorta.wiki/wiki/Bethléem_de_Galilée
+35.20735331511656,31.71084868435597,Bethléem de Judée,https://fr.mariavaltorta.wiki/wiki/Bethléem_de_Judée
+35.63040756724246,32.91704537395029,"Béthsaïda, Bethsaïde","https://fr.mariavaltorta.wiki/wiki/Béthsaïda,_Bethsaïde"
+35.08755237253292,31.61757613346582,"Bethsur, Bet-Çur, Bethsour","https://fr.mariavaltorta.wiki/wiki/Bethsur,_Bet-Çur,_Bethsour"
+35.62324394950462,32.20071828293873,"Betjaboc, Bethjaboc","https://fr.mariavaltorta.wiki/wiki/Betjaboc,_Bethjaboc"
+34.894362420148774,31.61766047316361,"Betléchi, Bétléchi","https://fr.mariavaltorta.wiki/wiki/Betléchi,_Bétléchi"
+35.25027005151009,31.781572408589238,"Betphagé, Bethphagé","https://fr.mariavaltorta.wiki/wiki/Betphagé,_Bethphagé"
+36.46285826731815,32.52105460989908,Bozra,https://fr.mariavaltorta.wiki/wiki/Bozra
+35.5582225423314,31.60267470369455,Calliroé,https://fr.mariavaltorta.wiki/wiki/Calliroé
+35.34831155968165,32.74443194270446,Cana,https://fr.mariavaltorta.wiki/wiki/Cana
+36.616950592197206,32.761574796128166,"Canatha, Canata","https://fr.mariavaltorta.wiki/wiki/Canatha,_Canata"
+35.57314995220098,32.888154595410285,Capharnaüm,https://fr.mariavaltorta.wiki/wiki/Capharnaüm
+35.33743719889598,31.863508159335037,Carit,https://fr.mariavaltorta.wiki/wiki/Carit
+35.04894223612709,32.72647083207332,Carmel (Mont),https://fr.mariavaltorta.wiki/wiki/Carmel_(Mont)
+35.52950460777376,33.11645351777313,Cédès,https://fr.mariavaltorta.wiki/wiki/Cédès
+34.89256154937965,32.507653176455946,Césarée Maritime,https://fr.mariavaltorta.wiki/wiki/Césarée_Maritime
+35.69326293656577,33.25351292209744,Césarée de Philippe (Panéade),https://fr.mariavaltorta.wiki/wiki/Césarée_de_Philippe_(Panéade)
+33.575125009125166,34.857742450023906,Cintium,https://fr.mariavaltorta.wiki/wiki/Cintium
+35.565851244482374,32.915827774668344,"Corozaïn, Chorazeïn","https://fr.mariavaltorta.wiki/wiki/Corozaïn,_Chorazeïn"
+35.52252391739293,32.81846162689635,Dalmanutha,https://fr.mariavaltorta.wiki/wiki/Dalmanutha
+35.421608555088625,31.902616122591745,"Doco, Docco","https://fr.mariavaltorta.wiki/wiki/Doco,_Docco"
+34.919504231429705,32.61935105970254,Dora,https://fr.mariavaltorta.wiki/wiki/Dora
+35.23803590002037,32.419000445566304,Dothaïn,https://fr.mariavaltorta.wiki/wiki/Dothaïn
+35.129537520975624,31.848502447411587,Emmaüs de la montagne,https://fr.mariavaltorta.wiki/wiki/Emmaüs_de_la_montagne
+34.98771655261128,31.84573231007545,Emmaüs de la plaine,https://fr.mariavaltorta.wiki/wiki/Emmaüs_de_la_plaine
+35.54840726991284,32.77238876759598,"Emmaüs de Tibériade, Emmaüs (source)","https://fr.mariavaltorta.wiki/wiki/Emmaüs_de_Tibériade,_Emmaüs_(source)"
+35.38364658656661,32.6331456657306,"Endor, En-Dor","https://fr.mariavaltorta.wiki/wiki/Endor,_En-Dor"
+35.38094421348024,31.458497459873183,Engaddi,https://fr.mariavaltorta.wiki/wiki/Engaddi
+35.2947772565807,32.466283157179475,"Engannim, En Gannim","https://fr.mariavaltorta.wiki/wiki/Engannim,_En_Gannim"
+35.53245040062371,32.405498299404115,"Ennon, Hennon, Enon","https://fr.mariavaltorta.wiki/wiki/Ennon,_Hennon,_Enon"
+35.23367322682317,31.773412035409518,En Rogel (Fontaine),https://fr.mariavaltorta.wiki/wiki/En_Rogel_(Fontaine)
+35.269335872600124,31.780172594989647,Ensémès,https://fr.mariavaltorta.wiki/wiki/Ensémès
+35.29157855727976,31.954755828897483,Éphraïm,https://fr.mariavaltorta.wiki/wiki/Éphraïm
+35.32770722905001,32.56351501134256,Esdrelon,https://fr.mariavaltorta.wiki/wiki/Esdrelon
+35.18433687573392,31.854305031931226,"Gabaon, Gibeon","https://fr.mariavaltorta.wiki/wiki/Gabaon,_Gibeon"
+35.67788791056352,32.66158753013312,Gadara,https://fr.mariavaltorta.wiki/wiki/Gadara
+35.51447574606868,31.893332206180013,"Galgala, Guilgal","https://fr.mariavaltorta.wiki/wiki/Galgala,_Guilgal"
+34.43263521636104,31.526432402408243,Gaza,https://fr.mariavaltorta.wiki/wiki/Gaza
+35.52533556441388,32.85198487021243,Génésareth,https://fr.mariavaltorta.wiki/wiki/Génésareth
+35.210348239497044,31.76994724261404,Jérusalem,https://fr.mariavaltorta.wiki/wiki/Jérusalem
+35.648559272480774,32.830772162669795,Gerghesa,https://fr.mariavaltorta.wiki/wiki/Gerghesa
+35.23908287284,31.786391890542653,Gethsémani,https://fr.mariavaltorta.wiki/wiki/Gethsémani
+35.44448924956974,33.03296926978159,Giscala,https://fr.mariavaltorta.wiki/wiki/Giscala
+35.21539788069092,31.968881456485065,Goféna,https://fr.mariavaltorta.wiki/wiki/Goféna
+35.10714521687246,31.5394084835322,Hébron,https://fr.mariavaltorta.wiki/wiki/Hébron
+35.80879787374096,31.80725761376169,Hesbon,https://fr.mariavaltorta.wiki/wiki/Hesbon
+35.225446581365894,31.774745722815958,"Hinnom (vallée), Ben Hinnom, Géhenne","https://fr.mariavaltorta.wiki/wiki/Hinnom_(vallée),_Ben_Hinnom,_Géhenne"
+35.6585375932186,32.784063325412404,"Ippo, Hippos","https://fr.mariavaltorta.wiki/wiki/Ippo,_Hippos"
+35.611107575839675,32.38612367172578,Jabés-Galaad,https://fr.mariavaltorta.wiki/wiki/Jabés-Galaad
+34.73275923146452,31.88230893131602,Jabnia,https://fr.mariavaltorta.wiki/wiki/Jabnia
+35.441286876645734,31.87567650110657,Jéricho,https://fr.mariavaltorta.wiki/wiki/Jéricho
+35.24758056317507,32.8248626090544,Jiphtaël,https://fr.mariavaltorta.wiki/wiki/Jiphtaël
+34.75292588457781,32.06164310290623,Joppé,https://fr.mariavaltorta.wiki/wiki/Joppé
+35.084697858910296,31.457681278587067,Jutta,https://fr.mariavaltorta.wiki/wiki/Jutta
+35.12215788620699,31.351856977459484,"Kériot, Kérioth","https://fr.mariavaltorta.wiki/wiki/Kériot,_Kérioth"
+35.246505239377605,32.067506760111144,Lébona,https://fr.mariavaltorta.wiki/wiki/Lébona
+34.89737188020141,31.95860424651642,Lidda,https://fr.mariavaltorta.wiki/wiki/Lidda
+35.63374289564217,31.582227557706545,Machéronte,https://fr.mariavaltorta.wiki/wiki/Machéronte
+35.51317027251029,32.832023082663106,Magdala,https://fr.mariavaltorta.wiki/wiki/Magdala
+35.18378390751812,32.59254719161087,Mageddo,https://fr.mariavaltorta.wiki/wiki/Mageddo
+35.351936885066266,31.325015255198668,"Masada, Massada","https://fr.mariavaltorta.wiki/wiki/Masada,_Massada"
+31.30591815835774,30.12660586453351,Matarea,https://fr.mariavaltorta.wiki/wiki/Matarea
+35.624061673868425,33.06748676725369,"Méron (lac), Mérom (lac)","https://fr.mariavaltorta.wiki/wiki/Méron_(lac),_Mérom_(lac)"
+35.43728892493072,32.98992644931077,"Méron (cité), Meiéron","https://fr.mariavaltorta.wiki/wiki/Méron_(cité),_Meiéron"
+34.99322555671065,31.94144778431809,Modin,https://fr.mariavaltorta.wiki/wiki/Modin
+35.458000426530376,32.80601519894534,"Mont des Béatitudes, Cornes d'Hattin","https://fr.mariavaltorta.wiki/wiki/Mont_des_Béatitudes,_Cornes_d'Hattin"
+35.34804790963234,32.640515126725084,Naïm,https://fr.mariavaltorta.wiki/wiki/Naïm
+35.29890991260032,32.70740360914315,Nazareth,https://fr.mariavaltorta.wiki/wiki/Nazareth
+35.72494219505834,31.7734440333252,Nébo (Mont),https://fr.mariavaltorta.wiki/wiki/Nébo_(Mont)
+34.93008488678209,32.11182888872905,"Antipatride, Antipatris","https://fr.mariavaltorta.wiki/wiki/Antipatride,_Antipatris"
+35.23680451833574,31.78625404910716,"Bel Nidrasch, Beth Midrasc","https://fr.mariavaltorta.wiki/wiki/Bel_Nidrasch,_Beth_Midrasc"
+34.785072340702555,31.259677892293983,Bersabée,https://fr.mariavaltorta.wiki/wiki/Bersabée
+35.244562905138665,31.79714623414411,Nobé,https://fr.mariavaltorta.wiki/wiki/Nobé
+35.23439463558212,31.773823463329173,Ophel (quartier),https://fr.mariavaltorta.wiki/wiki/Ophel_(quartier)
+35.61459490162224,32.45509177972282,Pella,https://fr.mariavaltorta.wiki/wiki/Pella
+35.504167,32.503889,"Betsean, Bet-Shéan, Betscan","https://fr.mariavaltorta.wiki/wiki/Betsean,_Bet-Shéan,_Betscan"
+35.07268327670572,32.927391870086105,Ptolémaïs,https://fr.mariavaltorta.wiki/wiki/Ptolémaïs
+35.93727352573342,31.958731326461383,Philadelphie (Rabbath Ammon),https://fr.mariavaltorta.wiki/wiki/Philadelphie_(Rabbath_Ammon)
+35.22993387595324,31.85828025782444,Rama,https://fr.mariavaltorta.wiki/wiki/Rama
+35.72607556115476,32.04436828794804,"Ramot, Ramoth","https://fr.mariavaltorta.wiki/wiki/Ramot,_Ramoth"
+35.25605520052573,31.90168766488445,Bétaven,https://fr.mariavaltorta.wiki/wiki/Bétaven
+34.97473619436593,31.75717009316411,"Betsames, Beth Shemesh","https://fr.mariavaltorta.wiki/wiki/Betsames,_Beth_Shemesh"
+34.83216588315003,32.000389542225754,Bettegon,https://fr.mariavaltorta.wiki/wiki/Bettegon
+35.23322455018412,31.788183917258024,"Bézéta, Bezetha","https://fr.mariavaltorta.wiki/wiki/Bézéta,_Bezetha"
+35.93852406831713,36.1201195641844,Séleucie,https://fr.mariavaltorta.wiki/wiki/Séleucie
+35.49529656982274,32.975196396656465,Séphet,https://fr.mariavaltorta.wiki/wiki/Séphet
+35.27789791484924,32.76003537019095,Sephoris,https://fr.mariavaltorta.wiki/wiki/Sephoris
+35.28048324592368,32.21917934599124,Sichem,https://fr.mariavaltorta.wiki/wiki/Sichem
+35.29611452996141,32.05743548243147,Silo,https://fr.mariavaltorta.wiki/wiki/Silo
+35.235,31.770278,Siloan (lieu-dit),https://fr.mariavaltorta.wiki/wiki/Siloan_(lieu-dit)
+34.97362622317574,31.68760261839135,"Soco, Soko","https://fr.mariavaltorta.wiki/wiki/Soco,_Soko"
+35.168889,33.164167,Cap Blanc,https://fr.mariavaltorta.wiki/wiki/Cap_Blanc
+35.30059389137854,32.2192537677712,Sychar,https://fr.mariavaltorta.wiki/wiki/Sychar
+35.56849091340708,32.72674496808377,Tarichée,https://fr.mariavaltorta.wiki/wiki/Tarichée
+35.213175544133506,31.64549035349704,Tecua,https://fr.mariavaltorta.wiki/wiki/Tecua
+35.490635242751125,32.1463400360186,Tersa,https://fr.mariavaltorta.wiki/wiki/Tersa
+35.542635238618644,32.783180010361306,Tibériade (cité),https://fr.mariavaltorta.wiki/wiki/Tibériade_(cité)
+35.19359526046758,33.27446249093701,Tyr,https://fr.mariavaltorta.wiki/wiki/Tyr
+12.237384384782532,42.33226901469872,Caprarola,https://fr.mariavaltorta.wiki/wiki/Caprarola
+35.32194523438416,32.68625780375328,Caslot-Thabor,https://fr.mariavaltorta.wiki/wiki/Caslot-Thabor
+35.21412691268933,32.70973136489378,Semeron,https://fr.mariavaltorta.wiki/wiki/Semeron
+34.955556,32.825278,"Sicaminon, Sycaminon","https://fr.mariavaltorta.wiki/wiki/Sicaminon,_Sycaminon"
+34.947222,31.691944,Térébinthe (vallée),https://fr.mariavaltorta.wiki/wiki/T%C3%A9r%C3%A9binthe%20(vall%C3%A9e)
+35.261667,31.916944,"Aï, Et-Tell",https://fr.mariavaltorta.wiki/wiki/A%C3%AF%2C%20Et-Tell
+35.229444,31.769167,"Tophet (lieu-dit), Tofet",https://fr.mariavaltorta.wiki/wiki/Tophet%20(lieu-dit)%2C%20Tofet
+36.422222,33.003333,"Trachonide (région), Trachonitide (région)",https://fr.mariavaltorta.wiki/wiki/Trachonide%20(r%C3%A9gion)%2C%20Trachonitide%20(r%C3%A9gion)
+35.227778,31.775833,Tour de David (Jérusalem),https://fr.mariavaltorta.wiki/wiki/Tour%20de%20David%20(J%C3%A9rusalem)
+35.207222,31.704722,Tour de David (Bethléem),https://fr.mariavaltorta.wiki/wiki/Tour%20de%20David%20(Bethl%C3%A9em)
+35.004444,31.770278,Timnata,https://fr.mariavaltorta.wiki/wiki/Timnata
+35.587222,32.805,"Tibériade (lac), mer de Galilée",https://fr.mariavaltorta.wiki/wiki/Tib%C3%A9riade%20(lac)%2C%20mer%20de%20Galil%C3%A9e
+34.999167,31.732222,Szanoé,https://fr.mariavaltorta.wiki/wiki/Szano%C3%A9
+36.191667,36.176389,"Silpio, Sulpius (mont)",https://fr.mariavaltorta.wiki/wiki/Silpio%2C%20Sulpius%20(mont)
+35.235,31.770278,"Siloé, Siloan (Fontaine)",https://fr.mariavaltorta.wiki/wiki/Silo%C3%A9%2C%20Siloan%20(Fontaine)
+35.368333,33.561667,Sidon,https://fr.mariavaltorta.wiki/wiki/Sidon
+35.0,32.4,Saron (plaine),https://fr.mariavaltorta.wiki/wiki/Saron%20(plaine)
+35.298889,33.433889,Sarepta,https://fr.mariavaltorta.wiki/wiki/Sarepta
+34.985556,31.775833,"Saràa (Soréa, Çoréa)",https://fr.mariavaltorta.wiki/wiki/Sar%C3%A0a%20(Sor%C3%A9a%2C%20%C3%87or%C3%A9a)
+35.260556,32.143056,Samarie (cité et région),https://fr.mariavaltorta.wiki/wiki/Samarie%20(cit%C3%A9%20et%20r%C3%A9gion)
+38.795556,15.761111,Saba (Royaume),https://fr.mariavaltorta.wiki/wiki/Saba%20(Royaume)
+35.544444,33.219444,Rohob,https://fr.mariavaltorta.wiki/wiki/Rohob
+34.875,31.927222,Ramlé,https://fr.mariavaltorta.wiki/wiki/Raml%C3%A9
+35.170833,31.688889,Piscines de Salomon,https://fr.mariavaltorta.wiki/wiki/Piscines%20de%20Salomon
+35.443333,30.330556,Pétra,https://fr.mariavaltorta.wiki/wiki/P%C3%A9tra
+30.854167,36.961667,Pergé,https://fr.mariavaltorta.wiki/wiki/Perg%C3%A9
+35.640833,32.066667,Pérée (région),https://fr.mariavaltorta.wiki/wiki/P%C3%A9r%C3%A9e%20(r%C3%A9gion)
+26.254722,35.197778,"Paléocastro, Paleocastros",https://fr.mariavaltorta.wiki/wiki/Pal%C3%A9ocastro%2C%20Paleocastros
+35.524444,33.058056,Nephtali (région),https://fr.mariavaltorta.wiki/wiki/Nephtali%20(r%C3%A9gion)
+35.484444,31.576111,Mer Morte,https://fr.mariavaltorta.wiki/wiki/Mer%20Morte
+35.570556,32.667778,Magedan,https://fr.mariavaltorta.wiki/wiki/Magedan
+34.608333,31.669444,Magdalgad,https://fr.mariavaltorta.wiki/wiki/Magdalgad
+34.955278,31.727778,Macéda,https://fr.mariavaltorta.wiki/wiki/Mac%C3%A9da
+35.653056,33.238333,Lesemdan,https://fr.mariavaltorta.wiki/wiki/Lesemdan
+35.033333,32.816667,"Kison, Kishon",https://fr.mariavaltorta.wiki/wiki/Kison%2C%20Kishon
+35.272778,32.838611,"Jotapate, Yodephat",https://fr.mariavaltorta.wiki/wiki/Jotapate%2C%20Yodephat
+35.183333,31.716667,Jala,https://fr.mariavaltorta.wiki/wiki/Jala
+35.274444,32.690833,Jafia,https://fr.mariavaltorta.wiki/wiki/Jafia
+35.842222,32.196944,Jaboc,https://fr.mariavaltorta.wiki/wiki/Jaboc
+44.316667,31.975278,Ischilo,https://fr.mariavaltorta.wiki/wiki/Ischilo
+32.4825,37.865556,Iconium,https://fr.mariavaltorta.wiki/wiki/Iconium
+35.857222,33.414167,Hermon (Grand),https://fr.mariavaltorta.wiki/wiki/Hermon%20(Grand)
+35.358333,32.618611,Hermon (Petit),https://fr.mariavaltorta.wiki/wiki/Hermon%20(Petit)
+34.855556,31.695278,Get,https://fr.mariavaltorta.wiki/wiki/Get
+34.921944,31.876944,"Jézéron (Geser, Guézer)",https://fr.mariavaltorta.wiki/wiki/J%C3%A9z%C3%A9ron%20(Geser%2C%20Gu%C3%A9zer)
+35.088611,31.985833,"Gaas, Gahas",https://fr.mariavaltorta.wiki/wiki/Gaas%2C%20Gahas
+34.971667,31.710278,Gerimot,https://fr.mariavaltorta.wiki/wiki/Gerimot
+35.766667,33.233889,"Fialé, Phialé (lac)",https://fr.mariavaltorta.wiki/wiki/Fial%C3%A9%2C%20Phial%C3%A9%20(lac)
+35.244444,31.783333,Champ des galiléens (Jérusalem),https://fr.mariavaltorta.wiki/wiki/Champ%20des%20galil%C3%A9ens%20(J%C3%A9rusalem)
+35.483333,33.891389,"Colonie Julia, Colonia Julia",https://fr.mariavaltorta.wiki/wiki/Colonie%20Julia%2C%20Colonia%20Julia
+35.235556,31.7775,Mont Moriah,https://fr.mariavaltorta.wiki/wiki/Mont%20Moriah
+35.238611,31.773611,Cédron (Vallée du),https://fr.mariavaltorta.wiki/wiki/C%C3%A9dron%20(Vall%C3%A9e%20du)
+36.298333,33.512222,Damas,https://fr.mariavaltorta.wiki/wiki/Damas
+36.144167,36.129722,"Daphné, Daphnée",https://fr.mariavaltorta.wiki/wiki/Daphn%C3%A9%2C%20Daphn%C3%A9e
+35.375,32.695278,"Débereth, Débaret, Déberet",https://fr.mariavaltorta.wiki/wiki/D%C3%A9bereth%2C%20D%C3%A9baret%2C%20D%C3%A9beret
+35.776667,31.5,"Débon, Debon",https://fr.mariavaltorta.wiki/wiki/D%C3%A9bon%2C%20Debon
+35.560556,33.026389,"Hatsor, Hatzor","https://fr.mariavaltorta.wiki/wiki/Hatsor,_Hatzor"
