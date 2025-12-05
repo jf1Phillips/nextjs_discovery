@@ -75,7 +75,7 @@ export default function SearchBar(
                 type="text"
                 value={search}
                 onChange={(e) => { setSearch(e.target.value); setError(false); }}
-                onKeyDown={(e) => { e.key === "Enter" && handleSubmit() }}
+                onKeyDown={(e) => { if (e.key === "Enter") handleSubmit() }}
                 placeholder="Rechercher un lieu..."
                 className={`h-[35px] px-4 py-2 border border-gray-300
                     rounded-lg focus:outline-none focus:border-gray-500

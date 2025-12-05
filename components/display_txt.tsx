@@ -2,8 +2,42 @@
 
 import { useState } from "react";
 
-export const BDD_ULR: string = "https://om-backend-315602396963.europe-west9.run.app/";
-const BIBLE_ID: number = 5;
+export const BDD_ULR: string = "https://om-backend-315602396963.europe-west9.run.app";
+// const BIBLE_ID: number = 5;
+
+interface ApiScheme {
+    poemChapter: {
+        chapter: number,
+        name: string,
+        poemSections: {
+            name: string,
+            entityLocations: {
+                name?: string,
+                longitude?: number,
+                latitude?: number,
+                [key: string]: unknown,
+            }[],
+            [key: string]: unknown,
+        }[],
+        [key: string]: unknown,
+    },
+    [key: string]: unknown,
+};
+
+const filtersMemory: Map<number, ApiScheme> = new Map();
+
+async function loadChapterData(chatperId: number): Promise<ApiScheme | undefined> {
+    if (!filtersMemory.has(chatperId)) {
+        const response = await fetch(`${BDD_ULR}/poem/chapters/${chatperId}`);
+        if (!response.ok) {
+            return undefined;
+        }
+        const data: ApiScheme = await response.json();
+        filtersMemory.set(chatperId, data);
+    }
+    const scheme: ApiScheme | undefined = filtersMemory.get(chatperId);
+    return scheme;
+}
 
 export interface DisplayArgs {
     setStateTextNbr: (val: number) => void,
@@ -14,29 +48,26 @@ export interface DisplayArgs {
 
 export default function DisplayTxt({ setStateTextNbr, histdate, setHistDate, darkMode }: DisplayArgs): React.JSX.Element {
     const [displayText, setDisplayText] = useState<string>("start...");
-    const [textNbr, setTextNbr] = useState<number>(1);
+    const [chapterName, setChapterName] = useState<string>("Loading...");
+    const [textNbr, setTextNbr] = useState<number>(26);
     const [up, setUp] = useState<boolean>(false);
 
-    // const api_req: (nbr: number) => string = (nbr: number) => `${BDD_ULR}${nbr}`;
-    // const set_text_data: (id: number) => void = (id: number) => {
-    //     setDisplayText("loading...");
-    //     fetch(api_req(id)).then(res => res.json()).then(data => {
-    //         setDisplayText(id.toString());
-    //         setStateTextNbr(id);
-    //         setTextNbr(id);
-    //     });
-    // };
-
-    // if (displayText == "start...")
-    //     set_text_data(textNbr);
     const click_btn: (add: number) => void = (add: number) => {
-        // let new_nbr: number = textNbr + add;
-        // const max = 50;
+        const maxNbr = 50;
+        const minNbr = 26;
+        const addNbr = textNbr + add;
+        const nbr: number = addNbr > maxNbr ? minNbr : addNbr < minNbr ? maxNbr : addNbr;
 
-        // if (new_nbr <= 0) new_nbr = max;
-        // if (new_nbr > max) new_nbr = 1;
-        // set_text_data(new_nbr);
-        // setHistDate(histdate + add);
+        setChapterName("Loading...");
+        setDisplayText("Loading...");
+        loadChapterData(nbr).then((res) => {
+            if (res == undefined) return;
+            setTextNbr(nbr);
+            setStateTextNbr(nbr);
+            setDisplayText(res.poemChapter.chapter.toString());
+            setChapterName(res.poemChapter.name);
+        });
+        setHistDate(histdate + add);
     };
     return (<>
         <div className={`absolute w-full flex justify-center h-[50px] items-center duration-300
@@ -46,20 +77,25 @@ export default function DisplayTxt({ setStateTextNbr, histdate, setHistDate, dar
                 ${darkMode ? "bg-whiteMode text-darMode" : "bg-bgWhiteMode text-whiteMode"}`}
                 onClick={() => setUp(!up)}>{!up ? "△" : "▽"}</button>
         </div>
-        <div className={`flex-row flex justify-between duration-300 rounded-t-[10px]
-            ${darkMode ? "bg-darkMode text-whiteMode" : "bg-bgDarkMode text-darkMode"}
-                ${up ? "h-[200px] pt-[20px]" : "h-[70px] items-center"}
-                absolute bottom-0 w-full px-[20px]`}>
-            <button className={`text-[20px] duration-300 h-[25px] w-[40px] items-center justify-center flex rounded-[5px]
-                ${darkMode ? "bg-whiteMode text-darkMode" : "bg-bgWhiteMode text-whiteMode"}`}
-                onClick={() => { click_btn(-1) }}
-            >{"<"}</button>
-            <p className="text-[16px]">Chapitre {displayText}</p>
-            <button className={`text-[20px] duration-300  h-[25px] w-[40px] items-center justify-center flex rounded-[5px]
-                ${darkMode ? "bg-whiteMode text-darkMode" : "bg-bgWhiteMode text-whiteMode"}`}
-                onClick={() => { click_btn(1) }}
-            >{">"}</button>
-            <div className="scaleDiv right-[10px] top-[-30px] absolute"></div>
-        </div>
+            <div className={`rounded-t-[10px] flex flex-col space-y-5 duration-300  pt-4
+                ${darkMode ? "bg-darkMode text-whiteMode" : "bg-bgDarkMode text-darkMode"}
+                    ${up ? "h-[200px]" : "h-[70px]"}
+                    absolute bottom-0 w-full px-[20px]`}>
+                <div className="flex-row flex justify-between duration-300">
+                    <button className={`text-[20px] duration-300 h-[25px] w-[40px] items-center justify-center flex rounded-[5px]
+                        ${darkMode ? "bg-whiteMode text-darkMode" : "bg-bgWhiteMode text-whiteMode"}`}
+                        onClick={() => { click_btn(-1) }}
+                    >{"<"}</button>
+                    <p className="text-[16px]">Chapitre {displayText}</p>
+                    <button className={`text-[20px] duration-300  h-[25px] w-[40px] items-center justify-center flex rounded-[5px]
+                        ${darkMode ? "bg-whiteMode text-darkMode" : "bg-bgWhiteMode text-whiteMode"}`}
+                        onClick={() => { click_btn(1) }}
+                    >{">"}</button>
+                </div>
+                <p className={`
+                    ${!up && "hidden"}
+                    ml-auto mr-auto`}>{chapterName}</p>
+                <div className="scaleDiv right-[10px] top-[-50px] absolute"></div>
+            </div>
     </>);
 }

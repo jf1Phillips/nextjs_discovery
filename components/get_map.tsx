@@ -10,8 +10,6 @@ import json_load from "./json_load";
 import SearchBar from "./search_bar";
 import mapboxTools, { GeoImg, GeoJsonLabels, LocType } from "@/script/mapbox_functions";
 import Toggle from "./toggle";
-import { stat } from "fs";
-import { text } from "stream/consumers";
 
 const ROAD_FILENAME: string = "/geoJson_files/route_palestine_merged.geojson";
 const LABELS_FILENAME: string = "/geoJson_files/city_label.geojson";

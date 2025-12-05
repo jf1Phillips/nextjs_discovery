@@ -1,25 +1,6 @@
 import { GeoJsonLabels, highLightLabel } from "@/script/mapbox_functions";
 import { Map as MapboxMap } from "mapbox-gl";
 
-interface ApiScheme {
-    chapter: number,
-    poemSections: {
-        name: string,
-        entityLocations: {
-            name: string,
-            longitude: number,
-            latitude: number,
-            [key: string]: unknown,
-        }[],
-        [key: string]: unknown,
-    }[],
-    [key: string]: unknown,
-};
-
-async function loadChapterData(chatperId: number): Promise<ApiScheme | undefined> {
-    return undefined;
-}
-
 interface Feature {
     type: "Feature",
     geometry: {
@@ -37,16 +18,22 @@ interface GeoJsonScheme {
     features: Feature[],
 };
 
+const geoJsonMemory: Map<string, GeoJsonScheme> = new Map();
+
 async function get_json_data(file_name: string): Promise<GeoJsonScheme | undefined> {
     try {
-        const response = await fetch(file_name);
-        if (!response.ok) {
-            return undefined;
+        if (!geoJsonMemory.has(file_name)) {
+            const response  = await fetch(file_name);
+            if (!response.ok) {
+                return undefined;
+            }
+            const data: GeoJsonScheme = await response.json();
+            geoJsonMemory.set(file_name, data);
         }
-        const json: GeoJsonScheme = await response.json();
-        return json;
-    } catch (error) {
-        console.log(error);
+        const scheme: GeoJsonScheme | undefined = geoJsonMemory.get(file_name);
+        return scheme;
+    } catch (err) {
+        console.log(err);
         return undefined;
     }
 }
