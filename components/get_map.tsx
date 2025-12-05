@@ -296,8 +296,8 @@ export default function GetMapboxMap({ def_zoom, textNbr, histdate, setDarkMode 
                                     Géolocalisation</p>
                             </div>
                             {/* ********** */}
-                            <div className={`${!displayCursor ? "hidden":
-                                    "flex w-full pr-10 justify-between"}`}>
+                            <div className={`${!displayCursor ? "hidden" :
+                                "flex w-full pr-10 justify-between"}`}>
                                 <Toggle defaultChecked={true} text="AT" darkmode={state.enabled} onClick={toggleClick} />
                                 <Toggle defaultChecked={true} text="NT" darkmode={state.enabled} onClick={toggleClick} />
                                 <Toggle defaultChecked={true} text="EC" darkmode={state.enabled} onClick={toggleClick} />
@@ -307,7 +307,7 @@ export default function GetMapboxMap({ def_zoom, textNbr, histdate, setDarkMode 
                                 setLastPos={setLastPos as (lngLat: { lng: number; lat: number }) => void}
                                 map={map.current as MapboxMap} enabled={state.enabled} />
                             {/* ********** */}
-                    </>)}
+                        </>)}
                 </div>
                 <div className={`flex space-x-[10px] ml-[10px] ${displayCursor ? "mt-[10px] mb-[10px]" : ""}`}>
                     {/* DARKMODE */}
