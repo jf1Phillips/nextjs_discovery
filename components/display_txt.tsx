@@ -27,16 +27,21 @@ interface ApiScheme {
 const filtersMemory: Map<number, ApiScheme> = new Map();
 
 async function loadChapterData(chatperId: number): Promise<ApiScheme | undefined> {
-    if (!filtersMemory.has(chatperId)) {
-        const response = await fetch(`${BDD_ULR}/poem/chapters/${chatperId}`);
-        if (!response.ok) {
-            return undefined;
+    try {
+        if (!filtersMemory.has(chatperId)) {
+            const response = await fetch(`${BDD_ULR}/poem/chapters/${chatperId}`);
+            if (!response.ok) {
+                return undefined;
+            }
+            const data: ApiScheme = await response.json();
+            filtersMemory.set(chatperId, data);
         }
-        const data: ApiScheme = await response.json();
-        filtersMemory.set(chatperId, data);
+        const scheme: ApiScheme | undefined = filtersMemory.get(chatperId);
+        return scheme;
+    } catch (err) {
+        console.log(err);
+        return undefined;
     }
-    const scheme: ApiScheme | undefined = filtersMemory.get(chatperId);
-    return scheme;
 }
 
 export interface DisplayArgs {
