@@ -439,10 +439,10 @@ function setDarkModeToMap(map: MapboxMap): void {
     });
 }
 
-const PIN_LABELS_FOLDER: string = "/img/pin/"
-const loadedIcons = new Set<string>();
 /*****************************************************************************************/
 
+const PIN_LABELS_FOLDER: string = "/img/pin/"
+const loadedIcons = new Set<string>();
 
 /**
  * Loads all icons referenced in a given GeoJSON label file into the Mapbox map.
