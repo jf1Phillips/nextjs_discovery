@@ -12,7 +12,7 @@ export default function MapNbr(
     }
 ) {
     const params = use(props.params);
-    const [stateTextNbr, setStateTextNbr] = useState<number>(1);
+    const [stateTextNbr, setStateTextNbr] = useState<number>(26);
     const [histdate, setHistDate] = useState<number>(1950);
     const [darkMode, setDarkMode] = useState<boolean>(false);
 
