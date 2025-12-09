@@ -234,8 +234,10 @@ export default function GetMapboxMap({ def_zoom, textNbr, histdate, setDarkMode 
         if (!map.current) return;
         if (!isChecked) {
             mapboxTools.filterGestion(map.current, ID_CITY, `toggle${txt}`, ["!=", ["get", "testament"], txt]);
+            mapboxTools.filterGestion(map.current, ID_MARIALCITY, `toggle${txt}`, ["!=", ["get", "testament"], txt]);
         } else {
             mapboxTools.filterGestion(map.current, ID_CITY, `toggle${txt}`, null);
+            mapboxTools.filterGestion(map.current, ID_MARIALCITY, `toggle${txt}`, null);
         }
     };
 
