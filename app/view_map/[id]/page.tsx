@@ -1,6 +1,6 @@
 "use client";
 
-import React, { use, useState } from "react";
+import { use, useState } from "react";
 import "@/styles/globals.css";
 import atoi from "@/script/atoi";
 import GetMapboxMap from "@/components/get_map";
@@ -28,5 +28,5 @@ export default function MapNbr(
                             setHistDate={setHistDate}
                             darkMode={darkMode}/>
         </>
-    )
+    );
 }

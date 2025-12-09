@@ -11,3 +11,7 @@ body {
 .mapboxgl-ctrl-bottom-left, .mapboxgl-ctrl-bottom-right {
     display: none;
 }
+
+a {
+  @apply text-blue-600 underline hover:text-blue-800;
+}
