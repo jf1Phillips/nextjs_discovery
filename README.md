@@ -63,7 +63,7 @@ npm install
 echo "NEXT_PUBLIC_MAPBOX_TOKEN=YOUR_TOKEN_HERE" > .env.local
 
 # 4. Start the development server
-npm run dev
+npm run build && npm run start
 ```
 
 The site will be available at [http://localhost:3000](http://localhost:3000).
