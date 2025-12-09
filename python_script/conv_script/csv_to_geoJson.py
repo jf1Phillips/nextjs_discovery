@@ -13,7 +13,6 @@ dico = {
     "Bethsaïda": "<p style='margin-bottom: 0.5rem; font-size: 20px;'>Bethsaïde</p><img src='/img/bethsaid.jpg' alt='Bethsaïde' width='250' style='display: block; margin-bottom: 0.5rem;' /><p style='text-align: justify; padding: 0.5rem; font-size: 15px;'>La ville galiléenne de Bethsaïde fut détruite par un tremblement de terre vers l'an 324 après Jésus Christ. Elle fut retrouvée en 1987 par un consortium d'universités menée par l'Université du Nebraska à Omaha, conduit par le professeur de religion et de philosophie israélien Dr. Rami Arav, sur le site de et-Tell, à 2 kilomètres au nord-est du lac de Tibériade. Cet emplacement correspond exactement à la dictée du Christ transmis à Maria Valtorta du 4 juin 1947 dans laquelle il lui explique qu'en raison de « vingt siècles d'alluvions apportés par le fleuve et par les éboulis descendus des collines », la ville se trouve désormais au milieu des terres et non plus « à l'embouchure du fleuve dans le lac » (L'Évangile tel qu'il m'a été révélé, chapitre 179.1).</p>",
 }
 
-testement = ["AT", "NT", "EC"]
 
 def csv_to_geoJson(file_name):
     features = []
@@ -22,7 +21,6 @@ def csv_to_geoJson(file_name):
         file.seek(0, 0)
         reader = csv.DictReader(file)
         for i, row in enumerate(reader):
-            nb = min(i // int(size / len(testement)), len(testement) - 1)
 
             if not (row["lat"] and row["long"]):
                 continue
@@ -44,9 +42,9 @@ def csv_to_geoJson(file_name):
                 "properties": {
                     "fr": row["fr"],
                     "html": html,
-                    "icon": f"pin_labels_dark_{testement[nb]}.png",
-                    "icon_selected": f"pin_labels_{testement[nb]}_selected.png",
-                    "testament": testement[nb],
+                    "icon": f"pin_labels_dark_NT.png",
+                    "icon_selected": f"pin_labels_NT_selected.png",
+                    "testament": "NT",
                 }
             }
             features.append(feature)
