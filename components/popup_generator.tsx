@@ -1,4 +1,5 @@
 import { JSX } from "react";
+import mapboxTools from "@/script/mapbox_functions";
 
 /**
  * Arguments used to create an HTML popup component.
@@ -28,7 +29,7 @@ type CreateHTMLPopupArgs = {
     lnglat: [number, number],
     img_url?: string,
     description?: string,
-    links?: {url: string, name ?: string}[],
+    links?: { url: string, name?: string }[],
 };
 
 
@@ -76,12 +77,14 @@ function CreateHTMLPopup(props: CreateHTMLPopupArgs): JSX.Element {
         });
     }
     return (<>
-        <div className="flex flex-col shadow-[rgba(0,0,15,0.5)_0px_0px_30px_0px]
+        <div className={`flex flex-col shadow-[rgba(0,0,15,0.5)_0px_0px_30px_0px]
+                    ${mapboxTools.darkmode ? "bg-[#1D1448] text-whiteMode" : "bg-white"}
                     overflow-y-auto -ms-overflow-style:none &::-webkit-scrollbar:hidden [scrollbar-width:none]
-                    bg-white max-h-[60vh] text-[#555] font-[500] text-[15px] min-w-[300px] rounded-[5px] p-3">
+                    bg-white max-h-[60vh] text-[#555] font-[500] text-[15px] min-w-[300px] rounded-[5px] p-3`}>
             {/* Header */}
             <section>
-                <h1 className="text-[#000] text-[30px] font-[900]">{props.name.toUpperCase()}</h1>
+                <h1 className={`${mapboxTools.darkmode ? "text-white" : "text-[#000]"}
+                     text-[30px] font-[900]`}>{props.name.toUpperCase()}</h1>
                 <p>Longitude : {props.lnglat[0].toFixed(6).toString()}</p>
                 <p className="mt-[-4px]">Latitude : {props.lnglat[1].toFixed(6).toString()}</p>
             </section>
@@ -92,12 +95,12 @@ function CreateHTMLPopup(props: CreateHTMLPopupArgs): JSX.Element {
                     <img src={props.img_url} className="rounded-[5px] mt-5" alt={`Image of ${props.name}`} />
                 </>)}
                 {props.description && (<>
-                    <h1 className="mt-6 mb-2 font-[600] text-[#000]">Description du lieu</h1>
+                    <h1 className={`mt-6 mb-2 font-[600] ${mapboxTools.darkmode ? "text-white" : "text-[#000]"}`}>Description du lieu</h1>
                     <p>{props.description}</p>
                 </>)}
                 {props.links && (<>
-                    <h1 className="mt-6 mb-2 font-[600] text-[#000]">En savoir plus</h1>
-                    <ul className="list-disc pl-5 text-[#000]">{linkList}</ul>
+                    <h1 className={`mt-6 mb-2 font-[600] ${mapboxTools.darkmode ? "text-white" : "text-[#000]"}`}>En savoir plus</h1>
+                    <ul className={`list-disc pl-5 ${mapboxTools.darkmode ? "text-white" : "text-[#000]"}`}>{linkList}</ul>
                 </>)}
             </section>
             {/* ******* */}
@@ -105,4 +108,4 @@ function CreateHTMLPopup(props: CreateHTMLPopupArgs): JSX.Element {
     </>);
 }
 
-export {CreateHTMLPopup, type CreateHTMLPopupArgs};
+export { CreateHTMLPopup, type CreateHTMLPopupArgs };
