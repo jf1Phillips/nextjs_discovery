@@ -1,4 +1,6 @@
+import { CreateHTMLPopup } from "@/components/popup_generator";
 import mapboxgl, { Map as MapboxMap, LngLatLike, MapMouseEvent, Marker, FilterSpecification } from "mapbox-gl";
+import { renderToString } from "react-dom/server";
 
 var darkmode: boolean = false;
 
@@ -280,7 +282,7 @@ function setWaterColor(map: MapboxMap) {
                 ],
                 'fill-opacity': 1.0,
             }
-        });
+        }, "hillshade");
     } else {
         map.setPaintProperty(idWaterLayer, 'fill-color', [
             'interpolate', ['linear'], ['get', 'min_depth'],
@@ -900,11 +902,17 @@ function handler(map: MapboxMap, e: MapMouseEvent): void {
     const feature = e.features[0];
     if (!feature.properties || feature.geometry.type !== 'Point') return;
 
-    const coords = feature.geometry.coordinates as LngLatLike;
+    const coords: LngLatLike = feature.geometry.coordinates as LngLatLike;
     const popup = new mapboxgl.Popup({ anchor: "bottom", closeButton: false, offset: [0, -30] })
         .setLngLat(coords);
 
-    popup.setHTML(feature.properties["html"]);
+    const html: string = renderToString(CreateHTMLPopup({
+        name: feature.properties["fr"],
+        lnglat: coords as [number, number],
+    }));
+
+    popup.setHTML(html);
+    // popup.setHTML(feature.properties["html"]);
     popup.once("open", () => {
         const popup_el = document.querySelector('.mapboxgl-popup-content') as HTMLDivElement;
 
