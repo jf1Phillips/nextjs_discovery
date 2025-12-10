@@ -66,7 +66,7 @@ type CreateHTMLPopupArgs = {
 function CreateHTMLPopup(props: CreateHTMLPopupArgs): JSX.Element {
     const linkList: JSX.Element[] = [];
 
-    if (props.links) {
+    if (props.links && props.links.length != 0) {
         props.links.forEach((link, index) => {
             linkList.push(
                 <li key={index}>
@@ -79,7 +79,7 @@ function CreateHTMLPopup(props: CreateHTMLPopupArgs): JSX.Element {
     }
     return (<>
         <div className={`flex flex-col shadow-[rgba(0,0,15,0.5)_0px_0px_30px_0px]
-                    ${mapboxTools.darkmode ? "bg-[#1D1448] text-whiteMode" : "bg-white"}
+                    ${mapboxTools.darkmode ? "bg-[#1d1448] text-whiteMode" : "bg-white"}
                     pointer-events-auto
                     overflow-y-auto -ms-overflow-style:none &::-webkit-scrollbar:hidden [scrollbar-width:none]
                     bg-white max-h-[60vh] text-[#555] font-[500] text-[15px] min-w-[300px] rounded-[5px] p-3`}>
@@ -100,7 +100,7 @@ function CreateHTMLPopup(props: CreateHTMLPopupArgs): JSX.Element {
                     <h1 className={`mt-6 mb-2 font-[600] ${mapboxTools.darkmode ? "text-white" : "text-[#000]"}`}>Description du lieu</h1>
                     <p>{props.description}</p>
                 </>)}
-                {props.links && (<>
+                {linkList.length != 0 && (<>
                     <h1 className={`mt-6 mb-2 font-[600] ${mapboxTools.darkmode ? "text-white" : "text-[#000]"}`}>En savoir plus</h1>
                     <ul className={`list-disc pl-5 ${mapboxTools.darkmode ? "text-white" : "text-[#000]"}`}>{linkList}</ul>
                 </>)}

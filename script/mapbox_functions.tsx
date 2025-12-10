@@ -913,6 +913,9 @@ function handler(map: MapboxMap, e: MapMouseEvent): void {
         <CreateHTMLPopup
             name={feature.properties["fr"]}
             lnglat={coords as [number, number]}
+            img_url={feature.properties["img"]}
+            description={feature.properties["description"]}
+            links={JSON.parse(feature.properties["links_more"])}
         />
     );
     popup.once("open", () => {
