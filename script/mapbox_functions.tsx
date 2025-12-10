@@ -915,7 +915,7 @@ function handler(map: MapboxMap, e: MapMouseEvent): void {
             lnglat={coords as [number, number]}
             img_url={feature.properties["img"]}
             description={feature.properties["description"]}
-            links={JSON.parse(feature.properties["links_more"])}
+            links={JSON.parse(feature.properties["links_more"] ? feature.properties["links_more"] : "[]")}
         />
     );
     popup.once("open", () => {
