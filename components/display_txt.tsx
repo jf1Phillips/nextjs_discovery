@@ -85,14 +85,14 @@ export default function DisplayTxt({ setStateTextNbr, histdate, setHistDate, dar
         <div className={`absolute w-full flex justify-center h-[50px] items-center duration-300
                 ${up ? "bottom-[200px]" : "bottom-[70px]"}`}>
             <button className={`w-[30px] h-[30px] text-[15px] rounded-full duration-200
-                flex items-center justify-center hover:mb-[10px]
+                flex items-center justify-center hover:mb-[7px]
                 ${darkMode ? "bg-whiteMode text-darMode" : "bg-bgWhiteMode text-whiteMode"}`}
                 onClick={() => setUp(!up)}>{!up ? "△" : "▽"}</button>
         </div>
         <div className={`rounded-t-[10px] flex flex-col space-y-5 duration-300  pt-4
             ${darkMode ? "bg-darkMode text-whiteMode" : "bg-bgDarkMode text-darkMode"}
                 ${up ? "h-[200px]" : "h-[70px]"}
-                absolute bottom-0 w-full px-[20px]`}>
+                overflow-hidden absolute bottom-0 w-full px-[20px]`}>
             <div className="flex-row flex justify-between duration-300">
                 <button className={`text-[20px] duration-300 h-[25px] w-[40px] items-center justify-center flex rounded-[5px]
                     ${darkMode ? "bg-whiteMode text-darkMode" : "bg-bgWhiteMode text-whiteMode"}`}
@@ -106,7 +106,7 @@ export default function DisplayTxt({ setStateTextNbr, histdate, setHistDate, dar
             </div>
             <p className={`
                 ${!up && "hidden"}
-                ml-auto mr-auto`}>{chapterName}</p>
+                text-center`}>{chapterName}</p>
             <div ref={scaleDivRef} className="scaleDiv right-[10px] top-[-50px] absolute"></div>
         </div>
     </>);

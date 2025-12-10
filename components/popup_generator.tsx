@@ -76,13 +76,14 @@ function CreateHTMLPopup(props: CreateHTMLPopupArgs): JSX.Element {
         });
     }
     return (<>
-        <div className="flex flex-col overflow-y-auto -ms-overflow-style:none &::-webkit-scrollbar:hidden [scrollbar-width:none]
-                    bg-white max-h-[60vh] text-[#555] font-[500] text-[15px] w-[300px] rounded-[5px] p-3">
+        <div className="flex flex-col shadow-[rgba(0,0,15,0.5)_0px_0px_30px_0px]
+                    overflow-y-auto -ms-overflow-style:none &::-webkit-scrollbar:hidden [scrollbar-width:none]
+                    bg-white max-h-[60vh] text-[#555] font-[500] text-[15px] min-w-[300px] rounded-[5px] p-3">
             {/* Header */}
-            <section className="space-y-[-5px]">
+            <section>
                 <h1 className="text-[#000] text-[30px] font-[900]">{props.name.toUpperCase()}</h1>
                 <p>Longitude : {props.lnglat[0].toFixed(6).toString()}</p>
-                <p>Latitude : {props.lnglat[1].toFixed(6).toString()}</p>
+                <p className="mt-[-4px]">Latitude : {props.lnglat[1].toFixed(6).toString()}</p>
             </section>
             {/* ****** */}
             {/* Content */}

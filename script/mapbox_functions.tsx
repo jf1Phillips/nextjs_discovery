@@ -1,6 +1,6 @@
 import { CreateHTMLPopup } from "@/components/popup_generator";
-import mapboxgl, { Map as MapboxMap, LngLatLike, MapMouseEvent, Marker, FilterSpecification } from "mapbox-gl";
-import { renderToString } from "react-dom/server";
+import mapboxgl, { Map as MapboxMap, LngLatLike, MapMouseEvent, Marker, FilterSpecification, LngLat } from "mapbox-gl";
+import { createRoot } from "react-dom/client";
 
 var darkmode: boolean = false;
 
@@ -906,34 +906,25 @@ function handler(map: MapboxMap, e: MapMouseEvent): void {
     const popup = new mapboxgl.Popup({ anchor: "bottom", closeButton: false, offset: [0, -30] })
         .setLngLat(coords);
 
-    const html: string = renderToString(CreateHTMLPopup({
-        name: feature.properties["fr"],
-        lnglat: coords as [number, number],
-    }));
-
-    popup.setHTML(html);
-    // popup.setHTML(feature.properties["html"]);
+    const popupNode = document.createElement("div");
+    const root = createRoot(popupNode);
+    popup.setHTML("<p></p>");
+    root.render(
+        <CreateHTMLPopup
+            name={feature.properties["fr"]}
+            lnglat={coords as [number, number]}
+        />
+    );
     popup.once("open", () => {
-        const popup_el = document.querySelector('.mapboxgl-popup-content') as HTMLDivElement;
-
-        popup_el.classList.add(
-            'flex',
-            'flex-col',
-            'items-center',
-            'max-h-[500px]',
-            'overflow-y-auto',
-            'text-white');
-        popup_el.style.backgroundColor = '#3E3D3C';
-        popup_el.style.color = '#FFFFFF';
-        popup_el.style.fontSize = '18px';
-        popup_el.style.scrollbarWidth = 'thin';
-        popup_el.style.scrollbarColor = '#616161 #2a2a2a';
-    });
-
-    // Hide the popup anchor triangle
-    popup.once("open", () => {
+        const popup_el = document.querySelector(".mapboxgl-popup");
+        const popup_content = document.querySelector(".mapboxgl-popup-content") as HTMLDivElement;
         const popup_anchor = document.querySelector('.mapboxgl-popup-tip') as HTMLDivElement;
+        if (!popup_el || !popup_anchor || !popup_content) return;
+
+        popup_el.appendChild(popupNode);
+        (popup_el as HTMLDivElement).style.alignItems = "center";
         popup_anchor.style.display = "none";
+        popup_content.style.display = "none";
     });
     popup.addTo(map);
 }
