@@ -56,8 +56,9 @@ def csv_to_geoJson(file_name):
                     "img": img,
                     "description": description,
                     "links_more": links_more,
-                    "icon": f"pin_labels_dark_NT.png",
-                    "icon_selected": f"pin_labels_NT_selected.png",
+                    "icon": "map_icon_black.png",
+                    "icon_darkmode": "map_icon_white.png",
+                    "icon_selected": "map_icon_orange.png",
                     "testament": "NT",
                 }
             }

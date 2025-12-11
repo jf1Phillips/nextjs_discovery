@@ -80,6 +80,7 @@ type GeoJsonLabels = {
  *   - `fr`: The French display name.
  *   - `jsx`: A JSX version of the label (e.g., for React rendering).
  *   - `icon`: The default icon ID or URL.
+ *   - `icon_darkmode`: The icon for the darkmode (optional).
  *   - `icon_selected`: The icon ID or URL used when the point is selected.
  *   - `min_zoom` *(optional)*: Minimum zoom level required for the point to be displayed.
  *
@@ -109,6 +110,7 @@ type CustomFeature = {
         fr: string,
         jsx: string,
         icon: string,
+        icon_darkmode?: string,
         icon_selected: string,
         min_zoom?: number,
     },
@@ -174,6 +176,9 @@ function setDarkmodeToLabels(map: MapboxMap, labels: GeoJsonLabels[]): void {
             darkmode ? '#ffffff' : '#000000');
         map.setPaintProperty(label.id, 'text-halo-color',
             darkmode ? '#000000' : '#ffffff');
+        map.setLayoutProperty(label.id, "icon-image",
+            darkmode ? ['coalesce', ['get', 'icon_darkmode'], ['get', 'icon']] : ['get', 'icon']
+        );
     });
 }
 
@@ -479,9 +484,14 @@ async function loadIcons(map: MapboxMap, label: GeoJsonLabels): Promise<void> {
     const promises: Promise<void>[] = [];
 
     geojson.features.forEach((feature) => {
-        const icons = [feature.properties.icon, feature.properties.icon_selected];
+        const icons = [
+            feature.properties.icon,
+            feature.properties.icon_selected,
+            feature.properties.icon_darkmode,
+        ];
 
         icons.forEach((icon) => {
+            if (!icon) return;
             if (loadedIcons.has(icon)) return;
             loadedIcons.add(icon);
             const url = PIN_LABELS_FOLDER + icon;

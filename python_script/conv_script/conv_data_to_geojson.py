@@ -27,7 +27,7 @@ with open(file_name, mode="r", encoding="utf-8") as file:
                 "fr": d["Nom"],
                 "html": d["Texte"],
                 "icon": d["TypeSite"],
-                "icon_selected": "pin_labels_selected.png",
+                "icon_selected": "map_icon_orange.png",
                 "min_zoom": float(d["NiveauCarteMinimum"]),
                 "testament": "EC",
             }
