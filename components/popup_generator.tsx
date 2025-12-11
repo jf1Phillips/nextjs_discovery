@@ -1,7 +1,6 @@
 import { JSX } from "react";
 import mapboxTools from "@/script/mapbox_functions";
 
-
 /**
  * Arguments used to create an HTML popup component.
  *
@@ -79,14 +78,13 @@ function CreateHTMLPopup(props: CreateHTMLPopupArgs): JSX.Element {
     }
     return (<>
         <div className={`flex flex-col shadow-[rgba(0,0,15,0.5)_0px_0px_30px_0px]
-                    ${mapboxTools.darkmode ? "bg-[#1d1448] text-whiteMode" : "bg-white"}
-                    pointer-events-auto
-                    overflow-y-auto -ms-overflow-style:none &::-webkit-scrollbar:hidden [scrollbar-width:none]
-                    bg-white max-h-[60vh] text-[#555] font-[500] text-[15px] min-w-[300px] rounded-[5px] p-3`}>
+                    ${mapboxTools.darkmode ? "bg-[#1D1448] text-whiteMode" : "bg-white"}
+                    pointer-events-auto overflow-y-auto -ms-overflow-style:none &::-webkit-scrollbar:hidden [scrollbar-width:none]
+                    max-h-[60vh] text-[#555] font-[500] text-[15px] min-w-[300px] rounded-[5px] p-3`}>
             {/* Header */}
             <section>
                 <h1 className={`${mapboxTools.darkmode ? "text-white" : "text-[#000]"}
-                     text-[30px] font-[900]`}>{props.name.toUpperCase()}</h1>
+                    leading-[1] text-[30px] font-[900]`}>{props.name.toUpperCase()}</h1>
                 <p>Longitude : {props.lnglat[0].toFixed(6).toString()}</p>
                 <p className="mt-[-4px]">Latitude : {props.lnglat[1].toFixed(6).toString()}</p>
             </section>

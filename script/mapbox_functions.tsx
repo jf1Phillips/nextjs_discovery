@@ -275,6 +275,7 @@ function setWaterColor(map: MapboxMap) {
             type: 'fill',
             source: idWaterLayer,
             'source-layer': 'depth',
+            filter: ['>', ['get', 'min_depth'], 0],
             paint: {
                 'fill-color': [
                     'interpolate', ['linear'], ['get', 'min_depth'],
