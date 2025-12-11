@@ -498,7 +498,9 @@ async function loadIcons(map: MapboxMap, label: GeoJsonLabels): Promise<void> {
             const p = new Promise<void>((resolve, reject) => {
                 map.loadImage(url, (err, img) => {
                     if (err) return reject(err);
-                    if (!map.hasImage(icon)) map.addImage(icon, img!);
+                    if (img && !map.hasImage(icon)) {
+                        map.addImage(icon, img!);
+                    }
                     resolve();
                 });
             });
@@ -971,6 +973,7 @@ function add_popup(map: MapboxMap, labels: GeoJsonLabels[]): void {
             const oldHandler = labelHandlers.get(id);
             if (oldHandler) {
                 map.off("click", id, oldHandler);
+                labelHandlers.delete(id);
             }
             const newHandler = (e: MapMouseEvent) => handler(map, e);
             labelHandlers.set(id, newHandler);
