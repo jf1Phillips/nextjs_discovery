@@ -3,6 +3,7 @@
 import json5
 from sys import argv
 import json
+from bs4 import BeautifulSoup
 
 if len(argv) != 2:
     exit(84)
@@ -17,6 +18,9 @@ print("File loaded !")
 features = []
 with open(file_name, mode="r", encoding="utf-8") as file:
     for d in data:
+        if d["Texte"]:
+            soup = BeautifulSoup(d["Texte"])
+            d["Texte"] = soup.get_text()
         feature = {
             "type": "Feature",
             "geometry": {
@@ -25,8 +29,10 @@ with open(file_name, mode="r", encoding="utf-8") as file:
             },
             "properties": {
                 "fr": d["Nom"],
-                "html": d["Texte"],
+                "description": d["Texte"],
                 "icon": d["TypeSite"],
+                "icon": "map_icon_black.png",
+                "icon_darkmode": "map_icon_white.png",
                 "icon_selected": "map_icon_orange.png",
                 "min_zoom": float(d["NiveauCarteMinimum"]),
                 "testament": "EC",
