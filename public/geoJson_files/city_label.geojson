@@ -1128,7 +1128,12 @@
                 "related_event": [],
                 "img": "/img/bethsaid.jpg",
                 "description": "La ville galiléenne de Bethsaïde fut détruite par un tremblement de terre vers l'an 324 après Jésus Christ. Elle fut retrouvée en 1987 par un consortium d'universités menée par l'Université du Nebraska à Omaha, conduit par le professeur de religion et de philosophie israélien Dr. Rami Arav, sur le site de et-Tell, à 2 kilomètres au nord-est du lac de Tibériade. Cet emplacement correspond exactement à la dictée du Christ transmis à Maria Valtorta du 4 juin 1947 dans laquelle il lui explique qu'en raison de « vingt siècles d'alluvions apportés par le fleuve et par les éboulis descendus des collines », la ville se trouve désormais au milieu des terres et non plus « à l'embouchure du fleuve dans le lac » (L'Évangile tel qu'il m'a été révélé, chapitre 179.1).",
-                "links_more": [],
+                "links_more": [
+                    {
+                        "name": "wiki",
+                        "url": "https://fr.mariavaltorta.wiki/wiki/Béthsaïda,_Bethsaïde"
+                    }
+                ],
                 "icon": "map_icon_black.png",
                 "icon_darkmode": "map_icon_white.png",
                 "icon_selected": "map_icon_orange.png",
@@ -10070,31 +10075,6 @@
                 "links_more": [
                     {
                         "url": "https://fr.mariavaltorta.wiki/wiki/Bethléem_de_Judée"
-                    }
-                ],
-                "icon": "map_icon_black.png",
-                "icon_darkmode": "map_icon_white.png",
-                "icon_selected": "map_icon_orange.png",
-                "testament": "NT"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    35.63040756724246,
-                    32.91704537395029
-                ]
-            },
-            "properties": {
-                "fr": "Béthsaïda, Bethsaïde",
-                "related_event": [],
-                "img": null,
-                "description": null,
-                "links_more": [
-                    {
-                        "url": "https://fr.mariavaltorta.wiki/wiki/Béthsaïda,_Bethsaïde"
                     }
                 ],
                 "icon": "map_icon_black.png",
