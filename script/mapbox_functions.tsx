@@ -21,8 +21,8 @@ const mapboxTools = {
     set3dTerrain,
     /** {@link addRoads} */
     addRoads,
-    /** {@link addRain} */
-    addRain,
+    /** {@link setEnvironment} */
+    setEnvironment,
     /** {@link get_location} */
     get_location,
     /** {@link highLightLabel} */
@@ -373,6 +373,10 @@ function setDarkModeToMap(map: MapboxMap): void {
     const layers = map.getStyle().layers;
     if (!layers) return;
     setWaterColor(map);
+    const layerRegistryArray = Array.from(layerRegistry.values());
+    if (layerRegistryArray.length != 0) {
+        setDarkmodeToLabels(map, layerRegistryArray);
+    }
 
     // Couleurs du mode sombre
     const darkColors: LayerStyleInclude = {
@@ -476,7 +480,6 @@ const loadedIcons = new Set<string>();
  * // This function is used internally when initializing label layers.
  * await loadIcons(map, cityLabel);
  */
-
 async function loadIcons(map: MapboxMap, label: GeoJsonLabels): Promise<void> {
     const response = await fetch(label.url);
     if (!response.ok) throw new Error("Error fetch " + label.url);
@@ -573,6 +576,8 @@ function filterGestion(map: MapboxMap, layerId: string, filterKey: string, filte
 }
 
 
+const layerRegistry = new Map<string, GeoJsonLabels>();
+
 /**
  * Adds GeoJSON-based label layers to a Mapbox map and ensures the icons used by
  * those labels are loaded beforehand.
@@ -616,6 +621,7 @@ function addGeoJsonLabels(map: MapboxMap, labels: GeoJsonLabels[]): void {
                 map.addSource(label.id, { type: "geojson", data: label.url });
             }
             if (!map.getLayer(label.id)) {
+                layerRegistry.set(label.id, label);
                 map.addLayer({
                     id: label.id,
                     type: 'symbol',
@@ -1131,30 +1137,75 @@ export { addRoads };
 
 
 /**------------------------------------------------------------------------------------- */
-/**                                    ADD RAIN                                          */
+/**                                    SET ENVIRONMENT                                   */
 /**------------------------------------------------------------------------------------- */
 
-/**
- * Adds or removes a rain effect on the map.
- *
- * If `remove_rain` is true, the current rain effect is removed.
- * Otherwise, if no rain is active, it creates a new one with
- * predefined visual properties such as density, color, and direction.
- *
- * @param map - The Mapbox map instance to modify.
- * @param remove_rain - Optional flag to remove the rain effect.
- *
- * @example
- * // Add a rain effect
- * addRain(map);
- *
- * // Remove the rain effect
- * addRain(map, true);
- */
-function addRain(map: MapboxMap, remove_rain?: boolean): void {
-    if (remove_rain) {
+type environmentParams = {
+    wind?: boolean,
+    fog?: boolean,
+    rain?: boolean,
+    snow?: boolean,
+    storm?: boolean,
+    night?: boolean,
+};
+
+function setEnvironment(map: MapboxMap, env: environmentParams | null): void {
+    if (env == null) {
+        map.setFog(null);
+        map.setSnow(null);
+        map.setSnow(null);
+        darkmode = false;
+        setDarkModeToMap(map);
+        return;
+    }
+    if (env.night != undefined) {
+        darkmode = env.night;
+        setDarkModeToMap(map);
+    }
+    if (env.fog == false) {
+        map.setFog(null);
+    } else if (env.fog && !map.getFog()) {
+        map.setFog({
+            range: [0.5, 10],
+            color: '#d8dfe8',
+            'horizon-blend': 0.1,
+            'high-color': '#c8d5e8',
+            'space-color': '#7c9cc5',
+            'star-intensity': 0.15
+        });
+    }
+    if (env.snow == false) {
+        map.setSnow(null);
+    } else if (env.snow && !map.getSnow()) {
+        map.setSnow({
+            density: ['interpolate', ['linear'], ['zoom'],
+                8, 0, 10, 0.8],
+            intensity: 0.6,
+            color: darkmode ? '#ffffff' : '#888',
+            opacity: 0.8,
+            direction: [10, 70],
+            'center-thinning': 0.2
+        });
+    }
+    if (env.wind == false && env.wind == false) {
         map.setRain(null);
-    } else if (!map.getRain()) {
+    }
+    if (env.wind) {
+        map.setRain({
+            density: ['interpolate', ['linear'], ['zoom'],
+                8, 0, 10, 1.0],
+            intensity: 1.0,
+            color: '#a8adbc',
+            opacity: 0.2,
+            vignette: ['interpolate', ['linear'], ['zoom'],
+                9, 0.0, 13, 0.8],
+            direction: [180, 180],
+            'droplet-size': [1, 50],
+            'distortion-strength': 0,
+            'center-thinning': 0
+        });
+    }
+    if (env.rain) {
         map.setRain({
             density: ['interpolate', ['linear'], ['zoom'],
                 8, 0, 10, 1.0],
@@ -1164,7 +1215,7 @@ function addRain(map: MapboxMap, remove_rain?: boolean): void {
             vignette: ['interpolate', ['linear'], ['zoom'],
                 9, 0.0, 13, 0.8],
             'vignette-color': '#464646',
-            direction: [0, 80],
+            direction: [0, env.wind ? 140 : 80],
             'droplet-size': [2.6, 18.2],
             'distortion-strength': 0.7,
             'center-thinning': 0
@@ -1172,7 +1223,7 @@ function addRain(map: MapboxMap, remove_rain?: boolean): void {
     }
 }
 
-export { addRain };
+export { setEnvironment, type environmentParams };
 /*****************************************************************************************/
 
 
