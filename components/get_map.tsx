@@ -269,17 +269,11 @@ export default function GetMapboxMap({ def_zoom, textNbr, histdate, setDarkMode 
                                 name="Afficher les routes de Hans J. Hopfen (1975)" include={ROAD_FILENAME}
                                 map={map} enabled={state.enabled} def={100} />
                             <Cursor className={!displayCursor ? "hidden" : ""}
-                                name="Afficher les lieux" include={ID_CITY}
-                                map={map} enabled={state.enabled} def={100} />
-                            <Cursor className={!displayCursor ? "hidden" : ""}
-                                name="Afficher les routes et bâtiments actuels" include={[
+                                name="Afficher les infrastructures actuelles" include={[
                                     "road", "natural-line-label", "natural-point-label", "aeroway",
                                     "water-line-label", "water-point-label", "poi-label", "airport-label",
-                                    "settlement-subdivision-label", "settlement-label",
+                                    "settlement-subdivision-label", "settlement-label", "admin", "state-label", "country-label",
                                     "building", "bridge", "tunnel", "waterway", "park", "land-structure-polygon"]}
-                                map={map} enabled={state.enabled} def={0} />
-                            <Cursor className={!displayCursor ? "hidden" : ""}
-                                name="Afficher les frontières actuelles" include={["admin", "state-label", "country-label"]}
                                 map={map} enabled={state.enabled} def={100} />
 
                             {/* GEOLOC */}
