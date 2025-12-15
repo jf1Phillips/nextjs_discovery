@@ -25,7 +25,6 @@ type MapVar = {
     lat: number;
     enabled: boolean;
     relief: boolean;
-    rain: boolean;
 };
 
 const DEFAULT_VALUE: MapVar = {
@@ -34,7 +33,6 @@ const DEFAULT_VALUE: MapVar = {
     lat: 32.38416,
     enabled: false,
     relief: false,
-    rain: false,
 };
 
 const ID_PEF: string = "pef1880map";
@@ -77,11 +75,10 @@ const LabelsToAdd: GeoJsonLabels[] = [
 
 const add_all_things = (new_state: MapVar, map: MapboxMap | null) => {
     if (!map) return;
-    mapboxTools.darkmode = new_state.enabled;
     mapboxTools.addGeoImg(map, geoImgArray);
     mapboxTools.addRoads(ROAD_FILENAME, map);
     mapboxTools.set3dTerrain(map, !new_state.relief);
-    mapboxTools.addRain(map, !new_state.rain);
+    mapboxTools.setEnvironment(map, null);
     mapboxTools.addGeoJsonLabels(map, LabelsToAdd);
     mapboxTools.setDarkmodeToLabels(map, LabelsToAdd);
     mapboxTools.add_popup(map, LabelsToAdd);
@@ -166,13 +163,13 @@ export default function GetMapboxMap({ def_zoom, textNbr, histdate, setDarkMode 
 
     useEffect(() => {
         if (!map.current || !styleLoaded) return;
-        if (!(textNbr % 4)) {
-            mapboxTools.addRain(map.current);
-            setState(prev => ({ ...prev, rain: true }));
-        } else {
-            mapboxTools.addRain(map.current, true);
-            setState(prev => ({ ...prev, rain: false }));
-        }
+        const modulo = textNbr % 5;
+        mapboxTools.setEnvironment(map.current, {
+            night: modulo == 0,
+            snow: modulo == 1,
+            wind: modulo == 2 || modulo == 4,
+            rain: modulo == 3 || modulo == 4,
+        })
         json_load(map.current, {
             label: LabelsToAdd[0],
             zoom_level: 10,
@@ -194,10 +191,7 @@ export default function GetMapboxMap({ def_zoom, textNbr, histdate, setDarkMode 
     const changeMode = () => {
         if (!map.current || !styleLoaded) return;
         const new_state: MapVar = { ...state, enabled: !state.enabled };
-        mapboxTools.darkmode = new_state.enabled;
         setDarkMode(new_state.enabled);
-        mapboxTools.setDarkmodeToLabels(map.current, LabelsToAdd);
-        mapboxTools.setDarkModeToMap(map.current);
         setState(new_state);
     }
 
@@ -213,12 +207,6 @@ export default function GetMapboxMap({ def_zoom, textNbr, histdate, setDarkMode 
         mapboxTools.set3dTerrain(map.current, state.relief);
         setState(prev => ({ ...prev, relief: !prev.relief }));
     };
-
-    const setRain = () => {
-        if (!map.current || !map.current.isStyleLoaded()) return;
-        mapboxTools.addRain(map.current, state.rain);
-        setState(prev => ({ ...prev, rain: !prev.rain }));
-    }
 
     const [displayCursor, setDisplayCursor] = useState<boolean>(true);
     const [locBtn, setLocBtn] = useState<LocType>({ enabled: false, pos: { lng: 0, lat: 0 } });
@@ -274,7 +262,7 @@ export default function GetMapboxMap({ def_zoom, textNbr, histdate, setDarkMode 
                                     "water-line-label", "water-point-label", "poi-label", "airport-label",
                                     "settlement-subdivision-label", "settlement-label", "admin", "state-label", "country-label",
                                     "building", "bridge", "tunnel", "waterway", "park", "land-structure-polygon"]}
-                                map={map} enabled={state.enabled} def={100} />
+                                map={map} enabled={state.enabled} def={0} />
 
                             {/* GEOLOC */}
                             <div className={!displayCursor ? "hidden" : "space-x-4 flex items-center"}>
@@ -331,12 +319,6 @@ export default function GetMapboxMap({ def_zoom, textNbr, histdate, setDarkMode 
                                 ${!state.enabled ? "bg-bgDarkMode text-darkModde" : "bg-darkMode text-whiteMode"}`}
                         onClick={setRelief}>
                         {state.relief ? "2d" : "3d"}</button>
-                    {/* ********** */}
-                    {/* RAIN */}
-                    <button className={`w-[22px] h-[22px] duration-300 text-[15px] rounded-[2px]
-                                ${!state.enabled ? "bg-bgDarkMode" : "bg-darkMode"}`}
-                        onClick={setRain}>
-                        {!state.rain ? "🌧️" : "☀️"}</button>
                     {/* ********** */}
                     {/* RELOAD JSON */}
                     <button ref={reloadRef}
