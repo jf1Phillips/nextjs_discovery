@@ -69,7 +69,7 @@ function CreateHTMLPopup(props: CreateHTMLPopupArgs): JSX.Element {
         props.links.forEach((link, index) => {
             linkList.push(
                 <li key={index}>
-                    <a target="_blank" href={link.url}>
+                    <a className="break-all" target="_blank" href={link.url}>
                         {link.name ? link.name : link.url}
                     </a>
                 </li>
