@@ -165,7 +165,7 @@ export default function GetMapboxMap({ def_zoom, textNbr, histdate, setDarkMode 
         if (!map.current || !styleLoaded) return;
         const modulo = textNbr % 5;
         mapboxTools.setEnvironment(map.current, {
-            night: modulo == 0,
+            night: modulo == 0 || state.enabled,
             snow: modulo == 1,
             wind: modulo == 2 || modulo == 4,
             rain: modulo == 3 || modulo == 4,
@@ -192,6 +192,8 @@ export default function GetMapboxMap({ def_zoom, textNbr, histdate, setDarkMode 
         if (!map.current || !styleLoaded) return;
         const new_state: MapVar = { ...state, enabled: !state.enabled };
         setDarkMode(new_state.enabled);
+        mapboxTools.darkmode = new_state.enabled;
+        mapboxTools.setDarkModeToMap(map.current);
         setState(new_state);
     }
 
