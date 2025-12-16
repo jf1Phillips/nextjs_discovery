@@ -166,9 +166,6 @@ export default function GetMapboxMap({ def_zoom, textNbr, histdate, setDarkMode 
         const modulo = textNbr % 5;
         mapboxTools.setEnvironment(map.current, {
             night: modulo == 0 || state.enabled,
-            snow: modulo == 1,
-            wind: modulo == 2 || modulo == 4,
-            rain: modulo == 3 || modulo == 4,
         })
         json_load(map.current, {
             label: LabelsToAdd[0],

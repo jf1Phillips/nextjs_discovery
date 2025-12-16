@@ -1147,6 +1147,7 @@ type environmentParams = {
     snow?: boolean,
     storm?: boolean,
     night?: boolean,
+    bounds?: [[number, number], [number, number]] | null, // [[west, south], [east, north]]
 };
 
 function setEnvironment(map: MapboxMap, env: environmentParams | null): void {
@@ -1171,7 +1172,7 @@ function setEnvironment(map: MapboxMap, env: environmentParams | null): void {
             'horizon-blend': 0.1,
             'high-color': '#c8d5e8',
             'space-color': '#7c9cc5',
-            'star-intensity': 0.15
+            'star-intensity': 0.15,
         });
     }
     if (env.snow == false) {
@@ -1184,7 +1185,7 @@ function setEnvironment(map: MapboxMap, env: environmentParams | null): void {
             color: darkmode ? '#ffffff' : '#888',
             opacity: 0.8,
             direction: [10, 70],
-            'center-thinning': 0.2
+            'center-thinning': 0.2,
         });
     }
     if (env.wind == false && env.wind == false) {
@@ -1202,7 +1203,7 @@ function setEnvironment(map: MapboxMap, env: environmentParams | null): void {
             direction: [180, 180],
             'droplet-size': [1, 50],
             'distortion-strength': 0,
-            'center-thinning': 0
+            'center-thinning': 0,
         });
     }
     if (env.rain) {
@@ -1218,7 +1219,7 @@ function setEnvironment(map: MapboxMap, env: environmentParams | null): void {
             direction: [0, env.wind ? 140 : 80],
             'droplet-size': [2.6, 18.2],
             'distortion-strength': 0.7,
-            'center-thinning': 0
+            'center-thinning': 0,
         });
     }
 }
