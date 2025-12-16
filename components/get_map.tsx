@@ -232,10 +232,10 @@ export default function GetMapboxMap({ def_zoom, textNbr, histdate, setDarkMode 
     };
 
     return (<>
-        <div className="flex flex-col left-0 top-0 absolute z-10">
+        <div className="flex flex-col left-0 top-0 absolute z-10 pointer-events-none">
             <div className={`flex ${displayCursor ? "flex-col" : "flex-row items-center"}`}>
                 <div className={`flex flex-col justify-between p-[10px] duration-300
-                        rounded-br-[5px] whitespace-nowrap overflow-hidden
+                        rounded-br-[5px] whitespace-nowrap overflow-hidden pointer-events-auto
                         ${displayCursor ? "h-[280px] w-[400px]" : "h-[30px] w-[30px]"}
                         ${!state.enabled ? "bg-bgDarkMode" : "bg-darkMode"}`}>
                     {/* CLOSE BTN */}
@@ -297,7 +297,7 @@ export default function GetMapboxMap({ def_zoom, textNbr, histdate, setDarkMode 
                 </div>
                 <div className={`flex space-x-[10px] ml-[10px] ${displayCursor ? "mt-[10px] mb-[10px]" : ""}`}>
                     {/* DARKMODE */}
-                    <div className={`flex cursor-pointer rounded-full duration-300 w-[60px]
+                    <div className={`pointer-events-auto  flex cursor-pointer rounded-full duration-300 w-[60px]
                             ${state.enabled ? "bg-darkMode" : "bg-bgDarkMode"}`} onClick={changeMode}>
                         <p className={`pointer-events-none text-[15px] select-none duration-300
                             z-10 ml-[5px] mr-[5px]
@@ -306,7 +306,7 @@ export default function GetMapboxMap({ def_zoom, textNbr, histdate, setDarkMode 
                     </div>
                     {/* ********** */}
                     {/* ZOOM IN OUT */}
-                    <div className={`w-[55px] h-[22px] text-[20px] flex flex-row justify-between
+                    <div className={`pointer-events-auto w-[55px] h-[22px] text-[20px] flex flex-row justify-between
                             ${state.enabled ? "text-whiteMode" : "text-darkMode"}`}>
                         <button className={`rounded-[2px] w-[22px] h-[22px] flex items-center justify-center duration-[300ms]
                             ${!state.enabled ? "bg-bgDarkMode" : "bg-darkMode"}`}
@@ -317,14 +317,14 @@ export default function GetMapboxMap({ def_zoom, textNbr, histdate, setDarkMode 
                     </div>
                     {/* ********** */}
                     {/* RELIEF */}
-                    <button className={`w-[22px] h-[22px] duration-300 text-[15px] rounded-[2px]
+                    <button className={`pointer-events-auto w-[22px] h-[22px] duration-300 text-[15px] rounded-[2px]
                                 ${!state.enabled ? "bg-bgDarkMode text-darkModde" : "bg-darkMode text-whiteMode"}`}
                         onClick={setRelief}>
                         {state.relief ? "2d" : "3d"}</button>
                     {/* ********** */}
                     {/* RELOAD JSON */}
                     <button ref={reloadRef}
-                        className={`w-[22px] h-[22px] rounded-[2px] duration-300 text-[15px] reload_json
+                        className={`pointer-events-auto w-[22px] h-[22px] rounded-[2px] duration-300 text-[15px] reload_json
                                 ${!state.enabled ? "bg-bgDarkMode text-darkMode" : "bg-darkMode text-whiteMode"}`}
                         onClick={() => mapboxTools.reload_json_labels(map.current, LabelsToAdd)}
                     >↻</button>
@@ -332,9 +332,9 @@ export default function GetMapboxMap({ def_zoom, textNbr, histdate, setDarkMode 
                 </div>
             </div>
             {/* LONG LAT */}
-            <div className={`w-fit text-[15px] p-[5px] duration-300 tracking-[1px] rounded-br-[5px]
+            <div className={`w-fit text-[15px] p-[5px] duration-300 tracking-[1px] rounded-br-[5px] pointer-events-none
                 ${!state.enabled ? "text-darkMode bg-bgDarkMode" : "bg-darkMode text-whiteMode"}`}>
-                <p>Lng: {lastPos ? lastPos.lng.toFixed(7) : ''}<br />Lat: {lastPos ? lastPos.lat.toFixed(7) : ''}</p>
+                <p className="pointer-events-auto">Lng: {lastPos ? lastPos.lng.toFixed(7) : ''}<br />Lat: {lastPos ? lastPos.lat.toFixed(7) : ''}</p>
             </div>
             {/* ********** */}
         </div>
