@@ -31,6 +31,8 @@ const mapboxTools = {
     filterGestion,
     /** {@link filterGestion} */
     setWaterColor,
+    /** {@link setSatelliteView} */
+    setSatelliteView,
     get darkmode() {
         return darkmode;
     },
@@ -992,6 +994,49 @@ export { add_popup };
 
 
 /**------------------------------------------------------------------------------------- */
+/**                                  ADD SATELITE VIEW                               */
+/**------------------------------------------------------------------------------------- */
+// DOC A JOUTEREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+function setSatelliteView(map: MapboxMap, remove?: boolean): void {
+    const idSatellite = "satellite_view";
+
+    if (remove) {
+        if (map.getLayer(idSatellite)) {
+            map.setLayoutProperty(idSatellite, "visibility", "none");
+        }
+        return;
+    }
+    if (!map.getSource(idSatellite)) {
+        map.addSource(idSatellite, {
+            type: "raster",
+            url: "mapbox://mapbox.satellite",
+            tileSize: 256,
+        });
+    }
+    if (!map.getLayer(idSatellite)) {
+        map.addLayer({
+            id: idSatellite,
+            source: idSatellite,
+            type: "raster",
+            paint: {
+                "raster-opacity": 0.8,
+            },
+            layout: {
+                visibility: "visible",
+            }
+        }, "water");
+    } else {
+        map.setLayoutProperty(idSatellite, "visibility", "visible");
+    }
+}
+
+export { setSatelliteView };
+
+/*****************************************************************************************/
+
+
+
+/**------------------------------------------------------------------------------------- */
 /**                                  SET 3D TERRAIN                                      */
 /**------------------------------------------------------------------------------------- */
 
@@ -1039,7 +1084,8 @@ function set3dTerrain(map: MapboxMap, remove: boolean): void {
     if (!map.getSource(id_terrain)) {
         map.addSource(id_terrain, {
             type: 'raster-dem',
-            url: 'mapbox://mapbox.terrain-rgb',
+            url: 'mapbox://mapbox.mapbox-terrain-dem-v1',
+            // url: 'mapbox://mapbox.terrain-rgb',
             tileSize: 512,
         });
     }
@@ -1140,91 +1186,95 @@ export { addRoads };
 /**                                    SET ENVIRONMENT                                   */
 /**------------------------------------------------------------------------------------- */
 
-type environmentParams = {
-    wind?: boolean,
-    fog?: boolean,
-    rain?: boolean,
-    snow?: boolean,
-    storm?: boolean,
-    night?: boolean,
-    bounds?: [[number, number], [number, number]] | null, // [[west, south], [east, north]]
-};
+import { WeatherSystem, WeatherConfig, createBoundsAroundPoint } from './environment';
 
-function setEnvironment(map: MapboxMap, env: environmentParams | null): void {
-    if (env == null) {
-        map.setFog(null);
-        map.setSnow(null);
-        map.setSnow(null);
-        darkmode = false;
-        setDarkModeToMap(map);
-        return;
-    }
-    if (env.night != undefined) {
-        darkmode = env.night;
-        setDarkModeToMap(map);
-    }
-    if (env.fog == false) {
-        map.setFog(null);
-    } else if (env.fog && !map.getFog()) {
-        map.setFog({
-            range: [0.5, 10],
-            color: '#d8dfe8',
-            'horizon-blend': 0.1,
-            'high-color': '#c8d5e8',
-            'space-color': '#7c9cc5',
-            'star-intensity': 0.15,
+let weatherSystem: WeatherSystem | null = null;
+
+function setEnvironment(map: MapboxMap, env: WeatherConfig | null): void {
+    // Initialiser le système la première fois
+    if (!weatherSystem) {
+        weatherSystem = new WeatherSystem(map, (night) => {
+            darkmode = night;
+            setDarkModeToMap(map);
         });
     }
-    if (env.snow == false) {
-        map.setSnow(null);
-    } else if (env.snow && !map.getSnow()) {
-        map.setSnow({
-            density: ['interpolate', ['linear'], ['zoom'],
-                8, 0, 10, 0.8],
-            intensity: 0.6,
-            color: darkmode ? '#ffffff' : '#888',
-            opacity: 0.8,
-            direction: [10, 70],
-            'center-thinning': 0.2,
-        });
-    }
-    if (env.wind == false && env.wind == false) {
-        map.setRain(null);
-    }
-    if (env.wind) {
-        map.setRain({
-            density: ['interpolate', ['linear'], ['zoom'],
-                8, 0, 10, 1.0],
-            intensity: 1.0,
-            color: '#a8adbc',
-            opacity: 0.2,
-            vignette: ['interpolate', ['linear'], ['zoom'],
-                9, 0.0, 13, 0.8],
-            direction: [180, 180],
-            'droplet-size': [1, 50],
-            'distortion-strength': 0,
-            'center-thinning': 0,
-        });
-    }
-    if (env.rain) {
-        map.setRain({
-            density: ['interpolate', ['linear'], ['zoom'],
-                8, 0, 10, 1.0],
-            intensity: 1.0,
-            color: '#a8adbc',
-            opacity: 0.7,
-            vignette: ['interpolate', ['linear'], ['zoom'],
-                9, 0.0, 13, 0.8],
-            'vignette-color': '#464646',
-            direction: [0, env.wind ? 140 : 80],
-            'droplet-size': [2.6, 18.2],
-            'distortion-strength': 0.7,
-            'center-thinning': 0,
-        });
-    }
+
+    // Appliquer la config météo
+    weatherSystem.setWeather(env);
+    // if (env == null) {
+    //     map.setFog(null);
+    //     map.setSnow(null);
+    //     map.setSnow(null);
+    //     darkmode = false;
+    //     setDarkModeToMap(map);
+    //     return;
+    // }
+    // if (env.night != undefined) {
+    //     darkmode = env.night;
+    //     setDarkModeToMap(map);
+    // }
+    // if (env.fog == false) {
+    //     map.setFog(null);
+    // } else if (env.fog && !map.getFog()) {
+    //     map.setFog({
+    //         range: [0.5, 10],
+    //         color: '#d8dfe8',
+    //         'horizon-blend': 0.1,
+    //         'high-color': '#c8d5e8',
+    //         'space-color': '#7c9cc5',
+    //         'star-intensity': 0.15,
+    //     });
+    // }
+    // if (env.snow == false) {
+    //     map.setSnow(null);
+    // } else if (env.snow && !map.getSnow()) {
+    //     map.setSnow({
+    //         density: ['interpolate', ['linear'], ['zoom'],
+    //             8, 0, 10, 0.8],
+    //         intensity: 0.6,
+    //         color: darkmode ? '#ffffff' : '#888',
+    //         opacity: 0.8,
+    //         direction: [10, 70],
+    //         'center-thinning': 0.2,
+    //     });
+    // }
+    // if (env.wind == false && env.wind == false) {
+    //     map.setRain(null);
+    // }
+    // if (env.wind) {
+    //     map.setRain({
+    //         density: ['interpolate', ['linear'], ['zoom'],
+    //             8, 0, 10, 1.0],
+    //         intensity: 1.0,
+    //         color: '#a8adbc',
+    //         opacity: 0.2,
+    //         vignette: ['interpolate', ['linear'], ['zoom'],
+    //             9, 0.0, 13, 0.8],
+    //         direction: [180, 180],
+    //         'droplet-size': [1, 50],
+    //         'distortion-strength': 0,
+    //         'center-thinning': 0,
+    //     });
+    // }
+    // if (env.rain) {
+    //     map.setRain({
+    //         density: ['interpolate', ['linear'], ['zoom'],
+    //             8, 0, 10, 1.0],
+    //         intensity: 1.0,
+    //         color: '#a8adbc',
+    //         opacity: 0.7,
+    //         vignette: ['interpolate', ['linear'], ['zoom'],
+    //             9, 0.0, 13, 0.8],
+    //         'vignette-color': '#464646',
+    //         direction: [0, env.wind ? 140 : 80],
+    //         'droplet-size': [2.6, 18.2],
+    //         'distortion-strength': 0.7,
+    //         'center-thinning': 0,
+    //     });
+    // }
 }
 
-export { setEnvironment, type environmentParams };
+export { setEnvironment };
 /*****************************************************************************************/
 
 
