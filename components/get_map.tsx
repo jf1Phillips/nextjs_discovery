@@ -15,16 +15,18 @@ const ROAD_FILENAME: string = "/geoJson_files/route_palestine_merged.geojson";
 const LABELS_FILENAME: string = "/geoJson_files/city_label.geojson";
 const style: string = "mapbox://styles/mapbox/light-v10";
 
+
 export { LABELS_FILENAME };
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN as string;
 
 type MapVar = {
-    zoom: number;
-    long: number;
-    lat: number;
-    enabled: boolean;
-    relief: boolean;
+    zoom: number,
+    long: number,
+    lat: number,
+    enabled: boolean,
+    relief: boolean,
+    satellite: boolean,
 };
 
 const DEFAULT_VALUE: MapVar = {
@@ -33,6 +35,7 @@ const DEFAULT_VALUE: MapVar = {
     lat: 32.38416,
     enabled: false,
     relief: false,
+    satellite: false,
 };
 
 const ID_PEF: string = "pef1880map";
@@ -164,9 +167,9 @@ export default function GetMapboxMap({ def_zoom, textNbr, histdate, setDarkMode 
     useEffect(() => {
         if (!map.current || !styleLoaded) return;
         const modulo = textNbr % 5;
-        mapboxTools.setEnvironment(map.current, {
-            night: modulo == 0 || state.enabled,
-        })
+        // mapboxTools.setEnvironment(map.current, {
+        //     night: modulo == 0 || state.enabled,
+        // });
         json_load(map.current, {
             label: LabelsToAdd[0],
             zoom_level: 10,
@@ -205,6 +208,12 @@ export default function GetMapboxMap({ def_zoom, textNbr, histdate, setDarkMode 
         if (!map.current || !map.current.isStyleLoaded()) return;
         mapboxTools.set3dTerrain(map.current, state.relief);
         setState(prev => ({ ...prev, relief: !prev.relief }));
+    };
+
+    const setSatellite = () => {
+        if (!map.current || !map.current.isStyleLoaded()) return;
+        mapboxTools.setSatelliteView(map.current, state.satellite);
+        setState(prev => ({...prev, satellite: !prev.satellite}));
     };
 
     const [displayCursor, setDisplayCursor] = useState<boolean>(true);
@@ -325,6 +334,12 @@ export default function GetMapboxMap({ def_zoom, textNbr, histdate, setDarkMode 
                                 ${!state.enabled ? "bg-bgDarkMode text-darkMode" : "bg-darkMode text-whiteMode"}`}
                         onClick={() => mapboxTools.reload_json_labels(map.current, LabelsToAdd)}
                     >↻</button>
+                    {/* ********** */}
+                    {/* SATELLITE */}
+                    <button className={`pointer-events-auto w-[22px] h-[22px] duration-300 text-[15px] rounded-[2px]
+                                ${!state.enabled ? "bg-bgDarkMode text-darkModde" : "bg-darkMode text-whiteMode"}`}
+                        onClick={setSatellite}>
+                        {state.satellite ? "◈" : "⊞"}</button>
                     {/* ********** */}
                 </div>
             </div>
