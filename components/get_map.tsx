@@ -43,16 +43,14 @@ const ID_HANS: string = "hans1975map";
 
 const geoImgArray: GeoImg[] = [
     {
-        url: "/img/geo_map/pef_1880_map.webp",
+        url: "/tiles_pef_1880_map/{z}/{x}/{y}.webp",
         id: ID_PEF,
-        type: "image",
-        opacity: 0,
-        coord: [
-            [34.120542941238725 + 0.008, 33.46703792406347 + 0.003],
-            [35.7498100593699 + 0.008, 33.46703792406347 + 0.003],
-            [35.7498100593699 + 0.008, 31.10529446421723 - 0.0058],
-            [34.120542941238725 + 0.008, 31.10529446421723 - 0.0058],
-        ],
+        type: "raster",
+        opacity: 0.0,
+        bounds: [34.120542941238725 + 0.008,
+            31.10529446421723 - 0.0058,
+            35.7498100593699 + 0.008,
+            33.46703792406347 + 0.003],
     },
     {
         url: "/tiles/{z}/{x}/{y}.webp",
@@ -60,7 +58,7 @@ const geoImgArray: GeoImg[] = [
         type: "raster",
         opacity: 0,
         bounds: [33.6803545, 31.1732927, 36.6260058, 33.7008169],
-    }
+    },
 ];
 
 const ID_CITY: string = "cityGeoJson";
