@@ -144,6 +144,18 @@ export default function GetMapboxMap({ def_zoom, textNbr, histdate, setDarkMode 
                 };
                 waitLoadStyle(LabelsToAdd);
             });
+            map.current.on("zoomstart", () => {
+                const scaleDiv = document.querySelector(".scaleDiv") as HTMLDivElement | undefined;
+
+                if (!scaleDiv) return;
+                scaleDiv.style.opacity = "1.0";
+            });
+            map.current.on("zoomend", () => {
+                const scaleDiv = document.querySelector(".scaleDiv") as HTMLDivElement | undefined;
+
+                if (!scaleDiv) return;
+                scaleDiv.style.opacity = "0.0";
+            });
             map.current.on("click", (e) => {
                 const txt = `${e.lngLat.lng.toFixed(7)},${e.lngLat.lat.toFixed(7)}`;
                 cpy_txt(txt);
