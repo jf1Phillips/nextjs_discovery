@@ -52,4 +52,6 @@ type_enum.csv
 0006.sql
 /utils/bible_aelf.csv
 /utils/bible_with_meteo.csv
+pef_1880_map.tif
+pef_1880_map.webp
 /python_script/ex.csv

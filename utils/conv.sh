@@ -5,8 +5,8 @@
 
 set -e
 
-INPUT="input.tif"
-OUTPUT_DIR="public/tiles"
+INPUT="pef_1880_map.tif"
+OUTPUT_DIR="public/tiles_pef_1880_map"
 TEMP_DIR="temp_processing"
 
 GREEN='\033[0;32m'
