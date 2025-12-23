@@ -43,7 +43,7 @@ const ID_HANS: string = "hans1975map";
 
 const geoImgArray: GeoImg[] = [
     {
-        url: "/img/geo_map/pef_1880_map.jpg",
+        url: "/img/geo_map/pef_1880_map.webp",
         id: ID_PEF,
         type: "image",
         opacity: 0,
