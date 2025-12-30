@@ -78,7 +78,6 @@ const add_all_things = (new_state: MapVar, map: MapboxMap | null) => {
     if (!map) return;
     mapboxTools.addGeoImg(map, geoImgArray);
     mapboxTools.addRoads(ROAD_FILENAME, map);
-    mapboxTools.set3dTerrain(map, !new_state.relief);
     mapboxTools.setEnvironment(map, null);
     mapboxTools.addGeoJsonLabels(map, LabelsToAdd);
     mapboxTools.setDarkmodeToLabels(map, LabelsToAdd);
@@ -214,9 +213,11 @@ export default function GetMapboxMap({ def_zoom, textNbr, histdate, setDarkMode 
         });
     };
 
+    const [buildingOpactity, setBuildingOpacity] = useState<number>(0.0);
+
     const setRelief = () => {
         if (!map.current || !map.current.isStyleLoaded()) return;
-        mapboxTools.set3dTerrain(map.current, state.relief);
+        mapboxTools.set3dTerrain(map.current, state.relief, buildingOpactity);
         setState(prev => ({ ...prev, relief: !prev.relief }));
     };
 
@@ -276,11 +277,11 @@ export default function GetMapboxMap({ def_zoom, textNbr, histdate, setDarkMode 
                                 map={map} enabled={state.enabled} def={100} />
                             <Cursor className={!displayCursor ? "hidden" : ""}
                                 name="Afficher les infrastructures actuelles" include={[
-                                    "road", "natural-line-label", "natural-point-label", "aeroway",
+                                    "road", "natural-line-label", "natural-point-label", "aeroway", "3dbuilding",
                                     "water-line-label", "water-point-label", "poi-label", "airport-label",
                                     "settlement-subdivision-label", "settlement-label", "admin", "state-label", "country-label",
                                     "building", "bridge", "tunnel", "waterway", "park", "land-structure-polygon"]}
-                                map={map} enabled={state.enabled} def={0} />
+                                map={map} enabled={state.enabled} def={0} setValue={setBuildingOpacity}/>
 
                             {/* GEOLOC */}
                             <div className={!displayCursor ? "hidden" : "space-x-4 flex items-center"}>

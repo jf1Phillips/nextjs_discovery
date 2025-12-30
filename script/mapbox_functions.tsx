@@ -1,5 +1,5 @@
 import { CreateHTMLPopup } from "@/components/popup_generator";
-import mapboxgl, { Map as MapboxMap, LngLatLike, MapMouseEvent, Marker, FilterSpecification, LngLat } from "mapbox-gl";
+import mapboxgl, { Map as MapboxMap, LngLatLike, MapMouseEvent, Marker, FilterSpecification } from "mapbox-gl";
 import { createRoot } from "react-dom/client";
 
 var darkmode: boolean = false;
@@ -27,9 +27,9 @@ const mapboxTools = {
     get_location,
     /** {@link highLightLabel} */
     highLightLabel,
-    /** {@link setWaterColor} */
-    filterGestion,
     /** {@link filterGestion} */
+    filterGestion,
+    /** {@link setWaterColor} */
     setWaterColor,
     /** {@link setSatelliteView} */
     setSatelliteView,
@@ -1054,10 +1054,12 @@ export { setSatelliteView };
  * - Smoothly resets the map pitch to a flat view.
  *
  * @param map - The Mapbox map instance.
+ * @param remove - Remove or not the 3D terrain
+ * @param opacity - If specified, set the opacity to the buildings
  *
  * @example
- * // Enable 3D terrain
- * set3dTerrain(map, false);
+ * // Enable 3D terrain with a 0.5 opacity
+ * set3dTerrain(map, false, 0.5);
  *
  * // Disable 3D terrain and return to flat mode
  * set3dTerrain(map, true);
@@ -1068,25 +1070,31 @@ export { setSatelliteView };
  * - A smooth pitch animation is applied when toggling terrain for a better user experience.
  * - The function safely checks for existing sources and layers before adding or removing them.
  */
-function set3dTerrain(map: MapboxMap, remove: boolean): void {
+function set3dTerrain(map: MapboxMap, remove: boolean, opacity ?: number): void {
     const id_building: string = "3dbuilding";
     const id_shadow: string = "shadow_layer";
     const id_terrain: string = "terrain_to_shadow";
+    const id_source_hillshade: string = "hillshade_source";
 
-    map.easeTo({ pitch: 60, duration: 1000 });
     if (remove) {
         map.setTerrain(null);
         map.easeTo({ pitch: 0, duration: 1000 });
-        if (map.getLayer(id_shadow)) map.removeLayer(id_shadow);
-        if (map.getLayer(id_building)) map.removeLayer(id_building);
+        if (map.getLayer(id_shadow)) map.setLayoutProperty(id_shadow, 'visibility', 'none');
+        if (map.getLayer(id_building)) map.setLayoutProperty(id_building, 'visibility', 'none');
         return;
     }
     if (!map.getSource(id_terrain)) {
         map.addSource(id_terrain, {
             type: 'raster-dem',
-            url: 'mapbox://mapbox.mapbox-terrain-dem-v1',
-            // url: 'mapbox://mapbox.terrain-rgb',
+            url: 'mapbox://mapbox.terrain-rgb',
             tileSize: 512,
+        });
+    }
+    if (!map.getSource(id_source_hillshade)) {
+        map.addSource(id_source_hillshade, {
+            type: 'raster-dem',
+            url: 'mapbox://mapbox.mapbox-terrain-dem-v1',
+            tileSize: 256,
         });
     }
     if (!map.getLayer(id_building)) {
@@ -1101,15 +1109,17 @@ function set3dTerrain(map: MapboxMap, remove: boolean): void {
                 'fill-extrusion-color': '#aaa',
                 'fill-extrusion-height': ['get', 'height'],
                 'fill-extrusion-base': ['get', 'min_height'],
-                'fill-extrusion-opacity': 1.0
+                'fill-extrusion-opacity': opacity ? opacity : 1.0,
             }
         });
+    } else {
+        map.setLayoutProperty(id_building, 'visibility', 'visible');
     }
     if (!map.getLayer(id_shadow)) {
         map.addLayer({
             id: id_shadow,
             type: 'hillshade',
-            source: id_terrain,
+            source: id_source_hillshade,
             layout: {},
             paint: {
                 'hillshade-shadow-color': '#473B24',
@@ -1118,10 +1128,13 @@ function set3dTerrain(map: MapboxMap, remove: boolean): void {
                 'hillshade-exaggeration': 1.0
             }
         }, 'water');
+    } else {
+        map.setLayoutProperty(id_shadow, 'visibility', 'visible');
     }
     if (!map.getTerrain()) {
         map.setTerrain({ source: id_terrain, exaggeration: 1.5 });
     }
+    map.easeTo({ pitch: 60, duration: 1000 });
 }
 
 export { set3dTerrain };

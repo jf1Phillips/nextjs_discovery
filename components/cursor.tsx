@@ -27,6 +27,8 @@ export interface ArgsCursor {
     def?: number;
     /** Whether dark mode is enabled. */
     enabled?: boolean;
+    /** SetState to get the value of the cursor */
+    setValue?: (value: number) => void;
 }
 
 /**
@@ -113,7 +115,7 @@ function set_paint(map: MapboxMap, value: number, include: string | string[])
  * />
  * ```
  */
-function Cursor({name, include, map, def, className, enabled} : ArgsCursor): JSX.Element {
+function Cursor({name, include, map, def, className, enabled, setValue} : ArgsCursor): JSX.Element {
     const [sliderValue, setSliderValue] = useState<number>(() => {
             const value = def ? def : 0;
             set_paint(map.current as MapboxMap, value, include);
@@ -123,6 +125,7 @@ function Cursor({name, include, map, def, className, enabled} : ArgsCursor): JSX
 
     const changeOpacity = (value: number) => {
         setSliderValue(value);
+        setValue?.(value / 100.0);
         set_paint(map.current as MapboxMap, value, include);
     };
 
