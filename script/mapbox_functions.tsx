@@ -21,8 +21,6 @@ const mapboxTools = {
     set3dTerrain,
     /** {@link addRoads} */
     addRoads,
-    /** {@link setEnvironment} */
-    setEnvironment,
     /** {@link get_location} */
     get_location,
     /** {@link highLightLabel} */
@@ -994,9 +992,40 @@ export { add_popup };
 
 
 /**------------------------------------------------------------------------------------- */
-/**                                  ADD SATELITE VIEW                               */
+/**                                  ADD SATELITE VIEW                                   */
 /**------------------------------------------------------------------------------------- */
-// DOC A JOUTEREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+
+/**
+ * Enables or disables a satellite imagery overlay on the Mapbox map.
+ *
+ * @remarks
+ * This function manages a raster satellite layer based on Mapbox’s
+ * `mapbox.satellite` tileset. The layer is added only once and is then
+ * shown or hidden by toggling its visibility to avoid unnecessary
+ * source or layer recreation.
+ *
+ * When enabled, the satellite imagery is rendered as a semi-transparent
+ * overlay above the base map, allowing underlying layers (such as roads
+ * or labels) to remain visible.
+ *
+ * The layer is inserted below the `"water"` layer to preserve proper
+ * visual hierarchy.
+ *
+ * @param map - The Mapbox GL map instance on which the satellite view
+ * should be applied.
+ * @param remove - If set to `true`, hides the satellite layer instead of
+ * adding or showing it. If omitted or `false`, the satellite view is
+ * enabled.
+ *
+ * @example
+ * ```ts
+ * // Enable satellite view
+ * setSatelliteView(map);
+ *
+ * // Disable satellite view
+ * setSatelliteView(map, true);
+ * ```
+ */
 function setSatelliteView(map: MapboxMap, remove?: boolean): void {
     const idSatellite = "satellite_view";
 
@@ -1069,6 +1098,10 @@ export { setSatelliteView };
  * - Building data is fetched from the `"composite"` source (default Mapbox Streets style).
  * - A smooth pitch animation is applied when toggling terrain for a better user experience.
  * - The function safely checks for existing sources and layers before adding or removing them.
+ * - **Important:** two distinct `raster-dem` layers based on the `terrain-rgb` tileset
+ *   must be used: one dedicated to terrain elevation (relief) and a separate one for
+ *   hillshade/shadow rendering. Reusing the same `raster-dem` source or layer for both
+ *   purposes can lead to Mapbox GL errors and unstable rendering behavior.
  */
 function set3dTerrain(map: MapboxMap, remove: boolean, opacity ?: number): void {
     const id_building: string = "3dbuilding";
@@ -1192,102 +1225,6 @@ function addRoads(url_given: string, map: MapboxMap): void {
 }
 
 export { addRoads };
-/*****************************************************************************************/
-
-
-/**------------------------------------------------------------------------------------- */
-/**                                    SET ENVIRONMENT                                   */
-/**------------------------------------------------------------------------------------- */
-
-import { WeatherSystem, WeatherConfig, createBoundsAroundPoint } from './environment';
-
-let weatherSystem: WeatherSystem | null = null;
-
-function setEnvironment(map: MapboxMap, env: WeatherConfig | null): void {
-    // Initialiser le système la première fois
-    if (!weatherSystem) {
-        weatherSystem = new WeatherSystem(map, (night) => {
-            darkmode = night;
-            setDarkModeToMap(map);
-        });
-    }
-
-    // Appliquer la config météo
-    weatherSystem.setWeather(env);
-    // if (env == null) {
-    //     map.setFog(null);
-    //     map.setSnow(null);
-    //     map.setSnow(null);
-    //     darkmode = false;
-    //     setDarkModeToMap(map);
-    //     return;
-    // }
-    // if (env.night != undefined) {
-    //     darkmode = env.night;
-    //     setDarkModeToMap(map);
-    // }
-    // if (env.fog == false) {
-    //     map.setFog(null);
-    // } else if (env.fog && !map.getFog()) {
-    //     map.setFog({
-    //         range: [0.5, 10],
-    //         color: '#d8dfe8',
-    //         'horizon-blend': 0.1,
-    //         'high-color': '#c8d5e8',
-    //         'space-color': '#7c9cc5',
-    //         'star-intensity': 0.15,
-    //     });
-    // }
-    // if (env.snow == false) {
-    //     map.setSnow(null);
-    // } else if (env.snow && !map.getSnow()) {
-    //     map.setSnow({
-    //         density: ['interpolate', ['linear'], ['zoom'],
-    //             8, 0, 10, 0.8],
-    //         intensity: 0.6,
-    //         color: darkmode ? '#ffffff' : '#888',
-    //         opacity: 0.8,
-    //         direction: [10, 70],
-    //         'center-thinning': 0.2,
-    //     });
-    // }
-    // if (env.wind == false && env.wind == false) {
-    //     map.setRain(null);
-    // }
-    // if (env.wind) {
-    //     map.setRain({
-    //         density: ['interpolate', ['linear'], ['zoom'],
-    //             8, 0, 10, 1.0],
-    //         intensity: 1.0,
-    //         color: '#a8adbc',
-    //         opacity: 0.2,
-    //         vignette: ['interpolate', ['linear'], ['zoom'],
-    //             9, 0.0, 13, 0.8],
-    //         direction: [180, 180],
-    //         'droplet-size': [1, 50],
-    //         'distortion-strength': 0,
-    //         'center-thinning': 0,
-    //     });
-    // }
-    // if (env.rain) {
-    //     map.setRain({
-    //         density: ['interpolate', ['linear'], ['zoom'],
-    //             8, 0, 10, 1.0],
-    //         intensity: 1.0,
-    //         color: '#a8adbc',
-    //         opacity: 0.7,
-    //         vignette: ['interpolate', ['linear'], ['zoom'],
-    //             9, 0.0, 13, 0.8],
-    //         'vignette-color': '#464646',
-    //         direction: [0, env.wind ? 140 : 80],
-    //         'droplet-size': [2.6, 18.2],
-    //         'distortion-strength': 0.7,
-    //         'center-thinning': 0,
-    //     });
-    // }
-}
-
-export { setEnvironment };
 /*****************************************************************************************/
 
 

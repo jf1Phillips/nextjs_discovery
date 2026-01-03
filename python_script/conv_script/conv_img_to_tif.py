@@ -50,6 +50,5 @@ bounds = (34.120542941238725 + 0.008,
             35.7498100593699 + 0.008,
             33.46703792406347 + 0.003) # lon_min, lat_min, lon_max, lat_max
 
-# webp_to_geotiff(webp_file, tif_file, bou
 webp_to_geotiff(webp_file, tif_file, bounds=bounds)
 

@@ -24,4 +24,4 @@ for row in csv2.iloc:
     ouput["fr"].append(row["name"])
     ouput["url"].append(row["url"])
 dt = pd.DataFrame(ouput)
-dt.to_csv("merged_csv.csv", sep=",", index=False)
+dt.to_csv("city_labels_and_urls.csv", sep=",", index=False)

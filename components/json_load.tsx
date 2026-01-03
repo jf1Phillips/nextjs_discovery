@@ -1,4 +1,4 @@
-import { GeoJsonLabels, highLightLabel, setEnvironment } from "@/script/mapbox_functions";
+import { GeoJsonLabels, highLightLabel } from "@/script/mapbox_functions";
 import { Map as MapboxMap } from "mapbox-gl";
 
 interface Feature {
@@ -85,15 +85,6 @@ export default function json_load(map: MapboxMap, properties: LoadProperties) {
             return;
         const feature: Feature = response.features[properties.index];
         const coord: [number, number] = feature.geometry.coordinates;
-
-        // const modulo = properties.index % 5;
-        // setEnvironment(map, {
-        //     snow: modulo == 1,
-        //     wind: modulo == 2 || modulo == 4,
-        //     rain: modulo == 3 || modulo == 4,
-        //     bounds: createBoundsAroundPoint(coord, 1)
-        // });
-
         highLightLabel(map, [properties.label], feature.properties.fr);
         if (!properties.move) return;
         map.flyTo({ center: coord, zoom: properties.zoom_level });

@@ -78,7 +78,6 @@ const add_all_things = (new_state: MapVar, map: MapboxMap | null) => {
     if (!map) return;
     mapboxTools.addGeoImg(map, geoImgArray);
     mapboxTools.addRoads(ROAD_FILENAME, map);
-    mapboxTools.setEnvironment(map, null);
     mapboxTools.addGeoJsonLabels(map, LabelsToAdd);
     mapboxTools.setDarkmodeToLabels(map, LabelsToAdd);
     mapboxTools.add_popup(map, LabelsToAdd);
@@ -175,10 +174,6 @@ export default function GetMapboxMap({ def_zoom, textNbr, histdate, setDarkMode 
 
     useEffect(() => {
         if (!map.current || !styleLoaded) return;
-        const modulo = textNbr % 5;
-        // mapboxTools.setEnvironment(map.current, {
-        //     night: modulo == 0 || state.enabled,
-        // });
         json_load(map.current, {
             label: LabelsToAdd[0],
             zoom_level: 10,
