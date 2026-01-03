@@ -68,7 +68,7 @@ def csv_to_geoJson(file_name):
         "features": features
     }
 geojson_data = csv_to_geoJson(file_name)
-output_file = file_name.split('.')[0] + ".geojson"
+output_file = file_name.split('.')[-2].replace("/", "") + ".geojson"
 
 with open(output_file, mode='w', encoding='utf-8') as geojson_file:
     json.dump(geojson_data, geojson_file, indent=4, ensure_ascii=False)

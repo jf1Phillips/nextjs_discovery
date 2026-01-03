@@ -1,12 +1,12 @@
 long,lat,fr,url
 35.7235471783873,31.6822813967507,Monts Abarim,
 35.5803781991821,33.2577033933823,Abel Maïm,
-35.1023412581567,33.0485981736681,Achzib,
+35.1023412581567,33.0485981736681,Achzib,"https://fr.mariavaltorta.wiki/wiki/Aczib,_Achzib"
 16.7352010877973,40.2208984543028,Aciri,
-35.3486462894152,31.8813663092477,Vallée de Acor,
-34.822977032364,31.8600682231551,Acron,
+35.3486462894152,31.8813663092477,Vallée de Acor,"https://fr.mariavaltorta.wiki/wiki/Acor_(Vallée),_Akor"
+34.822977032364,31.8600682231551,Acron,"https://fr.mariavaltorta.wiki/wiki/Acron,_Akron"
 23.7258766749851,37.9715537092891,Acropole,
-35.2809970897732,31.791700904952,Mont Adomin,
+35.2809970897732,31.791700904952,Mont Adomin,"https://fr.mariavaltorta.wiki/wiki/Adomin_(Mont),_Hadomim"
 35.7041744988012,32.7800841602005,Aféca,
 35.3332630039967,31.9894926808067,Ain Samieh,
 35.9455842350175,32.841983861494,"Al Allan, nahr",
@@ -441,11 +441,7 @@ long,lat,fr,url
 35.68386745736617,32.76608303874568,Gamala,https://fr.mariavaltorta.wiki/wiki/Gamala_(Gamla)
 35.89235293983559,32.28807578561087,Gérasa,https://fr.mariavaltorta.wiki/wiki/G%C3%A9rasa
 27.363892,37.95458,Éphèse,https://fr.mariavaltorta.wiki/wiki/Éphèse
-35.534898,31.796308,"Acor (Vallée), Akor","https://fr.mariavaltorta.wiki/wiki/Acor_(Vallée),_Akor"
-35.10276791877531,33.05474178338891,"Aczib, Achzib","https://fr.mariavaltorta.wiki/wiki/Aczib,_Achzib"
-34.82291375631936,31.861397850928658,"Acron, Akron","https://fr.mariavaltorta.wiki/wiki/Acron,_Akron"
 35.537030335731465,32.15011469946688,"Gué d'Adâm, Gué du Jaboc, Gué du Yabbok","https://fr.mariavaltorta.wiki/wiki/Gué_d'Adâm,_Gué_du_Jaboc,_Gué_du_Yabbok"
-35.27992673550452,31.797916244791807,"Adomin (Mont), Hadomim","https://fr.mariavaltorta.wiki/wiki/Adomin_(Mont),_Hadomim"
 36.174242644637,33.20375808032284,"Aëra, Aéra","https://fr.mariavaltorta.wiki/wiki/Aëra,_Aéra"
 35.70307069326341,32.7865310252464,"Aféca, Aphéqa, Afeca","https://fr.mariavaltorta.wiki/wiki/Aféca,_Aphéqa,_Afeca"
 35.16739037781992,33.156919969429204,Alexandroscène,https://fr.mariavaltorta.wiki/wiki/Alexandroscène

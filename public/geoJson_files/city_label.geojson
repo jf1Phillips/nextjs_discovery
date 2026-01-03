@@ -57,7 +57,11 @@
                 "related_event": [],
                 "img": null,
                 "description": null,
-                "links_more": [],
+                "links_more": [
+                    {
+                        "url": "https://fr.mariavaltorta.wiki/wiki/Aczib,_Achzib"
+                    }
+                ],
                 "icon": "map_icon_black.png",
                 "icon_darkmode": "map_icon_white.png",
                 "icon_selected": "map_icon_orange.png",
@@ -99,7 +103,11 @@
                 "related_event": [],
                 "img": null,
                 "description": null,
-                "links_more": [],
+                "links_more": [
+                    {
+                        "url": "https://fr.mariavaltorta.wiki/wiki/Acor_(Vallée),_Akor"
+                    }
+                ],
                 "icon": "map_icon_black.png",
                 "icon_darkmode": "map_icon_white.png",
                 "icon_selected": "map_icon_orange.png",
@@ -120,7 +128,11 @@
                 "related_event": [],
                 "img": null,
                 "description": null,
-                "links_more": [],
+                "links_more": [
+                    {
+                        "url": "https://fr.mariavaltorta.wiki/wiki/Acron,_Akron"
+                    }
+                ],
                 "icon": "map_icon_black.png",
                 "icon_darkmode": "map_icon_white.png",
                 "icon_selected": "map_icon_orange.png",
@@ -162,7 +174,11 @@
                 "related_event": [],
                 "img": null,
                 "description": null,
-                "links_more": [],
+                "links_more": [
+                    {
+                        "url": "https://fr.mariavaltorta.wiki/wiki/Adomin_(Mont),_Hadomim"
+                    }
+                ],
                 "icon": "map_icon_black.png",
                 "icon_darkmode": "map_icon_white.png",
                 "icon_selected": "map_icon_orange.png",
@@ -9313,81 +9329,6 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    35.534898,
-                    31.796308
-                ]
-            },
-            "properties": {
-                "fr": "Acor (Vallée), Akor",
-                "related_event": [],
-                "img": null,
-                "description": null,
-                "links_more": [
-                    {
-                        "url": "https://fr.mariavaltorta.wiki/wiki/Acor_(Vallée),_Akor"
-                    }
-                ],
-                "icon": "map_icon_black.png",
-                "icon_darkmode": "map_icon_white.png",
-                "icon_selected": "map_icon_orange.png",
-                "testament": "NT"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    35.10276791877531,
-                    33.05474178338891
-                ]
-            },
-            "properties": {
-                "fr": "Aczib, Achzib",
-                "related_event": [],
-                "img": null,
-                "description": null,
-                "links_more": [
-                    {
-                        "url": "https://fr.mariavaltorta.wiki/wiki/Aczib,_Achzib"
-                    }
-                ],
-                "icon": "map_icon_black.png",
-                "icon_darkmode": "map_icon_white.png",
-                "icon_selected": "map_icon_orange.png",
-                "testament": "NT"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    34.82291375631936,
-                    31.861397850928658
-                ]
-            },
-            "properties": {
-                "fr": "Acron, Akron",
-                "related_event": [],
-                "img": null,
-                "description": null,
-                "links_more": [
-                    {
-                        "url": "https://fr.mariavaltorta.wiki/wiki/Acron,_Akron"
-                    }
-                ],
-                "icon": "map_icon_black.png",
-                "icon_darkmode": "map_icon_white.png",
-                "icon_selected": "map_icon_orange.png",
-                "testament": "NT"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
                     35.537030335731465,
                     32.15011469946688
                 ]
@@ -9400,31 +9341,6 @@
                 "links_more": [
                     {
                         "url": "https://fr.mariavaltorta.wiki/wiki/Gué_d'Adâm,_Gué_du_Jaboc,_Gué_du_Yabbok"
-                    }
-                ],
-                "icon": "map_icon_black.png",
-                "icon_darkmode": "map_icon_white.png",
-                "icon_selected": "map_icon_orange.png",
-                "testament": "NT"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    35.27992673550452,
-                    31.797916244791807
-                ]
-            },
-            "properties": {
-                "fr": "Adomin (Mont), Hadomim",
-                "related_event": [],
-                "img": null,
-                "description": null,
-                "links_more": [
-                    {
-                        "url": "https://fr.mariavaltorta.wiki/wiki/Adomin_(Mont),_Hadomim"
                     }
                 ],
                 "icon": "map_icon_black.png",
