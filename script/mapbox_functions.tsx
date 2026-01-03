@@ -839,14 +839,14 @@ type GeoImg =
  *   {
  *     id: "satellite-layer",
  *     type: "raster",
- *     url: "https://example.com/tiles/{z}/{x}/{y}.png",
+ *     url: "https://example.com/tiles/{z}/{x}/{y}.webp",
  *     opacity: 0.7
  *     bounds: [33.6803545, 31.1732927, 36.6260058, 33.7008169],
  *   },
  *   {
  *     id: "overlay-image",
  *     type: "image",
- *     url: "https://example.com/image.png",
+ *     url: "https://example.com/image.webp",
  *     coord: [
  *       [-74, 40.7],
  *       [-74, 40.8],

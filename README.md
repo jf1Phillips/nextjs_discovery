@@ -120,3 +120,43 @@ This file merges `city_label.csv` and `maria_valtorta_parse_data.csv` to create 
 # Usage (you must be at the project root)
 cd python_script/ && python merge_city_label.py
 ```
+
+# Image and tiles
+To add large maps to Mapbox, here is the process I followed. First, you need to obtain the coordinates of the map and convert it into a `.tif` file. For this, I used QGIS, which allows you to georeference an image and then export it as a `.tif` file. If you already know the coordinates of the map edges, you can use the Python file `conv_img_to_tif.py`. After that, there are two ways to display the map:
+* First, you can directly add it using the `addGeoImg` function from the `mapbox_functions.tsx` file (in this case, there is no need to convert the file to `.tif`).
+```ts
+addGeoImg(map, [
+  {
+    id: "overlay-image",
+    type: "image",
+    url: "https://example.com/image.png",
+    coord: [
+      [-74, 40.7],
+      [-74, 40.8],
+      [-73.9, 40.8],
+      [-73.9, 40.7]
+    ]
+  }
+]);
+```
+The advantages of this method are that it is quite fast to add and the image can be edited directly. However, for a large image, the projection on the map will not be very accurate, likely due to the curvature of the map. As a result, the top and bottom may appear slightly stretched. Additionally, large maps can be very heavy in file size, which can cause long loading times.
+* To address this issue, you can use the `./utils/conv.sh` file. You need to specify the following data in the file header:
+```bash
+# Input: the .tif file you previously converted
+INPUT="pef_1880_map.tif"
+# Output directory
+OUTPUT_DIR="public/tiles"
+```
+You must specify an output directory because the image will be converted into tiles, creating multiple folders and subfolders containing the tiles needed for each zoom level, with different quality. At very low zoom levels (distant view), there will be few tiles and their quality will be low to save resources. This script generates the tiles and then converts all tiles into WebP files to save as much space as possible. As a result, the final folder with all the tiles will be smaller than the original GeoJSON file.
+Then you can add it using the `addGeoImg` function from the `mapbox_functions.tsx` file in the following way:
+```ts
+addGeoImg(map, [
+  {
+    id: "satellite-layer",
+    type: "raster",
+    url: "https://example.com/tiles/{z}/{x}/{y}.webp",
+    opacity: 0.7
+    bounds: [33.6803545, 31.1732927, 36.6260058, 33.7008169],
+  }]);
+```
+It is important to specify the map boundaries because otherwise, if you are in an area outside the map (for example, viewing Paris while the map is in Australia), Mapbox will try to load tiles that do not exist, resulting in many error messages. The `bounds` variable defines the area where the map is located, which prevents errors caused by nonexistent tiles.
