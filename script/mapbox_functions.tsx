@@ -1142,7 +1142,7 @@ function set3dTerrain(map: MapboxMap, remove: boolean, opacity ?: number): void 
                 'fill-extrusion-color': '#aaa',
                 'fill-extrusion-height': ['get', 'height'],
                 'fill-extrusion-base': ['get', 'min_height'],
-                'fill-extrusion-opacity': opacity ? opacity : 1.0,
+                'fill-extrusion-opacity': opacity !== undefined ? opacity : 1.0,
             }
         });
     } else {
