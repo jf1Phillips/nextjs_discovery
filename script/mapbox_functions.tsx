@@ -1,5 +1,11 @@
 import { CreateHTMLPopup } from "@/components/popup_generator";
-import mapboxgl, { Map as MapboxMap, LngLatLike, MapMouseEvent, Marker, FilterSpecification } from "mapbox-gl";
+import mapboxgl, {
+    Map as MapboxMap,
+    LngLatLike,
+    MapMouseEvent,
+    Marker,
+    FilterSpecification,
+} from "mapbox-gl";
 import { createRoot } from "react-dom/client";
 
 var darkmode: boolean = false;
@@ -922,8 +928,15 @@ function handler(map: MapboxMap, e: MapMouseEvent): void {
     if (!feature.properties || feature.geometry.type !== 'Point') return;
 
     const coords: LngLatLike = feature.geometry.coordinates as LngLatLike;
-    const popup = new mapboxgl.Popup({ anchor: "bottom", closeButton: false, offset: [0, -30] })
-        .setLngLat(coords);
+
+    const point = map.project(coords);
+    const mapHeight = map.getCanvas().clientHeight;
+    const anchor = point.y < mapHeight / 2 ? "top" : "bottom";
+    const popup = new mapboxgl.Popup({
+        anchor: anchor,
+        closeButton: false,
+        offset: [0, -30],
+    }).setLngLat(coords);
 
     const popupNode = document.createElement("div");
     const root = createRoot(popupNode);
@@ -1103,7 +1116,7 @@ export { setSatelliteView };
  *   hillshade/shadow rendering. Reusing the same `raster-dem` source or layer for both
  *   purposes can lead to Mapbox GL errors and unstable rendering behavior.
  */
-function set3dTerrain(map: MapboxMap, remove: boolean, opacity ?: number): void {
+function set3dTerrain(map: MapboxMap, remove: boolean, opacity?: number): void {
     const id_building: string = "3dbuilding";
     const id_shadow: string = "shadow_layer";
     const id_terrain: string = "terrain_to_shadow";
