@@ -5,7 +5,6 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import React, { useState, useRef, useEffect, JSX } from "react";
 import mapboxgl, { LngLat, Map as MapboxMap, Marker } from "mapbox-gl";
 import { Cursor } from "./cursor";
-import addBunker, { removeBunker } from "./addBunker";
 import json_load from "./json_load";
 import SearchBar from "./search_bar";
 import mapboxTools, { GeoImg, GeoJsonLabels, LocType } from "@/script/mapbox_functions";
@@ -48,9 +47,9 @@ const geoImgArray: GeoImg[] = [
         type: "raster",
         opacity: 0.0,
         bounds: [34.120542941238725 + 0.008,
-            31.10529446421723 - 0.0058,
-            35.7498100593699 + 0.008,
-            33.46703792406347 + 0.003],
+        31.10529446421723 - 0.0058,
+        35.7498100593699 + 0.008,
+        33.46703792406347 + 0.003],
     },
     {
         url: "/tiles/{z}/{x}/{y}.webp",
@@ -183,15 +182,6 @@ export default function GetMapboxMap({ def_zoom, textNbr, histdate, setDarkMode 
         });
     }, [textNbr, styleLoaded]);
 
-    useEffect(() => {
-        if (!map.current || !styleLoaded) return;
-        if (histdate > 1955) {
-            removeBunker(map.current);
-        } else {
-            addBunker(map.current);
-        }
-    }, [histdate, styleLoaded]);
-
     const changeMode = () => {
         if (!map.current || !styleLoaded) return;
         const new_state: MapVar = { ...state, enabled: !state.enabled };
@@ -219,7 +209,7 @@ export default function GetMapboxMap({ def_zoom, textNbr, histdate, setDarkMode 
     const setSatellite = () => {
         if (!map.current || !map.current.isStyleLoaded()) return;
         mapboxTools.setSatelliteView(map.current, state.satellite);
-        setState(prev => ({...prev, satellite: !prev.satellite}));
+        setState(prev => ({ ...prev, satellite: !prev.satellite }));
     };
 
     const [displayCursor, setDisplayCursor] = useState<boolean>(true);
@@ -276,7 +266,7 @@ export default function GetMapboxMap({ def_zoom, textNbr, histdate, setDarkMode 
                                     "water-line-label", "water-point-label", "poi-label", "airport-label",
                                     "settlement-subdivision-label", "settlement-label", "admin", "state-label", "country-label",
                                     "building", "bridge", "tunnel", "waterway", "park", "land-structure-polygon"]}
-                                map={map} enabled={state.enabled} def={0} setValue={setBuildingOpacity}/>
+                                map={map} enabled={state.enabled} def={0} setValue={setBuildingOpacity} />
 
                             {/* GEOLOC */}
                             <div className={!displayCursor ? "hidden" : "space-x-4 flex items-center"}>
